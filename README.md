@@ -10,6 +10,9 @@ Prace domowe należy zgłaszać przez GitHub. [Instrukcja jak korzystać](http:/
 
 # Tematy spotkań
 
+* [1] W: [Historia grafiki statystycznej](http://biecek.pl/Eseje/indexHistoria.html); L: [ggplot2 - pierwsza krew](https://pbiecek.gitbooks.io/przewodnik/content/Wizualizacja/jak_tworzyc_wykresy_ggplot2.html).
+* [2] W: [Gramatyka grafiki](http://biecek.pl/Eseje/indexGramatyka.html), [Standardy w komunikacji](http://www.ibcs-a.org/); L: [ggplot2 - skale, statystyki, koordynaty](https://pbiecek.gitbooks.io/przewodnik/content/Wizualizacja/jak_tworzyc_wykresy_ggplot2.html)
+
 
 # Zasady zaliczenia
 
