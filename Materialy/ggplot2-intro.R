@@ -12,14 +12,24 @@ ggplot(data = countries, aes(x = birth.rate, y = death.rate))
 ggplot(data = countries, aes(x = continent, y = death.rate))
 
 # dodawanie geometrii
-ggplot(data = countries, aes(x = birth.rate, y = death.rate)) +
+ggplot(data = countries, aes(x = birth.rate, y = death.rate)) + 
   geom_point()
 
 ggplot(data = countries, aes(x = continent, y = death.rate)) +
   geom_point()
+
+set.seed(1410)
+ggplot(data = countries, aes(x = continent, y = death.rate)) +
+  geom_point(position = "jitter")
+
+ggplot(data = countries, aes(x = continent, y = death.rate)) +
+  geom_point(alpha = 0.2)
 
 ggplot(data = countries, aes(x = continent, y = death.rate)) +
   geom_boxplot()
+
+ggplot(data = countries, aes(x = continent, y = death.rate)) +
+  geom_boxplot(outlier.color = "red")
 
 ggplot(data = countries, aes(x = continent, y = death.rate)) +
   geom_dotplot(binaxis = "y", stackdir = "center")
@@ -39,7 +49,17 @@ ggplot(data = countries, aes(x = death.rate)) +
   geom_density()
 
 ggplot(data = countries, aes(x = death.rate, fill = continent)) +
+  geom_density()
+
+p1 <- ggplot(data = countries, aes(x = death.rate, fill = continent)) +
   geom_density(alpha = 0.2)
+
+p2 <- ggplot(countries, aes(x = continent, y = death.rate)) +
+  geom_violin()
+
+library(gridExtra)
+grid.arrange(p1, p2, nrow = 1)
+
 
 # 2. Wielowarstwowe wykresy
 # geometrie mozna laczyc
