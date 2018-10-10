@@ -85,14 +85,16 @@ ggplot(continents, aes(x = birth.rate, y = death.rate, size = population)) +
   geom_point()
 
 ggplot(continents, aes(x = birth.rate, y = death.rate, size = population, color = continent)) +
-  geom_point()
+  geom_point() +
+  scale_color_manual(values = c("red", "navyblue", "orange", "pink", "green"))
 
 ggplot(continents, aes(x = birth.rate, y = death.rate, size = population, color = n.countries)) +
   geom_point()
 
 ggplot(continents, aes(x = birth.rate, y = death.rate, size = population, color = n.countries)) +
   geom_point() +
-  scale_size_continuous(range = c(4, 12))
+  scale_size_continuous(range = c(4, 12)) +
+  scale_x_continuous("Birth rate", expand = c(0.2, 0.2))
 
 # geometrie automatycznie wykorzystują okreslone atrybuty graficzne.
 # w tym przypadku atrybut size automatycznie jest przypisany zarowno do geom_point i geom_text
@@ -157,6 +159,9 @@ ggplot(countries, aes(x = birth.rate, y = death.rate, fill = continent)) +
 
 # wykorzystujemy stat, a nie geom, poniewaz interesuje nas inna geometria (polygon)
 ggplot(countries, aes(x = birth.rate, y = death.rate, fill = continent)) +
+  stat_density_2d(color = "black", contour = TRUE, geom = "polygon")
+
+ggplot(countries, aes(x = birth.rate, y = death.rate, fill = continent)) +
   stat_density_2d(aes(alpha = ..level..), color = "black", contour = TRUE, geom = "polygon")
 
 # czasami to nie wystarcza i trzeba uciec się do paneli
@@ -167,6 +172,11 @@ ggplot(countries, aes(x = birth.rate, y = death.rate, fill = continent)) +
 ggplot(countries, aes(x = birth.rate, y = death.rate)) +
   stat_density2d(aes(alpha = ..level..), color = "black", contour = TRUE, geom = "polygon") +
   facet_wrap(~ continent)
+
+ggplot(countries, aes(x = birth.rate, y = death.rate)) +
+  stat_density2d(aes(fill = ..level..), color = "black", contour = TRUE, geom = "polygon") +
+  facet_wrap(~ continent) +
+  scale_fill_gradient(low = "navyblue", high = "red")
 
 # wykresy zyskuja poprzez pokazanie linii trendu
 
@@ -188,7 +198,7 @@ ggplot(countries, aes(x = birth.rate, y = death.rate)) +
 # skrajne przypadki mozna podpisac
 na.omit(countries) %>% 
   mutate(label.for.plot = ifelse(birth.rate %in% range(birth.rate) | death.rate %in% range(death.rate),
-                        country, "")) %>% 
+                                 country, "")) %>% 
   ggplot(aes(x = birth.rate, y = death.rate, label = label.for.plot)) +
   geom_point() +
   geom_text_repel()
