@@ -113,6 +113,7 @@ grid.arrange(density_death, main_plot + theme(legend.position = "none"), get_leg
 # library(cowplot)
 # library(customLayout)
 
+install.packages("ggplot2")
 source("https://install-github.me/thomasp85/patchwork")
 library(patchwork)
 
