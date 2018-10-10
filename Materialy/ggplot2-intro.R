@@ -211,3 +211,11 @@ mieszkania <- read.csv(file = "https://raw.githubusercontent.com/STWUR/STWUR-201
 # I. Na jednym wykresie przedstaw rozklad cen i wieku mieszkan dla a) calego Wroclawia b) 
 # poszczegolnych dzielnic.
 # II. Przedstaw zaleznosc ceny za metr^2 od dzielnicy, pietra i roku zbudowania mieszkania.
+
+# ad. II
+mieszkania_pietro <- mutate(mieszkania, 
+                            pietro_disc = cut(pietro, breaks = c(0, 1, 2, 3, 5, 16), include.lowest = TRUE))
+
+ggplot(mieszkania_pietro, aes(x = rok, y = cena_m2)) +
+  stat_density2d(aes(alpha = ..level..), color = "black", contour = TRUE, geom = "polygon")+
+  facet_grid(dzielnica ~ pietro_disc)

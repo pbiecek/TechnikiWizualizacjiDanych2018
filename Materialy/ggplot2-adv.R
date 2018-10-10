@@ -133,4 +133,5 @@ p3 <- ggplot(data = countries, aes(x = continent)) +
 ((p1 + p2) / p3) & theme_bw()
 
 # rozklady brzegowe w patchwork
-density_death + main_plot + plot_spacer() + density_birth + plot_layout(ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
+density_death + main_plot + plot_spacer() + density_birth + 
+  plot_layout(ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
