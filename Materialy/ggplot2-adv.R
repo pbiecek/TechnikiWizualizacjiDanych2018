@@ -13,6 +13,10 @@ p + scale_y_continuous(position = "right")
 
 p + scale_x_discrete(limits = sort(unique(countries[["continent"]]), decreasing = TRUE))
 
+p + scale_y_reverse()
+
+# p + scale_x_reverse() juz nie dziala
+
 continent_order <- group_by(countries, continent) %>% 
   summarise(count = length(continent)) %>% 
   arrange(desc(count)) %>% 
@@ -61,6 +65,8 @@ p <- ggplot(data = countries, aes(x = continent)) +
 
 p + coord_flip()
 
+p + coord_flip() + scale_y_reverse()
+
 p + coord_polar()
 
 ggplot(countries, aes(x = death.rate, y = birth.rate)) +
@@ -75,8 +81,8 @@ p <- ggplot(data = countries, aes(x = birth.rate, y = death.rate, color = contin
 p + coord_equal()
 
 # coord_cartesian nie usuwa punktów
-p + coord_cartesian(xlim = c(5, 10))
-p + scale_x_continuous(limits = c(5, 10))
+p + coord_cartesian(xlim = c(5, 15))
+p + scale_x_continuous(limits = c(5, 15))
 
 library(gridExtra)
 
