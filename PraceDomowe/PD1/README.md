@@ -7,3 +7,7 @@ W katalogu https://github.com/pbiecek/TechnikiWizualizacjiDanych2018/tree/master
 umieść skrypt `knitr` z kodem R, linkiem do źródłowego artykułu (lub zdjęcie wersji papierowej), oraz wykresem przygotowanym z użyciem `ggplot2`.
 
 Pracę domową należy wykonać indywidualnie.
+
+**Update**
+
+Proszę w zgłoszeniu umieszczać też skompilowany plik html z kodem R i z wynikowym wykresem.
