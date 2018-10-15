@@ -1,0 +1,67 @@
+---
+title: "Praca Domowa nr.1"
+subtitle: "Witold Merkel"
+output: pdf_document
+lang: pl-PL
+toc: TRUE
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressMessages(library(ggplot2))
+#tworzenie potrzebnego data.fram'u z płacami minimalnymi
+minimum_brutto <- c(700, 760, 760, 800, 824, 849, 899.1, 936, 1126, 1276, 1317, 1386, 1500, 1600, 1680, 1750, 1850, 2000, 2100, 2250)
+minimum_netto <- c(512.83, 559.12, 561.82, 588.39, 602.77, 617.39, 647.93, 686.45, 845.17, 954.96, 984.15, 1032.34, 1111.86, 1181.38, 1237.20, 1286.16, 1355.69, 1459.48, 1530, 1633.78)
+lata <- c(2000:2019)
+
+dane_minimum_prim <- cbind(minimum_brutto, minimum_netto)
+dane_minimum <- as.data.frame(cbind(lata, dane_minimum_prim))
+
+#tworzenie potrzebnego data.fram'u z płacami minimalnymi w Uni
+unia_brutto <- c(1999, 1563, 1552, 1532, 1498, 1480, 845, 826, 684, 453, 407, 380)
+kraje <- c("Luksemburg", "Irlandia", "Holandia", "Belgia", "Niemcy", "Francja", "Srednia w UE", "Hiszpania", "Gracja", "Polska", "Czechy", "Litwa")
+kraje_minimum <- as.data.frame(cbind(unia_brutto, kraje))
+```
+
+\newpage
+
+#1 Wprowadzenie
+
+W tej pracy domowej chciałbym pokazać pewne rzeczy związane z zarobkami Polaków na przestrzeni lat i sytuacje jaka panuje w Uni Europejskiej. Skupię się na płacy minimalnej, ponieważ są to dane ogólnodostępne i zweryfikowane. Zdecydowałem się skorzystać z danych podanych w artykule (artykół z października 2018): https://gratka.pl/regiopraca/portal/rynek-pracy/wiadomosci/placa-minimalna-2019-co-najmniej-2250-zl-wynagrodzenia-dla-pracownikow-umowa- oraz zaczerpnąć dodatkowych informacji z artykułu: https://pl.wikipedia.org/wiki/P%C5%82aca_minimalna#P%C5%82aca_minimalna_brutto_w_krajach_UE_i_w_USA
+
+#2 Płaca minimalna na przestrzeni lat
+
+Na stronie przedstawione są dane o wartości minimalnego wynagrodzenia brutto i netto w latach od 2000 do 2019 w Polsce. Własnoręcznie stworzę potrzebny data.frame.
+\newline
+Poniżej przedstawiam wykres wykonany za pomocą pakietu *ggplot* zawierający dane dotyczące minumalnej płacy Polaków oraz kod, który umożliwił wykonanie go.
+
+```{r, echo = TRUE}
+wykres_minumum_polska <- ggplot(data = dane_minimum, aes(x = lata, y = minimum_brutto)) +
+  geom_col(fill = lata) +
+  geom_text(aes(label = minimum_brutto), size = 3, vjust = 2, color = "white") +
+  ylab("Zarobki minimalne w zlotwwkach brutto") + xlab("Lata") + 
+  ggtitle("Wykres zarobkww Polakow na przestrzeni ostatnich lat") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r, echo = FALSE}
+plot(wykres_minumum_polska)
+```
+
+\newpage
+
+#3 Płaca minimalna w Polsce na tle innych państw Uni Europejskiej
+
+Na stronie przedstawione są dane dotyczące minumalnego wynagrodzenia brutto w konkretnych państwach w euro, ja skupie się na danych ze stycznia 2017 roku. Własnoręcznie stworzę potrzebny data.frame.
+\newline
+Poniżej przedstawiam wykresy zawierający dane dotyczące minumalnej płacy w różnych krajach Uni Europejskiej oraz kod, który umożliwił wykonanie go. Jest to boxplot z minimalnych zarobków w Uni Europejskiej, a czerowna linia to płaca minimalna w Polsce.
+
+```{r, echo = TRUE}
+boxplot(unia_brutto, main = "Rozklad minimalnych zarobkww \n w Uni Europejskiej"
+        , ylab = "Zarobki w Euro")
+abline(h = 453, col = "red", lwd = 4, lty = 5)
+```
+
+#4 Wnioski
+
+Z pierwszego wykresu widać, że w Polsce panuje tendęcja wzrostowa płący minimalnej w ostatnich latach. Przez ostatnie 19 lat płaca minimalna wzrosła o 1550 złotych brutto, czyli potroiła się. Pomimo tego dalej na tle innych państw Uni Europejskiej mamy małą płacę minimalną. Plasujemy się zdecydowanie bliżej minimum niż mediany, nie wspominająć już o maksimum, które jest w Luksemburgu.
