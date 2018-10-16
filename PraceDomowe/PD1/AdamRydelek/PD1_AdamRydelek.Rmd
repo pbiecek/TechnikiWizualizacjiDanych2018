@@ -1,0 +1,92 @@
+---
+title: "Techniki Wizualizacji Danych - PD1"
+author: "Adam Rydelek"
+date: "15.10.2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(plyr)
+library(ggplot2)
+```
+
+# Wygrane w Lotto
+
+## Miasta, w których najczêœciej trafiano wszystkie szeœæ liczb
+
+Artyku³ na stronie wp.pl: https://finanse.wp.pl/gdzie-grac-zeby-wygrac-oto-mapa-polskich-lottomilionerow-6305571623520385a zaciekawi³ mnie, poniewa¿ jestem sporadycznym graczem w Lotto. Zamieszczono w nim mapê z iloœci¹ trafionych szóstek w najwiêkszych Polskich miastach. Zliczane by³y wyniki zarówno z Lotto, jak i Lotto Plus. Jako, ¿e sam gram jedynie w Lotto bez oznaczenia plusem, uzna³em, ¿e wykonam wykres dla wygranych tylko w tej kategorii. Dane zosta³y pobrane ze strony Totalizatora Sportowego: https://www.lotto.pl/lotto/wyniki-i-wygrane/wygrane?page=10&order=wygrana i po³¹czone w jeden spójny data frame.
+
+```{r}
+miasta <- read.csv("lotto_miasta.txt")
+wygrane <- read.csv("lotto_wygrane.txt")
+wygrane <- wygrane[1]
+lotto <- data.frame("Miasta"=miasta, "Wygrana" = wygrane)
+colnames(lotto) <- c("Miasto", "Wygrana")
+wykres1 <- count(lotto, "Miasto")
+wykres1 <- wykres1[order(wykres1$freq, decreasing=TRUE),]
+wykres1 <- wykres1[1:15,]
+colnames(wykres1) <- c("Miasto", "n")
+```
+
+Na podstawie otrzymanych danych stworzy³em wykres, na którym przeanalizowane zosta³y wszystkie 1095 trafienia szóstek w klasycznej odmianie gry Totalizatora Sportowego i wybrane zosta³o 15 miast o najwiêkszej iloœci wygranych.
+
+```{r}
+ggplot(wykres1, aes(x = reorder(Miasto, -n), y = n, fill=n)) + 
+  geom_bar(stat = "identity") +
+  scale_x_discrete(limits = wykres1$Miasto[1:15]) +
+  scale_fill_gradient(low="green", high="darkgreen") +
+  theme_bw() +
+  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5),
+        plot.title = element_text(color="black", size=18, face="bold", hjust=0.5),
+        axis.title.x = element_text(color="black", size=14, face="plain"),
+        axis.title.y = element_text(color="black", size=14, face="plain")) +
+  theme(legend.position="none") +
+  xlab("Miasta") + ylab("Liczba trafionych szóstek") +
+  ggtitle("Liczba wygranych w Lotto\nw zale¿noœci od miasta")
+```
+
+## Najszczêœliwsze miasta
+
+Po analizie zamieszczonych w artykule informacji i wykonanego powy¿ej wykresu doszed³em do wniosku, ¿e nie okreœla on dobrze, w którym mieœcie warto graæ, poniewa¿ nie bierze pod uwagê iloœci graczy w danym mieœcie. Jako, ¿e Lotto nie podaje danych na ten temat, wyszed³em z za³o¿enia, ¿e liczba graczy Lotto jest proporcjonalna do liczby mieszkañców danego miasta. 
+
+Wykorzysta³em wiêc dane ze strony: https://stat.gov.pl/statystyka-regionalna/rankingi-statystyczne/miasta-najwieksze-pod-wzgledem-liczby-ludnosci/ i po³¹czy³em je z wczeœniejsz¹ analiz¹ wygranych Lotto. 
+
+```{r}
+miasta2 <- read.csv("miasta_nazwy.txt")
+mieszkancy <- read.csv("miasta_liczba.txt")
+
+zamieszkanie <- data.frame(miasta2, mieszkancy)
+colnames(zamieszkanie) <- c("Miasto", "Mieszkancy")
+
+lacznie <- ddply(lotto, "Miasto", transform, LacznaWygrana=sum(Wygrana))
+lacznie <- subset(lacznie, !duplicated(Miasto))
+lacznie2 <- lacznie[order(lacznie$LacznaWygrana, decreasing = TRUE),]
+
+wynik <- merge(lacznie2, zamieszkanie, by="Miasto")
+wynik <- ddply(wynik, "Miasto", transform, Wskaznik=LacznaWygrana/Mieszkancy)
+wykres2 <- wynik[order(wynik$Wskaznik, decreasing = TRUE),]
+```
+
+Na ich podstawie wykona³em wykres, który przedstawia œredni¹ wygran¹ przypadaj¹c¹ na jednego mieszkañca w poszczególnych miastach.
+
+```{r}
+ggplot(wykres2, aes(x = reorder(Miasto, -Wskaznik), y = Wskaznik, fill=Wskaznik)) + 
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  scale_x_discrete(limits = wykres2$Miasto) +
+  scale_fill_gradient(low="green", high="darkgreen") +
+  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5),
+        plot.title = element_text(color="black", size=18, face="bold", hjust=0.5),
+        axis.title.x = element_text(color="black", size=14, face="plain"),
+        axis.title.y = element_text(color="black", size=14, face="plain")) +
+  theme(legend.position="none") +
+  xlab("Miasta") + ylab("Kwota wygranej w PLN") +
+  ggtitle("Wygrana kwota przypadaj¹ca na jednego mieszkañca")
+```
+
+
+## Podsumowanie
+
+Na powy¿szym wykresie mo¿na wiêc zauwa¿yæ, ¿e pomimo najwiêkszej ³¹cznej iloœci wygranych w stolicy, po wziêciu pod uwagê iloœci mieszkañców, czyli te¿ graczy, spad³a a¿ na 8 miejsce. Z powy¿szej analizy wynika wiêc jasny wniosek: aby zwiêkszyæ swoje szanse na wygran¹ w Lotto, trzeba udaæ siê nad morze, do Gdyni.
