@@ -1,0 +1,35 @@
+---
+title: "Praca domowa nr 1"
+author: "Aleksandra Gacek"
+date: "13/10/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Wstęp
+
+Celem zadania było opracowanie danych liczbowych znalezionych w artykule na portalu informacyjnym przy użyciu pakietu ggplot2. Wybrane przeze mnie dane pochodzą z następującego artykułu: https://www.bankier.pl/wiadomosc/Stopa-bezrobocia-w-USA-najnizsza-od-prawie-49-lat-7619135.html. Artykuł zawiera informacje na temat najniższej od 49 lat stopy bezrobocia w USA oraz dane dotyczące zatrudnienia w tym kraju. Dodatkowo w celu otrzymania danych dotyczących stopy bezrobocia, bez konieczności ręcznego zczytywania ich z wykresu, wykorzystana zostały dane z portalu: https://data.bls.gov.
+
+
+# Stopa bezrobocia na przestrzeni ostatnich 10 lat
+
+
+```{r unemployment, message=F, warning=F}
+library(ggplot2)
+library(dplyr)
+unemployment_rate <- read.csv("unemployment_rate.csv")
+
+unemployment_rate <- unemployment_rate %>% mutate(date=as.Date(date))
+
+ggplot(data=unemployment_rate, aes(x=date, y=Value)) + 
+  geom_line(colour="blue") + 
+  scale_x_date(name = 'Miesiac', date_breaks = '12 months', date_labels = '%m/%Y') +
+  theme_minimal() +
+  labs(y="Stopa bezrobocia(%)") + 
+  ggtitle("Stopa bezrobocia w Stanach Zjednoczonych na przestrzeni ostatnich 10 lat")
+```
+
+Powyższy wykres obrazuje procentową wartość stopy bezrobocia na przestrzenii ostatnich 10 lat. We wrześniu stopa bezrobocia w USA wynosiła 3,7% co jest najniższym wynikiem od niemal 49 lat. Co ciekawe na wykresie można zaobserwować pewne trendy, silnie powiązane z wydarzeniami gospodarczymi w Stanach Zjednoczonych. W roku 2008 rozpoczął się ewidentny wzrost stopy bezrobocia, co można tłumaczyć wybuchem kryzysu gospodarczego w tym samym okresie. W roku 2010 wartość ta zaczęła spadać w związku z ustabilizowaniem się sytuacji, a od kilku lat ma trend wyraźnie spadkowy.

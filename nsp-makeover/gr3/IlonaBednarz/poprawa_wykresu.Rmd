@@ -1,0 +1,29 @@
+---
+title: "Poprawa_wykresu"
+author: "Ilona Bednarz"
+date: "October 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Źrdódło
+Wykres oryginalny pochodzi z dokumentu 'Wyniki wstępne Narodowego Spisu Powszechnego Ludności i Mieszkań 2011' zamieszczonego pod linkiem http://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki-wstepne/wyniki-wstepne-narodowego-spisu-powszechnego-ludnosci-i-mieszkan-2011,4,1.html
+
+<img src="/home/samba/bednarzi/Desktop/piechart.jpg">
+
+### Wykres poprawiony
+
+```{r, echo = FALSE}
+library(ggplot2)
+data <- data.frame(wyksztalcenie = c('wyższe', 'średnie',"zasadnicze zawodowe", 'gimnazjalne', 'podstawowe', "podstawowe nieukończone"),
+                   procent = c(17.5, 33.0, 22.8, 5.4, 19.8, 1.5))
+ggplot(data = data, aes(x = wyksztalcenie, y = procent)) +
+  geom_bar(stat = 'identity') +
+  scale_x_discrete(limits = data$wyksztalcenie) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = 'Wykształcenie', y = 'Procent populacji') +
+  ggtitle('Poziom wykształcenia wśród Polaków w 2011 roku')
+```
