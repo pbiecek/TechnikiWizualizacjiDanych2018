@@ -1,0 +1,45 @@
+---
+title: "Wichrowska_Aleksandra_pd1"
+author: "Aleksandra Wichrowska"
+date: "16 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Artykuł zawiera informacje o działalności ugrupowań politycznych na Twitterze w okresie 1.10-7.10.2018
+
+http://www.politykawsieci.pl/raport-twitter-podsumowanie-dzialan-partii-politycznych-01-10-07-10-2018/
+
+Będziemy korzystać z biblioteki $\tt{ggplot2}$ do zwizualizowania analizowanych danych na wykresach.
+
+```{r, warning=FALSE}
+library(ggplot2)
+library(readxl)
+```
+
+Wczytujemy dane z oddzielnego pliku:
+
+```{r}
+df <- read_excel("~/obserwujacy.xlsx", sheet = 1)
+```
+
+Podgląd fragmentu tabeli danych:
+```{r, echo=FALSE}
+head(data.frame(df))
+```
+
+Teraz wizualizujemy dane na wykresie w postaci słupkowej.
+Kolejne słupki odpowiadają partiom politycznym, różne kolory oznaczają dni 1-7 października (według legendy).
+
+Wykres obrazuje zarówno różnice w przyrostach liczby obserwujących w kolejnych dniach, jak i sumaryczne różnice pomiędzy partiami.
+
+```{r}
+ggplot(data=df, aes(x=Partia, y=Liczba, fill=Data)) +
+  geom_bar(stat="identity") + 
+  scale_fill_brewer(palette="Paired")  + 
+  labs(x="Partia polityczna", y="Liczba nowych obserwujących") +
+  ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia")
+```
