@@ -33,6 +33,10 @@ ggplot(data = countries, aes(x = continent, fill = continent)) +
 # powloki (layers) ---------------------------------
 
 ggplot(data = countries, aes(x = continent, fill = continent, label = ..count..)) +
+  layer(geom = "bar", stat = "count", position = position_dodge(width = 0.5))
+
+
+ggplot(data = countries, aes(x = continent, fill = continent, label = ..count..)) +
   layer(geom = "bar", stat = "count", position = position_dodge(width = 0.5)) +
   layer(geom = "text", stat = "count", position = position_dodge(width = 0.5))
 
