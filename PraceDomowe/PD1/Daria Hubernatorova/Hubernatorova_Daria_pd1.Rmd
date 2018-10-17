@@ -1,0 +1,34 @@
+---
+title: "Praca domowa 1"
+author: "Daria Hubernatorova"
+date: "10/16/2018"
+output: html_document
+---
+#Zadanie
+W gazecie lub na portalu informacyjnym znajdź artykuł opublikowany w październiku, w którym pojawia się wykres lub dane liczbowe. Następnie przedstaw te dane z użyciem pakietu ggplot2.  
+
+##Dane
+Przed wyborami samorządowymi było prowadzone badanie mające na celu wykryć główne
+problemy dzielnic Warszawy - czyli co Warszawiacy oczekują od nowego prezydenta, 
+że będzie poprawione.  
+Source: http://warszawa.naszemiasto.pl/artykul/zdjecia/wybory-samorzadowe-2018-jakich-zmian-oczekuja-mieszkancy,4842184,artgal,36222066,t,id,tm,zid.html
+
+Problemy były skategoryzowane w celu większej czytelności wykresu.
+```{R}
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+data = read.csv('/Users/dasha/Documents/twd/pd1_problemy_warszawa.csv', 
+                header = TRUE, sep = ";", encoding = "UTF-8", 
+                stringsAsFactors=FALSE)
+ggplot(data = data, aes(x = factor(-Procent), y = Procent, fill = Kategoria)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(palette="Paired") +
+  facet_wrap(~Dzielnica, scales = "free_x") +
+  ylab("%") +
+  ggtitle("Problemy dzielnic Warszawy") +
+  theme_bw() +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.title.x = element_blank())
+```
