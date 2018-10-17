@@ -1,0 +1,29 @@
+---
+title: "Wykres -GUS"
+author: "Anna Kozak"
+date: "October 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Wykres - Migracje zagraniczne ludności - NSP 2011 
+
+![](wykres.png)
+
+
+## Poprawiony wykres 
+
+```{r, include  =FALSE}
+data <- data.frame(stan = c("stan cywilny nieustalony", "kawalerowie, panny", "żonaci, zamężne", "wdowcy, wdowy", "rozwiedzeni"), procent = c(13, 34, 45, 1, 7))
+data$stan <- factor(data$stan, levels = data$stan[order(data$procent)])
+
+```
+
+```{r, echo=FALSE}
+ggplot(data, aes(x= stan, y=procent) ) + geom_bar(stat= "identity", fill = "gray23") + theme_gray() + ggtitle("Emigranci w wieku 15 lat i więcej przebywajacy za granicą czasowo \npowyżej 3 miesięcy według stanu cywilnego prawnego")
+```
+
