@@ -1,0 +1,44 @@
+---
+title: "Labolatorium 3"
+author: "Damian Gutowski"
+date: "18 paŸdziernika 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(knitr)
+library(dplyr)
+```
+
+## Na potrzeby zadania wykorzystano nastêpuj¹cy wykres
+
+<img src="http://pages.mini.pw.edu.pl/~gutowskid/wykres.png" alt="Smiley face">
+
+
+## W ramach rozwi¹zania przygotowano nastêpuj¹cy wykres
+
+```{r 1}
+Name <- c("Mê¿czyŸni", "Kobiety")
+Pracujacy <- c(45, 30)
+Bezrobotni <- c(10,10)
+Bierni <- c(40, 65)
+Nieznany <- c(5, 5)
+
+data <- data.frame(Name, Pracujacy, Bezrobotni, Bierni, Nieznany)
+data1 <- data.frame(Name, Wartosc = Pracujacy, Ranking=rep("Pracujacy", 2))
+data2 <- data.frame(Name, Wartosc = Bezrobotni, Ranking=rep("Bezrobotni", 2))
+data3 <- data.frame(Name, Wartosc = Bierni, Ranking=rep("Bierni", 2))
+data4 <- data.frame(Name, Wartosc = Nieznany, Ranking=rep("Nieznany", 2))
+
+
+data_a <- rbind(data1, data2, data3, data4)
+data_a$Ranking <- factor(data_a$Ranking, levels = c("Pracujacy", "Bezrobotni", "Bierni", "Nieznany"))
+
+ggplot(data=data_a, aes(x=Ranking, y=Wartosc, fill=Name)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  scale_fill_brewer(palette="Paired")+
+  labs(x = "Typ", title = "Struktura sosób w wieku co najmniej 15 lat wed³ug altywnoœci zawodowej") +
+  theme_minimal()
+```

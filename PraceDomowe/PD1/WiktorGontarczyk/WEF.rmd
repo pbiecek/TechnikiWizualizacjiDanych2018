@@ -1,0 +1,43 @@
+---
+title: "Praca domowa 1"
+author: "Wiktor Gontarczyk"
+date: "17 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r }
+library(ggplot2)
+library(ggthemes)
+
+data <- read.csv("wef.csv", sep=";", header=TRUE, encoding = "UTF-8", colClasses=c("numeric","factor", "numeric", "numeric", "numeric"))
+```
+
+##Źródło danych 
+
+Dane pochodzą z raportu globalnej konkurencyjności, opublikowanego przez World Economic Forum. Źródło: https://finance.yahoo.com/news/america-first-us-competitive-country-world-220219237.html?guccounter=1
+
+## Sposób prezentacji danych
+
+Na wykresie uwzględniono top 20 krajów w rankingu z 2018 roku. Wyniki uszeregowano według punkacji i zamieszczono wynik w postaci liczbowej. Liczba w kole określa zmianę miejsca rankingowego w porównaniu z rokiem poprzednim. Kolorem oznaczono wzrost (odcienie zielonego), spadek (odcienie czerwonego), lub brak zmian (kolor szary) punktacji ogólnej od ubiegłorocznej edycji.
+
+```{r pressure}
+ggplot(data, aes(x = reorder(Country, -Rank), y = Score, fill=ScoreChange)) + 
+  geom_bar(stat = "identity") +
+  geom_text(aes(label=Score), hjust=1.5, color="white") +
+  geom_point(data=data, mapping=aes(x=reorder(Country, -Rank), y=Score+3), size=6, shape=21, color="white") +
+  geom_text(data=data, mapping=aes(x=reorder(Country, -Rank), y=Score+3, label=RankChange), size=3, color="black") +
+  coord_flip() + 
+  scale_fill_gradient2(midpoint = 0, mid="#cccccc", high="#00ff00", low="#ff0000") +
+  theme_gdocs() +
+  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5),
+        plot.title = element_text(color="black", size=14, face="bold", hjust=0.5)) +
+  xlab("Kraj") + 
+  ylab("Wynik rankingu") +
+  ggtitle("Ranking WEF top 20 - indeks konkurencyjności\n gospodarczej") + 
+  labs(fill = "Zmiana wyniku")
+```
+

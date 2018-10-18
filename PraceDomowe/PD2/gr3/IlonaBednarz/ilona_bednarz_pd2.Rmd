@@ -1,0 +1,62 @@
+---
+title: "Praca domowa 2"
+author: "Ilona Bednarz"
+date: "Październik 17, 2018"
+output: html_document
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wykres orginalny
+
+Poniżej znajduje się wykres, który postanowiłam skomentować i poprawić. Wykres obrazuje poparcie, jakie uzyskały wiodące partie polityczne w Bawarii w dwóch ostatnich wyborach.
+
+<img src="wykres_orginalny.png">
+
+### Zalety
+
+Pogrupowany wykres słupkowy jest dobrym sposobem na przedstawienie takich danych, ponieważ umożliwia porównywanie partii między sobą oraz odczytanie spadków i wzrostów poparcia dla poszczególnych partii. Sposób wykonania wykresu jest jednak możliwy do poprawy.
+
+Dobrym pomysłem autora wykresu jest posortowanie partii według zdobytej liczby głosów w ostatnich wyborach oraz narysowanie poziomej linii obrazującej próg procentowy potrzebny do otrzymania mandatów, dzięki czemu widać, które partie weszły do sejmu zarówno w 2013 roku jak i w 2018 roku.
+
+### Wady
+
+Głównym problemem powyższego wykresu jest umieszczenie legendy wyjaśniającej przypisanie poszczególnych partii do kolorów słupków, ponieważ partie zostały podpisane na osi poziomej, a więc legenda taka nie jest potrzebna i tylko zaśmieca grafikę i utrudnia odbiór. Ponadto pojawia się druga legenda opisująca, do którego roku odnosi się dany słupek i jest ona jak najbardziej potrzebna, ale jej kolory nie odpowiadają kolorom słupków tylko ich 'jasności', co jest dosyć dziwnym zabiegiem.
+
+Złym pomysłem (a raczej niedopatrzeniem) jest również przedstawienie słupków z późniejszych wyborów z lewej, a z wcześniejszych po prawej, ponieważ sugeruje to spadki poparcia, tam gdzie były wzrosty i na odwrót.
+
+Ponadto dobrane kolory są bardzo jaskrawe, a słupek żółty mało czytelny.
+
+## Wykres poprawiony
+
+Poniżej prezentuję wykres, na którym poprawiłam wszystkie wymienione powyżej uchybienia.
+
+```{r, echo = FALSE}
+library(ggplot2)
+df <- read.table('votes.cvs', header = TRUE)
+df$Elections <-  as.factor(df$Elections)
+order <- df$party[1:7]
+```
+
+```{r, warning = FALSE, out.width = 2000}
+ggplot(data = df, aes(x = party, y = votes)) +
+  scale_x_discrete(limits = order) + 
+  geom_bar(aes(fill = Elections), stat = 'identity', position = 'dodge', width = 0.7) +
+  geom_hline(yintercept = 5, color = '#636363', linetype="dashed") +
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  geom_text(aes(7, 5, label = "threshold", vjust = -1), size = 4, color = '#636363') +
+  scale_fill_manual(values = c("#beaed4", "#7fc97f")) +
+  labs(x = "Political party", y = "Percent of votes") +
+  theme(legend.position = "top",
+        legend.title = element_blank(),
+        legend.text = element_text(margin = margin(r = 25, l = 5))) +
+  ggtitle('Bavarian elections in 2013 and 2018')
+```
+
