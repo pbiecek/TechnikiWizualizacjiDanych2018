@@ -5,6 +5,7 @@ author: "Anna Kozak"
 output: 
   html_document: 
     theme: cosmo
+    highlight: zenburn
     
 ---
 
@@ -40,16 +41,16 @@ df <- read_excel("obserwujacy.xlsx", sheet = 1)
 Wykres obrazuje dane z artykyłu na temat informacji o działalności ugrupowań politycznych na Twitterze w okresie 1.10.-7.10.2018.
 
 
-```{r, , warning=FALSE, message=FALSE, error=FALSE, echo=FALSE, fig.width=10}
-ggplot(data=df, aes(x=Partia, y=Liczba, fill=Data)) +
-  geom_bar(stat="identity") + 
-  scale_fill_brewer(palette="Paired")  + 
-  labs(x="Partia polityczna", y="Liczba nowych obserwujących") +
+```{r, , warning=FALSE, message=FALSE, error=FALSE, fig.width=10}
+ggplot(data = df, aes(x = Partia, y = Liczba, fill = Data)) +
+  geom_bar(stat = "identity") + 
+  scale_fill_brewer(palette = "Paired")  + 
+  labs(x = "Partia polityczna", y = "Liczba nowych obserwujących") +
   ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia")
 
 ```
 ```{r, include=FALSE}
-df$Data <-  paste0("0", sub(" .*", "", df$Data),"-10-2018")
+df$Data <-  paste0("0", sub(" .*", "", df$Data), "-10-2018")
 ```
 Na powyższym wykresie możemy zauwazyć pogrupwanie według partii politycznej. Każdy słupek odpowiada jednej z nich oraz zawiera podział na 7 dni, przedstawiając liczbę obserwujących każdego dnia.
 Przygladając się tej wizualizacji danych cięzko odczytać w jakim dniu, która partia miała największą liczbę obserwujących. Największą wadą jest trudne porównanie zmiany liczby obserwujących dla każdej partii w ciągu tygodnia.
@@ -58,6 +59,12 @@ Przygladając się tej wizualizacji danych cięzko odczytać w jakim dniu, któr
 
 Poniżej poprawiony wykres. Dzięki umieszczeniu na osi X kolejnych dni mamy czytelną informację jak zmienia się liczba obserwujących danej partii.
 
-```{r, warning=FALSE, message=FALSE, error=FALSE, echo=FALSE, fig.width=10, fig.height=8}
-ggplot(df, mapping = aes(x = Data, y = Liczba, col= Partia, group = Partia)) + geom_point() + geom_line(size=1) + theme(axis.text.x = element_text(angle=45, hjust=1)) + labs(x="Partia polityczna", y="Liczba nowych obserwujących") + ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia") + theme_bw() + scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d", "#666666"))
+```{r, warning=FALSE, message=FALSE, error=FALSE, fig.width=10, fig.height=8}
+ggplot(df, mapping = aes(x = Data, y = Liczba, col = Partia, group = Partia)) + 
+  geom_point() + 
+  geom_line(size = 1) + 
+  labs(x = "Partia polityczna", y = "Liczba nowych obserwujących") + 
+  ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia") + 
+  scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d", "#666666")) +
+  theme_bw()
 ```
