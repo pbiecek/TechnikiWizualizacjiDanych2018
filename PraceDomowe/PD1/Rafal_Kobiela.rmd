@@ -1,0 +1,81 @@
+---
+title: "Praca domowa nr 1"
+author: "Rafał Kobiela"
+date: "October 16, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd('/home/rafal/Documents/Studia/Techniki_wizualizacji_danych/TechnikiWizualizacjiDanych2018/PraceDomowe/PD1/RafalKobiela')
+library(dplyr)
+library(ggplot2)
+library(reshape)
+library(patchwork)
+```
+
+## Wprowadzenie
+
+Jako bazy do stworzenia wykresu użyłem danych znalezionych na stronie: http://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/ludnosc-stan-i-struktura-oraz-ruch-naturalny-w-przekroju-terytorialnym-w-2018-r-stan-w-dniu-30-vi,6,24.html
+Możemy tutaj znaleźć raport na temat stanu i struktury wiekowej ludności zamieszkałej w każym z województw. Ja zdecydowałem się na zaprezentowanie tej struktury z województwa mazowieckiego, dzieląc ją na miejsce zamieszkania. 
+
+## Czyszczenie tabeli
+
+Tabela pobrana ze strony ma kilka kolumn które są agregatami. Na początku je usunąłem oraz zmodyfikowałem kolumnę Wiek. Usunąłem również wiersz z wiekiem 85 i więcej aby nie zaburzał on całego wykresu tym, że jest w nim skumulowana liczba ludzi mająca 85 lub więcej lat.
+
+```{r}
+df <- read.csv2('tabela03.csv',sep=',')
+head(df)
+```
+
+Przetwarzanie tabeli:
+
+```{r warning=FALSE, message=FALSE}
+
+df <- df[!grepl('-', df$Wiek),]
+df <- df[,c(1,6,7,9,10)]
+df <- df[-nrow(df),]
+df <- melt(df)
+df$Wiek <- as.numeric(as.character(df$Wiek))
+```
+
+Wynikowa tabela prezentuje się następująco. Jest ona w postaci długiej.
+
+```{r warning=FALSE, message=FALSE}
+head(df)
+```
+
+Wykres to tzw. wykres wiolinowy. Składają się na niego dwa wykresy słupkowe ustawione pionowo. Sam wykres tworzy następujący kod:
+
+```{r warning=FALSE, message=FALSE}
+p1 <- ggplot(df[df$variable == 'Mężczyźni.w.miastach' | df$variable == 'Mężczyźni.na.wsi',], 
+            aes(x = Wiek, y=value, color=variable, fill=variable, width=0.5)) + 
+      geom_bar(stat="identity") + 
+      coord_flip() + 
+      scale_y_reverse() + 
+      ylim(50000,0) +
+      guides(color=FALSE, fill=FALSE) +     
+      labs(y = "Mężczyźni") +
+      ggtitle('Struktura wieku według miejsca zamieszkania')
+
+p2 <- ggplot(df[df$variable == 'Kobiety.w.miastach' | df$variable == 'Kobiety.na.wsi',], 
+             aes(x = Wiek, y=value, color=variable, fill=variable, width=0.5)) + 
+      geom_bar(stat="identity") + 
+      coord_flip() +
+      labs(y = "Kobiety") +
+      ylim(0, 50000) +
+      guides(color=FALSE) +
+      theme(legend.position = "right",
+            axis.title.y = element_blank(),
+            axis.ticks.y = element_blank(),
+            axis.text.y = element_blank()) +
+      scale_fill_discrete(name="Miejsce \nzamieszkania",
+                          labels=c("Miasto", "Wieś")) 
+
+
+p1 + p2
+
+```
+
+Z wykresu można zauważyć dłuzszy średni wiek życia kobiet, których to jest zauważalnie więcej po przekroczeniu 80 lat. Widać również wyż demograficzny z okesu stanu wojennego. Co ciekawe jest on obecny głównie w mieście gdzie widać dużo większe różnice niż na wsi.
+
