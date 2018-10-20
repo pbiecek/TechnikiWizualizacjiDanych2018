@@ -1,0 +1,61 @@
+---
+title: "Praca domowa nr 2"
+author: "Mateusz Polakowski"
+date: "20 października 2018"
+output: html_document
+---
+
+# Poprawienie wybranego wykresu z PD1
+
+### Wybór wykresu
+Za wykres do poprawienia wybrałem przedstawiający wyniki sondażu wyborczego ze strony Gazety Wyborczej. [Interaktywny link do artykułu](http://wyborcza.pl/1,75398,19061937,tns-dla-wyborczej-w-nowym-sejmie-trzy-czy-siedem-partii.html). Poniżej wykres stworzony jako rozwiązanie *PD1*:
+
+```{r}
+library(ggplot2)
+dane<-data.frame(nazwa=factor(c("PiS","PO","K'15","ZL",".N","K","PSL"),levels = c("PiS","PO","K'15","ZL",".N","K","PSL")),
+                 procenty=c(32.5,26.3,10.4,7.5,6.1,5.3,4.8))
+ggplot(dane,aes(x=nazwa,y=procenty,fill=nazwa)) + geom_col(width=0.7) + 
+  geom_text(aes(label=as.character(procenty),y=procenty+1),size=5,fontface="bold") + guides(fill=FALSE) + 
+  coord_fixed(ratio = 0.25) +
+  labs(title="POPARCIE DLA PARTII",y="",x="",subtitle="(W PROC.)") +
+  theme_minimal()+theme(panel.border = element_blank(),
+                        panel.grid.major = element_blank(),
+                        panel.grid.minor = element_blank(),
+                        axis.text.y = element_blank(),
+                        axis.text = element_text(face = "bold",size = rel(1.5)),
+                        plot.title = element_text(size = rel(1.75),hjust=-.1,face="bold")
+                        
+                        )
+```
+
+### Poprawienie
+
+Wykres ten przedstawia co powinien, jednak, według mnie, w niemiły dla oka sposób, da się w nim trochę ponaprawiać:
+
+* zwiększyłem odstępy poszczególnych kolumn, tak, aby skróty nazw partii nie były aż tak blisko siebie,
+* poszerzyłem kolumny, aby wartości punktów procentowych estetycznie na nich leżały, a nie wystawały poza nie,
+* dodałem siatkę na wykresie, aby ten był bardziej przejrzysty i nie 'zawieszony w powietrzu',
+* przy użyciu internetu dodałem kolory kolumn odpowiadających logom partii.
+
+Mimo wszystko zachowałem formę wykresu jako słupkowego - informacje takie jak wyniki sondażu prezentują się wtedy czytelnie:
+
+```{r}
+library(ggplot2)
+library(data.table)
+
+sondaz <- data.table(factor(c("PiS","PO","K'15","ZL",".N","K","PSL"), 
+                            levels = c("PiS","PO","K'15","ZL",".N","K","PSL")),
+                     c(32.5,26.3,10.4,7.5,6.1,5.3,4.8))
+kolory <- c('navyblue', 'orange2', 'black', 'red2', 'deepskyblue2', 'yellow2', 'green2')
+colnames(sondaz) <- c("Partia", "PP")
+
+ggplot(data = sondaz, aes(x = Partia, y = PP)) +
+  geom_col(width = 0.7, fill = kolory) +
+  geom_text(aes(label = as.character(PP), y = PP + 1), size = 5, fontface = "bold") + 
+  theme_light() +
+  guides(fill=FALSE) + 
+  labs(title = 'Poparcie dla partii (sondaż)', subtitle = 'w punktach procentowych', x = '', y = '') +
+  theme(axis.text.x = element_text(size = 15, face = 'bold'),
+        plot.title = element_text(size = 20)) + 
+  scale_y_continuous(expand = c(0,0), limits = c(0, 35)) 
+```
