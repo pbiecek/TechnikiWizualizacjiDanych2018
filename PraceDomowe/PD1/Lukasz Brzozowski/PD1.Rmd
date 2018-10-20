@@ -1,0 +1,29 @@
+---
+title: "Praca domowa nr 1"
+author: "Łukasz Brzozowski"
+output: html_document
+---
+```{r, echo = FALSE, tidy = TRUE, message=FALSE}
+require(ggplot2)
+require(zoo)
+inflacja <- as.data.frame(read.csv2("wskaznik_inflacji.csv", sep = "\t", col.names = c("Date", "Value"), stringsAsFactors=FALSE))
+inflacja[,2] <- as.numeric(inflacja[,2])
+inflacja <- inflacja[nrow(inflacja):1,] #Odwracam koljenosc danych w tabeli
+inflacja[,1] <- as.yearmon(inflacja[,1], format="%m-%Y") #Zamieniam typ elementów na yearmon
+```
+#Wskaźnik inflacji w Polsce w latach 2000-2018
+
+```{r figure, message = FALSE, echo = FALSE}
+ggplot(data = inflacja, aes(x = Date, y = Value)) +
+  geom_line() + 
+  geom_area(aes(fill = "red")) +
+  guides(fill = FALSE) +
+  labs(x = "Lata", y = "Wskaźnik inflacji [%]") + geom_hline(yintercept = 0, color = "red")
+
+```
+
+Powyżej prezentuję wykres wskaźnika inflacji od stycznia 2000 r. do września 2018 r. opublikowany w artykule:
+https://www.bankier.pl/wiadomosc/Inflacja-we-wrzesniu-ponizej-2-procent-7620582.html \t
+
+Dane liczbowe pochodzą ze strony:
+https://www.bankier.pl/gospodarka/wskazniki-makroekonomiczne/inflacja-rdr-pol

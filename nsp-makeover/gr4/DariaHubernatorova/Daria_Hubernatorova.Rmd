@@ -1,0 +1,25 @@
+---
+title: "Poprawa wykresu z GUS"
+author: "Daria Hubernatorova"
+date: "10/18/2018"
+output: html_document
+---
+![](/Users/dasha/Documents/twd/wykres.png)
+```{R}
+library(ggplot2)
+data = read.csv('/Users/dasha/Documents/twd/dane.csv', 
+                header = TRUE, sep = ";", encoding = "UTF-8", 
+                stringsAsFactors=FALSE)
+data$Value <- as.double(data$Value)
+data <- data[,colSums(is.na(data))<nrow(data)]
+data <- na.omit(data)
+ggplot(data = data, aes(x = Kategoria, y = Value, fill = factor(-Rok))) +
+  geom_col(position = "dodge") +
+  coord_flip() +
+  labs(y = "%") +
+  scale_fill_discrete(name="Rok",
+                         labels=c("2011", "2002"),
+                      guide = guide_legend(reverse=TRUE)) +
+  ggtitle("Struktura mieszkan wedlug podmiotow") +
+  theme_bw()
+```
