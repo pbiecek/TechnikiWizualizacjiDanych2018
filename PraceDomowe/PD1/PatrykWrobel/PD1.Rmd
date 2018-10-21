@@ -1,0 +1,66 @@
+---
+title: "Techniki Wizualizacji Danych - PD1"
+output: html_document
+author: "Patryk Wróbel"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Cel zadania**
+
+Celem zadania jest przygotowanie wykresu na podstawie danych ze znalezionego w internecie lub prasie artykułu z wykorzystaniem pakietu *ggplot2*.
+
+**Wybór danych**
+
+Wybrany artykuł zawiera informacje o zmianach wyników oglądalności kanałów sportowych. Zawiera on dane dotyczące udziału 16 kanałów we wrześniu 2017 i rok później w dwóch wariantach:
+
+  - oglądalność wśród widzów w grupie 4+,
+  - **oglądalność wśród widzów w grupie 16-49**.
+  
+Link do artykułu: https://www.wirtualnemedia.pl/artykul/ogladalnosc-kanalow-sportowych-wrzesien-2018-tvp-sport-liderem .
+
+**Prezentacja danych**
+
+Poniżej przedstawione są w formie tabeli i wykresu dane dotyczące widzów w grupie komercyjnej 16-49.
+
+```{r include=FALSE}
+library(ggplot2)
+library(knitr)
+library(dplyr)
+```
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+
+# załadowanie danych
+data <- read.csv(file="Ogladalnosc.csv", header=TRUE, stringsAsFactors = FALSE,sep=";")
+data <- data[order(-data$SHR_09_18),]
+row.names(data) <- NULL
+
+# wyświetlenie tabeli
+kable(data,col.names = c('Stacja','SHR wrzesień 2017 (%)','SHR wrzesień 2018 (%)','Dynamika (%)'))
+
+# obróbka danych
+data_17 <- data.frame(data[,c("Stacja","SHR_09_17")],"wrzesień 2017")
+names(data_17) = c("Stacja","SHR","Okres")
+data_18 <- data.frame(data[,c("Stacja","SHR_09_18")],"wrzesień 2018")
+names(data_18) = c("Stacja","SHR","Okres")
+shr_data <- rbind(data_17, data_18)
+shr_data <- within(shr_data, Stacja <- factor(Stacja, levels = rev(data[,1])))
+max_shr <- ifelse(data$SHR_09_17 < data$SHR_09_18, data$SHR_09_18, data$SHR_09_17)
+dynamic_proc <- ifelse(data$Dynamika <= 0, paste(data$Dynamika,"%"), paste("+",data$Dynamika,"%"))
+data <- cbind(data, max_shr, dynamic_proc)
+
+# wyświetlenie wykresu
+ggplot(data = shr_data, aes(x = Stacja, y = SHR, fill = Okres, width=0.7)) + 
+  geom_bar(stat="identity", position = position_dodge()) +
+  geom_text(data = data, aes(x = Stacja, y = max_shr, label = dynamic_proc), inherit.aes=FALSE, nudge_y = 0.11, size = 2.7) +
+  labs(x = "Kanał sportowy", y = "SHR (%)", title = "Wyniki oglądalności kanałów sportowych") +
+  ylim(0,1.7) +
+  scale_fill_manual(values=c("darkseagreen","darkslategray")) +
+  theme(legend.position = "bottom", plot.title = element_text(size=11, colour="gray17")) +
+  coord_flip()
+
+```
+
+Wykres ułatwia porównanie wyników oglądalności poszczególnych kanałów sportowych z dwóch okresów. Dodatkowo uszeregowanie kanałów wg oglądalności we wrześniu 2018 roku umożliwia szybkie wskazanie aktualnych liderów i przekazanie informacji o tym, jak prezentują się oni na tle pozostałych stacji.

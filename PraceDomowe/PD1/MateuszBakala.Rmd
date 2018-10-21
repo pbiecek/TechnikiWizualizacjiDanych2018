@@ -1,0 +1,83 @@
+---
+title: "Praca domowa nr. 1."
+author: "Bąkała Mateusz"
+date: "12 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("ggplot2")
+library("hms")
+teamColours <- data.frame(stringsAsFactors = FALSE,
+  colours = c("#DC0000", "#F596C8", "#5A5A5A", "#FF8700", "#00D2BE", "#00327D", "#FFF500", "#9B0000", "#0032FF", "#FFFFFF"),
+  row.names = c("Ferrari", "Force India", "Haas", "McLaren", "Mercedes", "Red Bull", "Renault", "Sauber", "Toro Rosso", "Williams"))
+perfectTime <- data.frame(
+  time = c(88.217, 88.678, 89.050, 89.257, 89.513, 89.498, 90.035, 90.502, 90.440, 90.478, 90.510, 90.906, 90.644, 90.956, 90.795, 90.904, 90.988, 91.087, 91.215, 91.981),
+  ifPerfect = c(0, 0.046, 0.027, 0, 0.246, 0.086, 0, 0.072, 0, 0, 0.003, 0.382, 0.008, 0.167, 0, 0.046, 0.073, 0, 0, 0),
+  team = c("Mercedes", "Mercedes", "Ferrari", "Red Bull", "Red Bull", "Ferrari", "Force India", "Toro Rosso", "Haas", "Sauber", "Force India", "Sauber", "Renault", "Haas", "Toro Rosso", "Renault", "McLaren", "Williams", "Williams", "McLaren"),
+  driver = c("Hamilton", "Bottas", "Vettel", "Verstappen", "Ricciardo", "Raikkonen", "Ocon", "Hartley", "Grosjean", "Ericsson", "Perez", "Leclerc", "Hülkenberg", "Magnussen", "Gasly", "Sainz", "Alonso", "Sirotkin", "Stroll", "Vandoorne"))
+timeRank <- data.frame(
+  time = c(88.217, 89.050, 89.257, 90.035, 90.440, 90.478, 90.502, 90.644, 90.988, 91.087),
+  team = c("Mercedes", "Ferrari", "Red Bull", "Force India", "Haas", "Sauber", "Toro Rosso", "Renault", "McLaren", "Williams"))
+bestTime <- min(timeRank$time)
+```
+
+Wykorzystane w tej pracy domowej dane pochodzą z [artykułu na stronie formula1.com](https://www.formula1.com/en/latest/article.who%27s-hot-and-who%27s-not-after-day-1-in-japan.O5M69xoI6IiIKCosegigY.html). Przedstawiają one czasy okrążeń osiągnięte przez zawodników Formuły 1 w trakcie trzech treningów przed GP Japonii.
+
+Kolory odpowiadające zespołom zostały natomiast zaczerpnięte z [postu w serwisie reddit.com](https://www.reddit.com/r/formula1/comments/82h891/f1_2018_team_color_hex_codes/) w celu uniknięcia dysonansu pomiędzy zespołem a przypisanymi mu barwami.
+
+## Ranking zespołów wg. najlepszego czasu jednego okrążenia
+
+Najpierw zapoznajmy się z najlepszymi czasami osiągniętymi przez każdy zespół. Pozwoli nam to zorientować się, które zespoły będą walczyć o zwycięstwo, a które najprawdopodobniej będą zamykać stawkę.
+
+Graficzne przedstawienie danych pozwala szybciej wyobrazić sobie, jakie są względne różnice pomiędzy zespołami.
+
+```{r timeRanking, echo=FALSE}
+ggplot(timeRank, aes(x = team, y = time, fill = team)) + 
+  geom_bar(stat = "identity", colour = "black", width = 0.7) + 
+  scale_fill_manual(values = teamColours$colours) + 
+  scale_x_discrete(name = "Zespół", limits = rev(timeRank$team)) + 
+  scale_y_time(name = "Czas (min:sek)") + 
+  coord_flip(ylim = c(87.7, 91.6)) + 
+  geom_label(aes(label = ifelse(time == bestTime, paste(bestTime%/%60, ":", bestTime%%60, sep = ""), paste("+", round(time - bestTime, 3), sep = ""))), nudge_y = 0.3, size = 4, fontface = "bold") + 
+  geom_hline(yintercept = bestTime, colour = "black", size = 1.2, linetype = 5) + 
+  theme(legend.position = "none") + 
+  ggtitle(label = "Ranking szybkości zespołów")
+```
+
+Przewaga zespołu Mercedesa wynosząca niespełna sekundę na okrążeniu nad drugim zespołem Scuderii Ferrari jest jak na realia Formuły 1 olbrzymia. Już na podstawie tych danych można zgadywać, kierowca którego zespołu wygra wyścig - i rzeczywiście, obaj kierowcy Mercedesa ukończyli wyścig na dwóch czołowych pozycjach.
+
+W walce o trzecie miejsce na podium liczą się tylko Ferrari i Red Bull, jako że ich przewaga nad resztą stawki jest porównywalna do straty do Mercedesa.
+
+Z zespołów środka stawki wyróżnia się zespół Racing Point Force India, który wynikami treningów zgłosił aspiracje do bycia "best of the rest" tegorocznego wyścigu o GP Japonii.
+
+Stawkę zamykają zespoły McLarena i Williamsa, które na jednym okrążeniu tracą prawie trzy sekundy do prowadzącego Mercedesa. Oznacza to, że teoretycznie mogą zostać zdublowani już w okolicach 32. okrążenia. Z dużym prawdopodobieństwem można założyć, że ich kierowcy nie będą liczyć się w walce o pierwszą dziesiątkę, w rezultacie nie przywożąc z wyścigu żadnych punktów.
+
+## Hipotetyczny a rzeczywisty najlepszy czas okrążenia
+
+Każdy tor w kalendarzu Formuły 1 jest podzielony na trzy sektory. Zawodnicy wykręcają czasy dla każdego z tych sektorów, a suma trzech sektorów składa się na czas jednego okrążenia. Nie zawsze jednak najlepszy czas okrążenia składa się z trzech najlepszych czasów sektorów.
+
+Poniższy wykres ma za zadanie zilustrować, jak wyglądałby rozkład sił w stawce, gdyby każdy zawodnik przejechał swoje najlepsze sektory w trakcie jednego okrążenia - i ile by na tym zyskał w porównaniu do najlepszego czasu, który rzeczywiście uzyskał.
+
+```{r perfectTime, echo=FALSE}
+ggplot(perfectTime, aes(x = driver, y = time, fill = team)) + 
+  geom_bar(stat = "identity", fill = "black") + 
+  geom_text(aes(label = ifelse(ifPerfect == 0, "", paste("+", ifPerfect, sep = ""))), nudge_y = 0.25, size = 3.5) + 
+  scale_fill_manual(values = teamColours$colours) + 
+  scale_x_discrete(name = "Kierowca", limits = rev(perfectTime$driver)) + 
+  scale_y_time(name = "Czas (min:sek)") + 
+  coord_flip(ylim = c(87.5, 92.2)) + 
+  geom_bar(stat = "identity", colour = "black", aes(y = time - ifPerfect)) + 
+  geom_label(aes(y = 87.65, label = paste((time - ifPerfect)%/%60, ":", (time - ifPerfect)%%60, sep = "")), size = 3.5, fontface = "bold") + 
+  labs(fill = "Zespół") + 
+  ggtitle(label = "Hipotetyczne czasy okrążeń")
+```
+
+W Formule 1 ścigają się jedni z najlepszych kierowców na świecie oraz Stoffel Vandoorne. Przynajmniej takie wrażenie można odnieść, kiedy przeanalizuje się powyższy wykres. W żadnym innym zespole bowiem różnice między kierowcami nie są rzędu sekundy.
+
+Jedno wybitne okrążenie nie daje prawie nic w trakcie wyścigu, jeśli nie jest poparte regularnością na przestrzeni półtorej godziny, bowiem tyle trwa wyścig. Wydatnie jednak przydaje się w kwalifikacjach. Jak widzimy, dziewięciu na dwudziestu kierowców potrafiło przejechać swoje najszybsze sektory w trakcie jednego "kółka". To prawie połowa stawki! Jeśli dodamy do tego Sergio Pereza i Nico Hülkenberga, którzy stracili mniej niż jedną setną sekundy, wówczas mamy obraz tego, jak kierowcy współczesnej F1 potrafią wyszlifować swoje czasy do minimum.
+
+Z drugiej strony, treningi nie polegają na wykręcaniu najszybszych "kółek", lecz na zbieraniu danych i ustawianiu bolidu na kwalifikacje oraz wyścig. Dlatego trudno powiedzieć, że Daniel Ricciardo i Charles Leclerc pokazali się w treningach od gorszej strony. Ich hipotetyczny czas nie różni się prawie wcale od czasów osiągniętych przez ich kolegów zespołowych. Można jednak się spodziewać, że wspomniani kierowcy będą trochę mniej regularni, gdyż takie rozbieżności biorą się nierzadko z problemów z idealnym przejechaniem któregoś sektora.
+
+Na osobne słowo zasługuje Esteban Ocon, który osiągnął czas około 0.4 s szybszy od reszty środka stawki. Nie jest zaskakujące, że wymagało to połączenia trzech idealnych sektorów.

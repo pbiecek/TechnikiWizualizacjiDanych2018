@@ -1,0 +1,27 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+install.packages('BetaBit')
+library(BetaBit)
+proton()
+```
+
+```{r}
+employees[employees$name=="John",]
+proton(action = "login", login="johnins")
+```
+```{r}
+t=lapply(top1000passwords, function(pass) {proton(action = "login", login="johnins", password=pass) == 'Success! User is logged in!'})
+```
+
+```{r}
+employees[employees$name=="Slawomir",]
+names(sort(table(logs[logs$login=='slap',]$host), decreasing = T))[1]
+proton(action = "server", host="194.29.178.16")
+```
+```{r}
+bash_history
+```

@@ -1,0 +1,67 @@
+---
+title: "Praca domowa 1"
+author: "Ilona Bednarz"
+date: "16.10.2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Stosunek obywateli USA do Donalda Trumpa
+
+### Źródło danych
+Przedstawiam wizualizację danych na temat tego, jak obywatele USA oceniają poczynania ich obecnego prezydenta Donalda Trumpa na przestrzeni czasu. Dane pochodzą z artykułu: https://projects.fivethirtyeight.com/trump-approval-ratings/
+
+Dostępne są dane od stycznia 2017 do dnia dzisiejszego (połowa paździenika 2018), a więc brakuje danych z okresu dwóch pierwszych miesięcy po wyborach. Dane pochodzą z ankiet przeprowadzonych wśród obywateli USA i uznanych za wiarygodne 
+ze względu na wielkość próby.
+
+```{r, message =  FALSE}
+library(ggplot2)
+library(dplyr)
+library(ggthemes)
+
+top <- read.table('approval_topline.csv', fill=TRUE, sep = ',', header = TRUE)
+
+# konwersja daty
+top$modeldate <- as.Date(top$modeldate, format = '%m/%d/%Y')
+
+# srednie per dzien
+top <- group_by(top, modeldate) %>%
+  summarise(approve_mean = mean(approve_estimate), disapprove_mean = mean(disapprove_estimate)) %>%
+  right_join(top, on = modeldate)
+```
+
+### Wizualizacja
+
+Każdej ankiecie ze zbioru danych odpowiadają dwa punkty na wykresie - czerwony i zielony, natomiast linie trendu oznaczają średnie z ankiet opublikowanych w poszczególnych dniach.
+
+```{r,  out.height = 500, out.width = 2000}
+ggplot(data = top, aes(x = modeldate)) +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%b %Y") +
+  geom_hline(yintercept = 50, color = "darkgray") +
+  geom_point(aes(x = modeldate, y = disapprove_estimate, color = 'disapproval'), alpha = 0.2, size = 2) +
+  geom_line(aes(x = modeldate, y = disapprove_mean), color = '#d7191c', size = 0.7) +
+  geom_point(aes(x = modeldate, y = approve_estimate, color = 'approval'), alpha = 0.2, size = 2) +
+  geom_line(aes(x = modeldate, y = approve_mean), color = '#1a9641', size = 0.7) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.title = element_blank(),
+        legend.text = element_text(size = 8), legend.position = "top") +
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  scale_colour_manual(values = c(disapproval = "#fc8d59", approval = "#a6d96a"),
+                      guide = guide_legend(reverse = TRUE)) +
+  labs(x = '', y = '') +
+  ggtitle('How popular is Donald Trump?')
+```
+
+Przez cały analizowany okres, z wyjątkiem czasu tuż po wyborach, przeważa dezaprobata w stosunku do czynów prezydenta Trumpa. Różnica w szczytowym momencie osiąga 20 punktów procentowych. W ostatnich sześciu miesiącach różnica obniżyła się
+i utrzymuje się na poziomie 10 punktów procentowych. Biorąc pod uwagę, że na Donalda Trumpa głosowało 47% wyborców oraz tendencje ludzi do krytykowania polityków, aprobata społeczeństwa utrzymująca się na poziomie ponad 40% nie jest złym wynikiem.
+
+
+
+
+\
+\
+\
+ 
