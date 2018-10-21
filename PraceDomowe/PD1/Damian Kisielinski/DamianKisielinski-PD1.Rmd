@@ -1,0 +1,44 @@
+---
+title: "Techniki Prezentacji - PD1"
+author: "Damian Kisieliński"
+date: "October 13, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+require(grid)
+```
+
+```{r, include=FALSE}
+df <- data.frame(aktywa=rep(c("Aktywa obrotowe", "Zapasy"), each=5),
+                rok=rep(seq(2014,2018),2),
+                wartosc=c(902.9, 968.1, 1017.7, 1082.9, 1175.3, 254.4, 268.4, 275.1, 300.2, 329.9))
+df
+```
+
+```{r, echo=FALSE}
+ggplot(data=df, aes(x=rok, y=wartosc, fill=aktywa)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  geom_text(aes(label=wartosc), vjust=-0.5,
+            position = position_dodge(0.9), size=3.5)+
+  scale_fill_manual("legend", values = c("Aktywa obrotowe" = "#756bb1", "Zapasy" = "#bcbddc"))+
+  scale_y_continuous(breaks = seq(0, 1200, 100)) +
+  theme_minimal() +
+  theme(legend.position="bottom", axis.title = element_blank(),
+        legend.title = element_blank(),
+        legend.text = element_text(
+          margin = margin(r = 60, unit = "pt")),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.y = element_blank())+
+  labs(tag="")+
+  ggtitle("Aktywa obrotowe na koniec czerwca w latach 2014–2018")
+grid.text("mld zł", x=unit(0.03,"npc"),y=unit(0.91,"npc"),gp = gpar(fontsize = 10))
+```
+
+Powyższy wykres przedstawia wartość aktywów obrotowych badanych przedsiębiorstw na koniec czerwca 2014-2018.
+
+### Źródło
+Wykres znajduje się w pdf, str. 28 załączonym do artykułu http://stat.gov.pl/obszary-tematyczne/podmioty-gospodarcze-wyniki-finansowe/przedsiebiorstwa-niefinansowe/wyniki-finansowe-podmiotow-gospodarczych-i-vi-2018,11,19.html

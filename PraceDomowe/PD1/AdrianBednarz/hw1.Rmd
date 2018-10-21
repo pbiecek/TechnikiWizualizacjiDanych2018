@@ -1,0 +1,179 @@
+---
+title: "Huragan Michael"
+author: "Adrian Bednarz"
+date: "October 17, 2018"
+output: html_document
+urlcolor: blue
+---
+
+<style type="text/css">
+.cols {width: 100%; text-align: justify;}
+.clearer {clear: both}
+.right {width: 50%; float: right; padding: 10px}
+.left {width: 50%; float: left; padding: 10px}
+.just {text-align: justify}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(jsonlite)
+library(dplyr)
+library(ggmap)
+library(ggrepel)
+library(lubridate)
+library(viridis)
+library(patchwork)
+
+register_google("your-google-static-maps-api-key")
+
+json <- readChar("data.txt", nchars=1e9)
+parsed <- fromJSON(json)
+
+df <- na.omit(data.frame(
+  id = parsed$features$properties$id,
+  lat = as.numeric(parsed$features$properties$lat),
+  lon = as.numeric(parsed$features$properties$lon),
+  wind.speed = parsed$features$properties$windMphRound,
+  category = parsed$features$properties$category,
+  time = strptime(parsed$features$properties$advisoryTime, format="%Y-%m-%d %H:%M:%S")
+))
+
+# filter just Michael's position
+df <- df[df$id == "Michael Position", ]
+df <- unique(df)
+df <- df[order(df$time), ]
+
+# end of day timestamps
+d <- day(df$time)
+d <- d[2:length(d)] != d[1:length(d) - 1]
+df$label <- ifelse(c(TRUE, d), strftime(df$time, format = "%D"), "")
+
+# add day labels + last day
+labels <- data.frame(lat = df$lat, lon = df$lon, label = ifelse(c(TRUE, d), strftime(df$time, format = "%b, %d"), ""))
+rawLabel <- levels(labels$label)[as.numeric(labels$label)]
+rawLabel[length(rawLabel)] <- "Oct, 12"
+labels$label <- factor(rawLabel)
+
+# add Destin - first city on hurricane's path in the USA
+labels <- rbind(labels, data.frame(lat = 30.3982638, lon = -86.4740075, label = "Destin, FL"))
+
+# map center == Orlando vicinity
+center <- c(-81.5, 28.5)
+```
+
+```{r, include=FALSE}
+category.legend <- scale_color_viridis(
+    name = "Hurricane's category",
+    guide = guide_colorbar(
+      direction = "horizontal",
+      title.position = "top",
+      barheight = unit(2, units = "mm"),
+      barwidth = unit(60, units = "mm"),
+      title.hjust = 0.5,
+      label.hjust = 0.5,
+      draw.ulim = FALSE
+    )
+  )
+
+plot.first <-get_googlemap(center = center, zoom = 5, size = c(500, 500), style="element:labels%7Cvisibility:off&style=feature:administrative.land_parcel%7Cvisibility:off&style=feature:administrative.neighborhood%7Cvisibility:off&style=feature:road%7Cvisibility:off&size=480x360") %>% ggmap() +
+  geom_point(data=df, aes(x = lon, y = lat, size = category, color = category), alpha = 0.7) +
+  geom_text_repel(data=labels, aes(x = lon, y = lat, label = label), color = "#222222", size = 5) +
+  category.legend +
+  scale_size_continuous(guide=FALSE, range=c(1, 4)) + 
+  theme_minimal() +
+  theme(
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank(),
+    text = element_text(family = "Ubuntu Regular", color = "#222222"),
+    plot.title = element_text(hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5, size = 15),
+    plot.background = element_rect(fill = "#ffffff", color = NA),
+    legend.position = "bottom"
+  ) +
+  labs(
+    subtitle = "Michael's path"
+  )
+
+plot.second <- ggplot() +
+  geom_point(data=df, aes(x = time, y = wind.speed, color = category, size = category), alpha = 0.7) +
+  geom_vline(xintercept = as.POSIXct(strftime("2018-10-10 19:00", "%Y-%m-%d %H:%M")), linetype = 4) +
+  geom_text(aes(x=as.POSIXct(strftime("2018-10-10 19:00", "%Y-%m-%d %H:%M")), y=80, label="Destin, FL", angle = 90, vjust=-0.8), size = 5) +
+  category.legend +
+  scale_size_continuous(guide=FALSE, range=c(2, 5)) + 
+  theme_minimal() +
+  theme(
+    axis.ticks = element_blank(),
+    text = element_text(family = "Ubuntu Regular", color = "#222222"),
+    plot.subtitle = element_text(hjust = 0.5, size = 15),
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 12),
+    plot.background = element_rect(fill = "#ffffff", color = NA)
+  ) +
+  labs(
+    subtitle = "Wind speed and category over time"
+  ) + 
+  xlab("Time") + 
+  ylab("Wind speed [mph]")
+```
+
+<div class="just">
+## Źródło danych
+
+W ostatnich dniach przez teren USA przeszedł siejący ogromne zniszczenia huragan Michael. Wiele stron internetowych postanowiło przygotować wizualizację jego ścieżki. W tej pracy postaram się zaprezentować podobną wizualiację przy użyciu pakietu **ggplot2**.
+
+[Link do artykułu CNN](https://edition.cnn.com/2018/10/10/us/hurricane-michael-wxc/index.html)
+
+Z punktu widzenia projektowania strony internetowej głupotą byłoby wyświetlanie surowych danych dot. współrzędnych geograficznych i innych parametrów huraganu bez przetworzenia. Dane te zwykle są zaprezentowane na mapie. Z racji, że wykres z artykułu stanowi interaktywną mapę - byłem pewien, że dane do serwerów Google są wysyłane z przeglądarki użytkownika. Po krótkiej analizie kodu źródłowego strony natrafiłem na link do danych:
+
+[Link do danych](https://ix.cnn.io/data/storm-tracker/tropicaldata.json)
+
+a zwracany zbiór w formacie JSON zawiera wszystkie potrzebne do narysowania wykresu informacje. Zwracane przez ten link dane to zbiór informacji o wszystkich aktualnie obserwowanych sztormach i huraganach. My skupimy się na ich podzbiorze - dotyczącym huraganu Michael.
+</div>
+
+```{r, echo=FALSE, warning=FALSE, fig.width=12, fig.height=8}
+get.grob <- function(gg.plot, name) {
+  grob.table <- ggplotGrob(gg.plot)
+  grob.table[["grobs"]][[which(sapply(grob.table[["grobs"]], function(x) x[["name"]]) == name)]]
+}
+
+get.legend <- function(gg.plot) {
+  get.grob(gg.plot, "guide-box")
+}
+
+wrap_elements((
+  (plot.first + theme(legend.position = "none")) + 
+  (plot.second + theme(legend.position = "none"))
+  ) / 
+  get.legend(plot.first) +
+    
+  plot_layout(heights = c(0.9, 0.1))
+) + 
+labs(
+  title = "Hurricane Michael",
+  caption = "Data provided by CNN"
+) + 
+theme_minimal() +
+theme(
+  axis.ticks = element_blank(),
+  text = element_text(family = "Ubuntu Regular", color = "#222222"),
+  plot.title = element_text(hjust = 0.5, size = 18),
+  plot.background = element_rect(fill = "#ffffff", color = NA),
+  legend.position = "bottom",
+  plot.caption = element_text(size = 12)
+)
+```
+
+<div class="cols">
+<div class="left">
+
+Wykres ten to jedno z możliwych spojrzeń na dane. Ciekawym zjawiskiem jest fakt, że przy pominięciu opisu wykresu w postaci dat obserwator jest w stanie określić chronologię punktów. Umieszczenie ich wydaje się być jednak naturalne - pokazuje też pośrednio prędkość z jaką porusza się huragan. Zaznaczenie pierwszej miejscowości w Stanach Zjednoczonych w centrum oka ma na celu uświadomienie obserwatora w jakim rejonie huragan dokonał największego zniszczenia.
+</div>
+<div class="right">
+
+Możemy również zastosować alternatywne spojrzenie - bez mapy. W&nbps;tym ujęciu możemy wykorzystać wolny stopień swobody na ukazanie prędkości wiatru. Na wykresie zaznaczono ponownie miejscowość Destin - jest to ważny punkt na trasie huraganu, ponadto pozwala obserwatorowi na dokładniejsze określenie odpowiadających punktów na obu wykresach. Oba wykresy duplikują większość informacji - ale różnią się tym, co prezentują. Pierwszy wykres dobrze oddaje trasę huraganu, ale dodanie do niego informacji o prędkości wiatru mogłoby zaburzyć przekaz. Tymczasem drugi wykres pomija kwestię trasy (z&nbsp;wyjątkiem charakterystycznej miejscowości), ukazuje też jasno zależność kategorii huraganu od prędkości wiatru.
+
+</div>
+</div>
+<div class="clearer"></div>
