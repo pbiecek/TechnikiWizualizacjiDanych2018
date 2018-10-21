@@ -19,7 +19,7 @@ Jako realizację zadania postanowiłem poprawić wykres stworzony przez Annę Ko
 
 ![](oryginal.png)
 
-Moim zdaniem wykres nie pokazuje wszystkich informacji w sposób przejrzysty, ponieważ etykiety punktów oznaczających wysokość oprocentowania nie są na tej samej wysokości co punkty, co może być mylące oraz porównywanie wysokości punktów, zwłaszcza, gdy są oddalone od siebie, nie jest wygodne dla odbiorcy. Poza tym szary kolor kolumn na szarym tle sprawia, że wykres nie jest przyjemny do czytania.
+Moim zdaniem wykres nie pokazuje wszystkich informacji w sposób przejrzysty, ponieważ etykiety punktów oznaczających wysokość oprocentowania nie są na tej samej wysokości co punkty, a to może być mylące. Ponadto porównywanie wysokości punktów, zwłaszcza, gdy są oddalone od siebie, nie jest wygodne dla odbiorcy. Poza tym szary kolor kolumn na szarym tle sprawia, że wykres nie jest przyjemny do czytania.
 
 **Po:**
 ```{r  ,echo=FALSE, fig.width=10}
