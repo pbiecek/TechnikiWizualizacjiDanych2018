@@ -8,29 +8,17 @@ output: html_document
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
-library(ggrepel)
+data <- read.csv("ranking_kont_oszczednosciowych.csv", sep = ";", encoding = "UTF-8", check.names = FALSE)
+
+data$Bank <- factor(data$`Bank`, levels = data$`Bank`[order(-data$`Zysk po roku(po podatku)`)])
 ```
 
 Jako realizację zadania postanowiłem poprawić wykres stworzony przez Annę Kozak na podstawie artykułu dotyczącego rankingu kont oszczędnościowych. [link]( https://www.money.pl/gospodarka/wiadomosci/artykul/ranking-kont-oszczednosciowych---pazdziernik,25,0,2418201.html)
 
 **Przed:**
-```{r, warning=FALSE, message=FALSE, error=FALSE, echo=FALSE, fig.width=10}
-data <- read.csv("ranking_kont_oszczednosciowych.csv", sep = ";", encoding = "UTF-8", check.names = FALSE)
 
-data$Bank <- factor(data$`Bank`, levels = data$`Bank`[order(-data$`Zysk po roku(po podatku)`)])
+![](oryginal.png)
 
-scaleFactor <- max(data$`Zysk po roku(po podatku)`) / max(data$`Oprocentowanie nominalne`)
-
-ggplot() +
-geom_bar(aes(x=data$Bank, y = data$`Zysk po roku(po podatku)`), stat = "identity", fill = "gray") +
-geom_point(aes(x= data$Bank,y=data$`Oprocentowanie nominalne` * scaleFactor), size=1.5,  col="darkred") + 
-geom_label_repel(aes(x = data$Bank, y = data$`Oprocentowanie nominalne` * scaleFactor, label = paste( data$`Oprocentowanie nominalne`, "%"))) + scale_x_discrete(name="Bank") +
-scale_y_continuous(name="Zysk po roku(po podatku) (zł)", sec.axis=sec_axis(~./scaleFactor, name="Oprocentowanie nominalne (%)")) + coord_cartesian() +
-theme_replace() +
-theme(axis.text.x = element_text(angle=60, hjust=1)) +
-ggtitle("Ranking kont oszczędnościowych dla nowych klientów \ni na nowe środki - październik 2018")
-
-```
 Moim zdaniem wykres nie pokazuje wszystkich informacji w sposób przejrzysty, ponieważ etykiety punktów oznaczających wysokość oprocentowania nie są na tej samej wysokości co punkty, co może być mylące oraz porównywanie wysokości punktów, zwłaszcza, gdy są oddalone od siebie, nie jest wygodne dla odbiorcy. Poza tym szary kolor kolumn na szarym tle sprawia, że wykres nie jest przyjemny do czytania.
 
 **Po:**
@@ -46,4 +34,4 @@ ggplot(data = data, aes(x = Bank, y=`Zysk po roku(po podatku)`, fill = `Oprocent
   theme(axis.text.x = element_text(angle=60, hjust=1)) +
   ggtitle("Ranking kont oszczędnościowych dla nowych klientów \ni na nowe środki - październik 2018")
 ```
-Na moim wykresie postanowiłem przedstawić wysokość oprocentowania za pomocą kolorów słupków. Rozwiązanie to likwiduje problem szarych kolorów, ułatwia porównywanie poszczególnych banków i upraszcza wykres, co czyni go jeszcze łatwiejszym do odczytania. W legendzie zaznaczyłem tylko wartości, które występują w danych, by można było dokładnie odczytać wartość oprocentowania. Na koniec poprawiłem jeszcze podpisy na osi Y, by łatwiej można było odczytać kwotę.
+Na moim wykresie postanowiłem przedstawić wysokość oprocentowania za pomocą kolorów słupków. Rozwiązanie to likwiduje problem szarych kolorów, ułatwia porównywanie poszczególnych banków i upraszcza wykres, co czyni go jeszcze łatwiejszym do odczytania. W legendzie zaznaczyłem tylko wartości, które występują w danych, by można było dokładnie odczytać wysokość oprocentowania. Na koniec poprawiłem jeszcze podpisy na osi Y, by łatwiej można było odczytać kwotę.
