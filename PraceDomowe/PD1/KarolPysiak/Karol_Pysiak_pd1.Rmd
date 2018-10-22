@@ -1,0 +1,31 @@
+---
+title: "Praca domowa 1"
+author: "Karol Pysiak"
+date: "October 14, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+options(stringsAsFactors = FALSE)
+library(data.table)
+library(ggplot2)
+shares <- as.data.table(read.csv("data-BQdWQ.csv"))
+shares[9, 2] <- shares[9, 3]  # to NA mi przeszkadzalo wiec przepisalem tu wartosc z drugiej kolumny dla poprawnosci wykresu
+shares
+```
+Praca przygotowana przeze mnie jest na podstawie danych załączonych w artykule [Three reasons some countries are far more unequal than others](http://www.https://theconversation.com/three-reasons-some-countries-are-far-more-unequal-than-others-103638). Mój wykres został utworzony na podstawie zamieszczonej w tym artykule grafiki. 
+
+Dane pochodzą z World Wealth and Income Database. Opisują one jaki procentowy udział w łącznym zysku wszystkich obywateli ma 1% najbogatszych osób w państwie. Dane zostały obliczone przed opodatkownaiem, a zbierane były w dwóch okresach: 1976-80 oraz 2010-14. Przedstawione liczby są to średnie ze wszystkich lat danego okresu w danym państwie. 
+```{r, echo=FALSE}
+color <- c("1976-1980 average" = rgb(0.4, 0.4, 0.4), "2010-2014 average" = "red")
+ggplot(data = shares, col = color) +
+  scale_x_continuous(name = "Income shares [%]", limits = c(1, 22), breaks = seq(0, 22, 2)) +
+  scale_y_discrete(name = "Countries") +
+  geom_segment(aes(x = shares$X1976.80.average, y = reorder(shares$X.1, shares$X2010.14.average), xend = shares$X2010.14.average, yend = reorder(shares$X.1, shares$X2010.14.average)), size = 1.3, col = "grey") +
+  geom_point(aes(x = shares$X1976.80.average, y = reorder(shares$X.1, shares$X2010.14.average), colour = "1976-1980 average"), size = 3)  +
+  geom_point(aes(x = shares$X2010.14.average, y = reorder(shares$X.1, shares$X2010.14.average), colour = "2010-2014 average"), size = 3) +
+  scale_color_manual(values = color) +
+  ggtitle("Income shares of the top 1% in various countries")
+```
+
+Wykres kładzie nacisk na rozłożenie przychodów w latach 2010-2014, gdyż oś Y została w taki sposób posortowana. Dzięki temu możemy odczytać, że&nbsp;największe dysproporcje panują ostatnio w USA, a w Dani oraz Holandii są one bardzo małe. Bardzo dobrze jest tutaj widoczna zmiana tego parametru na przestrzeni lat. Stany nie zaskakują nas w tym miejscu, ale za to Zjednoczone Królestwo zaliczyło w&nbsp;tych latach duży w porównaniu do innych państw wzrost dysproporcji zysku. Ponownie w przypadku Dani i&nbsp;Holandii otrzymujemy małe liczby, gdyż zwiększenie udziału 1% najbogatszych ludzi było minimalne. Najmniej intuicyjna, ale ciągle czytelna jest część wykresu poświęcona latom 1976-80. Możemy stąd odczytać, że największe dysproporcje panowały w&nbsp;Niemczech i USA, a&nbsp;najmniejsze w Szwecji i Australii, jednakże odczytanie tego nie było już aż tak wygodne.

@@ -1,0 +1,34 @@
+---
+title: "TWD - PD1"
+author: "Bartek Sielicki"
+date: "17 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(reshape)
+library(scales)
+```
+
+## Praca Domowa nr 1
+
+Dane które postanowiłem wykorzystać na potrzeby ćwiczenia pochodzą z artykułu zamieszczonego w serwisie "The Wall Street Journal". Artykuł dotyczy ciekawego zjawiska, które to zaszło na rynku pracy w USA. Po raz pierwszy od ponad 17 lat, liczba nowo powstałych miejsc pracy przekroczyła liczbę poszukujących zatrudnienia Amerykanów. Dane, jak można się więc domyślić przedstawiają jak dokładnie wyglądały te liczby podczas tego okresu.
+
+```{r}
+data <- read.csv("unemployed_vs_jobs_openings.csv", header=TRUE)
+data$DATE <- as.Date(data$DATE)
+data <- melt(data, id.vars="DATE", measure.vars=c("UNEMPLOYED", "JOB_OPENINGS"))
+
+ggplot(data, aes(x=DATE, y=value/1e6, color=variable, group=variable)) + 
+  geom_line() +
+  labs(title="Unemployed Americans and unfilled positions in the U.S.\n", x="Year", y="Millions", color="") +
+  scale_color_manual(labels=c("Unemployed", "Job Openings"), values=c("#D55E00", "#56B4E9")) +
+  scale_x_date(date_breaks="2 years", labels=date_format("%Y")) +
+  theme_bw()
+```
+
+Link do artykułu:
+https://www.wsj.com/articles/u-s-job-openings-topped-7-million-this-summer-1539702755
+

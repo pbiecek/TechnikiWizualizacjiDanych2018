@@ -1,0 +1,49 @@
+---
+title: "Praca domowa nr 1"
+autor: Bogdan Jastrzębski
+output: html_document
+---
+
+```{r, echo=FALSE}
+library(knitr)
+library(ggplot2)
+```
+
+---
+
+
+# 1. Wprowadzenie
+
+W niniejszej pracy odtworzę wykresy dotyczące zależności między wysokością stopy bezrobocia i poparciem prezydenta w społeczeństwie z artykułu the Washington Post: [Link]:https://www.washingtonpost.com/politics/2018/10/12/unfortunately-trump-approval-ratings-are-based-more-than-unemployment-rates/?noredirect=on&utm_term=.018c6c1ef78d.
+Wykorzystane dane odnoszą się do poparcia prezydentów Amerykańskich i bezrobocia w Stanach Zjednoczonych. 
+
+__Uwaga: Na potrzeby tej pracy dane zostały wygenerowane sztucznie.__
+
+---
+
+# 2. Wizualizacja
+
+```{r}
+# Wczytanie danych
+dane <- read.csv(file = "Approval_vs_unemployment_rate.csv")
+names(dane) <- c("x", "y", "label")
+
+# Przygotowanie danych
+dane$label <- as.character(dane$label)
+dane$x <- dane$x/100 
+dane$y <- dane$y/10 - 0.1
+
+# Wykres
+ggplot(dane, aes(x,y,color=label)) +
+  geom_point() +
+  scale_x_continuous(labels = scales::percent, limits = c(0,0.12)) +
+  scale_y_continuous(labels = scales::percent,limits = c(0,1)) +
+  xlab("UNEMPLOYMENT RATE") +
+  ylab("APPROVAL RATING") +
+  theme_light() +
+  theme(aspect.ratio=1,
+        axis.line = element_line(),
+        legend.position="none")
+  
+
+```

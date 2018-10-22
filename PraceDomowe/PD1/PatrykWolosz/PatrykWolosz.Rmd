@@ -1,0 +1,56 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+<style>
+p {
+  text-align: justify;
+}
+
+```{R, echo = FALSE, message = FALSE}
+library(ggplot2)
+```
+
+</style>
+
+<center>
+<h1>Techniki wizualizacji danych</h1>
+<h3>Praca domowa 1</h3>
+<h4>Autor: Patryk Wołosz</h4>
+</center><br/>
+<center>
+```{R, echo = FALSE}
+names <- c("JAVA", "C", "JAVASCRIPT", "PYTHON", "C++", "PHP", "C#", "ASSEMBLER", "LUA", "GO", "OTHER", "R", "SWIFT", "RUBY", "RUST")
+values <- c(0.665, 0.569, 0.471, 0.460, 0.457, 0.173, 0.157, 0.149, 0.101, 0.096, 0.072, 0.069, 0.053, 0.040, 0.037)
+df <- data.frame("language"=names, "value"=values)
+
+ggplot(data = df, aes(x = reorder(language, -value), y = value)) +
+  geom_bar(stat = "identity", width=0.5, fill="#FF6666") + 
+  theme_minimal() +
+  scale_y_continuous(labels = scales::percent, 
+                     expand = c(0,0), 
+                     limits = c(0,0.7), 
+                     breaks = seq(from = 0.0, to = 0.7, by = 0.1), 
+                     minor_breaks = seq(0, 0.7, 0.1)) +
+  theme(axis.title.x = element_blank(), 
+        axis.title.y = element_blank(), 
+        axis.line = element_line(color = "black"), 
+        panel.grid.major.x = element_blank(), 
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"), 
+        axis.text.y = element_text(face = "bold", size = 12)) +
+  geom_text(aes(label = scales::percent(value)), 
+            position = position_dodge(width = 0.9), 
+            vjust = -0.5,
+            size = 3) +
+  ggtitle("Popularność języków programowania używanych w rozwiązaniach IoT") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+</center>
+
+<p>
+Powyższy wykres przestawia wyniki ankiety przeprowadzonej wśród programistów, których zapytano o to, jakich języków używają do tworzenia rozwiązań IoT.
+Jak widać ankietę zdominowała Java. Warto teź zwrócić uwagę na sporą dysproporcję pomiędzy pierwszymi pięcioma najpopularniejszymi językami (wymieniane przez ponad 45% ankietowanych), a pozostałymi (poniżej 18%).
+</p>
+
+<i>Źródło: https://www.iotforall.com/2018-top-3-programming-languages-iot-development/</t>
