@@ -1,0 +1,47 @@
+---
+title: "Praca domowa nr 1 - TWD"
+author: "Szymon Maksymiuk"
+date: "16 paŸdziernika 2018"
+output: html_document
+---
+
+# Wstêp
+
+Tkniêty sza³em wyborczym i wszechobecnymi sonda¿ami maj¹cymi przedstawiaæ poparcie, postanowi³em pozostaæ w temacie polityki przy wykonywaniu zadania. Z pomoc¹ przyszed³ mi CBOS, a konkretniej mówi¹c, artyku³ w poratlu interia.pl (https://fakty.interia.pl/polska/news-ocena-prezydenta-najnowszy-sondaz-cbos,nId,2645166) opisuj¹cy jeden z kolejnych sonda¿y Centrum. Dodatkowo, czytaj¹c artyku³, ze zgroz¹ przekona³em siê o tym, ¿e nie za³¹czono do niego wykresu, st¹d te¿ postanowi³em to natychmiast naprawiæ. Pragnê w tym punkcie zaznaczyæ, ¿e wszystkie dane czerpa³em z tego artyku³u, nie stara³em siê poprawiaæ ewidentych b³êdów takich jak nie sumowanie siê punktów procentowych przy Panu Prezydencie do stu oraz brak kategorii "Nie mam zdania" dla samorz¹du. Na s³owo uwagi zas³uguje równie¿ forma. Zastanawia³em siê d³u¿szy czas czy nie u¿yæ wykresu s³upkowego skumulowanego lecz odst¹pi³em od tego z dwóch powodów. Po pierwsze bêdne dane sprawi³yby, ¿e ca³oœæ wygl¹da³aby nie najlepiej, po drugie zaœ. do sonda¿y pasuj¹ mi tylko i wy³¹cznie wykresy s³upkowe, tak siê je przecie¿ zazwyczaj w mediach przedstawia.
+
+# Wykonanie zadania
+
+
+```{r fig.width=12, fig.height=6}
+library(ggplot2)
+
+dane <- data.frame(rbind(c("PAD", "le", 31),
+                         c("PAD", "Nie mam zdania", 10),
+                         c("PAD", "Dobrze", 56),
+                         c("Sejm", "le", 52),
+                         c("Sejm", "Nie mam zdania", 17),
+                         c("Sejm", "Dobrze", 31),
+                         c("Senat", "le", 44),
+                         c("Senat", "Nie mam zdania", 25),
+                         c("Senat", "Dobrze", 31),
+                         c("Samorz¹d", "le", 23),
+                         c("Samorz¹d", "Dobrze", 70)))
+
+colnames(dane) <- c("Kandydat", "Kategoria", "Wynik")
+
+dane$Wynik <- as.numeric(as.vector(dane$Wynik))
+ggplot(data=dane, aes(x=Kandydat, y=Wynik, fill=Kategoria)) +
+geom_bar(stat="identity", width = 0.8, position = position_dodge(width = 0.9), colour="black")+
+geom_text(aes(label=Wynik), vjust=1.6, color="black",
+          position = position_dodge(0.9), size=3.5)+
+ylim(0,max(dane$Wynik)+5)+
+scale_fill_brewer(palette="Set1")+
+labs(x="", y="Wynik (%)", fill = "")+
+ggtitle("Oceny dzia³alnoœci parlamentu, prezydenta i w³adz lokalnych. CBOS paŸdziernik 2018")+
+theme_minimal()+
+theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+
+

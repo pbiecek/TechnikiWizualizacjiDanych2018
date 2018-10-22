@@ -1,0 +1,53 @@
+---
+title: "Praca domowa 1"
+author: "Piotr Pasza Storozenko"
+date: "17 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Oryginalny wykres
+
+![Źródło: https://www.datacenterknowledge.com/colocation/n-virginia-s-already-tight-data-center-real-estate-market-just-got-lot-tighter](nova stoller chart 4_0.jpg)
+
+# Zreprodukowany wykres
+```{r, echo=FALSE, warning=FALSE,message=FALSE,results='hide'}
+library(ggplot2)
+library(scales)
+library(ggthemes)
+library(readr)
+
+set.seed(1)
+start <- as.POSIXct("2016-01-01", "%Y-%m-%d")
+end   <- as.POSIXct("2018-10-01", "%Y-%m-%d")
+
+x <- seq(start, end, length.out = 16)
+xn <- as.numeric(x)
+dt <- xn[2] - xn[1]
+a = 0.017
+b = 2e5
+y <- a * (xn- xn[1]) + b + rnorm(16, 0, 3e5)
+data = as.data.frame(x=x, y=y)
+
+
+Sys.setlocale("LC_ALL", "en_US.UTF-8")
+```
+
+```{r}
+
+
+ggplot(data, aes(x=x,y=y)) +
+  geom_point() +
+  ylab('$ per acre') +
+  xlab("") +
+  ggtitle("Northern Virginia land price trends") +
+  scale_x_datetime(labels = date_format(format = "%y-%b"), date_breaks = "4 months", limits = c(start-dt/2, end+dt/2)) +
+  scale_y_continuous(labels = dollar_format(), limits = c(0,2e6)) +
+  theme_light() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+Poprawiony został kontrast, przez co wykres jest bardziej przejrzysty. Dodatkowo *minorticki* na wykresie są co 2 miesiące co pozwala na pogodzenie łatwości odczytania informacji z niewielką ilością tekstu na wykresie.

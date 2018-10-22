@@ -1,0 +1,29 @@
+---
+title: "Praca domowa 1"
+author: "Kamil Grabowski"
+date: "October 14, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+library(ggplot2)
+x <- c('J. Majchrowski', 'M. Wassermann', 'Ł. Gibała', 'K. Berkowicz', 'J. Gajęcka', 'G. Gorczyca', 'D. Gosek-Popiołek')
+y <- c(34.7, 33.1, 20.8, 5.3, 3.9, 1.2, 1.0)
+df <- data.frame(x, y)
+```
+Poniższy wykres przedstawia wyniki sondażu dotyczącego wyborów na prezydenta Krakowa w 2018 roku. Pochodzi on ze strony: https://warszawa.onet.pl/wybory-samorzadowe-2018-sondaz-dla-warszawy-krakowa-gdanska-wroclawia/nfk8gen.
+```{r}
+theme_update(plot.title = element_text(hjust = 0.5))
+ggplot(data=df, aes(x=reorder(x, -y), y=y)) +
+  geom_bar(stat='identity', color='red', fill='red')+
+  geom_text(aes(label=y), vjust=-0.3, size=3.5) +
+  theme(axis.title.x=element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.x = element_text(angle = 45, vjust = .5)) +
+  labs(title="NA KOGO ODDAŁABY PANI/ODDAŁBY PAN GŁOS, GDYBY WYBORY \n PREZYDENTA KRAKOWA ODBYWAŁY SIĘ DZIŚ?") +
+  expand_limits(y = c(0, 40))
+```
