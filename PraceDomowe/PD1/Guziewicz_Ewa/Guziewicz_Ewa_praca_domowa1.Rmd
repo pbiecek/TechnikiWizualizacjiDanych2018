@@ -1,0 +1,68 @@
+---
+author: "Ewa Guziewicz"
+date: "17 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Zadanie
+
+W gazecie lub na portalu informacyjnym znajdź artykuł opublikowany w październiku, w którym pojawia się wykres lub dane liczbowe. Następnie przedstaw te dane z użyciem pakietu ggplot2.
+
+W katalogu https://github.com/pbiecek/TechnikiWizualizacjiDanych2018/tree/master/PraceDomowe/PD1 umieść skrypt knitr z kodem R, linkiem do źródłowego artykułu (lub zdjęcie wersji papierowej), oraz wykresem przygotowanym z użyciem ggplot2.
+
+## Koszty ślubów w UK w zależności od regionu
+
+Artykuł pochodził ze strony brytyjskiego dziennika "The Independent" ("https://www.independent.co.uk/life-style/average-cost-uk-wedding-how-much-pay-32000-venue-where-honeymoon-food-catering-guests-a8557271.html").
+
+Autorka przygotowała analizę danych zebranych za pomocą corocznej ankiety "Hitched’s 21st Century Bride survey" przeprowadzonej przez Hitched.co.uk, jednej z największych ślubnych stron internetowych. W ankiecie wzięło udział ponad 3300 Panien Młodych.
+
+Przygotowałam wykres bazujący na wykresie umieszczonym w artykule. Przedstawia on średnie wydatki na ślub i wesele w zależności od regionu Wielkiej Brytanii.
+
+
+```{r, echo=FALSE}
+library(ggplot2)
+wedding_costs <- c(41521, 29613, 27091, 31191, 28465, 27245, 30586, 28320, 28240, 33406, 31335, 36902)
+region <- c("London", "East of England", "Wales", "West Mids", "East Mids", "Yorkshire", "North West", "North East",
+            "South West", "South East", "Scotland", "Northern Ireland")
+
+wedding_data <- data.frame(region = region, 
+                           wedding_costs = wedding_costs)
+wedding_data$limits <- ifelse(wedding_costs > 40000, "Above 40 000", 
+                              ifelse(wedding_costs > 30000, "Above 30 000", "Above 20 000"))
+
+```
+
+
+
+
+
+
+```{r, fig.align='center'}
+
+ggplot(data = wedding_data, 
+  aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_bar(aes(fill=factor(limits)), position = 'dodge', stat="identity", width=.5) +
+  scale_fill_manual(values=c("#E066FF", "#9932CC", "#68229B")) +
+  theme(axis.line = element_blank(), 
+        plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6), legend.title = element_blank()) +
+  geom_text(aes(label=wedding_costs), position=position_dodge(width=0.9), vjust=-0.25) 
+
+
+```
+
+
+
+
+
+
+
+
+
