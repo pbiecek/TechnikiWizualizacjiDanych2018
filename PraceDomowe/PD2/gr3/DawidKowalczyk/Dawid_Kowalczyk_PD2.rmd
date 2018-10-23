@@ -1,0 +1,50 @@
+---
+title: "Techniki PD2"
+author: "Dawid Kowalczyk"
+date: "20.10.2018"
+output: html_document
+---
+  
+  ```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  cache = FALSE)
+
+```
+
+\pagebreak
+
+#Wstęp
+
+"Poniższy wykres został stworzony na podstawie danych zawartych w artykule z dnia 17 października 2018r. znajdującego się pod [linkiem.](https://forsal.pl/nieruchomosci/mieszkania/galerie/1303361,zdjecie,1,mieszkania-uzywane-drozaly-w-ostatnich-latach-bardziej-niz-nowe.html) Przedstawia on przeciętne ceny mkw. mieszkania w największych miastach Polski z podziałem na rynek wtórny i pierwotny w II kw. 2018r. Wykres pozwala na porównanie tych cen."
+
+#Wykres oryginalny
+
+```{r}
+library(reshape2)
+library(ggplot2)
+dane <- read.csv("C:/Users/Dawid Kowalczyk/Desktop/TechnikiWizualizacjiDanych2018-master/PraceDomowe/PD1/dane.csv", sep = ";")
+dat.m<-melt(dane, id.vars = "miasto")       
+names(dat.m) <- c("miasto", "rynek", "cena")
+ggplot(data = dat.m,aes(x = miasto, y = cena, fill = rynek))+
+  geom_bar(stat = "identity", width =  0.8, position=position_dodge())+
+  scale_fill_brewer(palette="Paired")+
+  theme_minimal() +
+  labs(title="Przeciętne ceny za mkw. mieszkania w największych miastach Polski na rynku wtórnym i pierwotnym", x="miasto", y = "średnia cena za mkw. (w zl)") +
+  theme(axis.text.x = element_text(angle = 45)) 
+```
+
+#Wykres poprawiony
+Postanowiłem wprowadzić poprawki, ponieważ przy tak licznej grupie miast, ich nazwy się zlewały, co powodowało trudności w odczytaniu wykresu. Usunąłem podwójne słupki w celu ogarniczenia zajętego miejsca na wykresie.
+```{r}
+#zmiana danych
+dat.m[dat.m$rynek == "pierwotny", 3] <- c(dat.m[dat.m$rynek == "pierwotny", 3]) - c(dat.m[dat.m$rynek == "wtorny", 3])
+
+ggplot(data = dat.m, aes(x = miasto, y = cena))+
+  geom_bar(stat= "identity", aes(fill = rynek), width = 0.5) +
+  scale_fill_brewer(palette="Paired")+
+  theme_minimal() +
+  labs(title="Przeciętne ceny za mkw. mieszkania w Polsce", x="miasto", y = "Cena za mkw. (w PLN)") +
+  theme(axis.text.x = element_text(angle=90, hjust=1))
+
+```

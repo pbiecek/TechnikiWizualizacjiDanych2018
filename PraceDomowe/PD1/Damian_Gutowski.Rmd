@@ -1,0 +1,67 @@
+---
+title: "Praca domowa 1"
+author: "Damian Gutowski"
+date: "15 paŸdziernika 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(ggplot2)
+library(knitr)
+library(dplyr)
+```
+
+## Treœæ zadania
+
+W gazecie lub na portalu informacyjnym znajdŸ artyku³ opublikowany w paŸdzierniku, w którym pojawia siê wykres lub dane liczbowe. Nastêpnie przedstaw te dane z u¿yciem pakietu ggplot2.
+
+## Wybrane dane
+
+Na potrzeby tego zadania postanowi³em zwizualizowaæ dane zamieszczone na pierwszej stronie artyku³u pt. "MŒ 2018. Polacy wysoko w indywidualnych rankingach po zakoñczeniu turnieju".  
+Wskazany artyku³ zawiera statystyki siatkarzy podczas niedawno zakoñczonych Mistrzostw Œwiata.
+Poniewa¿ dane na stronie by³y niepe³ne, zosta³a pobrana pe³na tabela ze Ÿród³a (oficjalna strona federacji siatkarskiej fivb)  
+Aby zachowaæ czytelnoœæ wykresu umieszono na nim tylko dziesiêciu najlepszych zawodników.
+
+Link od artyku³u: 
+https://sportowefakty.wp.pl/siatkowka/780372/ms-2018-polacy-wysoko-w-indywidualnych-rankingach-po-zakonczeniu-turnieju
+
+## Pobrane dane
+
+Poni¿sza tabela zawiera dane w oryginalnej postawci dostêpne na stronie fivb.com
+
+```{r 1}
+Position <- 1:10
+Name <- c("Bartosz Kurek", "Matthew Anderson", "Wallace De Souza", "Aaron Russell", "Douglas Souza", "Aleksandar Atanasijevic", "Taylor Sander", "Artur Szalpuk", "Michal Kubiak", "Uros Kovacevic")
+Name <- factor(Name, levels = Name)
+Spikes <- c(133,138,145,135,129,130,107,105,97,104)
+Blocks <- c(22,9,6,10,10,6,13,16,21,9)
+Servers <- c(16,16,6,8,11,9,15,9,12,10)
+Total <- c(171,163,157,153,150,145,135,130,130,123)
+data.frame(Name, Spikes, Blocks, Servers, Total)
+```
+
+## Prezentacja daych
+
+### Obróbka danych
+```{r 2}
+data1 <- data.frame(Position, Name, Points = Spikes, Ranking = rep("Ataki", 10), y_lab_pos = Servers + Blocks + Spikes)
+data2 <- data.frame(Position, Name, Points = Blocks, Ranking = rep("Bloki", 10), y_lab_pos = Servers + Blocks)
+data3 <- data.frame(Position, Name, Points = Servers, Ranking = rep("Serwy", 10), y_lab_pos = Servers)
+data5 <- rbind(data1, data2, data3)
+```
+
+
+### Rysowanie wykresu
+```{r 3}
+ggplot(data = data5, aes(x = Name, y = Points, fill = Ranking, width=0.7)) + 
+  geom_bar(stat="identity") +
+  geom_text(aes(y = y_lab_pos, label = Points), hjust=1.3, color="white", size=4) +
+  scale_fill_brewer(palette="Paired") +
+  labs(x = "Zawodnik", y = "Punkty", title = "Najlepiej punktuj¹cy MŒ 2018") +
+  coord_flip() +
+  theme_minimal()
+```

@@ -1,0 +1,48 @@
+---
+title: "Praca domowa nr 1"
+author: "Wojciech Bogucki"
+date: "14 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Ile zarabiają nauczyciele?
+
+## Źródło danych
+Dane przedstawione poniżej zostały użyte do stworzenia tabeli 5. w artykule *"Ile zarabiają nauczyciele?"* na portalu wynagrodzenia.pl (link: https://wynagrodzenia.pl/artykul/ile-zarabiaja-nauczyciele-ihow-much-do-teachers-earni).
+Plik CSV z danymi źródłowymi pobrałem ze strony https://stats.oecd.org/.
+
+```{r wczytanie}
+library(data.table)
+salaries <- na.omit(fread("teachers_salaries_2017.csv", sep = ","), "Value")
+```
+
+## Przedstawienie danych z użyciem `ggplot2`
+Dane postanowiłem przedstawić w formie wykresu słupkowego. Do przetworzenia ramki danych użyłem pakietu `data.table`. Dodałem również dodatkowy słupek pokazujący średnią zarobków we wszystkich krajach.
+
+```{r wykres, fig.height=7, fig.width=8}
+library(ggplot2)
+
+salaries1 <- salaries[EXP == 'EXP0' & QUAL == 'QUAL_TYP' & INDICATOR == 'USD_STAT_YR' & ISC11 == 'L3_C4',.(Kraj = Country,Value=as.numeric(Value)),]
+salaries1 <- rbind(salaries1, list("ŚREDNIA", mean(salaries1$Value)))
+salaries1$Kraj <- factor(salaries1$Kraj, levels = salaries1$Kraj[order(salaries1$Value)])
+
+ggplot(data = salaries1,aes(x = Kraj, y = Value, fill=Kraj, label = round(Value))) + 
+  geom_col(position= "dodge", width = 0.6) + 
+  labs(title = "Ustawowe roczne stawki początkowe nauczycieli na poziomie licealnym 
+       \nw krajach OECD w 2017 roku") +
+  geom_text(hjust=-0.1, color = "black", size = 3) + 
+  ylab("Roczne wynagrodzenie (brutto w USD PPS)") +
+  theme(legend.position = "none", axis.title.y = element_text(angle=0, vjust=0.5)) + 
+  scale_fill_hue(h=c(20,140)) +
+  scale_y_discrete(limits = seq(0,80000,10000),expand = c(0, 0, 0.1, 0)) + 
+  coord_flip()
+```
+
+Z wykresu można odczytać, iż zdecydowanie najwięcej zarabiają nauczyciele w Luksemburgu, Szwajcarii i Niemczech. Najmniejsze zarobki mają pracownicy oświaty w Brazylii, na Łotwie oraz na Słowacji. Polscy nauczyciele plasują się na 4. od końca miejscu zarabiając około 50% średniej pensji dla nauczyciela.
+
+**Uwagi**
+
+W podanym artykule zostały przedstawione zarobki nauczycieli "w wybranych" krajach, ja przedstawiłem zarobki we wszystkich krajach, które miały te dane. Wybrałem natomiast tylko nauczycieli pracujących na poziomie licealnym, a nie, tak jak twórcy artykułu, na wszystkich poziomach. 

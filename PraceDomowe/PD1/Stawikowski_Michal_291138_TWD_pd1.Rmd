@@ -1,0 +1,78 @@
+---
+title: "Stawikowski_Michal_291138_pd1"
+author: "Michał Stawikowski"
+date: "October 13, 2018"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+    toc_depth: 4
+   
+---
+
+
+
+
+#Wstęp
+Celem raportu jest przedstawienie danych lub wykresów za pomocą pakietu **ggplot2** znalezionych w artykule z pażdziernika 2018 roku. Artykuł, który wybrałem dotyczy segmentu nieruchomości, a konkretniej wybierania najbardziej opłacalnych mieszkań pod wynajem ze względu na lokalizację oraz metraż.
+
+##Źródła danych
+Wszystkie dane i treści pochodzą z portalu **[Forsal.pl](http://forsal.pl/nieruchomosci/aktualnosci/artykuly/1277817,zyski-z-wynajmu-gdzie-i-jakiej-wielkosci-mieszkanie-kupic.html)**
+
+
+##Pierwszy wykres - W jakim mieście warto?
+
+*"Biorąc pod uwagę lokalizację, najwięcej zarobić można nabywając lokal w jednym z poniższych pięciu miast. W zestawieniu pierwsze miejsce zajął Gdańsk, drugie Katowice, a na trzecim uplasowała się Warszawa."* 
+
+```{r echo=FALSE, results="hide", error=FALSE}
+library("ggplot2")
+library("ggthemes")
+library("data.table")
+
+points_scale <- 0:25
+Miasta <- c("Gdansk", "Katowice", "Warszawa", "Lublin", "Wroclaw")
+Punkty <- c(24,23,21,20,12)
+data <- data.frame(Miasta,Punkty)
+```
+
+
+```{r}
+theme_set(theme_solarized_2(light=FALSE))
+g <- ggplot(data, aes(x = reorder(Miasta, -Punkty),
+                      y = Punkty, group = Miasta, fill = Miasta))
+g + geom_bar(stat="identity", colour = "black", width = 0.5) + 
+  theme(axis.text.x = element_text(size=14),axis.title.x=element_blank()) +
+  labs(title="W jakim miescie oplaca sie kupic mieszkanie na wynajem:", 
+       subtitle="Ranking pod wzgledem lokalizacji") +
+  geom_text(aes(label=Punkty, color = Miasta, size = 10),
+            position=position_dodge(width=0.9), vjust=-0.25) +
+  theme(legend.position="none")
+```
+\pagebreak
+
+##Drugi wykres - Ile można zarobić?
+
+*"Podejmując decyzję o wyborze wielkości mieszkania do zakupu i pod wynajem oraz jego lokalizacji, przyszli właściciele czasami zapominają, że powierzchnia lokalu ma bardzo duży wpływ na zwrot z inwestycji. Często wybierają te najmniejsze, kierując się mniejszymi nakładami finansowymi na jego zakup i remont. Jednak, jak pokazuje poniższa analiza i dane, wcale tak nie jest. Mieszkania do 35 m2, choć dają wysoką stopę zwrotu, to jednak nie jest ona najwyższa. Dzięki danym z platformy Rentier.io można zauważyć, że kupno nieco większego mieszkania skutkuje wyższą średnią ROI. W przypadku mieszkań o wielkości 35-40 m2 jest ona najwyższa i wyniosła 9,21%. Na drugim miejscu w rankingu znalazły się mieszkania o powierzchni 41-50 m2 ze średnią stopą zwrotu na poziomie 8,81%. Podium zamykają najmniejsze lokale, ze średnim ROI na poziomie 8,73%. Najniższą stopę zwrotu dają mieszkania największe, tj. powyżej 81 m2, z ROI 7,33%."*
+
+
+
+
+```{r echo=FALSE, results="hide"}
+Wielkość <- c("35-40", "41-50", "do 35", "51-60", "71-80")
+ROI <- c(9.21, 8.81, 8.73, 7.97, 7.84)
+data <- data.frame(Wielkość,ROI)
+```
+
+
+
+```{r}
+theme_set(theme_economist())
+g <- ggplot(data, aes(x = reorder(Wielkość, -ROI), y=ROI))
+g + geom_bar(stat="identity", colour = "black", width = 0.5) + 
+  scale_x_discrete(name ="Powierzchnia (m^2)") +
+  scale_y_continuous(breaks = seq(0, 9, by = 1.0)) +
+  ylab("ROI (%)")+
+  labs(title="Ile mozna zarobic w zaleznosci od wielkosci mieszkania.") +
+  geom_text(aes(label=ROI), position=position_dodge(width=0.9), vjust=-0.25) 
+```
+

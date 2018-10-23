@@ -1,0 +1,88 @@
+---
+title: "Praca domowa 2"
+author: "Adrian Bednarz"
+date: "October 24, 2018"
+output: html_document
+---
+
+<style>
+  body {
+    font-family: Calibri Light;
+    text-align: justify;
+  }
+</style>
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(ggrepel)
+library(dplyr)
+library(ggrepel)
+library(grid)
+
+knitr::opts_chunk$set(echo = TRUE)
+
+input <- read.csv("top100.csv")
+colnames(input) <- c("pozycja", "imie.nazwisko", "majatek", "wiek", "zrodlo.majatku", "filantropia")
+input$imie.nazwisko <- factor(input$imie.nazwisko, levels=input$imie.nazwisko)
+
+temp <- input[1:20,]
+previous <- 
+  ggplot(temp, aes(x=imie.nazwisko, y=majatek, fill = wiek)) +
+    geom_col() +
+    coord_flip() +
+    scale_x_discrete(limits = rev(levels(temp$imie.nazwisko))[81:100]) +
+    scale_fill_gradient(low="lightpink1", high="lightpink4") +
+    xlab("Imię i nazwisko") +
+    ylab("Majątek w mld. dolarów") +
+    ggtitle("Top20 najbogatszych Amerykanów") +
+    theme_linedraw()
+
+#important_people <- c("Jeff Bezos", "Bill Gates", "Warren Buffett", "Sergey Brin", "Larry Page", "Mark Zuckerberg")
+important_people <- c("Jeff Bezos", "Warren Buffett", "Mark Zuckerberg", "Bill Gates")
+important_subset <- temp %>% filter(imie.nazwisko %in% important_people)
+
+t1 <- textGrob(expression("Czy " * phantom(bold("bogactwo")) * " i " * phantom(bold("wiek")) * " idą ze sobą w parze?"), x = 0.5, y = 1.1, gp = gpar(col = "#222222", fontsize = 15))
+t2 <- textGrob(expression(phantom("Czy ") * bold("bogactwo") * phantom(" i " * bold("wiek") * " idą ze sobą w parze?")), x = 0.5, y = 1.1, gp = gpar(col = "firebrick3", fontsize = 15))
+t3 <- textGrob(expression(phantom("Czy " * bold("bogactwo") * " i ") * bold("wiek") * phantom(" idą ze sobą w parze?")), x = 0.5, y = 1.1, gp = gpar(col = "dodgerblue3", fontsize = 15))
+
+after.1 <-
+  ggplot(temp, aes(wiek, majatek)) +
+    geom_point(color = "#222222") +
+    geom_label_repel(data=important_subset, aes(label=imie.nazwisko), color = "#222222") +
+    theme_minimal() +
+    theme(
+      axis.title = element_blank(),
+      plot.margin = unit(c(4, 0, 0, 0), "lines"),
+      axis.text.x = element_text(color = "dodgerblue3", size = 12),
+      axis.text.y = element_text(color = "firebrick3", size = 12),
+      panel.grid.minor = element_blank()
+    ) +
+    annotation_custom(grobTree(t1, t2, t3)) + 
+    scale_y_continuous(labels=function(x) paste0("$", x, "B")) +
+    expand_limits(x = 30, y = 0)
+
+g <- ggplot_gtable(ggplot_build(after.1))
+g$layout$clip[g$layout$name == "panel"] <- "off"
+```
+
+## Przed
+<center>
+```{r, echo=FALSE}
+previous
+```
+</center>
+
+Patrząc na ten wykres z punktu czysto technicznego - jest on wykonany poprawnie. Nie znajdziemy na nim redundantnych informacji - poprawnie ukazuje informacje na temat wieku i majątku najbogatszych Amerykanów. Nie ma problemów ze zrozumieniem informacji, które są w nim zawarte. Z łatwością można zidentyfikować, że Warren Buffet jest starszy niż Mark Zuckerberg - czy też, że pan Zuckerberg jest najmłodszy w zestawieniu. Ale trzeba chcieć to zauważyć.
+
+Pytanie, które nasuwa się przy analizie tego wykresu brzmi: co ten wykres chce tak na prawdę przekazać? Mimo prostoty wykresu mam problem z udzieleniem odpowiedzi na to pytanie. Jeśli autor chciał pokazać, że pan Zuckerberg jest wyróżniająco młody to zaznaczenie wieku kolorem było nie najlepszym pomysłem - tak trudno porównać podobne wielkości. Jeśli celem było po prostu pokazanie kto ma ile pieniędzy - to po co nam informacja o wieku?
+
+A co jeśli chcielibyśmy pokazać, że niektóre osoby są wyróżniająco młode a inne **bardzo** bogate?
+
+## Po
+<center>
+```{r, echo=FALSE}
+grid.draw(g)
+```
+</center>
+
+Teraz już jasno widzimy wyróżniające się osoby - zarówno te o wysokim majątku, jak i te, które dodatkowo są jeszcze młode. Pytanie w tytule wykresu przyciąga uwagę czytelnika i pobudza do refleksji - sugeruje też kierunek analizy wykresu i uwypukla historię, która za nim stoi. Sama reprezentacja informacji pokazuje, że pan Bezos jest jedną z młodszych osób w czołówce czego nie było od razu widać w poprzedniej reprezentacji. Cztery osobistości o wyróżniającej charakterystyce zostały uwypuklone przy pomocy opisu tekstowego.
