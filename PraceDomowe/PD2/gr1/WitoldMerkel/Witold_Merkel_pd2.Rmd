@@ -1,0 +1,49 @@
+---
+title: "Praca Domowa nr.2"
+subtitle: "Witold Merkel"
+output: html_document
+lang: pl-PL
+---
+
+W katalogu PD1 znalazłem następujący wykres zrobiony za podstawie artykułu: "http://wyborcza.pl/1,75398,19061937,tns-dla-wyborczej-w-nowym-sejmie-trzy-czy-siedem-partii.html".
+
+```{r, echo=FALSE}
+suppressMessages(library(ggplot2))
+dane<-data.frame(nazwa=factor(c("PiS","PO","K'15","ZL",".N","K","PSL"),levels = c("PiS","PO","K'15","ZL",".N","K","PSL")),
+                 procenty=c(32.5,26.3,10.4,7.5,6.1,5.3,4.8))
+ggplot(dane,aes(x=nazwa,y=procenty,fill=nazwa)) + geom_col(width=0.7) + 
+  geom_text(aes(label=as.character(procenty),y=procenty+1),size=5,fontface="bold") + guides(fill=FALSE) + 
+  coord_fixed(ratio = 0.25) +
+  labs(title="POPARCIE DLA PARTII",y="",x="",subtitle="(W PROC.)") +
+  theme_minimal()+theme(panel.border = element_blank(),
+                        panel.grid.major = element_blank(),
+                        panel.grid.minor = element_blank(),
+                        axis.text.y = element_blank(),
+                        axis.text = element_text(face = "bold",size = rel(1.5)),
+                        plot.title = element_text(size = rel(1.75),hjust=-.1,face="bold"))
+```
+
+Na powyższym wykresie nie ma osi, nie jest to specjalnie złe, ale uważam, że czytelniej jest z nimi. Dzięki nim łatwiej jest nam zwyzualizować sytuację. Wykres nie zawiera legendy, przez to istnieje możliwość, że niektórzy ludzie nie będą w stanie rozszyfrować wszystkich skrótów.
+
+```{r, echo=FALSE}
+library(ggthemes)
+
+dane <- data.frame(nazwa=factor(c("PiS","PO","K'15","ZL",".N","K","PSL"),
+                                levels = c("PiS","PO","K'15","ZL",".N","K","PSL")),
+                                procenty=c(32.5,26.3,10.4,7.5,6.1,5.3,4.8))
+colnames(dane) <- c("Partie", "Poparcie")
+
+ggplot(data = dane, aes(x = Partie, y = Poparcie, fill = Partie)) + geom_bar(stat = "identity") + 
+  geom_text(aes(label=as.character(Poparcie),y=Poparcie+1),size=5,fontface="bold") +
+  theme_bw() +
+  labs(title="POPARCIE DLA PARTII POLITYCZNYCH",y="Procent poparcia",x="Partie polityczne", subtitle="(W PROC.)") +
+  scale_fill_discrete(name="Nazwy partii politycznych \n w wyborach parlamentarnych",
+                      breaks=c("PiS", "PO", "K'15", "ZL", ".N", "K", "PSL"),
+                      labels=c("Prawo i Sprawiedliwość", "Platforma Obywatelska",
+                               "Kukiz 15", "Zjednoczona Lewica",
+                               "Nowoczesna", "Korwin", "Polskie Stronnictwo Ludowe")) +
+  geom_hline(yintercept = 5, show.legend = TRUE, col = "red") +
+  geom_text(x = 2, y = 6, label = "Próg wyborczy", color = "black")
+```
+
+Na moim wykresie umieściłem legendę, która wyjaśnia skróty partii politycznych, będzię to przydatnę dla ludzi, którzy nie orientują się w świecie nazw, ale dalej chcieliby wiedzieć kto jakie ma poparcie. Podpisałem obydwie osię, żeby nie było żadnych nieporozumień albo jakichkolwiek pomówień. Dodatkowo wprowadziłem, poziomą linię na poziomie 5 procent, jest to próg wyborczy, jeżeli jakaś partia go nie przekroczy to nie dostanie się do sejmu. Uważam, że jest to ciekawa informacja i wiele osób może nie zdawać sobie sprawy z istnienia takiego przepisu, więc jest to ulepszenie. Umieściłem również tło w kratkę i "zamknąłem" w kwadracie przez co jest łatwiej skupić się na danych, można też dzięki kratce łatwiej porównać wysokość słupków, dla tych ludzi którzy potrzebują wizualizacji.

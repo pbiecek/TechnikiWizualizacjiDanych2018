@@ -1,0 +1,52 @@
+---
+title: "Techniki wizualizacji - PD2"
+author: "Damian Kisieliński"
+date: "October 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(reshape2)
+library(ggplot2)
+```
+
+```{r}
+dane <- read.csv("dane.csv", sep = ";")
+dat.m<-melt(dane, id.vars = "miasto")       
+names(dat.m) <- c("miasto", "rynek", "cena")
+```
+
+### Przed
+```{r}
+ggplot(data = dat.m,aes(x = miasto, y = cena, fill = rynek))+
+  geom_bar(stat = "identity", width =  0.8, position=position_dodge())+
+  scale_fill_brewer(palette="Paired")+
+  theme_minimal() +
+  labs(title="Przeciętne ceny za mkw. mieszkania w największych miastach Polski na rynku wtórnym i pierwotnym", x="miasto", y = "średnia cena za mkw. (w zl)") +
+  theme(axis.text.x = element_text(angle = 45)) 
+```
+
+### Po
+```{r}
+dane$miasto <- factor(dane$miasto, levels = dane$miasto[order(dane$pierwotny)])
+ggplot(data = dane, aes(y=miasto)) +
+  scale_x_continuous(limits = c(0, 8500), breaks = seq(0, 8200, 1000)) +
+  geom_segment(aes(x = pierwotny, y = miasto, xend = wtorny, yend = miasto), col="gray", size = 1) +
+  geom_point(aes(x = wtorny, y = miasto, colour = "wtórny"), size = 2) +
+  geom_point(aes(x = pierwotny, y = miasto, colour = "pierwotny"), size = 2)  +
+  theme_minimal()+
+  scale_fill_discrete(name = "New Legend Title")+
+  labs(color="rynek",title="Średnie ceny mieszkań na rynku wtórnym i pierwotnym", x="średnia cena za mkw. (zł)")
+```
+
+### Uzasadnienie
+
+Problemy z pierwszym wykresem:  
+
+* Nieposortowane kategorie, ciężko porównywać wartości.
+* Labele na osi x wydają się przesunięte (nie widać do których słupków należą), patrz Bydgoszcz, Warszawa.
+* Długi tytuł wykresu, jest ucięty.
+* Za rzadka skala na osi y.  
+
+Moje rozwiązanie nie posiada tych wad, dodatkowo łatwo można odczytać miasta z najdroższymi / najtańszymi cenami mieszkań na rynku pierwotnym, oraz miasta z największą / najmniejszą różnicą cen pomiędzy tymi rynkami.
