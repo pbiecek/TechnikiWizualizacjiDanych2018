@@ -28,7 +28,7 @@ openings$value <- openings$value/unemployed$value
 # Wybrana praca
 
 Do modyfikacji wybrano pracę pokazującą liczbę pojawiających się miejsc pracy i liczbę obsób bezrobotnych w USA.
-```{r}
+```{r, echo=F}
 ggplot(data, aes(x=DATE, y=value/1e6, color=variable, group=variable)) + 
   geom_line() +
   labs(title="Unemployed Americans and unfilled positions in the U.S.\n", x="Year", y="Millions", color="") +
@@ -45,7 +45,7 @@ Konkluzją uwzględnianych statystyk jest przewyższenie, pierwszy raz od 17 lat
 * zmniejszyć liczbę danych na wykresie - z dwóch krzywych do jednej
 * zaakcentować zaistniałą zmianę w perspektywie jednego człowieka a nie skali całego społeczeństwa USA
 
-```{r}
+```{r, echo=F}
 ggplot(openings, aes(x = DATE, y = value)) + 
   geom_point(alpha=0.7) + theme_minimal() + 
   scale_y_continuous(limits = c(0, 1.5)) + 
