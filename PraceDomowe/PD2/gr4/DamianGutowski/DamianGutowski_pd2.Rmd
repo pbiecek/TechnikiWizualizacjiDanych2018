@@ -1,0 +1,54 @@
+---
+title: "Praca domowa 2"
+author: "Damian Gutowski"
+date: "22 paŸdziernika 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Cel zadania
+
+W katalogu z PD1 znajdŸ wykres innej osoby, który potrafisz zrobiæ lepiej (lepsza geometria, lepsze adnotacje, lepsze kolory, lepsza skórka).
+
+Popraw ten wykres i poka¿ wersjê ,,przed i po''. Uzasadnij, dlaczego uwa¿asz, ¿e wersja ,,po'' jest lepsza.
+
+
+## Wybrany wykres
+
+Link: https://github.com/pbiecek/TechnikiWizualizacjiDanych2018/tree/master/PraceDomowe/PD1/Olaf_Werner_zadanie1
+
+#Wykres przedtsawia sonda¿owe wyniki wyborów
+
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("wykresPrzed.png")
+```
+
+# Komentarz
+Na tym wykresie na pierwszy rzut oka widoczne jest nieodpowiednie dobranie odleg³oœci miêdzy s³upkami do wielkoœci czcionki u¿ytej do podpisu s³upków. Z tego powodu nazwy parti politycznych PO, K'15 i Zl zlewaj¹ siê w jeden wyraz.  
+Ponadto bardzo dobrym pomys³em mog³o byæ umieszczenie na wykresie równie¿ danych odnoœnie szacunkowej liczby mandatów, które partie uzyska³yby. Jest ona œciœle zale¿na od procentowego wyniku. Dane te znalaz³y siê w przytoczonym artykule i oryginalnie zosta³y zwizualizowane na innym wykresie. W moim rozwi¹zaniu znalaz³y siê na s³upkiem.  
+Dodatkowo tytu³ wykresu lepiej pasuje jako opis osi y. W moim rozwi¹zaniu tytu³ brzmi: "Sondarzowe wyniki wyborów."  
+
+
+```{r 2}
+Name <- c("PiS", "PO", "K'15", "ZL", ".N", "K", "PSL")
+Name <- factor(Name, levels = Name)
+Percent <- c(32.5, 26.3, 10.4, 7.5, 6.1, 5.3, 4.8)
+Result <- c(196, 155, 43, 36, 21, 8, 1)
+
+table <- data.frame(Name, Percent,  Result)
+ggplot(table, aes(x = Name, y = Percent, fill = Name)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label=as.character(Percent),vjust=2),size=4,fontface="bold",color="white") +
+  geom_point(data=table, mapping=aes(x=Name, y=Percent+2), size=13, shape=21, color="white") +
+  geom_text(data=table, mapping=aes(x=Name, y=Percent+2, label=Result), size=5, color="white") +
+  labs(title="Sonda¿owe wyniki wyborów",y="Poparcie [%]",x="Partia", size = 2) +
+  guides(fill=FALSE) +
+  theme_minimal() +
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"))
+```
+
