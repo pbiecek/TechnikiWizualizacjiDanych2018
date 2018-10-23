@@ -1,0 +1,24 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(tidyverse)
+```
+![](wykres.png)
+
+```{r}
+library(readr)
+bezdomnosc <- read_csv("bezdomnosc.csv")
+bezdomnosc <- bezdomnosc %>% mutate(przyczyna = fct_reorder(przyczyna, ogolem))
+bezdomnosc <- gather(bezdomnosc, key = "key", "value", -przyczyna)
+bezdomnosc <- bezdomnosc %>% mutate(value = value / 100)
+```
+
+```{r}
+ggplot(bezdomnosc, aes(przyczyna, value, fill = key)) + geom_col(position = "dodge", width = 0.8)+ 
+  coord_flip() + 
+  labs(x = "", y = "", title = "Przyczyny bezdomności według płci osób bezdomnych\n I kategorii w 2011 roku") +
+  scale_y_continuous(labels = scales::percent) + theme_classic() + scale_fill_discrete(name= "" )+ theme(panel.grid.major.x = element_line(colour = "grey"))
+```
+

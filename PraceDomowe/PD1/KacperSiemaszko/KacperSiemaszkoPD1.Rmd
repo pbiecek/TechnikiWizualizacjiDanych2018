@@ -1,0 +1,63 @@
+---
+title: "Praca domowa nr 1"
+author: "Kacper Siemaszko"
+date: "October 16, 2018"
+output: "html_document"
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+library(ggplot2)
+library(reshape)
+library(stringi)
+library(RColorBrewer)
+```
+
+# Wprowadzenie
+
+Tematem, którym chciałbym się dzisiaj zająć jest przebieg wojny handlowej pomiędzy Chinami, a Stanami Zjednoczonymi. Na podstawie raportu "Global Financial Stability Report October 2018: A Decade after the Global Financial Crisis: Are We Safer?" (Źródło: https://www.imf.org/en/Publications/GFSR/Issues/2018/09/25/Global-Financial-Stability-Report-October-2018) zestawiłem ze sobą zmiany cen aktyw firm związanych z handlem międzynarodowym. Grupy, które zostały wyróżnione to:
+
+* Firmy, których sprzedają dużo towarów na rynku chińskim,
+* Sektory, które mają duży wpływ chińskich towarów,
+* Firmy, które zajmują się handlem międzynarodowym.
+
+Dwie pierwsze grupy pozwalają nam na określenie jak wojna handlowa wpływa na import/export pomiędzy Stanami, a Chinami. Ostatnia służy jako grupa kontrolna, która pozwoli przedstawić częściowo wpływ trendów na rynku światowym. Oprócz samych zmian wartości kapitału, pionowymi liniami oznaczone są wydarzenia, które dotychczas wpłynęły na przebieg wojny handlowej.
+
+# Przystosowanie danych
+
+```{r data.preparation, include=TRUE}
+data <- read.csv(file="china_US.csv")
+
+data$date <- as.Date(data$date, format = "%m/%d/%Y")
+data <- melt(data, id = "date", measure = colnames(data)[2:4])
+data$variable <- stri_replace_all(data$variable, " ", regex = "\\.")
+```
+
+# Kod generowania wizualizacji
+
+```{r data.visualization, include=TRUE, fig.width = 10}
+ggplot(data = data, aes(x=data$date, y = data$value, group = data$variable, color = data$variable)) +
+  geom_line(size=1) +
+  geom_vline(xintercept = as.Date("2018-07-06"), alpha=0.5, size = 1.5, color = "red") +
+  geom_vline(xintercept = c(as.Date("2018-05-20"), as.Date("2018-06-12"), as.Date("2018-08-14")), alpha = 0.5) +
+  scale_y_continuous(limits = c(min(data$value),max(data$value))) +
+  scale_x_date(date_breaks = "1 month") +
+  scale_color_manual(values = brewer.pal(3, "Accent")) + 
+  xlab("date") +
+  ylab("equity performace") +
+  labs(title = "Impact of U.S.-China Trade Tensions on Asset Prices\n") + 
+  theme_minimal() +
+  theme(legend.title = element_blank(), plot.title = element_text(hjust = 0.5), legend.position = "bottom")
+```
+
+
+Wydarzenia, które ukształtowały przebieg wojny handlowej:
+
+* 20 maja - Załagodzenie stosunków, Chiny zgadzają się na kupno większej ilości dóbr ze Stanów
+* 12 czerwca - Rozmowy pokojowe pomiędzy USA, a Koreą Północną
+* 6 lipca - Oficjalny początek wojny handlowej - nałożenie sankcji na Chiny przez Stany Zjednoczone
+* 20 sierpnia - Chiny zakładają sprawę przeciwko sankcjom USA do Światowej Organizacji Handlu
+
+
+Daty, które zaznaczyłem na wykresie pochodzą ze strony http://www.china-briefing.com/news/the-us-china-trade-war-a-timeline/

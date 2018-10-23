@@ -1,0 +1,56 @@
+---
+title: "Praca domowa 1"
+author: "Dominik Rafacz"
+date: "October 13, 2018"
+output: html_document
+---
+
+W niniejszej pracy domowej zwizualizuję dane prezentowane w poniższym artykule:
+
+(https://www.gry-online.pl/S013.asp?ID=111470)
+
+Artykuł ten zawiera informacje o 10 filmach, które zarobiły najwięcej w USA w weekend 5-7 października bieżącego roku. Poza tą informacją dane informują nas również, ile każdy z tych filmów zarobił w USA łącznie (tzn. od daty premiery) oraz ile zarobił łącznie na całym świecie.
+
+Będziemy korzystać z biblioteki $\tt{ggplot2}$ do tworzenia wykresów oraz pomocniczo z biblioteki $\tt{reshape}$, która pomoże przygotwać nam dane.
+
+```{r setup}
+library(ggplot2)
+library(reshape)
+```
+
+Najpierw ładujemy dane zapisane w oddzielnym pliku:
+
+```{r load}
+load("box_office.rda")
+```
+
+Następnie dane musimy przygotować - we wczytanej ramce danych każdy film posiada trzy liczbowe wartości i by móc zaprezentować je na wykresie słupkowym, użyjemy funkcji $\tt{melt}$ z pakietu $\tt{reshape}$, aby format danych był łatwiejszy do wyświetlenia za pomocą funkcji z pakiegu $\tt{ggplot2}$. Ponadto odpowiednio posortujemy wyjściową ramkę i zapiszemy w zmiennej porządek, w jakim chcemy prezentować słupki.
+
+```{r prepare}
+# Rozbicie ramki danych względem zmiennych
+box_office_long <- melt(box_office, id = "tytul", measure = c("przychod_weekendowy_w_USA", 
+                                                              "laczny_przychod_w_USA", 
+                                                              "laczny_przychod_na_swiecie"))
+box_office_long <- box_office_long[order(box_office_long$variable, decreasing = TRUE), ]
+ord <- order(box_office$przychod_weekendowy_w_USA, decreasing = TRUE)
+```
+
+Wreszcie - rysujemy wykres:
+
+```{r plot, fig.align='center', fig.width=9, fig.height= 7}
+ggplot(data = box_office_long, aes(x = reorder(tytul, rep(ord, 3)), fill = variable, y = value)) +
+  geom_col(position = position_identity(), 
+           width = (as.integer(factor(box_office_long$variable))+2)/6, 
+           col="black") +
+  scale_fill_discrete(name="Rodzaj przychodu", 
+                      labels=c("Weekendowy w USA", 
+                               "Laczny w USA", 
+                               "Laczny na swiecie")) + 
+  theme_light() +
+  theme(legend.position="bottom") +
+  xlab("Tytul filmu") +
+  ylab("Przychod (w milionach USD)") +
+  coord_flip()
+```
+
+Używamy wykresu słupkowego z nakładającymi się na siebie słupkami dla każdego filmu - zdecydowałem się na takie rozwiązanie, ponieważ dobrze obrazuje ono względną wielkość poszczególnych rodzajów przychodu każdego filmu, a także pozwala łatwo je porównać pomiędzy filmami.

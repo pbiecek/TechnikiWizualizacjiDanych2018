@@ -1,0 +1,76 @@
+---
+title: "Zadanie domowe 01 - Tomasz Klonecki"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=12) 
+```
+
+**Dane pochodza ze strony:**
+
+https://www.fakt.pl/pieniadze/finanse/smog-zabija-40-tys-polakow-rocznie-polskie-miasta-w-rankingu/sd0g655#slajd-1
+
+#Skrypt
+**Tworzenie tabeli z danymi:**
+```{R}
+city = c("Vidin","Dimitrovograd","Opoczno","Zywiec","Rybnik","Pszczyna","Dolny Voden",
+         "Krakow","Nowa Ruda","Nowy Sacz","Proszowice","Godow","Wodzislaw Slaski",
+         "Pleszew","Bielsko Biala","Sucha Beskidzka","Haskovo","Rawa Mazowiecka",
+         "Pazarjik","Jaroslaw","Sosnowiec","Knuruw","Dolni Lutyne","Naklo","Zabrze",
+         "Radomsko","Tomaszow Mazowiecki","Naklo Nad Notecia","Niepolomice",
+        "Piotrkow Trybunalski","Padova","Gliwice","Dabrowa Gornicza","Zdunska Wola",
+        "Wadowice","Otwock","Smolian","Gorna Oriahovica","Nowy Tomysl","Belotin",
+        "Brzeziny","Settimo Torinese","Piastow","Leini","Myszkow","Ceccano",
+        "Wagrowiec","Katowice","Tuchow","Soresina")
+
+country = c("Bulgaria","Bulgaria","Poland","Poland","Poland","Poland","Bulgaria",
+            "Poland","Poland","Poland","Poland","Poland","Poland","Poland","Poland",
+            "Poland","Bulgaria","Poland","Bulgaria","Poland","Poland","Poland",
+            "Bulgaria","Poland","Poland","Poland","Poland","Poland","Poland",
+            "Poland","Italy","Poland","Poland","Poland","Poland","Poland",
+            "Bulgaria","Bulgaria","Poland","Czechia","Poland","Italy","Poland",
+            "Italy","Poland","Italy","Poland","Poland","Poland","Italy")
+
+PM = c(43, 42 ,41 ,40.2 ,38.5, 38, 38, 37, 36.5, 36.3 ,36.1, 35.7, 34, 34, 34,
+       33, 32.9, 32.5, 32.45, 32.40, 32.35, 32.1, 32, 31.9, 31.85, 31.80, 31.75, 
+       31.70, 31.65 ,31.60 ,31.55, 31.50, 31.45, 31.40, 31.35, 31.30, 31.25, 31.20, 
+       31.15, 31.10, 31.05, 31.0, 30.9, 30.8, 30.7, 30.6, 30.5, 30.4, 30.3, 30.2)
+
+df <- data.frame(city,country,PM)
+```
+
+
+**Tworzenie wykresu przy uzyciu biblioteki ggplot2:**
+```{R}
+library(ggplot2)
+
+pl <- ggplot(df, aes(x = reorder(city,PM), # daj dane w kolejnosci z kolumny PM
+                     y = PM)) + 
+  geom_bar(stat = "identity", width = 0.5, aes(fill = country)) # dodaj warstwe bar-plot
+
+pl + 
+  coord_flip(ylim = c(0,50)) +    # obroc wykres o 90 stopni i ustaw limity osi y -> [0,50]
+  scale_fill_manual(values = c("gray40", 
+                               "gray60", 
+                               "gray80", 
+                               "brown3")) +                   # ustaw kolory dla krajow
+  ggtitle("50 most polluted cities in European Unions") +     # dodaj tytul
+  labs(y = "PM2.5 ["~mu~"g/m3]", x = element_blank()) +       # edytuje labele przy osiach
+  theme(panel.grid.major.y = element_blank(),                 # usun glowne linie poziome
+        panel.grid.major.x = element_line(colour = "black"),  # ustaw glowne linie pionowe na czarno
+        panel.grid.minor.x = element_blank(),                 # usun podrzedne linie pionowe
+        panel.background = element_blank(),                   # zmien tlo na biale
+        legend.title = element_blank(),                       # usun tytul legendy
+        legend.text = element_text(size = 15),                # ustawienia labeli legendy
+        plot.title = element_text(hjust=0.5, size = 25),      # ustawienia tytul wykresu
+        axis.title.x = element_text(size = 15),               # ustawienia nazwy osi x
+        axis.text.x = element_text(size = 12),                # ustawienia labeli przy osi x
+        axis.text.y = element_text(size = 11)                  # ustawienia labeli przy osi y
+        ) +
+  scale_y_continuous(expand = c(0, 0))         # drobna poprawka, aby wykres zgrywal sie w 0
+
+```
+
