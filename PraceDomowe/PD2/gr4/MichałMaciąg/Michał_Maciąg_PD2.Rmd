@@ -1,0 +1,83 @@
+---
+title: "Techniki Wizualizacji Danych - Praca Domowa 2"
+author: "Michał Maciąg"
+date: "23.10.2018"
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
+```{r, echo = FALSE}
+
+library(ggplot2)
+
+wedding_costs <- c(41521, 29613, 27091, 31191, 28465, 27245, 30586, 28320, 28240, 33406, 31335, 36902)
+
+region <- c("London", "East of England", "Wales", "West Mids", "East Mids", "Yorkshire", "North West", "North East",
+            "South West", "South East", "Scotland", "Northern Ireland")
+
+wedding_data <- data.frame(region = region, wedding_costs = wedding_costs)
+
+wedding_data$limits <- ifelse(wedding_costs > 40000, "Above 40 000", 
+                              ifelse(wedding_costs > 30000, "Above 30 000", "Above 20 000"))
+
+hj <- wedding_costs[order(region)]/10000
+
+```
+
+Postanowiłem poprawić poniższy wykres:
+
+```{r, fig.align = 'center'}
+
+ggplot(data = wedding_data, 
+  aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_bar(aes(fill=factor(limits)), position = 'dodge', stat="identity", width=.5) +
+  scale_fill_manual(values=c("#E066FF", "#9932CC", "#68229B")) +
+  theme(axis.line = element_blank(), 
+        plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6), legend.title = element_blank()) +
+  geom_text(aes(label=wedding_costs), position=position_dodge(width=0.9), vjust=-0.25) 
+
+```
+
+Poprawiony wykres:
+
+```{r, fig.align = 'center'}
+
+ggplot(data = wedding_data, aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_bar(aes(fill = factor(limits)), position = 'dodge', stat = "identity", width = 0.5) +
+  geom_hline(yintercept = mean(wedding_costs), colour = 'blue', alpha = 0.8, size = 1.5) + 
+  scale_fill_manual(values = c('yellow', 'orange', 'red')) +
+  theme_minimal() +
+  theme(axis.line = element_line(color = 'black'), 
+        panel.grid.major.x = element_blank(), 
+        legend.title = element_blank(),
+        legend.text = element_text(size = 10),
+        axis.text.x = element_text(angle = 45, size = 10, hjust = 1, face = 'bold'), 
+        axis.text.y = element_text(size = 10, face = 'bold'),
+        axis.title.x = element_text(size = 15, face = 'bold'),
+        axis.title.y = element_text(size = 15, face = 'bold'),
+        plot.title = element_text(size = 20, face = 'bold', hjust = 0.5)) +
+  labs(title = 'UK Wedding Costs By Region', 
+       x = 'Region of UK',
+       y = 'Wedding Costs in Pounds') + 
+  geom_text(label = wedding_costs[order(region)], position = position_dodge(width = 0.9), angle = 90, vjust = 0.5, hjust = hj) +
+  geom_text(label = 'Average costs', x = 9.6, y = 33500, color = 'blue')
+
+```
+
+Wprowadzone zmiany:
+
+1. zmiana tła wykresu na jednolite białe tło z poziomymi delikatnymi liniami
+2. zamiana kolorów słupków na bardziej czytelne i intuicyjne
+3. zmiana położenia liczb na słupkach, tak aby nie nachodziły na siebie
+4. dodanie lini średniego poziomu wydatków
+5. skrócenie tytułu wykresu
+6. poprawa jakości napisów, są bardziej czytelne
