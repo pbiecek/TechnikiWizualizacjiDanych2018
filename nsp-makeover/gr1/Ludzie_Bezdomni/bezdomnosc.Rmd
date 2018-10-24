@@ -1,0 +1,38 @@
+---
+title: "Poprawianie wykresów NSP"
+author: "Karol Saputa & Michał Pastuszka"
+date: "October 24, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Pierwotny wykres
+Strona raportu 132, wykres 25.
+
+
+## Nasz wykres
+
+```{r,echo=FALSE, out.width = "100%"}
+library(ggplot2)
+kobiety <- read.csv("kobiety.csv", header=FALSE, dec=",", na.strings="-")
+mezczyzni <- read.csv("mezczyzni.csv", header=FALSE, dec=",", na.strings="-")
+ogolem <- read.csv("ogolem.csv", header=FALSE, dec=",", na.strings="-")
+
+mezczyzni[,7] <- rep("Mężczyźni", times=nrow(mezczyzni))
+kobiety[,7] <- rep("Kobiety", times=nrow(kobiety))
+mezczyzni[,2:6] <- mezczyzni[,2:6]/6547
+kobiety[,2:6] <- kobiety[,2:6]/1115
+wynik <- rbind(mezczyzni,kobiety)
+wynik[is.na(wynik)] <- 0
+
+wynik2 <- wynik[c(-1,-12),]
+wynik3 <- wynik2
+wynik3[1:(nrow(wynik3)/2),2:6] <- wynik3[1:(nrow(wynik3)/2),2:6]/6547
+
+ggplot(wynik2, aes(x=V1, y=V2, fill=V7)) + geom_col() +coord_flip() +labs(y="",x="", fill="płeć", title="Wykres 25. Przyczyny bezdomności według płci osób \nbezdomnych pierwszej kategorii w 2011 roku") +
+    theme(plot.title = element_text(hjust=0.77)) + scale_y_continuous(labels = scales::percent_format(accuracy = 1))
+
+```
