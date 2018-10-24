@@ -1,0 +1,45 @@
+---
+title: "Praca domowa 1"
+author: "Małgorzata Wachulec"
+date: "14 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Źródło danych
+
+Dane użyte w tej pracy pochodzą z rankingu najtańszych kredytów hipotecznych na 20 lat na kwotę 300 000 zł, zawartych w artykule https://marciniwuc.com/ranking-kredytow-hipotecznych/. Na stronie znajduje się też ranking kredytów na okres 30 lat, jednak autor ich nie poleca, stąd moja praca bazuje na tabeli zawierającej szczegóły dotyczące 8 najtańszych kredytów hipotecznych dostępnych na polskim rynku na okres 20 lat. 
+
+Na stronie autora arykułu tabela zawiera informacje o kosztach odsetek, prowizji banku oraz o całkowitym koszcie danego kredytu. Uwzględniona jest również różnica między kosztem danego kredytu a kosztem tego najtańszego.
+
+## Wizualizacja danych
+```{r cars, echo=FALSE, warning=FALSE}
+#install.packages("ggplot2")
+#install.packages("data.table")
+library(ggplot2)
+library(data.table)
+```
+
+```{r plot}
+dt <- data.table(read.csv2("kredyty.csv", stringsAsFactors=FALSE))
+
+names(dt)[1]<-"Bank"
+tmp <- data.table(melt(dt[,-2], id="Bank"))
+tmp <- tmp[order(value)]
+tmp[,3] <- tmp[,3]/1000
+
+minprice <- min(dt[,2])/1000
+
+ggplot(tmp, aes(x=Bank, y=value, fill=variable)) +
+  geom_bar(stat="identity") +
+  coord_cartesian(ylim=c(300,450)) +
+  geom_hline(yintercept = minprice, linetype='dotted') +
+  labs(y = "Kwota do splaty w tys.", title="Najtansze kredyty na 300.000 zl na 20 lat")
+```
+
+Jako że porównywane kredyty zaciągane są na tę samą kwotę 300 000 zł, postanowiłam zmienić zakres osi y pokazującej całkowitą kwotę do spłaty do 300-450 tys. zł, tak aby wykres pokazywał istotne różnice w kosztach kredytów, takie jak koszt odsetek czy prowizji. Dzięki przerywanej linii można zauważyć, jak bardzo ceny kredytów różnią się od ceny najtańszego kredytu. Widać też, że niektóre kredyty oferowane przez banki (np. bank Pocztowy), mimo że żądają niższych odsetek i prowizji, doliczają inne koszty związane m.in. z obowiązkowym ubezpieczeniem domu czy życia konsumenta, przez co łączna kwota do spłaty jest wyższa niż w konkurencyjnych bankach.
+
+Nazwy banków zostały skrócone w celu poprawienia czytelności wykresu.
