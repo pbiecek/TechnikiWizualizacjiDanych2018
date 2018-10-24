@@ -1,0 +1,60 @@
+---
+title: "Techniki Wizualizacji Danych - Praca Domowa 1"
+author: "Michał Maciąg"
+date: "17.10.2018"
+---
+
+Dane do wizualizacji pochodzą ze strony Głównego Urzędu Statystycznego, dotyczą one stopy bezrobocia w Polsce w latach 2000-2016. Dane zostały zebrane dla 3 grup społecznych: całego społeczeństwa, osób młodych do 26 roku życia, osób po 26 roku zycia. Wybrałem takie dane, ponieważ temat bezrobocia jest ostatnio bardzo popularny i poświęcone mu są liczne programy TV. 
+
+```{r, warning=F}
+
+Stopa_bezrobocia_wszyscy <- c(16.1, 18.2, 19.9, 19.6, 19.0, 17.7, 13.8, 9.6, 7.1, 8.2, 9.6, 9.6, 10.1, 10.3, 9.0, 7.5, 6.2)
+Stopa_bezrobocia_mlodzi <- c(35.1, 41.0, 43.9, 43.0, 40.8, 37.8, 29.8, 21.7, 17.3, 20.6, 23.7, 25.8, 26.5, 27.3, 23.8, 20.8, 17.7)
+Stopa_bezrobocia_starzy <- c(13.4, 15.0, 16.7, 16.5, 16.2, 15.3, 11.7, 8.1, 5.9, 6.8, 8.0, 8.0, 8.5, 8.8, 7.6, 6.4, 5.2)
+Lata <- c(2000,	2001, 2002,	2003,	2004,	2005,	2006,	2007,	2008,	2009,	2010,	2011,	2012,	2013,	2014,	2015,	2016)
+
+
+```
+
+Do zaprezentowania danych wykożystałem pakiet R "ggplot2", który poznalismy ostatnio na zajęciach. Pozwolił on na wygenerowanie estetycznych i czytelnych wykresów słupkowych dla każdej z grup społecznych. Dodatkowo wykozystałem pakiet "patchwork", który pozwolił w niezwykle prosty sposób połączyć wygenerowane wykresy w jedne obrazek. Poniżej zamieszczam kod użyty do wizualizacji:
+
+```{r, warning=F}
+
+library(ggplot2)
+library(patchwork)
+
+p1 <- ggplot() +
+      geom_bar(aes(x = Lata, y = Stopa_bezrobocia_wszyscy), stat = "identity", fill = "royalblue4") +
+      geom_point(aes(x = Lata, y = Stopa_bezrobocia_wszyscy), size = 2,  col = "slategray") +
+      geom_text(aes(x = Lata, y = Stopa_bezrobocia_wszyscy, label = Stopa_bezrobocia_wszyscy), vjust = 1.6, color = "white", size = 3.5) +
+      ggtitle("Stopa bezrobacia w Polsce w latach 2000-2016 dla całego społeczeństwa") +    
+      xlab("Lata") +
+      ylab("Stopa bezrobocia [%]") +
+      ylim(0, 25) +
+      theme(panel.background = element_rect(fill = "palegreen3", colour = "palegreen3"))
+
+p2 <- ggplot() +
+      geom_bar(aes(x = Lata, y = Stopa_bezrobocia_mlodzi), stat = "identity", fill = "skyblue2") +
+      geom_point(aes(x = Lata, y = Stopa_bezrobocia_mlodzi), size = 2,  col = "slategray") +
+      geom_text(aes(x = Lata, y = Stopa_bezrobocia_mlodzi, label = Stopa_bezrobocia_mlodzi), vjust = 1.6, color = "white", size = 3.5) +
+      ggtitle("Stopa bezrobacia w Polsce w latach 2000-2016 dla osób młodych") +    
+      xlab("Lata") +
+      ylab("Stopa bezrobocia [%]") +
+      ylim(0, 50) +
+      theme(panel.background = element_rect(fill = "palegreen3", colour = "palegreen3"))
+
+p3 <- ggplot() +
+      geom_bar(aes(x = Lata, y = Stopa_bezrobocia_starzy), stat = "identity", fill = "slateblue3") +
+      geom_point(aes(x = Lata, y = Stopa_bezrobocia_starzy), size = 2,  col = "slategray") +
+      geom_text(aes(x = Lata, y = Stopa_bezrobocia_starzy, label = Stopa_bezrobocia_starzy), vjust = 1.6, color = "white", size = 3.5) +
+      ggtitle("Stopa bezrobacia w Polsce w latach 2000-2016 dla osób starszych") +    
+      xlab("Lata") +
+      ylab("Stopa bezrobocia [%]") +
+      ylim(0, 25) +
+      theme(panel.background = element_rect(fill = "palegreen3", colour = "palegreen3"))
+
+  p1/p2/p3
+
+```
+
+Na podstawie zdobytych danych oraz ich wizualizacji możemy wyciagnąć kilka ciekawych wniosków. Po pierwsze możemy zauważyć że aktualnie mamy do czynienia z najniższym od lat bezrobociem. Jest to bardzo dobra dla nas informacja. Jest to zapewne związane z dobrym stanem polskiej gospodarki. Po drugie łatwo zauważyć, że bezrobocie wśród osób młodych jest zdecydowanie wyższe niż wśród osób starszych, jest to zapewne spowodowane tym, że młode osoby potrzebują kilku lat aby dobrze odnależć się na rynku pracy. Na podstawie danych można by pokusić się o stwierdzenie, że w kolejnych latach bezrobocie będzie dalej spadać. Wymagałoby to jednak stworzenia odpowiedniego modelu, chociażby modelu MNK.
