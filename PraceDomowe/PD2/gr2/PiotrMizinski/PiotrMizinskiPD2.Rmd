@@ -1,0 +1,61 @@
+---
+title: "Praca domowa 2"
+author: "Piotr Miziński"
+date: "20 października 2018"
+output: html_document
+---
+
+## Pierwotny wykres
+
+Zadaniem drugiej pracy domowej było poprawienie jednego z wykresów stworzonych podczas pierwszej pracy domowej. Poniżej załączam grafikę, którą zdecydowano się odświeżyć.
+
+```{r w1, include = TRUE, echo=FALSE}
+  library(reshape2)
+  library(ggplot2)
+  dane <- read.csv("./dane.csv", sep = ";")
+  dat.m<-melt(dane, id.vars = "miasto")       
+  names(dat.m) <- c("miasto", "rynek", "cena")
+  ggplot(data = dat.m,aes(x = miasto, y = cena, fill = rynek))+
+    geom_bar(stat = "identity", width =  0.8, position=position_dodge())+
+    scale_fill_brewer(palette="Paired")+
+    theme_minimal() +
+    labs(title="Przeciętne ceny za mkw. mieszkania w największych miastach Polski na rynku wtórnym i pierwotnym", 
+         x="miasto", y = "średnia cena za mkw. (w zl)") +
+    theme(axis.text.x = element_text(angle = 45)) 
+```
+
+Przedstawiono na niej przeciętne ceny mkw. mieszkania w największych miastach Polski z podziałem na rynek wtórny i pierwotny w II kw. 2018r. To co można poprawić to przede wszystkim nieczytelne podpisy pod słupkami, które ciężko na pierwszy rzut oka przyporządkować.
+
+## Poprawiony wykres
+Poniżej pokazano zmienioną grafikę. Wykres przekręcono, tworząc wykres słupkowy poziomy, a nazwy miast umieszczono na słupkach co daje łatwiejszą ich identyfikacje. Dodatkowo posortowano miasta względem ceny na rynku pierwotnym, ułatwiając porównanie poszczególnych miejscowości między sobą.
+
+```{r d, echo=FALSE}
+  library(ggthemes)
+  library(ggplot2)
+  library(ggrepel)
+
+  dane <- read.csv("./dane.csv", sep = ";")
+  dane <- dane[with(dane, order(pierwotny)),]
+  dane <- dane[nrow(dane):1,]
+  dane$miasto <- factor(dane$miasto, levels = dane$miasto)
+  dat.m<-melt(dane, id.vars = "miasto")  
+  names(dat.m) <- c("miasto", "rynek", "cena")
+```
+
+```{r w2, include = TRUE, echo=TRUE, fig.width=10, fig.height=8}
+ggplot(data = dat.m,aes(x = miasto, y = cena, fill = rynek))+
+  coord_flip() +
+  geom_bar(stat = "identity", position=position_dodge())+
+  scale_fill_brewer(palette="Set2")+
+  theme_economist(horizontal=FALSE,base_size = 9)+
+  theme(axis.ticks.y = element_blank(),        
+        axis.text.y = element_blank(),
+        axis.text=element_text(size=16),
+        axis.title=element_text(size=14,face="bold"))+
+  labs(title="Przeciętne ceny za mkw. mieszkania w największych miastach Polski na rynku wtórnym i pierwotnym", 
+       x="miasto", y = "średnia cena za mkw. (w zl)") +
+  guides(fill=guide_legend(title="Rynek",reverse=TRUE))+
+  annotate(geom = 'text', label = dane$miasto, 
+           x = dane$miasto, y = 2500,colour='azure',size=7,fontface=2)+
+  scale_y_continuous(breaks=seq(0,8000,1000))
+```
