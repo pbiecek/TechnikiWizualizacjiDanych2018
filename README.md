@@ -39,6 +39,8 @@ Treść wkrótce
 
 Prezentacje można przygotować w 2-3 osobowych zespołach. Należy wybrać jeden z tematów poniżej, przeczytać, zrozumieć, przeczytać, przedstawić treści z tego artykułu w 5+5 min (5 minut na prezentacje i 5 minut na dyskusje).
 
+Prezentacje mają miejsce na wykładzie. Rozpoczynamy **28 listopada**.
+
 * Percepcja grafiki, https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73#.3kne5zu36
 * Kartogramy a Brexit, http://vis4.net/blog/posts/to-cartogram-or-not-to-cartogram-the-brexit/
 * Wizualizacja reszt, https://drsimonj.svbtle.com/visualising-residuals
