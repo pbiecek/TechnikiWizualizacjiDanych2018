@@ -1,0 +1,1096 @@
+test
+Skrzyszów
+Ziêbice
+Gdynia
+Boles³awiec
+¯abno
+Suwa³ki
+Bolimów
+Poznañ
+Barcin
+Reda
+Warszawa
+Zduñska Wola
+S³upsk
+Elbl¹g
+Szczerbice
+Kraków
+Warszawa
+Ochla
+Bytom
+Skawina
+Warszawa
+Chotomów
+Warszawa
+Wêgrów
+Baborów
+Piñczów
+Sosnowiec
+Kraków
+Zamoœæ
+Wêgorzyno
+Piotrków Trybunalski
+Porêba
+Œwiebodzice
+Chojnice
+Sosnowiec
+Wroc³aw
+Gdynia
+Kalisz
+Tanowo
+Warszawa
+Bia³ystok
+Katowice
+Szczawno-Zdrój
+£ódŸ
+Sosnowiec
+Ostrowiec Œwiêtokrzyski
+£ódŸ
+¯migród
+Stary S¹cz
+Lublin
+Lublin
+Lubin
+Koœcierzyna
+Warszawa
+£ódŸ
+Bia³ystok
+Gdañsk
+Wroc³aw
+Ostrzeszów
+Kielce
+Bydgoszcz
+Gdynia
+Wydminy
+Lublin
+Bydgoszcz
+Szyd³owiec
+Toruñ
+Przemyœl
+Kartuzy
+Radlin
+Sopot
+Kraków
+Gdañsk
+Miko³ów
+Oleœnica
+Lublin
+Warszawa
+Gdañsk
+Kraków
+Tarnowskie Góry
+I³awa
+Bytom
+Gdañsk
+W³oc³awek
+Konin
+Warszawa
+Wejherowo
+£ódŸ
+K³odzko
+Koœcian
+Warszawa
+Kraków
+Piaseczno
+Gryfino
+Tarnów
+Lubin
+Lublin
+Jêdrzejów
+Kolbuszowa
+Zawiercie
+Kraków
+Tarnowskie Góry
+Bielsko-Bia³a
+O³awa
+Katowice
+Radzymin
+Gniezno
+Miko³ów
+Dobra
+Ostrzeszów
+Warszawa
+£añcut
+Krajenka
+Gorzów Wielkopolski
+Toruñ
+Starogard Gdañski
+Pu³awy
+Tychy
+Jelenia Góra
+Warszawa
+£ódŸ
+¯órawina
+Bielsk Podlaski
+Przemyœl
+Kozy
+Toruñ
+Bia³ystok
+Piotrków Trybunalski
+¯ywiec
+Krotoszyn
+Wroc³aw
+Kraków
+G³ogów
+Tarnowskie Góry
+Siedlce
+Gdañsk
+Gdynia
+Olsztyn
+£ódŸ
+Wadowice
+Toruñ
+Œwidnica
+Burzenin
+Warszawa
+Bielsko-Bia³a
+Nowa Sól
+Warszawa
+Elbl¹g
+Strzelce Opolskie
+Oœwiêcim
+Marklowice
+Wo³ów
+Poznañ
+Warszawa
+Gliwice
+Starogard Gdañski
+PrzeŸmierowo
+Ko³obrzeg
+Bia³ystok
+Wroc³aw
+Pieniê¿no
+Miko³ów
+Wroc³aw
+Bia³ystok
+Zabrze
+Kamienica Polska
+Szczecin
+Gdañsk
+Gdañsk
+£ódŸ
+Sulechów
+Œwidwin
+Pleszew
+Zduñska Wola
+Œwiêtoch³owice
+Olsztyn
+Pszczew
+Koœcian
+Rzeszów
+Stalowa Wola
+Chodzie¿
+Mierzêcice
+Pruszków
+Gdynia
+Czêstochowa
+¯erków
+Gorzów Wielkopolski
+Nysa
+Gdynia
+£ódŸ
+Bystra Podhalañska
+Piñczów
+Gdañsk
+Karczew
+Warszawa
+Micha³owo
+Poznañ
+Swadzim
+Wroc³aw
+Ko³obrzeg
+Warszawa
+Lipinki
+Szczytno
+Jelenia Góra
+Grotniki
+Pielgrzymowice
+Swarzêdz
+Bia³ystok
+Kielce
+Iñsko
+Pu³tusk
+Bychawa
+Bartoszyce
+Legnica
+Wa³brzych
+Turek
+Pajêczno
+S³upsk
+Katowice
+Rajsko
+Lublin
+Gdañsk
+Brzeg Dolny
+Koluszki
+Gliwice
+Wa³brzych
+Lublin
+Krzeszowice
+Wola Batorska
+Chojnice
+Przeworsk
+Zduñska Wola
+Rawa Mazowiecka
+Kraków
+Gdynia
+Police
+Reda
+Bi³goraj
+¯ywiec
+Warszawa
+£êknica
+Nowy Targ
+P³ock
+Kraków
+Œrem
+Siemianowice Œl¹skie
+Sêdziszów Ma³opolski
+Warszawa
+Gniezno
+Kielce
+Golczewo
+Katowice
+Szczecin
+Oœwiêcim
+Skoczów
+Poddêbice
+Warszawa
+Jelenia Góra
+Sochaczew
+Gorzów Wielkopolski
+¯yrardów
+Rybnik
+Szczecin
+Wroc³aw
+Lidzbark
+Bydgoszcz
+Kêdzierzyn-KoŸle
+Jedlicze
+Marki
+Poznañ
+Domaniewice
+Malczyce
+Wyrzysk
+Poznañ
+Warszawa
+Jastrzêbie-Zdrój
+Zakopane
+Kostrzyn nad Odr¹
+Lwówek Œl¹ski
+Stalowa Wola
+D¹browa Górnicza
+Dobrodzieñ
+£ukta
+Stolno
+Reda
+Miasteczko Œl¹skie
+Zgierz
+Chojnów
+W³oc³awek
+Gdañsk
+Gdañsk
+Piaseczno
+Koszêcin
+W³oc³awek
+Warszawa
+Konstancin-Jeziorna
+Olsztyn
+Wojkowice
+Kraków
+Kraków
+Mielno
+Gdañsk
+Chorzów
+Szczecin
+Mielec
+Siedlce
+Bojano
+Wroc³aw
+Wodzis³aw Œl¹ski
+Legionowo
+Toruñ
+Kêdzierzyn-KoŸle
+Tomaszów Mazowiecki
+Nidzica
+Rzeszów
+Paw³owice
+S³upsk
+E³k
+Trzcianka
+¯ywiec
+Warszawa
+Bia³ystok
+Zb¹szyñ
+£ódŸ
+Turek
+Legionowo
+Wolin
+Bydgoszcz
+Janowo
+£ódŸ
+£uków
+Tczew
+Warszawa
+Dar³owo
+Choszczno
+Cieszyn
+Kraœnik
+Leszno
+Katowice
+Raci¹¿
+Stegna
+Szczytno
+Poznañ
+Warszawa
+Szczecin
+£ódŸ
+Stalowa Wola
+Przemyœl
+Z³otoryja
+£owicz
+Szczecinek
+Lidzbark Warmiñski
+Szczecin
+Kluczbork
+Przasnysz
+Nowy S¹cz
+Zawiercie
+Stanis³awów
+Szczecin
+Odolanów
+Choszczno
+Kraków
+Wierzchowo
+Poznañ
+Gliwice
+Kalisz
+Pruszcz Gdañski
+R¹czna
+Koszalin
+Paterek
+Gubin
+Szczecin
+Olsztyn
+Wroc³aw
+Oœwiêcim
+Skoczów
+P³ock
+Warszawa
+Warszawa
+Kalisz
+Elbl¹g
+Dar³owo
+Kisielice
+Sierpc
+Suwa³ki
+Warszawa
+Olesno
+Bydgoszcz
+Warszawa
+Warszawa
+Rumia
+Kie³czewo
+£aziska Górne
+Pi³a
+£ódŸ
+Cieszyn
+Gdañsk
+Pruszcz Gdañski
+Borowo
+Karczew
+Radomsko
+S³awa
+S³ubice
+Bytom
+Mszana Dolna
+Suwa³ki
+D¹browa Bia³ostocka
+Rzgów
+D¹browa Górnicza
+Bia³ystok
+Bia³ogard
+Poznañ
+P³ock
+Szczecin
+¯yrardów
+Przyborów
+Gdañsk
+Olesno
+Ksawerów
+¯ukowo
+Kraków
+G³ogów
+Celestynów
+Tarnowskie Góry
+Libi¹¿
+Poraj
+Jaworzno
+Mys³owice
+Poznañ
+Kraków
+Rzgów
+Warszawa
+Warszawa
+Gdañsk
+Narol
+Gdañsk
+Warzymice
+Che³mno
+D¹browa Górnicza
+Che³m
+Miêdzyrzecz
+Buk
+Brzozów
+Warszawa
+Leszno
+Kraków
+Bia³ystok
+Jaros³aw
+Poznañ
+Olesno
+Szczecinek
+Pleszew
+Stargard
+Gorzów Wielkopolski
+Poznañ
+Wroc³aw
+Szyd³owiec
+Rudziniec
+Piastów
+Szklarska Porêba
+Kutno
+Bia³ystok
+G³ubczyce
+Opoczno
+Szczytno
+Warszawa
+Stara Huta
+Góra Pu³awska
+Rybnik
+Oborniki
+Poznañ
+I³awa
+O¿arów Mazowiecki
+Wroc³aw
+Gdañsk
+Baniocha
+Koœcierzyna
+Legionowo
+Kutno
+P³ock
+Bia³ystok
+Kraków
+Stalowa Wola
+D¹browa Tarnowska
+Warszawa
+Gniezno
+Szczytno
+Nisko
+Pniewy
+Zielona Góra
+G³uszyca
+Kraków
+Warszawa
+Kraków
+Warszawa
+Gdów
+Piaseczno
+Rzeszów
+Warszawa
+Busko-Zdrój
+Luzino
+Opole Lubelskie
+Rzeszów
+Szczecin
+Gdañsk
+Jelenia Góra
+Lublin
+Ksi¹¿ Wielkopolski
+Siewierz
+Prudnik
+Dobrcz
+Czêstochowa
+Wroc³aw
+Toruñ
+Prudnik
+Nysa
+Warszawa
+Wadowice
+Lublin
+Legionowo
+£aziska Górne
+Kórnik
+Warszawa
+Zagnañsk
+Nysa
+Oborniki Wielkopolskie
+Gorzów Wielkopolski
+Gdynia
+Andrychów
+Kraków
+Pi³a
+Kwidzyn
+Bierutów
+Pszczyna
+Stopnica
+Szczecin
+Czêstochowa
+Kraków
+Jaworzno
+¯ary
+Poznañ
+Paw³owiczki
+Nowy Dwór Mazowiecki
+Warszawa
+Bia³a Podlaska
+Kraków
+Radom
+Bystrzyca K³odzka
+Kielce
+Gliwice
+Tarnów
+Koprzywnica
+Warszawa
+Kraków
+Dzia³dowo
+Gdynia
+Rzeszów
+Siedlce
+Grodzisk Wielkopolski
+Przemyœl
+Zakopane
+£êczna
+Gdañsk
+Olszanica
+Be³¿yce
+£ódŸ
+Bydgoszcz
+G³uszyca
+Zgorzelec
+Syców
+Opole
+Szczecin
+Dwikozy
+Raci¹¿
+Sanok
+Swarzêdz
+Poznañ
+Warszawa
+Zielona Góra
+Œrem
+Warszawa
+Niemodlin
+Miko³ów
+Inowroc³aw
+Warszawa
+Sosnowiec
+Ma³ogoszcz
+W¹wolnica
+Tarnów
+Szczecin
+W³adys³awowo
+¯ywiec
+Wilkowice
+¯ywiec
+Pabianice
+Nowy Dwór Mazowiecki
+Warszawa
+Kalisz
+Lidzbark
+Zielona Góra
+Szczecin
+Lêdziny
+Sandomierz
+Czêstochowa
+Zabrze
+£ódŸ
+Wa³brzych
+Opole
+Prudnik
+Police
+Kielce
+Bydgoszcz
+Olsztyn
+Stargard
+Goleniów
+Rybnik
+Wyszogród
+Rajcza
+Warszawa
+Poznañ
+Katowice
+Chabówka
+Bielsko-Bia³a
+Karczew
+Tomaszów Mazowiecki
+Skierniewice
+Kraœnik
+Piotrków Trybunalski
+Warszawa
+Jonkowo
+Puck
+Warszawa
+Œroda Œl¹ska
+Przemyœl
+D¹browa Górnicza
+Wodzis³aw Œl¹ski
+Pu³awy
+Sierakowice
+£apy
+Pi³a
+Wroc³aw
+Lêdziny
+Legnica
+£ódŸ
+Kozy
+Katowice
+Maków Mazowiecki
+Krasne
+Starogard Gdañski
+S³ubice
+Toszek
+Opoczno
+Czêstochowa
+Syców
+Lubin
+Gdynia
+Oborniki
+Che³mno
+Jastrzêbie-Zdrój
+Pabianice
+Wo³omin
+Szczecin
+Wroc³aw
+Poznañ
+Chorzów
+Warszawa
+Strzelin
+Nowy S¹cz
+Bia³ystok
+Tarnów
+Ciechanów
+£ódŸ
+Katowice
+Marki
+Wroc³aw
+Koszalin
+Skrwilno
+Œrem
+Lublin
+Dobroszyce
+Miñsk Mazowiecki
+Warszawa
+Myszków
+Tarnów
+Olsztyn
+Cz³uchów
+Gdynia
+Przasnysz
+Warszawa
+K³obuck
+Jastrzêbie-Zdrój
+Kamieniec Z¹bkowicki
+Gdañsk
+Serock
+Nak³o nad Noteci¹
+£ódŸ
+Rumia
+Kraków
+Bia³ystok
+Krosno
+Wa³cz
+Warszawa
+Zawiercie
+Katowice
+Œwidnica
+Warszawa
+Warszawa
+Pszczyna
+Koszalin
+Æmielów
+Rozprza
+Opalenica
+Grudzi¹dz
+Warszawa
+Warszawa
+Przemyœl
+Czastary
+Wroc³aw
+Warszawa
+Boles³awiec
+Mszana Dolna
+Lublin
+Warszawa
+Ostro³êka
+Zabrze
+D¹browa Górnicza
+Konstancin-Jeziorna
+Jawor
+Wroc³aw
+Kotlin
+Warszawa
+Nowy S¹cz
+Smolice
+Knurów
+Œwiêtoszów
+Porêba
+Tomaszów Mazowiecki
+Lwówek
+Warszawa
+Szczerców
+Nowa Wieœ
+Kraków
+Bydgoszcz
+Rydu³towy
+Warszawa
+Chojna
+Zebrzydowice
+Zielonki-Wieœ
+Podgórzyn
+Pu³awy
+Starachowice
+Warszawa
+Katowice
+Jachranka
+Ozorków
+Kurzêtnik
+Mielec
+Zielona Góra
+Czêstochowa
+Tuszynek Majoracki
+Ko³obrzeg
+Warszawa
+Warszawa
+Opole
+P³ock
+Wielichowo
+Warszawa
+Kock
+Gdynia
+£ódŸ
+Gorzów Wielkopolski
+Warszawa
+Leszno
+Krasne
+Libi¹¿
+Nowy Dwór Mazowiecki
+Strzelin
+Rzeszów
+¯yrardów
+Gdañsk
+Wroc³aw
+Ma³dyty
+Olkusz
+Piaseczno
+Zielonka
+Szczecin
+Warszawa
+Kluczbork
+Ostrów Wielkopolski
+Wroc³aw
+£ódŸ
+Zamoœæ
+D¹browa Górnicza
+Katowice
+Kêtrzyn
+Andrychów
+Lublin
+Gdañsk
+Toruñ
+W³oc³awek
+Opole
+Piaseczno
+Gliwice
+Iwonicz-Zdrój
+Opole
+Szczecin
+Konstancin-Jeziorna
+Racibórz
+Che³m
+Radom
+Katowice
+Olecko
+Pi³a
+Warszawa
+Wroc³aw
+E³k
+Jaros³aw
+£ódŸ
+Sosnowiec
+Nowy S¹cz
+Toruñ
+S³omniki
+Wojkowice
+Zawiercie
+Luboñ
+Sanok
+Bytów
+Zamoœæ
+Wroc³aw
+Grajewo
+Sêdziszów
+Kêty
+Kraków
+Bydgoszcz
+Warszawa
+Kutno
+Kraków
+Chorzów
+Lesko
+Gryfino
+Poznañ
+Kolonowskie
+Olecko
+Grójec
+Bytom
+£ódŸ
+Lubañ
+Warszawa
+Staszów
+Leszno
+Warszawa
+Swadzim
+Kêpno
+Swarzêdz
+P³ock
+Wroc³aw
+Czêstochowa
+Niebylec
+Kutno
+Poznañ
+Gdynia
+Leszno
+Szczecin
+Lubsko
+Gdynia
+Szczecin
+Zambrów
+Che³mno
+Poznañ
+£ódŸ
+Opole
+Warszawa
+Karpacz
+Nowa Ruda
+Józefów
+Kraków
+Pruszków
+Wrzeœnia
+Wiœniowa
+Wo³omin
+Kraków
+Zgorzelec
+Kielce
+Warszawa
+Katowice
+Czêstochowa
+Kêdzierzyn-KoŸle
+Czêstochowa
+Zielona Góra
+Przemyœl
+Ogrodzieniec
+Pszów
+Orzesze
+Poznañ
+Tarnów
+Opole
+Skar¿ysko-Kam. Ske
+Bydgoszcz
+Wroc³aw
+Gdañsk
+Elbl¹g
+Gdañsk
+Kraków
+W³oc³awek
+Gdynia
+Malbork
+Kielce
+Warszawa
+G³ubczyce
+Z¹bki
+Zgorzelec
+Gubin
+Zamoœæ
+Pi³a
+Ruda Œl¹ska
+Poznañ
+Gdynia
+Kielce
+Wolbrom
+Rzgów
+Marki
+Kraków
+Warszawa
+Gdynia
+Milejów
+Barwice
+Grójec
+£obez
+Kraków
+Kraków
+Warszawa
+Moszczenica
+Kraków
+Olsztyn
+Bydgoszcz
+Katowice
+Nowy S¹cz
+S³awa
+Jasienica
+Wyœmierzyce
+Bralin
+Halinów
+Nowy Dwór Mazowiecki
+Lubin
+Lwówek Œl¹ski
+Warszawa
+Lipsko
+Poznañ
+Warszawa
+Warszawa
+Kraków
+Olsztynek
+Z¹bkowice
+Gliwice
+Trzcianka
+Olsztyn
+Rzeszów
+Warszawa
+Nowa Sól
+Jaworzno
+Grodków
+Gorzów Wielkopolski
+Warszawa
+Lublin
+Bia³ystok
+Gdynia
+Katowice
+Kargowa
+K³oczew
+Warszawa
+Bytom
+Skwierzyna
+Bydgoszcz
+Skierniewice
+Boles³aw
+Krynica-Zdrój
+Warszawa
+Gdañsk
+£ódŸ
+Warszawa
+Zielona Góra
+Piotrków Trybunalski
+Oœwiêcim
+Starogard Gdañski
+Che³mek
+£ódŸ
+Toruñ
+Warszawa
+Jaraczewo
+P³ock
+Gdynia
+Warszawa
+Rzeszów
+Warszawa
+Kutno
+Bydgoszcz
+Jastrzêbie-Zdrój
+£ódŸ
+Warszawa
+Poznañ
+Poznañ
+Koszalin
+Sosnowiec
+Warszawa
+D¹browa Górnicza
+Tomaszów Lubelski
+Bia³ystok
+Bydgoszcz
+Piaseczno
+Bia³ystok
+Paw³owice
+Warszawa
+Warta
+Kielce
+Poznañ
+£ódŸ
+Sopot
+Bia³e B³ota
+Rzepin
+Swarzêdz
+Warszawa
+Dêblin
+Sopot
+Warszawa
+Kraków
+Toruñ
+S³upsk
+Kraków
+Warszawa
+Kraków
+Sosnowiec
+Che³m
+Helenów
+Wieliczka
+Lublin
+Poznañ
+Miko³ów
+£ódŸ
+Myœlenice
+Czechowice-Dziedzice
+Suszec
+Bydgoszcz
+Nowy S¹cz
+Legnica
+Warszawa
+Boles³awiec
+Krzeszowice
+Tarnobrzeg
+Piekary Œl¹skie
+G³ogówek
+Warszawa
+Kraków
+Tarnobrzeg
+Czarne
+Radom
+Legnica
+Mielec
+Zawiercie
+Szczecin
+Bydgoszcz
+Elbl¹g
+Police
+Warszawa
+Warszawa
+Kraków
+¯arów
+£ódŸ
+Wa³brzych
+Milanówek
+Wa³brzych
+Twarogi
+Tuszyn
+Oœwiêcim
+£ódŸ
+Warszawa
+Kielce
+Bytom
+Warszawa
+Bytom
+Warszawa
+Solec Kujawski
+Poznañ
+Zakopane
+¯uromin
+Augustów
+Poznañ
+Wieluñ
+Elbl¹g
+Nowy Tomyœl
+Bydgoszcz
+Myœlenice
+Grodzisk Mazowiecki
+W³oc³awek
+Swarzêdz
+Poznañ

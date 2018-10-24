@@ -1,0 +1,60 @@
+---
+title: "Prywatność w internecie (CBOS)"
+author: "Mateusz Polakowski"
+date: "14 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<div style="text-align: justify">
+
+### Źródło danych
+Dane uzyskałem z jednego z artykułów CBOS News, który traktuje o prywatności online użytkowników. Są odpowiedziami ankietowanych na pytanie jakie części swojego prywatnego, realnego życia, osoby udostępniają w internecie i dla jakiego grona osób. [Interaktywny link do artykułu](https://www.cbos.pl/PL/publikacje/news/2018/31/newsletter.php). <br/>
+Na wykresie dane zostaną przedstawione w punktach procentowych, w podziale na odpowiedzi z roku 2015 (wyszarzone kolory) oraz aktualne, <br/> z 2018 roku.
+
+```{r echo = FALSE, results = 'hide'} 
+library(ggplot2)
+library(data.table)
+
+ankieta2015 <- data.table(cbind(
+  rep(c("Wszystkim (2015)", "Zaufanym (2015)", "Nikomu (2015)"), times = 11),
+  rep(c("Adres mailowy", "Zdjecie", "Data urodzenia", "Informacje, zainteresowania",
+        "Lokalizacja", "Stan cywilny", "Numer telefonu", "Adres zamieszkania", "Miejsce pracy",
+        "Podpisana opinia", "Wideo z twarza"), each = 3),
+  c(13, 50, 36, 24, 28, 48, 15, 41, 43, 11, 24, 65, 11, 26, 62, 12,
+    23, 65, 4, 27, 68, 6, 29, 65, 7, 20, 73, 9, 14, 77, 3, 10, 87)
+))
+colnames(ankieta2015) <- c("Komu", "Co", "PP")
+
+ankieta2018 <- data.table(cbind(
+  rep(c("Wszystkim (2018)", "Zaufanym (2018)", "Nikomu (2018)"), times = 11),
+  rep(c("Adres mailowy", "Zdjecie", "Data urodzenia", "Informacje, zainteresowania",
+        "Lokalizacja", "Stan cywilny", "Numer telefonu", "Adres zamieszkania", "Miejsce pracy",
+        "Podpisana opinia", "Wideo z twarza"), each = 3),
+  c(9, 47, 44, 26,29, 45, 14, 37, 49, 10, 25, 65, 6, 26, 67, 7, 23, 70,
+  5, 25, 70, 4, 21, 75, 7, 17, 75, 10, 14, 76, 7, 11, 82)
+))
+colnames(ankieta2018) <- c("Komu", "Co", "PP")
+```
+
+
+```{r}
+ggplot() +
+  scale_color_manual(values = c('red3', 'red', 'springgreen3', 'green', 'yellow3', 'yellow')) +
+  geom_point(data = ankieta2015, aes(x = as.numeric(PP), y = Co, color = Komu, size = 1, alpha = 1/10)) + 
+  geom_point(data = ankieta2018, aes(x = as.numeric(PP), y = Co, color = Komu, size = 1)) + 
+  xlab('') + ylab('') + 
+  theme(text=element_text(size=15)) +
+  guides(size = FALSE, alpha = FALSE) + 
+  ggtitle('Udostępnianie informacji w internecie')
+```
+
+### Komentarz
+
+Jak widać, istnieją różnice między rokiem 2015 a 2018. Przede wszystkim można zauważyć spadający trend dzielenia się z innymi swoimi całkowicie prywatnymi sprawami, jak na przykład data urodzenia, lokalizacja, adres zamieszkania. Ewidentnie ogół ludzi z biegiem czasu zaczął rozumieć, że istnieją również ciemne strony internetu, w których ich informacje są wykorzystywane. <br/>
+Niewielkie zmiany w niektórych kategoriach jak, między innymi numer telefonu, czy zdjęcie sugerują, że miejsca, w których się je udostępnia, nie tracą na wiarygodności pod tymi względami (portale społecznościowe, serwisy zawodowo-biznesowe). <br/>
+Mimo tego, w większości przypadków internet stał się tworem, któremu społeczeństwo coraz mniej potrafi zaufać. <br/>
+</div>
