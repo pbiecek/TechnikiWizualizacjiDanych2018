@@ -13,7 +13,8 @@ Prace domowe należy zgłaszać przez GitHub. [Instrukcja jak korzystać](http:/
 * [1] W: [Historia grafiki statystycznej](http://biecek.pl/Eseje/indexHistoria.html); L: [ggplot2 - pierwsza krew](https://pbiecek.gitbooks.io/przewodnik/content/Wizualizacja/jak_tworzyc_wykresy_ggplot2.html).
 * [2] W: [Gramatyka grafiki](http://biecek.pl/Eseje/indexGramatyka.html), [Standardy w komunikacji](http://www.ibcs-a.org/); L: [ggplot2 - skale, statystyki, koordynaty](https://pbiecek.gitbooks.io/przewodnik/content/Wizualizacja/jak_tworzyc_wykresy_ggplot2.html)
 * [3] W: [Nie rób tego w domu](http://biecek.pl/Eseje/indexPomylka.html); L: [poprawiamy NSP](http://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/)
-* [4] W: -; L: [wizualizacja danych z Eurostatu](https://journal.r-project.org/archive/2017/RJ-2017-019/index.html)
+* [4] W: [Kolory](http://biecek.pl/Eseje/indexKolory.html); L: [wizualizacja danych z Eurostatu](https://journal.r-project.org/archive/2017/RJ-2017-019/index.html)
+* [5] W: [Droga wzrokowa](http://biecek.pl/Eseje/indexObraz.html); L: [Grafika interaktywna i rCharts](http://pbiecek.github.io/Przewodnik/Wizualizacja/jak_tworzyc_interaktywne_wykresy.html)
 
 
 # Zasady zaliczenia
@@ -27,13 +28,12 @@ Zaliczenie jest oparte o trzy składowe:
 W sumie uzyskać można do 100 punktów. 51 punktów zalicza przedmiot.
 
 
-
 # Projekty
 
 Projekty można realizować w zespołach 1-3 osobowych. 
 Każdy projekt należy realizować w innym zespole. 
 
-Treść wkrótce
+Termin oddania projektu 1 to **21 listopada** - 10:15 rano (wykład).
 
 # Prezentacje studentów
 
