@@ -1,0 +1,41 @@
+---
+title: "Techniki Wizualizacji Danych - PD2"
+author: "Andrzej Szczesiak"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+```{r, echo=FALSE}
+min_wage <- data.frame(values = c(700, 760, 760, 800, 824, 849, 899.1, 936, 1126, 1276, 1317, 1386, 1500, 1600, 1680, 1750, 1850, 2000, 2100, 2250),
+                       years = c(2000:2019))
+```
+
+### Wykres oryginalny
+
+Wykres przedstawia wysokość płacy minimalnej brutto w Polsce w latach 2000-2019.
+
+```{r, echo=FALSE}
+knitr::include_graphics("original.png")
+```
+
+### Wykres zmieniony
+
+```{r, echo=FALSE, fig.width=12}
+ggplot(data = min_wage, aes(x = years, y = values)) +
+  geom_bar(stat = "identity", fill = "red", width = 0.3, position = position_dodge(width = 0.85)) +
+  geom_text(aes(label = values), size = 3, vjust = -2, color = "black") +
+  scale_x_continuous(breaks = pretty(min_wage$years, n = 20)) +
+  scale_y_continuous(limits = c(0, 2500)) +
+  ggtitle("Wysokość płacy minimalnej brutto w Polsce w latach 2000-2019") +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 20))
+```
+
+### Uzasadnienie
+
+Słupki oryginalnego wykresu były różnych kolorów, co nie jest potrzebne w przypadku wizualizowania wartości tego samego typu. Ponadto kolory się powtarzały sugerując niewystępujące w danych związki. Z tego powodu na zmodyfikowanym wykresie użyto tylko jednego koloru. Zmieniony został tytuł i usunięte niepotrzebne etykiety osi, co pozwala lepiej skoncentrować się na zawartości wykresu. Zmniejszono szerokość słupków i zwiększono odstępy między nimi tak, aby łatwiej je było odróżnić, a wartości liczbowe umieszczono nad nimi, żeby uniknąć częściowego wystawania poza figurę. Wartości na osi x zostały zagęszczone, co pozwala szybciej określić wartość płacy minimalnej dla dowolnego roku w uwzględnionym okresie.

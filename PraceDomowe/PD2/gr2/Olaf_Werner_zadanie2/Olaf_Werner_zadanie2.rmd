@@ -1,0 +1,60 @@
+---
+title: "Poprawiony wykres"
+author: "Olaf Werner"
+date: "October 22, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, warning=FALSE, comment=FALSE, message=FALSE}
+library(ggplot2)
+library(readxl)
+library(dplyr)
+df <- read_excel("obserwujacy.xlsx", sheet = 1)
+```
+
+Artykuł zawiera informacje o działalności ugrupowań politycznych na Twitterze w okresie 1.10-7.10.2018
+http://www.politykawsieci.pl/raport-twitter-podsumowanie-dzialan-partii-politycznych-01-10-07-10-2018/
+
+#Stary Wykres
+
+```{r}
+ggplot(data=df, aes(x=Partia, y=Liczba, fill=Data)) +
+  geom_bar(stat="identity") + 
+  scale_fill_brewer(palette="Paired")  + 
+  labs(x="Partia polityczna", y="Liczba nowych obserwujących") +
+  ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia")
+```
+
+Ten wykres ma dwie główne wady: po pierwsze ciężko odczytać z niego proporcje między poszczególnymi dniami ponieważ podstawy słupków z danego dnia są na różnych wysokościach, po drugie w złej kolejności ułożone są warstwy w słupkach, powinny być na odwrót.
+
+#Nowe wykresy
+
+```{r}
+df["Data"]<-c("01.10","02.10","03.10","04.10","05.10","06.10","07.10")
+ggplot(data = df,aes(x=Data,y=Liczba,colour=Partia,group=Partia))+
+  geom_point()+
+  geom_line()+
+  scale_color_brewer(palette="Set1")+ 
+  labs(x="Data", y="Liczba nowych obserwujących") +
+  ggtitle("Zmiany liczby obserwujących na przestrzeni tygodnia")
+
+group_by(df,Partia)%>%
+  mutate(Suma=cumsum(Liczba))->df2
+
+ggplot(data = df2,aes(x=Data,y=Suma,colour=Partia,group=Partia))+
+  geom_point()+
+  geom_line()+
+  scale_color_brewer(palette="Set1")+ 
+  labs(x="Data", y="Liczba nowych obserwujących(kumulatywnie)") +
+  ggtitle("Zmiany liczby obserwujących na przestrzeni tygodnia(kumulatywnie)")
+
+```
+
+Zrobiłem dwa wykresy by pokazać dwa różne spojrzenia: pierwszy wykres mówi nam jakie były zmiany miedzy kolejnymi dniami(na przykład łatwo wyczytać w danym dniu dla której parti była największa zmiana), zaś drugi wykres mówi nam o kumulatywnych różnicach.
+
+
+

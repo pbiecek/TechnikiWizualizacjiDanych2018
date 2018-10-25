@@ -1,0 +1,50 @@
+---
+title: "TWD - PD2"
+author: "Bartek Sielicki"
+date: "24 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Praca Domowa nr 2
+
+Przerabiany wykres przedstawia wysokość minimalnego wynagrodzenia (brutto) w Polsce. Dotyczy lat 2000 - 2019.
+
+```{r}
+wage <- c(700, 760, 760, 800, 824, 849, 899, 936, 1126, 1276, 1317, 1386, 1500, 1600, 1680, 1750, 1850, 2000, 2100, 2250)
+year <- c(2000:2019)
+data <- data.frame(wage=wage, year=year)
+```
+
+**Oryginalny wykres**
+```{r}
+ggplot(data=data, aes(x=year, y=wage)) +
+  geom_col(fill=year) +
+  geom_text(aes(label=wage), size=3, vjust=2, color="white") +
+  ylab("Zarobki minimalne w zlotówkach brutto") + xlab("Lata") + 
+  ggtitle("Wykres zarobków Polakow na przestrzeni ostatnich lat") +
+  theme(plot.title=element_text(hjust=0.5))
+```
+
+**Nowy wykres**
+```{r}
+ggplot(data=data, aes(x=year, y=wage, label=wage)) +
+  geom_point(shape=15, size=2, colour='#FFA057') +
+  geom_line(colour='#FFA057') +
+  geom_label(size=2) +
+  labs(
+    title="Minimalne wynagrodzenie miesięczne w Polsce w latach 2000 - 2019\n",
+    x="Lata", y="Wynagrodzenie [zł]", color=""
+  ) +
+  theme_bw()
+```
+
+Zmienione zostały następujące elementy:
+
+ - Geometria: punkty wydają się w tym przypadku bardziej czytelne niż słupki.
+ - Kolory: zastosowanie tylko jednej barwy poprawiło estetykę wykresu.
+ - Etykiety: dodanie oznaczenia jednostki na pionowej osi.

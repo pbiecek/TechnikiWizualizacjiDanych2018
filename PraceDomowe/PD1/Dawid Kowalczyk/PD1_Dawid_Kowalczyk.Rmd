@@ -1,0 +1,43 @@
+---
+title: "Praca domowa 1"
+author: "Dawid Kowalczyk"
+date: "14 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Celem pracy jest przedstawienie danych znalezionych w pewnym artykule. Do wizualizacji użyto biblioteki ggplot2.
+
+Źródło artykułu: "https://sportowefakty.wp.pl/skoki-narciarskie/relacja/93258/2-trening-w-klingenthal"
+
+Dane zawierają informacje o wynikach klasyfikacji 67 skoczków z treningu w Klingenthal, 2.10.2018.
+
+```{r, echo=FALSE}
+
+data <- read.csv("C:/Users/Dawid Kowalczyk/Google Drive/Studia MiNI PW/III semestr/Techniki wizualizacji danych/PD1/Skoki.csv", sep = ";", encoding = "UTF-8")
+
+data = data[1:20,]
+
+names(data)[3] = "Długość skoku"
+
+data$Skoczek <- factor(data$Skoczek, levels = data$Skoczek[order(data$`Punkty`)])
+library(ggplot2)
+
+theme_set(theme_bw())
+
+ggplot(data, aes(x=`Skoczek`, y=`Długość skoku`, label=`Punkty`)) + 
+  geom_point(stat='identity', color = "yellow",  size=8)  +
+  geom_text(color="black", size=3) +
+  labs(title="Klasyfikacja skoczków", 
+       subtitle="Trening w Klingenthal, 2.10.2018") + 
+  ylim(120, 150) +
+  coord_flip()
+
+
+
+```
+
+Wykres ukazuje wyniki tylko wyniki najlepszych 20 skoczków (klarowniejszy odczyt), skoczkowie posortowani są wg liczby punktów w klasyfikacji. Zależność liczba puktów - długość skoku została zachowana, poza nielicznymi przypadkami.
