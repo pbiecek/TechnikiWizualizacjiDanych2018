@@ -1,0 +1,54 @@
+---
+title: "Zadanie 2"
+author: "Aleksandra Gacek"
+date: "21/10/2018"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Wykres bazowy
+
+W ramach zadania zdecydowałam się na poprawę wykresu dotyczącego średnich zarobków emigrantów na świecie. Wykres ten bazował na danych z artykułu: 
+https://praca.interia.pl/news-gdzie-wyjechac-zeby-zarobic-najwiecej-oto-najlepsze-kraje-do,nId,2643773. Wykres wydał mi się mało przejrzysty, dodatkowo, jeśli chodzi o zarobki w Polsce, podana była mediana, zamiast średniej, a sposób jej prezentacji mógł wprowadzać w błąd, ponieważ możnaby odnieść wrażenie, że jej podpis dotyczy kolumny opisującej zarobki w Szwajcarii.
+
+![](przed.png)
+
+
+# Poprawki
+
+W pierwszej wersji wykresu zaprezentowane były potrzebne informacje, jednakże zdecydowałam się na pewne poprawki:
+
+* zmiana tła w celu zwiększenia przejrzystości wykresu
+* zmiana orientacji wykresu
+* zwiększenie odstępu pomiędzy kolumnami
+* zmiana średniej zarobków w Polsce oraz jej prezentacji - wcześniej podana była mediana, podczas gdy wwypadku pozostałych krajów jest to średnia
+* dodanie informacji o dokładnych wartościach liczbowych zarobków dla poszczególnych krajów
+* dodanie jednostki do opisu parytetu siły roboczej
+
+```{r new_plot, warning=FALSE, fig.height=7, fig.width=10}
+library(ggplot2)
+
+df <- data.frame(
+  "kraje" = c("Szwajcaria", "USA", "Hong Kong", "Chiny", "Singapur", "ZEA", "Indie", "Indonezja", "Japonia", "Australia", "Polska"),
+  "Zarobki" = c(202.9, 185.1, 178.7, 172.7, 162.2, 155, 131.8, 128, 127.4, 125.8, 15.5),
+  "PSN" = c(58087, 59495, 61393, 18066, 93905.5, 69896.3, 7183, 12378, 44426, 50334, 29521)
+)
+
+df <- df[order(df$Zarobki,decreasing = FALSE),]
+
+df$kraje <- factor(df$kraje, levels = df$kraje)
+
+p <- ggplot(data = df, aes(x = kraje, y = Zarobki, fill = PSN))  + 
+  geom_col(size=4, width=0.7) + 
+  ggtitle(label = "Srednie zarobki imigrantow", subtitle = "top 10 krajow")  + 
+  geom_text(aes(label = as.character(Zarobki), y = Zarobki + 5), size = 5) + 
+  ylab("Zarobki w tysiacach dolarow (1000$)") + 
+  xlab('Kraj') +
+  theme_light() + 
+  labs(fill = "PSN ($)") +
+  theme(axis.text.x = element_text(face = 'bold'))
+p
+```
+
