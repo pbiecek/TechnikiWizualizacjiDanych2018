@@ -13,6 +13,8 @@ ggplot(lp, aes(x = long, y = lat, group = group, fill = CNTR_CODE)) +
   geom_polygon() +
   coord_map()
 
+#alterntywnie ggalt::coord_proj
+
 # kraje poza europa
 # https://ec.europa.eu/eurostat/documents/345175/501899/NUTS-regions-2015-EU28-CC-EFTA.png
 
@@ -34,6 +36,19 @@ filter(lp, CNTR_CODE == "PL", LEVL_CODE == 3) %>%
   geom_text() +
   coord_map()
 
+# najlepsze rozwiazanie (gratulacje dla gr 4)
+
+names_df <- filter(lp, CNTR_CODE == "PL", LEVL_CODE == 3) %>%
+  group_by(NUTS_NAME) %>% 
+  summarise(long = mean(long),
+            lat = mean(lat))
+
+filter(lp, CNTR_CODE == "PL", LEVL_CODE == 3) %>%
+  group_by(NUTS_NAME) %>% 
+  ggplot(aes(x = long, y = lat, group = group, fill = NUTS_NAME)) + 
+  geom_polygon(color = "black") +
+  geom_text(data = names_df, aes(x = long, y = lat, label = NUTS_NAME), inherit.aes = FALSE) +
+  coord_map()
 
 # search eurostat
 
