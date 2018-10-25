@@ -1,0 +1,30 @@
+---
+title: "HB_AR_TD1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("dplyr")
+library("ggplot2")
+library("RColorBrewer")
+kolory <- brewer.pal(3, "Set1")
+```
+
+## PRZED:
+Wykres 16. Ludność w wieku 13 lat i więcej według poziomu wykształcenia i krajupierwszego obywatelstwa w 2011 roku
+Strona 85
+
+## PO: 
+
+```{r echo = FALSE, out.width="100%"}
+data <- read.csv("data.csv")
+
+ggplot(data, aes(x=data$Kraje, y=data$Procent, fill=data$Wyksztalcenie)) + 
+  geom_bar(stat="identity", position = "dodge")+
+  ylab("Procent") + xlab("Kraj") + scale_fill_manual(values = kolory, name="Rodzaj wykształcenia") +
+  facet_grid(cols= vars(Kraje), scales = "free") + 
+  theme(axis.text.x = element_blank(), axis.ticks.x= element_blank(), legend.position="bottom") + 
+  ggtitle("Ludność w wieku 13 lat i więcej według kraju urodzenia,\npoziomu wykształcenia w 2011 roku") 
+```
+
