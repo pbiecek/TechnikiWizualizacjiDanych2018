@@ -1,0 +1,73 @@
+---
+title: "NSP Makeover"
+author: "Łukasz Brzozowski"
+output: html_document
+---
+```{r, echo = FALSE, message = FALSE}
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
+library(reshape2)
+
+read.table("./nsp-makeover/gr2/Lukasz_Brzozowski/Lukasz_Brzozowski/ksieza.csv", sep = "\t", header = TRUE) %>% 
+  mutate(Miejsce = c("Świat", "Świat", "Europa", "Europa", "Polska", "Polska")) %>% 
+  melt %>% 
+  mutate(variable = as.numeric(sub("X", "", variable)),
+         Miejsce = factor(Miejsce),
+         Miejsce = factor(Miejsce, levels = levels(Miejsce)[c(3, 1, 2)])) %>% 
+  filter(Rodzaj == "księża") %>% 
+  ggplot(aes(x = variable, y = value, fill = Miejsce)) + 
+  geom_area(position = "identity")
+
+ksieza <- read.csv("ksieza.csv", sep = "\t", header = TRUE)
+ksieza <- ksieza[c(1, 3, 5),]
+ksieza <- t(ksieza)
+ksieza <- ksieza[c(1, 3:nrow(ksieza)),]
+ksieza <- ksieza[-1,]
+ksieza <- cbind(c(1990, 1994, 1998, 2002, 2006, 2010), ksieza)
+rownames(ksieza) <- 1:nrow(ksieza)
+colnames(ksieza) <- c("Rok", "Świat", "Europa", "Polska")
+ksieza <- as.data.frame(apply(ksieza, 2,function(x) as.numeric(x)))
+```
+```{r, echo = FALSE, message = FALSE}
+p1 <- ggplot(data = ksieza, aes(Rok)) +
+  geom_line(aes(y = ksieza[,2]), color = "lightblue") +
+  geom_line(aes(y = ksieza[,3]), color = "pink") +
+  geom_line(aes(y = ksieza[,4]), color = "lightgreen") +
+  geom_area(aes(y = ksieza[,2]), fill = "lightblue") +
+  geom_area(aes(y = ksieza[,3]), fill = "pink") +
+  geom_area(aes(y = ksieza[,4]), fill = "lightgreen") +
+  scale_y_continuous(limits = c(0, 420000), labels = c("0", "100 tys.", "200 tys.", "300 tys.", "400 tys.")) +
+  labs(title = "Zmiana liczby księży na świecie, w Europie i w Polsce w latach 1990-2010", y = "Liczba księży") +
+  theme(axis.text.x = element_text(family = "cambria", color="azure4", size=10),
+        axis.text.y = element_text(family = "cambria", color="azure4", size = 10, angle = 60),
+        axis.title.x = element_text(family = "cambria", size = 13),
+        axis.title.y = element_text(family = "cambria", size = 12),
+        plot.title = element_text(family = "cambria", size = 14))
+
+p2 <- ggplot(data = ksieza, aes(x = Rok, y = ksieza[,4])) +
+  geom_line(color = "lightgreen") +
+  scale_y_continuous(limits = c(0, 32000)) +
+  geom_area(aes(y = ksieza[,4]), fill = "lightgreen") +
+  labs(title = "Zmiana liczby księży w Polsce w latach 1990-2010", y = "Liczba księży") +
+  theme(axis.text.x = element_text(family = "cambria", color="azure4", size=10),
+        axis.text.y = element_text(family = "cambria", color="azure4", size = 10, angle = 60),
+        axis.title.x = element_text(family = "cambria", size = 13),
+        axis.title.y = element_text(family = "cambria", size = 12),
+        plot.title = element_text(family = "cambria", size = 14))
+
+```
+##Wykres wyjściowy
+```{r fig.width=1, fig.height=8, fig.width = 6,echo=FALSE}
+library(png)
+library(grid)
+img <- readPNG("Wykres_ksieza.png")
+ grid.raster(img)
+```
+
+##Wykres poprawiony
+
+```{r fig1, fig.height=9, fig.width=8, echo = FALSE}
+grid.arrange(p1, p2, nrow = 2, ncol = 1)
+```
+

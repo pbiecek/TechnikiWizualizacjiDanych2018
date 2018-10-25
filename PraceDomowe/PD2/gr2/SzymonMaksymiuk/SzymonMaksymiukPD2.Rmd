@@ -1,0 +1,50 @@
+---
+title: '[TWD] Praca domowa nr 2'
+author: "Szymon Maksymiuk"
+date: "21 paŸdziernika 2018"
+output: html_document
+---
+
+# Wstêp
+
+W swojej drugiej pracy domowej postanowi³em wzi¹æ na warsztat wykres Bartka Granata. Nie uwa¿am jakkolwiek a¿eby wykonany by³ b³êdnie, s¹dzê po prostu, ¿e sposób, który przedstawiê poni¿ej, bêdzie bardziej korzystny dla danych nam zaprezentowanych.
+```{r}
+library(reshape2)
+library(ggplot2)
+dane <- read.csv("dane.csv", sep = ";")
+dat.m<-melt(dane, id.vars = "miasto")       
+names(dat.m) <- c("miasto", "rynek", "cena")
+ggplot(data = dat.m,aes(x = miasto, y = cena, fill = rynek))+
+  geom_bar(stat = "identity", width =  0.8, position=position_dodge())+
+  scale_fill_brewer(palette="Paired")+
+  theme_minimal() +
+  labs(title="Przeciêtne ceny za mkw. mieszkania w najwiêkszych miastach Polski na rynku wtórnym i pierwotnym", x="miasto", y = "œrednia cena za mkw. (w zl)") +
+  theme(axis.text.x = element_text(angle = 45)) 
+```  
+
+#Wersja poprawiona
+
+```{r}
+library(ggplot2)
+dane <- read.csv("dane.csv", sep = ";")
+ggplot(data = dane) +
+  geom_segment(aes(x = dane$wtorny, y = reorder(dane$miasto, dane$pierwotny), 
+                   xend = dane$pierwotny, yend = reorder(dane$miasto, dane$pierwotny)), 
+               size = 1, col = "black") +
+  geom_point(aes(x = dane$wtorny, y = reorder(dane$miasto, dane$pierwotny), 
+                 colour = "Rynek wtórny"), size = 2)  +
+  geom_point(aes(x = dane$pierwotny, y = reorder(dane$miasto, dane$pierwotny), 
+                 colour = "Rynek pierwotny"), size = 2) +
+  scale_color_manual(values = c("Rynek wtórny" = "blue", "Rynek pierwotny" = "red")) +
+  scale_x_continuous(name = "Œrednia cena za metr kwadratowy (z³)", limits = c(3000, 9000), 
+                     breaks = seq(0, 9000, 500)) +
+  scale_y_discrete(name = "") +
+  ggtitle("Ró¿nice pomiêdzy cenami mieszkañ na rynkach pierwotnym a wtórnym")+
+  labs(colour = "")+
+  theme_minimal()
+
+```
+
+# Wyjaœnienie
+
+Zaproponowany przez Bartka wykres w sposób mniej lub bardziej zamierzony porównywa³ ró¿nice miêdzy cenami na rynkach pierwotnym a wtórnym. Wykres s³upokowy z dwoma kategoriami oczywiœcie nie jest z³ym pomys³em na wykonanie tego zadania, jednak¿e ja uwa¿am, ¿e zaproponowany przeze mnie wykres ró¿nic jest lepszy. Przede wszystkim pozwala szybko oceniæ przybli¿on¹ ró¿nicê pomiêdzy jedn¹ a drug¹ kategori¹ nawet bez znajomoœci dok³adnych wartoœci. Pomaga w tym belka ³¹cz¹ca jedn¹ wartoœæ z drug¹, której d³ugoœæ jest wprost proporcjonalan do ró¿nicy, zaœ gêsta podzia³ka pozwala jeszcze lepiej to oceniæ. Celowo nie ustawi³em skali osi poziomej w zerze poniewa¿ moim zdaniem nie prowadzi to w tym przypadku do jakichkolwiek niedomówieñ, wrêcz przeciwnie zwiêksza przejrzystoœæ. Jest tak poniewa¿ gdyby skala zaczyna³a siê w punkcie zero, wykres mia³by du¿o mniejsz¹ dok³adnoœæ, wszak pierwsze wartoœæ pojawiaj¹ siê dopiero przy 3500z³.
