@@ -60,6 +60,14 @@ as.list(s1[1, ])
 
 t1 <- get_eurostat(s1[1, "code"])
 
+
+left_join(lp, t1, by = c("geo" = "geo")) %>% 
+  filter(CNTR_CODE == "PL") %>% 
+  na.omit %>% 
+  ggplot(aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  coord_map()
+
 left_join(lp, t1, by = c("geo" = "geo")) %>% 
   filter(CNTR_CODE == "PL") %>% 
   na.omit %>% 

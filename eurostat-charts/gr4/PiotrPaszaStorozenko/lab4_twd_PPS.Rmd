@@ -1,0 +1,37 @@
+---
+title: "Eurostat"
+author: "Piotr Pasza Storoøenko"
+date: "25 paüdziernika 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(eurostat)
+library(ggthemes)
+library(scales)
+
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "all")
+
+s1 <- search_eurostat("sugar", type = "table")
+
+t1 <- get_eurostat(s1[1, "code"])
+
+nd <- t1 %>% filter(geo %in% c('FI', 'PL', 'LT'))
+
+ggplot(nd, aes(x=time,y=values, colour = geo)) +
+  geom_point() +
+  geom_line() +
+  xlab("Year") +
+  ylab("Price per unit [EUR]") +
+  ggtitle(s1$title[1]) +
+  scale_color_discrete("Country") +
+  scale_y_continuous(labels=dollar_format(prefix="Ä")) +
+  theme_gdocs()
+```
+
