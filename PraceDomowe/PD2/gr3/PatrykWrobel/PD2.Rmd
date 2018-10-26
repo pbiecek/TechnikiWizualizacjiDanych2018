@@ -1,0 +1,58 @@
+---
+title: "Techniki Wizualizacji Danych - PD2"
+output: html_document
+author: "Patryk Wróbel"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Cel zadania**
+
+Celem zadania jest wprowadzenie i uzasadnienie poprawek do wykresu przygotowanego przez inną osobę w ramach PD1.
+
+**Wybór wykresu**
+
+Wybrany wykres porównuje wyniki wyborów w Bawarii w roku 2013 i 2018.
+
+Link do źródła: https://github.com/pbiecek/TechnikiWizualizacjiDanych2018/tree/master/PraceDomowe/PD1/Piotr%20Halama 
+
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("wykresPrzed.png")
+```
+  
+**Własna wersja wykresu**
+
+```{r include=FALSE}
+library(ggplot2)
+library(reshape2)
+library(ggrepel)
+library(knitr)
+library(dplyr)
+```
+```{r warning=FALSE, echo=FALSE, out.width = "70%"}
+
+# przygotowanie danych
+data <- read.csv(file="dane.csv", header=TRUE, stringsAsFactors = FALSE,sep=",")
+data$elections2013 <- data$elections2018 - data$change
+data$change <- ifelse(data$change <= 0, data$change, paste("+",data$change))
+sequence <- rev(order(data$elections2018))
+df <- melt(data[, !(names(data) == "change")], id.vars="pp")
+df$pp <- factor(df$pp, levels=data[sequence,"pp"])
+df$variable <- factor(df$variable, levels=c("elections2013", "elections2018"), labels=c("2013", "2018"))
+
+# wyświetlenie wykresu
+ggplot(data = df, aes(x = pp, y = value, fill = variable, width=0.7)) + 
+  geom_bar(stat="identity", position = 'dodge') +
+  geom_hline(yintercept = 5, linetype="dashed") + 
+  geom_text(aes(7,5,label = "threshold", vjust = -0.7), show_guide  = F, size = 3.5) +
+  geom_label_repel(data = data, aes(x = pp, y = elections2018, label = change), inherit.aes=FALSE, nudge_y = 7.5, size = 3.5, box.padding= unit(0.5, "lines"), colour=ifelse(substr(data$change,1,1) == '+','green4','red3')) +
+  labs(x = "Political party", y = "Percent of votes (%)", title = "Bavaria election results comparison 2018 vs 2013") +
+  scale_fill_manual(name = "Elections", values=c("lightblue3", "dodgerblue2")) +
+  theme(plot.title = element_text(size=11, colour="gray17"), axis.title.x = element_text(margin = margin(t = 20)), axis.title.y = element_text(margin = margin(r = 20)))
+```
+
+ - Wykres w pierwotnej wersji prezentował dane w niechronologicznym porządku (dane dotyczące roku 2013 przedstawiane były po danych z bieżącego roku), co błędnie sugerowało kierunek zmian w poparciu dla poszczególnych partii (partie, których poparcie wzrosło, miały na wykresie niższy drugi słupek, co domyślnie wskazuje na spadek poparcia).
+ - Osobne zestawy kolorów dla poszczególnych partii zakłócały główny przekaz wykresu, zmniejszały jego czytelność, dając mylne wrażenie wnoszenia do wykresu dodatkowych treści, dlatego zostały zastąpione przez jedną paletę kolorów. 
+ - W nowej wersji wykresu dodane zostały także etykiety z informacją o zmianie poparcia każdej partii wyrażonej w postaci przyrostu/spadku liczby punktów procentowych.
