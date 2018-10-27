@@ -1,0 +1,33 @@
+---
+title: "NSP-makeover"
+author: "Mateusz Polakowski & Michał Stawikowski"
+date: "October 24, 2018"
+output: html_document
+---
+
+```{r}
+library(data.table)
+library(ggplot2)
+
+panstwa <- c("Polacy", "Cudzoziemcy", "Ukraina", "Niemcy", "Rosja", "Białoruś", "Wietnam", "Armenia",
+                    "Wielka Brytania", "Włochy", "USA", "Francja", "Egipt", "Nigeria", "Tunezja", "Litwa", "Filipiny")
+                   
+mezczyzni <- c(49, 52, 30, 64, 30, 33, 63, 63, 74, 80, 55, 71, 99, 100, 98, 32, 12)
+kobiety <- 100 - mezczyzni
+
+result <- data.table(cbind(rep(panstwa, times =2),
+                           rep(c("mezczyzni", "kobiety"), each = 17),
+                           c(mezczyzni, kobiety),
+                           rep(rep(c("Narodowości", "Państwa"), times = c(2, 15)), 2)))
+colnames(result) <- c("Panstwa", "Plec", "Wartosc", "Panel")
+
+ggplot(data = result, aes(x = Panstwa, y = as.numeric(Wartosc), fill = Plec)) +
+  geom_bar(position = "dodge", stat = "identity", width = 0.7) +
+  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 10), expand = c(0,0),
+                     labels = paste(seq(0, 100, by = 10), '%', sep = '')) +
+  labs(title = 'Ludność według płci i kraju pierwszego obywatelstwa', subtitle = 'w 2011 roku', 
+       x = '', y = '') +
+  theme(plot.title = element_text(size = 15)) + 
+  coord_flip() +
+  facet_wrap(~ Panel, scales = 'free_y', ncol = 1)
+```

@@ -1,0 +1,56 @@
+---
+title: "Techniki Wizualizacji Danych - PD2"
+author: "Ivan Rukhavets"
+date: "10/22/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Cel zadania
+
+Celem zadania jest wprowadzenie i uzasadnienie poprawek do wykresu przygotowanego przez inną osobę w ramach PD1.
+
+## Wykres orginalny
+
+Wybrany wykres przedstawia on średnie wydatki na ślub i wesele w zależności od regionu Wielkiej Brytanii.
+
+![](original_img.png)
+
+## Wady
+
+Dane na wykresie mogłyby być czytelniejsze gdyby słupki były posortowane wadług wydatków. Dodatkowo kolory na wykresie dublują wysokość słupków i tak naprawdę nie są potrzebne. Zamiast tego można kolorami pokazać kraje UK. Napisy miejscami nakładają się na siebie, podpisy osi X mogłyby nie być tak obrócone.
+
+## Wykres poprawiony
+Poniżej prezentuję wykres, na którym poprawiłem wszystkie wymienione powyżej uchybienia.
+
+```{r, include=FALSE}
+library(ggplot2)
+wedding_costs <- c(41521, 29613, 27091, 31191, 28465, 27245, 30586, 28320, 28240, 33406, 31335, 36902)
+region <- c("London", "East of England", "Wales", "West Mids", "East Mids", "Yorkshire", "North West", "North East",
+            "South West", "South East", "Scotland", "Northern Ireland")
+
+wedding_data <- data.frame(region = region, 
+                           wedding_costs = wedding_costs)
+
+wedding_data$country <- ifelse(region %in% c('Wales', 'Scotland', 'Northern Ireland'), region, 'England')
+levels(wedding_data$region) <- gsub(" ", "\n", levels(wedding_data$region))
+```
+
+```{r}
+ggplot(data = wedding_data,
+  aes(x = reorder(region, -wedding_costs), y = wedding_costs)) +
+  geom_bar(aes(fill=factor(country)), position = position_dodge(width=3), stat="identity", width=0.9) +
+  scale_fill_manual(values=c("#AE65B8", "#169B62", "#0165BF", "#D30731")) +
+  scale_y_continuous(limits = c(0, 43000)) +
+  theme(axis.line = element_blank(), 
+        plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  theme(axis.text.x = element_text(vjust=0.6), legend.title = element_blank(), legend.position = 'bottom', plot.subtitle = element_text(hjust = 0.5)
+) +
+  geom_text(aes(label=wedding_costs), size=3, position=position_dodge(width=0.9), vjust=-0.25) 
+```

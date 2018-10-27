@@ -1,0 +1,36 @@
+---
+title: "Techniki Wizualizacji Danych - PD1"
+author: "Andrzej Szczesiak"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+```{r, include=FALSE}
+data <- read.csv("data.csv", header = TRUE)
+data2016 <- data.frame(data[,c("Oddział", "X2016")], 2016)
+names(data2016) = c("Oddział", "Strata", "Rok")
+data2017 <- data.frame(data[,c("Oddział", "X2017")], 2017)
+names(data2017) = c("Oddział", "Strata", "Rok")
+data <- rbind(data2016, data2017)
+data$Rok <- as.factor(data$Rok)
+```
+```{r, echo=FALSE}
+ggplot(data = data, aes(x = reorder(Oddział, Strata) , y = Strata, fill = Rok, label = Strata, width = 0.8)) + 
+  geom_bar(stat = "identity", position = position_dodge()) +
+  geom_text(vjust = 0, hjust = -0.3, position = position_dodge(0.5), size = 2) +
+  labs(x = "Oddział", y = "Strata w mln zł", title = "Wyniki finansowe oddziałów regionalnych Telewizji Polskiej") + 
+  scale_fill_manual(values = c("#4CB5F5", "#B7B8B6")) +
+  scale_y_continuous(breaks = seq(0, 16, 2)) +
+  coord_flip() + 
+  theme_minimal()
+```
+
+Powyższy wykres przedstawia straty finansowe oddziałów regionalnych Telewizji Polskiej w latach 2016-2017.
+
+### Źródło
+
+Dane przedstawione na wykresie zostały opublikowane w artykule: https://www.bankier.pl/wiadomosc/TVP-ma-klopoty-Prawie-wszystkie-oddzialy-regionalne-ze-strata-7620814.html.

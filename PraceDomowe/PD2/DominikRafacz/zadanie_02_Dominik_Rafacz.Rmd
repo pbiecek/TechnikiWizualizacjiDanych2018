@@ -1,0 +1,82 @@
+---
+title: "Praca domowa 2"
+author: "Dominik Rafacz"
+date: "October 22, 2018"
+output: html_document
+---
+
+W niniejszej pracy domowej chciałbym ukazać dane w sposób (w moim mniemaniu) lepszy, niż zrobił to mój przyjaciel bliski i serdeczny, Mateusz Polakowski w swej poprzedniej pracy domowej.
+
+> ### Źródło danych
+> Dane uzyskałem z jednego z artykułów CBOS News, który traktuje o prywatności online użytkowników. Są odpowiedziami ankietowanych na pytanie jakie części swojego prywatnego, realnego życia, osoby udostępniają w internecie i dla jakiego grona osób. [Interaktywny link do artykułu](https://www.cbos.pl/PL/publikacje/news/2018/31/newsletter.php). <br/>
+Na wykresie dane zostaną przedstawione w punktach procentowych, w podziale na odpowiedzi z roku 2015 (wyszarzone kolory) oraz aktualne, <br/> z 2018 roku.
+
+```{r echo = FALSE, results = 'hide'} 
+library(ggplot2)
+library(data.table)
+
+ankieta2015 <- data.table(cbind(
+  rep(c("Wszystkim (2015)", "Zaufanym (2015)", "Nikomu (2015)"), times = 11),
+  rep(c("Adres mailowy", "Zdjecie", "Data urodzenia", "Informacje, zainteresowania",
+        "Lokalizacja", "Stan cywilny", "Numer telefonu", "Adres zamieszkania", "Miejsce pracy",
+        "Podpisana opinia", "Wideo z twarza"), each = 3),
+  c(13, 50, 36, 24, 28, 48, 15, 41, 43, 11, 24, 65, 11, 26, 62, 12,
+    23, 65, 4, 27, 68, 6, 29, 65, 7, 20, 73, 9, 14, 77, 3, 10, 87)
+))
+colnames(ankieta2015) <- c("Komu", "Co", "PP")
+
+ankieta2018 <- data.table(cbind(
+  rep(c("Wszystkim (2018)", "Zaufanym (2018)", "Nikomu (2018)"), times = 11),
+  rep(c("Adres mailowy", "Zdjecie", "Data urodzenia", "Informacje, zainteresowania",
+        "Lokalizacja", "Stan cywilny", "Numer telefonu", "Adres zamieszkania", "Miejsce pracy",
+        "Podpisana opinia", "Wideo z twarza"), each = 3),
+  c(9, 47, 44, 26,29, 45, 14, 37, 49, 10, 25, 65, 6, 26, 67, 7, 23, 70,
+  5, 25, 70, 4, 21, 75, 7, 17, 75, 10, 14, 76, 7, 11, 82)
+))
+colnames(ankieta2018) <- c("Komu", "Co", "PP")
+```
+
+```{r}
+ggplot() +
+  scale_color_manual(values = c('red3', 'red', 'springgreen3', 'green', 'yellow3', 'yellow')) +
+  geom_point(data = ankieta2015, aes(x = as.numeric(PP), y = Co, color = Komu, size = 1, alpha = 1/10)) + 
+  geom_point(data = ankieta2018, aes(x = as.numeric(PP), y = Co, color = Komu, size = 1)) + 
+  xlab('') + ylab('') + 
+  theme(text=element_text(size=15)) +
+  guides(size = FALSE, alpha = FALSE) + 
+  ggtitle('Udostępnianie informacji w internecie')
+```
+
+Poniżej prezentuję moją prezentację tych samych danych:
+
+```{r echo = FALSE, results=FALSE}
+ankieta <- data.frame(ankieta2018)
+ankieta[,3] <- as.numeric(ankieta[,3])
+
+ankieta <- cbind(ankieta, ankieta[,3] - as.numeric(as.data.frame(ankieta2015)[,3]))
+colnames(ankieta) <- c("Prywatnosc", "Informacja", "Procent", "Diff")
+
+ankieta$Prywatnosc <- rep(c("Dla wszystkich", "Dla zaufanych", "Dla nikogo"), 11)
+
+ord <- order(ankieta$Procent[which(ankieta$Prywatnosc == "Dla nikogo")])
+ankieta$Prywatnosc <- factor(x = ankieta$Prywatnosc, levels = c("Dla wszystkich", "Dla zaufanych", "Dla nikogo"))
+
+change <- ifelse(ankieta$Diff > 0, paste("+", as.character(ankieta$Diff), sep = ""), as.character(ankieta$Diff))
+tcol <- ifelse(substr(change, 1, 1) == 0, "black", ifelse(substr(change, 1, 1) == "-", "red", "green"))
+```
+
+```{r fig.width = 8, fig.height= 8, fig.align= "center"}
+
+ggplot(data = ankieta, aes(x = reorder(Informacja, c(ord, ord + 11, ord +22)), y = Procent, fill = Prywatnosc)) +
+  geom_bar(stat = "identity", position = position_stack()) +
+  scale_fill_manual(values = c("#91cf60", "#ffffbf","#fc8d59") , name = "Prywatnosc") +
+  scale_size(range = c(2,6), guide = "none") +
+  geom_text(aes(label = change, size = abs(Diff)), position = position_stack(vjust = 0.5)) +
+  xlab("Udostepniana informacja") +
+  ggtitle("Udostepnianie informacji w internecie w 2018 w porownaniu do 2015") +
+  scale_y_continuous(breaks = seq(0, 100, 10), labels = paste(seq(0, 100, 10), "%", sep = ""), name = "Punkty procentowe")+
+  coord_flip() 
+
+```
+
+Zaproponowałem zmianę z wykresu punktowego na wykres słupkowy, ponieważ wydaje mi się on czytelniejszy. Kropki na poprzednim wykresie za bardzo zlewały się ze sobą i musiałem się przyglądać, by porównać stan obecny ze stanem sprzed trzech lat. Na moim wykresie postanowiłem zrezygnować z rysowania zmian, zamiast tego skupiłem się na tym, by prezentował on czytelnie sytuację aktualną, natomiast zmianę względem 2015 zaznaczyłem jako liczby na słupkach wraz z "+" i "-", które mówią, o ile punktów procentowych zmieniła się grupa osób o określonym dostępie do określonej informacji. Ponadto liczby te są są wizualnie tym większe im większe są ich wartości bezwzględne, dzięki czemu na pierwszy rzut oka możemy dostrzec, udostępnianie których danych najbardziej się zmieniło.

@@ -1,0 +1,47 @@
+---
+title: "Techniki wizualizacji danych"
+subtitle: "Praca domowa 1"
+author: "Anna Kozak"
+output: 
+  html_document: 
+    theme: cosmo
+    
+
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(ggrepel)
+```
+
+## Zadanie
+W gazecie lub na portalu informacyjnym znajdź artykuł opublikowany w październiku, w którym pojawia się wykres lub dane liczbowe. Następnie przedstaw te dane z użyciem pakietu `ggplot2`.
+
+## Realizacja
+Do wykonania pracy domowej użyłam artykułu dotyczącego rankingu kont oszczędnościowych. [link]( https://www.money.pl/gospodarka/wiadomosci/artykul/ranking-kont-oszczednosciowych---pazdziernik,25,0,2418201.html) 
+
+W celu przygotowania tego zestawienia, przyjęto, że otwieramy konto, a następnie wpłacamy na nie jednorazowo 1 tys. zł. Przez kolejnych 11 miesięcy wpłacamy po 750 zł. Na podstawie tego policzono, ile można zarobić na koncie oszczędnościowym po roku.
+
+Poniżej wykres obrazujący zawartą w artykule tabelę.
+$$ $$
+
+```{r, warning=FALSE, message=FALSE, error=FALSE, echo=FALSE, fig.width=10}
+data <- read.csv("../ranking_kont_oszczednosciowych.csv", sep = ";", encoding = "UTF-8", check.names = FALSE)
+
+data$Bank <- factor(data$`Bank`, levels = data$`Bank`[order(-data$`Zysk po roku(po podatku)`)])
+
+scaleFactor <- max(data$`Zysk po roku(po podatku)`) / max(data$`Oprocentowanie nominalne`)
+
+ggplot() +
+geom_bar(aes(x=data$Bank, y = data$`Zysk po roku(po podatku)`), stat = "identity", fill = "gray") +
+geom_point(aes(x= data$Bank,y=data$`Oprocentowanie nominalne` * scaleFactor), size=1.5,  col="darkred") + 
+geom_label_repel(aes(x = data$Bank, y = data$`Oprocentowanie nominalne` * scaleFactor, label = paste( data$`Oprocentowanie nominalne`, "%"))) + scale_x_discrete(name="Bank") +
+scale_y_continuous(name="Zysk po roku(po podatku) (zł)", sec.axis=sec_axis(~./scaleFactor, name="Oprocentowanie nominalne (%)")) + coord_cartesian() +
+theme_replace() +
+theme(axis.text.x = element_text(angle=60, hjust=1)) +
+ggtitle("Ranking kont oszczędnościowych dla nowych klientów \ni na nowe środki - październik 2018")
+
+```
+
+Analizując ranking kont oszczędnościowych możemy zarobić 147 zł tylko dlatego, że wpłacimy pieniądze do banku - bez żadnego ryzyka.

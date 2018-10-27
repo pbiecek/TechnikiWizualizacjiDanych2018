@@ -1,0 +1,23 @@
+---
+title: "Praca domowa 1"
+author: "Michał Pastuszka"
+date: "October 13, 2018"
+output: html_document
+---
+
+Wykres przedstawia wyniki sondażu "Czy premier Mateusz Morawiecki powinien podać się do dymisji po opublikowaniu nagrań z afery podsłuchowej?" opublikowanego na stronie <https://www.rp.pl/Polityka/181019671-Sondaz-Czy-premier-Morawiecki-powinien-stracic-stanowisko.html>
+
+```{r wykres, echo=FALSE}
+library(ggplot2)
+
+x <- data.frame(
+  group = factor(x=c(1,2,3), labels=c("Tak", "Nie", "Nie wiem/\ntrudno powiedzieć"), ordered=TRUE),
+  value = c(48.8, 24.2, 27.0))
+
+plot <- ggplot(x, aes(x = group, y = value, fill = group)) + geom_bar(stat = "identity") +
+  labs(y = "Procent badanych", fill = "Odpowiedź", x = "", title = "Czy premier Mateusz Morawiecki powinien podać się do dymisji \npo opublikowaniu nagrań z afery podsłuchowej?") + guides(fill=FALSE) + scale_fill_manual(breaks = c("Tak", "Nie", "Nie wiem/\ntrudno powiedzieć"), 
+                       values=c("green", "red", "blue"))
+  
+plot
+
+```
