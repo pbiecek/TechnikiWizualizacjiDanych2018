@@ -1,0 +1,73 @@
+---
+title: "Praca domowa 2 - techniki wizualizacji danych"
+author: "Kacper Siemaszko"
+date: "October 23, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+library(ggplot2)
+library(data.table)
+library(dplyr)
+```
+
+# Wprowadzenie
+
+Wykresem, który postanowiłem poprawić jest wykres Mateusza Polakowskiego, przedstawiający jak zmieniło się podejście internautów do udostępniania prywatnych informacji w internecie. Dane zostały uzyskane z jednego z artykułów CBOS News, który traktuje o prywatności online użytkowników. Są odpowiedziami ankietowanych na pytanie jakie części swojego prywatnego, realnego życia, osoby udostępniają w internecie i dla jakiego grona osób. [link](https://www.cbos.pl/PL/publikacje/news/2018/31/newsletter.php).
+
+
+```{r data.preparation, include=FALSE}
+ankieta2015 <- data.table(cbind(
+  rep(c("Wszystkim (2015)", "Zaufanym (2015)", "Nikomu (2015)"), times = 11),
+  rep(c("Adres mailowy", "Zdjecie", "Data urodzenia", "Informacje, zainteresowania",
+        "Lokalizacja", "Stan cywilny", "Numer telefonu", "Adres zamieszkania", "Miejsce pracy",
+        "Podpisana opinia", "Wideo z twarza"), each = 3),
+  c(13, 50, 36, 24, 28, 48, 15, 41, 43, 11, 24, 65, 11, 26, 62, 12,
+    23, 65, 4, 27, 68, 6, 29, 65, 7, 20, 73, 9, 14, 77, 3, 10, 87)
+))
+colnames(ankieta2015) <- c("Komu", "Co", "PP")
+ankieta2018 <- data.table(cbind(
+  rep(c("Wszystkim (2018)", "Zaufanym (2018)", "Nikomu (2018)"), times = 11),
+  rep(c("Adres mailowy", "Zdjecie", "Data urodzenia", "Informacje, zainteresowania",
+        "Lokalizacja", "Stan cywilny", "Numer telefonu", "Adres zamieszkania", "Miejsce pracy",
+        "Podpisana opinia", "Wideo z twarza"), each = 3),
+  c(9, 47, 44, 26,29, 45, 14, 37, 49, 10, 25, 65, 6, 26, 67, 7, 23, 70,
+    5, 25, 70, 4, 21, 75, 7, 17, 75, 10, 14, 76, 7, 11, 82)
+))
+colnames(ankieta2018) <- c("Komu", "Co", "PP")
+
+```
+
+# Kod generowania wizualizacji Mateusza
+
+```{r data.visualization.by.pole, include=TRUE, fig.width = 10}
+ggplot() +
+  scale_color_manual(values = c('red3', 'red', 'springgreen3', 'green', 'yellow3', 'yellow')) +
+  geom_point(data = ankieta2015, aes(x = as.numeric(PP), y = Co, color = Komu, size = 1, alpha = 1/10)) + 
+  geom_point(data = ankieta2018, aes(x = as.numeric(PP), y = Co, color = Komu, size = 1)) + 
+  xlab('') + ylab('') + 
+  theme(text=element_text(size=15)) +
+  guides(size = FALSE, alpha = FALSE) + 
+  ggtitle('Udostępnianie informacji w internecie')
+```
+
+# Refleksja nad wykresem Mateusza
+
+Pomysł na wykres jest bardzo fajny, ale moim zdaniem przez małą względną zmianę między latami 2015-2018, wizualizacja staje się nieczytelna przez nachodzące na siebie punkty. Patrząc na wykres nie byłem w stanie szybko odczytać, że internauci stali się mniej, czy bardziej nieufni. W tym celu postanowiłem zredukować liczbę informacji, które zaprezentuję, do zmiany w poszczególnej grupie. W ten sposób jesteśmy w stanie od razu odczytać tendencje zmian w zaufaniu internautów.
+
+```{r data.visualization.by.me, include=TRUE, fig.width = 10, fig.height=10}
+change <- ankieta2018
+change$PP <- as.numeric(ankieta2018$PP) - as.numeric(ankieta2015$PP)
+change$Komu <- change$Komu %>% substr(0, nchar(.)-7)
+ggplot(data = change, aes(y = as.numeric(PP), x = Co, fill = Komu)) +
+  scale_fill_manual(values = c('red', 'springgreen3', 'yellow3')) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ change$Komu, ncol = 1) +
+  xlab('Komu udostępniłbyś ... w internecie?') + ylab('Zmiana w punktach procentowych') + 
+  guides(size = FALSE, alpha = FALSE, fill = FALSE) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45,hjust = 1)) +
+  ggtitle('Jak zmienia się podejście internautów do bezpieczeństwa w sieci - porównanie lat 2015 i 2018')
+```

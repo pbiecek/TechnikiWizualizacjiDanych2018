@@ -1,0 +1,97 @@
+---
+title: "Praca Domowa 2"
+author: "Ewa Guziewicz"
+date: "24 paĹşdziernika 2018"
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ggplot2)
+library(zoo)
+library(ggrepel)
+library(ggspectra)
+```
+
+
+
+
+
+```{r}
+inflacja <- as.data.frame(read.csv("C:/Users/Ewa/Documents/SMAD/SEMESTR 3/TWD/wskaznik_inflacji.csv", sep = " ", col.names = c("Date", "Value"), header=F, stringsAsFactors=FALSE))
+inflacja[,2] <- as.numeric(inflacja[,2])
+inflacja <- inflacja[nrow(inflacja):1,]
+inflacja[,1] <- as.yearmon(inflacja[,1], format="%m-%Y") 
+```
+
+#Wskaźnik inflacji w Polsce w latach 2000-2018
+
+### Przed 
+
+```{r, include=TRUE}
+library(ggplot2)
+ggplot(data = inflacja, aes(x = Date, y = Value)) +
+  geom_line() + 
+  geom_area(aes(fill = "red")) +
+  guides(fill = FALSE) +
+  labs(x = "Lata", y = "Wskaźnik inflacji [%]") + geom_hline(yintercept = 0, color = "red")
+```
+
+
+### Po
+
+
+```{r}
+min_inflacja <- min(inflacja$Value)
+max_inflacja <- max(inflacja$Value)
+skala_y <- c(min_inflacja, ceiling(min_inflacja):floor(max_inflacja), max_inflacja)
+
+
+ggplot(data = inflacja, aes(x = Date, y = Value)) +
+  ggtitle("Wskaźnik inflacji w Polsce w latach 2000-2018") + 
+  theme(plot.title = element_text(hjust = 0.5)) +
+  geom_line(color = "navy", size=1.6) +
+  guides(fill = FALSE) +
+   geom_hline(yintercept = 0, color = "black") +
+  scale_x_continuous("Lata", breaks = 2000:2018) + 
+  scale_y_continuous("Wskaźnik inflacji [%]", breaks = skala_y) +
+ stat_label_peaks(color="black", fill="white", geom = "label_repel", 
+                  aes(label = ..y.label..),label.fmt = "%1.2f", span=7,
+                  ignore_threshold = 0.49) +
+  stat_label_valleys(color="black", fill="white", geom = "label_repel", aes(label = ..y.label..),
+                     label.fmt = "%1.2f", span=17,
+                     ignore_threshold = 0.85)
+```
+
+
+### Uzasadnienie
+
+Problemy z pierwszym wykresem:
+
+1. - Nieuzasadnione zamalowanie pola(!) pod krzywą wyznaczającą wskaźnik inflacji.
+   - Pole pod wykresem funkcji inflacji od czasu nie ma interpretacji ekonomicznej.
+   + Usunęłam zamalowanie pola.
+   
+   
+   
+2. - Funkcja wskaźnik inflacji od czasu została namalowana przerywaną linią. Jest to nieco nieczytelne.
+   + Zamieniłam przerywaną linię na linię ciągłą, którą pogrubiłam dla czytelności wykresu.
+   
+   
+   
+3. - Za rzadkie wartości x i y tzn. za mało lat na osi x (tylko 4 liczby od 2000 do 2018) i za mało wartości inflacji na osi y. Przez to nie widać np. jakie wartości przyjmuje wskaźmnik inflacji ok. 2015 roku.
+   + Na osi x odłożyłam wszystkie lata od 2000 do 2018. Na osi y oznaczyłam najmniejsze i największe wartości oraz wszystkie liczby całkowite, które zawierały się między najmniejszą i największą wartością.
+   
+   
+   
+4. - Ciężko odczytać wartości wskaźnika inflacji, w szczególności ekstrema, które są najczęściej istotne.
+   + Na wykres naniosłam najważniejsze ekstrema, które dzięki temu są wyeksponowane (a powinny, bo są często istotne). Umieszczone na wykresie ekstrema pomagają odczytać wartości wskaźnika inflacji w otoczeniu ekstremów.
+
+
+
+
+
+
+
+

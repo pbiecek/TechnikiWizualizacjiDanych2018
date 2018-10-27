@@ -1,0 +1,72 @@
+---
+title: "PD2"
+author: "Hubert Baniecki"
+date: "21 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(RColorBrewer)
+```
+
+## Przed
+
+```{r, echo=FALSE}
+
+wedding_costs <- c(41521, 29613, 27091, 31191, 28465, 27245, 30586, 28320, 28240, 33406, 31335, 36902)
+region <- c("London", "East of England", "Wales", "West Mids", "East Mids", "Yorkshire", "North West", "North East",
+            "South West", "South East", "Scotland", "Northern Ireland")
+wedding_data <- data.frame(region = region, 
+                           wedding_costs = wedding_costs)
+wedding_data$limits <- ifelse(wedding_costs > 40000, "Above 40 000", 
+                              ifelse(wedding_costs > 30000, "Above 30 000", "Above 20 000"))
+
+```
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+ggplot(data = wedding_data, 
+  aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_bar(aes(fill=factor(limits)), position = 'dodge', stat="identity", width=.5) +
+  scale_fill_manual(values=c("#E066FF", "#9932CC", "#68229B")) +
+  theme(axis.line = element_blank(), 
+        plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6), legend.title = element_blank()) +
+  geom_text(aes(label=wedding_costs), position=position_dodge(width=0.9), vjust=-0.25) 
+```
+
+## Po
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+input <- wedding_data[order(wedding_data$wedding_costs),]
+input$region <- factor(input$region, levels=input$region)
+kolory <- brewer.pal(9,"Set1")
+
+ggplot(input, 
+  aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_col(aes(fill=factor(limits)), width=.5) +
+  geom_hline(yintercept = 32273, color=kolory[9], size=1) +
+  annotate("text", x = input$region[4], y = 35273, label = "32.273") +
+  scale_fill_manual(values=kolory[c(3,5,1)], labels=c("Below 30k", "30k - 40k", "Above 40k")) +
+  scale_y_continuous(breaks = waiver(), labels = c("0","10k","20k","30k","40k")) +
+  labs(title="UK wedding costs by region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding costs in pounds") + 
+  theme(legend.position="right", legend.title = element_blank(), plot.title= element_text(hjust=0.5)) +
+  coord_flip() 
+
+
+```
+
+## Uzasadnienie
+
+
+1. Zmieniona orientacja wykresu powoduje, że łatwiej odczytamy nazwy miejscowości
+2. Regiony są posortowane rosnąco wg. kosztów, więc można je porównywać
+3. Kolory zmienione na bardziej stonowane i łatwiej rozróżnialne
+4. Teraz można odczytać informacje gdzie jest taniej/drożej niż podana przez artykuł średnia
+5. Usunięcie wartości obok słupków i skrócenie tych na osiach wnosi większą przejrzystość

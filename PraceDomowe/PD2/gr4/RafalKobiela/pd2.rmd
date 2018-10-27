@@ -1,0 +1,53 @@
+---
+title: "PD2"
+author: "Rafał Kobiela"
+date: "October 23, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(ggrepel)
+library(dplyr)
+```
+
+Jako wykres do poprawy wybrałem wykres Anny Kozak. Przedstawia się on następująco:
+
+
+```{r warning=FALSE, message=FALSE, error=FALSE, echo=FALSE, fig.width=10}
+data <- read.csv("ranking_kont_oszczednosciowych.csv", sep = ";", encoding = "UTF-8", check.names = FALSE)
+
+data$Bank <- factor(data$`Bank`, levels = data$`Bank`[order(-data$`Zysk po roku(po podatku)`)])
+
+scaleFactor <- max(data$`Zysk po roku(po podatku)`) / max(data$`Oprocentowanie nominalne`)
+
+ggplot() +
+geom_bar(aes(x=data$Bank, y = data$`Zysk po roku(po podatku)`), stat = "identity", fill = "gray") +
+geom_point(aes(x= data$Bank,y=data$`Oprocentowanie nominalne` * scaleFactor), size=1.5,  col="darkred") + 
+geom_label_repel(aes(x = data$Bank, y = data$`Oprocentowanie nominalne` * scaleFactor, label = paste( data$`Oprocentowanie nominalne`, "%"))) + scale_x_discrete(name="Bank") +
+scale_y_continuous(name="Zysk po roku(po podatku) (zł)", sec.axis=sec_axis(~./scaleFactor, name="Oprocentowanie nominalne (%)")) + coord_cartesian() +
+theme_replace() +
+theme(axis.text.x = element_text(angle=60, hjust=1)) +
+ggtitle("Ranking kont oszczędnościowych dla nowych klientów \ni na nowe środki - październik 2018")
+```
+
+Jak widać wykres jest dość estetyczny. Wątpliwości budzą jednak podwóje osie. Nie wiadomo czy słupki tyczą się prawej czy lewej osi. To samo tyczy się kropek na wykresie. Dodatkowo nie da się łatwo porównać kont oszczędnościowych. Moja propozycja poprawy wykresu dla tych danych jest następująca.
+
+```{r warning=FALSE, message=FALSE, error=FALSE, echo=FALSE, fig.width=10}
+df <- data
+colnames(df) <- c('bank','x1','x2')
+
+ggplot(df, aes(x1, x2, label = bank)) + 
+  geom_point(col="darkred") + 
+  geom_label_repel(col = 'black') +
+  xlab('Oprocentowanie nominalne (%)') +
+  ylab('Zysk po roku (po podatku) (zł)') + 
+  ggtitle("Ranking kont oszczędnościowych dla nowych klientów i na nowe środki - październik 2018") 
+
+```
+
+Osie po lewej i prawej stronie wykresu słupkowego zastąpiłem osiami rzędnych i odciętych w wykresie rozproszenia. Teraz jedna oferta jest jedną kropką. Widać łatwo, że oferta w górnym prawym rogu jest ofertą najlepszą. Teraz dużo łatwiej porównywać oferty między sobą. Ze względu na małą liczbę ofert możemy każdej kropce nadać etykietę by wiedzieć z jakiego banku pochodzi.
+
+
+
