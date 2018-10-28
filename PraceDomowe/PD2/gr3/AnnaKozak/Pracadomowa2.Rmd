@@ -63,7 +63,7 @@ Poniżej poprawiony wykres. Dzięki umieszczeniu na osi X kolejnych dni mamy czy
 ggplot(df, mapping = aes(x = Data, y = Liczba, col = Partia, group = Partia)) + 
   geom_point() + 
   geom_line(size = 1) + 
-  labs(x = "Partia polityczna", y = "Liczba nowych obserwujących") + 
+  labs(y = "Liczba nowych obserwujących") + 
   ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia") + 
   scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d", "#666666")) +
   theme_bw()

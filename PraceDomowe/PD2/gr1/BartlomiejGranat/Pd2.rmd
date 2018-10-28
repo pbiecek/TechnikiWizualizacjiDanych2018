@@ -1,0 +1,103 @@
+---
+title: "[TWD] Praca Domowa 2"
+author: "Bartlomiej Granat"
+date: "23.10.2018"
+output: html_document
+---
+  
+  ```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  cache = FALSE)
+
+```
+
+\pagebreak
+
+#Wstęp
+
+Poniższe wykresy zostały stworzone na podstawie pracy domowej Witolda Merkela, w której na podstawie danych podanych w artykule
+(artykuł z pazdziernika 2018): https://gratka.pl/regiopraca/portal/rynek-pracy/wiadomosci/
+placa-minimalna-2019-co-najmniej-2250-zl-wynagrodzenia-dla-pracownikow-umowa- oraz zaczerpnac
+dodatkowych informacji z artykułu: https://pl.wikipedia.org/wiki/P%C5%82aca_minimalna#P%C5%
+82aca_minimalna_brutto_w_krajach_UE_i_w_USA
+
+#Wykresy przed zmianą
+
+```{r echo = FALSE}
+library(ggplot2)
+
+#tworzenie potrzebnego data.fram'u z płacami minimalnymi
+minimum_brutto <- c(700, 760, 760, 800, 824, 849, 899.1, 936, 1126, 1276, 1317, 1386, 1500, 1600, 1680, 1750, 1850, 2000, 2100, 2250)
+minimum_netto <- c(512.83, 559.12, 561.82, 588.39, 602.77, 617.39, 647.93, 686.45, 845.17, 954.96, 984.15, 1032.34, 1111.86, 1181.38, 1237.20, 1286.16, 1355.69, 1459.48, 1530, 1633.78)
+lata <- c(2000:2019)
+
+dane_minimum_prim <- cbind(minimum_brutto, minimum_netto)
+dane_minimum <- as.data.frame(cbind(lata, dane_minimum_prim))
+
+#tworzenie potrzebnego data.fram'u z płacami minimalnymi w Uni
+unia_brutto <- c(1999, 1563, 1552, 1532, 1498, 1480, 845, 826, 684, 453, 407, 380)
+kraje <- c("Luksemburg", "Irlandia", "Holandia", "Belgia", "Niemcy", "Francja", "Srednia w UE", "Hiszpania", "Gracja", "Polska", "Czechy", "Litwa")
+kraje_minimum <- as.data.frame(cbind(unia_brutto, kraje))
+
+
+#tworzenie wykresów
+
+#wykres o minimalnych zarobkach w Polsce
+wykres_minumum_polska <- ggplot(data = dane_minimum, aes(x = lata, y = minimum_brutto)) + geom_col(fill = lata) +
+  geom_text(aes(label = minimum_brutto), size = 4, vjust = 2, color = "white") +
+  ylab("Zarobki minimalne w złotówkach brutto") + xlab("Lata") + 
+  ggtitle("Wykres zarobków Polaków na przestrzeni ostatnich lat") +
+  theme(plot.title = element_text(hjust = 0.5))
+wykres_minumum_polska
+#wykres o minimalnych zarobkach w Uni
+
+wykres_minumum_unia_1 <- boxplot(unia_brutto, main = "Rozklad minimalnych zarobkow \n w Uni Europejskiej",
+                                 ylab = "Zarobki w Euro")
+wykres_minimum_unia_2 <- abline(h = 453, col = "red", lwd = 4, lty = 5)
+```
+
+
+#Wykresy po zmianie
+
+Jak widzimy na powyższych wykresach nie są one czytelne. Bez opisu nie widzimy też co przedstawia $boxplot$. Postanowiłem zrezygnować z przesycenia danych na wykresie słupkowym i zaznaczyłem tylko najważniejsze zmiany płacy minimalnej. Ponadto użyłem tego samego $theme$ w obu wykresach, aby lepiej wyglądały obok siebie. Dodałem również legendę i zmieniłem kolory na bardziej przyjazne oku.
+
+W boxplocie podpisałem co oznacza czerwona linia, uzupełniłem ramke danych o dodatkowe dostępne pod podanymi linkami, a także zaznaczyłem przeźroczystymi punktami wszystkie płace minimalne.
+
+```{r echo = FALSE}
+#tworzenie potrzebnego data.fram'u z płacami minimalnymi
+minimum_brutto <- c(700, 760, 760, 800, 824, 849, 899.1, 936, 1126, 1276, 1317, 1386, 1500, 1600, 1680, 1750, 1850, 2000, 2100, 2250)
+lata <- c(2000:2019)
+dane_min <- as.data.frame(cbind(lata, minimum_brutto))
+
+#tworzenie potrzebnego data.fram'u z płacami minimalnymi w Unii
+unia_brutto <- c(1999, 1563, 1552, 1532, 1498, 1480, 1397, 1192, 845, 826, 791,736,684,650,470, 453, 433, 412, 407, 380, 380, 318, 235)
+unia_brutto_df <- data.frame(unia_brutto)
+```
+
+```{r fig.height= 10}
+library(ggplot2)
+library(ggthemes)
+library(gridExtra)
+#wykres o minimalnych zarobkach w Polsce
+wykres_minumum_polska <- ggplot(data = dane_min, aes(x = lata, y = minimum_brutto, fill = minimum_brutto)) + geom_bar(stat = "identity") +
+  geom_text(data = subset(dane_min, minimum_brutto == 700 | minimum_brutto == 2250 | minimum_brutto == 1126 | minimum_brutto == 1276 | minimum_brutto == 936 |minimum_brutto == 1850 | minimum_brutto == 2000 ),aes(label = minimum_brutto), size = 3, vjust = 1, color = "white") +
+  ylab("Płaca minimalna brutto(w zł.)") + xlab("Rok") + 
+  ggtitle("Wykres wysokości płacy minimalnej Polaków na przestrzeni lat") +
+  theme_dark() +
+  theme(plot.title = element_text(hjust = 0.5))
+#wykres o minimalnych zarobkach w Unii
+
+wykres_tlo <- ggplot(data = unia_brutto_df, aes(x = "", y = unia_brutto)) +
+  geom_boxplot(fill="#56B4E9") +
+  theme_dark() + 
+  geom_hline(yintercept = 453, linetype="dashed", color = "red", size = 2) +
+  annotate("text", label = "płaca minimalna w PL", x = 0.8, y = 500, size = 5, color = "red") +
+  geom_point(position = position_jitter(width = 0.05), alpha = 0.4, color = "white", size = 2) + 
+  ylab("placa minimalna(w EUR)") +
+  xlab("") +
+  ggtitle("Płaca minimalna w Polsce na tle pozostałych krajów Unii") +
+  theme(plot.title = element_text(hjust = 0.5))
+
+grid.arrange(wykres_minumum_polska, wykres_tlo, ncol = 1)
+```
