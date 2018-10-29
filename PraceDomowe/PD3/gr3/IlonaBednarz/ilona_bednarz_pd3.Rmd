@@ -1,0 +1,77 @@
+---
+title: "Praca domowa 3"
+author: "Ilona Bednarz"
+date: "26.10.2018"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wykres oryginalny
+
+Poniżej znajduje się wybrany przeze mnie wykres pochodzący z [artykułu](http://300polityka.pl/news/2018/04/12/kantar-dla-300-trzaskowski-zdecydowanym-faworytem-w-warszawie-jaki-najsilniejszym-kandydatem-pis-lewica-mocna-ale-podzielona/?fbclid=IwAR1VloGMYVRpVkD8uVkRvfg_2abTWQczzi_xcgezXCSrSOL9O7612qLC4Wc) zamieszczonego na portalu *300polityka.pl*. Wykres przedstawia wyniki sondaży przedwyborczych dotyczących wyborów samorządowych w Warszawie w 2018 roku. Obrazuje hipotetyczne poparcie, jakie uzyskaliby poszczególni politycy w wyborach na prezydenta Warszawy, jeśli startowaliby w nich podani kandydaci.
+
+Wybrałam ten wykres, ponieważ został na nim popełniony szereg typowych błędów w sztuce wizualizacji danych, a także kilka nietypowych. Oczywiście przedstawienie danych, takich jak poparcie, na wykresie słupkowym jest dobrym pomysłem, ale sposób wykonania jest godny potępienia. 
+
+
+<img src="wykres_wybory_2018.png">
+
+### Błędy popełnione na wykresie
+
+1. Słupki i skala osi Y rozjeżdżają się w bardzo dziwnaczny sposób - np. słupek z wartością 12% znajduje się ponizej wartości 10% na skali osi Y, a słupek 2% jest poniżej zera! Pozostałe słupki również są źle położone w stosunku do skali. Jest to najpowazniejszy błąd, ponieważ zwyczajnie przekłamuje dane i może prowadzić do złego ich odczytania.
+
+2. Kolejnym poważnym błędem jest wprowadzenie trzeciego wymiaru, mało tego, zastosowanie w nim perspektywy środkowej. Po pierwsze, nie ma sensu wprowadzać trzeciego wymiaru dla danych, które można z powodzeniem przedstawić na rysunku dwuwymiarowym. Po drugie, perspektywa środkowa uniemożliwia porównywanie słupków między sobą, gdyż słupkom niższym perspektywa 'dodaje' więcej wysokości niz tym wyższym, co zaburza relacje między nimi.
+
+3. Oś pozioma nie jest pozioma, lecz nachylona pod kątem, co daje złudzenie, że słupki znajdujące się po lewej (czyli zaczepione wyżej) są wyższe niż w rzeczywistości.
+
+4. Rolę podpisów osi X pełnią miniaturowe zdjęcia kandydatów, brakuje nazwisk, co części odbiorów całkowicie uniemożliwi odbiór wykresu.
+
+5. Zdjęcia służące za podpis osi X nie są ułożone równolegle do tej osi, tylko w bez żadnego porządku. Przypisanie słupków do zdjęć zajmuje dłuższą chwilę (a nie powinno).
+
+6. Białe podpisy słupków nie zawsze są widoczne, np. słupek z wartością 2.
+
+7. Brak dużego i czytelnego tytułu wykresu oraz opisu osi Y. 
+
+8. Nie ma potrzeby używania różnych kolorów, jeśli nie kodują żadnej informacji.
+
+9. Procenty nie sumuja się do 100, a do 99, co może być błędem wynikającym z zaokrąglenia do liczb całkowitych.
+
+
+## Wykres poprawiony
+
+Poniżej prezentuję wykres, na którym poprawiłam wszystkie wymienione wcześniej błędy.
+
+```{r, echo = FALSE}
+library(ggplot2)
+data <- data.frame(
+  Kandydat = c('Rafał Trzaskowski', 'Michał Dworczyk', 'Ryszard Kalisz', 'Jan Śpiewak','Adrian Zandberg', 'Stanisław Tyszka', 'Piotr Guział', 'Piotr Ikonowicz', 'Nie wiem/Trudno powiedzieć'),
+  Poparcie = c(37, 18, 12, 7, 5, 5, 3, 2, 10),
+  color = c(rep('darkgrey', 8), 'lightgrey')
+)
+order <- data$Kandydat
+```
+
+```{r, warning = FALSE, out.width = 800}
+ggplot(data = data, aes(x = Kandydat, y = Poparcie, label = paste0(Poparcie, "%"), fill = color)) +
+  scale_fill_manual(values = c("grey50", "grey")) +
+  geom_bar(stat = 'identity') +
+  coord_flip() +
+  scale_x_discrete(limits = order) +
+  scale_y_continuous(limits = c(0, 45), labels = function(x) paste0(x, "%")) +
+  geom_text(hjust = -0.3) +
+  xlab('') +
+  ggtitle('Wyniki sondażu dn. 5-8.04 dotyczącego\nwyborów na prezydenta Warszawy') +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = 'none')
+```
+

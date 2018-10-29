@@ -1,0 +1,38 @@
+---
+title: "Wizualizacja danych z Eurostatu"
+author: "Anna Kozak"
+output: 
+  html_document: 
+    theme: cosmo
+    highlight: default
+    
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+
+```{r, include = FALSE, warning = FALSE, error = FALSE, message = FALSE}
+library(dplyr)
+library(ggplot2)
+library(eurostat)
+lp <- lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "all")
+s1 <- search_eurostat("job", type = "table")
+t1 <- get_eurostat(s1[4, "code"])
+df <- left_join(lp, t1, by = c("geo" = "geo")) %>%  filter(long > -30, lat > 30) 
+df <- na.omit(df)  
+
+```
+
+```{r, out.width=1000}
+
+ggplot(df, aes(x = long, y = lat, group = group, fill = values)) +
+  scale_fill_gradient(low = "blue", high = "red") +
+  geom_polygon(color = "black")+
+  coord_map() + 
+  facet_wrap(~time) + 
+  ggtitle("Individuals using the internet for looking for a job or sending a job application")
+
+```

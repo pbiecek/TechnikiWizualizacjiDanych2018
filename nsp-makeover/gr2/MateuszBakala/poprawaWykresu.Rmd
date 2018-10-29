@@ -1,0 +1,31 @@
+---
+title: "Poprawiony wykres"
+author: "Mateusz B¹ka³a"
+date: "October 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(RColorBrewer)
+kultura <- data.frame(odsetek = c(23, 31.1, 52.1, 53, 17.6, 11.9, 3.6, 1.3, 3.7, 2.7),
+                      opinia = rep(c("bardzo wa¿na", "doœæ wa¿na", "niezbyt wa¿na", "zupe³nie niewa¿na", "nie wiem/brak odpowiedzi"), each=2),
+                      plec = rep(c("mê¿czyŸni", "kobiety"), 5),
+                      stringsAsFactors = FALSE)
+```
+
+Wykres, który zdecydowa³em siê poprawiæ, to wykres 6. ze strony 56. [tego dokumentu](http://stat.gov.pl/obszary-tematyczne/kultura-turystyka-sport/kultura/uczestnictwo-ludnosci-w-kulturze-w-2014-r-,6,2.html). Poni¿ej zamieszczone zosta³y odpowiednio oryginalny wykres oraz poprawiona, autorska wersja tego¿.
+
+Wprowadzone poprawki mia³y na celu u³atwienie porównywania sumy wiêcej ni¿ jednej wartoœci pomiêdzy p³ciami, poniewa¿ czêsto interesuje nas jedynie, jaki odsetek ludzi mia³ pozytywny b¹dŸ negatywny stosunek do danego zagadnienia, bez wzglêdu na stopieñ intensywnoœci. Ponadto wykres przedstawia³ wartoœci procentowe, wobec tego przedstawienie go w postaci skumulowanego wykresu s³upkowego nie przyczynia siê do straty informacji. Dodatkowo odpowiedŸ "nie wiem/brak odpowiedzi" zosta³a umieszczona w œrodku wykresu, by u³atwiæ porównywanie zbiorcze pozosta³ych odpowiedzi. Ostatni¹ rzecz¹ jest umieszczenie s³upków dotycz¹cych kobiet po lewej stronie, a wiêc na pierwszej pozycji, by skutecznie walczyæ z patriarchalizmem i kontrpostêpowym modelem spo³ecznoœci.
+
+![Pierwotny wykres](wykres.png)
+
+```{r wykres, echo=FALSE}
+ggplot(kultura, aes(x = plec, y = odsetek, fill = opinia)) + 
+  geom_bar(stat = "identity", position = "stack") + 
+  geom_label(aes(label = paste(odsetek, "%", sep = "")), position = position_stack(vjust = 0.5)) + 
+  scale_x_discrete(name = "p³eæ") + 
+  scale_fill_manual(values = c("olivedrab", "palegreen1", "lightskyblue", "khaki1", "lightgoldenrod4"), breaks = c("bardzo wa¿na", "doœæ wa¿na", "nie wiem/brak odpowiedzi", "niezbyt wa¿na", "zupe³nie niewa¿na")) + 
+  ggtitle(label = "Wykres 6. Znaczenie kultury wed³ug p³ci")
+```

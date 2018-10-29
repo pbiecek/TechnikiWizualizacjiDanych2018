@@ -1,0 +1,66 @@
+---
+title: "Aleksandra_Wichrowska_pd2"
+author: "Aleksandra Wichrowska"
+date: "24 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Postanowiłam poprawić wykres dotyczący średnich wydatków na ślub i wesele w zależności od regionu Wielkiej Brytanii.
+
+Artykuł pochodzi ze strony brytyjskiego dziennika "The Independent" ("https://www.independent.co.uk/life-style/average-cost-uk-wedding-how-much-pay-32000-venue-where-honeymoon-food-catering-guests-a8557271.html").
+
+
+## Wykres "PRZED"
+
+```{r, echo=FALSE, warning=FALSE, fig.align='center'}
+library(ggplot2)
+wedding_costs <- c(41521, 29613, 27091, 31191, 28465, 27245, 30586, 28320, 28240, 33406, 31335, 36902)
+region <- c("London", "East of England", "Wales", "West Mids", "East Mids", "Yorkshire", "North West", "North East",
+            "South West", "South East", "Scotland", "Northern Ireland")
+wedding_data <- data.frame(region = region, 
+                           wedding_costs = wedding_costs)
+wedding_data$limits <- ifelse(wedding_costs > 40000, "Above 40 000", 
+                              ifelse(wedding_costs > 30000, "Above 30 000", "Above 20 000"))
+
+ggplot(data = wedding_data, 
+  aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_bar(aes(fill=factor(limits)), position = 'dodge', stat="identity", width=.5) +
+  scale_fill_manual(values=c("#E066FF", "#9932CC", "#68229B")) +
+  theme(axis.line = element_blank(), 
+        plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6), legend.title = element_blank()) +
+  geom_text(aes(label=wedding_costs), position=position_dodge(width=0.9), vjust=-0.25) 
+```
+
+Moim zdaniem brak posortowania danych utrudnia ich porównywanie. Ponadto słupki rozmieszczone są zbyt gęsto. 
+Dodatkowo myślę, że warto zaznaczyć na wykresie wartość średnią (która została podana pod tytułem).
+Bardziej rózróżnialne barwy słupków ułatwiają odbiór danych.
+
+## Wykres "PO"
+
+```{r, echo=FALSE, fig.align='center'}
+library(ggplot2)
+library(RColorBrewer)
+wedding <- wedding_data[order(wedding_data$wedding_costs),]
+wedding$region <- factor(wedding$region, levels=wedding$region)
+col <- brewer.pal(6,"Set3")
+
+ggplot(wedding,
+  aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_bar(aes(fill=factor(limits)), position = 'dodge', stat="identity", width=.5) +
+  geom_hline(yintercept = 32273, color="red", size=2) +
+  annotate("text", x = wedding$region[5], y = 36273, label = "32.273") +
+  scale_fill_manual(values=col[c(4,5,6)], labels=c("Above 20 000", "Above 30 000", "Above 40 000")) +
+  labs(title="UK wedding costs by region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding costs in pounds") + 
+  theme(legend.position="right", legend.title = element_blank()) +
+  coord_flip() 
+```
