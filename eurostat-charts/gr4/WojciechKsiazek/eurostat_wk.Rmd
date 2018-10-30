@@ -1,0 +1,39 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(eurostat)
+
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = 2)
+s2 <- search_eurostat("household", type = "table")
+
+code <- s2[3, "code"]
+
+t4 <- get_eurostat(code)
+
+# t4 <- t4 %>% sepa
+
+df <- inner_join(lp, t4, by = c("geo" = "geo"))
+
+balkans <- c("BG", "HR", "HRV", "GR", "MK", "RO", "MT")
+```
+
+```{r}
+df %>% 
+  filter(CNTR_CODE %in% balkans) %>%
+ggplot(aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  coord_map() + 
+  facet_wrap(~time) +
+  ggtitle("Spread of broadband internet in Balkans") + theme_classic()+
+  scale_fill_continuous(name = "Percentage of households with broadband access\n in relation to households with internet access") +
+  theme(legend.position = "bottom")
+
+```
+

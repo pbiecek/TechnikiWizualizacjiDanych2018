@@ -1,0 +1,40 @@
+---
+title: "nsp-makeover"
+author: "Piotr Miziński"
+date: "20 października 2018"
+output: html_document
+---
+
+W jednym z dokumentów zamieszczonychy na stronie GUS-u znalaziono poniższy wykres, obrazujący procent mieszkańców obiektów zbiorowego zakwaterowania urodzonych za granicą według danego kraju urodzenia. Wykres jest typu kołowego, na dodatek pokazanego w 3D z brzydkimi etykietami obrazującymi wartości liczbowe - które jednak pozwalają jakkolwiek zrozumieć zamieszczone dane.
+
+![](WykresZLY.png)
+
+Zaproponowałem następującą poprawkę wizualizacji danych zawartych na wspomnianym wykresie:
+
+```{r wstep, echo=FALSE}
+library(ggthemes)
+library(scales)
+library(ggplot2)
+library(ggrepel)
+
+options(stringsAsFactors=FALSE)
+
+dane <- read.csv("./daneLUD.csv", sep = ",") #wczytanie zbioru danych
+
+dane <- dane[nrow(dane):1,] #odwrocenie kolejnosci (pierwszy wiersz ostatnim itd.)
+
+dane$Kraj <- factor(dane$Kraj, levels = dane$Kraj) #stworzenie factorow do ustalenia kolejnosci
+```
+
+```{r wykres, fig.width=15, fig.height=8}
+ggplot(data = dane, aes(x=Kraj, y=Procenty)) +
+  coord_flip() +
+  geom_bar(stat="identity", fill="steelblue")+
+  theme_economist(horizontal=FALSE,base_size = 18)+
+  scale_y_continuous(labels = function(x) paste0(x, "%"))+
+  geom_text(aes(label = paste0(Procenty, "%")), stat = "identity", 
+            hjust = 1.2,colour='white',size=4,fontface=2)+
+  xlab(NULL)+ylab(NULL)+
+  ggtitle("Mieszkańcy obiektów zbiorowego zakwaterowania urodzeni za granicą")
+
+```
