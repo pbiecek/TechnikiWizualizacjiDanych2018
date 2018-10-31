@@ -1,0 +1,38 @@
+---
+title: "PD3"
+author: "Piotr Luboń"
+date: "October 27, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+# Wykres przed
+
+Wykres pochodzi z artykułu opublikowanego 22 sierpnia 2018 r. w New York Times pod tytułem "How the Trump Administration Is Remaking the Courts".
+Przedstawia on liczbę sędziów sądów apelacyjnych zaprzysiężonych przez poszczególnych amerykańskich prezydentów podczas pierwszej kadencji kongersu za ich rządów. 
+
+Wykres jest mylący ponieważ proporcje długości słupków nie odpowiadają proprocjom wartości. Ponadto, narysowanie słupków pod kątem utrudnia porównanie poszczególnych wartości.
+
+Artykuł jest dostępny pod linkiem poniżej:
+https://www.nytimes.com/2018/08/22/magazine/trump-remaking-courts-judiciary.html
+
+![](przed.jpg)
+
+# Wykres poprawiony
+
+```{r}
+presidents <- c('Ronald Reagan', 'George Bush', 'Bill Clinton', 'George W. Bush', 'Barack Obama', 'Donald Trump')
+dane <- data.frame(val=c(19, 18, 18, 16, 15, 24), 
+                   name=presidents,
+                   stringsAsFactors = FALSE)
+
+ggplot(data=dane) +
+  geom_col(aes(name, val), fill='darkblue') +
+  scale_x_discrete(limits = presidents, name="President") +
+  scale_y_continuous(name="Judgeships confirmed") +
+  ggtitle('Appellate Judgeships Confirmed During First Congressional Term')
+```
