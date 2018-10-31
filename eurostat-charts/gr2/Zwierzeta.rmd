@@ -1,0 +1,35 @@
+---
+title: "Prezentacja"
+author: "Olaf"
+date: "31 paŸdziernika 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning = FALSE,message = FALSE)
+```
+##Iloœæ zwierz¹t wo³owych w Europie w roku 2017 (w milionach)
+```{r}
+library(dplyr)
+library(ggplot2)
+library(eurostat)
+
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "all")
+
+s1 <- search_eurostat("animals", type = "table")
+
+s1
+
+as.list(s1[2, ])
+
+t1 <- get_eurostat(s1[2, "code"])
+filter(t1,time=="2017-01-01")%>%
+mutate(values=values/1000)->t1
+  left_join(lp, t1, by = c("geo" = "geo")) %>% 
+na.omit %>% 
+  ggplot(aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  coord_map()
+
+```
+
