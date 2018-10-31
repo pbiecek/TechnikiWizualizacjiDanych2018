@@ -1,0 +1,34 @@
+---
+title: '[TWD] PD3'
+author: "Szymon Maksymiuk"
+date: "31 paŸdziernika 2018"
+output: html_document
+---
+
+
+## Wstêp
+
+Postanowi³em zwróciæ uwagê na wykres (dostêpny w za³¹czniku), który Polskie Stronnictwo Ludowe zamieœci³o na swoim Twitterze 13 kwietnia br. Jest on perfidnym przyk³adem manipluacji. Najwiêkszym zarzutem s¹ Ÿle wyskalowane s³upki. Przedstawione w takim spsoób powoduj¹ wra¿enie narastania, oraz podejrzenia, ¿e wynik PiSu jest zbli¿ony do wyniku Kukiza. Tymczasem jest ca³kowicie inaczej, wartoœci liczbowe pokazuj¹, ¿e blisko 4 razy wiêcej respondentów wybra³o PiS zamiast Kukiza. Sam wynik PSL równie¿ wybija siê nienaturalnie ponad wynik PiS. Odleg³oœæ miedzy s³upkami powinna wynosiæ oko³o 1/4. tymczasem jest to oko³o 1/3. Poni¿ej prezentujê moim zdaniem poprawny wykres.
+
+
+```{r fig.width=12, fig.height=6}
+library(ggplot2)
+dane <- data.frame(cbind(c("PSL", "PiS", "Kukiz'15", "PO", "SLD", ".N"),
+                         c(36.7, 27.6, 7.2, 2, 1, 1)))
+
+
+dane$X2 <- as.numeric(as.character(dane$X2))
+ggplot(data=dane, aes(x=X1, y=X2)) +
+  geom_bar(stat="identity", width = 0.8, position = position_dodge(width = 0.9), colour="black", 
+           fill="steelblue")+
+  geom_text(aes(label=X2), vjust= -1, colour="black",
+            position = position_dodge(0.9), size=3.5)+
+  ylim(0,max(dane$X2)+5)+
+  scale_x_discrete(limits = dane$X1)+
+  labs(x="", y="Wynik (%)")+
+  ggtitle("Która partia najlepiej reprezentuje interes polskich rolników?")+
+  theme_minimal()+
+  theme(plot.title = element_text(hjust = 0.5), panel.grid.major.x = element_blank())
+
+```
+
