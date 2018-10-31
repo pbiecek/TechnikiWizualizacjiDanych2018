@@ -1,0 +1,77 @@
+---
+title: "Praca domowa 2"
+author: "Piotr Wawrzyniak"
+date: "23 paŸdziernika 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(RColorBrewer)
+```
+
+## Zadanie
+
+W katalogu z PD1 znajdŸ wykres innej osoby, który potrafisz zrobiæ lepiej
+(lepsza geometria, lepsze adnotacje, lepsze kolory, lepsza skórka).
+
+Popraw ten wykres i poka¿ wersjê ,,przed i po''.
+Uzasadnij, dlaczego uwa¿asz, ¿e wersja ,,po'' jest lepsza.
+
+## Wersja wyjœciowa
+
+```{r, echo=FALSE, out.width = "100%"}
+
+wedding_costs <- c(41521, 29613, 27091, 31191, 28465, 27245, 30586, 28320, 28240, 33406, 31335, 36902)
+region <- c("London", "East of England", "Wales", "West Mids", "East Mids", "Yorkshire", "North West", "North East",
+            "South West", "South East", "Scotland", "Northern Ireland")
+wedding_data <- data.frame(region = region, 
+                           wedding_costs = wedding_costs)
+wedding_data$limits <- ifelse(wedding_costs > 40000, "Above 40 000", 
+                              ifelse(wedding_costs > 30000, "Above 30 000", "Above 20 000"))
+
+```
+
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+ggplot(data = wedding_data, 
+  aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_bar(aes(fill=factor(limits)), position = 'dodge', stat="identity", width=.5) +
+  scale_fill_manual(values=c("#E066FF", "#9932CC", "#68229B")) +
+  theme(axis.line = element_blank(), 
+        plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6), legend.title = element_blank()) +
+  geom_text(aes(label=wedding_costs), position=position_dodge(width=0.9), vjust=-0.25) 
+```
+
+## Wersja poprawiona
+
+```{r warning=FALSE, echo=TRUE, out.width = "100%"}
+wedding_data <- wedding_data[order(wedding_data$wedding_costs),]
+wedding_data$region <- factor(wedding_data$region, levels=wedding_data$region)
+
+ggplot(wedding_data, 
+  aes(x = region, y = wedding_costs)) +
+  geom_col(width=0.8) +
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018.", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  coord_flip() +
+  geom_hline(yintercept = 32273, linetype="twodash", color = "orange", size=0.9) +
+  annotate("text", x = 2, y = 37273, label = "average cost:\n32'273")
+```
+
+## Wyjaœnienie
+
+1. Podwójne oznaczenie kosztu wesela w postaci koloru i wysokoœci s³upka powoduje mniejsz¹ czytelnoœæ - zostawiono wy³¹cznie s³upki.
+2. W przypadku wartoœci, których oszacowania nie s¹ dok³adne, nie wa¿ne s¹ dok³adne wartoœci, dlatego nie ma potrzeby wyœwietlania liczb nad s³upkami.
+3. Nazwy regionów s¹ d³u¿sze i ciê¿sze w odczycie, dlatego lepiej zamieniæ osie.
+4. Patrz¹c na taki wykres zazwyczaj porównujemy regiony miêdzy sob¹. Aby by³o to mo¿liwe powinny byæ one posortowane np. od najdro¿szych do najtañszych regionów.
+5. Na wykresie zaznaczono œredni¹.
+6. Szara kolorystyka nie rozprasza czytelnika.
+7. Tytu³ wyrównano do lewej, przez co wykres w moim odczuciu wygl¹da lepiej.
+8. Z opisu usuniêto informacje o œrednim koszcie - widaæ to teraz na wykresie.

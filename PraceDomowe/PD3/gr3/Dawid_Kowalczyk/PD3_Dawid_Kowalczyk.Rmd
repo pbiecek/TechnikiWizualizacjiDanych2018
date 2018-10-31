@@ -1,0 +1,46 @@
+---
+title: "Techniki PD3"
+author: "Dawid Kowalczyk"
+date: "30.10.2018"
+output: html_document
+---
+  
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  cache = FALSE)
+
+```
+
+\pagebreak
+
+#Wstęp
+
+Celem pracy było poprawienie wykresu omawiającego wyniki wyborów samorządowych w 2018 roku. Oryginalny artykuł z wykresem znajduje się po [linkiem.](https://nto.pl/pis-przegrywa-na-opolszczyznie-wybory-do-sejmiku-sondaz/ar/13164753) 
+
+#Wykres oryginalny
+
+```{r}
+knitr::include_graphics("wykres.png")
+```
+
+#Wykres poprawiony
+
+Na pierwszy rzut oka widać, że wykres jest mało profesjonalny. Umiejscownienie danych na półokręgu zaburza ich interpretację.
+```{r}
+library(ggplot2)
+
+df <- data.frame(partia = c("PiS", "PO+Nowoczesna" , "PSL" , "Mniejszość niemiecka"),
+                 wynik = c(10,12,4,4))
+
+
+ggplot(data = df, aes(x = partia, y = wynik, label = wynik))+
+  geom_bar(stat= "identity", aes(fill = partia), width = 0.5) +
+  geom_text(position = 'identity', stat = 'identity', vjust = -0.5) +
+  scale_fill_brewer(palette="Paired")+
+  theme_minimal() +
+  labs(title="Podział mandatów do Sejmiku Województwa Opolskiego") +
+  theme(legend.position="none")
+
+
+```
