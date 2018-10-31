@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 library(ggplot2)
 ```
 
-Przeglądając twittera w celu uzyskania inspiracji natrafiłem na grafikę opublikowaną w czerwcu 2018 roku przez Oficjalny profil Portu Lotniczego Poznań-Ławica im. Henryka Wieniawskiego prezentującą porównanie liczby pasażerów w maju 2017 i 2018 roku.
+Przeglądając twittera w celu uzyskania inspiracji natrafiłem na grafikę opublikowaną w czerwcu 2018 roku przez [Oficjalny profil Portu Lotniczego Poznań-Ławica im. Henryka Wieniawskiego](https://twitter.com/poz_airport/status/1007249064814153728/photo/1) prezentującą porównanie liczby pasażerów w maju 2017 i 2018 roku.
 
 
 
