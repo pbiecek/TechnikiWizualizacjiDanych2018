@@ -1,0 +1,24 @@
+---
+title: "Eurostat_Daria_Hubernatorova"
+author: "Daria Hubernatorova"
+date: "10/25/2018"
+output: html_document
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+library(eurostat)
+library(ggplot2)
+library(dplyr)
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "all")
+s2 <-search_eurostat("Employment", type = "table")
+t2 <- get_eurostat(s2[30, "code"])
+left_join(lp, t2, by = c("geo" = "geo")) %>% 
+  filter(CNTR_CODE == "PL", sex != "T") %>% 
+  na.omit %>% 
+  ggplot(aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  coord_map() +
+  ggtitle("Employment rate by sex in Poland in %") +
+  theme_minimal() +
+  facet_grid(sex ~ time)
+```

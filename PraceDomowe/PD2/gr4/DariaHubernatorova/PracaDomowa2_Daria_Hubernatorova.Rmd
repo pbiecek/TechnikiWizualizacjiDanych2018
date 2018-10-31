@@ -1,0 +1,58 @@
+---
+title: "Praca domowa 2"
+author: "Daria Hubernatorova"
+date: "10/24/2018"
+output: html_document
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+wedding_costs <- c(41521, 29613, 27091, 31191, 28465, 27245, 30586, 28320, 28240, 33406, 31335, 36902)
+region <- c("London", "East of England", "Wales", "West Mids", "East Mids", "Yorkshire", "North West", "North East",
+            "South West", "South East", "Scotland", "Northern Ireland")
+wedding_data <- data.frame(region = region, 
+                           wedding_costs = wedding_costs)
+wedding_data$limits <- ifelse(wedding_costs > 40000, "Above 40 000", 
+                              ifelse(wedding_costs > 30000, "Above 30 000", "Above 20 000"))
+```  
+## Oryginalny wykres
+Source: https://github.com/pbiecek/TechnikiWizualizacjiDanych2018/blob/master/PraceDomowe/PD1/Guziewicz_Ewa/Guziewicz_Ewa_praca_domowa1.Rmd
+```{r, fig.align='center', echo=FALSE}
+ggplot(data = wedding_data, 
+  aes(x = region, y = wedding_costs), fill = wedding_costs) +
+  geom_bar(aes(fill=factor(limits)), position = 'dodge', stat="identity", width=.5) +
+  scale_fill_manual(values=c("#E066FF", "#9932CC", "#68229B")) +
+  theme(axis.line = element_blank(), 
+        plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6), legend.title = element_blank()) +
+  geom_text(aes(label=wedding_costs), position=position_dodge(width=0.9), vjust=-0.25) 
+```  
+
+## Poprawiony wykres
+```{r, fig.align='center', echo=FALSE}
+costs_order <- wedding_data %>% 
+  arrange(desc(wedding_costs))
+ggplot(data = wedding_data, 
+  aes(x = reorder(region, -wedding_costs), y = wedding_costs)) +
+  geom_bar(position = 'dodge', stat="identity", fill = "plum",
+           width = 0.7) +
+  coord_flip() +
+  theme(axis.line = element_blank(), 
+        plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", 
+       subtitle="The average total cost of wedding suppliers in 2018 is 32.273 pounds", 
+       x="Region of UK", y="Wedding Costs in Pounds") + 
+  theme(axis.text.x = element_text(vjust=0.6)) +
+  theme_minimal() +
+  geom_text(aes(label=wedding_costs), position=position_dodge(width=0.75), hjust=1.0)
+```
+
+### Problemy wykresu przed
+* Nieposortowane dane
+* Moim zdaniem kiedy dane są posortowane nie ma potrzeby na pokazanie
+czy kwota przekracza dany próg czy nie (limity above 20000, above 30000, above 40000)
+* Na oryginalnym wykresie wartości były pokazane, ale nie ładnie niektóre liczby się pokrywały wizualnie

@@ -1,0 +1,82 @@
+---
+title: "Praca domowa nr 2"
+author: "Łukasz Brzozowski"
+output: html_document
+---
+```{r, echo = FALSE, message = FALSE}
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
+```
+Poniżej zamieszczam porównanie wykresu Andrzeja Szcześniaka dotyczącego wyników finansowych oddziałów Telewizji Polskiej w latach 2016 i 2017 oraz mojej poprawionej wersji.
+
+#Wykres wyjściowy
+```{r fig 1, echo = FALSE, fig.width=10}
+data <- read.csv("data.csv", header = TRUE)
+data2016 <- data.frame(data[,c("Oddział", "X2016")], 2016)
+names(data2016) = c("Oddział", "Strata", "Rok")
+data2017 <- data.frame(data[,c("Oddział", "X2017")], 2017)
+names(data2017) = c("Oddział", "Strata", "Rok")
+data <- rbind(data2016, data2017)
+data$Rok <- as.factor(data$Rok)
+ggplot(data = data, aes(x = reorder(Oddział, Strata) , y = Strata, fill = Rok, label = Strata, width = 0.8)) + 
+  geom_bar(stat = "identity", position = position_dodge()) +
+  geom_text(vjust = 0, hjust = -0.3, position = position_dodge(0.5), size = 2) +
+  labs(x = "Oddział", y = "Strata w mln zł", title = "Wyniki finansowe oddziałów regionalnych Telewizji Polskiej") + 
+  scale_fill_manual(values = c("#4CB5F5", "#B7B8B6")) +
+  scale_y_continuous(breaks = seq(0, 16, 2)) +
+  coord_flip() + 
+  theme_minimal()
+```
+Powyższy wykres przedstawia wyniki finansowe konkretnych oddziałów w porównaniu rocznym. Trudno jednak z niego odczytać zarówno oddział, którego kondycja finansowa uległa największej poprawie, jak również oddział, u którego poprawa była największa w stosunku do obecnej straty. Nie jest również czytelne, dlaczego oddziały zostały zaprezentowane akurat w tej kolejności.
+
+#Wykres poprawiony
+
+Zdecydowałem się na rozbicie prezentowanych danych pomiędzy dwa wykresy: jeden prezentuje porównanie wyników finansowych 2016 roku z rokiem 2017, co odpowiada różnicom długości słupków na przedstawionym wyżej wykresie, a drugi prezentuje procentowy spadek straty w porównaniu do poprzedniego roku.
+```{r, echo = FALSE}
+dane <- read.csv("data.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
+dane[,2] <- as.numeric(dane[,2])
+dane[,3] <- as.numeric(dane[,3])
+colnames(dane) <- c("Oddzial", "Rok_2016", "Rok_2017")
+dane <- dane[order((dane[,2] - dane[,3])),]
+dane1 <- dane[order(((dane[,2] - dane[,3])/dane[,2])),]
+p1 <- ggplot(data = dane, aes(x = reorder(Oddzial, (Rok_2017 - Rok_2016)), y = -(Rok_2017 - Rok_2016))) +
+  geom_bar(aes(x = reorder(Oddzial, -((Rok_2017 - Rok_2016)))), 
+           stat = "identity", 
+           fill = factor(ifelse((dane[,3] - dane[,2] < 0), "cornflowerblue", "brown2"))) +
+  geom_hline(yintercept = mean(dane[,2] - dane[,3])) +
+  geom_label(aes(4.5, mean(dane[,2] - dane[,3]), 
+                label = "Średnia poprawa finansowa"), 
+            vjust = 1) +
+  labs(x = "Oddział Telewizji Polskiej", 
+       y = "Poprawa wyniku finansowego oddziału") +
+  theme(axis.text.x = element_text(family = "cambria", color="azure4", size=10, angle=90), 
+        axis.text.y = element_text(family = "cambria", color="azure4", size = 10, angle = 60),
+        axis.title.x = element_text(family = "cambria", size = 13),
+        axis.title.y = element_text(family = "cambria", size = 12),
+        plot.title = element_text(family = "cambria", size = 14)) +
+  scale_y_continuous(breaks = c(0, 1, 2), 
+                     labels = c("0 zł", "1 mln zł", "2 mln zł"))
+  
+p2 <- ggplot(data = dane1, aes(x = reorder(Oddzial, (Rok_2017 - Rok_2016)/Rok_2016), y = -(Rok_2017 - Rok_2016)/Rok_2016)) +
+  geom_bar(aes(x = reorder(Oddzial, -(Rok_2017 - Rok_2016)/Rok_2016)), 
+           stat = "identity", 
+           fill = factor(ifelse((dane1[,3] - dane1[,2] < 0), "cornflowerblue", "brown2"))) +
+  geom_hline(yintercept = mean((dane1[,2] - dane1[,3])/dane1[,2])) +
+  geom_label(aes(4.5, mean((dane1[,2] - dane1[,3])/Rok_2016),
+                label = "Średnia poprawa procentowa"),
+            vjust = 0) +
+  labs(x = "Oddział Telewizji Polskiej",
+       y = "Poprawa procentowa wyniku oddziału") +
+  theme(axis.text.x = element_text(family = "cambria", color="azure4", size=10, angle=90),
+        axis.text.y = element_text(family = "cambria", color="azure4", size = 10, angle = 60),
+        axis.title.x = element_text(family = "cambria", size = 13),
+        axis.title.y = element_text(family = "cambria", size = 12),
+        plot.title = element_text(family = "cambria", size = 14)) +
+  scale_y_continuous(breaks = c(0, 0.2, 0.4), labels = c("0%", "20%", "40%"))
+```
+```{r figure, echo = FALSE, fig.width= 10}
+grid.arrange(p1, p2, nrow = 1, ncol = 2, top = "Różnice finansowe oddziałów Telewizji Polskiej pomiędzy rokiem 2016 a 2017")
+```
+
+Porównując powyższe dwa wykresy można zauważyć, że zniknął problem z wyróżnieniem największej poprawy w stosunku do poprzedniego roku, zarówno finansowej jak i procentowej. Ponadto oddziały zostały czytelnie posegregowane wg. zmiany, która nastąpiła pomiędzy 2016 a 2017 rokiem.

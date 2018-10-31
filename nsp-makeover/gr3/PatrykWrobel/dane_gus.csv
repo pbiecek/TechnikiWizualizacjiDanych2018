@@ -1,0 +1,37 @@
+bezrobotni;wiek;procent
+bo;15-24 lata;20
+bo;25-34 lata;30
+bo;35-44 lata;15
+bo;45-54 lata;20
+bo;55-64 lata;14
+bo;65 lat i więcej;1
+db;15-24 lata;15
+db;25-34 lata;20
+db;35-44 lata;19
+db;45-54 lata;30
+db;55-64 lata;15
+db;65 lat i więcej;1
+boup;15-24 lata;15
+boup;25-34 lata;25
+boup;35-44 lata;19
+boup;45-54 lata;25
+boup;55-64 lata;15
+boup;65 lat i więcej;1
+dboup;15-24 lata;5
+dboup;25-34 lata;15
+dboup;35-44 lata;25
+dboup;45-54 lata;35
+dboup;55-64 lata;19
+dboup;65 lat i więcej;1
+bodn;15-24 lata;40
+bodn;25-34 lata;30
+bodn;35-44 lata;14
+bodn;45-54 lata;10
+bodn;55-64 lata;5
+bodn;65 lat i więcej;1
+dbdn;15-24 lata;40
+dbdn;25-34 lata;30
+dbdn;35-44 lata;14
+dbdn;45-54 lata;10
+dbdn;55-64 lata;5
+dbdn;65 lat i więcej;1
