@@ -1,0 +1,46 @@
+---
+title: "Praca domowa 3"
+author: "Piotr Miziński"
+date: "26 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pierwotny wykres
+
+Wykres, który postanowiono poprawić podczas tej pracy domowej znaleziono na stronie <https://krknews.pl/malopolska-pis-wygra-wybory-do-sejmiku-ale-nie-bedzie-rzadzil/>. Dotyczy on podziału mandatów do Sejmiku Województwa Małopolskiego, który nastapił podczas tegorocznych wyborów. Pokazano go poniżej.
+
+![](WykresZLY.png)
+
+Jak wspomniano wcześniej, twórca chciał pokazać na tej grafice zarówno liczbę otrzymanych mandatów, jak i (poprzez wykres kołowy 3D) ich procent względem całości. Miało to zapewne na celu zobrazowanie czytelnikowi następujących wniosków, które zostały później w artykule przytoczone:
+
+* PiS wybory wygrywa zdecydowanie, ale nie jest w stanie sam rządzić w Małopolsce. Zdobywa tutaj 18 mandatów, a więc musi stworzyć koalicję, aby uzyskać większość.
+* Jeżeli powstanie koalicja “antyPiS”, wówczas to ona przejmie władze w Małopolsce.
+
+## Poprawiony wykres
+
+Oprócz użycia wykresu kołowego, co samo w sobie jest złem wizualiazacji danych, pokazano również tabelkę przekazującą te same dane - po co więc umieszczać wykres kołowy skoro dokładnych danych procentowych i tak nie można z niego odczytać? W związku z tym, zdecydowano się stworzyć wykres słupkowy, na którym pokazano liczbę otrzymanych mandatów przez daną partię polityczną oraz umieszczono informację o procentowej ich liczbie względem całości. Wykres umieszczono poniżej.
+
+```{r d, echo=FALSE}
+library(ggthemes)
+library(ggplot2)
+
+dane <- read.csv("./dane.csv", sep = ";")
+```
+
+```{r w2, include = TRUE, echo=TRUE, fig.width=10, fig.height=8}
+ggplot(data = dane, aes(x=reorder(partia, -mandaty), y=mandaty)) +
+  geom_bar(stat="identity", fill="steelblue")+
+  theme_economist(base_size = 12)+
+  geom_text(aes(label = paste0(round(100*mandaty/sum(mandaty)), "%")), stat = "identity", 
+            vjust = 2,colour='white',size=5,fontface=2)+
+  scale_y_continuous(breaks=seq(0,20,2))+
+  labs(title="Podział mandatów do Sejmiku Województwa Małopolskiego", 
+       x="Partia", y = "Liczba uzyskanych mandatów", size = 10)+
+  theme(axis.text=element_text(size=12),
+       axis.title=element_text(size=12,face="bold"),
+       plot.title = element_text(hjust = 0.5))
+```
