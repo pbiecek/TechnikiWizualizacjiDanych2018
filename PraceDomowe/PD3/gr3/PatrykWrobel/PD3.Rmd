@@ -1,0 +1,53 @@
+---
+title: "Techniki Wizualizacji Danych - PD3"
+output: html_document
+author: "Patryk Wróbel"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Cel zadania**
+
+Celem zadania jest znalezienie w dowolnym artykule z 2018 roku złego wykresu i przygotowanie jego własnej wersji z uzasadnieniem wprowadzonych poprawek.
+
+**Wybór wykresu**
+
+Wybrany wykres pochodzi ze strony prezentującej dane dotyczące przeszczepów i dawców narządów z bieżącego roku. Przedstawia on liczbę pobranych w tym roku do przeszczepu narządów.
+  
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("wykresPrzed.png")
+```
+
+Wykres posiada kilka cech świadczących o jego błędnej konstrukcji. Przede wszystkim to wykres trójwymiarowy, co utrudnia odczytywanie wartości słupków z osi. Na wykresie nie widać proporcji w wielkości słupków (np. słupek odpowiadający przeszczepom nerki wcale nie jest 3 razy dłuższy od słupka wątroby). Niepoprawnie narysowana jest też oś Y (nie ma żadnego uzasadnienia, dla którego oś powinna się zaczynać od 20, a nie od 0). Poza tym maksymalna wyróżniona na osi Y wartość wynosi 470, podczas gdy najwyższy słupek prezentuje wartość 660 - na wykresie nie widać tej różnicy. Gdyby nie naniesione na wykres labele z dokładnymi wartościami liczbowymi, wyciągnięcie tych informacji z wykresu byłoby praktycznie niemożliwe.
+
+Link do materiału: https://www.poltransplant.org.pl/statystyka_2018.html .
+
+**Poprawiony wykres**
+
+```{r include=FALSE}
+library(ggplot2)
+library(ggrepel)
+
+```
+```{r warning=FALSE, echo=FALSE, out.width = "70%"}
+
+# załadowanie danych
+narzad <- c("nerka","wątroba","serce","płuco","nerka-trzustka")
+przeszczepy <- c(660,216,108,31,15)
+dane <- data.frame(narzad,przeszczepy)
+kolejnosc <- rev(order(dane$przeszczepy))
+dane$narzad <- factor(dane$narzad, levels=dane[kolejnosc,"narzad"])
+
+# wyświetlenie wykresu
+ggplot(data = dane, aes(x = narzad, y = przeszczepy, label = przeszczepy, width=0.5)) + 
+  geom_bar(stat="identity", fill = "#7AB360") +
+  geom_label_repel(nudge_y = 1, size = 3.5, box.padding= unit(0.5, "lines"), color = "white", fontface="bold", fill = "#7AB360") +
+  scale_y_continuous(limits = c(0,710), breaks = seq(0, 700, 100)) +
+  labs(x = "Narząd", y = "Liczba przeszczepów", title = "Liczba przeszczepionych narządów pobranych od zmarłych dawców w 2018 r.") +
+  theme(plot.title = element_text(size=11, colour="gray17"), axis.title.x = element_text(margin = margin(t = 20)), axis.title.y = element_text(margin = margin(r = 20)))
+
+```
+
+W nowej wersji wykresu usunięte też zostały osobne kolory dla każdego narządu, ponieważ błędnie sugerowały one wnoszenie do wykresu jakiejś dodatkowej informacji, a słupki narządów zostały uporządkowane w kolejności od największej liczby przeszczepów do najmniejszej.

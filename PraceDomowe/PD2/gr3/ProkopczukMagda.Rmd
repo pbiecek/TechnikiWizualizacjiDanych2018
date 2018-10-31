@@ -1,0 +1,56 @@
+---
+title: "PRACA DOMOWA NR 2"
+author: "Prokopczuk Magda"
+date: "24 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wykres oryginalny
+ Wykres oryginalny został stworzony na podstawie artykułu http://wyborcza.pl/1,75398,19061937,tns-dla-wyborczej-w-nowym-sejmie-trzy-czy-siedem-partii.html.
+
+``` {r orginal, echo=FALSE}
+library(ggplot2)
+dane<-data.frame(nazwa=factor(c("PiS","PO","K'15","ZL",".N","K","PSL"),levels = c("PiS","PO","K'15","ZL",".N","K","PSL")),
+                 procenty=c(32.5,26.3,10.4,7.5,6.1,5.3,4.8))
+ggplot(dane,aes(x=nazwa,y=procenty,fill=nazwa)) + geom_col(width=0.7) + 
+  geom_text(aes(label=as.character(procenty),y=procenty+1),size=5,fontface="bold") + guides(fill=FALSE) + 
+  coord_fixed(ratio = 0.25) +
+  labs(title="POPARCIE DLA PARTII",y="",x="",subtitle="(W PROC.)") +
+  theme_minimal()+theme(panel.border = element_blank(),
+                        panel.grid.major = element_blank(),
+                        panel.grid.minor = element_blank(),
+                        axis.text.y = element_blank(),
+                        axis.text = element_text(face = "bold",size = rel(1.5)),
+                        plot.title = element_text(size = rel(1.75),hjust=-.1,face="bold")
+                        
+                        )
+```
+
+
+## Wykres poprawiony
+
+```{r poprawa}
+library(ggplot2)
+dane<-data.frame(nazwa=factor(c("PiS","PO","K'15","ZL",".N","K","PSL"),levels = c("PiS","PO","K'15","ZL",".N","K","PSL")),
+                 procenty=c(32.5,26.3,10.4,7.5,6.1,5.3,4.8))
+
+ggplot(dane,aes(x=nazwa,y=procenty, fill=2)) + geom_col(width=0.7) + 
+  geom_text(aes(label=as.character(procenty),y=procenty+1),size=5) + guides(fill=FALSE) + 
+  coord_fixed(ratio = 0.2) +
+  labs(title="POPARCIE DLA PARTII ",y="PROCENT POPARCIA",x="",subtitle="(19-20 PAŹDZIERNIKA 2015R.)") +
+  theme_minimal()+theme(panel.border = element_blank(),
+                        panel.grid.major = element_blank(),
+                        panel.grid.minor = element_blank(),
+                        axis.text.x = element_text(size = rel(1.5), vjust=7),
+                        plot.title = element_text(size = rel(1.75),hjust=-.1,face="bold") )
+
+```
+
+Zmiany, które zaszły między wykresami:   
+1. zmiana różnych kolorów słupków na jeden, jako że nie przekazywały one żadnej dodatkowej informacji   
+2. dodanie osi Y oraz jej opis   
+3. zmiana podtytułu wykresu, by uwzględniał przybliżony czas przeprowadzenia badania.
