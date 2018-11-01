@@ -1,0 +1,88 @@
+---
+title: "Praca domowa 4"
+author: "Małgorzata Wachulec"
+date: "(prawie) Halloween 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wstęp
+
+Postanowiłam przerobić wykres ze strony: https://www.hiaonline.org/page/statsandtrends, pokazujący w jaki sposób Amerykanie zamierzają spędzić Halloween w roku 2017 (niestety na tej stronie nie zostały utworzone tego typu statystyki w bieżącym roku), a dokładniej, ile procentowo Amerykanów zamierza uczcić Halloween na jeden z poszczególnych sposobów:
+
+1. Rozdając cukierki
+2. Dekorując dom, etc.
+3. Przebierając się w Halloween-owy kostium
+4. Wykrajając dynię
+5. Organizując/biorąc udział w przyjęciu
+6. Zbierając cukierki (trick-or-treating)
+7. Odwiedzając nawiedzony dom
+8. Przebierając zwierzęta w Halloween-owe kostiumy
+
+## Wersja A
+
+```{r pack, echo=FALSE, warning=FALSE}
+#install.packages("ggplot2")
+#install.packages("data.table")
+#install.packages("ggthemes")
+library(ggplot2)
+library(data.table)
+library(ggthemes)
+```
+
+```{r plot1, fig.width=10}
+dt <- data.table(read.csv2("halloween.csv", stringsAsFactors=FALSE))
+names(dt) <- c("sposob","procenty")
+dt$procenty <- as.numeric(dt$procenty)
+dt$sposob <- factor(dt$sposob,levels = rev(dt$sposob))
+
+ggplot(dt,aes(x=sposob,y = procenty)) + 
+  theme_light() +
+  geom_col(fill = "#636363", width = .5, aes(x =sposob, y = procenty)) +
+  labs(y = "Procent Amerykanow planujacych obchodzenie Halloween w dany sposob",x="") +
+  ggtitle("Na jakie sposoby Amerykanie planowali obchodzic Halloween w 2017 roku",subtitle = "Wiecej Amerykanow planowalo rozdawac niz zbierac cukierki") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0,80)) +
+  geom_text(aes(label=procenty), position=position_dodge(width=0.9), hjust=-0.25) +
+  coord_flip() 
+```
+
+## Wersja B
+
+
+```{r plot2, fig.width=10}
+ggplot(dt,aes(x=sposob,y = procenty,fill=factor(procenty))) + 
+  theme_light() +
+  geom_col(width = .5, aes(x =sposob, y = procenty)) +
+  labs(y = "Procent Amerykanow planujacych obchodzenie Halloween w dany sposob",x="") +
+  ggtitle("Na jakie sposoby Amerykanie planowali obchodzic Halloween w 2017 roku",subtitle = "Wiecej Amerykanow planowalo rozdawac niz zbierac cukierki") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0,80)) +
+  geom_text(aes(label=procenty), position=position_dodge(width=0.9), hjust=-0.25) +
+  theme(legend.position="none") +
+  coord_flip() +
+  scale_fill_brewer(type="seq",palette = 18)
+```
+
+W wersji B zdecydowałam się użyć Helloween-owej palety kolorów, od najintensywniejszych tam, gdzie procent Amerykanów obchodzących w ten sposób święto jest najwyższy, do najmniej intensywnych tam, gdzie procent ten jest niższy. Dodanie kolorów do wersji A powoduje, że wykres bardziej zauważalny i przykuwa uwagę obserwatora do najczęstszych Halloween-owych praktyk (w wersji A robił to jedynie podtytuł).
+
+## Halloween-owy bonus
+
+```{r plot3, echo=FALSE}
+dat <- data.table(read.csv2("pumpkin.csv"))
+names(dat) <- c("x","y","z")
+dat$z[dat$z==1] <- "orange"
+dat$z[dat$z==2] <- "brown"
+dat$z[dat$z==3] <- "red"
+dat$z[dat$z==4] <- "red"
+dat$z[dat$z==5] <- "red"
+ggplot(dat,aes(x=x,y=y,color=z)) +
+  geom_point(aes(x=x,y=y)) +
+  scale_color_manual(values = c("#8c510a","#fd8d3c","#f16913")) +
+  labs(x="",y="") +
+  theme_minimal() +
+  theme(legend.position="none") +
+  scale_x_continuous(breaks = 0, labels = "") +
+  scale_y_continuous(breaks = 0, labels = "")
+```
