@@ -1,0 +1,30 @@
+---
+title: "eurostat-teicp290"
+author: "Mateusz Bakala"
+date: "31 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+library(eurostat)
+
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "all")
+s1 <- search_eurostat("industrial", type = "table")
+t1 <- get_eurostat(s1[2, "code"])
+```
+
+## Przetworzony wykres
+
+```{r plot, echo=FALSE, warning=FALSE}
+left_join(lp, t1, by = c("geo" = "geo")) %>%
+  filter(long > -30, lat > 30, unit == "PCH_M1") %>% 
+  ggplot(aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  coord_map() +
+  facet_wrap(~ time) + 
+  labs(title = "Zharmonizowany indeks cen konsumpcyjnych",
+       subtitle = "Zmiana względem poprzedniego miesiąca dla dóbr przemysłowych innych niż energia")
+```
