@@ -1,0 +1,34 @@
+---
+title: "Praca domowa 4"
+author: "Karol Pysiak"
+date: "November 3, 2018"
+output: html_document
+---
+
+Do pracy domowej nr 3 wybrałem dane z artykułu [Halloween Spending Statistics, Facts and Trends](https://www.thebalance.com/halloween-spending-statistics-facts-and-trends-3305716). Dane te opowiadają o tym jak kształtowały się wydatki i liczba osób biorących udział w Halloween w USA.
+
+# Wykres czarno-biały
+```{r, echo=FALSE}
+library(ggplot2)
+
+dane <- read.csv2(file = "data.csv")
+ggplot(data = dane) +
+  geom_bar(stat = "identity", aes(x = dane$Year, y = dane$Average.Spending.Per.Buyer, fill = dane$Americans.Celebrating)) +
+  labs(x = "Year", y = "Average Spending Per Buyer [$]", title = "Halloween spendings and contribution of American Citizens") +
+  coord_flip() +
+  scale_x_continuous(breaks = 2012:2018) + 
+  scale_fill_gradient(name = "Americans Celebrating [mln]", low = "#BBBBBB", high = "#222222")
+```
+
+Porównując oba wykresy można zauważyć, że kolorowy wykres znacznie bardziej zwraca uwagę niż wykres czarno-biały. Co&nbsp;więcej, na wykresie czarno-białym niektóre kolory zlewają się z tłem, a także nie odczuwa się między nimi kontrastu. Na&nbsp;wykresie kolorowym, słupki kontrastują z tłem oraz są wyraźnie między sobą rozróżnialne. Wszystko to sprawia, że&nbsp;dodanie&nbsp;koloru do&nbsp;czarno-białego wykresu znacznie poprawia jego czytelność.
+
+# Wykres kolorowy
+```{r, echo=FALSE}
+
+ggplot(data = dane) +
+  geom_bar(stat = "identity", aes(x = dane$Year, y = dane$Average.Spending.Per.Buyer, fill = dane$Americans.Celebrating)) +
+  labs(x = "Year", y = "Average Spending Per Buyer [$]", title = "Halloween spendings and contribution of American Citizens") +
+  coord_flip() +
+  scale_x_continuous(breaks = 2012:2018) + 
+  scale_fill_gradient(name = "Americans Celebrating [mln]", low = "#ffeda0", high = "#f03b20")
+```
