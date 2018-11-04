@@ -1,0 +1,32 @@
+---
+title: "Eurostat"
+author: "Tomasz Makowski"
+date: "31 paüdziernika 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r plot}
+library(dplyr)
+library(ggplot2)
+library(eurostat)
+#library(RColorBrewer)
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "all")
+s1 <- search_eurostat("Land", type = "table")
+t1 <- get_eurostat(s1[3, "code"])
+t1[,"values"] <- log2(t1[,"values"])
+df <- left_join(lp, t1, by = c("geo" = "geo")) %>% 
+  filter(long > -30, lat > 30) %>% 
+  na.omit
+ggplot(df, aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  scale_fill_gradient(low = "#F7FCF0", high = "#4A1486") +
+  coord_map() +
+  #geom_text(data = names_df, aes(x = long, y = lat, label = NUTS_NAME), inherit.aes = FALSE) +
+  ggtitle('Logarytm z liczby barier* na 1000 km2')
+```
+
+Bariera jest uznawana jako obiekt zbudowany przez cz≥owieka, np. droga, miasto.
