@@ -1,0 +1,37 @@
+---
+title: "Eurostat"
+author: "Dominik Rafacz"
+date: "31 paŸdziernika 2018"
+output: html_document
+---
+
+
+```{r eurostat, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.width= 9, fig.height=6}
+library(dplyr)
+library(ggplot2)
+library(eurostat)
+
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "all")
+
+w <- search_eurostat(pattern = "GDP", type="table")
+tab <- get_eurostat(w[1, "code"])
+
+times <- (tab %>% group_by(time) %>% summarise())$time
+
+dat <- left_join(lp, tab, by = c("geo" = "geo")) %>%
+  filter(LEVL_CODE == 0, 
+         geo %in% c("PL", "DE", "CZ", "SK", "LT"),
+         time %in% times[c(1,12)]) %>% mutate(geo = factor(geo), time = factor(time))
+
+vals <- dat %>% group_by(geo, time) %>% summarise(lat = mean(lat), long = mean(long), values = mean(values))
+
+ggplot(data = dat, aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  coord_map() +
+  geom_label(data = vals, aes(x = long, y = lat, label = values), inherit.aes = FALSE) +
+  facet_wrap(~time) +
+  ggtitle("PKP Polski i s¹siednich krajów UE na osobê wyra¿ony w PPS", subtitle = "w roku 2006 oraz 2017")
+
+```
+
+
