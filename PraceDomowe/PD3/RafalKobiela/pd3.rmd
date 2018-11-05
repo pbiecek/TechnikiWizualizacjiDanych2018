@@ -1,0 +1,63 @@
+---
+title: "pd3"
+author: "Rafał Kobiela"
+date: "October 30, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Wykres który zdecydowałem się poprawić pochodzi ze strony https://howmuch.net/articles/worlds-money-in-perspective-2018 i prezentuje się następująco.
+
+![](plot.jpg)
+
+Ma on na celu zaprezentowanie jak dużo pieniędzy mają poszczególni, najbogatsti, ludzie oraz jak to się ma to innych dóbr czy wskaźników jakimi są na przykład giełdy czy wszystkie pieniędze. Wykres ten według mnie zakłamuje rzeczywistość z tego względu, że proporcje wielkości tych kół (kul?) słabo oddają rzeczywistą wartość, którą prezentują. Przykładowo czy koło Billa Gatesa wydaje się tysiąc razy mniejszy od koła ze wszystkimi pieniędzmi? Według mnie nie. Dlatego proponuję następujący wykres, który naprawia ten błąd.
+
+```{r warning=FALSE, message=FALSE, error=FALSE, echo=FALSE, fig.width=10, fig.height=7}
+library(ggplot2)
+library(scales)
+library(dplyr)
+
+x <- c('All money',
+       'Stock markets',
+       'Physical \n money',
+       'Gold market \n cap',
+       'USD in \n circulation',
+       'Apple',
+       'Amazon',
+       'All \n Cryptocurrencies',
+       'Jef bezos',
+       'Bitcoin',
+       'Bill Gates'
+       )
+
+
+y <- c(86.5 * 10^3,
+       67.5 * 10^3,
+       34.4 * 10^3,
+       7.8 * 10^3,
+       1.5 * 10^3,
+       10^3,
+       970 * 10^0,
+       202 * 10^0,
+       112 * 10^0,
+       112 * 10^0,
+       90 * 10^0)
+df <- data_frame(x = x, y = y)
+
+df$x <- factor(df$x, levels = df$x)
+
+ggplot(df, aes(x = x, y = y)) + 
+  geom_bar(stat = 'identity') + 
+  ylab(label = 'Value (in Bilions of $)') +
+  xlab(label = '') +
+  scale_y_continuous(labels = comma) +
+  ggtitle("Putting the world's Money into Perspective") + 
+  geom_text(aes(label=paste0(y,'Bln$')), position=position_dodge(width=0.9), vjust=-0.25)
+  
+```
+
+Na tym prostym wykresie widać główny cel, który prawdopodobnie przyświecał przy tworzeniu tego wykresu czyli proporcje. Widać jaką małą cześcią wszystkich pieniędzy świata są poszczególni ludzie, wartości spółek czy kryptowalut.
