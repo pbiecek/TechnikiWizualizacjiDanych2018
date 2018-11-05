@@ -15,6 +15,7 @@ Prace domowe należy zgłaszać przez GitHub. [Instrukcja jak korzystać](http:/
 * [3] W: [Nie rób tego w domu](http://biecek.pl/Eseje/indexPomylka.html); L: [poprawiamy NSP](http://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/)
 * [4] W: [Kolory](http://biecek.pl/Eseje/indexKolory.html); L: [wizualizacja danych z Eurostatu](https://journal.r-project.org/archive/2017/RJ-2017-019/index.html)
 * [5] W: [Droga wzrokowa](http://biecek.pl/Eseje/indexObraz.html); L: [Grafika interaktywna i rCharts](http://pbiecek.github.io/Przewodnik/Wizualizacja/jak_tworzyc_interaktywne_wykresy.html)
+* [6] W: [Skale pomiarowe](http://biecek.pl/Eseje/indexKuchnia.html); L: [Inkscape](https://inkscape.org/) lub [Illustrator](https://www.adobe.com/pl/products/illustrator/free-trial-download.html) (w miarę możliwości proszę przynieść własny laptop)
 
 
 # Zasady zaliczenia
