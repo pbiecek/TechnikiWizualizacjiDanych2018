@@ -1,0 +1,56 @@
+---
+title: "Techniki wizaualizacji PD4"
+author: "Dawid Kowalczyk"
+date: "2.11.2018"
+output: html_document
+---
+  
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  cache = FALSE)
+
+```
+
+\pagebreak
+
+#Wstęp
+
+Celem pracy było przedstawienie danych związanych z Halloween obchodzonych w USA. Wykresy przedstawiają planowane roczne wydatki na to święto w Stanach Zjednoczonych na przestrzeni lat 2006 - 2018. Dane oryginalne znajdują się pod [linkiem.](https://www.statista.com/statistics/275726/annual-halloween-expenditure-in-the-united-states/) 
+
+#Wykres A (czarno-biały)
+
+Pierwsza wersja wykresu to wykres w skali szarości, pokazujący planowane wydatki w miliardach dolarów.
+
+```{r}
+library(ggplot2)
+
+df = data.frame( year = as.factor(seq(2006, 2018, 1)),
+                 expen = as.numeric(c(4.96, 5.07, 5.77, 4.75, 5.8, 6.86, 8, 6.99, 7.4, 6.89, 8.4, 9.1, 9)))
+
+ggplot(data = df, aes(x = year, y = expen, label = expen))+
+  geom_bar(stat= "identity", width = 0.5) +
+  geom_text(position = 'identity', stat = 'identity', vjust = -0.5) +
+  theme_minimal() +
+  labs(title="Planned annual Halloween expenditure in the United States") +
+  ylab("Annual expenditure in USD") +
+  theme(legend.position="none")
+
+```
+
+#Wykres B (kolorowy)
+
+Nałożono paletę kolorów, aby zwrócić uwagę na maksymalne wartości na wykresie, odznaczają się one jasnymi odcieniami oraz pokazują jak ważne dla Amrykanów jest to święto.
+
+```{r}
+
+ggplot(data = df, aes(x = year, y = expen, label = expen))+
+  geom_bar(stat= "identity", aes(fill = expen), width = 0.5) +
+  geom_text(position = 'identity', stat = 'identity', vjust = -0.5) +
+  theme_minimal() +
+  labs(title="Planned annual Halloween expenditure in the United States") +
+  ylab("Annual expenditure in USD") +
+  theme(legend.position="none") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0,10))
+
+```

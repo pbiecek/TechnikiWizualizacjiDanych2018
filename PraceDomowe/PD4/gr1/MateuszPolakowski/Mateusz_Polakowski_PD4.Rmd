@@ -1,0 +1,65 @@
+---
+title: "Praca domowa nr 4"
+author: "Mateusz Polakowski"
+date: "2 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Dane
+Dane zostały zaciągnięte ze strony *statista.pl*, a dokładniej [stąd](https://www.statista.com/statistics/275726/annual-halloween-expenditure-in-the-united-states). Wskazują one ile pieniędzy Amerykanie wydają co roku na ich święto *Halloween*.
+
+## Wykres bez kolorów
+Bez kolorów wykres jest o wiele mniej czytelny, a sama predykcja wyników jest kompletnie nieczytelna:
+
+```{r}
+library(ggplot2)
+library(data.table)
+
+halloween <- as.data.table(cbind(
+  2006:2018,
+  c(4.96, 5.07, 5.77, 4.75, 5.8, 6.86, 8, 6.99, 7.4, 6.89, 8.4, 9.1, 9)
+))
+colnames(halloween) <- c("year", "exp")
+
+### Wykres bez kolorów
+ggplot(data = halloween, aes(x = year, y = as.numeric(exp))) +
+  geom_col(width = 0.74) +
+  theme_classic() + 
+  geom_smooth(method = 'loess', se = FALSE, size = 2, color = "gray35") +
+  geom_text(aes(label = exp, y = as.numeric(exp) + 0.3 + c(0.1, 0, 0, 0, 0.1, 0.05, 0, - 0.1, 0, 0, 0, 0, - 0.1)), 
+            fontface = 'bold', size = 5, color = 'gray35') + 
+  scale_x_continuous(limits = c(2005.4, 2018.6), breaks = 2006:2018,
+                     expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 9.5), breaks = 0:9,
+                     expand = c(0.01, 0.01)) +
+  labs(title = "Wydatki Amerykanów na święto Halloween", subtitle = "w miliardach dolarów",
+       x = '', y = '') +
+  theme(plot.title = element_text(size = 20, face = "bold", color = 'gray35'))
+```
+
+## Wykres z kolorami
+
+Z kolorami natomiast jesteśmy w stanie podkreślić predykcję kolejnych wartości, a także kolorem słupków wskazać czy wartość przekracza predykcję, czy nie. Dodatkowo wykres jest barwniejszy i milszy dla oka:
+
+```{r}
+smooth_vals <- as.numeric(predict(loess(exp ~ year, data = as.data.frame(halloween))))
+smooth_cols <- ifelse(halloween$exp < smooth_vals, '#e65020', '#f58d37')
+
+ggplot(data = halloween, aes(x = year, y = as.numeric(exp))) + 
+  geom_col(width = 0.74, fill = smooth_cols) +
+  geom_smooth(method = 'loess', se = FALSE, size = 2, color = '#febe64') +
+  geom_text(aes(label = exp, y = as.numeric(exp) + 0.3 + c(0.1, 0, 0, 0, 0.1, 0.05, 0, - 0.1, 0, 0, 0, 0, - 0.1)), 
+            fontface = 'bold', size = 5, color = 'black') + 
+  scale_x_continuous(limits = c(2005.4, 2018.6), breaks = 2006:2018,
+                     expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, 10), breaks = 0:9,
+                     expand = c(0, 0.01)) +
+  labs(title = "Wydatki Amerykanów na święto Halloween", subtitle = "w miliardach dolarów",
+       x = '', y = '') +
+  theme_classic() + 
+  theme(plot.title = element_text(size = 20, face = "bold"))
+```
