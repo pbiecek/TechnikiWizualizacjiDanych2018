@@ -1,0 +1,65 @@
+---
+title: "Techniki wizualizacji danych - PD 3"
+author: "Michał Maciąg"
+date: "31.10.2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br\>
+
+Znalazłem następujący wykres w internecie, przedstawiający poparcie parti politycznych w Polsce. Generalnie jest on bardzo schludny i elegancki. Ma jednak bardzo duże 2 wady. Po pierwsze po prawej stronie wykresu są puste rubryczki na liczbę mandatów w sejmie dla poszczególnych parti, wygląda to tak jakby wykres był niedokończony. Po drugie w mojej opini bardzo nie czytelny jest sposób przedstawienia zmiany poparci pomiędzy kolejnymi sondażami. Postaram się ten wykres poprawić.
+
+<br\>
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('/Users/michalmaciag/Desktop/TWD-PD3/Wykres_orginalny.png')
+```
+
+<br\>
+
+Kod poprawionego wykresu wygenerowanego przy uzyciu pakietu 'ggplot2'.
+
+<br\>
+
+```{r, fig.align='center'}
+
+library(ggplot2)
+
+poparcie <- c(40, 19, 8, 5, 4, 3, 2, 2, 15)
+partie <- c("PiS", "PO", "Kukiz'15", "PSL", "SLD", "Nowoczesna", "Wolność", "Razem", "Niezdecydowani")
+zmiana <- c(-3, 1, 1, 1, 0, 0, 0, 0, -1)
+
+poparcie_stare <- poparcie - zmiana
+
+dane <- data.frame(kiedy = as.factor(rep(c("Poprzedni sondaż", "Nowy sondaż"), each=9)), procent = c(poparcie, poparcie_stare), kto = rep(partie, 2))
+
+ggplot(data = dane, aes(x = kto, y = procent, fill = kiedy)) +
+  geom_bar(position = 'dodge', stat = "identity") +
+  coord_flip() +
+  theme_minimal() +
+  theme(axis.line = element_line(color = 'black'), 
+        panel.grid.major.x = element_blank(), 
+        legend.title = element_blank(),
+        legend.text = element_text(size = 10),
+        axis.text.x = element_text(size = 12, hjust = 1, face = 'bold'), 
+        axis.text.y = element_text(size = 12, face = 'bold'),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(size = 25, face = 'bold', hjust = 0.5)) +
+  scale_fill_brewer(palette = "Paired") +
+  labs(title = 'Poparcie parti politycznych w Polsce') +
+  geom_text(aes(label = procent), vjust = 0.5, hjust = 1, color = "orange", position = position_dodge(0.9), size = 5)
+  
+```
+
+<br\>
+
+Mój wykres, jest może mnie "elegancki" kolorystycznie, ale moim zdaniem zdaniem w zdecydowanie bardziej czytelny sposób przekazuje dane.
+
+<br\>
+<br\>
+<br\>
