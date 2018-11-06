@@ -1,0 +1,73 @@
+---
+title: "Praca domowa 4"
+author: "Piotr Wawrzyniak"
+date: "6 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(RColorBrewer)
+```
+
+## Dane
+
+Dane do wizualizacji sumy wydatków na halloween przez Amerykanów, pozyska³em z National Retail Federation: https://nrf.com/media/press-releases/halloween-spending-reach-9-billion
+
+## Wykres w skali szaroœci
+
+```{r, echo=FALSE, out.width = "100%"}
+
+
+years <- c(2005:2018)
+spendings <- c(3.3,5.0,5.1,5.8,4.8,5.8,6.9,8.0,7.0,7.4,6.9,8.4,9.1,9.0)
+dane <- data.frame(years = years, spendings = spendings)
+```
+
+```{r warning=FALSE, echo=TRUE, out.width = "100%"}
+
+ggplot(dane, aes(x = years, y = spendings)) +
+  geom_bar(stat="identity", width=0.8) +
+  scale_y_continuous(breaks = 0:10, labels = function(x) paste0("$" ,x, "B")) +
+  scale_x_discrete(limits = years) +
+  ylab("Spending") +
+  xlab("Year") +
+  geom_smooth(method = "lm", colour="black", se = FALSE, size=1.5) +
+  labs(title="Historical Planned Halloween Spending", 
+       subtitle="(in billions)") +
+  theme(plot.title = element_text(size = 20, face="bold"),
+        axis.text = element_text(size=10, face="bold"),
+        panel.grid = element_line(size = 0.5))
+```
+
+## Wykres kolorowy
+
+
+```{r warning=FALSE, echo=TRUE, out.width = "100%"}
+
+ggplot(dane, aes(x = years, y = spendings, fill=spendings)) +
+  scale_fill_gradient(low = '#95520d', high = '#e37b11', guide=FALSE) +
+  geom_bar(stat="identity", width=0.8) + #, color='#cc6e0e'
+  scale_y_continuous(breaks = 0:10, labels = function(x) paste0("$" ,x, "B")) +
+  scale_x_discrete(limits = years) +
+  #geom_col(width=0.9, color='#cc6e0e') +
+  ylab("Spending") +
+  xlab("Year") +
+  geom_smooth(method = "lm", colour="#e6c9ac", se = FALSE, size=1.5) +
+  labs(title="Historical Planned Halloween Spending", 
+       subtitle="(in billions)") +
+  theme(text = element_text(colour = '#ada2aa'),
+        plot.title = element_text(colour = '#f6921d', size = 20, face="bold"),
+        plot.subtitle = element_text(colour = '#b99b8b'),
+        axis.text = element_text(size=10, colour = '#5f4857', face="bold"),
+        plot.background = element_rect(fill = '#34172b'),
+        panel.background = element_rect(fill = '#34172b'),
+        panel.grid = element_line(colour='#000000', size = 0.5))
+```
+
+## Zalety u¿ycia kolorów
+
+1. Kolory pasuj¹ do klimatu danych, które opisuj¹ przez co wykres staje siê przyjemniejszy w odbiorze i bardziej zwraca uwagê czytelnika.
+2. Dziêki gradientowi uda³o siê jeszcze bardziej podkreœliæ, ¿e wydatki na halloween rosn¹ z roku na rok w szybkim tempie.
+3. Dziêki kolorom osi o odcieniu podobnym do t³a oraz pomarañczowemu kolorowi s³upków czytelnik bardziej zwraca uwagê na ogóln¹ tendencjê ni¿ na konkretne wartoœci.
