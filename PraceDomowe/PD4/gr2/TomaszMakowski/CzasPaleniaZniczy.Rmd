@@ -1,0 +1,67 @@
+---
+title: "Ceny zniczy"
+author: "Tomasz Makowski"
+date: "November 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+```
+
+### Wstęp
+
+W pracy domowej 4 zajmę się czasem palenia się zniczy. W artykule https://www.fakt.pl/pieniadze/zakupy/wszystkich-swietych-2018-test-zniczy-ktory-pali-sie-najdluzej/hzl0v25#slajd-1 jest zestawienie 8 zniczy wraz z przewidywanym przez producenta czasem palenia się znicza oraz rzeczywistym czasem palenia.
+
+### Wykres czarno-biały
+
+```{r}
+suppressMessages(library(ggplot2))
+czas_zniczy <- read.csv('CzasPaleniaZniczy.csv')
+
+czas_zniczy <- cbind(
+  czas_zniczy,
+  zmiana = paste(as.character(czas_zniczy$czas_rzeczywisty - czas_zniczy$czas_producenta))
+)
+ggplot(data = czas_zniczy, aes(x = nazwa, label = zmiana)) +
+  ylab(label = "Czas palenia") + xlab("Znicze") +
+  scale_x_discrete(limits = czas_zniczy$nazwa[order(czas_zniczy$czas_producenta, decreasing = TRUE)][nrow(czas_zniczy):1]) +
+  theme_bw() + coord_flip() + 
+  ggtitle("Ceny zniczy podane przez producenta i rzeczywiste") + 
+  geom_text(aes(y = (czas_producenta + czas_rzeczywisty) / 2), vjust = -1) +
+  geom_col(aes(y = czas_rzeczywisty), alpha = 0.8, width = 0.5, fill = "grey") + 
+  geom_col(aes(y = czas_producenta), alpha = 0.3, fill = "grey") + 
+  geom_segment(data = czas_zniczy[czas_zniczy$czas_rzeczywisty > czas_zniczy$czas_producenta,], aes(x = nazwa, y = czas_producenta, xend = nazwa, yend = czas_rzeczywisty), size = 2, color = "grey2", arrow = arrow(length = unit(0.07,"inches"))) +
+  geom_segment(data = czas_zniczy[czas_zniczy$czas_rzeczywisty < czas_zniczy$czas_producenta,], aes(x = nazwa, y = czas_producenta, xend = nazwa, yend = czas_rzeczywisty), size = 2, color = "grey3", arrow = arrow(length = unit(0.07,"inches")))
+```
+
+### Wykres kolorowy
+
+```{r}
+ggplot(data = czas_zniczy, aes(x = nazwa, label = zmiana)) +
+  ylab(label = "Czas palenia") + xlab("Znicze") +
+  scale_x_discrete(limits = czas_zniczy$nazwa[order(czas_zniczy$czas_producenta, decreasing = TRUE)][nrow(czas_zniczy):1]) +
+  theme_bw() + coord_flip() + 
+  ggtitle("Ceny zniczy podane przez producenta i rzeczywiste") + 
+  geom_text(aes(y = (czas_producenta + czas_rzeczywisty) / 2), vjust = -1) +
+  geom_col(aes(y = czas_rzeczywisty), alpha = 0.7, width = 0.5, fill = "orange") + 
+  geom_col(aes(y = czas_producenta), alpha = 0.3, fill = "orange") + 
+  geom_segment(data = czas_zniczy[czas_zniczy$czas_rzeczywisty > czas_zniczy$czas_producenta,], aes(x = nazwa, y = czas_producenta, xend = nazwa, yend = czas_rzeczywisty), size = 2, color = "blue", arrow = arrow(length = unit(0.07,"inches"))) +
+  geom_segment(data = czas_zniczy[czas_zniczy$czas_rzeczywisty < czas_zniczy$czas_producenta,], aes(x = nazwa, y = czas_producenta, xend = nazwa, yend = czas_rzeczywisty), size = 2, color = "red", arrow = arrow(length = unit(0.07,"inches")))
+
+#Wykresy wzorowane na wykresie Wojtka Kretowicza z pracy domowej numer 2
+  
+```
+
+### Opis różnic
+
+Na wykresie kolorowym łatwiej jest stwierdzić, czy dany znicz palił się dłużej, czy krócej niż przewidział producent dzięki zastosowaniu kolorów przy strzałkach, a nie tylko samych strzałek. Kolor jest lepiej widoczny niż tylko grot strzałki i liczba. Strzałki są w kolorach czerwonym i niebieskim zamiast czerwonym i zielonym, żeby były dobrze rozróżnialne niezależnie od posiadanych zaburzeń z percepcją barw.  
+Dzięki temu na pierwszy rzut oka widać, że tylko 2 znicze paliły się dłużej niż zakładał producent, a jeden ze zniczy palił się aż 9 godzin krócej.  
+Dodatkowo na wykresie kolorowym słupki mogą być koloru pomarańczowego przypominając palące się znicze, co pasuje tematycznie.
+
+
+
+
+
+
+
