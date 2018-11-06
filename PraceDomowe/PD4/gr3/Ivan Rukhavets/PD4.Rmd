@@ -1,0 +1,66 @@
+---
+title: "PD4"
+author: "Ivan Rukhavets"
+date: "11/6/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Cel zadania
+Celem zadania było wybranie pracy innego studenta bądź danych nawiązujących do Halloween lub Dnia Zmarłych i przedstawienie tych danych za pomocą dwóch wykresów:
+
+A) Wykresu czarnobiałego
+
+B) Wykresu z kolorami
+
+Zdecydowałem się na wybór danych dotyczących Halloween, a dokładniej danych z [Google Trends](https://trends.google.com/trends/explore?date=today%205-y&geo=US&q=Scary%20Movies) dotyczących częstości wyszukiwań hasła "Scary movies" w USA w ciągu ostatnich 5 lat. 
+
+```{r, include=FALSE}
+library(ggplot2)
+library(grid)
+df <- read.csv('multiTimeline.csv', header = T)
+```
+
+## Wykres A
+
+```{r}
+halloweensDates = as.Date(c('2014-10-13', '2015-10-13', '2016-10-13', '2017-10-13', '2018-10-13'))
+df2 <- data.frame(date=halloweensDates, col=rep('', 5))
+#names(halloweensDates) <- rep('hal', 5)
+bw_plot = ggplot(df, aes(x=as.Date(Week), y=Scary.Movies)) +
+  theme_minimal() +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b-%y") +
+  ylab('Czestotliwosc wyszukiwania') +
+  theme(legend.position = 'bottom', legend.title = element_blank(), axis.title.x=element_blank())
+
+bw_plot + geom_line() +   
+  geom_vline(data = df2, aes(xintercept=date, color="col"), linetype="dashed", size=0.7) +
+  ggtitle('Piki czestotliwosci wyszukiwan horrorow w okolicach Halloween') +
+  scale_color_manual(values=c('black'), labels=c('Halloween'))
+
+```
+
+## Wykres B
+```{r}
+t1 <- textGrob(expression("Piki czestotliwosci wyszukiwan horrorow w okolicach\n" * phantom(bold("Halloween"))), x = 0.55, y = 1.05, gp = gpar(col = "#2c365d", fontsize = 15))
+t2 <- textGrob(expression(phantom("Piki czestotliwosci wyszukiwan horrorow w okolicach\n") * bold("Halloween")), x = 0.05, y = 1.05, gp = gpar(col = "#ff5e3a", fontsize = 15))
+
+
+df2 <- data.frame(date=halloweensDates, col=rep('', 5))
+p <- bw_plot + 
+  geom_line(color="#ff5e3a", size=1) +
+  geom_vline(data = df2, aes(xintercept=date, color="col"), linetype="dashed", size=0.7) +
+  scale_color_manual(values=c('#2c365d'), labels=c('Halloween')) +
+  theme(legend.position = 'bottom', legend.title = element_blank(), axis.title.x=element_blank(), plot.margin = unit(c(3, 1, 1, 1), "lines")) +
+  annotation_custom(grobTree(t1, t2))
+g <- ggplot_gtable(ggplot_build(p))
+g$layout$clip[g$layout$name == "panel"] <- "off"
+grid.newpage()
+grid.draw(g)
+```
+
+## Komentarz
+W wypadku przedstawionych powyżej danych dodanie koloru umożliwia wyraźniejsze odczytanie tego, co ten wykres próbuje pokazać, czyli piki w okolicy halloween. Na pierwszym wykresie linia pionowa pokazująca dni, w których było świętowane halloween zlewa się z krzywą wykresu. Dodatkowo kolor pomarańczowy nawiązuje temtycznie do Halloween.
