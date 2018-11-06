@@ -1,0 +1,59 @@
+---
+title: "Praca domowa nr 4"
+author: "Wojciech Bogucki"
+date: "5 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+
+wydatki <- data.frame(kwota=rep(c("do 50 złotych", "od 51 do 100 złotych", "od 101 do 500 złotych", "ponad 500 złotych"),each=2),
+                      odsetek = c(32.48,60.83,27.07,20.35,28.03,15.97,12.42,2.84),
+                      wyjeżdżający = rep(c(0,1),times=4))
+wydatki$kwota <- factor(wydatki$kwota, levels = c("do 50 złotych", "od 51 do 100 złotych","od 101 do 500 złotych", "ponad 500 złotych"))
+```
+
+Dane do wykonania zadania znalazłem w artykule "Wydatki na Wszystkich Świętych. Zobacz, ile zapłacimy za znicze, kwiaty i podróże" ([link](https://www.money.pl/gospodarka/wiadomosci/artykul/wydatki-na-wszystkich-swietych-zobacz-ile,218,0,1649882.html)).
+
+**Wersja czarno-biała:**
+
+```{r}
+ggplot(wydatki, aes(x = kwota, y=odsetek, fill = factor(wyjeżdżający, labels = c("wyjeżdżający", "niewyjeżdżający")), label = paste0(odsetek,"%"))) + 
+  geom_col(position=position_dodge(width=0.7),width = 0.4) +
+  scale_fill_grey(name="", end=0.6, start=0.4) +
+  xlab("") +
+  geom_label(position=position_dodge(width = 0.7), vjust=-0.15, show.legend = FALSE)+
+  theme(axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour = "darkgrey"),
+        legend.position = "bottom") +
+  ggtitle("Wydatki na znicze i kwiaty wśród wyjeżdżających \ni niewyjeżdżających") +
+  scale_y_discrete(expand = c(0,0,0,10),limits=seq(0,60,10))
+```
+
+**Wersja kolorowa:**
+
+```{r}
+ggplot(wydatki, aes(x = kwota, y=odsetek, fill = factor(wyjeżdżający, labels = c("wyjeżdżający", "niewyjeżdżający")), label = paste0(odsetek,"%"))) + 
+  geom_col(position=position_dodge(width=0.7),width = 0.4) +
+  xlab("") +
+  scale_fill_discrete(name="") +
+  geom_label(position=position_dodge(width = 0.7), vjust=-0.15, show.legend = FALSE)+
+  theme(axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(colour = "darkgrey"),
+        legend.position = "bottom") +
+  ggtitle("Wydatki na znicze i kwiaty wśród wyjeżdżających \ni niewyjeżdżających") +
+  scale_y_discrete(expand = c(0,0,0,10),limits=seq(0,60,10))
+```
+
+Wykres wykorzystujący kolory zdecydowanie bardziej przyciąga uwagę odbiorcy, a zupełnie różne kolory dla poszczególnych kategorii pozwalają łatwiej rozróżniać i porównywać je ze sobą. Poza tym nie ma problemu z czytelnością czarnych napisów na kolorowym tle, w przeciwieństwie do napisow na szarych tłach.
+
+
+
