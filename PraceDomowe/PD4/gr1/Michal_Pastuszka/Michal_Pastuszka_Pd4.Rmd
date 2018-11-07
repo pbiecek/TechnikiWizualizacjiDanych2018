@@ -1,0 +1,38 @@
+---
+title: "Praca domowa 4"
+author: "Michal Pastuszka"
+output: html_document
+---
+
+#Oryginalny wykres
+
+Postanowiłem wykorzystać dane z wykresu znalezionego na stronie <https://www.statista.com/chart/15935/key-facts-about-halloween-spending-in-the-united-states/> pokazujące, w jaki sposób Amerykanie planują świętować Halloween w 2018 roku.
+
+#Czarno-biały wykres
+
+
+```{r A, echo=FALSE}
+library(data.table)
+library(ggplot2)
+#font: https://www.fontspace.com/chequered-ink/kreeptown
+
+dane <- c("Hand out candy" = 0.70, "Decorate" = 0.50, "Dress in costume" = 0.48, 
+          "Carve a pumpkin" = 0.45, "Host/attend a party" = 0.32, "Trick-or-treating" = 0.30,
+          "Visit haunted house" = 0.21, "Dress up pets" = 0.18)
+
+dane <- data.frame(dane)
+setDT(dane, keep.rownames = TRUE)
+
+ggplot(dane, aes(x = reorder(rn, dane), y = dane)) + geom_col(width = 0.7) + coord_flip() +
+  labs(y = "Percentage of respondents", x = "", title = "How will people in the U.S. \nspend Halloween in 2018?") +
+  scale_y_continuous(labels=scales::percent) + theme(plot.title = element_text(size = 20, family="KreepTown", hjust=0.5), 
+  axis.text = element_text(size=12, face="bold"))
+```
+
+#Kolorowy wykres
+
+W tym wypadku kolorystyka nie poprawia w znacznym stopniu czytelności wykresu. Wysokość słupka obrazuje zmienną lepiej niż gradient koloru. Zastosowanie kolorów ma tu na celu przyciągnięcie uwagi czytelnika oraz zasygnalizowanie tematyki wykresu poprzez skojarzenia z użytymi kolorami. W porównaniu z nim wykres czarno biały wydaje się nieatrakcyjny wizualnie.
+```{r B, echo=FALSE}
+ggplot(dane, aes(x = reorder(rn, dane), y = dane, fill=dane)) + geom_col(width = 0.7, color='#F93636') + coord_flip() + scale_fill_gradient(low = '#FFA52B',          high = '#F93636') + labs(y = "Percentage of respondents", x = "", title = "How will people in the U.S. \nspend Halloween in 2018?") + guides(fill=FALSE) + scale_y_continuous(labels=scales::percent) + theme(text = element_text(colour = '#c5670d'), plot.title = element_text(colour = '#86bd23', size = 20,           family="KreepTown", hjust=0.5), axis.text = element_text(size=12, colour = '#c5670d', face="bold"), plot.background = element_rect(fill = '#2c1438'),          panel.background = element_rect(fill = '#2c1438'), panel.grid = element_line(colour='#000000', size = 1.5))
+```
+

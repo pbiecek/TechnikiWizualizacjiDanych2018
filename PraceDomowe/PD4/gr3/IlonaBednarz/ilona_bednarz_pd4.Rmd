@@ -1,0 +1,69 @@
+---
+title: "Praca domowa 4"
+author: "Ilona Bednarz"
+date: "5.11.2018"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Dane okolicznościowe z okazji święta zmarłych
+
+Przedstawiam wizualizację danych dotyczących najpopularniejszych przyczyn zgonów w Stanach Zjednoczonych na przestrzeni lat 2000-2016 ([źródło danych](https://catalog.data.gov/dataset?tags=mortality)). Wizualizacja została wykonana w dwóch wariantach.
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+library(dplyr)
+library(ggplot2)
+
+data <- read.table('~/Desktop/NCHS_-_Leading_Causes_of_Death__United_States.csv', sep = ',', fill = TRUE, head  = TRUE)
+
+df1 <- data %>% na.omit %>% filter(Cause.Name %in% c('Cancer', 'Heart disease')) %>% group_by(Year, Cause.Name) %>% summarise(all_deaths = sum(Deaths))
+
+df2 <- data %>% na.omit %>% filter(Cause.Name != 'All causes') %>% group_by(Year, Cause.Name) %>% summarise(all_deaths = sum(Deaths))
+
+```
+
+
+### Wykres kolorowy
+
+```{r, warning = FALSE, message = FALSE, out.width = 800}
+colors <- c("#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628", "#f781bf", '#999999')
+
+ggplot(df2, aes(x = Year, y = all_deaths, color = Cause.Name)) +
+  geom_line() +
+  scale_color_manual(values = colors) +
+  theme_minimal() +
+  ggtitle('Leading causes of death in US') +
+  ylab('Number of deaths') +
+  scale_y_continuous(labels = function(x) paste(x/1000000, "mln"))
+```
+
+Zmienne użyte na wykresie to rok, liczba zgonów oraz przyczyna zgonu. Dzięki użyciu kolorów jest możliwość zakodowania większej liczby zmiennych. Bez kolorów niemożliwe byłoby pokazanie w czytelny sposób tylu zmiennych na rysunku dwuwymiarowym.
+
+### Wykres w odcieniach szarości
+
+```{r, warning = FALSE, message = FALSE, out.width = 800}
+
+greys <- grey.colors(8)
+
+ggplot(df1, aes(x = Year, y = all_deaths, color = Cause.Name)) +
+  geom_line() +
+  scale_color_manual(values = greys[c(5,1)]) +
+  theme_minimal() +
+  ggtitle('Leading causes of death in US') +
+  ylab('Number of deaths') +
+  scale_y_continuous(labels = function(x) paste(x/1000000, "mln"), expand = c(0, 1550000))
+```
+
+Gdy nie mamy do dyspozycji kolorów, a jedynie odcienie szarości, wciąż można wykonać podobną wizualizację, lecz trzeba zredukować liczbę poziomów zmiennej, która była kodowana kolorem, aby odcienie linii pozostały rozróżnialne. W powyższym przykładzie wybrałam dwie najbardziej popularne przyczyny śmierci. Można teoretycznie zakodować przyczynę śmierci poprzez różne rodzaje linii przerywanych i kropkowanych, ale takie rzeczy nigdy nie są czytelne.
+

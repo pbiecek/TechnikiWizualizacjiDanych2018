@@ -1,0 +1,82 @@
+---
+title: "Techniki Wizualizacji Danych - PD4"
+output: html_document
+author: "Patryk Wróbel"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Cel zadania**
+
+Celem zadania jest przygotowanie wykresu na podstawie danych dotyczących Wszystkich Świętych lub Halloween w dwóch wersjach: w skali szarości i w kolorze i porównanie ich ze sobą.
+
+**Wybór danych**
+
+Wybrane dane dotyczą wydatków w USA w latach 2010-2017 przeznaczonych na kostiumy na Halloween.
+
+Link do danych: https://www.statista.com/statistics/275741/us-halloween-costume-expenditure/ .
+
+**Prezentacja danych**
+
+Poniżej przedstawione są dane w formie wykresu liniowego w czterech wariantach.
+
+```{r include=FALSE}
+library(ggplot2)
+library(dplyr)
+```
+```{r warning=FALSE, echo=FALSE, out.width = "50%"}
+
+# załadowanie danych
+data <- read.csv(file="Data.csv", header=TRUE, stringsAsFactors = FALSE, sep=";")
+
+# wyświetlenie wykresu
+ggplot(data = data, aes(x = as.numeric(Year), y = Expenditure, color=Category)) + 
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = 2010:2017) +
+  labs(x = "", y = "Expenditure (in billion U.S. dollars)", title = "A. Halloween costume expenditure in the United States", color = "") +
+  ylim(0,1.7) +
+  scale_color_manual(labels=c("Adult costumes", "Children's costumes", "Pet costumes"), values=c("gray0","gray30","gray45")) +
+  theme_bw() +
+  theme(legend.position = "bottom", axis.title.y = element_text(margin = margin(r = 20)))
+
+ggplot(data = data, aes(x = as.numeric(Year), y = Expenditure, color=Category)) + 
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = 2010:2017) +
+  labs(x = "", y = "Expenditure (in billion U.S. dollars)", title = "B. Halloween costume expenditure in the United States", color = "") +
+  ylim(0,1.7) +
+  scale_colour_grey() +
+  theme_bw() +
+  theme(legend.position = "bottom", axis.title.y = element_text(margin = margin(r = 20)))
+
+ggplot(data = data, aes(x = as.numeric(Year), y = Expenditure)) + 
+  geom_line(aes(linetype=Category)) +
+  geom_point() +
+  scale_x_continuous(breaks = 2010:2017) +
+  labs(x = "", y = "Expenditure (in billion U.S. dollars)", title = "C. Halloween costume expenditure in the United States", color = "") +
+  ylim(0,1.7) +
+  theme_bw() +
+  theme(legend.position = "bottom", axis.title.y = element_text(margin = margin(r = 20)))
+
+ggplot(data = data, aes(x = as.numeric(Year), y = Expenditure, color=Category)) + 
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = 2010:2017) +
+  labs(x = "", y = "Expenditure (in billion U.S. dollars)", title = "D. Halloween costume expenditure in the United States", color = "") +
+  ylim(0,1.7) +
+  scale_color_brewer(labels=c("Adult costumes", "Children's costumes", "Pet costumes"), palette="Dark2") +
+  theme(legend.position = "bottom", axis.title.y = element_text(margin = margin(r = 20)))
+```
+
+Wykresy A i B wykorzystują skalę szarości, wykres C biel i czerń, natomiast wykres D dysponuje kolorami. 
+
+Na **wykresie A** do rozróżnienia poszczególnych grup danych wykorzystane zostały wyraźne odcienie szarości. Niestety w przypadku wykresu liniowego rozróżnienie odcieni jest niemal niemożliwe.
+
+W przypadku **wykresu B** szare linie reprezentujące poszczególne kategorie są co prawda rozróżnialne między sobą, jednak najjaśniejszy odcień szarości jest bardzo słabo widoczny na wykresie.
+
+W **wykresie C** wykorzystano inny sposób rozróżnienia grup i zastosowano przerywane linie. Rozwiązanie jest czytelne i zdecydowanie wypada najlepiej na tle dwóch pierwszych wykresów. Problemem, który pojawiłby się w przypadku wystąpienia większej ilości kategorii, jest mocno ograniczona ilość rozróżnialnych typów linii.
+
+**Wykres D** dysponuje pełną paletą barw, każdej grupie danych przyporządkowany jest kolor łatwy do rozpoznania w legendzie. Wykres jest czytelny i odporny na problem wystąpienia kolejnych grup danych (wspomniany przy wykresie C).

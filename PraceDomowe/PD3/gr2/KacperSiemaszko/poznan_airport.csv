@@ -1,0 +1,10 @@
+type, number_of_passengers, year
+total, 140205, 2017
+total, 206102, 2018
+legacy, 33491, 2017
+legacy, 39854, 2018
+low_cost, 79909, 2017
+low_cost, 104681, 2018
+charter, 27148, 2017
+charter, 61083, 2018
+
