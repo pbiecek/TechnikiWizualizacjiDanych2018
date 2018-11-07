@@ -15,7 +15,7 @@ ggplot(data = countries2, aes(x = birthrate, y = deathrate)) +
 
 # lattice
 
-library(lattice) 
+library(lattice)
 xyplot(deathrate ~ birthrate | continent, data = countries2)
 
 # http://ramnathv.github.io/rCharts/
@@ -37,6 +37,16 @@ r
 r$facet(var = "continent", type = 'wrap', rows = 2)
 r
 
+r$save('r.html')
+
+r_error <- rPlot(death.rate ~ birth.rate | continent, data = countries, type = "point")
+
+str(r_error)
+r_error[["params"]][["layers"]][[1]][["x"]] <- "birthrate"
+r_error[["params"]][["layers"]][[1]][["y"]] <- "deathrate"
+colnames(r_error[["params"]][["layers"]][[1]][["data"]])[2L:3] <- c("birthrate", "deathrate")
+r_error
+
 
 # nvd3 charts -----------------------------
 nPlot(death.rate ~ birth.rate, group = "continent", data = countries, type = "scatterChart")
@@ -46,8 +56,8 @@ nPlot(death.rate ~ birth.rate | continent, data = countries, type = "scatterChar
 
 n <- nPlot(death.rate ~ birth.rate, group = "continent", data = countries, type = "scatterChart")
 
-n$xAxis(axisLabel = "Zgonów na 1000 osób")
-n$yAxis(axisLabel = 'Urodzin na 1000 osób')
+n$xAxis(axisLabel = "Birth rate")
+n$yAxis(axisLabel = "Death  rate")
 n$set(width = 750, height = 590)
 n
 
@@ -59,12 +69,26 @@ continents <- group_by(countries, continent) %>%
             population = mean(population),
             ncountries = length(country))
 
-
 nPlot(ncountries ~ continent, data = continents, type = "multiBarChart")
 
 hair_eye = as.data.frame(HairEyeColor)
 hair_eye = as.data.frame(HairEyeColor)
-n2 <- nPlot(Freq ~ Hair, group = "Eye", data = filter(hair_eye, Sex == "Female"), type = "multiBarChart")
+n2 <- nPlot(Freq ~ Hair, group = "Eye", data = filter(hair_eye, Sex == "Female"), 
+            type = "multiBarChart")
 n2$chart(color = c('brown', 'blue', '#594c26', 'green'))
 n2
 
+# plotly -------------------------------
+
+library(plotly)
+p <- ggplot(data = countries2, aes(x = birthrate, y = deathrate)) + 
+  geom_point() +
+  facet_wrap(~ continent)
+
+ggplotly(p)
+
+# rpivotTable -----------------------------
+
+library(rpivotTable)
+
+rpivotTable(countries, rows = "continent",  rendererName = "Bar Chart")
