@@ -1,0 +1,49 @@
+---
+title: "Praca domowa 4"
+author: "Kamil Grabowski"
+date: "November 3, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressMessages(library(ggplot2))
+years <- c(2012, 2012, 2012, 2012, 2013, 2013, 2013, 2013, 2014, 2014, 2014, 2014, 
+           2015, 2015, 2015, 2015, 2016, 2016, 2016, 2016, 2017, 2017, 2017, 2017)
+expenses <- c('Candy', 'Decorations', 'Costumes', 'Greeting Cards', 'Candy', 'Decorations', 'Costumes', 'Greeting Cards',
+              'Candy', 'Decorations', 'Costumes', 'Greeting Cards', 'Candy', 'Decorations', 'Costumes', 'Greeting Cards',
+              'Candy', 'Decorations', 'Costumes', 'Greeting Cards', 'Candy', 'Decorations', 'Costumes', 'Greeting Cards')
+money <- c(2138.7, 2084.3, 2649.2, 534.6, 2072.5, 1983.9, 2568.3, 468.6, 2083.3, 1992.7, 2625.2, 451.9,
+           2096.6, 1961.1, 2517.2, 445.4, 2215.8, 2156.9, 2710.2, 482.3, 2329.1, 2333.6, 2862.8, 505.3)
+df <- data.frame(years, expenses, money)
+head(df)
+```
+
+# Dane 
+Dane pochodzą ze strony: https://www.ibisworld.com/media/2017/10/18/spooky-spending-macroeconomic-growth-and-increased-disposable-income-will-drive-holiday-spending/.
+
+# Czarnobiały wykres
+```{r, echo = TRUE}
+ ggplot(data = df, aes(x = years, y = money, group = expenses, color = expenses)) +
+  geom_point()+
+  geom_line() +
+  ggtitle("Halloween Spending in Millions") +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title.x=element_text("years"),
+        axis.title.y = element_blank())+
+  scale_colour_grey()
+```
+
+#Kolorowy wykres
+```{r, echo = TRUE}
+ ggplot(data = df, aes(x = years, y = money, group = expenses, color = expenses)) +
+  geom_point()+
+  geom_line() +
+  ggtitle("Halloween Spending in Millions") +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title.x=element_text("years"),
+        axis.title.y = element_blank())
+```
+
+#Uzasadnienie
+Największym minusem czarnobiałego wykresu względem tego z kolorami jest to, że trudno odczytać z legendy, która krzywa oznacza dany rodzaj wydatku. Najbardziej widać to na przykładzie kostiumów i dekoracji. Tego problemu nie ma przy wykresie z kolorami.

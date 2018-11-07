@@ -1,0 +1,73 @@
+---
+output: html_document
+---
+
+```{R, echo = FALSE, message = FALSE, warning = FALSE}
+library("ggplot2")
+library("dplyr")
+library("plyr")
+```
+
+<style>
+p {
+  text-align: justify;
+}
+</style>
+
+<center>
+<h1>Techniki wizualizacji danych</h1>
+<h3>Praca domowa 4</h3>
+<h4>Autor: Patryk Wołosz</h4>
+</center><br/>
+</center>
+
+## Wykres czarnobiały
+
+```{R, echo=FALSE, warning=FALSE}
+cities <- read.csv("lotto_miasta.txt", encoding = "UTF-8")
+wins <- read.csv("lotto_wygrane.txt")
+wins <- wins[1]
+lotto <- data.frame("City"=cities, "Wins" = wins)
+colnames(lotto) <- c("City", "Wins")
+data <- count(lotto, "City")
+data <- data[order(data$freq, decreasing=TRUE),]
+data <- data[1:15,]
+colnames(data) <- c("City", "n")
+```
+
+```{R, echo = FALSE, warning = FALSE, message = FALSE}
+
+ggplot(data, aes(x = reorder(City, -n), y = n)) +
+  geom_bar(stat = "identity", width = 0.75, fill="#adadad") +
+  theme_light() +
+  labs(x = "Miasta", y = "Liczba wygranych") +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0, 108), breaks = c(0,20,40,60,80,100)) +
+  geom_text(aes(label = n), color = "#2f3033", vjust = -0.5) +
+  ggtitle("Ilość wygranych w lotto w zależności od miasta") 
+  
+
+```
+
+## Wykres z kolorami
+
+```{R, echo = FALSE, message = FALSE, warning = FALSE}
+
+ggplot(data, aes(x = reorder(City, -n), y = n)) +
+  geom_bar(stat = "identity", width = 0.75, fill="#79a9f7") +
+  theme_light() +
+  labs(x = "Miasta", y = "Liczba wygranych") +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(hjust = 0.5)) +
+  scale_y_continuous(expand = c(0,0), limits = c(0, 108), breaks = c(0,20,40,60,80,100)) +
+  geom_text(aes(label = n), color = "#2f3033", vjust = -0.5) +
+  ggtitle("Ilość wygranych w lotto w zależności od miasta") 
+
+```
+
+Moim zdaniem dodanie koloru poprawia estetykę wykresu - wydaje mi się, że wykres z niebieskimi słupkami jest ładniejszy niż ten ze słupkami szarymi. W przypadku tego wykresu można było rozważyć zmianę koloru w zależności od wartości, czyli im większa wartość tym słupek ciemniejszy. Moim zdaniem dodanie tego typu gradientu jest niepotrzebne, ponieważ powiela on informację zawartą w wysokości słupka, a nadal nie pozwala na odczytanie dokładnej wartości dla miasta (dodanie liczb nad słupkami pozwala nam to odczytać).
