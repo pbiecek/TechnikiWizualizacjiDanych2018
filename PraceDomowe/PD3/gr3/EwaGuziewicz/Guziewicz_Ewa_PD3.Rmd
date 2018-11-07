@@ -1,0 +1,50 @@
+---
+title: "Praca Domowa 3"
+author: "Ewa Guziewicz"
+date: "30 października 2018"
+output: html_document
+---
+
+Poniższy wykres został znaleziony w artykule na stronie ESPN - amerykańskiej całodobowej stacji telewizyjnej poświęconej tematyce sportowej. Artykuł dotyczył przechwyceń biężacych rozgrywkach NFL (National Football League) przez poszczególne drużyny:
+  - CHI: Chicago Bears Team
+  - CIN: Cincinnati Bengals Team
+  - CLE: Cleveland Browns Team
+  - MIA: Miami Dolphins Team
+  - NE: New England Patriots Team
+  - NYJ: New York Jets Team
+  - SEA: Seattle Seahawks Team
+
+## Przed
+
+Wykres prezentował się następująco:
+
+```{r}
+knitr::include_graphics("przed.png")
+
+```
+
+Podstawową wadą wykresu jest umieszczenie części dziesiętnych dla osi Oy, czyli dla liczby przechwyceń. Liczba przechwyceń jest liczbą całkowitą i nie należy zaznaczać na osi wartości, które na pewno nie będą przyjmowane, bo sprawia to wrażenie, jakby wielkości takie mogłyby zostać przyjęte.
+
+## Po
+
+Wykres poprawiony został w następujący sposób:
+
+
+```{r}
+library(ggplot2)
+myData <- data.frame(names =  c("CLE", "CHI", "MIA", "NE", "CIN", "NYJ", "SEA"), 
+                     interceptions = as.factor(c(12, 11, 11, 11, 10, 10, 10)))
+cols <- c("10" = "#68229B", "11" = "#9932CC", "12" = "#E066FF")
+
+ggplot(data = myData, aes(x = names, y = interceptions)) + 
+  scale_y_discrete(limits = c(1:12)) +
+  geom_bar(stat="identity", width = 0.8, fill = "darkgreen")  + 
+  theme(axis.line = element_blank(), plot.title = element_text(hjust=0.5)) +
+  labs(title="Number of interceptions per team", x="Team", y = "Interceptions") +
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) +
+  geom_text(aes(label=interceptions), position=position_dodge(width=0.9), vjust=-0.25) 
+```
+
+Na osi Oy zaznaczone są całkowite liczby (przejęcia piłki przez drużynę) i wartości zaczynają się od 0. Autor poprzedniego wykresu przez dobór wartości od 9 do 13 na osi Oy chciał zaznaczyć, że różnice między drużynami są duże. Natomiast obiektywnie (patrząc od 0 do 10, 11, 12) widzimy, że liczby przechwyceń między drużynami nie róznicą się znacząco.
+
+

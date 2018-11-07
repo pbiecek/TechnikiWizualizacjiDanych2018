@@ -219,3 +219,7 @@ mieszkania_pietro <- mutate(mieszkania,
 ggplot(mieszkania_pietro, aes(x = rok, y = cena_m2)) +
   stat_density2d(aes(alpha = ..level..), color = "black", contour = TRUE, geom = "polygon")+
   facet_grid(dzielnica ~ pietro_disc)
+
+ggplot(mieszkania_pietro, aes(x = rok, y = cena_m2)) +
+  stat_density2d(aes(alpha = ..level..), color = "black", contour = TRUE, geom = "polygon") +
+  facet_wrap(~ dzielnica + pietro_disc)

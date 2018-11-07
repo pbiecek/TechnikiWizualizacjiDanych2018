@@ -1,0 +1,49 @@
+---
+title: "Praca domowa nr 2 - poprawa wykresu"
+author: "Wojciech Kretowicz"
+date: "21 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+#Wyniki wyborów do bawarskiego landtagu
+
+Postanowiłem poprawić pracę Piotra Halamy (https://github.com/pbiecek/TechnikiWizualizacjiDanych2018/tree/master/PraceDomowe/PD1/Piotr%20Halama).
+
+![Wyjściowy wykres](./wykres.png)
+
+Po pierwsze na powyższym wykresie najpierw jest przedstawiony rok późniejszy, a dopiero potem wcześniejszy. Po drugie uważam, że nie jest to najlepszy sposób na przedstawienie zmiany w poparciu. Na poniższym wykresie można zarówno łatwo odczytać, która partia ma więcej poparcia, kto najwięcej stracił, a kto najwięcej zyskał oraz nie ma problemu z określeniem, który punkt wskazuje na rok wcześniejszy.
+
+```{r}
+df <- data.frame(
+  partia = c("CSU", "Grüne", "Freie Wähler", "AfD", "SPD", "FPD", "Die Linke"),
+  "2013" = c(47.6, 8.6, 9, 0, 20.6, 3.3, 2.1),
+  "2018" = c(37.2, 17.5, 11.6, 10.2, 9.7, 5.1, 3.2)
+)
+
+df <- cbind(
+  df,
+  zmiana = paste(as.character(df$X2018 - df$X2013), "%")
+)
+
+df$partia <- factor(df$partia, levels = rev(c("CSU", "Grüne", "Freie Wähler", "AfD", "SPD", "FPD", "Die Linke")))
+
+ggplot() +
+  ylab(label = "Procent poparcia") + scale_y_continuous(minor_breaks = c(seq(2.5,60,by = 2.5))) +
+  theme_minimal() +
+  geom_text(data =df, aes(x = partia, y = (X2013 + X2018) / 2, label = zmiana), vjust = -1) +
+  geom_hline(yintercept = 5, linetype = 'dashed') +
+  geom_text(data = NULL,aes(1,8,label="Próg")) +
+  geom_col(data = df, aes(x = partia, y = X2018), alpha = 0.5, width = 0.5, fill = "blue") + 
+  geom_col(data = df, aes(x = partia, y = X2013), alpha = 0.3) + 
+  geom_segment(data = df[df$X2018 > df$X2013,], aes(x = partia, y = X2013, xend = partia, yend = X2018), size = 2, color = "green", arrow = arrow(length = unit(0.12,"inches"))) +
+  geom_segment(data = df[df$X2018 < df$X2013,], aes(x = partia, y = X2013, xend = partia, yend = X2018), size = 2, color = "red", arrow = arrow(length = unit(0.12,"inches"))) +
+  geom_point(data = df[df$X2018 > df$X2013,], aes(x = partia, y = X2013), size = 3, color = "green") +
+  geom_point(data = df[df$X2018 < df$X2013,], aes(x = partia, y = X2013), size = 3, color = "red") +
+  coord_flip() + ggtitle("Poparcie w 2013 i 2018 roku dla partii w Bawarii") + 
+  xlab("Partie")
+```

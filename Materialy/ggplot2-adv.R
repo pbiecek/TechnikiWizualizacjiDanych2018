@@ -13,6 +13,10 @@ p + scale_y_continuous(position = "right")
 
 p + scale_x_discrete(limits = sort(unique(countries[["continent"]]), decreasing = TRUE))
 
+p + scale_y_reverse()
+
+# p + scale_x_reverse() juz nie dziala
+
 continent_order <- group_by(countries, continent) %>% 
   summarise(count = length(continent)) %>% 
   arrange(desc(count)) %>% 
@@ -47,12 +51,21 @@ mutate(countries_f, continent = factor(continent, levels = continent_order),
 p + scale_fill_manual(values = c("red", "grey", "black", "navyblue", "green"))
 # gradienty: przykladowo scale_fill_gradient()
 
+ggplot(countries, aes(x = birth.rate, y = death.rate)) +
+  stat_density_2d(aes(fill = ..level..), color = "black", contour = TRUE, geom = "polygon") +
+  scale_fill_gradient(low = "navyblue", high = "red")
+
+p + theme(legend.position = "bottom") +
+  guides(fill = guide_legend(nrow = 2))
+
 # koordynaty --------------------------------------------------------------
 
 p <- ggplot(data = countries, aes(x = continent)) +
   geom_bar()
 
 p + coord_flip()
+
+p + coord_flip() + scale_y_reverse()
 
 p + coord_polar()
 
@@ -68,8 +81,10 @@ p <- ggplot(data = countries, aes(x = birth.rate, y = death.rate, color = contin
 p + coord_equal()
 
 # coord_cartesian nie usuwa punktów
-p + coord_cartesian(xlim = c(5, 10))
-p + scale_x_continuous(limits = c(5, 10))
+p + coord_cartesian(xlim = c(5, 15))
+p + scale_x_continuous(limits = c(5, 15))
+
+library(gridExtra)
 
 grid.arrange(p + coord_cartesian(xlim = c(5, 10)) + ggtitle("coord_cartesian"),
              p + scale_x_continuous(limits = c(5, 10)) + ggtitle("scale_x_continuous - limits"),
@@ -78,7 +93,7 @@ grid.arrange(p + coord_cartesian(xlim = c(5, 10)) + ggtitle("coord_cartesian"),
 # wiele wykresow na jednym rysunku ---------------------------------------------------
 
 main_plot <- ggplot(data = countries, aes(x = birth.rate, y = death.rate, color = continent)) +
-  geom_point()
+  geom_point() 
 
 density_death <- ggplot(data = na.omit(countries), aes(x = death.rate, fill = continent)) +
   geom_density(alpha = 0.2) +
@@ -109,10 +124,32 @@ get_legend <- function(gg_plot) {
 grid.arrange(density_death, main_plot + theme(legend.position = "none"), get_legend(main_plot), density_birth, 
              ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
 
+
+main_plot <- ggplot(data = countries, aes(x = birth.rate, y = death.rate, color = continent)) +
+  geom_point() +
+  theme_bw(base_size = 14)
+
+density_death <- ggplot(data = na.omit(countries), aes(x = death.rate, fill = continent)) +
+  geom_density(alpha = 0.2) +
+  scale_y_reverse() +
+  coord_flip() +
+  theme_bw(base_size = 14) +
+  theme(legend.position = "none") 
+
+density_birth <- ggplot(data = countries, aes(x = birth.rate, fill = continent)) +
+  geom_density(alpha = 0.2) +
+  theme_bw(base_size = 14) +
+  theme(legend.position = "none") + 
+  scale_y_reverse()
+
+grid.arrange(density_death, main_plot + theme(legend.position = "none"), get_legend(main_plot), density_birth, 
+             ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
+
 # alternatywy do patchwork
 # library(cowplot)
 # library(customLayout)
 
+# install.packages("ggplot2")
 source("https://install-github.me/thomasp85/patchwork")
 library(patchwork)
 
@@ -126,6 +163,10 @@ p2 <- ggplot(data = countries, aes(x = continent, y = death.rate)) +
 p3 <- ggplot(data = countries, aes(x = continent)) +
   geom_bar()
 
+p1 + p2
+
+p1 / p2
+
 (p1 + p2) / p3
 
 ((p1 + p2) / p3) * theme_bw()
@@ -135,3 +176,9 @@ p3 <- ggplot(data = countries, aes(x = continent)) +
 # rozklady brzegowe w patchwork
 density_death + main_plot + plot_spacer() + density_birth + 
   plot_layout(ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
+
+# I. Przedstawic na jednym rysunku zaleznosc ceny mieszkan od pietra dla calego Wroclawia
+# II. Wykorzystac rozne tematy z ggthemes i porownac dla jednego rysunku.
+# III. Zaleznosc ceny mieszkan od pietra i dzielnicy dla przedwojennych mieszkan  
+# i powojennych mieszkan (1939) na jednym obrazku.
+

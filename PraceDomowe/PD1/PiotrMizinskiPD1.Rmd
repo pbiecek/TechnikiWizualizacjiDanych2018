@@ -1,0 +1,70 @@
+---
+title: "Techniki Wizualizacji Danych - Praca domowa 1"
+author: "Piotr Miziński"
+date: "14 października 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wstęp
+
+Artykuł, który zainspirował mnie do wykonania wykresu znalazłem na stronie internetowj poświęconej analizie i wizualizacji danych dotyczących piłki nożnej. Skupiał się on na angielskiej Premier League. Grafika w bardzo ciekawy sposób starała się odzwierciedlić charakter zespołu na podstawie analizy oddanych strzałów w każdym meczu.
+
+Artykuł nie zawierał danych liczbowych (można je było odczytać z wykresu, ale z błędem), dlatego zdecydowano się pobrać je ze strony: <https://www.whoscored.com/Regions/252/Tournaments/2/Seasons/7361/Stages/16368/TeamStatistics/England-Premier-League-2018-2019>
+
+Omawianą publikację można znaleźć pod następującym adresem: <https://experimental361.com/2018/10/08/scatter-graphics-premier-league-8-oct-2018/>
+
+
+## Stworzony wykres
+
+Na wykresie pokazano rozkład średniej liczby strzałów oddanych przez każdy z zespołów angielskiej Premier League oraz przez ich rywali na mecz. Za tło wykresu posłużył gradient kolorów od czerwonego do zielonego, który obrazuje styl gry rozważanych klubów piłkarskich. Nie powstał on na podstawie żadnych istotnych i konkretnych danych - ma on na celu jedynie wspomóc odbiór i zrozumienie wykresu. Jeżeli punkt przypisany do danego zespołu znajduje się w czerwonym obszarze to na podstawie analizy liczby strzałów można stwierdzić, że częściej się on broni niż atakuje. Z kolei, im obszar bardziej zielony, to świadczy to o tym, że piłkarze danego klubu praktycznie nie opuszczają połowy przeciwnika i nieustannie nękają go strzałami.
+
+Na wykresie umieszczono również dwie szare linie - pionową i poziomą. Obrazują one kolejno średnią liczbę strzałów oddanych na mecz, biorąc pod uwagę wszystkie zespoły Premier League oraz analogicznie średnią oddanych strzałów przez rywali.
+
+```{r, message= FALSE, warning = FALSE}
+library(ggplot2)
+library(ggrepel)
+
+options(stringsAsFactors=FALSE)
+```
+
+```{r}
+dane <- read.csv("./dane.csv", sep = ";") #wczytanie zbioru danych
+```
+
+```{r, fig.width=12, fig.height=9}
+df <- expand.grid(x=8:22, y=6:21) #stworzenie siatki dla gradientu
+
+ggplot(data = dane, aes(x = ShotsTaken, y = ShotsFaced)) + 
+  geom_raster(data =df, aes(x, y,fill = x-y),interpolate = TRUE)+
+  scale_fill_distiller(type = "div", palette = 8, direction=1)+ 
+  geom_point(size = 5)+
+  geom_hline(yintercept=mean(dane$ShotsFaced), color = "gray", size=1.5,alpha = 0.7)+
+  geom_vline(xintercept = mean(dane$ShotsTaken), color = "gray", size=1.5,alpha = 0.7)+
+  geom_text_repel(data = dane, aes(label=Team),size=6,force=1) +
+  annotate("label", x = 20, y = 8, label = "Nieustanny atak",size=10)+
+  annotate("label", x = 10.5, y = 18.5, label = "Desperacka obrona",size=10)+
+  xlab('Średnia liczba strzałów oddanych na mecz') + 
+  ylab("Średnia liczba strzałów oddanych przez rywali na mecz")+
+  scale_x_continuous(breaks=seq(8,22,1))+
+  scale_y_continuous(breaks=seq(6,21,1))+
+  geom_hline(yintercept=6:21, color = "black", size=0.5,alpha = 0.1)+
+  geom_vline(xintercept=8:22, color = "black", size=0.5,alpha = 0.1)+
+  coord_cartesian(expand = F) + 
+  theme_bw() +
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=16),
+        plot.title = element_text(size=20, hjust = 0.5),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(colour = "black", size=1),
+        legend.position="none")+
+  ggtitle("Premier League: strzały oddane vs strzały oddane przez rywali na mecz")
+
+
+```
+
+Znaleziony we wspomnianym artykule wykres jest nowatorski i interesujący. Pokazuje ciekawe spojrzenie na świat piłki nożnej, dlatego postanowiono zachować główne jego cechy. Przedstawiona w tej pracy domowej grafika jest jego uproszczoną wersją, jednak nadal niesie za sobą wiele informacji przedstawionych w ciekawy sposób.
