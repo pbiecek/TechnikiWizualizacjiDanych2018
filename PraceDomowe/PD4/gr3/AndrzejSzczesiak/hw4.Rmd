@@ -1,0 +1,56 @@
+---
+title: "Techniki Wizualizacji Danych - PD4"
+author: "Andrzej Szczesiak"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+```
+
+### Dane
+
+[Dane](https://www.statista.com/statistics/243210/planned-halloween-activities-in-the-united-states/) przedstawiają popularność różnych sposobów spędzania Halloween w Stanach Zjednoczonych w 2018 roku.
+
+```{r, echo=FALSE}
+halloween_activities <- data.frame(activity = c("Rozdawanie cukierków", "Dekorowanie domu lub podwórka", "Przebieranie się w kostium", "Wykrawanie dyni", 
+                                         "Organizowanie/branie udziału w imprezie", "Zbieranie cukierków", "Odwiedzanie nawiedzonego domu", "Przebieranie zwierzaka w kostium"), 
+                                   popularity = c(70, 50, 48, 45, 32, 30, 21, 18))
+```
+
+### Wersja A
+
+```{r, echo=FALSE, fig.width=12, fig.align='center'}
+ggplot(data = halloween_activities, aes(x = activity, y = popularity, label = paste(popularity, "%"))) + 
+  geom_col(width = 0.6) + 
+  geom_text(hjust = -0.2, color = "black") + 
+  scale_x_discrete(limits = rev(halloween_activities$activity)) + 
+  scale_y_continuous(limits = c(0, 72)) +
+  labs(x = "", y = "Odsetek odpowiedzi", title = "Sposób spędzania Halloween w Stanach Zjednoczonych w 2018 roku") + 
+  coord_flip() + 
+  theme(text = element_text(size = 15), 
+        axis.title.y = element_blank(), 
+        plot.title = element_text(hjust = 0.5), 
+        legend.position = "none")
+```
+
+### Wersja B
+
+```{r, echo=FALSE, fig.width=12, fig.align='center'}
+ggplot(data = halloween_activities, aes(x = activity, y = popularity, label = paste(popularity, "%"), fill = popularity)) + 
+  geom_col(width = 0.6) + 
+  geom_text(hjust = -0.2, color = "black") + 
+  scale_x_discrete(limits = rev(halloween_activities$activity)) + 
+  scale_y_continuous(limits = c(0, 72)) + 
+  scale_fill_gradient(low = "#fff7bc", high = "#d95f0e") + 
+  labs(x = "", y = "Odsetek odpowiedzi", title = "Sposób spędzania Halloween w Stanach Zjednoczonych w 2018 roku") + 
+  coord_flip() + 
+  theme(text = element_text(size = 15), 
+        axis.title.y = element_blank(), 
+        plot.title = element_text(hjust = 0.5), 
+        legend.position = "none")
+```
+
+### Komentarz
+
+Na drugim wykresie kolor koduje informację o stopniu popularności danego sposobu spędzania Halloween. Ponieważ jest już ona zawarta w wysokości słupka, zabieg ten nie wnosi dodatkowych informacji, ale poprawia atrakcyjność wizualną wykresu. Dodatkowo kolorystyka kojarzy się z przedstawianą tematyką.
