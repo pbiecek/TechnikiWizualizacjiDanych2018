@@ -1,0 +1,66 @@
+---
+title: "Aleksandra_Wichrowska_pd4"
+author: "Aleksandra Wichrowska"
+date: "6 listopada 2018"
+output: html_document
+---
+
+
+## Źródło danych
+
+Dane pochodzą z artykułu: 
+https://www.statista.com/statistics/275726/annual-halloween-expenditure-in-the-united-states/
+
+Prezentują planowane wydatki na Halloween w Stanach Zjednoczonych.
+
+```{r, include=FALSE}
+library(ggplot2)
+library(data.table)
+library(RColorBrewer)
+```
+
+```{r, include=FALSE}
+wydatki = c(4.96, 5.07, 5.77, 4.75, 5.8, 6.86, 8, 6.99, 7.4, 6.89, 8.4, 9.1, 9)
+year = seq(2006,2018,1)
+
+halloween = data.table(wydatki, year)
+
+```
+
+## Wykres czarno-biały
+
+```{r, echo=FALSE }
+ggplot(halloween, aes(x=year,y=wydatki)) + 
+  geom_col(width=0.7) +
+  geom_text(aes(label=wydatki), position=position_dodge(width=0.9), vjust=-0.5) +
+  scale_y_continuous(limits=c(0,12),breaks=seq(0,14,2)) +
+  scale_x_continuous(breaks=seq(2006,2018,1)) +
+  ylab("Wydatki w mld USD") +
+  xlab("Rok") +
+  ggtitle("Planowane wydatki na Halloween w Stanach Zjednoczonych na przestrzeni lat",
+          "Amerykanie wydają na Halloween coraz więcej")
+```
+
+## Wykres z kolorami
+
+```{r, echo=FALSE }
+ggplot(halloween, aes(x=year,y=wydatki, fill=wydatki)) + 
+  geom_col(width=0.7) +
+  geom_text(aes(label=wydatki), position=position_dodge(width=0.9), vjust=-0.5) +
+  scale_fill_gradient(low="darkorange",high = "firebrick3") +
+  scale_y_continuous(limits=c(0,12),breaks=seq(0,14,2)) +
+  scale_x_continuous(breaks=seq(2006,2018,1)) +
+  theme(legend.position="none") +
+  ylab("Wydatki w mld USD") +
+  xlab("Rok") +
+  ggtitle("Planowane wydatki na Halloween w Stanach Zjednoczonych na przestrzeni lat",
+          "Amerykanie wydają na Halloween coraz więcej")
+
+```
+
+
+Wykres drugi zdecydowanie bardziej przykuwa uwagę. 
+
+Intensywniejszymi barwami oznaczono lata z większymi wydatkami - różnice są teraz mocniej zauważalne.
+
+Dodatkowo dobrana paleta kolorów wprowadza w Halloweenowy klimat.

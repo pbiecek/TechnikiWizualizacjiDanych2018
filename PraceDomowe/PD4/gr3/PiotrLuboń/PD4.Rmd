@@ -1,0 +1,40 @@
+---
+title: "PD4"
+author: "Piotr Luboń"
+date: "November 4, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(readxl)
+library(RColorBrewer)
+dane <- read_excel("obserwujacy.xlsx", sheet = 1)
+```
+
+Dane dotyczą zmiany liczby obserwująych profile partii politycznych na Twitterze.
+
+```{R}
+ggplot(dane, mapping = aes(x = Data, y = Liczba, shape = Partia, group = Partia)) + 
+  scale_shape_manual(values=1:length(unique(dane$Partia))) +
+  geom_point(size=2) + 
+  geom_line() + 
+  labs(y = "Liczba nowych obserwujących") + 
+  ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia") + 
+  theme_bw()
+```
+
+Na wykresie czarno-białym linie odpowiadające wartościom dla poszczególnych partii, możemy rozróżnić jedynie na podstawie ikon. Niestety, z powodu dużej ilości linii nie jest to czytelne.
+
+```{R}
+ggplot(dane, mapping = aes(x = Data, y = Liczba, col = Partia, group = Partia)) + 
+  geom_point() + 
+  geom_line() + 
+  scale_fill_manual(values=brewer.pal(8, "Spectral")) +
+  labs(y = "Liczba nowych obserwujących") + 
+  ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia") + 
+  theme_bw()
+```
+
+Zastosowanie kolorów pozwala na łatwe rozponzanie, której partii dotyczy dana linia.
