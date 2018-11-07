@@ -1,0 +1,46 @@
+---
+title: "Praca domowa - wizualizacja danych z eurostatu"
+author: "Ilona Bednarz"
+date: "5.11.2018"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Edukacja wyższa w Europie
+
+Przedstawiam wizualizację danych pochodzących z Eurostatu na temat liczby osób kończących studia na kierunkach ścisłych w przeliczeniu na 1000 osób w wieku 25-30 lat. Dane pochodzą z czterech kolejnych lat.
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+library(dplyr)
+library(ggplot2)
+library(eurostat)
+library(mapproj)
+```
+
+```{r, warning = FALSE, message = FALSE, out.width = 800}
+geo_data <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "0") %>%
+  filter(long > -25, lat > 27)
+
+results <- search_eurostat("math", type = "dataset")
+data <- get_eurostat(results$code[1])
+data <- left_join(geo_data, data, by = c("geo" = "geo")) %>% na.omit %>% filter(time != "2012-01-01")
+data %>%
+  group_by(NUTS_NAME) %>% 
+  ggplot(aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  coord_map() +
+  facet_wrap(~time) + 
+  ggtitle("Graduates in tertiary education, in science, math,\ncomputing, engineering per 1000 of population")
+```
+

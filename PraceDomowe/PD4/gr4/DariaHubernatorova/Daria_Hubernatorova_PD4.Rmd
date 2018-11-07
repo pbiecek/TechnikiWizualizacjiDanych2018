@@ -1,0 +1,43 @@
+---
+title: "Praca domowa 4"
+author: "Daria Hubernatorova"
+date: "11/3/2018"
+output: html_document
+---
+
+## Zadanie
+Z poprzednich prac domowych PD1-PD3 wybrać pracę innego studenta a następnie pokazać dane z tej pracy domowe za pomocą dwóch wykresów:
+
+A) Wykresu czarnobiałego, na którym stosować można jedynie kolory biały, czarny i odcienie szarości B) Wykresy z kolorami, na krórym można stosować (z umiarem) kolory aby przedstawić jakąś zmienną, wyróżnić obserwacje, poprawić estetykę wykresu.
+
+BONUS: Zamiast wybierać dane z pracy domowej innego studenta, można otrzymać bonusowy 1 punkt za znalezienie ciekawych danych nawiązujących do Dnia Zmarłych lub Halloween.  
+  
+### Dane
+https://www.statista.com/statistics/275741/us-halloween-costume-expenditure/  
+Dane o wydatkach w Stanach na ubrania do Halloween.  
+
+### Odcienie szarości
+```{R, message = FALSE, fig.align = 'center'}
+data <- read.csv("/Users/dasha/Documents/twd/pd4/data.csv", header = TRUE,
+                 row.names = NULL, sep = ';', encoding = "utf-8")
+library(ggplot2)
+ggplot(data, aes(x = Year, y = Expenditure, color = Type, group = Type)) +
+  geom_point() +
+  geom_line() +
+  scale_colour_grey() +
+  ggtitle("Halloween costume expenditure in the United States from 2010 to 2017, \nby type (in billion U.S. dollars)") +
+  theme_bw()
+```
+  
+### Kolory
+Dzięki wyborowi kontrastowych kolorów wykres jest czytelniejszy niż w przypadku użycia skali szarości.
+```{R, message = FALSE, fig.align = 'center'}
+data <- read.csv("/Users/dasha/Documents/twd/pd4/data.csv", header = TRUE,
+                 row.names = NULL, sep = ';', encoding = "utf-8")
+library(ggplot2)
+ggplot(data, aes(x = Year, y = Expenditure, color = Type, group = Type)) +
+  geom_point() +
+  geom_line() +
+  ggtitle("Halloween costume expenditure in the United States from 2010 to 2017, \nby type (in billion U.S. dollars)") +
+  theme_bw()
+```

@@ -1,0 +1,65 @@
+---
+title: "Praca domowa nr 4"
+author: "Wojciech Kretowicz"
+date: "6 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+library(jpeg)
+library(grid)
+```
+
+#Dane, na których pracowałem
+
+```{r, echo=FALSE}
+df <- data.frame(
+  years = 2012:2018,
+  avg_spend_per_buyer = c(79.82, 75.03, 77.52, 74.34, 82.93, 86.13, 86.79),
+  total_spending = c(8, 6.9, 7.4, 6.9, 8.4, 9.1, 9)
+)
+```
+
+Ze strony https://www.thebalance.com/halloween-spending-statistics-facts-and-trends-3305716 wziąłem dane o wydatkach na przestrzeni ostatnich lat na halloween i postanawiłem je zilustrować.
+
+#Wykres bez kolorów
+
+Tak wygląda wykres pozbawiony kolorów:
+
+```{r}
+  
+ggplot(data = df, aes(x = years, y = avg_spend_per_buyer, fill = total_spending)) +
+    geom_col() + scale_y_continuous(name = "Przeciętne wydatki", breaks = seq(0,100,10), labels = paste(seq(0,100,10),"$",sep = "")) + scale_x_continuous(name = 'Lata', breaks = df$years, labels = df$years) +
+    scale_fill_continuous(low = 'black', high = 'white') + theme() + ggtitle("Wydatki halloweenowe w USA") + guides(fill = guide_legend(title = 'Łączne wydatki'))
+```
+
+
+Jak widać nie jest on atrakcyjny, nie przykuwa wzroku. Ponadto kolumnę z 2018 roku ciężko jest rozczytać.
+
+#Wykres kolorowy
+
+Poniższy wykres przedstawia te same dane, również kolumnowo. Zostały jednak dodane kolory i tło przyciągające uwagę - tym bardziej, że tydzień temu było właśnie halloween. Kolory kolumn pomimo tego, że są w odcieniach pomarańczowo-halloweenowych, są wyraźnie odróżnialne od tła.
+
+
+
+```{r}
+
+
+img <- readJPEG('History_Halloween_Haunted_History_of_Halloween_SF_small_240x160.jpg')
+  
+ggplot(data = df, aes(x = years, y = avg_spend_per_buyer, fill = total_spending))  + annotation_custom(rasterGrob(img, width=unit(1,"npc"), height=unit(1,"npc")), -Inf, Inf, -Inf, Inf) +
+    geom_col(alpha = 0.7) + scale_y_continuous(name = "Przeciętne wydatki", breaks = seq(0,100,10), labels = paste(seq(0,100,10),"$",sep = "")) + scale_x_continuous(name = 'Lata', 
+    breaks = df$years, labels = df$years) +
+    scale_fill_continuous(low = 'goldenrod4', high = 'lightgoldenrod1') + theme(plot.background = element_rect('black'), legend.background = element_rect('black'), text = element_text(color = 'white'),
+    axis.text = element_text(color = 'white')) + ggtitle("Wydatki halloweenowe w USA") + guides(fill = guide_legend(title = 'Łączne wydatki')) + 
+    geom_hline(yintercept = seq(0,100,10))
+
+```
+
+
+Obraz w tle wzięty z: https://www.history.com/s3static/video-thumbnails/AETN-History_VMS/21/161/History_Halloween_Haunted_History_of_Halloween_SF_small_240x160.jpg
+
+

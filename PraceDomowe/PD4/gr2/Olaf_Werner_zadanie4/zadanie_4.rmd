@@ -1,0 +1,39 @@
+---
+title: "Zadanie 4"
+author: "Olaf Werner"
+date: "November 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+##Wypadki drogowe w 2018 roku
+Dane zebrane na podstawie [danych z policji](http://policja.pl/pol/form/1,Statystyki-dnia.html)
+zainspirowane akcją "Znicz"
+
+###wersja szara
+```{r message=FALSE ,warning=FALSE}
+library(dplyr)
+library(ggplot2)
+library(readxl)
+
+wypadki<-read_xls("wypadki_drogowe.xls")
+select(wypadki,c(1,5,6,7,8))%>%
+top_n(308,Data)%>%
+  na.omit()->wypadki
+Miesiąc<-months(pull(wypadki,Data))
+wypadki<-cbind(wypadki,Miesiąc)
+srednia<-mean(pull(wypadki,`Wypadki drogowe`))
+ggplot(wypadki,aes(x=Data,y=`Wypadki drogowe`,group=months.POSIXt(Data)))+geom_line()+scale_x_datetime(breaks = "months",date_labels = "%b")+geom_point(data = wypadki[4,],size=3,shape=2)+geom_hline(yintercept = srednia)+labs(title ="Wypadki drogowe w Polsce od początku 2018 do 4 listopada",y="Wypadki drogowe",subtitle = "pozioma kreska to średnia ilość wypadków(83.6), zaś trójkąt pokazuje dzień Wszystkich Świętych")
+
+```
+
+###wersja kolorowa
+```{r message=FALSE ,warning=FALSE}
+kolory<-c("red","green")
+ggplot(wypadki,aes(x=Data,y=`Wypadki drogowe`,group=months.POSIXt(Data)))+geom_line()+scale_x_datetime(breaks = "months",date_labels = "%b")+geom_point(aes(color=kolory[(`Wypadki drogowe`>srednia)+1]),show.legend=FALSE)+geom_point(data = wypadki[4,],size=4,shape=2,colour="brown")+geom_hline(yintercept = srednia,colour="purple")+labs(title ="Wypadki drogowe w Polsce od początku 2018 do 4 listopada",y="Wypadki drogowe",subtitle = "pozioma kreska to średnia ilość wypadków(83.6), zaś trójkąt pokazuje dzień Wszystkich Świętych")
+
+```
+
+
