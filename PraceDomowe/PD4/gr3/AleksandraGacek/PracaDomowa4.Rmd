@@ -1,0 +1,67 @@
+---
+title: "Praca domowa nr 4"
+author: "Aleksandra Gacek"
+date: "06/11/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Cel zadania
+Celem zadania było wybranie pracy innego studenta bądź danych nawiązujących do Halloween lub Dnia Zmarłych i przedstawienie tych danych za pomocą dwóch wykresów:
+
+A) Wykresu czarnobiałego
+
+B) Wykresu z kolorami
+
+Zdecydowałam się na wybór danych dotyczących Halloween, a dokładniej danych dotyczących ocen odcinków specjalnych seriali, związaych z Halloween. Dane pochodzą ze strony: https://www.kaylinpavlik.com/halloween-tv-episodes-are-better-than-regular-episodes/ . Wybrałam dane dotyczące serialu Pretty Little Liars.
+
+# Wykres A
+
+```{r plot A, warning=F}
+library(ggplot2)
+
+data <- data.frame("episode" = seq(1, 24), 
+                   "rate" = c(8.6, 8.5, 8.5, 8.3, 8.4, 8.2, 8.6, 8.4, 8.4, 8.8, 8.4, 8.9 ,9 ,8.5, 8.6, 8.7, 8.6, 8.6, 8.6, 8.5,
+                            8.6, 8.4, 8.6, 8.7)
+                   )
+p1 <- subset(data, episode == "13")
+
+ggplot(data=data, aes(x=episode, y=rate)) +
+  geom_point(size=3, colour='gray') + 
+  geom_line(size=0.5) + 
+  geom_point(data=p1, size=3, colour="black") +
+  geom_text(data=p1, aes(x = 14, y = 9.1, label = "Halloween episode rating = 9")) +
+  ylim(8, 9.2) + 
+  theme_minimal() +
+  geom_hline(yintercept=mean(data$rate), linetype="dashed", color = "gray24") +
+  geom_text(data=p1, aes(x = 4, y = 8.7, label = "Regular season mean = 8.5"), colour='gray24') +
+  xlab("Episode number") +
+  ylab("Rating")
+```
+
+
+# Wykres B
+
+```{r plot B, warning=F}
+library(ggplot2)
+
+ggplot(data=data, aes(x=episode, y=rate)) +
+  geom_point(size=3) + 
+  geom_line(size=0.5) + 
+  geom_point(data=p1, size=3, colour="orange") +
+  geom_text(data=p1, aes(x = 14, y = 9.1, label = "Halloween episode rating = 9"), colour='orange') +
+  ylim(8, 9.2) + 
+  theme_minimal() +
+  geom_hline(yintercept=mean(data$rate), linetype="dashed", color = "gray24") +
+  geom_text(data=p1, aes(x = 4, y = 8.7, label = "Regular season mean = 8.5"), colour='gray24') +
+  xlab("Episode number") +
+  ylab("Rating")
+```
+
+
+# Komentarz
+
+W wypadku przedstawionych powyżej danych dodanie koloru umożliwia wyraźniejsze wyróżnienie obserwacji w porównaniu do wykresu czarnobiałego. Na wykresie A mniej widoczna jest różnica między obserwacją wyróżnioną, a resztą obserwacji. Dodatkowo kolor pomarańczowy nawiązuje temtycznie do Halloween. Jednakże użycie większej ilości kolorów mijałoby się z celem - w tym przypadku odcienie czerni i bieli oraz jeden wyróżniony kolor są całkowicie wystarczające, wykres jest przejrzysty, a dane które chcieliśmy wyróżnić są wyróżnione.
