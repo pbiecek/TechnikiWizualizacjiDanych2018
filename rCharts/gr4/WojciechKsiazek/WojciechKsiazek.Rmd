@@ -1,0 +1,31 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+library(tidyverse)
+library(rCharts)
+```
+
+<style>
+.tick text {
+opacity: 1 !important;
+}
+</style>
+
+```{r}
+df <- readr::read_csv("data-BQdWQ.csv")
+colnames(df) <- c("Country", "avg1976", "avg2010")
+df <-
+  df %>% 
+  tidyr::gather(key = "average", value = "value", - Country)
+```
+
+```{r, results='asis'}
+plot <- rPlot(Country ~ value, data = df, type = "point", color = "average")
+plot$show('inline', include_assets = TRUE, cdn = TRUE)
+```
+
