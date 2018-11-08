@@ -1,0 +1,71 @@
+---
+title: "Praca domowa nr 4"
+author: Bogdan Jastrzębski
+date: "3 listopada 2018"
+output: html_document
+---
+
+# Wprowadzenie 
+
+Dane przedstawione na poniższym wykresie pochodzą ze strony: https://www.trendhunter.com/trends/candynomics-infographic.
+Przedstawiają udział procentowy poszczególnych halloweenowych produktów w wydatkach amerykanów.
+
+# Wykres czarno-biały
+
+```{r}
+library(ggplot2)
+library(scales)
+d <- c(1.65, 1.9, 2.12, 0.35)
+dane <- data.frame(value =  sort(d/sum(d)*100), names = c("Decorations", "Candy", "Costumes", "GreetingCards")[order(d)])
+
+ggplot(dane, aes(x='', y=value, fill=names)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0) +
+  scale_fill_grey() + 
+  theme_minimal()+
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+    plot.title=element_text(size=14, face="bold")) + 
+  theme(axis.text.x=element_blank()) +
+  geom_text(aes(y = value/2 + c(0, cumsum(value)[-length(value)]), 
+            label = paste(sort(d), "Billion"), x = 1.7), size=5)
+  
+```
+
+```{r}
+library(ggplot2)
+library(scales)
+
+d <- c(1.65, 1.9, 2.12, 0.35)
+dane <- data.frame(value =  sort(d/sum(d)*100), names = c("Decorations", "Candy", "Costumes", "GreetingCards")[order(d)])
+
+ggplot(dane, aes(x='', y=value, fill=names)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0) +
+  theme_minimal()+
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_blank(),
+    plot.background = element_rect(fill = '#58395e'),
+    panel.grid = element_blank(),
+    text=element_text(size=20,  family="Riky Vampdator Normal", color="white",face="bold"),
+    plot.title=element_text(size=39.5,  family="Riky Vampdator Normal", color="white")) +
+  theme(axis.text.x=element_blank()) +
+  geom_text(aes(y = value/2 + c(0, cumsum(value)[-length(value)]), 
+            label = paste(sort(d), "Bn"), x = 1.7), size=8, family="Riky Vampdator Normal", color="white") +
+  geom_text(aes(y = value/2 + c(0, cumsum(value)[-length(value)]), 
+            label = paste(round(value,2), "%", sep=""), x = 1.1), size=6, family="Riky Vampdator Normal", color="white") +
+  ggtitle("Annual Halloween Sales") +
+  scale_fill_manual(values = c("#b02f09","#cf5f0b","#b9a304","#456789"))
+  
+```
+
+# Opis
+
+Grafika utrzymana jest w halloweenowej konwencji, dzięki czemu sygnalizuje tematykę grafiki. Kolory na wykresie kołowym pomagają wyodrębnić poszczególne części wydatków halloweenowych. 
