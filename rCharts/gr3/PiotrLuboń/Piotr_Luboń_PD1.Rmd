@@ -1,0 +1,54 @@
+---
+title: "Praca Domowa Nr 1"
+author: "Piotr Luboń"
+date: "October 13, 2018"
+output: html_document
+---
+
+Dane pochodzą z poniższego artykułu dotyczącego zmian w produkcji energii elektrycznej na świecie.
+
+https://www.bloomberg.com/news/articles/2018-10-07/world-to-install-over-one-trillion-watts-of-clean-energy-by-2023
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library('ggplot2')
+library('RColorBrewer')
+library(reshape2)
+```
+
+```{r}
+years <- 2001 : 2017
+fossil <- c(85, 110, 108, 92, 112, 147, 134, 123, 146, 155, 148, 144, 130, 135, 139, 115, 103)
+clean <- c(19, 23, 28, 34, 34, 34, 52, 60, 78, 79, 101, 113, 116, 128, 155, 163, 170)
+dt1 <- melt(data.frame('Rok'=years, 'Nieodnawialne'=fossil, 'Odnawialne'=clean), id.vars = 'Rok', variable.name = 'Źródło')
+
+palette1 <- brewer.pal(3, "BrBG")
+
+ggplot(data = dt1, aes(x = Rok, y = value, colour=Źródło)) +
+  scale_x_continuous(name="Rok") +
+  scale_y_continuous(name="Przyrost Produkcji Energii w Gigawatach") + 
+  geom_line() +
+  ggtitle("Przyrost produkcji energii elektrycznej")
+```
+
+```{r}
+period <- c('2006-2011', '2012-2017', '2018-2023')
+coal <- c(2986.626, 1634.775, 731.727)
+wind <- c(332.088, 709.134, 736.441)
+solar <- c(59.267, 397.039, 816.49)
+hydro <- c(579.268, 566.406, 495.936)
+nuclear <- c(-185.312, 88.067, 340.693)
+bio <- c(136.045, 203.193, 250.8)
+dt2 <- data.frame('Okres'=period, 'Węglowa'=coal, 'Wiatrowa'=wind, 'Słoneczna'=solar, 'Wodna'=hydro, 'Jądrowa'=nuclear, 'Biomasy'=bio)
+dt2 <- melt(dt2, id.vars = 'Okres', variable.name = 'Elektrownia')
+
+ggplot(data = dt2) + 
+  geom_bar(aes(x = Okres, y=value, fill = Elektrownia), stat='identity') +
+  scale_y_continuous(name="Przyrost produkcji energii elektrycznej (Terawatogodziny)") +
+  scale_fill_manual(values=brewer.pal(6, "Spectral")) +
+  ggtitle("Przyrost produkcji energii elektrycznej według rodzaju elektrowni")
+```
+
+
+
+
