@@ -1,0 +1,65 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(reshape2)
+library(ggrepel)
+library(knitr)
+library(dplyr)
+source("https://install-github.me/ramnathv/rCharts")
+library(rCharts)
+```
+
+**PD1 Wyniki oglądalności kanałów sportowych**
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%", results='asis'}
+
+# załadowanie danych
+data <- read.csv(file="Ogladalnosc.csv", header=TRUE, stringsAsFactors = FALSE,sep=";")
+data <- data[order(-data$SHR_09_18),]
+row.names(data) <- NULL
+
+# obróbka danych
+data_17 <- data.frame(data[,c("Stacja","SHR_09_17")],"wrzesień 2017")
+names(data_17) = c("Stacja","SHR","Okres")
+data_18 <- data.frame(data[,c("Stacja","SHR_09_18")],"wrzesień 2018")
+names(data_18) = c("Stacja","SHR","Okres")
+shr_data <- rbind(data_17, data_18)
+shr_data <- within(shr_data, Stacja <- factor(Stacja, levels = rev(data[,1])))
+max_shr <- ifelse(data$SHR_09_17 < data$SHR_09_18, data$SHR_09_18, data$SHR_09_17)
+dynamic_proc <- ifelse(data$Dynamika <= 0, paste(data$Dynamika,"%"), paste("+",data$Dynamika,"%"))
+data <- cbind(data, max_shr, dynamic_proc)
+
+# wyświetlenie wykresu
+plot <- nPlot(SHR ~ Stacja, group = "Okres", data = shr_data, type = "multiBarHorizontalChart")
+plot$set(width = 750, height = 590)
+plot$yAxis(axisLabel = "SHR(%)")
+plot$show('inline', include_assets = TRUE, cdn = TRUE)
+```
+
+**PD2 Bavaria election results comparison 2018 vs 2013**
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%", results='asis'}
+
+# przygotowanie danych
+data2 <- read.csv(file="dane.csv", header=TRUE, stringsAsFactors = FALSE,sep=",")
+data2$elections2013 <- data2$elections2018 - data2$change
+data2$change <- ifelse(data2$change <= 0, data2$change, paste("+",data2$change))
+sequence <- rev(order(data2$elections2018))
+df <- melt(data2[, !(names(data2) == "change")], id.vars="pp")
+df$pp <- factor(df$pp, levels=data2[sequence,"pp"])
+df$variable <- factor(df$variable, levels=c("elections2013", "elections2018"), labels=c("2013", "2018"))
+
+# wyświetlenie wykresu
+plot2 <- nPlot(value ~ pp, group = "variable", data = df, type = "multiBarChart")
+plot2$set(width = 750, height = 590)
+plot2$xAxis(axisLabel = "Political party")
+plot2$show('inline', include_assets = TRUE, cdn = TRUE)
+```

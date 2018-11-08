@@ -1,0 +1,30 @@
+---
+title: "RCharts"
+author: "Daria Hubernatorova"
+date: "11/8/2018"
+output: html_document
+---
+## Wykres z pracy domowej 1
+```{R, results = "asis", message = FALSE}
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+library(rCharts)
+data = read.csv('/Users/dasha/Documents/twd/pd1_problemy_warszawa.csv', 
+                header = TRUE, sep = ";", encoding = "UTF-8", 
+                stringsAsFactors=FALSE)
+ggplot(data = data, aes(x = factor(-Procent), y = Procent, fill = Kategoria)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(palette="Paired") +
+  facet_wrap(~Dzielnica, scales = "free_x") +
+  ylab("%") +
+  ggtitle("Problemy dzielnic Warszawy") +
+  theme_bw() +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.title.x = element_blank())
+
+r <- rPlot(Procent ~ Kategoria | Dzielnica, data = data, type = "bar", 
+           color = 'Kategoria')
+r$show('inline', include_assets = TRUE, cdn = TRUE)
+```
