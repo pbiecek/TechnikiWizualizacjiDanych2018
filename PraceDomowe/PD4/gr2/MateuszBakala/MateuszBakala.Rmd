@@ -1,0 +1,41 @@
+---
+title: "Praca domowa nr. 4."
+author: "Bąkała Mateusz"
+date: "2 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(RColorBrewer)
+data <- data.frame(rok = 2006:2018,
+                   dni = c(5, 5, 2, 2, 4, 5, 5, 4, 3, 4, 5, 7, 5),
+                   wypadki = c(483, 761, 334, 424, 407, 464, 428, 338, 196, 294, 534, 609, 408))
+```
+
+## Statystyki akcji "Znicz"
+
+Dane zaczerpnąłem z [artykułu na Wikipedii dotyczącym tej akcji](https://pl.wikipedia.org/wiki/Znicz_(akcja)) oraz, dla akcji z roku 2018, z [artykułu na gazecie.pl](http://wiadomosci.gazeta.pl/wiadomosci/7,114883,24128847,akcja-znicz-2018-policja-podsumowuje-mniej-wypadkow-mniej.html). Dotyczą one liczby wypadków w kolejnych latach trwania akcji "Znicz".
+
+```{r bw.plot, echo=FALSE}
+ggplot(data = data, aes(x = rok, y = wypadki/dni, fill = factor(dni))) + 
+  geom_bar(stat = "identity") + 
+  scale_fill_manual(values = paste("gray", seq(85, 5, by=-20), sep = "")) + 
+  theme_light() + 
+  labs(x = "Rok akcji", y = "Wypadków dziennie", fill = "Ilość dni trwania akcji") + 
+  ggtitle("Czarno-białe statystyki wypadków akcji \"Znicz\"")
+```
+
+## Porównanie wykresów
+
+Zastąpienie czarno-białych słupków kolorowymi nie jest w przypadku tego wykresu konieczne, gdyż niewiele zmienia w kwestii jego czytelności. Oczywiście, pomarańczowe barwy bardziej przyciągają ludzkie oko. Z drugiej strony, tematyka tego wykresu jest raczej ponura i być może odcienie szarości są bardziej stosowne. Tak naprawdę wybór jednego z tych wykresów zależy od priorytetów zleceniodawcy.
+
+```{r c.plot, echo=FALSE}
+ggplot(data = data, aes(x = rok, y = wypadki/dni, fill = factor(dni))) + 
+  geom_bar(stat = "identity") + 
+  scale_fill_manual(values = brewer.pal(5, "Oranges")) + 
+  theme_light() + 
+  labs(x = "Rok akcji", y = "Wypadków dziennie", fill = "Ilość dni trwania akcji") + 
+  ggtitle("Barwne statystyki wypadków akcji \"Znicz\"")
+```

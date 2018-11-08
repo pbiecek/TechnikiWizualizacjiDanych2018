@@ -1,0 +1,38 @@
+---
+title: "Techniki wizualizacji danych - Wizualizacja danych z Eurostatu"
+author: "Piotr Halama"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(reshape2)
+library(RColorBrewer)
+library(dplyr)
+library(tidyr)
+library(eurostat)
+```
+
+
+```{r, message=F, warning=F, out.width="1000px"}
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "0") %>%
+    filter(long > -30, lat > 23)
+
+raw_data <- get_eurostat("tps00176")
+data <- filter(raw_data, agedef =="REACH", time >= as.Date("2011-01-01")) %>% select(geo, time, values)
+data$time <- format(data$time, "%Y")
+data <- rbind(data, list("BG", "2011", 0))
+
+left_join(lp, data, by = c("geo" = "geo")) %>% na.omit %>%
+  ggplot(aes(x = long, y = lat, group = group, fill = values)) + 
+  geom_polygon(color = "black") +
+  coord_map() +
+  facet_wrap(~ time, drop = T) +
+  scale_fill_distiller(breaks=seq(0, 1500000, 250000), direction = 1) +
+  ggtitle("Immigration", "Total number of long-term immigrants arriving into the country during the year") +
+  labs(x = "", y = "", fill="Number of immigrants")
+```
+
+
+

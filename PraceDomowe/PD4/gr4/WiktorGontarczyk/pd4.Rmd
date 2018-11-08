@@ -1,0 +1,52 @@
+---
+title: "Praca domowa 4"
+author: "Wiktor Gontarczyk"
+date: "7 listopada 2018"
+output: html_document
+---
+
+# Dane
+
+```{r}
+library(ggplot2)
+data <- read.csv("./best-halloween-candies.csv", sep=";")
+data <- data.frame(data)
+```
+
+Wykres przedstawia dane dotyczące głosowania na najlepsze słodycze halloweenowe. Wybrano 20 najlepiej ocenionych słodyczy i przedstawiono na wykresie słupkowym. Dane pochodzą z serwisu ranker: https://www.ranker.com/crowdranked-list/best-halloween-candy
+
+# Wersja w odcieniach szarości
+
+```{r}
+ggplot(data=data[1:20,], aes(x = reorder(Candy, Likes - Dislikes), y = Likes)) +
+geom_bar(stat = "identity", width=.8, fill="white") +
+geom_text(aes(label=Likes), vjust=.5, hjust=1.1, color="black") +
+geom_bar(stat = "identity", width=.8, aes(x = Candy, y = -Dislikes), fill="black") +
+geom_text(aes(label=Dislikes, y=-Dislikes), vjust=.5, hjust=-.1, color="white") +
+coord_flip() +
+ylim(-max(data$Likes, data$Dislikes), max(data$Likes, data$Dislikes)) +
+labs(x = "Candy", y = "Dislikes and likes", title = "Top 20 Halloween candies") +
+theme(legend.position = "none",
+      legend.title = element_blank(),
+      plot.title = element_text(size=18, hjust = 0.5),
+      panel.background = element_rect(fill =  "grey95"))
+```
+
+# Wersja kolorowa
+
+```{r}
+ggplot(data=data[1:20,], aes(x = reorder(Candy, Likes - Dislikes), y = Likes)) +
+geom_bar(stat = "identity", width=.8, fill="green") +
+geom_text(aes(label=Likes), vjust=.5, hjust=1.1, color="white") +
+geom_bar(stat = "identity", width=.8, aes(x = Candy, y = -Dislikes), fill="red") +
+geom_text(aes(label=Dislikes, y=-Dislikes), vjust=.5, hjust=-.1, color="white") +
+coord_flip() +
+ylim(-max(data$Likes, data$Dislikes), max(data$Likes, data$Dislikes)) +
+labs(x = "Candy", y = "Dislikes and likes", title = "Top 20 Halloween candies") +
+theme(legend.position = "none",
+      legend.title = element_blank(),
+      plot.title = element_text(size=18, hjust = 0.5),
+      panel.background = element_rect(fill =  "grey95"))
+```
+
+Wersja kolorowa wykresu lepiej wyróżnia głosy pozytywne i negatywne, mimo tego że wersja w odcieniach szarości również jest kontrastowa.
