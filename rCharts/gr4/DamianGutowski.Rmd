@@ -1,0 +1,23 @@
+---
+title: "rCharts"
+author: "Damian Gutowski"
+date: "8 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rCharts)
+```
+
+
+```{r,results='asis'}
+Name <- c("PiS", "PO", "K'15", "ZL", ".N", "K", "PSL")
+Name <- factor(Name, levels = Name)
+Percent <- c(32.5, 26.3, 10.4, 7.5, 6.1, 5.3, 4.8)
+Result <- c(196, 155, 43, 36, 21, 8, 1)
+
+table <- data.frame(Name, Percent,  Result)
+plot <- rPlot(Percent ~ Name , data = table, type = 'bar')
+plot$show('inline', include_assets = TRUE, cdn = TRUE)
+```

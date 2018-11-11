@@ -1,0 +1,69 @@
+---
+author: "Łukasz Brzozowski"
+title: "Praca domowa nr 4"
+output: html_document
+---
+  
+```{r, echo = FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(reshape2)
+library(RColorBrewer)
+library(gridExtra)
+dane <- read.csv("./Dane.csv", header = TRUE, sep = "\t")
+dane <- melt(dane, id.vars = "Source")
+dane <- dane %>% group_by(Source)
+```
+
+##Wykres wyjściowy
+
+W poniższym dokumencie przedstawiam porównanie wykresów inspiracji kostiumów na Halloween. Wykres wyjściowy pochodzi z portalu Statista.com:
+https://www.statista.com/statistics/275770/areas-of-inspiration-for-halloween-costumes-in-the-us/.
+Jest to prosty wykres słupkowy.
+
+```{r fig.height=8, fig.width = 8,echo=FALSE}
+library(png)
+library(grid)
+img <- readPNG("Inspiracje.png")
+grid.raster(img)
+```
+
+##Wykresy poprawione
+
+Dostępne dane pozwoliły na przedstawienie powyższych danych w zależności od płci. 
+```{r, echo = FALSE, message=FALSE, fig.width=10}
+colors <- brewer.pal(4, "Greys")
+colors <- colors[2:3]
+p1 <- ggplot(data = dane, aes(x = reorder(Source, value), fill = variable)) +
+  geom_bar(aes(y = value), stat = "identity", position = position_dodge(), width = 0.7) +
+  coord_flip() +
+  labs(x = "", 
+       y = "Share of respondents",
+       title = "Sources of inspiration for Halloween costumes (A)",
+       fill = "Sex") +
+  scale_fill_manual(values = colors) +
+  scale_y_discrete(limits = c(0, 10, 20, 30), labels = c("0%", "10%", "20%", "30%")) +
+  theme_bw()
+
+colors1 <- brewer.pal(6, "Accent")
+colors1 <- colors1[5:6]
+p2 <- ggplot(data = dane, aes(x = reorder(Source, value), fill = variable)) +
+  geom_bar(aes(y = value), stat = "identity", position = position_dodge(), width = 0.7) +
+  coord_flip() +
+  labs(x = "", 
+       y = "Share of respondents",
+       title = "Sources of inspiration for Halloween costumes (B)",
+       fill = "Sex") +
+  scale_fill_manual(values = colors1) +
+  scale_y_discrete(limits = c(0, 10, 20, 30), labels = c("0%", "10%", "20%", "30%")) +
+  theme(axis.text.x = element_text(family = "cambria", color="azure4", size=10),
+        axis.text.y = element_text(family = "cambria", color="azure4", size = 10),
+        axis.title.x = element_text(family = "cambria", size = 13),
+        axis.title.y = element_text(family = "cambria", size = 12),
+        plot.title = element_text(family = "cambria", size = 14))
+p1
+p2
+```
+
+
+Użycie kolorów znacznie urozmaica wykres. Sprawia ono, że wykres łatwiej przyciąga wzrok. Ponadto, zwiększenie kontrastu ułatwia odczytanie różnic w danych pomiędzy płciami. Wykorzystane kolory są także powiązanie z tym, jak kojarzone są płcie (niebieski kolor dla mężczyzn i różowy lub fioletowy dla kobiet), co sprawia, że wykres wydaje się bardziej naturalny w odbiorze.

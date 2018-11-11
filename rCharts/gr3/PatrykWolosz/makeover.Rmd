@@ -1,0 +1,78 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{R, echo = FALSE, message = FALSE}
+library(ggplot2)
+library(rCharts)
+```
+<style>
+.tick text {
+opacity: 1 !important;
+}
+</style>
+## Wersja ggplot2:
+
+```{R, echo = FALSE}
+names <- c("JAVA", "C", "JS", "PY", "C++", "PHP", "C#", "ASM", "LUA", "GO", "OTHER", "R", "SWIFT", "RUBY", "RUST")
+values <- c(0.665, 0.569, 0.471, 0.460, 0.457, 0.173, 0.157, 0.149, 0.101, 0.096, 0.072, 0.069, 0.053, 0.040, 0.037)
+df <- data.frame("language"=names, "value"=values)
+ggplot(data = df, aes(x = reorder(language, -value), y = value)) +
+  geom_bar(stat = "identity", width=0.5, fill="#FF6666") + 
+  theme_minimal() +
+  scale_y_continuous(labels = scales::percent, 
+                     expand = c(0,0), 
+                     limits = c(0,0.7), 
+                     breaks = seq(from = 0.0, to = 0.7, by = 0.1), 
+                     minor_breaks = seq(0, 0.7, 0.1)) +
+  theme(axis.title.x = element_blank(), 
+        axis.title.y = element_blank(), 
+        axis.line = element_line(color = "black"), 
+        panel.grid.major.x = element_blank(), 
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"), 
+        axis.text.y = element_text(face = "bold", size = 12)) +
+  geom_text(aes(label = scales::percent(value)), 
+            position = position_dodge(width = 0.9), 
+            vjust = -0.5,
+            size = 3) +
+  ggtitle("Popularność języków programowania używanych w rozwiązaniach IoT") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+## Wersja rCharts:
+
+```{R, echo = FALSE,results='asis'}
+plot <- nPlot(value ~ language, data = df, type = "multiBarChart")
+plot$show('inline', include_assets = TRUE, cdn = TRUE)
+```
+
+## Wersja ggplot:
+
+```{R, echo = FALSE, warning = FALSE, message = FALSE}
+values <- c(0.325, 0.263, 0.104, 0.075, 0.061, 0.053, 0.048)
+names <- c("PiS", "PO", "K'15", "ZL", ".N", "K", "PSL")
+data <- data.frame("Values" = values, "Names" = names)
+ggplot(data = data, aes(x = reorder(names, -values), y = values)) +
+  geom_bar(stat = "identity", width = 0.8, fill = "#4286f4") +
+  theme_light() +
+  scale_y_continuous(labels = scales::percent, limits = c(0, 0.35), expand = c(0,0)) +
+  geom_text(aes(label = scales::percent(values)), color = "#2f3033", vjust = -0.5) + 
+  ggtitle("Poparcie dla partii policzycznych (w proc.)") +
+  theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5),
+        panel.grid.major.x = element_blank(),
+        axis.text = element_text(face = "bold"),
+        axis.line = element_line(color = "#4e5056", size = 1),
+        axis.title = element_text(color = "#2f3033", face = "bold")) +
+  labs(x = "Partia polityczna", y = "Wartość") 
+```
+
+## Wersja rCharts:
+
+```{R, echo = FALSE,results='asis'}
+data['vals'] = data['Values']*100
+plot <- nPlot(vals ~ Names, data = data, type = "multiBarChart")
+plot$show('inline', include_assets = TRUE, cdn = TRUE)
+```
+

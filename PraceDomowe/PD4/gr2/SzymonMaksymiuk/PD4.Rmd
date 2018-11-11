@@ -1,0 +1,62 @@
+---
+title: "[TWD] Praca Domowa nr 4"
+author: "Szymon Maksymiuk"
+date: "7 listopada 2018"
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+library(ggplot2)
+library(grid)
+library(RColorBrewer)
+dane <- read.csv("danepd4.csv", sep = ";")
+```
+
+# Wprowadzenie
+
+W zwi¹zku z uroczystoœci¹ Wszystkich Œwiêtych, któr¹ obchodziliœmy niemal tydzieñ temu, postanowi³em pochyliæ siê nad tematem naszego bezpieczeñstwa w trakcie tych dni na przestrzeni lat. Jak wiemy w czasie tych swi¹t Policja co roku organizuje akcjê "Znicz" polegaj¹c¹ na wzmo¿onych kontrolach na drogach. Dziêki danym zebranym na stronie http://statystyka.policja.pl/st/ruch-drogowy/dlugie-weekendy-i-swie/76569,Akcja-quotZniczquot.html mo¿emy porównac jak na przestrzeni lat prezentowa³a siê sytuacja na polskich drogach.
+
+# Wersja z odcieniami szaroœci
+
+```{r, echo=FALSE, fig.width=12}
+ggplot(dane, aes(x=Rok)) + 
+  geom_line(size = 3, aes(y = Wypadki, colour = "Wypadki"), alpha = 0.7) +
+  geom_line(size = 3, aes(y = Zabici, colour = "Zabici"), alpha = 0.7) +
+  geom_line(size = 3, aes(y = Ranni, colour = "Ranni"), alpha = 0.7) +
+  scale_y_continuous(limits = c(0, max(dane$Ranni)))+
+  scale_x_continuous(breaks=seq(1993,2017,2))+
+  scale_color_manual(values = brewer.pal(11,"RdGy")[c(8,9,10)])+
+  labs(title="Liczba wypadków, osób rannych oraz zgonów na polskich drogach w dniach
+31paŸdziernika - 1 listopada na przestrzeni lat")+
+  guides(colour = guide_legend(override.aes = list(alpha=1, size = 3, linetype = 1)))+
+  theme_bw() + theme(legend.title=element_blank(), axis.title.x = element_blank(), 
+                     axis.title.y = element_blank(), legend.text=element_text(size=rel(1.2)),
+                     panel.background = element_rect(colour = "black", size=2), 
+                     legend.box.spacing = unit(1.5, "line"), legend.key.height=unit(2,"line"), 
+                     legend.key.width = unit(3, "line"))
+```
+
+#Wersja z kolorami
+
+```{r echo=FALSE, fig.width=12}
+ggplot(dane, aes(x=Rok)) + 
+  geom_line(size = 3, aes(y = Wypadki, colour = "Wypadki"), alpha = 0.7) +
+  geom_line(size = 3, aes(y = Zabici, colour = "Zabici"), alpha = 0.7) +
+  geom_line(size = 3, aes(y = Ranni, colour = "Ranni"), alpha = 0.7) +
+  scale_y_continuous(limits = c(0, max(dane$Ranni)))+
+  scale_x_continuous(breaks=seq(1993,2017,2))+
+  scale_color_manual(values = c("orange", "blue", "red"))+
+  labs(title="Liczba wypadków, osób rannych oraz zgonów na polskich drogach w dniach
+31paŸdziernika - 1 listopada na przestrzeni lat")+
+  guides(colour = guide_legend(override.aes = list(alpha=1, size = 3, linetype = 1)))+
+  theme_bw() + theme(legend.title=element_blank(), axis.title.x = element_blank(), 
+                     axis.title.y = element_blank(), legend.text=element_text(size=rel(1.2)),
+                     panel.background = element_rect(colour = "black", size=2), 
+                     legend.box.spacing = unit(1.5, "line"), legend.key.height=unit(2,"line"), 
+                     legend.key.width = unit(3, "line"))
+```
+
+# Podsumowanie
+
+Pierwszy wykres, subiektywnie mówi¹c, nie jest mi³y dla oka. Fakt utrzymania go w odcieniach szaroœci sprawia, ¿e wszystko nam siê na nim zlewa, musimy wytê¿yæ wzork aby rozró¿niæ poszczególne kategorie. Przedstawione dane szczególnie pokazuj¹ jak wa¿ny jest rozró¿nialny kolor. Wartoœci kategorii "Ranni" oraz "Wypadki" czêsto s¹ blisko siebie, zdarza siê im nawet krzy¿owaæ przez co rozró¿nienie linii jest jeszcze trudniejsze. Patrz¹c na drugi wykres nasz¹ uwagê od razu przykuwaj¹ barwy. Wed³ug mnie oprócz tego, ¿e w oczywisty sposób u³atwiaj¹ odczytanie danych z wykresu to dodaj¹ du¿o walorów estetycznych dziêki czemu patrzenie na wykres w celu odczytania poszczególnych wartoœci nie jest ju¿ katorg¹ (w sensie estetycznym jak i zdrowotnym - oczy nie bol¹ od wytê¿ania wzorku) a przyjemnoœci¹. 
+Poœwiêcaj¹c zdanie samym danym, ³atwo zauwa¿yæ pokrzepiaj¹cy serca fakt, ¿e ogólna liczba wypadków spada na przestrzeni lat. Je¿eli chodzi o sam¹ liczbê wypadków jak i rannych to obni¿y³a siê ona w porównaniu do pocz¹tków akcji oko³o dwukrotnie co wed³ug mnie jest sukcesem podnoszenia œwaidomoœci wœród polskich kierowców. Liczba osób, które trac¹ ¿ycie na drogach równie¿ ku uciesze nas wszystkich maleje.
