@@ -31,7 +31,8 @@ rPlot(deathrate ~ birthrate | continent, data = countries2, type = "point")
 r <- rPlot(deathrate ~ birthrate | continent, data = countries2, type = "point")
 r
 
-r <- rPlot(deathrate ~ birthrate, data = countries2, type = "point", color = "continent")
+r <- rPlot(deathrate ~ birthrate, data = countries2, type = "point", 
+           color = "continent")
 r
 
 r$facet(var = "continent", type = 'wrap', rows = 2)
@@ -49,7 +50,8 @@ r_error
 
 
 # nvd3 charts -----------------------------
-nPlot(death.rate ~ birth.rate, group = "continent", data = countries, type = "scatterChart")
+nPlot(death.rate ~ birth.rate, group = "continent", 
+      data = countries, type = "scatterChart")
 
 # nie dziala poprawnie
 nPlot(death.rate ~ birth.rate | continent, data = countries, type = "scatterChart")
