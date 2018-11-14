@@ -1,0 +1,52 @@
+---
+title: "Praca Domowa Nr 1"
+author: "Piotr Luboń"
+date: "October 13, 2018"
+output: html_document
+---
+
+Dane pochodzą z poniższego artykułu dotyczącego zmian w produkcji energii elektrycznej na świecie.
+
+https://www.bloomberg.com/news/articles/2018-10-07/world-to-install-over-one-trillion-watts-of-clean-energy-by-2023
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library('ggplot2')
+library('RColorBrewer')
+library('reshape2')
+library('rCharts')
+```
+
+```{r, results='asis'}
+years <- 2001 : 2017
+fossil <- c(85, 110, 108, 92, 112, 147, 134, 123, 146, 155, 148, 144, 130, 135, 139, 115, 103)
+clean <- c(19, 23, 28, 34, 34, 34, 52, 60, 78, 79, 101, 113, 116, 128, 155, 163, 170)
+dt0 <- data.frame('Rok'=years, 'Nieodnawialne'=fossil, 'Odnawialne'=clean)
+dt1 <- melt(data.frame('Rok'=years, 'Nieodnawialne'=fossil, 'Odnawialne'=clean), id.vars = 'Rok', variable.name = 'Źródło')
+
+palette1 <- brewer.pal(3, "BrBG")
+
+#rPlot(value ~ Rok | Źródło, data = dt1, type = "line")
+m1 = mPlot(x = 'Rok', y = c('Nieodnawialne', 'Odnawialne'), type = 'Line', data = dt0)
+m1$set(pointSize = 0, lineWidth = 1)
+m1$show('inline', include_assets = TRUE, cdn = FALSE)
+```
+
+```{r, results='asis'}
+period <- c('2006-2011', '2012-2017', '2018-2023')
+coal <- c(2986.626, 1634.775, 731.727)
+wind <- c(332.088, 709.134, 736.441)
+solar <- c(59.267, 397.039, 816.49)
+hydro <- c(579.268, 566.406, 495.936)
+nuclear <- c(-185.312, 88.067, 340.693)
+bio <- c(136.045, 203.193, 250.8)
+dt2 <- data.frame('Okres'=period, 'Węglowa'=coal, 'Wiatrowa'=wind, 'Słoneczna'=solar, 'Wodna'=hydro, 'Jądrowa'=nuclear, 'Biomasy'=bio)
+dt2 <- melt(dt2, id.vars = 'Okres', variable.name = 'Elektrownia')
+
+p2 <- nPlot(value ~ Okres, group='Elektrownia', data = dt2, type= 'multiBarChart')
+p2$show('inline', include_assets = TRUE, cdn = FALSE)
+```
+
+
+
+
