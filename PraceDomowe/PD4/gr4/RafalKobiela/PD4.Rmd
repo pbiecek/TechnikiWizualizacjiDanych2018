@@ -1,0 +1,56 @@
+---
+title: "PD4"
+author: Rafał Kobiela
+date: "6 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+data <- read.csv("data.csv") 
+data <- arrange(data,Population)
+data$Country <- factor(data$Country, levels = data$Country)
+```
+
+
+## Wykres A (skala szarośći)
+
+```{r echo=FALSE, out.width="100%"}
+ggplot(data, aes(x=Country, y=Population)) +
+  geom_col(width=0.85, position = "dodge") +
+  scale_fill_gradient(low = "black", high = "white") +
+  coord_flip() +
+  theme(axis.ticks.y = element_blank()) +
+  labs(x="Country", y="Population in millions", title ="Population in the EU (2017)") +
+  scale_y_continuous(breaks=seq(0,90,5), limits = c(0,85)) +
+  geom_text(aes(label = as.character(Population)),size=3, fontface = "bold", hjust = -0.5) +
+  geom_rect(aes(ymin=55, ymax=80, xmin="LT", xmax="HU"), color="black") +
+  geom_text(aes(x="DK", y=67.5, label="EU-28 \n 512 million"), fontface="bold", size = 6, color = "black")
+
+```
+
+
+## Wykres B (kolorowy)
+
+```{r echo=FALSE, out.width="100%"}
+ggplot(data, aes(x=Country, y=Population, fill=Population)) +
+  geom_col(width=0.85, position = "dodge") +
+  scale_fill_gradient(low="orange", high="red")+
+  coord_flip() +
+  theme(axis.ticks.y = element_blank()) +
+  labs(x="Country", y="Population in millions", title ="Population in the EU (2017)") +
+  scale_y_continuous(breaks=seq(0,85,5), expand=c(0.01,0)) +
+  geom_text(aes(label = as.character(Population), 
+                y = ifelse(Population<3,as.numeric(Population)+1.5,as.numeric(Population-1.7))),
+            size=3, fontface = "bold") +
+  geom_rect(aes(ymin=55, ymax=80, xmin="LT", xmax="HU"), color="black") +
+  geom_text(aes(x="DK", y=67.5, label="EU-28 \n 512 million"), fontface="bold", size = 6)
+```
+
+## Komentarz
+
+Wykres A zaprezentowany jest w skali szarości. Jak widać niezbyt przyjemnie się na niego patrzy przez szare kolory. Dodatkowo nie jednolity kolor nie oddaje różnicy pomiędzy kolejnymi słupkami. Na wykresie B te problemy znikają. Po pierwsze, kolory uprzyjemniają patrzenie na wykres. Po drugie, weidać teraz bardziej różnice pomiędzy populacjami, nie tylko patrząc na wielkość słupka, ale intuicyjne rozumiejąc kolor.

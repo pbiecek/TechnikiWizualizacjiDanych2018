@@ -42,6 +42,7 @@ Prezentacje można przygotować w 2-3 osobowych zespołach. Należy wybrać jede
 
 Prezentacje mają miejsce na wykładzie. Rozpoczynamy **28 listopada**.
 
+* Artykuły z ostatniej konferencji IEEE VIS 2018 (wybrać jeden) http://ieeevis.org/year/2018/info/papers
 * Percepcja grafiki, https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73#.3kne5zu36
 * Kartogramy a Brexit, http://vis4.net/blog/posts/to-cartogram-or-not-to-cartogram-the-brexit/
 * Wizualizacja reszt, https://drsimonj.svbtle.com/visualising-residuals
