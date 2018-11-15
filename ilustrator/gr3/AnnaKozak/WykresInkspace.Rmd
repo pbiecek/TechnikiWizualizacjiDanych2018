@@ -1,0 +1,17 @@
+---
+title: "Ilustrator"
+author: "Anna Kozak"
+date: "14 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Wykres oryginalny
+![](C:/Users/Anna Kozak/Desktop/wykres1.png)
+
+## Wykres poprawiony - Inkspace
+![](C:/Users/Anna Kozak/Desktop/Rplot01.png)
