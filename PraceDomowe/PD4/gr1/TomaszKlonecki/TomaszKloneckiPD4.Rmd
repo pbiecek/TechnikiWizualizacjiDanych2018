@@ -1,0 +1,63 @@
+---
+title: "Zadanie domowe 04 - Tomasz Klonecki"
+author: "Tomasz Klonecki"
+date: "6 November 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Dane:
+
+Dane pochodzą z bloga pewnego amerykania, który postanowił spędzić Halloween z liczbami i wykresami.
+
+https://www.graphgraph.com/2012/11/my-halloween-candy-in-graphs-2012/
+
+Wybrałem wykres dotyczący ilości dzieci (młodzieży?), które odwiedziły dom naszego bohatera w Halloween w 2011 i 2012 roku.
+
+```{R, echo = FALSE}
+hour <- rep(c("6:30", "6:45", "7:00", "7.15", "7:30", "7:45", "8:00", "8:15"),2)
+year <- c(rep(2011,8),rep(2012,8))
+treaters <- c(21,23,31,41,26,26,20,5,24,12,40,40,57,23,20,0)
+
+df <- data.frame(hour,year,treaters)
+```
+
+# Czarno-biały wykres:
+```{R}
+library(ggplot2)
+p <- ggplot(df,aes(x=hour,y=treaters,fill=factor(year)))+
+  geom_bar(stat="identity",position="dodge") +
+  scale_fill_manual(values = c("grey60", "grey40"),name= "Year") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0,60)) +
+  labs(x = "Hour", y="Number of treaters") +
+  ggtitle("Number of treaters that visited my house per hour")
+p
+```
+
+Wykres jest w miarę czytelny, natomiast użycie tylko czarno-białych kolorów powoduje, że nie wygląda on na interesujący. Na pewno nie w artykule dotyczącym Halloween.
+
+# Kolorowy wykres :
+```{R}
+p <- ggplot(df,aes(x=hour,y=treaters,fill=factor(year)))+
+  geom_bar(stat="identity",position="dodge") +
+  scale_fill_manual(values = c("darkorange1", "darkorange4"),name= "Year") +
+  scale_y_continuous(expand = c(0, 0), limits = c(0,60)) +
+  labs(x = "Hour", y="Number of treaters") +
+  ggtitle("Number of treaters that visited my house per hour") +
+  theme(plot.title = element_text(color="white", face="bold", size=18, hjust=0),
+        plot.background = element_rect(fill = 'black'),
+        panel.background = element_rect(fill = 'black'), 
+        panel.grid = element_line(colour='grey', size = 0.5),
+        legend.background = element_rect(fill = 'black'),
+        text = element_text(colour = 'white', size = 15),
+        axis.text = element_text(colour = 'white', size = 13)
+        )
+p
+```
+
+W kolorowym wykresie postanowiłem wykorzystać jedne z najbardziej skrajnych połączeń kolorów Halloween w taki sposób, żeby wykres jak najmocniej rzucał się w oczy. Kolor spełnia u mnie funkcję przyciągania uwagi czytelnika - kwestia podziału na lata jest drugorzędna. Myślę, że gryby autor wybranego przeze mnie artykułu wykorzystał wykresy o podobnej kolorystyce - cały tekst czytało by się o wiele lepiej.
+
+
