@@ -2,7 +2,7 @@
 
 Celem pierwszego projektu jest przygotowanie plakatu w formacie A2, który przedstawi graficznie ciekawe informacje o wybranym filmie/serialu/audiobooki (lub ich kolekcji).
 
-Plakat powinien składać się ze zbioru przynajmniej dwóch wykresów oraz komentarzy/opisów do wykresów. Projekt wykonywać można w grupie do 3 osób. Wydrukowany plakat należy przynieść na 7. zajęcia. Kody źródłowe wykresów I plakat w postaci elektronicznej należy umieścić na GitHubie.
+Plakat powinien składać się ze zbioru przynajmniej dwóch wykresów oraz komentarzy/opisów do wykresów. Projekt wykonywać można w grupie do 3 osób. Wydrukowany plakat należy przynieść na wykład **21 listopada**. Kody źródłowe wykresów i plakat w postaci elektronicznej należy umieścić na GitHubie.
 
 Wykresy mogą być wykonane w dowolnym narzędziu i złożone w plakat z użyciem dowolnej techniki.
 

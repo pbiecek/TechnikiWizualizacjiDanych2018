@@ -1,0 +1,57 @@
+---
+title: "Praca domowa nr 3"
+author: "Łukasz Brzozowski"
+output: html_document
+---
+```{r, echo = FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+dane <- read.csv("Urodzenia_Zgony.csv", header = TRUE, stringsAsFactors = FALSE, sep = "\t")
+k <- as.data.frame(read.csv("Przeciecia.csv", header = TRUE))
+k <- k[,2:4]
+colnames(k) <- colnames(dane)
+dane1 <- rbind(dane, k)
+dane1 <- dane1[order(dane1[,1]),]
+dane <- dane1
+```
+##Wykres wyjściowy 
+
+Poprawiany wykres pochodzi z publikacji Głównego Urzędu Statystycznego "100 lat Polski w liczbach. 1918 - 2018" dostępnego pod adresem:
+https://stat.gov.pl/obszary-tematyczne/inne-opracowania/inne-opracowania-zbiorcze/100-lat-polski-w-liczbach-1918-2018,30,1.html
+
+Na 84. stronie pojawia się wykres dotyczący przyrostu naturalnego Polski w latach 1990 - 2018. Zostały w nim popełnione dwa błędy: oś pionowa nie zaczyna się w zerze, co powoduje prezentację zmian przyrostu naturalnego jako dużo większych, niż były w rzeczywistości; ponadto, ujemny przyrost naturalny jest trudno odróżnić od dodatniego przez ten sam kolor wypełnienia w obu przypadkach. Należy również zauważyć, że brak pionowych linii pomocniczych znacznie utrudnia odczytanie wartości dla konkretnych lat.
+
+```{r fig.height=6, fig.width = 6,echo=FALSE}
+library(png)
+library(grid)
+img <- readPNG("Przyrost naturalny Polski w latach 1990-2017.png")
+ grid.raster(img)
+```
+
+##Wykres poprawiony
+
+```{r, echo = FALSE, fig.height=5}
+ggplot(data = dane, aes(x = Rok, y = Urodzenia)) +
+  geom_area(aes(y = Zgony), fill = "lightcyan2") +
+  geom_line(aes(y = Urodzenia), color = "olivedrab") +
+  geom_line(aes(y = Zgony), color = "lightcoral") +
+  geom_ribbon(data = filter(dane[1:15,], Urodzenia >= Zgony), aes(ymin = Zgony, ymax = Urodzenia), fill = "palegreen") +
+  geom_ribbon(data = filter(dane[13:20,], Urodzenia <= Zgony), aes(ymin = Urodzenia, ymax = Zgony), fill = "lightcoral") +
+  geom_ribbon(data = filter(dane[17:28,], Urodzenia >= Zgony), aes(ymin = Zgony, ymax = Urodzenia), fill = "palegreen") +
+  geom_ribbon(data = filter(dane[21:34,], Urodzenia <= Zgony), aes(ymin = Urodzenia, ymax = Zgony), fill = "lightcoral") +
+  labs(x = "Rok", y = "Urodzenia i zgony",
+       title = "Zmiana przyrostu naturalnego Polski w latach 1990-2018") +
+  scale_y_continuous(breaks = c(0, 100000, 200000, 300000, 400000, 500000, 600000), 
+                     labels = c("0", "100 tys.", "200 tys.", "300 tys.", "400 tys.", "500 tys.", "600 tys."),
+                     limits = c(0, 600000)) +
+  scale_x_continuous(breaks = c(1990, 1995, 2000, 2005, 2010, 2015),
+                   labels = as.character(c(1990, 1995, 2000, 2005, 2010, 2015))) +
+  theme(axis.text.x = element_text(family = "cambria", color="azure4", size=10),
+        axis.text.y = element_text(family = "cambria", color="azure4", size = 10, angle = 60),
+        axis.title.x = element_text(family = "cambria", size = 13),
+        axis.title.y = element_text(family = "cambria", size = 12),
+        plot.title = element_text(family = "cambria", size = 14))
+```
+
+
+Poprawiłem wspomniane powyżej błędy, przez co wykres staje się czytelniejszy, szczególnie pod kątem wyróżnienia ujemnego i dodatniego przyrostu naturalnego.

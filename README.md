@@ -13,7 +13,9 @@ Prace domowe należy zgłaszać przez GitHub. [Instrukcja jak korzystać](http:/
 * [1] W: [Historia grafiki statystycznej](http://biecek.pl/Eseje/indexHistoria.html); L: [ggplot2 - pierwsza krew](https://pbiecek.gitbooks.io/przewodnik/content/Wizualizacja/jak_tworzyc_wykresy_ggplot2.html).
 * [2] W: [Gramatyka grafiki](http://biecek.pl/Eseje/indexGramatyka.html), [Standardy w komunikacji](http://www.ibcs-a.org/); L: [ggplot2 - skale, statystyki, koordynaty](https://pbiecek.gitbooks.io/przewodnik/content/Wizualizacja/jak_tworzyc_wykresy_ggplot2.html)
 * [3] W: [Nie rób tego w domu](http://biecek.pl/Eseje/indexPomylka.html); L: [poprawiamy NSP](http://stat.gov.pl/spisy-powszechne/nsp-2011/nsp-2011-wyniki/)
-* [4] W: -; L: [wizualizacja danych z Eurostatu](https://journal.r-project.org/archive/2017/RJ-2017-019/index.html)
+* [4] W: [Kolory](http://biecek.pl/Eseje/indexKolory.html); L: [wizualizacja danych z Eurostatu](https://journal.r-project.org/archive/2017/RJ-2017-019/index.html)
+* [5] W: [Droga wzrokowa](http://biecek.pl/Eseje/indexObraz.html); L: [Grafika interaktywna i rCharts](http://pbiecek.github.io/Przewodnik/Wizualizacja/jak_tworzyc_interaktywne_wykresy.html)
+* [6] W: [Skale pomiarowe](http://biecek.pl/Eseje/indexKuchnia.html); L: [Inkscape](https://inkscape.org/) lub [Illustrator](https://www.adobe.com/pl/products/illustrator/free-trial-download.html) (w miarę możliwości proszę przynieść własny laptop)
 
 
 # Zasady zaliczenia
@@ -27,18 +29,20 @@ Zaliczenie jest oparte o trzy składowe:
 W sumie uzyskać można do 100 punktów. 51 punktów zalicza przedmiot.
 
 
-
 # Projekty
 
 Projekty można realizować w zespołach 1-3 osobowych. 
 Każdy projekt należy realizować w innym zespole. 
 
-Treść wkrótce
+Termin oddania projektu 1 to **21 listopada** - 10:15 rano (wykład).
 
 # Prezentacje studentów
 
 Prezentacje można przygotować w 2-3 osobowych zespołach. Należy wybrać jeden z tematów poniżej, przeczytać, zrozumieć, przeczytać, przedstawić treści z tego artykułu w 5+5 min (5 minut na prezentacje i 5 minut na dyskusje).
 
+Prezentacje mają miejsce na wykładzie. Rozpoczynamy **28 listopada**.
+
+* Artykuły z ostatniej konferencji IEEE VIS 2018 (wybrać jeden) http://ieeevis.org/year/2018/info/papers
 * Percepcja grafiki, https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73#.3kne5zu36
 * Kartogramy a Brexit, http://vis4.net/blog/posts/to-cartogram-or-not-to-cartogram-the-brexit/
 * Wizualizacja reszt, https://drsimonj.svbtle.com/visualising-residuals

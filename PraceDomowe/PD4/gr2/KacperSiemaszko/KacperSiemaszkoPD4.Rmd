@@ -1,0 +1,72 @@
+---
+title: "Praca domowa 4"
+author: "Kacper Siemaszko"
+date: "November 6, 2018"
+output: html_document
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+Postanowiłem zwizualizować wyniki [ankiety](https://www.ranker.com/crowdranked-list/best-halloween-candy?format=GRID&page=1&action=tab&type=list), którą znalazłem przeglądając wykresy z tego [bloga](https://blogs.sas.com/content/sastraining/2015/10/20/get-the-inside-scoop-for-your-halloween-candy-selection/). Postanowiłem odtworzyć oryginalny wykres, korzystając tylko z odcieni szarości. W moich wizualizacjach skorzystałem z bardziej aktualnych danych z ankiety źródłowej (ankieta dalej jest otwarta).
+
+```{r loading.data, include=FALSE}
+data <- read.csv('./halloween_candies.csv')
+data$Upvotes <- as.numeric(data$Upvotes)
+data$Downvotes <- as.numeric(data$Downvotes)
+data$Upvotes.to.downvotes.ratio <- data$Upvotes/data$Downvotes
+data <- data[order(data$Upvotes.to.downvotes.ratio, decreasing = TRUE),]
+
+data.for.visualization = as.data.frame(cbind(rep(as.character(data$Candy),2), c(-data$Downvotes, data$Upvotes), rep(data$Upvotes.to.downvotes.ratio, 2)))
+colnames(data.for.visualization) <- c('Candy', 'Votes', 'Ratio')
+data.for.visualization$Votes <- as.numeric(as.character(data.for.visualization$Votes))
+data.for.visualization$Type <- ifelse(data.for.visualization$Votes > 0, 'Up', 'Down')
+data.for.visualization$Candy <- factor(data.for.visualization$Candy, levels = rev(data$Candy))
+data.for.visualization$Ratio <- as.numeric(as.character(data.for.visualization$Ratio))
+data.for.visualization$Balance <- data.for.visualization$Type
+data.for.visualization$Balance <- 'Negative'
+data.for.visualization$Balance[data.for.visualization$Ratio > 0.95] <- 'Neutral'
+data.for.visualization$Balance[data.for.visualization$Ratio > 1.5] <- 'Positive'
+```
+
+# Odcienie szarości
+
+```{r visualize.grey, fig.width = 10, fig.height = 10}
+ggplot(data.for.visualization, aes(x = Candy, y = Votes, fill = Type)) +
+  geom_bar(stat = 'identity') +
+  scale_y_continuous(limits = max(data.for.visualization$Votes)*c(-1,1)) +
+  scale_fill_grey() +
+  labs(y = "Votes", title = 'Wyniki ankiety dot. ulubionych słodyczy na Halloween') +
+  theme_minimal() + 
+  coord_flip() +
+  theme(legend.position = "none")
+```
+
+Wykres w odcieniach szarości wyświetla dane w taki sposób, że jedyną informacją który jesteśmy w stanie uzyskać na pierwszy rzut oka jest wysokość pojedynczego słupka, czyli liczby głosów danej kategorii, na dany rodzaj słodyczy. Przez to, sprawdzenie czy dane słodycze mają przewagę głosów pozytywnych nad negatywnymi staje się niewygodne, pomimo iż jest to informacja, której z pewnością szukalibyśmy na wykresie dotyczącem ankiety. 
+
+# Użycie kolorów
+
+```{r visualize.color, fig.width = 10, fig.height = 10}
+ggplot(data.for.visualization,
+       aes(x = Candy,
+           y = Votes,
+           fill = factor(paste(data.for.visualization$Type,data.for.visualization$Balance),
+                         levels = c('Up Positive', 'Down Positive', 'Up Neutral', 'Down Neutral', 'Up Negative', 'Down Negative')))) +
+  geom_bar(stat = 'identity') +
+  scale_y_continuous(limits = max(data.for.visualization$Votes)*c(-1,1)) +
+  # scale_fill_grey() +
+  scale_fill_manual(values=c('#4dff4d','#ccffcc','#999966','#b8b894', '#ff6666', '#ff0000')) +
+  labs(y = "Votes", title = 'Wyniki ankiety dot. ulubionych słodyczy na Halloween') +
+  theme_minimal() +
+  coord_flip() +
+  theme(legend.position = "none")
+```
+
+W wersji kolorowej, postanowiłem ułatwić czytelnikowi wykresu porównanie liczby głosów pozytywnych i negatywnych. W tym celu, wykorzystałem kolory, które w naszym kręgu kulturowym w sposób jednoznaczny utożsamiane są z odczuciami jakie wywołują. Zielony przedstawia przewagę głosów pozytywnych nad negatywnymi - $\frac{Upvote}{Downvote} > 1.5$. Szarobrązowy symbolizuje neutralny stosunek - jednym te słodycze smakują, innym mniej - $\frac{Upvote}{Downvote} \in (0.9,1.5]$. Czerwony kolor sygnalizuje nam, że te słodycze wywołują negatywne odczucia wśród uczestników ankiety - $\frac{Upvote}{Downvote} \leq 0.9$. Tak przedstawione dane pozwalają przekazać na wykresie więcej informacji, oszczędzają czas czytelnika i przyciągają jego uwagę.

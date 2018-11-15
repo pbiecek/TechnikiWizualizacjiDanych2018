@@ -1,0 +1,108 @@
+---
+title: "Techniki Wizualizacji Danych - PD2"
+author: "Adam Rydelek"
+date: "21.10.2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+# Porównanie wykresów
+
+## Wykres do poprawy
+
+
+```{r, echo=FALSE, fig.width=12, fig.height=6}
+library(ggplot2)
+
+dane <- data.frame(rbind(c("PAD", "le", 31),
+                         c("PAD", "Nie mam zdania", 10),
+                         c("PAD", "Dobrze", 56),
+                         c("Sejm", "le", 52),
+                         c("Sejm", "Nie mam zdania", 17),
+                         c("Sejm", "Dobrze", 31),
+                         c("Senat", "le", 44),
+                         c("Senat", "Nie mam zdania", 25),
+                         c("Senat", "Dobrze", 31),
+                         c("Samorz¹d", "le", 23),
+                         c("Samorz¹d", "Dobrze", 70)))
+
+colnames(dane) <- c("Kandydat", "Kategoria", "Wynik")
+
+dane$Wynik <- as.numeric(as.vector(dane$Wynik))
+ggplot(data=dane, aes(x=Kandydat, y=Wynik, fill=Kategoria)) +
+geom_bar(stat="identity", width = 0.8, position = position_dodge(width = 0.9), colour="black")+
+geom_text(aes(label=Wynik), vjust=1.6, color="black",
+          position = position_dodge(0.9), size=3.5)+
+ylim(0,max(dane$Wynik)+5)+
+scale_fill_brewer(palette="Set1")+
+labs(x="", y="Wynik (%)", fill = "")+
+ggtitle("Oceny dzia³alnoœci parlamentu, prezydenta i w³adz lokalnych. CBOS paŸdziernik 2018")+
+theme_minimal()+
+theme(plot.title = element_text(hjust = 0.5))
+```
+
+Powy¿ej zamieszczony wykres zosta³ wybrany spoœród prac domowych PD1. Wykres ten przedstawia procentowy rozk³ad oceny dzia³alnoœci w³adz w Polsce i opiera siê na artykule: https://fakty.interia.pl/polska/news-ocena-prezydenta-najnowszy-sondaz-cbos,nId,2645166.
+
+Mo¿na zauwa¿yæ b³êdy w powy¿szym wykresie takie, jak:  
+
+
+* liczby na wykresie jedynie zaburzaj¹ przejrzystoœæ wykresu
+  + sumy procentowe wyników nie sumuj¹ siê do 100
+  + zaprezentowane wyniki nie s¹ posortowane
+  + wielkoœæ s³upków jest ró¿na, co sprawia b³êdne wra¿enie wielkoœci danych
+
+
+## Poprawiony wykres
+  
+  
+```{r, echo=FALSE, fig.width=12, fig.height=6}
+dane <- data.frame(rbind(c("Prezydent", "le", 31),
+                         c("Prezydent", "Dobrze", 56),
+                         c("Prezydent", "BrakZdania", 13),
+                         c("Sejm", "le", 52),
+                         c("Sejm", "Dobrze", 31),
+                         c("Sejm", "BrakZdania", 17),
+                         c("Senat", "le", 44),
+                         c("Senat", "Dobrze", 31),
+                         c("Senat", "BrakZdania", 25),
+                         c("Samorz¹d", "le", 23),
+                         c("Samorz¹d", "Dobrze", 70),
+                         c("Samorz¹d", "BrakZdania", 7)))
+
+colnames(dane) <- c("Kandydat", "Kategoria", "Wynik")
+dane$Wynik <- as.numeric(as.vector(dane$Wynik))
+dane$Kandydat <- factor(dane$Kandydat, levels = c("Samorz¹d","Prezydent","Senat","Sejm"))
+dane$Kategoria <- factor(dane$Kategoria, levels = c("Dobrze","le","BrakZdania"))
+
+ggplot(data=dane, aes(x=Kandydat, y=Wynik, fill=Kategoria)) +
+  geom_bar(stat="identity", position = position_dodge(width = 0.9), width = 0.8)+
+  ylab("Wynik [%]\n") +
+  ggtitle("Oceny dzia³alnoœci parlamentu, prezydenta i w³adz lokalnych\nCBOS paŸdziernik 2018\n")+
+  facet_grid(cols=vars(Kandydat), scales='free', switch='both') +
+  scale_fill_manual(name="Ocena",
+                    breaks=c("Dobrze", "le", "BrakZdania"),
+                    labels=c("Pozytywna","Negatywna", "Neutralna"),
+                    values = c("royalblue2","firebrick2","chartreuse3")) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.y=element_text(size=12),
+        axis.title.y=element_text(size=12,face="bold"),
+        plot.title = element_text(size=18,face="bold",hjust=0.5),
+        strip.text.x = element_text(size = 12, colour = "black", angle = 0),
+        legend.title = element_text(colour="black", size=12, face="bold"),
+        panel.background = element_rect(fill = "grey97",
+                                        colour = "grey90",
+                                        size = 0.5, linetype = "solid"),
+        panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+                                        colour = "white"), 
+        panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
+                                        colour = "white"))
+```
+
+Uwa¿am, ¿e wykonany przeze mnie wykres jest czytelniejszy, poniewa¿ dane s¹ posegregowane od najbardziej pozytywnie ocenianej organizacji do najbardziej negatywnie ocenianej. W ka¿dej katogii suma ocen pozytywnych, negatywnych i neutralnych sumuje siê do 100 procent. Szata graficzna wykresu jest przejrzysta, umo¿liwia odczytanie potrzebnych danych bez koniecznoœci u¿ycia liczb na s³upkach. Wszystkie s³upki maj¹ równ¹ szerokoœæ, co umo¿liwia ³atwy odczyt danych jedynie na podstawie wysokoœci s³upków.
