@@ -1,0 +1,15 @@
+---
+title: "rCharts"
+author: "Wiktor Gontarczyk"
+output: html_document
+---
+
+```{r, results='asis'}
+library(rCharts)
+data <- read.csv("wef.csv", sep=";", header=TRUE, encoding = "UTF-8", colClasses=c("numeric","factor", "numeric", "numeric", "numeric"))
+
+plot <- nPlot(Score ~ Country, data = data, type = 'multiBarHorizontalChart', title = 'Ranking WEF top 20 - indeks konkurencyjności gospodarczej')
+plot$xAxis(axisLabel = 'Score')
+plot$yAxis(axisLabel = 'Country')
+plot$show('inline', include_assets = TRUE, cdn = TRUE)
+```
