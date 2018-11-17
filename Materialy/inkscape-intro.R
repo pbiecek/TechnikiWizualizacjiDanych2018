@@ -41,20 +41,29 @@ ggplot(dat, aes(x = kraj, y = populacja, image = flaga)) +
 
 library(SmarterPoland)
 library(patchwork)
+library(latex2exp)
 
 p1 <- ggplot(data = countries, aes(x = continent, y = death.rate, color = continent)) +
-  geom_boxplot()
+  geom_boxplot() +
+  scale_x_discrete("ĄĘŻŹĆ") +
+  scale_y_continuous(TeX("$\\frac{\\alpha}{\\beta \\times \\log 10}$"))
 
 set.seed(1410)
 p2 <- ggplot(data = countries, aes(x = continent, y = death.rate, color = continent)) +
-  geom_point(position = "jitter")
+  geom_point(position = "jitter") 
 
 p3 <- ggplot(data = countries, aes(x = continent, fill = continent)) +
   geom_bar()
 
 
 cairo_ps("learning-inkscape.eps", height = 7.5, width = 8)
-((p1 + p2) / p3) * theme_bw()
+((p1 + p2) / p3) * theme_bw() * theme(legend.background = element_rect(fill = "green"))
 dev.off()
 
+# alternatywa: eksport do svg pakietem gridSVG
 
+library(gridSVG)
+
+svg("learning-inkscape.svg", height = 7.5, width = 8)
+((p1 + p2) / p3) * theme_bw() * theme(legend.background = element_rect(fill = "green"))
+dev.off()
