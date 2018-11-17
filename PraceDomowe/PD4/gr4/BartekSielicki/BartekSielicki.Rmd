@@ -1,0 +1,59 @@
+---
+title: "TWD - PD4"
+author: "Bartek Sielicki"
+date: "7 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(reshape)
+library(scales)
+```
+
+## Praca Domowa nr 4
+
+Wykorzystane dane przedstawiają odpowiedzi uczestników ankiety na pytanie "Kiedy zaczynasz przygotowywać się do Halloween".
+
+```{r}
+answers <- c("Second half of October", "First half of October", "During September", "Before september")
+data <- data.frame(
+  percentage <- c(0.201, 0.436, 0.299, 0.064),
+  label <- factor(answers, levels = rev(answers))
+)
+
+piechart_theme <- theme_minimal() +
+  theme(
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text.x = element_text(color='black',size=10),
+    axis.text.y = element_blank()
+  )
+
+plot <- ggplot(data, aes(x = "", y = percentage, fill = label)) +
+  geom_bar(stat = "identity") +
+  coord_polar(theta = "y", start = 0, direction = -1) +
+  piechart_theme +
+  scale_y_continuous(breaks = cumsum(data$percentage) - data$percentage / 2, labels = percent(data$percentage)) +
+  labs(title="When do you start preparing for Halloween?\n") +
+  guides(fill = guide_legend(title = "Answer"))
+```
+ 
+**Wykres czarno-biały**
+
+```{r}
+plot + scale_fill_grey()
+```
+
+**Wykres kolorowy**
+
+```{r}
+plot + scale_fill_brewer(palette="Oranges")
+```
+
+Poprawa estetyki wykresu po dodaniu barw innych niż odcienie szarości jest kwestią mocno subiektywną. Zdecydowanie można jednak
+sądzić, że negatywnie na estetykę wpływa zastosowanie palety barw nie składającej się z odcieni jednego koloru (np. mocno kontrastowej).

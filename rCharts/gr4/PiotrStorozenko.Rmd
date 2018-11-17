@@ -1,0 +1,55 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+#source("https://install-github.me/ramnathv/rCharts")
+library(rCharts)
+```
+
+```{r}
+library(ggplot2)
+library(scales)
+# pixi dust
+df <- data.frame(
+  "kraje" = c("Szwajcaria", "USA", "Hong Kong", "Chiny", "Singapur", "ZEA", "Indie", "Indonezja", "Japonia", "Australia", "Polska"),
+  "zarobki" = c(202.9, 185.1, 178.7, 172.7, 162.2, 155, 131.8, 128, 127.4, 125.8, 13.5),
+  "PSN" = c(58087, 59495, 61393, 18066, 93905.5, 69896.3, 7183, 12378, 44426, 50334, 29521)
+)
+
+df <- df[order(df$zarobki,decreasing = FALSE),]
+df$kraje <- factor(df$kraje, levels = df$kraje)
+```
+
+```{r, echo=FALSE, warning=FALSE,message=FALSE,results='hide'}
+df$Zarobki = df$zarobki * 1000
+df$pos1 = 25e4
+ggplot(data = df, aes(x = kraje, y = Zarobki, fill = Zarobki)) + 
+  geom_hline(yintercept = seq(50,200,by=50)) + 
+  geom_col() + 
+  geom_text(aes(label=dollar(Zarobki)), position=position_dodge(width=0.9), hjust = -0.1) +
+  geom_text(aes( y = pos1, label=dollar(round(PSN,0))), position=position_dodge(width=0.9), hjust = -0.1) +
+  ggtitle(label = "Przeciętne zarobki imigrantów", subtitle = "Top 10 krajów") + 
+  coord_flip() + 
+  xlab(NULL) +
+  ylab("Zarobki") + 
+  scale_fill_gradient(labels = dollar_format(), low = 'black', high='red') +
+  scale_y_continuous(labels = dollar_format(), limits = c(0, 3e5)) +
+  annotate("text", 12, 2.65e5, label = "PSN") + 
+  annotate("text", 12, 2.25e5, label = "Zarobki") + 
+  annotate("text", 1, 1.5e5, label = "← Mediana zarobków całego społeczeństwa") + 
+  scale_x_discrete(expand  = c(0.15, 0)) +
+  theme_classic() 
+  #annotate("text", x = 10, y = 45,label = "zarobki w Polsce", color = "white")
+```
+
+```{r, results='asis'}
+library(rCharts)
+r <- rPlot(x = 'kraje', y = 'Zarobki', data = df, type = 'bar', labels = list('PSN'))
+r$show('inline', include_assets = TRUE, cdn = TRUE)
+```
+
+
