@@ -10,7 +10,7 @@ https://doodle.com/poll/473f6f99rpqs8dt8
 **Ważne**
 
 Podczas prezentacji nie będzie czasu na zmianę komputerów, więc wszystkie prezentacje będą prowadzone z jednego komputera.
-Zespoły powinny przed zajęciami umieścić swoją prezentację w tym katalogu, najlepiej w formacie `html` lub `pdf`.
+Zespoły powinny przed zajęciami umieścić swoją prezentację w tym katalogu, najlepiej w formacie `html` lub `pdf`. Utrata terminu (brak prezentacji) to utrata kilku punktów (mam nadzieję, że nikogo ten problem nie będzie dotyczył).
 
 Osoby, które nie zarejestrują swojego terminu będą wpisywane w kolejne wolne sloty alfabetycznie. 
 Aby uniknąć niespodzianek proszę możliwie szybko ,,zaklepać'' sobie slot.
