@@ -1,0 +1,138 @@
+---
+title: "Techniki wizaualizacji PD5"
+author: "Dawid Kowalczyk"
+date: "15.11.2018"
+output: html_document
+---
+  
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  cache = FALSE)
+
+```
+
+\pagebreak
+
+#Wstęp
+
+Celem pracy było zbadanie sposobu odczytu danych na wykresie, w przypadku manipulacji przy pomocy skali osi.
+Przeprowadzono sondaż wsród 18 osób, rezentując im poniższy wykres i prosząc o odpowiedzenie na kilka pytań. Odpowiedzi na te pytania zostaną omówione poniżej.
+
+Link do ankiety: https://docs.google.com/forms/d/e/1FAIpQLSe0uCmdlPRuSmdjT3z6Q8yrOnLwelp5X6qVXAfdWtUFKK7MDw/viewform
+
+Warto zaznaczyć, że dane do wykresu zostały wygenerowane sztucznie, nie pochodzą z żadnego źródła.
+
+#Wykres
+
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(plotly)
+library(RColorBrewer)
+
+df = read.csv("C:/Users/Dawid Kowalczyk/Google Drive/Studia MiNI PW/III semestr/Techniki wizualizacji danych/PD5/Book1.csv")
+
+names(df) = c("Rok", "Liczba", "sex")
+
+p <- plot_ly(df, x = ~Rok, y = ~Liczba, type = 'bar', color = ~sex) %>%
+   layout(yaxis = list(title = 'Liczba przeczytanych książek na 10000 osób', range = c(310, 350)),
+          xaxis = list(title = 'Rok'),
+          title = "Raport czytelnictwa w Polsce w podziale na płeć",
+          barmode = 'group')
+
+p
+
+```
+
+#Analiza odpowiedzi
+
+###1. Jaki trend w danych wskazywał wykres?
+1. szybko rosnący
+2. powoli rosnący
+3. powoli malejący
+4. szybko malejący
+
+Pytanie miało na celu sprawdzenie czy nieintuicyjna skala osi OY wprowadziła czytelników w błąd.
+Analiza wyników znajduję się poniżej.
+
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+
+wyniki = read.csv("C:/Users/Dawid Kowalczyk/Google Drive/Studia MiNI PW/III semestr/Techniki wizualizacji danych/PD5/Krótka ankieta.csv", sep = ";")
+
+pyt1 = as.data.frame(table(wyniki$`Jaki.trend.w.danych.wskazywał.wykres.`))
+pyt2 = as.data.frame(table(wyniki$`Która.płeć.czyta.więcej.książek.`))
+pyt3 = as.data.frame(table(wyniki$`Czy.wykres.wskazywał..że.wartości.zbiegają.do.0.`))
+pyt4 = as.data.frame(table(wyniki$`Czy.kobiety.kiedykolwiek.przeczytały.2.razy.więcej.książek.niż.mężczyźni.`))
+
+plot_ly( x =~pyt1$Var1 , y =~pyt1$Freq,  text =pyt1$Freq,  type = "bar", width = 400, marker = list(color = brewer.pal(2, "YlOrRd"))) %>%
+   layout(title = "Jaki trend w danych wskazywał wykres?",
+         xaxis = list(title = ""),
+         yaxis = list(title = ""),
+         autosize = FALSE)
+
+
+```
+
+
+###2. Która płeć czyta więcej książek?
+1. Kobiety
+2. Mężczyźni
+
+Analiza wyników znajduję się poniżej.
+
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+
+plot_ly( x =~pyt2$Var1 , y =~pyt2$Freq,  text =pyt2$Freq,  type = "bar", width = 400, marker = list(color = brewer.pal(6, "Paired"))) %>%
+   layout(title = "Która płeć czyta więcej książek?",
+         xaxis = list(title = ""),
+         yaxis = list(title = ""),
+         autosize = FALSE)
+
+
+```
+
+
+###3. Czy wykres wskazywał, że wartości zbiegają do 0?
+1. Tak
+2. Nie
+
+Pytanie miało na celu sprawdzenie czy nieintuicyjna skala osi OY wprowadziła czytelników w błąd.
+Analiza wyników znajduję się poniżej.
+
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+
+plot_ly( x =~pyt3$Var1 , y =~pyt3$Freq,  text =pyt3$Freq,  type = "bar", width = 400, marker = list(color = brewer.pal(2, "YlGn"))) %>%
+   layout(title = "Czy wartości zbiegały do 0?",
+         xaxis = list(title = ""),
+         yaxis = list(title = ""),
+         autosize = FALSE)
+
+
+```
+
+
+###4. Czy kobiety kiedykolwiek przeczytały 2 razy więcej książek niż mężczyźni?
+1. Tak
+2. Nie
+
+Pytanie miało na celu sprawdzenie czy nieintuicyjna skala osi OY wprowadziła czytelników w błąd.
+Analiza wyników znajduję się poniżej.
+
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+
+plot_ly( x =~pyt4$Var1 , y =~pyt4$Freq,  text =pyt4$Freq,  type = "bar", width = 400, marker = list(color = brewer.pal(2, "PuRd"))) %>%
+   layout(xaxis = list(title = ""),
+          yaxis = list(title = ""),
+          autosize = FALSE)
+
+
+```
+
+#Wnioski
+
+Nieprawidłowe wyskalowanie osi pozwala na manipulację w odczycie danych przez odbiorcę. Wększość osób w badanej grupie poddała się zaplanowanemu złudzeniu. Fakt obciążenia wyników związany z małą licznością próby należy przemilczeć tym razem.
+
