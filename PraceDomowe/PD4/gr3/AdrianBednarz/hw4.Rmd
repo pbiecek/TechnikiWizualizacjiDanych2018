@@ -1,0 +1,133 @@
+---
+title: "Homework 4"
+author: "Adrian Bednarz"
+date: "November 5, 2018"
+output: html_document
+---
+
+<style>
+body {
+  text-align: justify;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+halloween <- data.frame(
+  x = 2005:2018,
+  y = c(3.3, 5.0, 5.1, 5.8, 4.8, 5.8, 6.9, 8.0, 7.0, 7.4, 6.9, 8.4, 9.1, 9.0)
+)
+
+library(ggplot2)
+library(grid)
+
+plot.0 <- ggplot(halloween, aes(x, y)) + 
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  theme(axis.ticks = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10)
+       ) +
+  scale_x_continuous(breaks = 2005:2018) +
+  scale_y_continuous(breaks = 3:9, labels = sapply(3:9, function(x) paste0("$", x, "B"))) +
+  expand_limits(y = 3:9) + 
+  labs(
+    title = "Planowane wydatki Amerykanów przed Halloween",
+    x = "",
+    y = "",
+    caption = "Dane: Coroczna ankieta dot. wydatków przed Halloween, Prosper Insignths & Analytics"
+  )
+
+t1 <- textGrob(expression("Planowane wydatki Amerykanów przed " * phantom(bold("Halloween"))), x = 0.5, y = 1.05, gp = gpar(col = "#222222", fontsize = 15))
+t2 <- textGrob(expression(phantom("Planowane wydatki Amerykanów przed ") * bold("Halloween")), x = 0.5, y = 1.05, gp = gpar(col = "darkorange2", fontsize = 15))
+
+plot.1 <- ggplot(halloween, aes(x, y)) + 
+  geom_line(color = "darkorange2") +
+  geom_point(color = "darkorange2") +
+  theme_minimal() +
+  theme(axis.title = element_blank(),
+        plot.margin = unit(c(4, 1, 1, 1), "lines"),
+        axis.ticks = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10)
+  ) +
+  scale_x_continuous(breaks = 2005:2018) +
+  scale_y_continuous(breaks = 3:9, labels = sapply(3:9, function(x) paste0("$", x, "B"))) +
+  expand_limits(y = 3:9) + 
+  labs(
+    x = "",
+    y = "",
+    caption = "Dane: Coroczna ankieta dot. wydatków przed Halloween, Prosper Insignths & Analytics"
+  ) +
+  annotation_custom(grobTree(t1, t2))
+
+plot.2 <- ggplot(halloween, aes(x, y)) + 
+  geom_line(aes(color = y)) +
+  geom_point(aes(color = y)) +
+  theme_minimal() +
+  theme(axis.title = element_blank(),
+        plot.margin = unit(c(4, 1, 1, 1), "lines"),
+        axis.ticks = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10)
+  ) +
+  scale_x_continuous(breaks = 2005:2018) +
+  scale_y_continuous(breaks = 3:9, labels = sapply(3:9, function(x) paste0("$", x, "B"))) +
+  scale_color_gradient(low="darkorange1", high="darkorange4", guide = FALSE) +
+  expand_limits(y = 3:9) + 
+  labs(
+    x = "",
+    y = "",
+    caption = "Dane: Coroczna ankieta dot. wydatków przed Halloween, Prosper Insignths & Analytics"
+  ) +
+  annotation_custom(grobTree(t1, t2))
+```
+
+### Dane
+Zbiór danych opisuje wyniki ankiety przeprowadzonej wśród Amerykanów dot. planowanych wydatków na Halloween w latach 2005-2018. 
+
+Źródło: https://nrf.com/media/press-releases/halloween-spending-reach-9-billion
+
+### Wykres czarno-biały
+<center>
+```{r echo=FALSE}
+plot.0
+```
+</center>
+
+Bardzo prosty wykres ukazujący istotne informacje. Prosty w interpretacji - połączenie punktów liniami ułatwia dostrzeżenie rosnących trendów w latach 2009 - 2012 oraz 2015 - 2017. Kolor wydaje się tutaj być zupełnie niepotrzebny - dla tych danych brakuje nam stopnia swobody, który moglibyśmy w ten sposób zobrazować.
+
+### Wykres z jednym kolorem
+<center>
+```{r echo=FALSE}
+g.1 <- ggplot_gtable(ggplot_build(plot.1))
+g.1$layout$clip[g.1$layout$name == "panel"] <- "off"
+grid.newpage()
+grid.draw(g.1)
+```
+</center>
+
+Estetyka jest rzeczą subiektywną - ten wykres przypomina taki, jaki znajdziemy na stronie źródłowej. Podoba mi się pomysł pokolorowania wykresu na pomarańczowo. Nie wprowadza to zamętu, a jednoznacznie kojarzy się z tematem Halloween. Warto jednak uważać, aby nie przesadzić z kolorem.
+
+### Wykres ze skalą kolorów
+<center>
+```{r echo=FALSE}
+g.2 <- ggplot_gtable(ggplot_build(plot.2))
+g.2$layout$clip[g.2$layout$name == "panel"] <- "off"
+grid.newpage()
+grid.draw(g.2)
+```
+</center>
+
+Tutaj, kolor oddaje ilość wydanych przez Amerykanów pieniędzy - im ciemniej tym więcej. Kolorystyka pozostaje co prawda w temacie Halloween lecz nadmiarowa informacja może niepotrzebnie zaciemniać odbiór wykresu. 

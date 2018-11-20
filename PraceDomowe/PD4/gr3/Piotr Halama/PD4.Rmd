@@ -1,0 +1,47 @@
+---
+title: "Techniki wizualizacji danych - Praca domowa nr 4"
+author: "Piotr Halama"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(reshape2)
+library(RColorBrewer)
+```
+
+```{r, echo=F}
+season_names <- c('Fall 2015', 'Spring 2016', 'Fall 2016', 'Spring 2017', 'Fall 2017', 'Spring 2018', 'Fall 2018')
+df <- data.frame(
+  season = factor(season_names, levels = season_names),
+  netflix = c(38.1,38.0, 37.0, 38.4, 37.3, 39.0, 37.6), 
+  cable_tv = c(29.5, 26.0, 25.0, 23.3, 21.6, 19.5, 16.4), 
+  youtube = c(21.4, 23.0, 26.0, 25.8, 28.6, 30.0, 33.1))
+df <- melt(df, variable.name = 'channel', id.vars = 'season')
+levels(df$channel) <- c('Netflix', 'Cable TV', 'Youtube')
+```
+
+
+## Wykres A: czarnobiały
+```{r wykres_a}
+ggplot(df, aes(x=season, y=value, group=channel, linetype=channel)) +
+  geom_line() +
+  labs (title = 'Teen Daily Video Consumption', x='Season', y='Users [%]', linetype='Channel') +
+  theme_bw()
+```
+
+## Wykres B: z kolorami
+```{r wykres_b}
+ggplot(df, aes(x=season, y=value, group=channel, color=channel)) +
+  geom_line() +
+  labs (title = 'Teen Daily Video Consumption', x='Season', y='Users [%]', color='Channel') +
+  scale_color_brewer(palette='Dark2') +
+  theme_minimal()
+```
+
+## Komentarz
+Dodanie kolorów do wykresu w tym przypadku wizualnie wiele nie zmieniło. Decyzję o doborze podjąłbym z myślą o odbiorcach.
+
+Wykres z kolorami z pewnością sprawdzi się lepiej gdy medium przekazu jest internet oraz wykres jest kierowany do szerszej publiki,
+a wykres czarnobiały gdy jest kierowany do ekspertów (publikacja naukowa, itp.) lub wykres zostanie wydrukowany.

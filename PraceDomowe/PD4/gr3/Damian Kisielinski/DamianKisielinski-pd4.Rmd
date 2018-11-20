@@ -1,0 +1,61 @@
+---
+title: "Techniki wizualizacji - PD4"
+author: "Damian Kisieliński"
+date: "November 6, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(stringsAsFactors = FALSE)
+library(ggplot2)
+```
+
+```{r, include=FALSE}
+df <- data.frame(rok=as.character(rep(seq(2006,2018),each=4)),
+                kategoria=rep(c("Wypadki","Ranni","Zginęło","Pijani kierowcy"), times=13),
+                liczba=c(483/5,697/5,63/5,1858/5,
+                        761/5,942/5,99/5,1982/5,
+                        334/2,421/2,32/2,974/2,
+                        424/2,533/2,41/2,1416/2,
+                        407/4,532/4,39/4,1880/4,
+                        464/5,592/5,51/5,2128/5,
+                        428/5,557/5,36/5,1837/5,
+                        338/4,410/4,38/4,1298/4,
+                        196/3,252/3,20/3,910/3,
+                        294/4,340/4,36/4,1337/4,
+                        534/5,654/5,49/5,1363/5,
+                        609/7,719/7,53/7,1821/7,
+                        408/5,502/5,50/5,1299/5))
+```
+
+## Zadanie
+
+Z poprzednich prac domowych PD1-PD3 wybrać pracę innego studenta lub znaleźć ciekawe dane nawiązujące do Dnia Zmarłych lub Halloween a następnie pokazać dane za pomocą dwóch wykresów:  
+  
+A)\ Wykresu czarno-białego, na którym stosować można jedynie kolory biały, czarny i odcienie szarości B) Wykresy z kolorami, na którym można stosować (z umiarem) kolory aby przedstawić jakąś zmienną, wyróżnić obserwacje, poprawić estetykę wykresu.
+
+### Wykres A
+```{r}
+ggplot(df, aes(x=rok, y=liczba, group=kategoria)) +
+  geom_line(aes(color=kategoria, linetype=kategoria))+
+  geom_point(aes(color=kategoria))+
+  scale_color_manual(values = c("#cccccc","#969696","#636363","#252525"))+
+  theme_minimal() + 
+  guides(colour = guide_legend(override.aes = list(shape = NA)))+
+  labs(x="rok", y="średnia na 1 dzień", title="Akcja 'Znicz' w latach 2006-2018")
+```
+
+### Wykres B
+```{r}
+ggplot(df, aes(x=rok, y=liczba, group=kategoria)) +
+  geom_line(aes(color=kategoria))+
+  geom_point(aes(color=kategoria))+
+  scale_color_brewer(type="qual", palette = 2, direction = -1)+
+  theme_minimal() +
+  labs(x="rok", y="średnia na 1 dzień", title="Akcja 'Znicz' w latach 2006-2018")
+```
+
+
+## Uzasadnienie
+Wykresy przestawiają statystki akcji 'Znicz', źródło: https://pl.wikipedia.org/wiki/Znicz_(akcja). Dane liczbowe zostały uśrednione przez liczbę dni trwania akcji (2-7 dni). By odróżnić serie danych zastosowano zarówno różne typy linii oraz różne odcienie szarości. Pomimo włożonych starań na słabym wyświetlaczu linie mogą być nierozróżnialne, a najjaśniejszy kolor może być niewidoczny. Przy większej liczbie kategorii będzie jeszcze gorzej. Wprowadzenie kolorów do wykresu poprawia jego czytelność oraz pozwala wizualizować więcej kategorii.

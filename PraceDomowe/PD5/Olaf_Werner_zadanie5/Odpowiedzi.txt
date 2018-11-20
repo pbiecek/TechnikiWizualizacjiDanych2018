@@ -1,0 +1,9 @@
+1.Piątek
+2.Nie
+3.Równe
+4.Tak minimalnie(o 3)
+5.Nie
+6.Nie
+7.Wtorek minimalnie(0 2)
+8.Wtorek i środa minimalnie(o 1)
+9.odpowiedź ucznia

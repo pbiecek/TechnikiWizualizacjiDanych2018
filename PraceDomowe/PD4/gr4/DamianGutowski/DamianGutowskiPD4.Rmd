@@ -1,0 +1,58 @@
+---
+title: "Praca domowa 4"
+author: "Damian Gutowski"
+date: "7 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("ggplot2")
+library(data.table)
+```
+
+```{r init, include=FALSE}
+dt <- data.frame(read.csv2("kredyty.csv", stringsAsFactors=FALSE))
+names(dt)[1]<-"Bank"
+dt[,2] <- dt[,2] - dt[,6]
+dt[,1] <- factor(dt[,1], levels = dt[,1])
+```
+
+## ród³o danych
+Jako dane wybra³em informacje o kredytach konsumenckiich udzielanych przez 8 banków dzia³aj¹cych w Polsce.
+Oryginalny wykres znajduje siê pod adresem: https://github.com/pbiecek/TechnikiWizualizacjiDanych2018/blob/master/PraceDomowe/PD1/TWDWachulec1.html
+
+## A) wykres czarnobia³y
+Poniewa¿ na wykresie przedstawionio kolorami ró¿ne zmienne, nale¿y wybraæ, miêdzy przygotowaniem kilku wykresów, przygotowaniem jednego wykresu z zamieniem kolorów na odcienie szaroœci, lub zmniejszenie liczby zmiennych.  
+Pierwszy wybór nie jest najlepszy, gdy¿ prosta zmiana koloróW na skalê szaroœci spowoduje wielkie trudnoœci z odczytaniem, który s³upek odpowada której zmiennej. Nie zdecydowa³em siê równie¿ przygotowanie 4 wykresów, gdy¿ moim zadaniem by³a prosta wizualizacja danych, a nie tworzenie wnikliwej analizy. Aby zachowaæ czytelnoœæ wykresu przedstawi³em tylko najwa¿niejszy czynnik czyli ca³kowity koszt kredytu poniesiony przez konsumenta.
+
+```{r 1}
+dt1 <- dt[,c(1,2)]
+dt1[,2] <-dt1[,2] / 1000
+
+ggplot(dt1, aes(x=Bank, y=Koszt)) +
+  geom_bar(stat="identity") +
+  geom_text(aes(label = Koszt), vjust=1.3, color="white", size=4) +
+  labs(y = "Ca³kowity koszt w tys.", title="Koszt kredytów na 300.000 zl na 20 lat") +
+  theme_minimal()
+
+```
+
+## B) Wykres kolorowy
+
+W tym przypadku mo¿na kolorami zaznaczyæ bardziej szczegó³owe dane na temat kredytów kolorami. W odró¿nieniu od wyjœciowego wykresu postanowi³em usun¹æ informacjê, i¿ kwota kredytu wynosi³a 300 tys z³. By³a ona zbêdna. Ponadto posortowa³em banki po kosztach kredytu w kolejnoœci rosn¹cej, aby na pierwszy rzut oka mo¿na by³o zorientowaæ siê, który bank wypad³ najlepiej, a który najgorzej.
+Dodatkowo wprowadzi³em dla ka¿dego kredytu informacjê o ca³ym koszcie, gdy¿ w ten sposób znacznie ³atwiej j¹ uzyskaæ.
+
+```{r 2, warning=FALSE}
+dt2 <- dt[, -c(6,2)]
+dt2 <- melt(dt2)
+dt2[,3] <- dt2[,3] / 1000
+dt2$label <- dt1$Koszt
+dt2[1:16,4] <- ""
+
+ggplot(dt2, aes(x=Bank, y=value, fill=variable)) +
+  geom_bar(stat="identity") +
+  geom_text(aes(label = label, y = as.numeric(dt2[,4])),vjust=-0.3, color="black", size=4) +
+  labs(y = "Ca³kowity koszt w tys.", title="Koszt kredytów na 300.000 zl na 20 lat") +
+  theme_minimal()
+```
