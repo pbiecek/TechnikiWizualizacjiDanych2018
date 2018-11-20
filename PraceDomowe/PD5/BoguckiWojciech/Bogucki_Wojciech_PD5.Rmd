@@ -76,7 +76,7 @@ ggplot(odp3, aes(x=pyt3, y= pyt3_procent, label=paste0(pyt3_procent,"%"))) +
 Aż 50% ankietowanych uległo złudzeniu optycznemu i wskazało złą odpowiedź. 
 
 Następne pytanie było już bardziej szczegółowe - pytałem o to który z omawianych trzech banków ma niższe oprocentowanie.
-\newline
+
 ```{r}
 odp4 <- odp[,c(1,5)] %>% count(pyt4 = factor(pyt4)) %>% ungroup() %>% mutate(pyt4_procent = prop.table(n)*100)
 ggplot(odp4, aes(x=pyt4, y= pyt4_procent, label=paste0(pyt4_procent,"%"))) + 
