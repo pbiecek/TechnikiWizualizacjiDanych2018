@@ -1,0 +1,91 @@
+---
+title: "PD5"
+author: "Rafał Kobiela"
+date: "Listopad 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(plotrix)
+library(ggplot2)
+library(dplyr)
+library(scales)
+
+producent <- c('Bosch','Siemens','Whirlpool','Pozostali','Beko','Samsung','LG')
+udzial <- c(240,100,300,100,20,290,100)
+udzial <- udzial/sum(udzial)
+df <- data.frame(producent, udzial)
+wyniki <- read.csv2("wyniki.csv", sep = ',')
+colnames(wyniki) <- c('time', 'p1', 'p2')
+```
+
+## Opis zadania
+
+Zadaniem w tej pracy domowej było przeprowadzenie eksperymentu polegającego na sprawdzeniu, czy błędy w odczytywaniu niektórych wykresów rzeczywiście występują. Jako rodzaj wykresu do testów wybrałem wykres kołowy 3D.
+
+## Opis eksperymentu
+
+Na wykresie został przedstawiony udział procentowy w sprzedaży pralek w Polsce w 2015 roku. Dane zostały wymyślone na potrzeby tego ćwiczenia. Dane te możemy dobrze zaprezentować przy pomocy wykresu słupkowego.
+
+```{r echo=FALSE, out.width="100%"}
+ggplot(df ,aes(x= reorder(producent, -udzial), y=udzial, fill = reorder(producent, -udzial))) +
+geom_bar(stat = 'identity') +
+xlab('Producent') +
+ylab('Udział sprzedaży') +
+scale_y_continuous(labels = percent) +
+ggtitle("Udział procentowy w sprzedaży pralek w Polsce (2015 r.)")+
+  theme(legend.position="none")
+```
+
+W eksperymencie zaprezentowałem dane w następujący sposób.
+
+```{r echo=FALSE, out.width="100%"}
+producent <- c('  Bosch','Siemens','Whirlpool       ','Pozostali      ','    Beko','Samsung','LG')
+pie3D(udzial, labels = producent, col = 5:14, main = "Udział procentowy w sprzedaży pralek w Polsce (2015 r.)")
+```
+
+Jak widać, nie jest on już tak czytelny. Do przeprowadzenmia ankiety użyłem ankiety znajdujęcej się pod linkiem: https://goo.gl/forms/qVTY6mGjTMIeR6bx2
+Na pytania odpowiedziały 52 osoby.
+
+### Pytanie 1
+
+Brzmiało ono następująco:
+"Która firma odnotowała największy udział w sprzedaży w 2015 roku?"
+Na wykresie słupkowym widać, bez wątpienia, że największy udział miała firma Whirlpool. Na wykresie kołowym już nie jest to takie oczywiste. Wyniki pytania prezentują się następująco:
+
+```{r echo=FALSE, out.width="100%"}
+wyniki %>% group_by(p1) %>% summarise(n = n()) %>% mutate(pct = paste0(as.character(round(n * 100/52,1)), '%')) %>%
+ggplot(aes(x = p1, y = n, label = pct, fill = reorder(p1, n))) +
+  geom_bar(stat="identity") +
+  xlab('Producent') +
+  ylab('Liczba odpowiedzi') +
+  geom_text(vjust = 0) +
+  ggtitle('Liczba odpowiedzi na pytanie 1.') + 
+  theme(legend.position="none")
+```
+
+Widać, że aż 73.1% osób odpowiedziało, że największy udział w sprzedaży miał Samsung, mimo, że to nie jest prawda. Jak widać bład poznawczy występuje.
+
+### Pytanie 2
+
+Brzmiało ono następująco:
+"Wybierz odpowiedź, w której wybrani producenci są uszeregowani względem udziału od najmniejszego do największego."
+Mieliśmy do wyboru tylko Siemensa, LG oraz Pozostałych producentów. Na wykresie słupkowym widać, że wszyscy trzej producenci mają taki sam udział. Gdyby każdy z wycinków koła wydawał się tak sam statystycznie na każdą odpowowiedź zagłosowałoby tyle samo osób. Tak się jednak nie stało co przedstawia poniższy wykres.
+
+```{r echo=FALSE, out.width="100%"}
+wyniki %>% group_by(p2) %>% summarise(n = n()) %>% mutate(pct = paste0(as.character(round(n * 100/52,1)), '%')) %>%
+  ggplot(aes(x =reorder(p2, -n), y = n, label = pct, fill = reorder(p2, -n))) +
+  geom_bar(stat="identity") +
+  xlab('Kolejność') +
+  ylab('Liczba odpowiedzi') +
+  geom_text(vjust = 0) +
+  ggtitle('Liczba odpowiedzi na pytanie 2.') +
+  theme(legend.position="none") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+Widać, że na odpowiedź LG, Pozostali, Siemens odpowiedziało aż 46.2% ankietowanych. Druga w kolejności odpowiedź to Pozostali, LG, Siemens gdzie również Siemens wydaje się być dla ankietowanych producentem z największym udziałem.
+
+## Podsumowanie
+
+Widać, że w obydwu pytaniach odpowiedzi wskazują na błędy poznawcze przy odczytywaniu wykresu. Najpierw ludzie źle odczytują największego gracza na rynku pralek a następnie prawie połowie osób wydaje się, że kolejność na którą załosowali jest poprawna, mimo że wszyscy prodycenci mają taki sam udział.
