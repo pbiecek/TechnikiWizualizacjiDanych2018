@@ -16,6 +16,9 @@ Prace domowe należy zgłaszać przez GitHub. [Instrukcja jak korzystać](http:/
 * [4] W: [Kolory](http://biecek.pl/Eseje/indexKolory.html); L: [wizualizacja danych z Eurostatu](https://journal.r-project.org/archive/2017/RJ-2017-019/index.html)
 * [5] W: [Droga wzrokowa](http://biecek.pl/Eseje/indexObraz.html); L: [Grafika interaktywna i rCharts](http://pbiecek.github.io/Przewodnik/Wizualizacja/jak_tworzyc_interaktywne_wykresy.html)
 * [6] W: [Skale pomiarowe](http://biecek.pl/Eseje/indexKuchnia.html); L: [Inkscape](https://inkscape.org/) lub [Illustrator](https://www.adobe.com/pl/products/illustrator/free-trial-download.html) (w miarę możliwości proszę przynieść własny laptop)
+* [7]: W: Prezentacja wyników projektu 1; L: [Shiny](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
+* [8]: W: Prezentacje studentów 1/2; L: [Wstęp do D3](http://vadim.ogievetsky.com/IntroD3/#1), [fiddle](https://jsfiddle.net/)
+* [9]: W: Prezentacje studentów 2/2; L: Tableau
 
 
 # Zasady zaliczenia
@@ -42,6 +45,7 @@ Prezentacje można przygotować w 2-3 osobowych zespołach. Należy wybrać jede
 
 Prezentacje mają miejsce na wykładzie. Rozpoczynamy **28 listopada**.
 
+* Artykuły z ostatniej konferencji IEEE VIS 2018 (wybrać jeden) http://ieeevis.org/year/2018/info/papers
 * Percepcja grafiki, https://medium.com/@kennelliott/39-studies-about-human-perception-in-30-minutes-4728f9e31a73#.3kne5zu36
 * Kartogramy a Brexit, http://vis4.net/blog/posts/to-cartogram-or-not-to-cartogram-the-brexit/
 * Wizualizacja reszt, https://drsimonj.svbtle.com/visualising-residuals

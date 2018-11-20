@@ -1,0 +1,36 @@
+---
+title: "Techniki wizualizacji danych - rCharts cz. 1"
+author: "Piotr Halama"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rCharts)
+library(ggplot2)
+library(reshape2)
+```
+
+```{r, echo=FALSE}
+df <- read.csv("./data.csv")
+df$pp <- factor(df$pp, levels=df$pp)
+df$elections2013 <- df$elections2018 - df$change
+df <- df[, !(names(df) == "change")]
+df <- melt(df, id.vars="pp")
+df$variable <- factor(df$variable, levels=c("elections2018", "elections2013"), labels=c("2018", "2013"))
+```
+
+```{r, warning=FALSE, results='asis'}
+
+plot <- nPlot(value ~ pp, group="variable", data = df, type="multiBarChart")
+plot$show('inline', include_assets = TRUE, cdn = TRUE)
+
+ ggplot(df, aes(x=pp, y=value, fill=pp, alpha=variable)) +
+  geom_bar(stat='identity', position='dodge') +
+  scale_fill_manual(values = c("#008AC5", "#64A12D", "#007E82", "#009EE0", "#EB001F", "#FFED00", "#BE3075")) +
+  scale_alpha_ordinal(range=c(1, 0.5), name="Elections") +
+  geom_hline(yintercept = 5, linetype="dashed") + 
+  geom_text(aes(7,5,label = "threshold", vjust = -1), show_guide  = F, size = 4) +
+  labs(x = "Political party", y="Percent of votes", fill="Political party", alpha="Elections") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```

@@ -1,0 +1,34 @@
+---
+title: "rChart"
+author: "Magda Prokopczuk"
+date: "7 listopada 2018"
+output: html_document
+---
+
+## Praca domowa nr 2
+# Obrazek ggplot
+```{r, echo=FALSE}
+library(ggplot2)
+dane<-data.frame(nazwa=factor(c("PiS","PO","K'15","ZL",".N","K","PSL"),levels = c("PiS","PO","K'15","ZL",".N","K","PSL")),
+                 procenty=c(32.5,26.3,10.4,7.5,6.1,5.3,4.8))
+
+ggplot(dane,aes(x=nazwa,y=procenty, fill=2)) + geom_col(width=0.7) + 
+  geom_text(aes(label=as.character(procenty),y=procenty+1),size=5) + guides(fill=FALSE) + 
+  coord_fixed(ratio = 0.2) +
+  labs(title="POPARCIE DLA PARTII ",y="PROCENT POPARCIA",x="",subtitle="(19-20 PAŹDZIERNIKA 2015R.)") +
+  theme_minimal()+theme(panel.border = element_blank(),
+                        panel.grid.major = element_blank(),
+                        panel.grid.minor = element_blank(),
+                        axis.text.x = element_text(size = rel(1.5), vjust=7),
+                        plot.title = element_text(size = rel(1.75),hjust=-.1,face="bold") )
+
+
+
+```
+
+# Obrazek rCharts
+```{r,results='asis'}
+library(rCharts)
+r<-rPlot(procenty~nazwa, data=dane, type="bar")
+r$show('inline', include_assets = TRUE, cdn = TRUE)
+```
