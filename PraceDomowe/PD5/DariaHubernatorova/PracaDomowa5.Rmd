@@ -70,7 +70,8 @@ wyniki %>% group_by(p2) %>% summarise(n = n()) %>% mutate(procent = paste0(as.ch
 ## Pytanie 3
 Jeśli tak, to które?
 Pytanie było nie obowiązkowe, ale dużo osób znalazło typy o takim samym procentowym udziale. Było wybrane najciekawsze spotrzeżenie, że Fani krótkich form są o takim samym 
-udziale procentowym jak Fani YouTube'a albo Zdigitalizowani. Ale z wykresu słupkowego wynika duża różnica między nimi.
+udziale procentowym jak Fani YouTube'a albo Zdigitalizowani. Ale z wykresu słupkowego wynika duża różnica między nimi.  
+
 ```{R echo=FALSE}
 wyniki %>% 
   filter(p3_krotki != "Fani krótkich form") %>%
