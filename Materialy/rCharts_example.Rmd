@@ -1,0 +1,17 @@
+---
+title: "rCharts example"
+author: "Michał Burdukiewicz"
+date: "7 listopada 2018"
+output: html_document
+---
+
+```{r,results='asis'}
+library(SmarterPoland)
+library(rCharts)
+countries2 <- countries
+names(countries2) = gsub('\\.', '', names(countries2))
+r <- rPlot(deathrate ~ birthrate | continent, data = countries2, type = "point")
+r$show('inline', include_assets = TRUE, cdn = TRUE)
+```
+
+Ważne: results='asis'
