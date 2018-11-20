@@ -1,0 +1,71 @@
+---
+title: "Techniki wizualizacji danych"
+subtitle: "Praca domowa 4"
+author: "Anna Kozak"
+output: 
+  html_document: 
+    theme: cosmo
+    highlight: kate
+    
+---
+
+
+<style>
+body {
+text-align: justify}
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(readxl)
+```
+
+
+
+## Zadanie
+
+Zadanie: z poprzednich prac domowych PD1-PD3 wybrać pracę innego studenta lub znaleźć ciekawe dane nawiązujące do Dnia Zmarłych lub Halloween a następnie pokazać dane za pomocą dwóch wykresów:
+
+A) Wykresu czarnobiałego, na którym stosować można jedynie kolory biały, czarny i odcienie szarości
+B) Wykresy z kolorami, na krórym można stosować (z umiarem) kolory aby przedstawić jakąś zmienną, wyróżnić obserwacje, poprawić estetykę wykresu.
+
+
+```{r, include=FALSE}
+df <- read.csv("stats_akcja_znicz.csv")
+```
+
+## Realizacja
+
+Dane zawierają informacje o akcji "Znicz" z dni 31 października - 1 listopada. [link](http://statystyka.policja.pl/st/ruch-drogowy/dlugie-weekendy-i-swie/76569,Akcja-quotZniczquot.html)
+
+Jest to coroczna akcja organizowana przez policję w okresie Wszystkich Świętych. Polega ona na wzmożonych patrolach drogówki na drogach wylotowych i trasach koło cmentarzy, kontrolach trzeźwości kierowców oraz na kierowaniu ruchem w okolicach cmentarzy. 
+
+### Wykres A
+
+Wykres obrazuje liczbę rannych, zabitych oraz wypadki w latach 1993-2017, wykonany w skali szarości.
+```{r, , warning=FALSE, message=FALSE, error=FALSE, fig.width=10}
+ggplot(data = df, aes(x = Rok, y = Liczba, group = Zdarzenie)) +
+  geom_line(aes(col = Zdarzenie)) + 
+  geom_point(aes(col = Zdarzenie)) +  
+  scale_colour_manual(name = "", values = c("#bdbdbd", "#737373", "#252525")) +
+  scale_x_continuous(breaks = seq(1993, 2017, 2)) +
+  ggtitle("Statystyki dla Akcji \"Znicz\" w latach 1993-2017") + 
+  theme_light()
+```
+
+
+### Wykres B
+
+Wykres obrazuje liczbę rannych, zabitych oraz wypadki w latach 1993-2017. Wykres wykonany z użyciem kolorów, które są przypisane odpowiedniemu zdarzeniu. Dzięki dobraniu kontrastowych kolorów wykres jest bardziej czytelny niż w przypadku użycia skali szarości.
+
+```{r, , warning=FALSE, message=FALSE, error=FALSE, fig.width=10}
+ggplot(data = df, aes(x = Rok, y = Liczba, group = Zdarzenie)) +
+  geom_line(aes(col = Zdarzenie)) + 
+  geom_point(aes(col = Zdarzenie)) +  
+  scale_colour_manual(name = "", values = c("#1b9e77", "#d95f02", "#7570b3")) +
+  scale_x_continuous(breaks = seq(1993, 2017, 2)) +
+  ggtitle("Statystyki dla Akcji \"Znicz\" w latach 1993-2017") + 
+  theme_light()
+```

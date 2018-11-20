@@ -1,0 +1,92 @@
+---
+title: "rChart"
+author: "Kamil Grabowski"
+date: "November 7, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+library(ggplot2)
+library(rCharts)
+x <- c('J. Majchrowski', 'M. Wassermann', 'Ł. Gibała', 'K. Berkowicz', 'J. Gajęcka', 'G. Gorczyca', 'D. Gosek-Popiołek')
+y <- c(34.7, 33.1, 20.8, 5.3, 3.9, 1.2, 1.0)
+df <- data.frame(x, y)
+```
+
+# Praca domowa 1
+```{r}
+theme_update(plot.title = element_text(hjust = 0.5))
+ggplot(data=df, aes(x=reorder(x, -y), y=y)) +
+  geom_bar(stat='identity', color='red', fill='red')+
+  geom_text(aes(label=y), vjust=-0.3, size=3.5) +
+  theme(axis.title.x=element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.x = element_text(angle = 45, vjust = .5)) +
+  labs(title="NA KOGO ODDAŁABY PANI/ODDAŁBY PAN GŁOS, GDYBY WYBORY \n PREZYDENTA KRAKOWA ODBYWAŁY SIĘ DZIŚ?") +
+  expand_limits(y = c(0, 40))
+```
+
+```{r, results='asis'}
+r <- mPlot(y ~ x, data = df, type = "Bar")
+r$show('inline', include_assets = TRUE, cdn = FALSE)
+```
+
+#Praca domowa 2
+
+```{r include=FALSE}
+#tworzenie potrzebnego data.fram'u z płacami minimalnymi
+minimum_brutto <- c(700, 760, 760, 800, 824, 849, 899.1, 936, 1126, 1276, 1317, 1386, 1500, 1600, 1680, 1750, 1850, 2000, 2100, 2250)
+minimum_netto <- c(512.83, 559.12, 561.82, 588.39, 602.77, 617.39, 647.93, 686.45, 845.17, 954.96, 984.15, 1032.34, 1111.86, 1181.38, 1237.20, 1286.16, 1355.69, 1459.48, 1530, 1633.78)
+lata <- c(2000:2019)
+dane_minimum_prim <- cbind(minimum_brutto, minimum_netto)
+dane_minimum <- as.data.frame(cbind(lata, dane_minimum_prim))
+```
+
+```{r, echo = TRUE}
+ ggplot(data = dane_minimum, aes(x = lata, y = minimum_brutto)) +
+  geom_bar(stat='identity', fill='steelblue')+
+  geom_text(aes(label = minimum_brutto), size = 3, vjust = -0.3, color = "black") +
+  ylab("Zarobki minimalne w zlotówkach brutto") + xlab("Lata") + 
+  ggtitle("Wykres zarobków Polaków na przestrzeni ostatnich lat") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r, results='asis'}
+r <- mPlot(minimum_brutto ~ lata, data = dane_minimum, type = "Bar")
+r$show('inline', include_assets = TRUE, cdn = FALSE)
+```
+
+#Praca domowa 3
+
+#Kolorowy wykres
+
+```{r include=FALSE}
+years <- c(2012, 2012, 2012, 2012, 2013, 2013, 2013, 2013, 2014, 2014, 2014, 2014, 
+           2015, 2015, 2015, 2015, 2016, 2016, 2016, 2016, 2017, 2017, 2017, 2017)
+expenses <- c('Candy', 'Decorations', 'Costumes', 'Greeting Cards', 'Candy', 'Decorations', 'Costumes', 'Greeting Cards',
+              'Candy', 'Decorations', 'Costumes', 'Greeting Cards', 'Candy', 'Decorations', 'Costumes', 'Greeting Cards',
+              'Candy', 'Decorations', 'Costumes', 'Greeting Cards', 'Candy', 'Decorations', 'Costumes', 'Greeting Cards')
+money <- c(2138.7, 2084.3, 2649.2, 534.6, 2072.5, 1983.9, 2568.3, 468.6, 2083.3, 1992.7, 2625.2, 451.9,
+           2096.6, 1961.1, 2517.2, 445.4, 2215.8, 2156.9, 2710.2, 482.3, 2329.1, 2333.6, 2862.8, 505.3)
+df <- data.frame(years, expenses, money)
+head(df)
+```
+
+```{r, echo = TRUE}
+ ggplot(data = df, aes(x = years, y = money, group = expenses, color = expenses)) +
+  geom_point()+
+  geom_line() +
+  ggtitle("Halloween Spending in Millions") +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title.x=element_text("years"),
+        axis.title.y = element_blank())
+```
+
+```{r, results='asis'}
+r <- nPlot(money ~ years, group='expenses', data = df, type='multiBarChart')
+r$show('inline', include_assets = TRUE, cdn = FALSE)
+```
