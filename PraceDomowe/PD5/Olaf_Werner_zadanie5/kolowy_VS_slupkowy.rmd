@@ -1,0 +1,157 @@
+---
+title: "Ankieta"
+author: "Olaf Werner"
+date: "November 11, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+##Ankieta
+Moim zadaniem było przeprowadzić badania nad tym który rodzaj wykresu jest lepszy: słupkowy czy kołowy. By to zrobić wziąłem zbiór danych który miałem pod ręką, przekształciłem go i przedstawiłem za pomocą dwóch wykresów: słupkowego i kołowego. Następnie ułożyłem do tych wykresów pytania. Później przeprowadziłem ankietę w szkole podstawowej. W tej ankiecie dzieci otrzymywały jeden z wykresów i na podstawie jego musiały odpowiadać na ułożone wcześniej pytania. Odpowiedzi udzieliło 22 uczniów w wieku 8 lat. 
+
+```{r message=FALSE,warning=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readxl)
+library(readODS)
+library(kableExtra)
+library(scales)
+df <- read_excel("obserwujacy.xlsx")
+df <- filter(df,Partia=="PIS")
+df <- mutate(df,Data=factor(c("Poniedziałek","Wtorek","Środa","Czwartek","Piątek","Sobota","Niedziela"),levels = c("Poniedziałek","Wtorek","Środa","Czwartek","Piątek","Sobota","Niedziela")))
+```
+##Wykres Słupkowy
+```{r}
+ggplot(df,aes(x=Data,y=Liczba,fill=Data))+geom_bar(stat = "identity")+theme_void()
+```
+
+##Wykres Kołowy
+```{r}
+ggplot(df,aes(x="",y=Liczba,fill=Data))+geom_bar(stat = "identity")+coord_polar("y")+theme_void()
+```
+
+##Pytania:
+1. Który dzień tygodnia jest największy?
+2. Czy suma środy i poniedziałku jest większa od piątku?
+3. Co jest większe: poniedziałek czy czwartek?
+4. Czy suma środy i niedzieli jest większa od poniedziałku?
+5. Czy sobota jest co najmniej 2 razy większa od niedzieli?
+6. Czy środa jest co najmniej 4 razy większa od niedzieli?
+7. Co jest większe: sobota czy wtorek?
+8. Co jest większe: suma wtorku i środy czy suma poniedzialku i niedzieli?
+9. Czy wygodnie pracowało się z wykresem?
+
+##Odpowiedzi:
+1. Piątek
+2. Nie
+3. Takie same
+4. Tak minimalnie(70 do 67)
+5. Nie
+6. Nie
+7. Wtorek minimalnie(34 do 32)
+8. Wtorek i środa minimalnie(86 do 85)
+9. odpowiedź ucznia
+
+##Jak Poszło uczniom?
+```{r message=FALSE}
+answers<-c("piatek","Nie","takie same","Tak","Nie","Nie","wtorek","wtorek/sroda")
+odpowiedzi<-read_ods("WykresyOlafa(1).ods")
+odpowiedzi<-as.matrix(odpowiedzi)
+odpowiedzi[odpowiedzi=="true"]<-"Tak"
+odpowiedzi[odpowiedzi=="false"]<-"Nie"
+odpowiedzi[1:11,2]<-"kołowy"
+odpowiedzi[14:15,10]<-"nie wiem"
+odpowiedzi[odpowiedzi=="s"]<-"słupkowy"
+odpowiedzi<-as_tibble(odpowiedzi)
+```
+
+
+
+##Pytanie 1 dobra odpowiedź: Piątek
+
+
+```{r}
+ggplot(odpowiedzi,aes(x=`ktory dzien tygodnia jest najwiekszy?`,fill=wykres))+geom_bar(position=position_dodge())
+```
+
+
+##Pytanie 2 dobra odpowiedź: Nie
+```{r}
+ggplot(odpowiedzi,aes(x=`czy suma srody i poniedziałku jest wieksza od piatku`,fill=wykres))+geom_bar(position=position_dodge())
+```
+
+##Pytanie 3 dobra odpowiedź: takie same
+```{r}
+ggplot(odpowiedzi,aes(x=`co jest wieksze: poniedzialek czy czwartek?`,fill=wykres))+geom_bar(position=position_dodge())
+```
+
+
+##Pytanie 4 dobra odpowiedź: Tak minimalnie(70 do 67)
+```{r}
+ggplot(odpowiedzi,aes(x=`czy suma srody i niedzieli jest większa od poniedzialku?`,fill=wykres))+geom_bar(position=position_dodge())
+```
+
+
+##Pytanie 5 dobra odpowiedź: Nie
+```{r}
+
+ggplot(odpowiedzi,aes(x=`czy sobota jest co najmniej 2 razy wieksza od niedzieli?`,fill=wykres))+geom_bar(position=position_dodge())
+
+```
+
+
+##Pytanie 6 dobra odpowiedź: Nie
+```{r}
+
+ggplot(odpowiedzi,aes(x=`czy sroda jest co najmniej 4 razy wieksza od niedzieli?`,fill=wykres))+geom_bar(position=position_dodge())
+
+```
+
+##Pytanie 7 dobra odpowiedź: Wtorek minimalnie(34 do 32)
+```{r}
+
+ggplot(odpowiedzi,aes(x=`co jest wieksza: sobota czy wtorek?`,fill=wykres))+geom_bar(position=position_dodge())
+
+```
+
+
+##Pytanie 8 dobra odpowiedź: Wtorek i środa minimalnie(86 do 85)
+```{r}
+
+ggplot(odpowiedzi,aes(x=`co jest wieksze: suma wtorku i srody czy suma poniedzialku i niedzieli?`,fill=wykres))+geom_bar(position=position_dodge())
+
+```
+
+
+##Pytanie 9
+```{r}
+ggplot(odpowiedzi,aes(x=`czy wygodnie pracowalo się z wykresem?`,fill=wykres))+geom_bar(position=position_dodge())+scale_y_continuous(breaks = pretty_breaks())
+```
+
+##Podsumowanie:
+
+```{r}
+colnames(odpowiedzi)[3:10]<-paste("pytanie",1:8,sep = "")
+odpowiedzi%>%
+  group_by(wykres)%>%
+  summarise(pytanie1=mean(answers[1]==pytanie1),pytanie2=mean(answers[2]==pytanie2),pytanie3=mean(answers[3]==pytanie3),pytanie4=mean(answers[4]==pytanie4),pytanie5=mean(answers[5]==pytanie5),pytanie6=mean(answers[6]==pytanie6),pytanie7=mean(answers[7]==pytanie7),pytanie8=mean(answers[8]==pytanie8))->podsumowanie
+
+podsumowanie<-as.data.frame(podsumowanie)
+pomoc<-data_frame(wykres=rep(c("kołowy","słupkowy"),each=8),poprawne=c(unlist(podsumowanie[1,-1]),unlist(podsumowanie[2,-1])),pytanie=rep(1:8,times=2))
+
+
+ggplot(pomoc,aes(x=pytanie,y=poprawne,fill=wykres))+geom_bar(stat = "identity",position = "dodge")+scale_x_discrete(labels=pomoc$pytanie[1:8],limits=pomoc$pytanie[1:8],breaks=pomoc$pytanie[1:8])+scale_y_continuous(labels = scales::percent)
+
+
+
+```
+
+```{r}
+podsumowanie[-1]<-apply(podsumowanie[-1],2,FUN=function(x){paste(round(x*100),"%")})
+kable(podsumowanie)%>%
+  kable_styling()
+```
+
+Jak widzimy wykresy słupkowe są na ogół lepsze niż wykresy kołowe. Inna rzeczą która nie została dokładnie zmierzona jest czas pracy z danym wykresem, jednakże dzieci wykonujące zadanie za pomocą wykresu słupkowego kończyły prace w znacznie krótszym czasie niż te posługujące się wykresem kołowym. Poza tym wykres kołowy zebrał więcej negatywnych opinii.   

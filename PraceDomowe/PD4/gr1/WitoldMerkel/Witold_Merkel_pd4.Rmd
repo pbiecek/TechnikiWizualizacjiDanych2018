@@ -1,0 +1,67 @@
+---
+title: "Praca Domowa nr.4"
+author: "Witold Merkel"
+date: "2 11 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(reshape)
+library(stringi)
+library(RColorBrewer)
+```
+
+```{r data.preparation, include=TRUE, echo = FALSE}
+data <- read.csv(file="china_US.csv")
+data$date <- as.Date(data$date, format = "%m/%d/%Y")
+data <- melt(data, id = "date", measure = colnames(data)[2:4])
+data$variable <- stri_replace_all(data$variable, " ", regex = "\\.")
+```
+
+# Wprowadzenie
+
+Do sprawdzenia roli kolorów na wykresie, zdecydowałem się użyć wykres Kacpra Siemaszki z pierwszej pracy domowej. Porównam wykres pierwotny z bardzo podobny, ale wykonanym tylko w odcieniach czerni.
+
+# Kod generujący wykres w odcieniach szarości
+
+```{r data.visualization, include=TRUE, fig.width = 10}
+ggplot(data = data, aes(x=data$date, y = data$value, group = data$variable, color = data$variable)) +
+  geom_line(size=1) +
+  geom_vline(xintercept = as.Date("2018-07-06"), alpha=0.5, size = 1.5, color = "black") +
+  geom_vline(xintercept = c(as.Date("2018-05-20"), as.Date("2018-06-12"), as.Date("2018-08-14")), alpha = 0.5) +
+  scale_y_continuous(limits = c(min(data$value),max(data$value))) +
+  scale_x_date(date_breaks = "1 month") +
+  scale_color_manual(values = brewer.pal(3, "Greys")) + 
+  xlab("date") +
+  ylab("equity performace") +
+  labs(title = "Impact of U.S.-China Trade Tensions on Asset Prices\n", 
+       subtitle = "Black and white") + 
+  theme_minimal() +
+  theme(legend.title = element_blank(), plot.title = element_text(hjust = 0.5), legend.position = "bottom")
+
+```
+
+# Kod generujący wykres z normalnymi kolorami
+
+```{r, include=TRUE, fig.width = 10}
+ggplot(data = data, aes(x=data$date, y = data$value, group = data$variable, color = data$variable)) +
+  geom_line(size=1) +
+  geom_vline(xintercept = as.Date("2018-07-06"), alpha=0.5, size = 1.5, color = "red") +
+  geom_vline(xintercept = c(as.Date("2018-05-20"), as.Date("2018-06-12"), as.Date("2018-08-14")), alpha = 0.5) +
+  scale_y_continuous(limits = c(min(data$value),max(data$value))) +
+  scale_x_date(date_breaks = "1 month") +
+  scale_color_manual(values = brewer.pal(3, "Accent")) + 
+  xlab("date") +
+  ylab("equity performace") +
+  labs(title = "Impact of U.S.-China Trade Tensions on Asset Prices\n",
+       subtitle = "In color") + 
+  theme_minimal() +
+  theme(legend.title = element_blank(), plot.title = element_text(hjust = 0.5), legend.position = "bottom")
+
+```
+
+# Omówienie
+
+Wykres pierwszy jest zdecydowanie mniej czytelny, ze względu na ograniczoną rozróżnialność odcieni tego samego koloru przez człowieka. Trzy łamane przedstawiające określone zależności nie dość, że się zlewają to jeszcze niektóre są mniej widoczne od pozostałych co może sugerować, że są mniej ważne. Legenda również traci na jasności przez to, że kolory są zbliżone do siebie. Tak samo jest z pionową linia 6 lipca, gdy jest ona po prostu szara, nie przykuwa uwagi, natomiast w drugim wykresie jej czerwony kolor od razu daje się zauważyć. W tym wypadku głównym atutem drugiego, kolorowego wykresu jest to, że linie się nie zlewają ze sobą, wszystkie są widoczne i jeżeli chcemy wyszczególnić jakąś datę, to możemy to w łatwy sposób zrobić.

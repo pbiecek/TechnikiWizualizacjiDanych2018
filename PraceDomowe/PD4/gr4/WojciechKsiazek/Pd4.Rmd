@@ -1,0 +1,58 @@
+---
+title: "R Notebook"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+
+```{r}
+library(tidyverse)
+df <- data.frame(
+  "kraje" = c("Szwajcaria", "USA", "Hong Kong", "Chiny", "Singapur", "ZEA", "Indie", "Indonezja", "Japonia", "Australia"),
+  "zarobki" = c(202.9, 185.1, 178.7, 172.7, 162.2, 155, 131.8, 128, 127.4, 125.8),
+  "PSN" = c(58087, 59495, 61393, 18066, 93905.5, 69896.3, 7183, 12378, 44426, 50334)
+)
+
+df <- df[order(df$zarobki,decreasing = FALSE),]
+
+df$kraje <- factor(df$kraje, levels = df$kraje)
+
+#df <- df[order(zarobki),]
+
+p <- ggplot(data = df, aes(x = kraje, y = zarobki)) + geom_hline(yintercept = seq(50,200,by=50)) + 
+  geom_col() + ggtitle(label = "Przeciętne zarobki imigrantów", subtitle = "top 10 krajów") + coord_flip() + 
+  ylab("Zarobki w tysiącach dolarów (1000$)") + geom_hline(yintercept = 13.5, color = "white") + 
+  theme(panel.background = element_rect("snow4")) + 
+  annotate("text", x = 10, y = 45,label = "zarobki w Polsce", color = "white") +
+scale_colour_grey()+
+  theme_bw()
+p
+
+```
+
+```{r}
+library(tidyverse)
+df <- data.frame(
+  "kraje" = c("Szwajcaria", "USA", "Hong Kong", "Chiny", "Singapur", "ZEA", "Indie", "Indonezja", "Japonia", "Australia"),
+  "zarobki" = c(202.9, 185.1, 178.7, 172.7, 162.2, 155, 131.8, 128, 127.4, 125.8),
+  "PSN" = c(58087, 59495, 61393, 18066, 93905.5, 69896.3, 7183, 12378, 44426, 50334)
+)
+
+df <- df[order(df$zarobki,decreasing = FALSE),]
+
+df$kraje <- factor(df$kraje, levels = df$kraje)
+
+df$PSNBracket <- cut(df$PSN, 3, dig.lab = 5)
+
+#df <- df[order(zarobki),]
+
+p <- ggplot(data = df, aes(x = kraje, y = zarobki, fill = PSNBracket)) + geom_hline(yintercept = seq(50,200,by=50)) + 
+  geom_col() + ggtitle(label = "Przeciętne zarobki imigrantów", subtitle = "top 10 krajów") + coord_flip() + 
+  ylab("Zarobki w tysiącach dolarów (1000$)") + geom_hline(yintercept = 13.5, color = "white") + 
+  theme(panel.background = element_rect("snow4")) + 
+  annotate("text", x = 10, y = 45,label = "zarobki w Polsce", color = "white")+
+  theme_bw()
+p
+
+```
