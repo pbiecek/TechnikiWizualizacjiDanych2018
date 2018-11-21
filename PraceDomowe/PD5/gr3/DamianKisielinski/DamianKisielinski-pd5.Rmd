@@ -1,0 +1,120 @@
+---
+title: "Techniki wizualizacji danych - PD5"
+author: "Damian Kisieliński"
+date: "November 20, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(ggplot2)
+library(plotrix)
+library(plyr)
+library("reshape2")
+```
+
+```{r}
+firmy <- c("HP","Dell","Acer","Pozostałe", "Lenovo","Apple","Asus")
+df <- data.frame(Udzial=c(22.7,16.1,6.8,19.1,21.1,7.6,6.6),
+                 Firma=firmy)
+results <- read.csv("wyniki.csv")
+```
+
+## Zadanie
+Sprawdzić czy określone problemy z czytaniem danych wciąż występują (problemy = iluzje na wykresach, błędy w odczytywaniu wykresu kołowego, błędy w pokazywaniu danych za pomocą wykresów 3D, problemy z tytułami na wykresie) 
+
+## Wstęp
+Przeprowadzono ankietę wśród mieszkańców domu studenckiego Riviera, na pytania odpowiedziało 60 osób. Dane dotyczyły sprzedaży komputerów w 2017r, źródło: https://www.wirtualnemedia.pl/artykul/sprzedaz-pecetow-w-2017-roku-hp-liderem-przed-lenovo-i-dellem. Na pierwszej stronie ankiety był wykres kołowy oraz poniższe pytania, na drugiej wykres słupkowy i te same pytania:  
+
+1. Wskaż firmę z największą sprzedażą
+ * Dell
+ * Lenovo
+ * HP
+ * Pozostałe
+2. Wskaż firmę z najmniejszą sprzedażą wśród wymienionych niżej
+ * Dell
+ * Lenovo
+ * HP
+ * Pozostałe
+3. Czy sprzedaż komputerów Acer pomnożona przez 3, jest większa od "Pozostałe"?
+ * Tak
+ * Nie
+4. Ile procent spośród wszystkich komputerów stanowiły komputery marki Lenovo?
+  
+Na końcu było pytanie który wykres był czytelniejszy? 
+
+##Wykresy - Sprzedaż komputerów w 2017r
+
+##Wykres 1
+```{r echo=FALSE}
+pie3D(df$Udzial,labels=df$Firma)
+```
+
+#Wykres 2
+```{r echo=FALSE}
+ggplot(df, aes(x=Firma, y=Udzial, fill=Firma)) +
+  geom_bar(stat = "identity") +
+  theme_minimal()+
+  labs(y="Udział (%)")
+```
+
+## Wyniki
+### Pyt1 Wskaż firmę z największą sprzedażą
+Prawidłowa odpowiedź to "HP".
+
+```{r}
+df <- melt(results[,c("pie1","bar1")], id=NULL)
+df$variable <- revalue(df$variable, c("pie1"="wykres 1","bar1"="wykres 2"))
+ggplot(df,aes(group=value, fill=value, x=variable)) + 
+  geom_bar()+
+  labs(x="",y="liczba odpowiedzi")
+```
+
+Na wykresie kołowym błędnej odpowiedzi udzieliło 21 osób, podczas gdy jest tylko 2 błędne na wykresie słupkowym. Kategoria "Lenovo" jest najbliżej obserwatora, więc kąt wydaje się być większy.
+
+### Pyt.2 Wskaż firmę z najmniejszą sprzedażą wśród wymienionych niżej
+Prawidłowa odpowiedź to "Dell".
+
+```{r}
+df <- melt(results[,c("pie2","bar2")], id=NULL)
+df$variable <- revalue(df$variable, c("pie2"="wykres 1","bar2"="wykres 2"))
+ggplot(df,aes(group=value, fill=value, x=variable)) + 
+  geom_bar()+
+  labs(x="",y="liczba odpowiedzi")
+```
+
+Na wykresie kołowym błędnej odpowiedzi udzieliło 18 osób, podczas gdy jest tylko 1 błędna na wykresie słupkowym.
+
+### Pyt.3 Czy sprzedaż komputerów Acer pomnożona przez 3, jest większa od "Pozostałe"?
+Prawidłowa odpowiedź to "Tak", różnica wynosiła 1.3%.
+```{r}
+df <- melt(results[,c("pie3","bar3")], id=NULL)
+df$variable <- revalue(df$variable, c("pie3"="wykres 1","bar3"="wykres 2"))
+ggplot(df,aes(group=value, fill=value, x=variable)) + 
+  geom_bar()+
+  scale_y_continuous(breaks = seq(0,60,10))+
+  labs(x="",y="liczba odpowiedzi")
+```
+
+Na wykresie kołowym mamy znaczącą przewagę błędnych odpowiedzi - 73%, wynika to z położenia kategorii "Acer" na wykresie, jest dalej więc kąt wydaje się mniejszy. Na wykresie słupkowym przewaga odpowiedzi prawidłowych.
+
+### Pyt.4 Ile procent spośród wszystkich komputerów stanowiły komputery marki Lenovo?
+Prawidłowa odpowiedź to 21.1
+
+
+```{r}
+df <- melt(results[,c("pie4","bar4")], id=NULL)
+df$variable <- revalue(df$variable, c("pie4"="wykres 1","bar4"="wykres 2"))
+ggplot(df, aes(x=variable, y=value)) + 
+  geom_boxplot()+
+  labs(x="",y="wartość (%)")
+```
+
+Odpowiedzi udzielone na podstawie wykresu słupkowego były bardziej precyzyjne, ponieważ była oś z której można było tą wartość odczytać. Wykres kołowy posiadał perspektywę, więc wartość wydawała się większa stąd duża liczba odczytów powyżej faktycznej wartości. 
+
+### Pyt.5 Który wykres był czytelniejszy? 
+Wszystkie osoby oprócz 1 wskazały wykres słupkowy jako czytelniejszy.
+
+## Podsumowanie
+Wykresy kołowe 3D nadają się jedynie, gdy zależy nam na przedstawieniu danych w korzystny dla nas sposób (manipulacji danymi). Obszary po bokach wydają się mniejsze, choć niektórzy znają ten trick, to wciąż ciężko ocenić jak bardzo zaburza faktyczną wartość. Kolorowe słupki nie zaburzyły odczytu, a jedynie odbiór estetyczny wykresu.
