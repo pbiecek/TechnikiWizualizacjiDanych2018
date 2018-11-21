@@ -1,0 +1,51 @@
+---
+title: "[TWD] Praca Domowa 5"
+author: "Bartlomiej Granat"
+date: "20.11.2018"
+output: html_document
+---
+  
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+echo = TRUE,
+cache = FALSE)
+```
+
+\pagebreak
+
+#Wstęp
+
+W ramach pracy domowej nr. 5 postanowiłem zbadać czytelność wykresów kołowych 3D. Poprosiłem ankietowanych o zadecydowanie, która część wykresu jest większa. Obie były równe, jednak z powodu złego przedstawienia danych osoba oglądająca wykres potrzebuje więcej czasu na podjęcie decyzji i często wskazuje złą odpowiedź.
+
+#Wykresy i wyniki ankiety
+
+W pierwszym pytaniu badam odbiór danych na wykresie 3D. Jak widać po wynikach prawie połowa ankietowanych zostało wprowadzonych w błąd przez głębię wykresu.
+
+![](Zrzut ekranu (227).png)
+
+![](Zrzut ekranu (218).png)
+
+W drugim pytaniu również został przedstawiony kołowy wykres 3D, jednak zielony fragment został umieszczony w innym miejscu co także powoduje złudzenie optyczne. Znów wyniki ankiety pokazują, że nie łatwo jest jednoznacznie określić dokładne wyniki ankiety.
+
+![](Zrzut ekranu (223).png)
+
+![](Zrzut ekranu (219).png)
+
+Jako trzeci został przedstawiony wykres kołowy 2D widzimy, że nadal nie jest tak łatwo porównać poszczególne części. Jednak więcej osób było w stanie wskazać prawidłową odpowiedź.
+
+![](Zrzut ekranu (224).png)
+
+![](Zrzut ekranu (220).png)
+
+Jako czwarty przedstawiłem zrobiony przez siebie wykres słupkowy dla tych samych danych. Wyraźnie widać, że jest to najlepsza forma przedstawienie danych i praktycznie wszyscy prawidłowo wskazali odpowiedź
+
+![](Zrzut ekranu (225).png)
+
+![](Zrzut ekranu (221).png)
+
+Wnioskując z wyników ankiety wykresy kołowe nie są odpowiednim sposobem przedstawiania danych.
+
+
+
+
+
