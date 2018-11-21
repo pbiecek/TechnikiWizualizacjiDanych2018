@@ -1,0 +1,200 @@
+---
+title: "Praca domowa 5"
+author: "Piotr Wawrzyniak"
+date: "16 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(RColorBrewer)
+```
+
+## Wstêp
+
+Jednym z najczêsciej u¿ywanych wykresów jest wykres ko³owy. Niestety czêsto jest on u¿ywany gdy twórca szuka ciekawszej reprezentacji danych - niekoniecznie zastanawiaj¹c siê jak wp³ynie to na percepcje tematu przez czytelnika.
+
+W tej pracy sprawdzê jak zmienia siê zrozumienie danych w zale¿noœci od typu wykresu. Porównam kolorowy wykres ko³owy i standardowy wykres s³upkowy w skali szaroœci.
+
+
+## Wykres ko³owy
+
+```{r, echo=FALSE, out.width = "100%"}
+
+marka <- rev(c('BMW', 'Mercedes', 'Audi', 'Volvo', 'Lexus', 'MINI'))
+sprzedaz <- rev(c(12498,11241,10787,7741, 3436, 1568))
+dane <- data.frame(marka = marka, sprzedaz = sprzedaz)
+```
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+
+# Create a basic bar
+pie = ggplot(dane, aes(x="", y=sprzedaz, fill=marka)) + geom_bar(stat="identity", width=1)
+ 
+# Convert to pie (polar coordinates) and add labels
+pie = pie + coord_polar("y", start=0) + geom_text(aes(label = paste0(round(sprzedaz), "")), position = position_stack(vjust = 0.5))
+ 
+# Add color scale (hex colors)
+pie = pie + scale_fill_manual(values=c("#55DDE0", "#33658A", "#2F4858", "#F6AE2D", "#F26419", "#999999")) 
+ 
+# Remove labels and add title
+pie = pie + labs(x = NULL, y = NULL, fill = NULL, title = "Ranking samochodowych marek premium w 2016 roku", subtitle="(wg liczby rejestracji)")
+ 
+# Tidy up the theme
+pie = pie + theme_classic() + theme(axis.line = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          plot.title = element_text(hjust = 0.5, color = "#666666"))
+
+pie
+```
+
+## Wykres s³upkowy
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+
+marka <- rev(c('Black', 'Red Bull', 'Burn', 'Mountain Dew', 'D.M. Tiger', 'N-Gine'))
+sprzedaz <- rev(c(30,26,10,5, 5, 4)) * 7
+dane <- data.frame(marka = marka, sprzedaz = sprzedaz)
+
+ggplot(dane, aes(x = marka, y = sprzedaz)) +
+  geom_bar(stat="identity", width=0.8) +
+  scale_x_discrete(limits = marka) +
+  ylab("Sprzeda¿ w milionach z³") +
+  xlab("Marka") +
+  labs(title="Sprzeda¿ napojów energetycznych w Polsce w 2011 roku") +
+  theme_classic() +
+  theme(plot.title = element_text(size = 12, face="bold"),
+        axis.text = element_text(size=8, face="bold"),
+        panel.grid = element_line(size = 0.5)) +
+  coord_flip()
+```
+
+## Wyniki ankiety
+
+W ankiecie wziê³o udzia³ 17 osób. Wyniki mo¿na znaleŸæ w pliku "wyniki.csv", a ankieta dostêpna jest pod adresem: https://docs.google.com/forms/d/e/1FAIpQLSebePglCWcvIirqPt7-Gv4DYRZOTdOxvVLUQZ4yNI3nM6Wf4Q/viewform
+
+
+```{r, echo=FALSE, out.width = "100%"}
+
+wyniki = read.table("wyniki.csv", sep=",", header=TRUE)
+dane <- data.frame(marka = marka, sprzedaz = sprzedaz)
+```
+
+### Pytanie 1 - maksymalna wartoœæ na wykresie
+
+`r gsub("[.]"," ",colnames(wyniki)[2])`
+
+I analogiczne:
+
+`r gsub("[.]"," ",colnames(wyniki)[6])`
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+
+wykres <- rev(c('Wykres ko³owy', 'Wykres s³upkowy'))
+odpowiedzi <- rev(c(6/17, 15/17))
+dane <- data.frame(wykres = wykres, odpowiedzi = odpowiedzi)
+
+ggplot(dane, aes(x = wykres, y = odpowiedzi, label = paste0(as.integer(odpowiedzi*100), "%"))) +
+  geom_bar(stat="identity", width=0.8) +
+  ylab("Stosunek poprawnych odpowiedzi") +
+  xlab("Rodzaj wykresu") +
+  scale_y_continuous(limits = c(0, 1)) +
+  geom_text(hjust = -0.3) +
+  geom_col(width=0.8) +
+  theme(plot.title = element_text(size = 12, face="bold"),
+        axis.text = element_text(size=8, face="bold"),
+        panel.grid = element_line(size = 0.5)) +
+  coord_flip()
+```
+
+
+### Pytanie 2 - minimalna wartoœæ na wykresie
+
+`r gsub("[.]"," ",colnames(wyniki)[3])`
+
+I analogiczne:
+
+`r gsub("[.]"," ",colnames(wyniki)[7])`
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+
+wykres <- rev(c('Wykres ko³owy', 'Wykres s³upkowy'))
+odpowiedzi <- rev(c(14/17, 16/17))
+dane <- data.frame(wykres = wykres, odpowiedzi = odpowiedzi)
+
+ggplot(dane, aes(x = wykres, y = odpowiedzi, label = paste0(as.integer(odpowiedzi*100), "%"))) +
+  geom_bar(stat="identity", width=0.8) +
+  ylab("Stosunek poprawnych odpowiedzi") +
+  xlab("Rodzaj wykresu") +
+  scale_y_continuous(limits = c(0, 1)) +
+  geom_text(hjust = -0.3) +
+  geom_col(width=0.8) +
+  theme(plot.title = element_text(size = 12, face="bold"),
+        axis.text = element_text(size=8, face="bold"),
+        panel.grid = element_line(size = 0.5)) +
+  coord_flip()
+```
+
+### Pytanie 3 - szacowanie sumy i porównywanie
+`r gsub("[.]"," ",colnames(wyniki)[4])`
+
+I analogiczne:
+
+`r gsub("[.]"," ",colnames(wyniki)[8])`
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+
+wykres <- rev(c('Wykres ko³owy', 'Wykres s³upkowy'))
+odpowiedzi <- rev(c(11/17, 14/17))
+dane <- data.frame(wykres = wykres, odpowiedzi = odpowiedzi)
+
+ggplot(dane, aes(x = wykres, y = odpowiedzi, label = paste0(as.integer(odpowiedzi*100), "%"))) +
+  geom_bar(stat="identity", width=0.8) +
+  ylab("Stosunek poprawnych odpowiedzi") +
+  xlab("Rodzaj wykresu") +
+  scale_y_continuous(limits = c(0, 1)) +
+  geom_text(hjust = -0.3) +
+  geom_col(width=0.8) +
+  theme(plot.title = element_text(size = 12, face="bold"),
+        axis.text = element_text(size=8, face="bold"),
+        panel.grid = element_line(size = 0.5)) +
+  coord_flip()
+```
+
+### Pytanie 4 - czy u¿ytkownik zwróci³ uwagê na rz¹d wielkoœci przedstawianych danych?
+`r gsub("[.]"," ",colnames(wyniki)[5])`
+
+I analogiczne:
+
+`r gsub("[.]"," ",colnames(wyniki)[9])`
+
+```{r warning=FALSE, echo=FALSE, out.width = "100%"}
+
+wykres <- rev(c('Wykres ko³owy', 'Wykres s³upkowy'))
+odpowiedzi <- rev(c(10/17, 11/17))
+dane <- data.frame(wykres = wykres, odpowiedzi = odpowiedzi)
+
+ggplot(dane, aes(x = wykres, y = odpowiedzi, label = paste0(as.integer(odpowiedzi*100), "%"))) +
+  geom_bar(stat="identity", width=0.8) +
+  ylab("Stosunek poprawnych odpowiedzi") +
+  xlab("Rodzaj wykresu") +
+  scale_y_continuous(limits = c(0, 1)) +
+  geom_text(hjust = -0.3) +
+  geom_col(width=0.8) +
+  theme(plot.title = element_text(size = 12, face="bold"),
+        axis.text = element_text(size=8, face="bold"),
+        panel.grid = element_line(size = 0.5)) +
+  coord_flip()
+```
+
+## Wnioski i podsumowanie
+
+Wyniki tego badania s¹ zbie¿ne z wynikami badaniañ prowadzonych kilka i kilkadziesi¹t lat temu. Wykresy ko³owe mimo, ¿e mniej standardowe ni¿ proste s³upki powoduj¹ pogorszenie zrozumienia i zapamiêtania prezentowanych danych.
+
+Dla ka¿dego pytania okaza³o siê, ¿e czytelnik lepiej rozumie dane, które ogl¹da³ na wykresie s³upkowym.
+
+Uwa¿am, ¿e dobrym podsumowaniem tego badania bêdzie nastêpuj¹ca animacja znaleziona w sieci:
+
+![](devourThePie3.gif)
