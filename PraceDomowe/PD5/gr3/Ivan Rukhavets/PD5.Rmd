@@ -1,0 +1,99 @@
+---
+title: "PD5"
+author: "Ivan Rukhavets"
+date: "11/21/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(latticeExtra)
+d <- read.table(text=' wyksztalcenie plec wartosc
+nizsze   mezczyzni   0.227
+srednie   mezczyzni   0.479
+wyzsze   mezczyzni   0.259
+nizsze   kobiety   0.223
+srednie   kobiety   0.443
+wyzsze   kobiety   0.334', header=TRUE)
+```
+
+
+## Opis zadania
+
+Zadaniem w tej pracy domowej było przeprowadzenie eksperymentu polegającego na sprawdzeniu, czy błędy w odczytywaniu niektórych wykresów rzeczywiście występują. Jako rodzaj wykresu do testów wybrałem wykres słupkowy 3d w którym dodatkowo oś Y nie zaczynała się od 0. 
+
+## Opis eksperymentu
+
+Na wykresie został umieszszone dane o wykrztałceniu kobiet i mężczyzn w polsce. Dane zostały pobrane z [eurostatu](https://stat.gov.pl/kobiety-i-mezczyzni-w-europie/bloc-2a.html?lang=pl). Ankietę wypełniło udział 16 osób o różnym backgroundzie technicznym.
+
+Wykres testowany wyglądał tak:
+```{r}
+cloud(wartosc~plec+wyksztalcenie, d, panel.3d.cloud=panel.3dbars, col.facet='grey', 
+      xbase=0.4, ybase=0.4, scales=list(arrows=FALSE, col=1), 
+      par.settings = list(axis.line = list(col = "transparent")))
+```
+
+Wykres "poprawny" był taki:
+```{r}
+ggplot(d, aes(x=wyksztalcenie, y=wartosc, fill=plec)) +
+  scale_y_continuous(labels = scales::percent) +
+  geom_bar(stat="identity", position=position_dodge()) +
+  ggplot2::ggtitle('Wyksztalcenie a plec')
+```
+
+### Pytanie 1
+
+*Z wykresu wynika że różnica między odsetkiem kobiet a mężczyzn z wykształceniem wyższym jest:*
+
+- Trzykrotna
+- Dwukrotna
+- Poniżej 1.5-krotnej
+
+Wyniki dla wykresy 3d były takie:
+```{r}
+percents = c(37.5, 31.3, 31.3)
+labels = c('Trzykrotna', 'Dwukrotna', 'Ponizej 1.5-krotnej')
+labels <- paste(labels, percents) # add percents to labels 
+labels <- paste(labels,"%",sep="")
+pie(percents, labels, col = c('#fc8d59', '#ffffbf', '#99d594'), main='Odpowiedzi na pytanie 1')
+```
+
+Jak widać, odpowiedzi podzialiły się prawie idealnie porówno, co udowadnia, że informację tą nie da się odczytać z wykresu testowego. Dla odmiany, 100% ankietowanych wybrały poprawną odpowiedź w przypadku wykresu słupkowego.
+
+### Pytanie 2
+
+*Który wykres jest mniej czytelny?*
+
+- 3d
+- 2d
+
+```{r}
+percents = c(93.8, 6.3)
+labels = c('3d', '2d')
+labels <- paste(labels, percents) # add percents to labels 
+labels <- paste(labels,"%",sep="")
+pie(percents, labels, col = c('#fc8d59', '#99d594'), main='Odpowiedzi na pytanie 2')
+```
+
+### Pytanie 3
+
+*(Jeśli w poprzednim zadaniu wybrano 3d) Co bardziej utrudnia odczyt tego wykresu?*
+
+- Niepotrzebna perspektywa
+- Zakres osi Y (zaczyna się nie od 0)
+- Wyżej wymienione wady są równie szkodliwe
+
+```{r}
+percents = c(20, 20, 60)
+labels = c('Niepotrzebna perspektywa', 'Zakres osi Y', 'Wady sa rownie szkodliwe')
+labels <- paste(labels, percents) # add percents to labels 
+labels <- paste(labels,"%",sep="")
+pie(percents, labels, col = c('#fc8d59', '#ffffbf', '#99d594'), main='Odpowiedzi na pytanie 3')
+```
+
+Z odpowiedzi na to pytanie wychodzi, że ankietowani głównie znajdują perspektywę i zakres osi Y równie szkodliwymi do poprawnego odczytu wykresu.
+
+## Wnioski
+
+Przeprowadzony eksperyment pokazał jak bardzo mylące mogą być wykresy słupkowe w perspektywie z osią Y zaczynającą się nie w punkcie 0. Poprawnie wykonany, zgrupowany wykres słupkowy był impreterowany jednoznacznie przez wszystkich, kiedy w przypadku wykresu 3d, odpowiedzi miały charakter prawie że losowy. Biorąc pod uwagę, że wykonanie zwykłego wykresu 2d jest prostrze, nie należy nigdy eksperymentować z perspektywą no i trzeba uważać z przedziałami na osiach.

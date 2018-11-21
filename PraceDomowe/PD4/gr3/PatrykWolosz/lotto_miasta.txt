@@ -1,0 +1,1096 @@
+﻿test
+Skrzyszów
+Ziębice
+Gdynia
+Bolesławiec
+Żabno
+Suwałki
+Bolimów
+Poznań
+Barcin
+Reda
+Warszawa
+Zduńska Wola
+Słupsk
+Elbląg
+Szczerbice
+Kraków
+Warszawa
+Ochla
+Bytom
+Skawina
+Warszawa
+Chotomów
+Warszawa
+Węgrów
+Baborów
+Pińczów
+Sosnowiec
+Kraków
+Zamość
+Węgorzyno
+Piotrków Trybunalski
+Poręba
+Świebodzice
+Chojnice
+Sosnowiec
+Wrocław
+Gdynia
+Kalisz
+Tanowo
+Warszawa
+Białystok
+Katowice
+Szczawno-Zdrój
+Łódź
+Sosnowiec
+Ostrowiec Świętokrzyski
+Łódź
+Żmigród
+Stary Sącz
+Lublin
+Lublin
+Lubin
+Kościerzyna
+Warszawa
+Łódź
+Białystok
+Gdańsk
+Wrocław
+Ostrzeszów
+Kielce
+Bydgoszcz
+Gdynia
+Wydminy
+Lublin
+Bydgoszcz
+Szydłowiec
+Toruń
+Przemyśl
+Kartuzy
+Radlin
+Sopot
+Kraków
+Gdańsk
+Mikołów
+Oleśnica
+Lublin
+Warszawa
+Gdańsk
+Kraków
+Tarnowskie Góry
+Iława
+Bytom
+Gdańsk
+Włocławek
+Konin
+Warszawa
+Wejherowo
+Łódź
+Kłodzko
+Kościan
+Warszawa
+Kraków
+Piaseczno
+Gryfino
+Tarnów
+Lubin
+Lublin
+Jędrzejów
+Kolbuszowa
+Zawiercie
+Kraków
+Tarnowskie Góry
+Bielsko-Biała
+Oława
+Katowice
+Radzymin
+Gniezno
+Mikołów
+Dobra
+Ostrzeszów
+Warszawa
+Łańcut
+Krajenka
+Gorzów Wielkopolski
+Toruń
+Starogard Gdański
+Puławy
+Tychy
+Jelenia Góra
+Warszawa
+Łódź
+Żórawina
+Bielsk Podlaski
+Przemyśl
+Kozy
+Toruń
+Białystok
+Piotrków Trybunalski
+Żywiec
+Krotoszyn
+Wrocław
+Kraków
+Głogów
+Tarnowskie Góry
+Siedlce
+Gdańsk
+Gdynia
+Olsztyn
+Łódź
+Wadowice
+Toruń
+Świdnica
+Burzenin
+Warszawa
+Bielsko-Biała
+Nowa Sól
+Warszawa
+Elbląg
+Strzelce Opolskie
+Oświęcim
+Marklowice
+Wołów
+Poznań
+Warszawa
+Gliwice
+Starogard Gdański
+Przeźmierowo
+Kołobrzeg
+Białystok
+Wrocław
+Pieniężno
+Mikołów
+Wrocław
+Białystok
+Zabrze
+Kamienica Polska
+Szczecin
+Gdańsk
+Gdańsk
+Łódź
+Sulechów
+Świdwin
+Pleszew
+Zduńska Wola
+Świętochłowice
+Olsztyn
+Pszczew
+Kościan
+Rzeszów
+Stalowa Wola
+Chodzież
+Mierzęcice
+Pruszków
+Gdynia
+Częstochowa
+Żerków
+Gorzów Wielkopolski
+Nysa
+Gdynia
+Łódź
+Bystra Podhalańska
+Pińczów
+Gdańsk
+Karczew
+Warszawa
+Michałowo
+Poznań
+Swadzim
+Wrocław
+Kołobrzeg
+Warszawa
+Lipinki
+Szczytno
+Jelenia Góra
+Grotniki
+Pielgrzymowice
+Swarzędz
+Białystok
+Kielce
+Ińsko
+Pułtusk
+Bychawa
+Bartoszyce
+Legnica
+Wałbrzych
+Turek
+Pajęczno
+Słupsk
+Katowice
+Rajsko
+Lublin
+Gdańsk
+Brzeg Dolny
+Koluszki
+Gliwice
+Wałbrzych
+Lublin
+Krzeszowice
+Wola Batorska
+Chojnice
+Przeworsk
+Zduńska Wola
+Rawa Mazowiecka
+Kraków
+Gdynia
+Police
+Reda
+Biłgoraj
+Żywiec
+Warszawa
+Łęknica
+Nowy Targ
+Płock
+Kraków
+Śrem
+Siemianowice Śląskie
+Sędziszów Małopolski
+Warszawa
+Gniezno
+Kielce
+Golczewo
+Katowice
+Szczecin
+Oświęcim
+Skoczów
+Poddębice
+Warszawa
+Jelenia Góra
+Sochaczew
+Gorzów Wielkopolski
+Żyrardów
+Rybnik
+Szczecin
+Wrocław
+Lidzbark
+Bydgoszcz
+Kędzierzyn-Koźle
+Jedlicze
+Marki
+Poznań
+Domaniewice
+Malczyce
+Wyrzysk
+Poznań
+Warszawa
+Jastrzębie-Zdrój
+Zakopane
+Kostrzyn nad Odrą
+Lwówek Śląski
+Stalowa Wola
+Dąbrowa Górnicza
+Dobrodzień
+Łukta
+Stolno
+Reda
+Miasteczko Śląskie
+Zgierz
+Chojnów
+Włocławek
+Gdańsk
+Gdańsk
+Piaseczno
+Koszęcin
+Włocławek
+Warszawa
+Konstancin-Jeziorna
+Olsztyn
+Wojkowice
+Kraków
+Kraków
+Mielno
+Gdańsk
+Chorzów
+Szczecin
+Mielec
+Siedlce
+Bojano
+Wrocław
+Wodzisław Śląski
+Legionowo
+Toruń
+Kędzierzyn-Koźle
+Tomaszów Mazowiecki
+Nidzica
+Rzeszów
+Pawłowice
+Słupsk
+Ełk
+Trzcianka
+Żywiec
+Warszawa
+Białystok
+Zbąszyń
+Łódź
+Turek
+Legionowo
+Wolin
+Bydgoszcz
+Janowo
+Łódź
+Łuków
+Tczew
+Warszawa
+Darłowo
+Choszczno
+Cieszyn
+Kraśnik
+Leszno
+Katowice
+Raciąż
+Stegna
+Szczytno
+Poznań
+Warszawa
+Szczecin
+Łódź
+Stalowa Wola
+Przemyśl
+Złotoryja
+Łowicz
+Szczecinek
+Lidzbark Warmiński
+Szczecin
+Kluczbork
+Przasnysz
+Nowy Sącz
+Zawiercie
+Stanisławów
+Szczecin
+Odolanów
+Choszczno
+Kraków
+Wierzchowo
+Poznań
+Gliwice
+Kalisz
+Pruszcz Gdański
+Rączna
+Koszalin
+Paterek
+Gubin
+Szczecin
+Olsztyn
+Wrocław
+Oświęcim
+Skoczów
+Płock
+Warszawa
+Warszawa
+Kalisz
+Elbląg
+Darłowo
+Kisielice
+Sierpc
+Suwałki
+Warszawa
+Olesno
+Bydgoszcz
+Warszawa
+Warszawa
+Rumia
+Kiełczewo
+Łaziska Górne
+Piła
+Łódź
+Cieszyn
+Gdańsk
+Pruszcz Gdański
+Borowo
+Karczew
+Radomsko
+Sława
+Słubice
+Bytom
+Mszana Dolna
+Suwałki
+Dąbrowa Białostocka
+Rzgów
+Dąbrowa Górnicza
+Białystok
+Białogard
+Poznań
+Płock
+Szczecin
+Żyrardów
+Przyborów
+Gdańsk
+Olesno
+Ksawerów
+Żukowo
+Kraków
+Głogów
+Celestynów
+Tarnowskie Góry
+Libiąż
+Poraj
+Jaworzno
+Mysłowice
+Poznań
+Kraków
+Rzgów
+Warszawa
+Warszawa
+Gdańsk
+Narol
+Gdańsk
+Warzymice
+Chełmno
+Dąbrowa Górnicza
+Chełm
+Międzyrzecz
+Buk
+Brzozów
+Warszawa
+Leszno
+Kraków
+Białystok
+Jarosław
+Poznań
+Olesno
+Szczecinek
+Pleszew
+Stargard
+Gorzów Wielkopolski
+Poznań
+Wrocław
+Szydłowiec
+Rudziniec
+Piastów
+Szklarska Poręba
+Kutno
+Białystok
+Głubczyce
+Opoczno
+Szczytno
+Warszawa
+Stara Huta
+Góra Puławska
+Rybnik
+Oborniki
+Poznań
+Iława
+Ożarów Mazowiecki
+Wrocław
+Gdańsk
+Baniocha
+Kościerzyna
+Legionowo
+Kutno
+Płock
+Białystok
+Kraków
+Stalowa Wola
+Dąbrowa Tarnowska
+Warszawa
+Gniezno
+Szczytno
+Nisko
+Pniewy
+Zielona Góra
+Głuszyca
+Kraków
+Warszawa
+Kraków
+Warszawa
+Gdów
+Piaseczno
+Rzeszów
+Warszawa
+Busko-Zdrój
+Luzino
+Opole Lubelskie
+Rzeszów
+Szczecin
+Gdańsk
+Jelenia Góra
+Lublin
+Książ Wielkopolski
+Siewierz
+Prudnik
+Dobrcz
+Częstochowa
+Wrocław
+Toruń
+Prudnik
+Nysa
+Warszawa
+Wadowice
+Lublin
+Legionowo
+Łaziska Górne
+Kórnik
+Warszawa
+Zagnańsk
+Nysa
+Oborniki Wielkopolskie
+Gorzów Wielkopolski
+Gdynia
+Andrychów
+Kraków
+Piła
+Kwidzyn
+Bierutów
+Pszczyna
+Stopnica
+Szczecin
+Częstochowa
+Kraków
+Jaworzno
+Żary
+Poznań
+Pawłowiczki
+Nowy Dwór Mazowiecki
+Warszawa
+Biała Podlaska
+Kraków
+Radom
+Bystrzyca Kłodzka
+Kielce
+Gliwice
+Tarnów
+Koprzywnica
+Warszawa
+Kraków
+Działdowo
+Gdynia
+Rzeszów
+Siedlce
+Grodzisk Wielkopolski
+Przemyśl
+Zakopane
+Łęczna
+Gdańsk
+Olszanica
+Bełżyce
+Łódź
+Bydgoszcz
+Głuszyca
+Zgorzelec
+Syców
+Opole
+Szczecin
+Dwikozy
+Raciąż
+Sanok
+Swarzędz
+Poznań
+Warszawa
+Zielona Góra
+Śrem
+Warszawa
+Niemodlin
+Mikołów
+Inowrocław
+Warszawa
+Sosnowiec
+Małogoszcz
+Wąwolnica
+Tarnów
+Szczecin
+Władysławowo
+Żywiec
+Wilkowice
+Żywiec
+Pabianice
+Nowy Dwór Mazowiecki
+Warszawa
+Kalisz
+Lidzbark
+Zielona Góra
+Szczecin
+Lędziny
+Sandomierz
+Częstochowa
+Zabrze
+Łódź
+Wałbrzych
+Opole
+Prudnik
+Police
+Kielce
+Bydgoszcz
+Olsztyn
+Stargard
+Goleniów
+Rybnik
+Wyszogród
+Rajcza
+Warszawa
+Poznań
+Katowice
+Chabówka
+Bielsko-Biała
+Karczew
+Tomaszów Mazowiecki
+Skierniewice
+Kraśnik
+Piotrków Trybunalski
+Warszawa
+Jonkowo
+Puck
+Warszawa
+Środa Śląska
+Przemyśl
+Dąbrowa Górnicza
+Wodzisław Śląski
+Puławy
+Sierakowice
+Łapy
+Piła
+Wrocław
+Lędziny
+Legnica
+Łódź
+Kozy
+Katowice
+Maków Mazowiecki
+Krasne
+Starogard Gdański
+Słubice
+Toszek
+Opoczno
+Częstochowa
+Syców
+Lubin
+Gdynia
+Oborniki
+Chełmno
+Jastrzębie-Zdrój
+Pabianice
+Wołomin
+Szczecin
+Wrocław
+Poznań
+Chorzów
+Warszawa
+Strzelin
+Nowy Sącz
+Białystok
+Tarnów
+Ciechanów
+Łódź
+Katowice
+Marki
+Wrocław
+Koszalin
+Skrwilno
+Śrem
+Lublin
+Dobroszyce
+Mińsk Mazowiecki
+Warszawa
+Myszków
+Tarnów
+Olsztyn
+Człuchów
+Gdynia
+Przasnysz
+Warszawa
+Kłobuck
+Jastrzębie-Zdrój
+Kamieniec Ząbkowicki
+Gdańsk
+Serock
+Nakło nad Notecią
+Łódź
+Rumia
+Kraków
+Białystok
+Krosno
+Wałcz
+Warszawa
+Zawiercie
+Katowice
+Świdnica
+Warszawa
+Warszawa
+Pszczyna
+Koszalin
+Ćmielów
+Rozprza
+Opalenica
+Grudziądz
+Warszawa
+Warszawa
+Przemyśl
+Czastary
+Wrocław
+Warszawa
+Bolesławiec
+Mszana Dolna
+Lublin
+Warszawa
+Ostrołęka
+Zabrze
+Dąbrowa Górnicza
+Konstancin-Jeziorna
+Jawor
+Wrocław
+Kotlin
+Warszawa
+Nowy Sącz
+Smolice
+Knurów
+Świętoszów
+Poręba
+Tomaszów Mazowiecki
+Lwówek
+Warszawa
+Szczerców
+Nowa Wieś
+Kraków
+Bydgoszcz
+Rydułtowy
+Warszawa
+Chojna
+Zebrzydowice
+Zielonki-Wieś
+Podgórzyn
+Puławy
+Starachowice
+Warszawa
+Katowice
+Jachranka
+Ozorków
+Kurzętnik
+Mielec
+Zielona Góra
+Częstochowa
+Tuszynek Majoracki
+Kołobrzeg
+Warszawa
+Warszawa
+Opole
+Płock
+Wielichowo
+Warszawa
+Kock
+Gdynia
+Łódź
+Gorzów Wielkopolski
+Warszawa
+Leszno
+Krasne
+Libiąż
+Nowy Dwór Mazowiecki
+Strzelin
+Rzeszów
+Żyrardów
+Gdańsk
+Wrocław
+Małdyty
+Olkusz
+Piaseczno
+Zielonka
+Szczecin
+Warszawa
+Kluczbork
+Ostrów Wielkopolski
+Wrocław
+Łódź
+Zamość
+Dąbrowa Górnicza
+Katowice
+Kętrzyn
+Andrychów
+Lublin
+Gdańsk
+Toruń
+Włocławek
+Opole
+Piaseczno
+Gliwice
+Iwonicz-Zdrój
+Opole
+Szczecin
+Konstancin-Jeziorna
+Racibórz
+Chełm
+Radom
+Katowice
+Olecko
+Piła
+Warszawa
+Wrocław
+Ełk
+Jarosław
+Łódź
+Sosnowiec
+Nowy Sącz
+Toruń
+Słomniki
+Wojkowice
+Zawiercie
+Luboń
+Sanok
+Bytów
+Zamość
+Wrocław
+Grajewo
+Sędziszów
+Kęty
+Kraków
+Bydgoszcz
+Warszawa
+Kutno
+Kraków
+Chorzów
+Lesko
+Gryfino
+Poznań
+Kolonowskie
+Olecko
+Grójec
+Bytom
+Łódź
+Lubań
+Warszawa
+Staszów
+Leszno
+Warszawa
+Swadzim
+Kępno
+Swarzędz
+Płock
+Wrocław
+Częstochowa
+Niebylec
+Kutno
+Poznań
+Gdynia
+Leszno
+Szczecin
+Lubsko
+Gdynia
+Szczecin
+Zambrów
+Chełmno
+Poznań
+Łódź
+Opole
+Warszawa
+Karpacz
+Nowa Ruda
+Józefów
+Kraków
+Pruszków
+Września
+Wiśniowa
+Wołomin
+Kraków
+Zgorzelec
+Kielce
+Warszawa
+Katowice
+Częstochowa
+Kędzierzyn-Koźle
+Częstochowa
+Zielona Góra
+Przemyśl
+Ogrodzieniec
+Pszów
+Orzesze
+Poznań
+Tarnów
+Opole
+Skarżysko-Kam. Ske
+Bydgoszcz
+Wrocław
+Gdańsk
+Elbląg
+Gdańsk
+Kraków
+Włocławek
+Gdynia
+Malbork
+Kielce
+Warszawa
+Głubczyce
+Ząbki
+Zgorzelec
+Gubin
+Zamość
+Piła
+Ruda Śląska
+Poznań
+Gdynia
+Kielce
+Wolbrom
+Rzgów
+Marki
+Kraków
+Warszawa
+Gdynia
+Milejów
+Barwice
+Grójec
+Łobez
+Kraków
+Kraków
+Warszawa
+Moszczenica
+Kraków
+Olsztyn
+Bydgoszcz
+Katowice
+Nowy Sącz
+Sława
+Jasienica
+Wyśmierzyce
+Bralin
+Halinów
+Nowy Dwór Mazowiecki
+Lubin
+Lwówek Śląski
+Warszawa
+Lipsko
+Poznań
+Warszawa
+Warszawa
+Kraków
+Olsztynek
+Ząbkowice
+Gliwice
+Trzcianka
+Olsztyn
+Rzeszów
+Warszawa
+Nowa Sól
+Jaworzno
+Grodków
+Gorzów Wielkopolski
+Warszawa
+Lublin
+Białystok
+Gdynia
+Katowice
+Kargowa
+Kłoczew
+Warszawa
+Bytom
+Skwierzyna
+Bydgoszcz
+Skierniewice
+Bolesław
+Krynica-Zdrój
+Warszawa
+Gdańsk
+Łódź
+Warszawa
+Zielona Góra
+Piotrków Trybunalski
+Oświęcim
+Starogard Gdański
+Chełmek
+Łódź
+Toruń
+Warszawa
+Jaraczewo
+Płock
+Gdynia
+Warszawa
+Rzeszów
+Warszawa
+Kutno
+Bydgoszcz
+Jastrzębie-Zdrój
+Łódź
+Warszawa
+Poznań
+Poznań
+Koszalin
+Sosnowiec
+Warszawa
+Dąbrowa Górnicza
+Tomaszów Lubelski
+Białystok
+Bydgoszcz
+Piaseczno
+Białystok
+Pawłowice
+Warszawa
+Warta
+Kielce
+Poznań
+Łódź
+Sopot
+Białe Błota
+Rzepin
+Swarzędz
+Warszawa
+Dęblin
+Sopot
+Warszawa
+Kraków
+Toruń
+Słupsk
+Kraków
+Warszawa
+Kraków
+Sosnowiec
+Chełm
+Helenów
+Wieliczka
+Lublin
+Poznań
+Mikołów
+Łódź
+Myślenice
+Czechowice-Dziedzice
+Suszec
+Bydgoszcz
+Nowy Sącz
+Legnica
+Warszawa
+Bolesławiec
+Krzeszowice
+Tarnobrzeg
+Piekary Śląskie
+Głogówek
+Warszawa
+Kraków
+Tarnobrzeg
+Czarne
+Radom
+Legnica
+Mielec
+Zawiercie
+Szczecin
+Bydgoszcz
+Elbląg
+Police
+Warszawa
+Warszawa
+Kraków
+Żarów
+Łódź
+Wałbrzych
+Milanówek
+Wałbrzych
+Twarogi
+Tuszyn
+Oświęcim
+Łódź
+Warszawa
+Kielce
+Bytom
+Warszawa
+Bytom
+Warszawa
+Solec Kujawski
+Poznań
+Zakopane
+Żuromin
+Augustów
+Poznań
+Wieluń
+Elbląg
+Nowy Tomyśl
+Bydgoszcz
+Myślenice
+Grodzisk Mazowiecki
+Włocławek
+Swarzędz
+Poznań
