@@ -1,0 +1,129 @@
+---
+title: 'Techniki Wizualizacji Danych - PD4'
+author: 'Michał Maciąg'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+<br\>
+
+# Wczytanie danych:
+
+```{r}
+
+min_wage <- data.frame(values = c(700, 760, 760, 800, 824, 849, 899, 936, 1126, 1276, 1317, 1386, 1500, 1600, 1680, 1750, 1850, 2000, 2100, 2250), years = c(2000:2019))
+
+limits <- ifelse(min_wage$values > 2000, 'Above 2000', ifelse(min_wage$values > 1500, 'Above 1500', ifelse(min_wage$values > 1000, 'Above 1000', 'Above 0500')))
+
+min_wage <- data.frame(min_wage, limits)
+
+```
+
+<br\>
+
+## Wykres oryginalny (kolegi z zajęć PD2):
+
+```{r, fig.align='center'}
+
+ggplot(data = min_wage, aes(x = years, y = values)) +
+  geom_bar(stat = "identity", fill = "red", width = 0.3, position = position_dodge(width = 0.85)) +
+  geom_text(aes(label = values), size = 3, vjust = -2, color = "black") +
+  scale_x_continuous(breaks = pretty(min_wage$years, n = 20)) +
+  scale_y_continuous(limits = c(0, 2500)) +
+  ggtitle("Wysokość płacy minimalnej brutto w Polsce w latach 2000-2019") +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 15))
+
+```
+
+<br\>
+
+## Wykres taki jak powyżej tylko w sakli szarości:
+
+```{r, fig.align='center'}
+
+ggplot(data = min_wage, aes(x = years, y = values)) +
+  geom_bar(stat = "identity", fill = "grey", width = 0.3, position = position_dodge(width = 0.85)) +
+  geom_text(aes(label = values), size = 3, vjust = -2, color = "black") +
+  scale_x_continuous(breaks = pretty(min_wage$years, n = 20)) +
+  scale_y_continuous(limits = c(0, 2500)) +
+  ggtitle("Wysokość płacy minimalnej brutto w Polsce w latach 2000-2019") +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, size = 15))
+
+```
+
+<br\>
+
+#### WNIOSKI: Generalnie wykres mojego kolegi jest jak dla mnie mało czytelny. Dodatkowo znajduje się na nim dużo nadmiarowych informacji, między innymi, wyskokości zarobków można odczytać z osi pionowej jak i z podpisów nad słupkami. Wykres kolegi jest jednokolorowy (czerwony), tutaj kolor nie wnosi żadnej informacji. Więc zmaina koloru na skale szarości nie powoduje dużej zmiany, poza tym, że jest on mniej estetyczny.
+
+<br\>
+<br\>
+<br\>
+
+## Wykres zmieniony, poprawiony, tylko w sakli szarości:
+
+```{r, fig.align='center'}
+
+ggplot(data = min_wage, aes(x = years, y = values), fill = values) +
+  geom_bar(aes(fill = factor(limits)), position = 'dodge', stat = "identity", width = 0.5) +
+  scale_fill_brewer(palette = 'Greys') +
+  theme_minimal() +
+  coord_flip() +
+  theme(axis.line = element_line(color = 'black'), 
+        panel.grid.major.x = element_blank(), 
+        legend.title = element_blank(),
+        legend.text = element_text(size = 10),
+        axis.text.x = element_blank(), 
+        axis.text.y = element_text(size = 10, face = 'bold'),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 12, face = 'bold'),
+        plot.title = element_text(size = 15, face = 'bold', hjust = 0.5)) +
+  labs(title = 'Wysokość płacy minimalnej brutto w Polsce w latach 2000-2019', 
+        x = 'Lata',
+        y = 'Wedding Costs in Pounds') +
+  geom_text(aes(label = values), vjust = 0.5, hjust = 1.5, color = "black", position = position_dodge(0.9), size = 3)
+
+```
+
+<br\>
+
+## Wykres zmieniony, poprawiony, tylko w pełnej kolorystyce:
+
+```{r, fig.align='center'}
+
+ggplot(data = min_wage, aes(x = years, y = values), fill = values) +
+  geom_bar(aes(fill = factor(limits)), position = 'dodge', stat = "identity", width = 0.5) +
+  scale_fill_brewer(palette = 'Accent') +
+  theme_minimal() +
+  coord_flip() +
+  theme(axis.line = element_line(color = 'black'), 
+        panel.grid.major.x = element_blank(), 
+        legend.title = element_blank(),
+        legend.text = element_text(size = 10),
+        axis.text.x = element_blank(), 
+        axis.text.y = element_text(size = 10, face = 'bold'),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 12, face = 'bold'),
+        plot.title = element_text(size = 15, face = 'bold', hjust = 0.5)) +
+  labs(title = 'Wysokość płacy minimalnej brutto w Polsce w latach 2000-2019', 
+        x = 'Lata',
+        y = 'Wedding Costs in Pounds') +
+  geom_text(aes(label = values), vjust = 0.5, hjust = 1.5, color = "black", position = position_dodge(0.9), size = 3)
+
+```
+
+<br\>
+
+#### WNIOSKI: Udało mi się poprawić wykres kolegi. Nie zawiera on nadmiarowych danych oraz jest bardziej czytelny. Doadkowo podzieliłem zarobki na grupy: (0 - 500) (501 - 1000) (1001 - 1500) (1501 - INF). Pozwala to przenieść dodatkową informację na temat tego jak zmieniały się zarobki na przestrzeni lat. Tutaj kolor wnosi dodatkową informację, lepiej do tego nadaje się skala kolorowa od skali szarości, wykres kolorowy jest bardziej czytelny i łdniejszy. Do wykresu kolorowego wykozystano palete barw BREWER przedstawioną na wykładzie. Pozwala ona na "równe" odstępy pomiędzy kolorami (grupami).
+
+<br\>
+<br\>
+<br\>
+
