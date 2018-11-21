@@ -1,0 +1,82 @@
+---
+title: "Projekt 1"
+author: "Damian Gutowski"
+date: "18 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars}
+library(ggplot2)
+library(data.table)
+library(dplyr)
+library(gridSVG)
+
+
+nagrody2 <- read.table("nagrody2.csv", sep=",",header = T, encoding = 'UTF-8')
+# nagrody2$Film <- factor(nagrody2$Film, levels = levels)
+nagrody2$V4 <- factor(nagrody2$V4, levels = c("Władca Pierścieni", "Hobbit"))
+nagrody2$V4 <- factor(nagrody2$V4, levels = c("Władca Pierścieni", "Hobbit"))
+nagrody2$label <- factor(nagrody2$label, levels = c("Nominacje", "Nagrody"))
+nagrody2$additionaInfo <- factor(nagrody2$additionaInfo, c("Drużyna Pierścienia", "Dwie wieże", "Powrót króla", "Niezwykła podróż", "Pustkowie Smauga", "Bitwa Pięciu Armii"))
+nagrody_lotr <- nagrody2 %>% filter(V4 == "Władca Pierścieni", additionaInfo != "Separator")
+svg("nagrody_lotr.svg", height = 7.5, width = 8)
+ggplot(data=nagrody_lotr, aes(x=label, y=value, fill=Rodzaj, width=0.8)) +
+  geom_bar(stat="identity") +
+  # geom_text(aes(y = 0, label = label), hjust=-0.1, color="black", size=4) +
+  # facet_grid(V4 ~ ., switch = "y", scales = "free_y", space = "free",labeller=label_wrap_gen(width=25, multi_line=T)) +
+  facet_grid(. ~ additionaInfo) + 
+  # labs(y = "Ile??", title = "Zdobyte nagrody") +
+   # theme_light() + 
+     theme(
+     axis.title.x = element_blank(),
+     axis.title.y = element_blank()
+   ) +
+  scale_fill_manual(values=c("lightblue", "steelblue")) +
+   expand_limits(y = c(0, 115))
+dev.off()
+```
+```{r}
+nagrody_hobbit <- nagrody2 %>% filter(V4 == "Hobbit", additionaInfo != "Separator")
+
+svg("nagrody_hobbbit.svg", height = 7.5, width = 8)
+ggplot(data=nagrody_hobbit, aes(x=label, y=value, fill=Rodzaj, width=0.8)) +
+  geom_bar(stat="identity") +
+  # geom_text(aes(y = 0, label = label), hjust=-0.1, color="black", size=4) +
+  # facet_grid(V4 ~ ., switch = "y", scales = "free_y", space = "free",labeller=label_wrap_gen(width=25, multi_line=T)) +
+  facet_grid(. ~ additionaInfo) + 
+  # labs(y = "Ile??", title = "Zdobyte nagrody") +
+   theme(
+     axis.title.x = element_blank(),
+     axis.title.y = element_blank()
+   ) +
+   # theme_light() + 
+       theme(
+     axis.title.x = element_blank(),
+     axis.title.y = element_blank()
+   ) +
+  scale_fill_manual(values=c("pink", "red")) +
+   expand_limits(y = c(0, 115))
+dev.off()
+```
+```{r}
+nagrody2_group <-nagrody2 %>% group_by(V4, label, Rodzaj) %>% summarize(value = sum(value))
+svg("nagrody.svg", height = 7.5, width = 8)
+ggplot(data=nagrody2_group, aes(x=label, y=value, fill=Rodzaj, width=0.8)) +
+  geom_bar(stat="identity") +
+  # geom_text(aes(y = 0, label = label), hjust=-0.1, color="black", size=4) +
+  # facet_grid(V4 ~ ., switch = "y", scales = "free_y", space = "free",labeller=label_wrap_gen(width=25, multi_line=T)) +
+  # labs(y = "Ile??", title = "Zdobyte nagrody") +
+  facet_grid(. ~ V4) + 
+   # theme_light() + 
+  theme(
+     axis.title.x = element_blank(),
+     axis.title.y = element_blank()
+   ) +
+  scale_fill_manual(values=c("violet", "purple")) 
+dev.off()
+```
+

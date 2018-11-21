@@ -1,0 +1,111 @@
+---
+title: "Praca domowa nr 5"
+author: "Bogdan Jastrzębski"
+date: "20 listopada 2018"
+output: html_document
+fig_width: 12
+fig_height: 12
+---
+  
+# Wstęp
+  
+Niniejsza praca dotyczy sprawdzenia nieczytelności wykresów, które wprowadzają w błąd czytającego wykres. Sprawdzę, czy uzasadnione są przeciwwskazania na temat wykorzystywania wykresów 3D, w tym przypadku słupków. 
+
+# Nieczytelny wykres
+
+Oto wykres przygotowany w LibreOffice Calc bez przeróbek. Został on wygenerowany automatycznie na podstawie tabeli. Ten fakt w połączeniu z wynikami ankiety powinien dawać do myślenia. 
+
+![](/home/bodo/plot/plot.png?raw=true "Title")
+
+# Ankieta
+
+W ankiecie wzięło udział 21 osób. Jest to na pewno mała grupa kontrolna, ale może uda nam się wyciągnąć pewne wnioski. 
+Ankieta: https://docs.google.com/forms/d/e/1FAIpQLScPte_5qM4kZmFwBKmwogrxUS_hi6fAi4e63BX2IkQS3x-zhg/viewform?usp=sf_link
+
+# Wyniki
+
+## Pytanie 1 (Tak a)
+
+```{r echo=FALSE}
+library(ggplot2)
+
+d <- data.frame(as = c(0,90.5,9.5,0), labels = c("5", "7.5", "10", "12.5"))
+ggplot(d, aes(x = 0, y = as, fill = labels)) +
+  geom_bar(stat="identity") + 
+  coord_flip() +
+  theme_void() +
+  theme(aspect.ratio = 1/8, legend.position="bottom") +
+  scale_fill_discrete(name = "Dostępne odpowiedzi") + 
+  geom_text(data = d[c(2,3),], aes(label = paste(as, "%" )), position = position_stack(vjust = .5))
+
+
+```
+
+
+Odpowiedzią prawidłową jest 10, a więc tylko 9.5% uczestników odpowiedziało prawidłowo. Właściwie jest to najprostszy z czterech słupków do odczytania. Mimo tego, że 
+znajduje się niedaleko podziałki, ma większy błąd, niż wykres obok: 
+
+
+## Pytanie 2 (Tak b)
+
+```{r echo=FALSE}
+library(ggplot2)
+
+d <- data.frame(as = c(0,71.4,28.6,0), labels = c("21", "26", "31", "36"))
+ggplot(d, aes(x = 0, y = as, fill = labels)) +
+  geom_bar(stat="identity") + 
+  coord_flip() +
+  theme_void() +
+  theme(aspect.ratio = 1/8, legend.position="bottom") +
+  scale_fill_discrete(name = "Dostępne odpowiedzi") + 
+  geom_text(data = d[c(2,3),], aes(label = paste(as, "%" )), position = position_stack(vjust = .5))
+
+```
+
+
+Prawidłowa odpowiedź w tym przypadku to 31.
+Ciekawostką na temat tego wykresu jest to, że został odczytany lepiej, niż poprzedni. Jednakże nadal 70% to błędne odpowiedzi, a różnica między preferowaną i prawidłową jest duża, bo aż 5:30. 
+
+## Pytanie 3
+
+```{r echo=FALSE}
+library(ggplot2)
+
+d <- data.frame(as = c(0,85.7,14.3,0), labels = c("25", "27.5", "30", "32.5"))
+ggplot(d, aes(x = 0, y = as, fill = labels)) +
+  geom_bar(stat="identity") + 
+  coord_flip() +
+  theme_void() +
+  theme(aspect.ratio = 1/8, legend.position="bottom") +
+  scale_fill_discrete(name = "Dostępne odpowiedzi") +
+  geom_text(data = d[c(2,3),], aes(label = paste(as, "%" )), position = position_stack(vjust = .5))
+
+
+```
+
+
+Poprawna odpowiedź: 30.
+Tutaj ponownie widać ogrom błędu popełnianego przez użytkowników. W poprzednim pytaniu słupek (Tak b) miałby mieć dla większości wysokość 26, ten natomiast 27.5. W rzeczywistości różnica między ich wysokościami rzeczywiście wynosi 1-1.5, ale słupek (Nie a) jest niższy od (Tak b). I gdyby ktoś się zastanowił, to stałoby się to oczywiste.
+
+## Pytanie 4
+
+```{r echo=FALSE}
+library(ggplot2)
+
+d <- data.frame(as = c(9.5,38.1,38.1,14.3), labels = c("7", "8", "9", "10"))
+ggplot(d, aes(x = 0, y = as, fill = labels)) +
+  geom_bar(stat="identity") + 
+  coord_flip() +
+  theme_void() +
+  theme(aspect.ratio = 1/8, legend.position="bottom") +
+  scale_fill_discrete(name = "Dostępne odpowiedzi") + 
+  geom_text(aes(label = paste(as, "%" )), position = position_stack(vjust = .5))
+
+
+```
+
+Prawidłowa odpowiedź: 10. Błąd wynosi tyle samo, co poprzednio, bo tylko 15% odpowiedziało poprawnie. W tym przypadku sprawa miała się inaczej niż w pozostałych pytaniach, bo zakres odpowiedzi jest mniejszy. Dalej jednak wiele osób zaznaczyło odpowiedź 9. W odniesieniu do pytania 1, w którym słupek jest równy słupkowi (Nie b), zauważmy, że gdyby wszystkie osoby, które zaznaczyły odpowiedź 9 zaokrągliły prawidłowo do 10, a nie do 7.5 to błąd w pytaniu 1 byłby niższy. Nie stało się tak jednak. 
+
+# Podsumowanie
+
+Ważnym tutaj jest fakt, że wykres został wygenerowany automatycznie. Można powiedzieć, zupełnie przypadkowo, korzystając z szablonu wyprodukowaliśmy wykres, który w rekordowy sposób, moim zdaniem, wprowadza w bład.
