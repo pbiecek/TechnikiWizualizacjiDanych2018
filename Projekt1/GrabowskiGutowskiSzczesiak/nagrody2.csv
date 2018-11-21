@@ -1,0 +1,29 @@
+Film,Typ,value,V4,label,Rodzaj,additionaInfo
+Drużyna Pierścienia,Oskar - Nagrody,4,Władca Pierścieni,Nagrody,Oskar,Drużyna Pierścienia
+Dwie wieże,Oskar - Nagrody,2,Władca Pierścieni,Nagrody,Oskar,Dwie wieże
+Powrót króla,Oskar - Nagrody,11,Władca Pierścieni,Nagrody,Oskar,Powrót króla
+Niezwykła podróż,Oskar - Nagrody,0,Hobbit,Nagrody,Oskar,Niezwykła podróż
+Pustkowie Smauga,Oskar - Nagrody,0,Hobbit,Nagrody,Oskar,Pustkowie Smauga
+Bitwa Pięciu Armii,Oskar - Nagrody,0,Hobbit,Nagrody,Oskar,Bitwa Pięciu Armii
+Drużyna Pierścienia,Pozostale - Nagrody,44,Władca Pierścieni,Nagrody,Pozostałe,Drużyna Pierścienia
+Dwie wieże,Pozostale - Nagrody,27,Władca Pierścieni,Nagrody,Pozostałe,Dwie wieże
+Powrót króla,Pozostale - Nagrody,54,Władca Pierścieni,Nagrody,Pozostałe,Powrót króla
+Niezwykła podróż,Pozostale - Nagrody,3,Hobbit,Nagrody,Pozostałe,Niezwykła podróż
+Pustkowie Smauga,Pozostale - Nagrody,1,Hobbit,Nagrody,Pozostałe,Pustkowie Smauga
+Bitwa Pięciu Armii,Pozostale - Nagrody,2,Hobbit,Nagrody,Pozostałe,Bitwa Pięciu Armii
+ ,Pozostale - Nominacje,93,Władca Pierścieni,Nominacje,Pozostałe,Powrót króla
+ ,Oskar - Nominacje,11,Władca Pierścieni,Nominacje,Oskar,Powrót króla
+  ,Pozostale - Nagrody,0,Władca Pierścieni,Nagrody,Pozostałe,Separator
+   ,Oskar - Nominacje,13,Władca Pierścieni,Nominacje,Oskar,Drużyna Pierścienia
+   ,Pozostale - Nominacje,103,Władca Pierścieni,Nominacje,Pozostałe,Drużyna Pierścienia
+    ,Pozostale - Nagrody,0,Władca Pierścieni,Nagrody,Pozostałe,Separator
+     ,Oskar - Nominacje,6,Władca Pierścieni,Nominacje,Oskar,Dwie wieże
+     ,Pozostale - Nominacje,75,Władca Pierścieni,Nominacje,Pozostałe,Dwie wieże
+      ,Pozostale - Nominacje,28,Hobbit,Nominacje,Pozostałe,Niezwykła podróż
+      ,Oskar - Nominacje,3,Hobbit,Nominacje,Oskar,Niezwykła podróż
+       ,Pozostale - Nagrody,0,Hobbit,Nagrody,Pozostałe,Separator
+        ,Pozostale - Nominacje,18,Hobbit,Nominacje,Pozostałe,Bitwa Pięciu Armii
+        ,Oskar - Nominacje,1,Hobbit,Nominacje,Oskar,Bitwa Pięciu Armii
+         ,Pozostale - Nagrody,0,Hobbit,Nagrody,Pozostałe,Separator
+          ,Oskar - Nominacje,3,Hobbit,Nominacje,Oskar,Pustkowie Smauga
+          ,Pozostale - Nominacje,31,Hobbit,Nominacje,Pozostałe,Pustkowie Smauga
