@@ -1,0 +1,106 @@
+<!-- HIT template: Survey-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<section class="container" id="Survey"><!-- Instructions -->
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>Survey Instructions</strong>
+            </div>
+            <p class="panel-body">Answer the questions about the graphs you see below.</p>
+            <ul>
+	              <li class="panel-body">Enter the answers about 1st graph before looking at the 2nd graph.</li>
+	              <li class="panel-body">Accuracy is not important. Answer without hestitation how you perceive, but please be honest.</li>
+	              <li class="panel-body">Answer this survey only once.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<p>&nbsp;</p>
+<!-- End Instructions --><!-- Survey Layout -->
+<div class="row" id="workContent">
+    <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>Graph 1</strong>
+            </div>
+            <div class="panel panel-body">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <img class="img-responsive" alt="Graph 1" src="https://s3.amazonaws.com/plots.plots.plots/pieplot.png"></img>
+                    <div class="panel panel-default">
+                        <div class="panel-body"><label>1. Which group is larger: B or E? </label>
+                            <div class="radio"><label><input name="Graph1LargerGroup" required="" type="radio" value="B" />B is larger </label></div>
+                            <div class="radio"><label><input name="Graph1LargerGroup" required="" type="radio" value="E" />E is larger </label></div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label for="Graph1LargestSize">2. If the size of group D is 5, what's the size of group C? (enter a number)</label>
+                            <input class="form-control" id="Graph1LargestSize" name="Graph1LargestSize" required="" type="number" />
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label for="Graph1GroupASize">3. If the size of group D is 5, what's the size of group A? (enter a number)</label>
+                            <input class="form-control" id="Graph1GroupASize" name="Graph1GroupASize" required="" type="number" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <strong>Graph 2</strong>
+            </div>
+            <div class="panel panel-body">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <img class="img-responsive" alt="Graph 2" src="https://s3.amazonaws.com/plots.plots.plots/barplot.png"></img>
+                    <div class="panel panel-default">
+                        <div class="panel-body"><label>4. Which group is larger: B or E? </label>
+                            <div class="radio"><label><input name="Graph2LargerGroup" required="" type="radio" value="B" />B is larger </label></div>
+                            <div class="radio"><label><input name="Graph2LargerGroup" required="" type="radio" value="E" />E is larger </label></div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label for="Graph2LargestSize">5. If the size of group D is 5, what's the size of group C? (enter a number)</label>
+                            <input class="form-control" id="Graph2LargestSize" name="Graph2LargestSize" required="" type="number" />
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <label for="Graph2GroupASize">6. If the size of group D is 5, what's the size of group A? (enter a number)</label>
+                            <input class="form-control" id="Graph2GroupASize" name="Graph2GroupASize" required="" type="number" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- End Survey Layout --></section>
+<!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><!-- External CSS references -->
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet -->
+<style type="text/css">#collapseTrigger{
+  color:#fff;
+  display: block;
+  text-decoration: none;
+}
+#submitButton{
+  white-space: normal;
+}
+.image{
+  margin-bottom: 15px; 
+}
+</style>
+<!-- Close internal style sheet --><!-- External JS references --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><!-- Open internal javascript --><script>
+</script><!-- CLose internal javascript -->
