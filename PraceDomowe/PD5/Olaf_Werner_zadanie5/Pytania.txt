@@ -1,0 +1,9 @@
+1. Który dzień tygodnia jest największy?
+2. Czy suma środy i poniedziałku jest większa od piątku?
+3. Co jest większe: poniedziałek czy czwartek?
+4. Czy suma środy i niedzieli jest większa od poniedziałku?
+5. Czy sobota jest co najmniej 2 razy większa od niedzieli?
+6. Czy środa jest co najmniej 4 razy większa od niedzieli?
+7. Co jest większe: sobota czy wtorek?
+8. Co jest większe: suma wtorku i środy czy suma poniedzialku i niedzieli?
+9. Czy wygodnie pracowało się z wykresem?

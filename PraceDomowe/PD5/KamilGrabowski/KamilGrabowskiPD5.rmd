@@ -1,0 +1,58 @@
+---
+title: "Praca domowa 5"
+author: "Kamil Grabowski"
+date: "November 17, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressMessages(library(ggplot2))
+
+# boxoffice <-c(775.398007, 538.375067, 475.106177)
+# movie <- c("Nowa nadzieja", "Imeprium Kontratakuje", "Powrót Jedi")
+boxoffice <-c(361.958736, 485.015179, 1063.171911)
+movie <- c("Toy Story 1", "Toy Story 2", "Toy Story 3")
+data <- data.frame(movie, boxoffice)
+```
+# Wstęp
+Celem eksperymentu było sprawdzenie czy wyskości słupków pozwalają lepiej ocenić różnice między wartościami niż kąty, aby tego dokonać postanowiłem wykorzystać  wykres składający się ze słupka z zaznaczonymi na nim wartościami przychodów poszczególnych części Toy Story (Wykres A) oraz wykres kołowy pokazujący te same dane (Wykres B). 
+
+# Wykres A
+```{r, echo = TRUE}
+ ggplot(data = data, aes(x = "", y = boxoffice, fill=movie)) +
+  geom_bar(stat='identity')+
+  ylab("Przychody") + 
+  ggtitle("Przychody poszczególnych części Toy Story (w milionach)") +
+  theme(plot.title = element_text(hjust = 0.5)) + scale_fill_brewer(palette="Dark2")
+```
+
+# Wykres B
+```{r, echo = TRUE}
+ ggplot(data = data, aes(x = "", y = boxoffice, fill=movie)) +
+  geom_bar(stat='identity')+
+  ylab("Przychody") + 
+  ggtitle("Przychody poszczególnych części Toy Story (w milionach)") +
+  theme(plot.title = element_text(hjust = 0.5)) +coord_polar("y", start=0) +   scale_fill_brewer(palette="Dark2")
+```
+
+# Ankieta
+W ramach eksperymenty przeprowadziłem ankietę, którą można znaleźć pod adresem: https://docs.google.com/forms/d/e/1FAIpQLScBSTD-mAvvSpIZ7T7n1Qv0bXDNimVifcihuw1zMr3AHIFo8g/viewform?usp=sf_link, w której zadałem pytanie "Który wykres lepiej pozwala ocenić różnice między przychodzami poszczególnych części Toy Story?" Jej wyniki przedstawiłem poniżej.
+
+# Wyniki
+```{r}
+names <- factor(c("Wykres A", "Wykres B", "Oba tak samo"), levels = c("Wykres A", "Wykres B", "Oba tak samo"))
+votes <- c(5, 10, 1)
+data_wyniki <- data.frame(names, votes)
+ggplot(data = data_wyniki, aes(x=names, y=votes))+
+  geom_bar(stat = 'identity', fill='steelblue') +
+  ggtitle("Głosy oddane w ankiecie") +
+  xlab("Odpowiedź") +
+  ylab("Liczba głosów")+
+  geom_text(aes(label = votes), size = 3, vjust = -0.3, color = "black") +
+  theme(plot.title = element_text(hjust = 0.5, size=20))
+```
+
+# Wnioski
+Wyniki eksperymetnu okazały się zaskakujące, ponieważ ludzie uznali wykres kołowy za ten, który lepiej pozwala ocenić różnice między przychodzami poszczególnych części Toy Story. Po rozmowie z niektórymi osobami, które wybrały odpowiedź B okazało się, że nie próbowali oni rzeczywiście porównać poszczególnych wartości, a swoją decyzję kierowali tym, który wykres był ładniejszy. Wykres A nie jest typowym wykresem słupkowym, ponieważ słupki położone są jeden na drugim zamiast obok siebie,ludzie nie są przyzwyczajeni do tego rodzaju wykresów co mogło mieć wpływ na ich dezyzję.
+

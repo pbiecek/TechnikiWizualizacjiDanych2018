@@ -1,0 +1,67 @@
+---
+title: "rCharts"
+author: "Anna Kozak"
+date: "November 7, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Praca domowa 1
+
+### Wersja 1
+
+```{r, warning=FALSE, message=FALSE, error=FALSE, echo=FALSE, fig.width=10}
+library(ggplot2)
+library(ggrepel)
+library(rCharts)
+data <- read.csv("ranking_kont_oszczednosciowych.csv", sep = ";", encoding = "UTF-8", check.names = FALSE)
+data$Bank <- factor(data$`Bank`, levels = data$`Bank`[order(-data$`Zysk po roku(po podatku)`)])
+scaleFactor <- max(data$`Zysk po roku(po podatku)`) / max(data$`Oprocentowanie nominalne`)
+ggplot() +
+geom_bar(aes(x=data$Bank, y = data$`Zysk po roku(po podatku)`), stat = "identity", fill = "gray") +
+geom_point(aes(x= data$Bank,y=data$`Oprocentowanie nominalne` * scaleFactor), size=1.5,  col="darkred") + 
+geom_label_repel(aes(x = data$Bank, y = data$`Oprocentowanie nominalne` * scaleFactor, label = paste( data$`Oprocentowanie nominalne`, "%"))) + scale_x_discrete(name="Bank") +
+scale_y_continuous(name="Zysk po roku(po podatku) (zł)", sec.axis=sec_axis(~./scaleFactor, name="Oprocentowanie nominalne (%)")) + coord_cartesian() +
+theme_replace() +
+theme(axis.text.x = element_text(angle=60, hjust=1)) +
+ggtitle("Ranking kont oszczędnościowych dla nowych klientów \ni na nowe środki - październik 2018")
+```
+
+### Wersja 2 - rCharts
+
+```{r, warning=FALSE, message=FALSE, error=FALSE, echo= FALSE}
+dat= as.data.frame(data)
+p1 = mPlot(x = 'Bank', y = 'Zysk po roku(po podatku)', data = dat, type = 'Bar',  labels = list("Zysk po roku(po podatku"))
+p1$save("p1.html", standalone = TRUE)
+```
+<iframe src="p1.html" align="center" width="900" height="600" frameBorder="0"></iframe>
+
+## Praca domowa 2
+
+### Wersja 1
+
+```{r, warning=FALSE, message=FALSE, error=FALSE, echo= FALSE, fig.width=10, fig.height=8}
+library(readxl)
+df <- read_excel("obserwujacy.xlsx", sheet = 1)
+ggplot(df, mapping = aes(x = Data, y = Liczba, col = Partia, group = Partia)) + 
+  geom_point() + 
+  geom_line(size = 1) + 
+  labs(y = "Liczba nowych obserwujących") + 
+  ggtitle("Zmiana liczby obserwujących na przestrzeni tygodnia") + 
+  scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d", "#666666")) +
+  theme_bw()
+```
+
+### Wersja 2 - rCharts
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+require(reshape2)
+uspexp = melt(USPersonalExpenditure)
+names(uspexp)[1:2] = c('category', 'year')
+x1 = xPlot(Liczba ~ Data, group = 'Partia', data = df, type = 'line-dotted')
+x1$save("p2.html", standalone = TRUE)
+```
+<iframe src="p2.html" align="center" width="900" height="600" frameBorder="0"></iframe>
