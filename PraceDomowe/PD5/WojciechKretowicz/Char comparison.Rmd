@@ -1,0 +1,45 @@
+---
+title: "Chart comparison"
+author: "Wojciech Kretowicz"
+date: "20 listopada 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Introduction
+
+##Motivation
+
+The proper visualization of data is essential due to human incapacity to understand the dependecies of many numbers. However there are many types of graphs, some are better and some are worse. I made a short inquiry about how much people can read and remember from graphs.
+
+##Thesis
+
+My thesis is that 3D charts are harder to understand the presented data than 2D graphs, though both contain the same information.
+
+##Data
+
+The presented data is fake. It was generated randomly. It tells us what corporation (*A,B,C*) in which country earned how much money. So our data is three dimensional.
+
+#Graphs
+##Graph 1.
+Fist graph is 3D, on first axis are discrete values describing countries, on second we have discrete values either, describing corporations. Eventually third axis shows continouos values - money. Chart was created using *"latticeExtra"* package in *R*.
+
+![First chart](./First)
+
+##Graph 2.
+Second graph is 2D, on first (horizontal) axis presents discrete values - outer variable is country, inner is corporation. The vertical axis is continouos and shows amount of money. Moreover, columns was differed with colours. Chart was created with *ggplot2* in *R*.
+
+![Second chart](./Second)
+
+#Inquiry
+
+Here is link to inquiry: https://docs.google.com/forms/d/1BYyGp9QP856DfAeYUDnmSH5rMcZ6EGd3bj99KD1S5mE
+
+#Results
+
+![Results](./Wykres)
+
+I have got 52 answers. And here are the results. As we see, number of correct answers drastically increases in Graph 2. Moreover number of "passes" decreases. It confirms that 3D charts are hard to understand and colours can help to make graph more understandable.
