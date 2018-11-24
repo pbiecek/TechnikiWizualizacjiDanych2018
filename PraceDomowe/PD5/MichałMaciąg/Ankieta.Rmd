@@ -1,0 +1,287 @@
+---
+title: "Techniki Wizualizacji Danych - PD 5"
+author: "Michał Maciąg"
+date: "20.11.2018r"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    code_folding: hide
+    highlight: tango
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br /> 
+<br /> 
+
+### Opis projektu
+
+Celem pracy domowej numer 5 było przeprowadzenie badania, mającego na celu pokazanie jak "źle" sporządzony wykres uniemożliwia właściwy odczyt danych. W tym celu wybrałem dane dotyczące powierzchni pojewództw w Polsce. Dane zawierały powierzchnie w hektarach [ha] wszystkich 16 województw, następnie powierzchnia została wyrażona w innej jednostce: tysiącach kilometrów kwadratowych [km^2]. Dzięki temu powierzchnie udało wyrazić się w czytelny sposób, liczby je opisujące są małe. 
+
+Dane te idelnie nadają się do przeprowadzenia padania, ponieważ mamy stosunkowo małą liczbę danych, zatem problem w ich odczytaniu nie będzie związany ze zbyt dużą dla odbiorcy liczbą danych. Co więcej dane dotyczą bardzo prostego zagadnienia, więc nie powinny wzbudzać w odbiory pewnego rodzają lęku, mogącego zaburzyć wynik eksperymentu. Pozwoli to zbadać jedynie wpływ rodzaju wykresu na jego czytelność.
+
+<br /> 
+<br /> 
+
+### Dane dotyczące powierzchni województw w Polsce
+
+<br /> 
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+
+library(ggplot2)
+set.seed(99)
+
+woj <- c('MAZOWIECKIE', 'WIELKOPOLSKIE', 'LUBELSKIE', 'WARMIŃSKO-MAZURSKIE', 'ZACHODNIOPOMORSKIE', 'PODLASKIE', 'DOLNOŚLĄSKIE', 'POMORSKIE', 'ŁÓDZKIE', 'KUJAWSKO-POMORSKIE', 'PODKARPACKIE', 'MAŁOPOLSKIE', 'LUBUSKIE', 'ŚLĄSKIE', 'ŚWIĘTOKRZYSKIE', 'OPOLSKIE')
+pow <- c(3555847, 2982650, 2512246, 2417347, 2289248, 2018702, 1994674, 1831034, 1821895, 1797134, 1784576, 1518279, 1398789, 1233309, 1171050, 941187)
+pow <- round((pow/100000), 1)
+x_cord <- runif(16)
+y_cord <- runif(16)
+dane <- data.frame('Wojewodztwo' = woj, 'Powierzchnia' = pow, 'X' = x_cord, 'Y' = y_cord)
+dane <- dane[order(dane$Powierzchnia, decreasing = TRUE), ]
+dane$Wojewodztwo <- factor(dane$Wojewodztwo, levels = dane$Wojewodztwo)
+head(dane[,1:2])
+
+```
+
+<br /> 
+<br /> 
+
+### Mało czytelny wykres typu "bubble plot"
+
+Pierwszy wygenerowany na podstawie danych wykres miał na celu "zmylić przeciwnika", to znaczy przedtawić dane w sposób poprawny (bez jakiego kolwiek oszukiwania), ale jednocześnie w sposób maksymalnie nie czytelny i uniemożliwijący ich analizowanie. W tym celu zdecydowałem się na wykres bąbelkowy (bubble plot). Jest on bardzo efektowny ale niestety nie efektywny. 
+
+Na planszy mamy 16 losowo rozmieszczonych kółek, których rozmiar koduje powierzchnie województwa. Jest to jeden z najgorszych sposobów prezentacji tego typu danych. Tego typu wykres mógłby się jeszcze obrnonić w sytuacji, gdybyśmy mieli do czynienia z danymi znacznie różniącymi się wielkością. Jednak w sytuacji, gdy powierzchnie wielu województw są praktycznie identyczne, wykres uniemożliwia porównywanie ich wielkości.
+
+<br /> 
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center'}
+
+ggplot(data = dane, aes(x = X, y = Y)) +
+  geom_point(aes(size = Powierzchnia), alpha = 0.5, col = 'blue') +
+  geom_text(data = dane, aes(x = X, y = Y, label = Wojewodztwo), col = 'orange', size = 2, vjust = -2, hjust = -0.1) +
+  scale_size_continuous(range = c(3, 6)) +
+  labs(title = 'Powierzchnia województw w Polsce w tysiącach km^2') +
+  ylim(min(dane$Y), max(dane$Y) + 0.04) +
+  xlim(min(dane$X), max(dane$X) + 0.3) +
+  theme_bw() +
+  theme(axis.text = element_blank(),  axis.title = element_blank(), axis.ticks = element_blank(), title = element_text(size = 12))
+
+```
+
+<br /> 
+<br /> 
+
+### Bardzo czytelny wkres typu "lollipop"
+
+Drugi wykres został zrobiony tak, aby był jak najbardziej czytelny i łatwy w odczycie. Wykorzystano wykres lizakowy (lollipop). Powierzchnia województwa jest kodowana jako długość odcinka, dodatkowo na końcu odcinka znajduje się etykietka z napisaną liczbowo powierzchnią, co więcej województwo są uszeregowane rosnąco, od najmniejszego do największego. Ten typ wykresu pozwala w naturalny, czytelne i bardzo prosty sposób porównywać rozmiary województw. Kożystając uważnie z tego wykresu praktycznie nie możliwe jest popełnienie błędu podczas analizowania danych.
+
+<br /> 
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+
+ggplot(dane, aes(x = Wojewodztwo, y = Powierzchnia, label = Powierzchnia)) + 
+  geom_point(stat = 'identity', fill = 'black', size = 6)  +
+  geom_segment(aes(y = 0, x = Wojewodztwo, yend = Powierzchnia, xend = Wojewodztwo), color = 'black') +
+  geom_text(color = 'white', size = 2) +
+  coord_flip() +
+  theme_bw() +
+  labs(title = 'Powierzchnia województw w Polsce w tysiącach km^2', y = ' ', x = ' ')
+  
+```
+
+<br /> 
+<br /> 
+
+### Przeprowadzona ankieta
+
+Przeprowadziłem ankiete składającą się z 4 pytań, znajdują się one poniżej. Respondenci na początku byli proszeni o zaznajomienie się z wykresem bąbelkowym oraz udzielenie odpowiedzi na 4 pytania. Następnie respondenci zaznajomili się z wykresem lizakowym oraz odpowiedzieli jeszcze raz na te same pytania. Taka kolejność wykluczyła sytuację, w której to respondent po zapoznaniu się z I wykresem uzyskiwał informację, których odczytanie z II wykresu byłoby bardzo trudne lub niemożliwe. Dlatego też możemy twierdzić, że ankieta została przeprowadzona w poprawny sposób.
+
+<br /> 
+<br /> 
+
+### Treść ankiety
+
+<br /> 
+
+##### 1."Które województwo ma największą powierzchnie ?" 
+##### A) Mazowieckie
+##### B) Wielkopolskie
+##### C) Dolnośląskie
+##### D) Lubelskie
+##### Poprawna odpowiedz: A
+
+<br /> 
+
+##### 2."Które województwo ma najmniejszą powierzchnie ?"
+##### A) Śląskie
+##### B) Lubuskie
+##### C) Opolskie
+##### D) Świętokrzyskie
+##### Poprawna odpowiedz: B
+
+<br /> 
+
+##### 3."Która odpowiedź jest poprawna ?"
+##### A) Łódzkie < Pomorskie < Podkarpackie
+##### B) Podkarpackie < Łódzkie < Pomorskie
+##### C) Pomorskie < Łódzkie < Podkarpackie
+##### D) Podkarpackie < Pomorskie < Łódzkie
+##### Poprawna odpowiedz: C
+
+<br /> 
+
+##### 4."Która odpowiedź jest poprawna ?"
+##### A) Wamińsko-Mazurskie < Zachodniopomorskie < Lubelskie
+##### B) Wamińsko-Mazurskie < Lubelskie < Zachodniopomorskie
+##### C) Lubelskie < Zachodniopomorskie < Wamińsko-Mazurskie
+##### D) Zachodniopomorskie < Wamińsko-Mazurskie < Lubelskie
+##### Poprawna odpowiedz: D
+
+<br /> 
+<br /> 
+
+### Wyniki ankiety
+
+Udało się uzyskać odpowiedzi od 25 osób. 
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+
+library(dplyr)
+
+wyniki <- read.csv('Ankieta.csv', sep = ',')
+colnames(wyniki) <- c('time', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8')
+
+```
+
+<br /> 
+<br /> 
+
+### Wyniki I pytania
+
+<br /> 
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center'}
+
+wynik1 <- data.frame('Wojewodztwo' = c('Mazowieckie','Wielkopolskie','Dolnośląskie','Lubelskie'))
+a1 <- wyniki %>% group_by(a1) %>% summarise(n = n())
+a5 <- wyniki %>% group_by(a5) %>% summarise(n = n())
+w1 <- full_join(wynik1, a1, by = c('Wojewodztwo' = 'a1'))
+w5 <- full_join(wynik1, a5, by = c('Wojewodztwo' = 'a5'))
+wynik1 <- rbind(w1, w5)
+colnames(wynik1) <- c('Wojewodztwo', 'Wynik')
+wynik1$Wynik[is.na(wynik1$Wynik)] <- 0
+wynik1$Wykres <- factor(c(rep('Bubble',4), rep('Lollipop',4)))
+
+ggplot(data = wynik1, aes(x = Wojewodztwo, y = Wynik, fill = Wykres)) +
+    geom_bar(stat = 'identity', position = 'dodge', colour = 'black') +
+    labs(title = 'Wyniki I pytania: ', x = ' ', y = 'Liczba odpowiedzi') +
+    theme_bw() +
+    coord_flip()
+
+```
+
+<br /> 
+<br /> 
+
+### Wyniki II pytania
+
+<br /> 
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center'}
+
+wynik2 <- data.frame('Wojewodztwo' = c('Śląskie','Lubuskie','Opolskie','Świętokrzyskie'))
+a2 <- wyniki %>% group_by(a2) %>% summarise(n = n())
+a6 <- wyniki %>% group_by(a6) %>% summarise(n = n())
+w2 <- full_join(wynik2, a2, by = c('Wojewodztwo' = 'a2'))
+w6 <- full_join(wynik2, a6, by = c('Wojewodztwo' = 'a6'))
+wynik2 <- rbind(w2, w6)
+colnames(wynik2) <- c('Wojewodztwo', 'Wynik')
+wynik2$Wynik[is.na(wynik2$Wynik)] <- 0
+wynik2$Wykres <- factor(c(rep('Bubble',4), rep('Lollipop',4)))
+
+ggplot(data = wynik2, aes(x = Wojewodztwo, y = Wynik, fill = Wykres)) +
+    geom_bar(stat = 'identity', position = 'dodge', colour = 'black') +
+    labs(title = 'Wyniki II pytania: ', x = ' ', y = 'Liczba odpowiedzi') +
+    theme_bw() +
+    coord_flip()
+
+```
+
+<br /> 
+<br /> 
+
+### Wyniki III pytania
+
+<br /> 
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center'}
+
+wynik3 <- data.frame('Wojewodztwo' = c('Łódzkie < Pomorskie < Podkarpackie','Podkarpackie < Łódzkie < Pomorskie','Pomorskie < Łódzkie < Podkarpackie','Podkarpackie < Pomorskie < Łódzkie'))
+a3 <- wyniki %>% group_by(a3) %>% summarise(n = n())
+a7 <- wyniki %>% group_by(a7) %>% summarise(n = n())
+w3 <- full_join(wynik3, a3, by = c('Wojewodztwo' = 'a3'))
+w7 <- full_join(wynik3, a7, by = c('Wojewodztwo' = 'a7'))
+wynik3 <- rbind(w3, w7)
+colnames(wynik3) <- c('Wojewodztwo', 'Wynik')
+wynik3$Wynik[is.na(wynik3$Wynik)] <- 0
+wynik3$Wykres <- factor(c(rep('Bubble',4), rep('Lollipop',4)))
+wynik3$Wojewodztwo <- as.factor(wynik3$Wojewodztwo)
+levels(wynik3$Wojewodztwo)[1] <- 'Ł<Pom<Pod'
+levels(wynik3$Wojewodztwo)[2] <- 'Pod<Ł<Pom'
+levels(wynik3$Wojewodztwo)[3] <- 'Pod<Pom<Ł'
+levels(wynik3$Wojewodztwo)[4] <- 'Pom<Ł<Pod'
+
+ggplot(data = wynik3, aes(x = Wojewodztwo, y = Wynik, fill = Wykres)) +
+    geom_bar(stat = 'identity', position = 'dodge', colour = 'black') +
+    labs(title = 'Wyniki III pytania: ', x = ' ', y = 'Liczba odpowiedzi') +
+    theme_bw() +
+    coord_flip()
+
+```
+
+<br /> 
+<br /> 
+
+### Wyniki IV pytania
+
+<br /> 
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center'}
+
+wynik4 <- data.frame('Wojewodztwo' = c('Wamińsko-Mazurskie < Zachodniopomorskie < Lubelskie','Wamińsko-Mazurskie < Lubelskie < Zachodniopomorskie','Lubelskie < Zachodniopomorskie < Wamińsko-Mazurskie','Zachodniopomorskie < Wamińsko-Mazurskie < Lubelskie'))
+a4 <- wyniki %>% group_by(a4) %>% summarise(n = n())
+a8 <- wyniki %>% group_by(a8) %>% summarise(n = n())
+w4 <- full_join(wynik4, a4, by = c('Wojewodztwo' = 'a4'))
+w8 <- full_join(wynik4, a8, by = c('Wojewodztwo' = 'a8'))
+wynik4 <- rbind(w4, w8)
+colnames(wynik4) <- c('Wojewodztwo', 'Wynik')
+wynik4$Wynik[is.na(wynik1$Wynik)] <- 0
+wynik4$Wykres <- factor(c(rep('Bubble',4), rep('Lollipop',4)))
+wynik4$Wojewodztwo <- as.factor(wynik4$Wojewodztwo)
+levels(wynik4$Wojewodztwo)[1] <- 'L<Z<WM'
+levels(wynik4$Wojewodztwo)[2] <- 'WM<L<Z'
+levels(wynik4$Wojewodztwo)[3] <- 'WM<Z<L'
+levels(wynik4$Wojewodztwo)[4] <- 'Z<WM<L'
+
+ggplot(data = wynik4, aes(x = Wojewodztwo, y = Wynik, fill = Wykres)) +
+    geom_bar(stat = 'identity', position = 'dodge', colour = 'black') +
+    labs(title = 'Wyniki IV pytania: ', x = ' ', y = 'Liczba odpowiedzi') +
+    theme_bw() +
+    coord_flip()
+
+```
+
+<br /> 
+<br /> 
+
+### Podsumowanie
+
+W pytaniach 1 i 2 (prostszych) respondenci potrafili udzeilić w większości poprawnych odpowiedzi zarówno korzystając z wykresu I jak i II, widać niewielką przewagę wykresu 2. Natomiast w pytaniach 3 i 4 (trudniejszych) repsondenci nie byli w stanie udzielić poprawnej odpowiedzi kozystając z wykresu I, padają tam można powiedzieć losowe odpowiedzi. Natomiast korzystając z wykresu II zdecydowana większość udzieliła poprawnej odpoweidzi. Jak zatem wytłumaczyć błędne odpowiedzi udzilone przez responedntów w drugiej części badania (wykres lizakowy) ? Po pierwsze możmy założyć, że dane zostały dobrze odczytane, jednak respondent mógł źle zaznaczyć odpowiedź. Po drugie respondent znudzony ankietą (były to pytania 5-8) mógł zaznaczyć losową odpowiedz nie zaznajamiając się z wykresem. Reasumując generalnie wyniki badania potwierdziły moje przypuszczenia. Rzeczywiście na podstawie wykresu I nie dało się prawidłowo odczytać zakodowanych danych. Natomiast wykres II pozwolił poprawnie odczytać dowlne informacje. 
+
+<br /> 
+<br /> 
