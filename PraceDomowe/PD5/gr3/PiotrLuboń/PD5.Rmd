@@ -1,0 +1,75 @@
+---
+title: "Praca Domowa nr 5"
+author: "Piotr Luboń"
+date: "November 20, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library('plotrix')
+library('ggplot2')
+library('kableExtra')
+```
+
+## Opis eksperymentu
+
+Celem eksperymentu było sprawdzenie, czy ocenienie na pierwszy rzut oka wartości na wykresie kołowym 3d jest trudniejsze niż na wykresie stacked bar chart. Odpowiadający mieli ocenić jakiej części całości odpowiada najliczniejsza kategoria na poniższych wykresach.
+
+```{r}
+ proc <- c(29, 17, 11, 9, 9, 7, 8, 10)
+ lab <-  c("Podatek od osób fizycznych", 'Środki pańśtwa', 'Dochody z majątku', 'Opłaty i kary',
+           'Środki unijne', 'Zobowiąznia', 'Podatek od nieruchomości', 'Inne')
+ 
+ pie3D(x = proc, labels=lab, explode = 0.2, labelcex = 1)
+```
+
+```{r}
+ wyd <- c(3.6, 3.1, 1.6, 1.1, 0.9, 0.7, 0.6, 1)
+ labels <- factor(c('Transport i komunikacja', 'Edukacja', 'Utrzymanie nieruchomości komunalnych', 'Ochrona zdrowia i pomoc społeczna',
+            'Obsługa mieszkańców', 'Janosikowe', 'Ochrona środowiska', 'Inne'))
+ data <- data.frame(wyd=wyd,Kategoria=labels)
+ ggplot(data, aes(fill=Kategoria, y=wyd, x= 1)) + 
+   geom_bar(position="fill", stat="identity") +
+   theme(axis.text.y=element_blank(),
+         axis.ticks.y=element_blank(),
+         axis.title.y = element_blank(),
+         axis.text.x=element_blank(),
+         axis.ticks.x=element_blank(),
+         axis.title.x = element_blank(),
+         strip.text = element_text(size = 10))
+```
+
+Drugi wykres specjalnie został pozbawaiony opisu skali, aby odpowiadjący musieli wybrać odpowiedź na podstawie oceny wizualnej.
+
+##Wyniki
+
+Odpowiedzi udzieliło 15 osób. Wyniki ankiety zostały przedstawione w tabeli i na wykresie poniżej
+```{r, include=FALSE}
+rmse <-function(expected, predicted)
+{
+  return(sqrt(mean((predicted-expected)**2)))
+}
+p1 <- c(25, 25, 25, 27, 30, 30, 30, 30, 32, 33, 35, 35, 40, 40, 50)
+p2 <- c(20, 20, 20, 20, 25, 25, 25, 27, 29, 30, 30, 40, 40, 40, 45)
+tabela <- data.frame(Pytanie1 =c('28%', paste0(round(mean(p1),2),'%'), round(sd(p1),2), round(rmse(29, p1),2)),
+                     Pytanie2 =c('28.57%', paste0(round(mean(p2),2),'%'),round(sd(p2),2), round(rmse(28.57, p2),2)))
+rownames(tabela) <- c("Prawidłowa odpowiedź", "Średnia odpowiedzi", "Odchylenie standardowe odpowiedzi", "RMSE odpowiedzi")
+hist_data <-rbind(data.frame(Odpowiedz=p1, Pytanie=rep(1, length(p1))), data.frame(Odpowiedz=p2, Pytanie=rep(2, length(p2))))
+hist_data$Pytanie <- factor(hist_data$Pytanie)
+```
+
+```{r, results='asis'}
+kable(tabela)
+```
+
+```{r}
+ggplot(aes(x=Odpowiedz), data=hist_data) + 
+  geom_histogram(position="dodge", bins=30, aes(fill=Pytanie))+
+  xlab("Wartośc odpowiedzi") + ylab("Liczba wystąpień") + ggtitle('Histogram odpowiedzi')
+```
+
+Co zaskakujące mimo, że dla drugiego pytania średnia odpowiedź była bliższ prawdziwej wartości niż dla pierwszego pytania, to odchylenie standardowe i błąd odpowiedzi były większe. Ankietowanie częściej wybierali odpowiedzi 20% i 40% niż najbliższą prawidłowej odpowiedzi okrągłą liczbę - 30%. Może to sugerować, żę przewaga bar charts nad wykresami kołowymi polega na możliwości odczytania wartości ze skali.
+
+Ankieta jest dostępna pod adresem:
+https://docs.google.com/forms/d/e/1FAIpQLSfA028x7blT_dOqhQ3tsRzhhQ9yVDx_dpnVauFkN6lpCSuuVQ/viewform
