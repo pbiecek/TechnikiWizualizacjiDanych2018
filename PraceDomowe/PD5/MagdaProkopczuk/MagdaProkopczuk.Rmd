@@ -1,0 +1,127 @@
+---
+title: "Praca domowa 5"
+author: "Prokopczuk Magda"
+date: "21 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Zadanie
+Celem zadania było sprawdzenie, czy wciąż występują określone problemy z odczytywaniem wykresów. 
+Zdecydowałam się na wykonanie dwóch wykresów kołowych, które czytający powinien ze sobą porównać. Kolejnym problemem, który mógł napotkać odbiorca to zmiana kolorów symbolizujących kategorie.
+Podobny wykres(bez zmiany kolorów kategorii) został przedstawiony w publikacji GUSu "100 lat Polski w liczbach. 1918-2018". Jest ona dostepna na stronie: http://stat.gov.pl/obszary-tematyczne/inne-opracowania/inne-opracowania-zbiorcze/100-lat-polski-w-liczbach-1918-2018,30,1.html .
+
+
+# Wykres
+![](C:/Users/Magda/Desktop/TWD/pd5/zly.png)
+``` {r wykres, include=FALSE}
+library(ggplot2)
+w1960<-c(45.2,39.3,10.3, 3.1, 2.1)
+w1988<-c(6.5,38.8,24.6,23.6,6.5)
+nazwy<-factor(c("Niepełne\npodstawowe,\nbez wykształcenia\nszkolnego i\nnieustalone","Podstawowe", "Policealne\ni\nśrednie", "Zasadnicze\nzawodowe", "Wyższe"),levels =c("Niepełne\npodstawowe,\nbez wykształcenia\nszkolnego i\nnieustalone","Podstawowe", "Policealne\ni\nśrednie", "Zasadnicze\nzawodowe", "Wyższe"))
+
+df <- data.frame(
+  Wykształcenie = nazwy,
+  value = w1960)
+df2 <- data.frame(
+  Wykształcenie = nazwy,
+  value = w1988)
+
+library(gridExtra)
+library(grid)
+
+kolor=c("#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99")
+p1<- ggplot(df, aes(x="", y=value, fill=Wykształcenie))+
+  geom_bar(width = 1, stat = "identity")+
+  ggtitle("Ludność wg poziomu wykształcenia w 1960r.")+
+  theme_minimal()+
+  theme(panel.border = element_blank(),
+        panel.grid=element_blank(),
+        axis.ticks = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        plot.title = element_text(size = rel(1.75)),
+        legend.position="bottom")+
+  coord_polar("y", start=0)+
+  scale_fill_manual(values=kolor)
+p2<- ggplot(df2, aes(x="", y=value, fill=Wykształcenie))+
+  geom_bar(width = 1, stat = "identity")+
+  ggtitle("Ludność wg poziomu wykształcenia w 1988r.")+
+  theme_minimal()+
+  theme(panel.border = element_blank(),
+        panel.grid=element_blank(),
+        axis.ticks = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        plot.title = element_text(size=rel(1.75)),
+        legend.position="bottom")+
+  coord_polar("y", start=0)+
+  scale_fill_manual(values=kolor[c(5,1,2,3,4)])
+grid.arrange(p1,p2,ncol=2)
+
+```
+
+
+Po zobaczeniu wykresu czytający został poproszony o odpowiedź na kilka pytań jednokrotnego wyboru. Link do ankiety: https://docs.google.com/forms/d/e/1FAIpQLSdSmllnhRxH6EJss-09Ipb9u2MXPuEeGyFyFBrTDNQgXrWyxQ/viewform
+
+# Pytanie 1 
+Ludność o jakim stopniu wykształcania przeważała w 1960r.?
+
+Pytanie miało na celu weryfikację porównania wartości znajdujących się na tym samym wykresie, jak i przeczytania odpowiedniej legendy. Wartości największa i druga co do wielkości różnią się jedynie o 6 punktów procentowych.  
+Poprawna odpowiedź to wykształcenie niepełne podstawowe, bez wykształcenia szkolnego i nieustalone.
+
+75% ankietowanych wybrało poprawną odpowiedź. 3 osoby (18,8%) wybrały wykształcenie podstawowe. Pozostałe 6,3% wybrało wykształcenie policealne i średnie, jest to najprawdopodobniej losowo udzielona odpowiedź. 
+
+# Pytanie 2
+Ludność o jakim stopniu wykształcania przeważała w 1988r.?
+
+Pytanie miało na celu weryfikację porównania wartości znajdujących się na tym samym wykresie, jak i przeczytania odpowiedniej legendy. Czytający mógł zostać zmylony przez zmianę kolorów poszczególnych kategorii.  
+Poprawna odpowiedź to wykształcenie podstawowe.
+
+68,8% ankietowanych wybrało poprawną odpowiedź. 4 osoby (25%) wybrały wykształcenie zasadnicze zawodowe. Pozostałe 6,3% wybrało wykształcenie policealne i średnie.
+
+# Pytanie 3
+Proszę uporządkować rosnąco procentowy udział grupy o danym poziomie wykształcenia w społeczeństwie w 1988r.  
+A. wyższe < zawodowe < policealne i średnie  
+B. wyższe < policealne i średnie < zawodowe    
+C. niepełne podstawowe, bez wykształcenia szkolnego i nieustalone < wyższe < zawodowe<policealne i średnie  
+Poprawna odpowiedź to A.   
+Odpowiedź B. mogła ukazać się stosowna, ponieważ różnica między udziałem wykształcenia policealnego i średniego a zawodowego to tylko 1 punkt procentowy.   
+Odpowiedź C. jest niepoprawna, ponieważ mamy taki sam odsetek ludzi o wykształceniu niepełnym podstawowym jak wyższym.
+
+Jedynie 50% ankietowanych wybrało poprawną odpowiedź. 31,3% badanych wybrało odpowiedź B. 18,8% badanych wybrało odpowiedź C. 
+
+# Pytanie 4
+Ile razy zwiększył się procentowy udział osób posiadających wykształcenie wyższe między 1960r. a 1988r.?   
+A. nie zmienił się  
+B. dwu-trzykrotnie  
+C. ponad trzykrotnie  
+Pytanie to dotyczyło porównania odpowiadających sobie wartości pomiędzy wykresami. Istotne dla porównania było również zauważenie zmiany kolorów kategorii, by wybrać odpowiednią wartość.  
+Poprawna odpowiedź to C.
+
+Jedynie 25% ankietowanych wybrało poprawną odpowiedź. 68,8% badanych wybrało odpowiedź B. 6,3% badanych wybrało odpowiedź A. 
+
+
+# Pytanie 5
+Czy w 1988r. przeważało wykształcenie podstawowe czy niepełne podstawowe, bez wykształcenia szkolnego i nieustalone ?  
+A. niepełne podstawowe, bez wykształcenia szkolnego i nieustalone  
+B. podstawowe  
+Jest to pytanie mające na celu sprawdzenie odczytania odpowiedniej legendy. Wybór odpowiedniej kategorii był dość prosty ze względu na dużą dysproporcję(ponad 14 punktów procentowych).  
+Poprawna odpowiedź to B.
+ 
+Niemal wszyscy udzielili poprawnej odpowiedzi (93.8% ankietowanych).
+
+# Pytanie 6
+Czy zauważyłeś/-aś, że nastąpiła zmiana kolorów przyporządkowanych kategoriom?   
+A. Tak  
+B. Nie 
+
+Jedynie 68,8% badanych zaznaczyło, że zauważyło zmianę kolorów przyporządkowanych kategoriom.
+
+## Podsumowanie
+Odczytywanie danych z wykresów kołowych nie jest problematyczne, gdy mamy wybrać wartość największą. Porządkowanie wartości znajdujących się na jednym wykresie bywa już kłopotliwe. Porównanie odpowiadających sobie wartości na dwóch różnych wykresach sprawia odbiorcom dużą trudność.Przykładamy również zbyt małą uwagę legendzie towarzyszącej wykresowi.
