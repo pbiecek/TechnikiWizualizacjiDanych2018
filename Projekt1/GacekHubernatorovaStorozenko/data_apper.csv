@@ -1,0 +1,13 @@
+Actor,A Study in Pink,The Blind Banker,The Great Game,A Scandal in Balgravia,The Hounds of Baskerville,The Reichenbach Fall,The Empty Hearse,The Sign of Three,His Last Vow,The Six Thatchers,The Lying Detective,The Final Problem
+Sherlock Holmes,1,1,1,1,1,1,1,1,1,1,1,1
+John Watson,1,1,1,1,1,1,1,1,1,1,1,1
+Mrs Hudson,1,1,1,1,1,1,1,1,1,1,1,1
+Greg Lestrade,1,0,1,1,1,1,1,1,1,1,1,1
+Molly Hopper,1,1,1,1,0,1,1,1,1,1,1,1
+Mycroft Holmes,1,0,1,1,1,1,1,1,1,1,1,1
+Jim Moriarty,0,1,1,1,1,1,1,0,1,0,0,1
+Mary Morstan,0,0,0,0,0,0,1,1,1,1,1,1
+Irane Adler,0,0,0,1,0,0,0,1,0,0,1,0
+Charles Augustus Magnussen,0,0,0,0,0,0,1,1,1,1,1,0
+Bill Wiggins,0,0,0,0,0,0,0,0,1,0,1,0
+Eurus Holmes,0,0,0,0,0,0,0,0,0,1,1,1
