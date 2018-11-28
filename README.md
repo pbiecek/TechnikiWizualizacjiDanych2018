@@ -16,9 +16,10 @@ Prace domowe należy zgłaszać przez GitHub. [Instrukcja jak korzystać](http:/
 * [4] W: [Kolory](http://biecek.pl/Eseje/indexKolory.html); L: [wizualizacja danych z Eurostatu](https://journal.r-project.org/archive/2017/RJ-2017-019/index.html)
 * [5] W: [Droga wzrokowa](http://biecek.pl/Eseje/indexObraz.html); L: [Grafika interaktywna i rCharts](http://pbiecek.github.io/Przewodnik/Wizualizacja/jak_tworzyc_interaktywne_wykresy.html)
 * [6] W: [Skale pomiarowe](http://biecek.pl/Eseje/indexKuchnia.html); L: [Inkscape](https://inkscape.org/) lub [Illustrator](https://www.adobe.com/pl/products/illustrator/free-trial-download.html) (w miarę możliwości proszę przynieść własny laptop)
-* [7]: W: Prezentacja wyników projektu 1; L: [Shiny](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
-* [8]: W: Prezentacje studentów 1/2; L: [Wstęp do D3](http://vadim.ogievetsky.com/IntroD3/#1), [fiddle](https://jsfiddle.net/)
-* [9]: W: Prezentacje studentów 2/2; L: Tableau
+* [7]: W: Prezentacja wyników projektu 1; L: [Shiny 1/2](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
+* [8]: W: Prezentacje studentów 1/2; L: [Shiny 2/2](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
+* [9]: W: Prezentacje studentów 2/2; L: [Wstęp do D3](http://vadim.ogievetsky.com/IntroD3/#1), [fiddle](https://jsfiddle.net/)
+* [10]: W: ; L: Tableau
 
 
 # Zasady zaliczenia
