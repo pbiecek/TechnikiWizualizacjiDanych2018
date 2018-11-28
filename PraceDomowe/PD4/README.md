@@ -14,3 +14,17 @@ Pracę domową należy wykonać indywidualnie.
 
 **BONUS:**
 Zamiast wybierać dane z pracy domowej innego studenta, można otrzymać bonusowy 1 punkt za znalezienie ciekawych danych nawiązujących do Dnia Zmarłych lub Halloween.
+
+-------
+
+Skala:
+
+* 5 - dobrze wykonana praca domowa
+* 4 - pracochłonnie wykonana praca domowa
+* 3 - kompletna praca domowa
+* 2 - niekompletna praca domowa
+* 1 - połowicznie wykonana praca domowa
+* 0 - brak pracy domowej lub praca nie na temat
+
+Osoby pracujące na tych samych danych i prezentujące dane w bardzo podobny otrzymują znacznie mniej punktów (do 0 w zależności od stopnia podobieństwa).
+

@@ -1,0 +1,119 @@
+---
+title: "Techniki Wizualizacji Danych - PD5"
+author: "Patryk Wróbel"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Cel zadania
+
+Celem zadania było zbadanie występowania różnego rodzaju problemów związanych z odczytywaniem danych z wykresów.
+
+Wykresy prezentują zmiany w liczbie użytkowników pewnego serwisu VoD na podstawie wyników z 2017 i 2018 roku.
+
+Dane zawarte w materiale zostały wygenerowane na potrzeby badania.
+
+## Wykres 1
+
+Na pierwszym wykresie dane dotyczące poszczególnych lat przedstawione zostały w postaci skumulowanych słupków.
+
+```{r warning=FALSE, echo=FALSE}
+library("ggplot2")
+library("reshape2")
+usersCount <- c(313000,446000,1030000,427000,486000,1870000)
+device <- c("Konsola","Smartfon","PC","Konsola","Smartfon","PC")
+year <- c("2017","2017","2017","2018","2018","2018")
+data <- data.frame(Users=usersCount/1000, Device = device, Year = year)
+data <- within(data, Device <- factor(Device, levels = c("Konsola","Smartfon","PC")))
+
+ggplot(data=data,aes(x=Year,y=Users,fill=Device)) +
+  geom_bar(stat="identity") + 
+  ylim(0,3000) +
+  labs(x = "Rok" ,y = "Liczba użytkowników (w tys.)", title = "Liczba użytkowników serwisu VoD w latach 2017 i 2018") +
+  scale_fill_brewer(palette="Accent") + 
+  theme(axis.title.y = element_text(margin = margin(r = 10)))
+```
+
+## Wykres 2
+
+Na drugim wykresie dane dotyczące poszczególnych lat przedstawione zostały w postaci osobnych słupków dla poszczególnych typów urządzeń.
+
+```{r warning=FALSE, echo=FALSE}
+ggplot(data=data,aes(x=Year,y=Users,fill=Device)) +
+  geom_bar(stat="identity", position = position_dodge()) + 
+  ylim(0,3000) +
+  labs(x = "Rok" ,y = "Liczba użytkowników (w tys.)", title = "Liczba użytkowników serwisu VoD w latach 2017 i 2018") +
+  scale_fill_brewer(palette="Accent") + 
+  theme(axis.title.y = element_text(margin = margin(r = 10)))
+```
+
+## Wykres 3
+
+Na ostatnim wykresie dane zostały przedstawione w osobnych słupkach, jednak w rozbiciu na typ urządzenia, a nie na rok.
+
+```{r warning=FALSE, echo=FALSE}
+ggplot(data=data,aes(x=Device,y=Users,fill=Year)) +
+  geom_bar(stat="identity", position = position_dodge()) + 
+  ylim(0,3000) +
+  labs(x = "Rok" ,y = "Liczba użytkowników (w tys.)", title = "Liczba użytkowników serwisu VoD w latach 2017 i 2018") +
+  scale_fill_brewer(palette="Accent") + 
+  theme(axis.title.y = element_text(margin = margin(r = 10)))
+```
+
+## Ankieta
+
+W ankiecie na podstawie każdego z wyżej zaprezentowanych wykresów należało odpowiedzieć na 2 pytania:
+
+ - W którym roku odnotowano większą liczbę użytkowników korzystających ze smartfonów?
+ - Czy w 2018 roku odnotowano większą liczbę uzytkowników korzystających z konsoli czy ze smartfonów?
+ 
+ Na koniec każdy z ankietowanych poproszony został o wskazanie jego zdaniem najlepszego wykresu do prezentowanych danych.
+ 
+ Link do ankiety: https://docs.google.com/forms/d/e/1FAIpQLSfrIshrbeHaH8zbPOiHpL8P9Gi2z_ilb7-wFLzzQU-S0wpd3A/viewform?vc=0&c=0&w=1
+ 
+ Wyniki przedstawione zostały poniżej:
+ 
+```{r warning=FALSE, echo=FALSE}
+answersCount <- c(0,4,12,2,7,7,0,14,2,0,15,1,0,16,0,0,16,0)
+plots <- c("1","1","1","1","1","1","2","2","2","2","2","2","3","3","3","3","3","3") 
+question <- c("1","1","1","2","2","2","1","1","1","2","2","2","1","1","1","2","2","2")
+answers <- c("w 2017","w 2018","Ciężko stwierdzić","Konsoli","Smartfona","Ciężko stwierdzić","w 2017","w 2018","Ciężko stwierdzić","Konsoli","Smartfona","Ciężko stwierdzić","w 2017","w 2018","Ciężko stwierdzić","Konsoli","Smartfona","Ciężko stwierdzić")
+data2 <- data.frame(Count=answersCount, Question = question, Answer = answers, Plot = plots)
+data2 <- within(data2, Answer <- factor(Answer, levels = c("w 2017","w 2018","Ciężko stwierdzić","Smartfona","Konsoli")))
+
+ggplot(data=data2[data2$Question=="1",],aes(x=Plot,y=Count,fill=Answer)) +
+  geom_bar(stat="identity", position = position_dodge()) + 
+  labs(x = "Wykres" ,y = "Liczba odpowiedzi", title = "Odpowiedzi na pytanie 1.",subtitle = "W którym roku odnotowano większą liczbę użytkowników korzystających ze smartfonów?") +
+  scale_fill_brewer(palette="Accent") + 
+  theme(axis.title.y = element_text(margin = margin(r = 10)))
+
+ggplot(data=data2[data2$Question=="2",],aes(x=Plot,y=Count,fill=Answer)) +
+  geom_bar(stat="identity", position = position_dodge()) + 
+  labs(x = "Wykres" ,y = "Liczba odpowiedzi", title = "Odpowiedzi na pytanie 2.",subtitle = "Czy w 2018 roku więcej uzytkowników korzystało z serwisu z konsoli czy ze smartfonów?") +
+  scale_fill_brewer(palette="Accent") + 
+  theme(axis.title.y = element_text(margin = margin(r = 10)))
+```
+
+```{r echo=FALSE, out.width='60%'}
+answersCount2 <- c(2,10,4)
+answers2 <- c("Wykres 1","Wykres 2","Wykres 3")
+data3 <- data.frame(Count=answersCount2, Answer = answers2)
+
+ggplot(data=data3,aes(x=Answer,y=Count)) +
+  geom_bar(stat="identity",fill="#FF6666") + 
+  labs(x = "Wykres" ,y = "Liczba odpowiedzi", title = "Najlepszy wykres?") +
+  theme(axis.title.y = element_text(margin = margin(r = 10)))
+```
+
+## Podsumowanie
+
+Jak widać wyniki ankiety pokrywają się z przewidywaniami.
+
+Na **wykresie 1.** trudno jest porównywać ze sobą segmenty odpowiadające tej samej kategorii. Dodatkowo problem stanowić może porównywanie segmentów zbliżonej wielkości należących do tego samego słupka. Większość ankietowanych uznała odpowiedź na zadane pytania za niemożliwą.
+
+Na **wykresie 2. ** porównywanie słupków jest o wiele łatwiejsze z uwagi na fakt, że wszystkie zaczynają się na jednej prostej. Wyniki ankiety potwierdzają, że wykres ten jest czytelny i w większym stopniu umożliwia udzielenie poprawnych odpowiedzi na zadane pytania. Dodatkowo wykres ten został **wybrany** przez większość ankietowanych **jako najlepszy**.
+
+Na **wykresie 3.** dane zostały przedstawione w sposób odwrotny do wykresu 2. Słupki zostały tu pogrupowane wg typu urządzenia, a nie roku, którego dotyczą dane. Jako jedyny wykres ten umożliwił **wszystkim ankietowanym** udzielenie **poprawnych odpowiedzi**, mimo że ostatecznie nie został wybrany jako najlepszy wykres.
