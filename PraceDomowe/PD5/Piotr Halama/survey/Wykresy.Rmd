@@ -1,0 +1,46 @@
+---
+title: "Techniki wizualizacji danych - Praca domowa nr 5 - wykresy"
+author: "Piotr Halama"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(reshape2)
+library(RColorBrewer)
+```
+
+```{r data}
+data <- data.frame(names=c("Group A", "Group B", "Group C", "Group D", "Group E"), size=c(14,23,37,5,21))
+data
+sum(data["size"])
+```
+
+```{r pie}
+pieplot <- ggplot(data, aes(x="", y=size, fill=names)) +
+  geom_bar(width=1, stat="identity") +
+  coord_polar("y") +
+  theme_void() +
+  scale_fill_brewer(palette = "Set1") +
+  labs(fill="Groups")
+
+pieplot
+```
+
+```{r bar}
+barplot <- ggplot(data, aes(x=names, y=size)) +
+  geom_bar(stat="identity", width=0.7) +
+  theme_minimal() + theme(
+    axis.text.y=element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank())+
+  labs(x="Groups", y="Percent")
+
+barplot
+```
+
+```{r save, echo=F}
+ggsave("pieplot.png", pieplot)
+ggsave("barplot.png", barplot)
+```

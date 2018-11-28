@@ -1,0 +1,54 @@
+---
+title: "Wykresy"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(waffle)
+```
+
+```{r dane}
+cases <- read.csv("./Sherlock Holmes/sherlock_holmes_cases.csv")
+case_county <- read.csv("./Sherlock Holmes/sherlock_holmes_case_county.csv")
+case_places <- read.csv("./Sherlock Holmes/sherlock_holmes_places.csv")
+inspectors <- read.csv("./Sherlock Holmes/sherlock_holmes_inspectors.csv")
+crimes <- read.csv("./Sherlock Holmes/sherlock_holmes_crimes.csv")
+cases$count <- apply(cases, 1, function(x){sum((cases$Places == x['Places']) & (cases$Year == x['Year']))})
+```
+
+```{r}
+cc5
+```
+
+```{r}
+cc5 <- case_places[c(1:6, 19), c("Place", "Times")]
+cc5 <- rbind(cc5, data.frame(Place=c("Pozostałe miejsca w Anglii"), Times=c(sum(case_county[-c(1:6,19),"Times"]))))
+cc5 %>% arrange(-Times) -> cc5
+data <- data.frame(names=as.character(cc5$Place), vals=cc5$Times)
+places_plot <- waffle(data, rows=5, 
+       colors=c("#482C21", "#A73E2B", "#D07E0E", "#96AF07", "#2F615E", "#89757A", "#EAC761", "#7D7769"),
+       title="Miejsca spraw", legend_pos = "bottom") +
+  theme(panel.background = element_blank())
+places_plot
+ggsave(plot = places_plot, file = "sh_places.png", 
+       type = "cairo-png",  bg = "transparent",
+       width = 20, height = 15, units = "cm", dpi = 800)
+```
+
+```{r}
+crimes_plot <-ggplot(crimes) +
+  geom_bar(aes(x=Crime, weight=Count), fill="#A73E2B") + 
+  coord_flip() +
+  scale_x_discrete("", limits=rev(crimes$Crime)) +
+  scale_y_continuous("") + theme_minimal() + theme(panel.grid.major.y=element_blank(), text=element_text(size=20, colour = "#002A15")) +
+  geom_text(aes(x=Crime, y=Count, label=Count), nudge_y = -1, fontface="bold", colour="white", size=5) +
+  ggtitle("Najczęstsze przestępstwa")
+crimes_plot
+ggsave(plot = crimes_plot, file = "sh_crimes.png", 
+       type = "cairo-png",  bg = "transparent",
+       width = 20, height = 15, units = "cm", dpi = 800)
+```

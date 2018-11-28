@@ -1,0 +1,2290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Sherlock Holmes</name>
+    <description>London locations mentioned in the Sherlock Holmes stories. Page numbers refer to the Folio Society edition, 1994</description>
+    <Style id="icon-111-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/111-purple-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-111-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/111-purple-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-111">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-111-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-111-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-111-nodesc-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/111-purple-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-111-nodesc-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/111-purple-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-111-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-111-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-111-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-123-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/123-red-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-123-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/123-red-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-123">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-123-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-123-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-61-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/61-green-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-61-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/61-green-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-61">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-61-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-61-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-0000FF-5000-normal">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>5</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-0000FF-5000-highlight">
+      <LineStyle>
+        <color>ffff0000</color>
+        <width>7.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-0000FF-5000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-0000FF-5000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-0000FF-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name><![CDATA[St Bart's]]></name>
+        <description><![CDATA[Location where Holmes and Watson first meet.<br><br>A Study in Scarlet, Chapter 1, p28.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.100229,51.517443,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Langham Hotel</name>
+        <description><![CDATA[1. Captain Morstan stayed here in 1878.<br>2. King of Bohemia staying here as Count von Kramm.<br>3. Lodging place of Philip Green.<br><br>1. The Sign of Four, Chapter 2, page 73.<br>2. The Adventure of a Scandal in Bohemia, page 28.<br>3. The Disappearance of Lady Frances Carfax, p146.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.143745,51.517703,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Beckenham Junction</name>
+        <description><![CDATA[H&amp;W catch a train here in pursuit of Sophy Kratides.<br><br>The Greek Interpreter, p195.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.027552,51.411627,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Beckenham</name>
+        <description><![CDATA[Sophy Kratides lives in the Myrtles, about half a mile from the station.<br><br>The Greek Interpreter, p195.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.016394,51.399795,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Brixton</name>
+        <description><![CDATA[1. J Davenport, who informs Holmes of Sophy Kratides&#39; address, lives in lower Brixton.<br>2. The Commissionaire at the Foreign Office lives at 16 Ivy Lane, Brixton.<br>3. Inspector Stanley Hopkins lives at 46 Lord Street.<br>4. According to the Daily Gazette, a lady fainted on the bus to Brixton.<br>5. 36 Poultney Square. Fictitious address of Ms Fraser and Henry Peters.<br>6. &#39;Killer&#39; Evans was last seen at a nursing home here.<br>7. Mrs Merrilow and her veiled lodger live in South Brixton.<br><br>1. The Greek Interpreter, p195.<br>2. The Naval Treaty, p210.<br>3. The Adventure of Black Peter, p158.<br>4. The Adventure of the Red Circle, p72.<br>5. The Disappearance of Lady Frances Carfax, p149<br>6. The Adventure of the Three Garridebs, p132.<br>7. The Adventure of the Veiled Lodger, p204.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.113125,51.459034,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Old Scotland Yard</name>
+        <description>Frequent mentions throughout the stories.</description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.125656,51.506432,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>London Bridge Station</name>
+        <description><![CDATA[1. H&amp;W catch a train from here to Beckenham.<br>2. John Hector McFarlane is followed to Baker Street from here.<br>3. This is the station Arthur Cadogan West would have headed for to return to Woolwich, as noted by Mycroft Holmes.<br>4. Watson returns to this station after going out to Blackheath, and sees the mysterious figure once again.<br><br>1. The Greek Interpreter, p197.<br>2. The Adventure of the Norwood Builder, p36.<br>3. The Adventure of Bruce Partington Papers, p96.<br>4. The Adventure of the Retired Colourman, p239.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.087097,51.505337,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Charles Street </name>
+        <description><![CDATA[Side entrance to the Foreign Office.<br><br>The Naval Treaty, p208.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.127394,51.502198,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Foreign Office</name>
+        <description><![CDATA[Workplace of Percy Phelps - and where the Naval Treaty is stolen from.<br><br>The Naval Treaty, p208.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.127491,51.502759,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Downing Street</name>
+        <description><![CDATA[H&amp;W interview Cabinet Minister Lord Holdhurst about the theft of the naval treaty.<br><br>The Naval Treaty, p221.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.127094,51.503213,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Corner of Welbeck and Bentinck Streets</name>
+        <description><![CDATA[An attempt on Holmes&#39; life, as a two-horse van almost knocks him over before galloping round Marylebone Lane..<br><br>The Final Problem, p244.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.14926,51.517209,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vere Street</name>
+        <description><![CDATA[A second attempt on Holmes&#39; life, as a brick tumbles from a nearby roof.<br><br>The Final Problem, p244.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.147071,51.514832,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lyceum Theatre</name>
+        <description><![CDATA[Meeting point for driver Williams with Mary Morstan, plus Holmes and Watson.<br><br>The Sign of Four, Chapter 3, page 32.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.119691,51.511474,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mortimer Street</name>
+        <description><![CDATA[Possible home of Watson, as Holmes is described as leaving the Doctor&#39;s premises over a back wall leading into Mortimer Street. However, this could be a fictional location in Kensington.<br><br>The Final Problem, p246.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.139089,51.51801,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Charing Cross Hospital</name>
+        <description><![CDATA[Former site of the hospital on Villiers Street.<br>Workplace of James Mortimer.<br><br>The Hound of the Baskervilles, p16.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.124433,51.508162,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Stanfords</name>
+        <description><![CDATA[55 Charing Cross, now Whitehall.<br>Holmes orders a map of Dartmoor from here.<br><br>The Hound of the Baskervilles, p43.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.126536,51.50547,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Borough</name>
+        <description><![CDATA[3 Turpey Street: fictitious address of John Clayton, cab driver.<br><br>The Hound of the Baskervilles, p71.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.092268,51.502011,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Museum of the College of Surgeons</name>
+        <description><![CDATA[Dr Mortimer passes some time here.<br><br>The Hound of the Baskervilles, p76.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.116215,51.515339,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Notting Hill</name>
+        <description><![CDATA[1. The convict Selden is described as the Notting Hill murderer.<br>2. Watson compares Gregson&#39;s manhandling as like that of a Notting Hill hooligan.<br><br>1. The Hound of the Baskervilles, p80.<br>2. The Adventure of the Red Circle, p82.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.197582,51.510826,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fulham Road</name>
+        <description><![CDATA[Dog dealers Ross and Mangles are based here - sellers of the titular hound.<br><br>The Hound of the Baskervilles, p213.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.178056,51.487743,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Craven Street</name>
+        <description><![CDATA[Site of the Mexborough Private Hotel where Stapleton and his wife stayed while following Baskerville.<br><br>The Hound of the Baskervilles, p216.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.124959,51.507574,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Park Lane</name>
+        <description><![CDATA[427 - home of Ronald Adair, murdered here.<br><br>The Adventure of the Empty House, p10.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.157242,51.511841,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Church Street</name>
+        <description><![CDATA[Former name of Kensington Church Street. Holmes, posing as a book seller, tells Watson he is a neighbour, whose shop is on the corner of Church Street.<br><br>The Adventure of the Empty House, p13.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.193334,51.504362,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Route to Coldharbour Lane</name>
+        <description><![CDATA[Part conjectural route described by Holmes, starting at the Lyceum Theatre, Strand, but only described from Rochester Row.<br><br>The Sign of Four, Chapter 3, page 34.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -0.135355,51.495893,0
+            -0.136256,51.494771,0
+            -0.133123,51.493649,0
+            -0.134969,51.491324,0
+            -0.124111,51.486327,0
+            -0.126643,51.484055,0
+            -0.128403,51.479913,0
+            -0.130892,51.47593,0
+            -0.131364,51.475476,0
+            -0.126472,51.474647,0
+            -0.127845,51.473578,0
+            -0.124283,51.471814,0
+            -0.122952,51.472669,0
+            -0.116429,51.465692,0
+            -0.114326,51.464622,0
+            -0.114799,51.463312,0
+            -0.11188,51.462056,0
+            -0.108533,51.462844,0
+            -0.105529,51.463901,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Manchester Street</name>
+        <description><![CDATA[Part of the route taken by Holmes and Watson to return to Baker Street.<br><br>The Adventure of the Empty House, p20.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.153594,51.51785,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blandford Street</name>
+        <description><![CDATA[Part of the route taken by Holmes and Watson to return to Baker Street.<br><br>The Adventure of the Empty House, p20.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.155193,51.518217,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>221b Baker Street</name>
+        <description>Best guess of the location of 221b, based on descriptions in The Adventure of the Empty House, p20.</description>
+        <styleUrl>#icon-111</styleUrl>
+        <Point>
+          <coordinates>
+            -0.15574,51.517997,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Conduit Street</name>
+        <description><![CDATA[Address of Colonel Sebastian Moran, the would-be assassin of Holmes.<br><br>The Adventure of the Empty House, p29.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.142071,51.511961,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lower Norwood</name>
+        <description><![CDATA[Home of the murdered Jonas Oldacre, who lives at the Sydenham end of the road of that name.<br><br>The Adventure of the Norwood Builder, p35.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.053215,51.426293,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gresham Buildings</name>
+        <description><![CDATA[Basinghall Street. Workplace of John Hector McFarlane.<br><br>The Adventure of the Norbury Builder, p37.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.090895,51.515927,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blackheath</name>
+        <description><![CDATA[1. Torrington Lodge, Home of John Hector McFarlane.<br>2. One of Godfrey Staunton&#39;s rugby teams.<br>3. Watson played rugby here, according to Robert Ferguson.<br><br>1. The Adventure of the Norwood Builder, p38.<br>2. The Adventure of the Missing Three-Quarter, p254.<br>3. The Adventure of the Sussex Vampire, p101.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            0.003433,51.466788,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Anerley Arms</name>
+        <description><![CDATA[John Hector McFarlane spends the night here.<br><br>The Adventure of the Norwood Builder, p41.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.066218,51.412404,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Russell Square</name>
+        <description><![CDATA[Hilton Cubitt first meets Elsie Patrick at a house she is boarding at in Russell Square.<br><br>The Adventure of the Dancing Men, p62.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.12748,51.522256,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Liverpool Street Station</name>
+        <description><![CDATA[1. Hilton Cubitt catches a train to here from North Walsham, Norfolk when consulting Holmes.<br>2. Watson is sent on a wild goose chase from here.<br><br>1. The Adventure of the Dancing Men, p65.<br>2. The Adventure of the Retired Colourman, p241.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.083106,51.517409,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Home of Thaddeus Sholto</name>
+        <description><![CDATA[Unknown location on Coldharbour Lane.<br><br>The Sign of Four, Chapter 4, page 36.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.105143,51.46374,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Imperial Theatre</name>
+        <description><![CDATA[Violet Smith&#39;s (the solitary cyclist) father conducted the orchestra at this now demolished theatre.<br><br>The Adventure of the Solitary Cyclist, p89.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.130248,51.49974,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Carlton House Terrace</name>
+        <description><![CDATA[1. Town address of Sixth Duke Holdernesse.<br>2. As Carlton House, mentioned by Baron von Herling as the location of the Germany Embassy, where &#39;things are moving&#39;.<br><br>1. The Adventure of the Priory School, p110.<br>2. His Last Bow, p191.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.131192,51.506472,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ratcliffe Highway</name>
+        <description><![CDATA[Sumner&#39;s Shipping Agents located here. They send three men, including harpoonist Patrick Cairns, on to Holmes.<br><br>The Adventure of Black Peter, p158.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.04343,51.510398,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hampstead Heath</name>
+        <description><![CDATA[1. Holmes and Watson skirt the edge of the Heath on their way to burgle Milverton, and later make their escape across it.<br>2. Mr Warren wakes up on Hampstead Heath after his abduction from Tottenham Court Road.<br><br>1. The Adventure of Charles Augustus Milverton, p175.<br>2. The Adventure of the Red Circle, p73.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.17355,51.565547,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Church Row</name>
+        <description><![CDATA[H&amp;W take a cab to this street on their way to burgle Milverton.<br><br>The Adventure of Charles Augustus Milverton, p174.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.178914,51.555608,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kennington Road</name>
+        <description><![CDATA[1. Morse Hudson keeps a picture and statue shop here, where the first case of Napoleon smashing occurred. Also the home of Dr Barnicot is on this road.<br>2. Ms Fraser is tracked along Kennington Road. Stimson and Co. undertakers are also located here.<br><br>1. The Adventure of the Six Napoleons, p186.<br>2. The Disappearance of Lady Frances Carfax, p149.<br>3. The Disappearance of Lady Frances Carfax, p149,154.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.110722,51.492393,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pitt Street</name>
+        <description><![CDATA[131: Scene of a murder connected with the Napoleonic busts.<br><br>The Adventure of the Six Napoleons, p189.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.194321,51.503507,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kensington High Street</name>
+        <description><![CDATA[Location of Harding Brothers (two doors from the station), who sell several of the Napoleonic busts.<br><br>The Adventure of the Six Napoleons, p190.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.192347,51.501076,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Stepney</name>
+        <description><![CDATA[Church Street - Location of Gelder &amp; Co. manufacturers of the Napoleonic busts.<br><br>The Adventure of the Six Napoleons, p194.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.04225,51.516221,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Chiswick</name>
+        <description><![CDATA[Laburnum Lodge, Laburnum Vale - Home of Mr Josiah Brown, owner of one of the six Napoleons.<br><br>The Adventure of the Six Napoleons, p197.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.250626,51.488892,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Upper Norwood</name>
+        <description><![CDATA[Pondicherry Lodge, Home of Bartholomew Sholto, specific location not given.<br><br>The Sign of Four, Chapter 5, page 59.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.105314,51.4188,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hammersmith Bridge</name>
+        <description><![CDATA[H&amp;W take a four-wheeler to &#39;the other side of Hammersmith Bridge&#39;.<br><br>The Adventure of the Six Napoleons, p200.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.230155,51.488331,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Saffron Hill</name>
+        <description><![CDATA[The Italian quarter, noted as the specialty of Inspector Hill.<br><br>The Adventure of the Six Napoleons, p198.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.107031,51.52068,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bayswater</name>
+        <description><![CDATA[Lord Mount-James takes the Bayswater bus to visit Holmes upon hearing of Godfrey&#39;s disappearance.<br><br>The Adventure of the Missing Three-Quarter, p260.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.188398,51.512802,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[King's Cross station]]></name>
+        <description><![CDATA[H&amp;W head to Cambridge from here in search of Godfrey Staunton.<br><br>The Adventure of the Missing Three-Quarter, p262.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.123553,51.530399,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Gray's Inn Road]]></name>
+        <description><![CDATA[Mentioned as part of the route to King&#39;s Cross station.<br><br>The Adventure of the Missing Three-Quarter, p262.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.113211,51.5206,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Chislehurst rail station</name>
+        <description><![CDATA[H&amp;W alight here on there way to Abbey Grange, which is described as two miles away.<br><br>The Adventure of the Abbey Grange, p276.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            0.057249,51.405685,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sydenham</name>
+        <description><![CDATA[The Randall gang &#39;did a job&#39; here a fortnight before the Abbey Grange murder. Later it is revealed that Mr Jack Crocker lives in Sydenham.<br><br>The Adventure of the Abbey Grange, p277, 292.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.056992,51.4264,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Westminster</name>
+        <description><![CDATA[Whitehall Terrace: Right Honourable Trelawney Hope, Secretary for European Affairs lives on this fictitious street or row, and has his papers taken from here.<br><br>16 Godolphin Street: fictitious home of the murdered Eduardo Lucas. Described as between the abbey and the river.<br><br>The Adventure of the Second Stain, p302, 308.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.127394,51.497175,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hammersmith</name>
+        <description><![CDATA[1. Eduardo Lucas&#39; valet was out visiting a friend here at the time of Lucas&#39; murder.<br>2. The &#39;Hammersmith Wonder&#39; is the subject of a cutting in Holmes&#39; record book.<br><br>1. The Adventure of the Second Stain, p308.<br>2. The Adventure of the Sussex Vampire, p98.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.225563,51.493034,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Richmond</name>
+        <description><![CDATA[1. Possible sighting of the elusive cyclist.<br>2. Robert Ferguson played three-quarter for Richmond, throwing Watson into the crowd at the Old Deer Park,.<br><br>1. The Valley of Fear, p92.<br>2. The Adventure of the Sussex Vampire, p101.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.308819,51.460104,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>On the trail of Jonathan Small</name>
+        <description><![CDATA[Vague route, which then leads on to a Lambeth pier.<br><br>The Sign of Four, Chapter 8, page 86.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -0.111022,51.483548,0
+            -0.113425,51.485632,0
+            -0.113854,51.486942,0
+            -0.119004,51.486487,0
+            -0.123768,51.48622,0
+            -0.125399,51.4832,0
+            -0.125731,51.483073,0
+            -0.127029,51.483327,0
+            -0.128961,51.482292,0
+            -0.125699,51.483227,0
+            -0.12557,51.487503,0
+            -0.121365,51.492393,0
+            -0.125012,51.492366,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>East Ham</name>
+        <description><![CDATA[Possible sighting of the elusive cyclist.<br><br>The Valley of Fear, p92.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            0.054932,51.530319,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Esher</name>
+        <description><![CDATA[Nearest centre to Wisteria Lodge, described as two miles south. H&amp;W also visit The Bull in Esher.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.365982,51.369959,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Oxshott Common</name>
+        <description><![CDATA[Garcia&#39;s body was found on the common, a mile from his home.<br><br>The Adventure of Wisteria Lodge, p19.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.367012,51.345411,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Spanish Embassy</name>
+        <description><![CDATA[Eccles makes inquiries about Garcia at the Spanish Embassy, then at 1 Grosvenor Gardens.<br><br>The Adventure of Wisteria Lodge, p17.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.146255,51.496922,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>High Holborn</name>
+        <description><![CDATA[Location of Marx and Co., clothing firm, who outfitted Garcia.<br><br>The Adventure of Wisteria Lodge, p26.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.112009,51.51777,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>British Museum</name>
+        <description><![CDATA[Holmes spends time reading here while engaged in the Wisteria Lodge case.<br><br>The Adventure of Wisteria Lodge, p28.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.127158,51.518464,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Croydon</name>
+        <description><![CDATA[Cross Street: home of Miss Cushing who receives the box of ears.<br><br>The Adventure of the Cardboard Box, p46.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.098877,51.368351,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Penge</name>
+        <description><![CDATA[Former home of Miss Cushing, where three medical students lodged.<br><br>The Adventure of the Cardboard Box, p47.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.055275,51.416124,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wallington</name>
+        <description><![CDATA[New Street: fictitious home of Sarah Cushing.<br><br>The Adventure of the Cardboard Box, p53.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.152435,51.363207,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Shadwell</name>
+        <description><![CDATA[Jim Browner makes his statement to Inspector Montgomery at Shadwell Police Station.<br><br>The Adventure of the Cardboard Box, p60.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.056992,51.510345,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Millbank Penitentiary</name>
+        <description><![CDATA[Holmes and Watson disembark near here after losing the trail of Jonathan Small<br><br>The Sign of Four, Chapter 8, page 90.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.125999,51.49242,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Great Orme Street</name>
+        <description><![CDATA[and Howe Street. Fictitious location of Mr Warren&#39;s house, but identified as to the north-east of the British Library.  Could potentially correspond to Great Ormond Street.<br><br>The Adventure of the Red Circle, p74.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.127115,51.519839,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Covent Garden Opera</name>
+        <description><![CDATA[Holmes suggests a visit to see a Wagner second act.<br><br>The Adventure of the Red Circle, p87.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.122223,51.512622,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Woolwich Arsenal</name>
+        <description><![CDATA[Arthur Cadogan West is a clerk here. He also holds an account at the local branch of Capital and Counties Bank (incidentally, the same institution Holmes banks with), and had planned to attend the Woolwich Theatre. H&amp;W later visit the area.<br><br>The Adventure of the Bruce-Partington Plans, p91,92.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            0.055275,51.487155,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aldgate Station</name>
+        <description><![CDATA[The body of Arthur Cadogan West is found on tracks just outside the station.<br><br>The Adventure of the Bruce-Partington Plans, p91.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.075531,51.514084,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capital and Counties Bank, Oxford Street</name>
+        <description><![CDATA[Real location of Holmes&#39; bank, The Capital and Counties Bank. (http://www.banking-history.co.uk/sherlock.html)<br><br>The Adventure of the Priory School, p135.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.135999,51.51586,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>13 Great George Street</name>
+        <description><![CDATA[Surprisingly precise address of Adolph Meyer, one of Mycroft&#39;s list of foreign agents.<br><br>The Adventure of Bruce Partington Papers, p108.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.128853,51.501076,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Campden Mansions</name>
+        <description><![CDATA[Surprisingly precise address of Louis La Rothiere, one of Mycroft&#39;s list of foreign agents.<br><br>The Adventure of the Bruce-Partington Plans, p108.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.194471,51.508248,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gloucester Road</name>
+        <description><![CDATA[Holmes had dinner at Goldini&#39;s Restaurant, before investigating the putative murder scene at Cauldfield Gardens.<br><br>The Adventure of the Bruce-Partington Plans, p109.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.183764,51.4995,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gloucester Road station</name>
+        <description><![CDATA[Holmes begins his trackside investigation from here.<br><br>The Adventure of the Bruce-Partington Plans, p110.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.183077,51.49421,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Daily Telegraph Offices</name>
+        <description><![CDATA[Holmes heads here to place an advert in an attempt to capture the foreign agent Oberstein.<br><br>The Adventure of the Bruce-Partington Plans, p114.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.106832,51.514328,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Great Peter Street post office</name>
+        <description><![CDATA[Holmes dispatches a telegram concerning the Aurora boat. Location unknown.<br><br>The Sign of Four, Chapter 8, page 90.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.128489,51.497015,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rotherhithe</name>
+        <description><![CDATA[Holmes was working &#39;in an alley near the river&#39; when he apparently contracted a tropical disease.<br><br>The Adventure of the Dying Detective, p121.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.033817,51.501477,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Simpson's Restaurant]]></name>
+        <description><![CDATA[1. 100 Strand. Holmes suggests a meal here to Watson after a period of fasting.<br>2. Holmes and Watson meet for two meals here.<br><br>1. The Adventure of the Dying Detective, p136.<br>2. The Adventure of the Illustrious Client, p17,23.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.120678,51.510559,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Houses of Parliament</name>
+        <description><![CDATA[Passed by H&amp;W on their way to Brixton.<br><br>The Disappearance of Lady Frances Carfax, p150.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.124111,51.4995,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Westminster Bridge</name>
+        <description><![CDATA[Crossed by H&amp;W on their way to Brixton.<br><br>The Disappearance of Lady Frances Carfax, p150.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.120635,51.500675,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Olympia</name>
+        <description><![CDATA[Baron Von Herling speaks of a prize in four-in-hand here.<br><br>His Last Bow, p189.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.210671,51.496614,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Duke of York Steps</name>
+        <description><![CDATA[A little door is mentioned, through which the signal book is to pass. <br><br>His Last Bow, p191.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.131493,51.506031,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Claridge's ]]></name>
+        <description><![CDATA[1. Martha is asked to report to Holmes here tomorrow.<br>2. Hotel of J Neil Gibson.<br><br><br><br>1. His Last Bow.<br>2. The Problem of Thor Bridge, p135.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.147586,51.512776,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Queen Anne Street</name>
+        <description><![CDATA[A later home of Watson is located here.<br><br>The Adventure of the Illustrious Client, p12.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.14735,51.518023,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kingston</name>
+        <description><![CDATA[Vernon Lodge - home of Baron Gruner.<br><br>The Adventure of the Illustrious Client, p16.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.289764,51.411841,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hurlingham</name>
+        <description><![CDATA[Baron Gruner played polo here for a time.<br><br>The Adventure of the Illustrious Client, p16.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.200543,51.466227,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Mordecai Smith's landing stage]]></name>
+        <description><![CDATA[Where Holmes loses the scent of Jonathan Small. Location given as opposite Millbank Penetentiary.<br><br>The Sign of Four, Chapter 8, page 90.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.122051,51.492366,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Berkeley Square</name>
+        <description><![CDATA[104 - residence of Miss Winter.<br><br>The Adventure of the Illustrious Client, p23.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.146127,51.50949,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cafe Royal</name>
+        <description><![CDATA[Holmes is badly beaten outside this restaurant.<br><br>The Adventure of the Illustrious Client, p27.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.136878,51.509958,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Glasshouse Street</name>
+        <description><![CDATA[Holmes&#39; assailants escape along here.<br><br>The Adventure of the Illustrious Client, p27.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.135655,51.510345,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The London Library</name>
+        <description><![CDATA[St James Square. Watson studies Chinese Pottery here, on the advice of Holmes.<br><br>The Adventure of the Illustrious Client, p29.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.136514,51.507313,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Half Moon Street</name>
+        <description><![CDATA[369 - fictitious address of Watson, posing as Dr Hill Barton.<br><br>The Adventure of the Illustrious Client, p30.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.145376,51.506419,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Throgmorton Street</name>
+        <description><![CDATA[James Dodd is a stockbroker here.<br><br>The Adventure of the Blanched Soldier, p40.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.086625,51.514819,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Minories</name>
+        <description><![CDATA[Holmes tracks Count Sylvius to Straubenzee&#39;s workshop on Minories.<br><br>The Adventure of the Mazarin Stone, p65.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.075445,51.511173,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Weald Station</name>
+        <description><![CDATA[Mary Maberley tells Holmes that Three Gables is a short distance from the Weald station.<br><br>The Adventure of the Three Gables, p81.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.33474,51.591576,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>St James Street</name>
+        <description><![CDATA[Langdale Pike belongs to a club on St James Street.<br><br>The Adventure of the Three Gables, p88.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.138359,51.505484,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Old Jewry</name>
+        <description><![CDATA[Location of Morison, Morison and Dodd, whose client Robert Ferguson is referred to Holmes in a case of vampirism. <br><br>The Adventure of the Sussex Vampire, p97.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.090616,51.514658,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>3 Pinchin Lane</name>
+        <description><![CDATA[Ficticious address of Sherman&#39;s Animal House. In Lambeth near the river - exact location unknown.<br>The Sign of Four, Chapter 6, page 69.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.12351,51.488999,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mincing Lane</name>
+        <description><![CDATA[Robert Ferguson of Ferguson and Muirhead, Tea brokers, is based here.<br><br>The Adventure of the Sussex Vampire, p97.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.081625,51.510652,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Edgware Road</name>
+        <description><![CDATA[136 Little Ryder Street, fictitious home of Mr Nathan Garrideb.Described as &#39;one of the smaller offshoots from the Edgware Road, within a stone-cast of old Tyburn Tree&#39;. Edgware Road also features as the location of Holloway and Steele, house agent of Nathan Garrideb.<br><br>The Adventure of the Three Garridebs, p116.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.160611,51.51371,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Sotheby's]]></name>
+        <description><![CDATA[One of two locations (the other being rival auction house Christies) to which Nathan Garrideb would leave the house.<br><br>The Adventure of the Three Garridebs, p122.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.12027,51.511894,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Christie's]]></name>
+        <description><![CDATA[One of two places (the other being rival auction house Sotheby&#39;s) to which Nathan Garrideb would leave his flat.<br><br>The Adventure of the Three Garridebs, p122.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.137608,51.506425,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Waterloo Road</name>
+        <description><![CDATA[&#39;Killer&#39;Evans (aka John Garrideb) shot a man over cards in a club here.<br><br>The Adventure of the Three Garridebs, p127.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.108747,51.501263,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cox and Co. Charing Cross</name>
+        <description><![CDATA[Number 16. Bank in whose vaults John H Watson keeps his memoirs of Sherlock Holmes.<br><br>The Problem of Thor Bridge, p133.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.127115,51.506579,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Commercial Road</name>
+        <description><![CDATA[Home of Dorak, Bohemian salesman who provides concoction for Prof Presbury.<br><br>The Adventure of the Creeping Man, p174]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.04283,51.513016,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wimbledon</name>
+        <description><![CDATA[Ronder caravan is on its way to Wimbledon when the lion attacks.<br><br>The Adventure of the Veiled Lodger, p206.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.206509,51.421209,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>St Pancras (area)</name>
+        <description><![CDATA[Holmes refers to &#39;the St Pancras case&#39;, in which a cap is found next to a dead policeman.<br><br>The Adventure of Shoscombe Old Place, p216.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.125785,51.531921,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Curzon Street</name>
+        <description><![CDATA[Sam Brewer, money lender, comes from here.<br><br>The Adventure of Shoscombe Old Place, p217.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.145655,51.50726,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Criterion Bar</name>
+        <description><![CDATA[Watson first hears of Sherlock Holmes from his friend Stamford.<br><br>A Study in Scarlet, Chapter 2, p25]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.133982,51.509891,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Westminster Stairs</name>
+        <description><![CDATA[A fast police launch waits here to persue Jonathan Small.<br><br>The Sign of Four, Chapter 9, p108.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.123811,51.500595,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lewisham</name>
+        <description><![CDATA[1. The Randall gang, framed for the murder of Abbey Grange, come from here.<br>2. Home of Josiah Amberley, who kills his wife and her lover.<br><br>1. The Adventure of the Abbey Grange, p277.<br>2. The Adventure of the Retired Colourman, p234.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.01133,51.462671,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Haymarket Theatre</name>
+        <description><![CDATA[Where Amberley claims to have been on the night of the murder.<br><br>The Adventure of the Retired Colourman, p238.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.131578,51.508689,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Blackheath Station</name>
+        <description><![CDATA[Watson returns to central London via this station, where he sees a man dart into the adjacent carriage.<br><br>The Adventure of the Retired Colourman, p239.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            0.00824,51.465665,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Albert Hall</name>
+        <description><![CDATA[Holmes suggests going to see Carina sing here. <br><br>The Adventure of the Retired Colourman, p240.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.177584,51.500889,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Conan Doyle's first house in London]]></name>
+        <styleUrl>#icon-111-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.12924,51.519719,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>2 Upper Wimpole Street</name>
+        <description><![CDATA[Conan Doyle&#39;s first practice.]]></description>
+        <styleUrl>#icon-111</styleUrl>
+        <Point>
+          <coordinates>
+            -0.149378,51.520413,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tennison Road</name>
+        <description>Conan Doyle home.</description>
+        <styleUrl>#icon-111</styleUrl>
+        <Point>
+          <coordinates>
+            -0.080509,51.394761,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Jacobson's Yard]]></name>
+        <description><![CDATA[Ficitcious boatyard opposite the Tower, where the Aurora is undergoing rudder repairs.<br><br>The Sign of Four, Chapter 10, page 111.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.078235,51.504869,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Plumstead Marshes</name>
+        <description><![CDATA[1. Where Jonathan Small is apprehended.<br>2. Noted by Watson, who reminisces about the chase of the Andaman islander, as he travels out by train with Holmes to Yoxley.<br><br>1. The Sign of Four, Chapter 10, p111.<br>2. The Adventure of the Golden Pince-Nez, p237.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            0.091152,51.505217,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>St Johns Wood</name>
+        <description><![CDATA[Briony Lodge, Serpentine Avenue<br><br>Fictitious address of Irene Adler. Exact location in St John&#39;s Wood unknown.<br><br>The Adventure of A Scandal in Bohemia, page 29.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.169387,51.535205,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Inner Temple</name>
+        <description><![CDATA[Godfrey Norton has lodgings here.<br><br>The Adventure of a Scandal in Bohemia, page 31]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.109509,51.512989,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Regent Street</name>
+        <description><![CDATA[1. Gross and Hankey&#39;s: Oddly named jewellers somewhere on Regent Street, where Godfrey buys rings for his wedding to Irene Adler.<br>2. H&amp;W follow Mortimer and Baskerville along Regent Street.<br><br>1. The Adventure of a Scandal in Bohemia, p32.<br>2. The Hound of the Baskervilles, p57.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.137844,51.509891,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Monica's Edgware Road]]></name>
+        <description><![CDATA[Ficticious church where Godfrey marries Irene with a disguised Holmes as Best Man.<br><br>The Adventure of a Scandal in Bohemia, page 32.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.166683,51.518197,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Charing Cross station</name>
+        <description><![CDATA[1, Station from which Irene Adler departs for the continent on the 5.15.<br>2. Mr Melas&#39;s journey to Mr Latimer&#39;s house begins here.<br>3. Holmes describes losing a left canine in the waiting room here.<br>4. Stanley Hopkins returns here from Yoxley before consulting Holmes.<br>5. H&amp;W catch a cab here at the opening of the story. They later send a telegram form here.<br>6. A woman matching the description of Madame Fournaye was seen here, according to a telegram from Paris.<br>7. Scott Eccles sends a telegram to Holmes from Charing Cross.<br>8. Charing Cross Hotel: place of entrapment for the foreign agent Oberstein.<br>9. Watson sees a news placard announcing the attack on Holmes.<br>10. <br><br>1. The Adventure of a Scandal in Bohemia, p41.<br>2. The Greek Interpreter, p187.<br>3. The Adventure of the Empty House, p29.<br>4. The Adventure of the Golden Pince-Nez, p229.<br>5. The Adventure of the Abbey Grange, p275, 292.<br>6. The Adventure of the Second Stain, p315.<br>7. The Adventure of Wisteria Lodge, p12.<br>8. The Adve]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.123124,51.507167,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[7 Pope's Court, Fleet Street]]></name>
+        <description><![CDATA[Offices of the Redheaded League.<br><br>The Adventure of the Red-Headed League, p48.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.107975,51.514378,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Saxe-Coburg Square</name>
+        <description><![CDATA[Fictitious address of Jabez Wilson&#39;s pawnbrokers. Exact location uncertain, but close to a major N-W artery and Aldersgate.<br><br>The Adventure of the Red-Headed League, p49.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.09892,51.520634,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>46 Audley Court , Kennington Park Gate</name>
+        <description><![CDATA[Fictitious address of constable who found the body of Enoch Drebber.<br><br>A Study in Scarlet, Chapter 4, page 64.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.106258,51.482986,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>17 King Edward Street</name>
+        <description><![CDATA[Fake address of William Morris, actually a maker of artificial kneecaps.<br><br>The Adventure of the Red-Headed League, p56.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.098791,51.516234,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>St James Hall</name>
+        <description><![CDATA[Music Hall visited by Holmes.<br><br>The Adventure of the Red-Headed League, p61.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.136524,51.509591,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Watson's Home in Kensington]]></name>
+        <description><![CDATA[Location uncertain; in &#39;The Adventure of the Engineer&#39;s Thumb&#39; Watson states that he lives not far from Paddington.<br><br>In The Adventure of the Empty House, a disguised Holmes describes himself as a neighbour living on Church Street.<br><br>The Adventure of the Red-Headed League, p62]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.192604,51.502706,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tottenham Court Road</name>
+        <description><![CDATA[1. Mrs Sutherland&#39;s father is a plumber here. Location unknown.<br>2. Commissionaire Peterson lives here.<br>3. Holmes recounts how he purchased a Stradivarius from a Jew brokers on TCR.<br>4. The landlord Mr Warren is a timekeeper at Morton and Waylight&#39;s on TCR.<br><br>1. The Adventure of a Case of Identity, p75.<br>2. The Adventure of the Blue Carbuncle, p166.<br>3. The Adventure of the Cardboard Box, p54.<br>4. The Adventure of the Red Circle, p73.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.132437,51.518918,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Leadenhall Street</name>
+        <description><![CDATA[Hosmer Angel is a cashier here.<br><br>The Adventure of a Case of Identity, p77.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.082119,51.513376,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[King's Cross]]></name>
+        <description><![CDATA[St Saviour&#39;s. Fictitious church, site of planned wedding between Horner Angel and Mary Sutherland. Also the St Pancras Hotel.<br><br>The Adventure of a Case of Identity, p78]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.121837,51.529171,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Westhouse & Marbank, Fenchurch Street]]></name>
+        <description><![CDATA[Wine importers employing Mary Sutherland&#39;s father.<br><br>The Adventure of a Case of Identity, p80.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.081797,51.511747,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paddington Station</name>
+        <description><![CDATA[1. Holmes meets Watson here before heading to Boscombe Valley by train.<br>2. Mr Victor Hatherley takes a train out of Paddington to reach Eyford. Later H&amp;W do the same.<br>3. Holmes and Watson catch a train from here to King&#39;s Pyland, Dartmoor.<br>4. Watson departs from here to Dartmoor.<br><br>1. The Adventure of the Boscombe Valley mystery, p91.<br>2. The Adventure of the Engineer&#39;s Thumb, p.216.<br>3. Silver Blaze, p9.<br>4. The Hound of the Baskervilles, p69.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.175996,51.515914,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Camberwell</name>
+        <description><![CDATA[1. Torquay Terrace, Camberwell. Charpentier&#39;s Boarding Establishment. Fictitious lodgings of Drebber. <br>2. 31 Lyon Place, Camberwell. Fictitious address of Mary Sutherland and family. Exact location in Camberwell unknown.<br>3. Location of a poisoning case Holmes solved by deducing when the victim&#39;s watch had been wound. Location unknown.<br>4. Encrypted letter sent from Porlock to Holmes from Camberwell post office.<br>5. Miss Dobney, old governess of Lady Fairfax, lives here.<br><br>1. A Study in Scarlet.<br>2. The Adventure of a Case of Identity, p80.<br>3. The Adventure of the five orange pips, p118.<br>4. The Valley of Fear, p25.<br>5. The Disappearance of Lady Frances Carfax, p139.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.090637,51.47283,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Waterloo Station</name>
+        <description><![CDATA[1. Destination of John Openshaw when he is murdered by the KKK.<br>2. Helen Stoner arrives by train here; later Holmes and Watson catch a train to Leatherhead.<br>3. Holmes and Watson take a train to Aldershot from here.<br>4. H&amp;W catch an early train from here to Woking.<br>5. Station of arrival for Henry Baskerville.<br>6. Shipley&#39;s Yard is said to be near the station.<br>7. Watson catches a train from here to Farnham.<br><br>1. The Adventure of the Five Orange Pips, p129.<br>2. The Adventure of the Speckled Band, p. 190.<br>3. The Crooked Man, p141.<br>4. The Naval Treaty, p204.<br>5. The Hound of the Baskervilles, p39.<br>6. The Hound of the Baskervilles, p71.<br>7. The Adventure of the Solitary Cyclist, p94.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.11394,51.503053,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>13 Duncan Street, Houndsditch</name>
+        <description><![CDATA[Fictitious address of Mrs Sawyer, claimant of missing gold ring.<br><br>A Study in Scarlet, Chapter 5, page 74]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.078202,51.515179,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Embankment</name>
+        <description><![CDATA[Close to Waterloo Bridge, John Openshaw is thrown into the river by the KKK.<br><br>The Adventure of the Five Orange Pips, p135.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.116816,51.510131,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Albert Dock</name>
+        <description><![CDATA[1. Last mooring of the Lone Star ship.<br>2. Lestrade aprehends James Browner onboard the SS May Day.<br><br>1. The Adventure of the Five Orange Pips, p137.<br>2. The Adventure of the Cardboard Box, p59.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            0.054331,51.505858,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Bar of Gold, Upper Swandam Lane</name>
+        <description><![CDATA[Opium Den.<br><br>The Adventure of the Man With the Twisted Lip, p141.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.085058,51.50901,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cannon Street Station</name>
+        <description><![CDATA[Neville St Clair returns home to Lee every night by the 5.14 from Cannon Street.<br><br>The Adventure of the Man With the Twisted Lip.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.090315,51.511226,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fresno Street</name>
+        <description><![CDATA[Location of the Aberdeen Shipping Company. &#39;Branches out of Upper Swandam Lane (both fictitious).<br><br>The Adventure of the Man With the Twisted Lip, p147]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.083342,51.509891,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Threadneedle Street</name>
+        <description><![CDATA[1. Hang out of Hugh Boone, who begs at a &#39;small angle in the wall&#39; on Threadneedle Street.<br>2. Headquarters of Holder &amp; Stevenson, the second largest private banking firm in London.<br><br>1. The Adventure of the Man With the Twisted Lip, p149.<br>2. The Adventure of the Beryl Coronet, p.265.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.086453,51.514004,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lee</name>
+        <description><![CDATA[1. The Cedars, Home of the St Clair family.<br>2. Popham House, Home of John Scott Eccles.<br><br>1. The Adventure of the Man With the Twisted Lip, p152.<br>2.The Adventure of Wisteria Lodge, p14.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            0.012875,51.458446,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Route of Holmes and Watson returning from Lee</name>
+        <description><![CDATA[Waterloo Bridge Road, Wellington Street, Bow Street.<br><br>The Adventure of the Man With the Twisted Lip, p158.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -0.1108,51.50273,0
+            -0.11436,51.50564,0
+            -0.11767,51.5093,0
+            -0.11904,51.51098,0
+            -0.11939,51.511467,0
+            -0.119884,51.511881,0
+            -0.120646,51.512141,0
+            -0.12115,51.51266,0
+            -0.12209,51.51334,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Corner of Goodge Street</name>
+        <description><![CDATA[Where commissionaire Peterson acquires a goose and a hat after seeing a stranger attacked by mob.<br><br>The Adventure of the Blue Carbuncle, p.171.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.133896,51.519853,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Alpha Inn</name>
+        <description><![CDATA[Identified as near the Museum, on the corner of one of the roads leading down to Holborn. Henry Baker and the goose cub meet here.<br><br>The Adventure of the Blue Carbuncle, p. 176.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.125785,51.517142,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>3 Mayfield Place, Peckham</name>
+        <description><![CDATA[Fictitious lodgings of Sally Dennis. No indication where in Peckham this might be.<br><br>A Study in Scarlet, Chapter 5, page 75.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.070596,51.471921,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Route of Holmes and Watson en route to Alpha Inn</name>
+        <description>The Adventure of the Blue Carbuncle, p.177.</description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -0.149217,51.520309,0
+            -0.148659,51.519081,0
+            -0.147178,51.519375,0
+            -0.145955,51.516851,0
+            -0.142779,51.517345,0
+            -0.142093,51.515275,0
+            -0.137286,51.515823,0
+            -0.133188,51.516277,0
+            -0.12939,51.51649,0
+            -0.125828,51.517091,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Route of Holmes and Watson from Alpha Inn to Covent Garden</name>
+        <description><![CDATA[Described as along Endell Street.<br><br>The Adventure of the Blue Carbuncle, p. 177.]]></description>
+        <styleUrl>#line-0000FF-5000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -0.125935,51.517025,0
+            -0.126386,51.516237,0
+            -0.126128,51.515502,0
+            -0.124798,51.514674,0
+            -0.123446,51.513766,0
+            -0.124261,51.513152,0
+            -0.122931,51.512111,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Covent Garden Market</name>
+        <description><![CDATA[Location of Breckinridge&#39;s meat stall, where geese are sold on to the goose club of Alpha Inn.<br><br>The Adventure of the Blue Carbuncle, p. 177.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.122824,51.512028,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Brixton Road</name>
+        <description><![CDATA[1. 3 Lauriston Gardens, off Brixton Road. Fictitious address where the body of Enoch Drebber is found. <br>2. 117: Address of Mrs Oakshott, poultry farmer, who supplies the goose in which the carbuncle is hidden.<br>3. Branch surgery and dispensary of Dr Barnicot is on lower Brixton Road.<br>4. H&amp;W ride down Brixton Road at 8pm on their way to Brixton.<br><br>1. A Study in Scarlet, p47<br>2. The Adventure of the Blue Carbuncle, 182.<br>3. The Adventure of the Six Napoleons, p186.<br>4. The Disappearance of Lady Frances Carfax, p156.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.112267,51.474327,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pentonville Prison</name>
+        <description><![CDATA[Jail where James Ryder&#39;s friend Maudsley did time.<br><br>The Adventure of the Blue Carbuncle, p.184.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.11673,51.54484,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kilburn</name>
+        <description><![CDATA[John Ryder&#39;s friend Maudsley lives here.<br><br>The Adventure of the Blue Carbuncle, p. 184.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.198269,51.539396,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Harrow</name>
+        <description><![CDATA[1. Honoria Westphail, aunt of Helen Stoner, lives here.<br>2. Three Gables is located in Harrow Weald.<br><br>1. The Adventure of the Speckled Band, p.193.<br>2. The Adventure of the Three Gables, p80.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.342808,51.58715,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>16A Victoria Street</name>
+        <description><![CDATA[Address of Mr Victor Hatherley - he of the missing thumb.<br><br>The Adventure of the Engineer&#39;s Thumb, p.218.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.136943,51.497469,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Greenwich</name>
+        <description><![CDATA[Home of Venner &amp; Matherson engineering firm.<br><br>The Adventure of the Engineer&#39;s Thumb, p.220.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.008755,51.477106,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grosvenor Square</name>
+        <description><![CDATA[1. Scene of an earlier case involving a furniture van.<br>2. Isadora Klein lives in one of the &#39;finest corner-houses of the West End&#39;.<br><br>1. The Adventure of the Noble Batchelor, p.241.<br>2. The Adventure of the Three Gables, p92]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.151598,51.512121,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Euston Station</name>
+        <description><![CDATA[1. Last sighting of Enoch Drebber before murder. Seen with Joseph Strangerson.<br>2. H&amp;W catch a train from here to the Peak District.<br>3. Holmes travels to Tuxbury Old Place from here.<br><br>1. A Study in Scarlet, Chapter 6, page 79.<br>2. The Adventure of the Priory School, p116.<br>3. The Adventure of the Blanched Soldier, p51.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.133982,51.52813,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St George's Hanover Square]]></name>
+        <description><![CDATA[Location of marriage between Robert St Simon and Hatty Doran.<br><br>The Adventure of the Noble Batchelor, p.242.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.143166,51.513376,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lancaster Gate</name>
+        <description><![CDATA[Wedding Breakfast at home of Aloysius Doran, from which Hatty runs away. Location uncertain, but the park is visible from window.<br><br>The Adventure of the Noble Batchelor, p.243]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.181661,51.510966,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hyde Park</name>
+        <description>Where Hatty Doran is seen with Flora Miller.</description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.173464,51.508155,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Serpentine</name>
+        <description><![CDATA[Hatty Doran&#39;s wedding dress is found in the Serpentine, which Lestrade dredges for further clues to her whereabouts.<br><br>The Adventure of the Noble Batchelor, p. 252.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.166597,51.50551,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Trafalgar Square</name>
+        <description><![CDATA[1. Holmes sarcastically suggests that Lestrade should just as profitably dredge the Trafalgar Square fountains as the Serpentine in looking for Hatty Doran.<br>2. Cab picks up man posing as Holmes in Trafalgar Square.<br><br>1. The Adventure of the Noble Batchelor, p. 252.<br>2. The Hound of the Baskervilles, p72.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.12836,51.508028,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>226 Gordon Square</name>
+        <description><![CDATA[Lodgings of Francis Moulton, Hatty Doran&#39;s true husband.<br><br>The Adventure of the Noble Batchelor, p. 258.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.13042,51.524339,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Northumberland Avenue</name>
+        <description><![CDATA[1. Location of expensive hotel frequented by Francis Moulton.<br>2. Mr Melas, the Greek Interpreter, makes his money by attending to &#39;Orientals&#39; staying in hotels on Northumberland Avenue.<br>3. H&amp;W visit a Turkish baths here on 3 September 1902.<br><br>1. The Adventure of the Noble Batchelor, p. 261.<br>2. The Greek Interpreter, p186.<br>3. The Adventure of the Illustrious Client, p11.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.124369,51.506806,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Northumberland Hotel</name>
+        <description><![CDATA[Where Sir Henry Baskerville stays. Now the Sherlock Holmes pub.<br><br>The Hound of the Baskervilles, p48.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.125334,51.507253,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sherlock Holmes Museum</name>
+        <description>221b Baker Street</description>
+        <styleUrl>#icon-111</styleUrl>
+        <Point>
+          <coordinates>
+            -0.158336,51.523404,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sherlock Holmes statue</name>
+        <styleUrl>#icon-111-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -0.156982,51.522431,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>129 Camberwell Road</name>
+        <description><![CDATA[John Underwood and Sons, hatmakers.<br><br>A Study in Scarlet, Chapter 6, page 83.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.094113,51.481035,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Baker Street Metropolitan Line</name>
+        <description><![CDATA[Alexander Holder, the banker trusted with the beryl coronet, takes the underground to this station when coming to see Holmes.<br><br>The Adventure of the Beryl Coronet, p.265.<br><br>The station also contains many tiles displaying the detective&#39;s profile.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.157285,51.52267,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Streatham</name>
+        <description><![CDATA[The family home of the Holder family, from which the beryl coronet is stolen.<br><br>The Adventure of the Beryl Coronet, p.268.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.135355,51.427899,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Montague Place</name>
+        <description><![CDATA[Lodgings of Miss Violet Hunter before she takes appointment at Copper Beeches.<br><br>The Adventure of the Copper Beeches, p. 292.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.128875,51.519839,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bond Steet</name>
+        <description><![CDATA[1. Address of Madame Lesurier, milliner.<br>2. H&amp;W spend some time in a Bond Street picture gallery.<br><br>1. Silver Blaze, p21.<br>2. The Hound of the Baskervilles, p61.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.143981,51.511814,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Clapham Junction</name>
+        <description><![CDATA[1. Passed through by Holmes &amp; Watson on their return from Dartmoor.<br>2. Mr Melas is instructed to head here for the last train to Victoria.<br>3. H&amp;W return from Woking by train. On passing Clapham Junction, Holmes remarks how he enjoys looking down on the houses.<br><br>1. Silver Blaze, p36.<br>2. The Greek Interpreter, p192.<br>3. The Naval Treaty, p216.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.17046,51.464756,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Victoria</name>
+        <description><![CDATA[1. Terminus for Holmes &amp; Watson, returning from Dartmoor (contrary to their outbound journey, which left from Paddington).<br>2. Mr Melas catches the last train here from Clapham Junction.<br>3. H&amp;W elude Moriarty by catching a train from here.<br>4. H&amp;W take a cab to Victoria when setting out for Birlstone.<br>5. H&amp;W catch the 2 O&#39;clock train to Lamberley.<br><br>1. Silver Blaze, p36.<br>2. The Greek Interpreter, p192. <br>3. The Final Problem, p245.<br>4. The Valley of Fear, p28.<br>5. The Adventure of the Sussex Vampire, p104.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.143938,51.496361,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pinner</name>
+        <description>Where Effie goes to live with her maiden aunt after returning from America.</description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.38229,51.593495,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Norbury</name>
+        <description><![CDATA[Home of Jack &amp; Effie.<br><br>The Yellow Face, p42.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.12394,51.412484,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Crystal Palace</name>
+        <description><![CDATA[Jack takes a walk to here.<br><br>The Yellow Face, p46.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.073986,51.421557,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Paddington (district)</name>
+        <description><![CDATA[Location of Watson&#39;s practice.<br><br>The Stockbroker&#39;s Clerk, p57.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.181532,51.514458,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Halliday's Private Hotel, Little George Street]]></name>
+        <description><![CDATA[Fictitious location of Joseph Stangerson&#39;s body. No indication where in Euston this is.<br><br>A Study in Scarlet, Chapter 7, page 91.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.135784,51.526715,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Drapers Gardens</name>
+        <description><![CDATA[Coxon and Woodhouse, workplace of Mr Hall Pycroft.<br><br>The Stockbroker&#39;s Clerk, p60.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.086818,51.515743,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lombard Street</name>
+        <description><![CDATA[Location of Mawson and Williams, stockbrokers, with whom Hall Pycroft is offered a job. Later, a scene of attempted robbery.<br><br>The Stockbroker&#39;s Clerk, p61.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.086045,51.512135,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hampstead</name>
+        <description><![CDATA[1. 17 Potters Terrace: fictitious address of Mr Hall Pycroft.<br>2. Home of Charles Augustus Milverton, the blackmailer, at Appledore Towers.<br>3. Hales Lodge: Home of Cecil Barker.<br><br>1. The Stockbroker&#39;s Clerk, p61.<br>2. The Adventure of Charles Augustus Milverton, p166.<br>3. The Valley of Fear, p38.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.17664,51.559144,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Montague Street</name>
+        <description><![CDATA[Holmes lived here for a time when first coming to London.<br><br>The Musgrave Ritual, p101.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.125377,51.519813,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fleet Street</name>
+        <description><![CDATA[H&amp;W take a three hour stroll, including Fleet Street.<br><br>The Resident Patient, p163.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.110271,51.513924,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Strand</name>
+        <description><![CDATA[1. H&amp;W take a three hour stroll, including Fleet Street.<br>2. Watson catches a cab from here after sprinting down Lowther Arcade.<br>3. Sir Henry Baskerville buys new boots from here.<br>4. A Strand postmark is on the telegram from Mr Overton, which opens the story. Later, Godfrey Staunton is last seen running towards the Strand.<br><br>1.The Resident Patient, p163.<br>2. The Final Problem, p246.<br>3. The Hound of the Baskervilles, p54.<br>4. The Adventure of the Missing Three-Quarter, p252, 255.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.12233,51.510091,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Brook Street</name>
+        <description><![CDATA[403 - residence of Dr Percy Trevelyan.<br><br>The Resident patient, p164.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.145075,51.513203,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[King's College Hospital]]></name>
+        <description><![CDATA[Where Dr Percy Trevelyan took a minor position to study catalepsy.<br><br>The resident patient, p165.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.115485,51.514899,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cavendish Square</name>
+        <description><![CDATA[1. Area noted for its medical specialists by Dr Percy Trevelyan.<br>2. Holmes stops the cab on the corner, when heading back to Baker Street to ensnare Colonal Moran.<br><br>1. The Resident Patient, p165.<br>2. The Adventure of the Empty House, p19.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.14544,51.516247,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Oxford Street</name>
+        <description><![CDATA[1. H&amp;W cross this street on their way home from Dr Trevelyan&#39;s.<br>2. Part of route taken by Mr Melas and Mr Latimer.<br>3. Holmes goes here to transact some business, while Moriarty plots to kill him.<br>4. Holmes and Watson follow Mortimer and Baskerville along Oxford Street.<br>5. Cigarette stub is marked Bradley, Oxford Street.<br>6. H&amp;W catch a hansom from here to Church Row, Hampstead on their way to burgle Milverton. Later, they recognise a photo of Milverton&#39;s killer in the window of an Oxford Street boutique.<br>7. Watson relates purchasing his new boots from Latimer&#39;s on Oxford Street.<br><br>1. The Resident Patient, p173.<br>2. The Greek Interpreter, p187.<br>3. The Final Problem, p244.<br>4. The Hound of the Baskervilles, p57.<br>5.The Hound of the Baskervilles, p166.<br>6. The Adventure of Charles Augustus Milverton, p175.<br>7. The Disappearance of Lady Frances Carfax, p137.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.145226,51.514859,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wigmore Street Post Office</name>
+        <description><![CDATA[Watson visits to send a telegram.<br><br>The Sign of Four, Chapter 1, page 16.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.148616,51.516541,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Harley Street</name>
+        <description><![CDATA[1. H&amp;W go down this street on their way home from Dr Trevelyan&#39;s.<br>2. Address of Dr Moore Agar, who recommends that Holmes slows down.<br>3. Holmes declares &#39;this is Baker Street, not Harley Street&#39;, when his client suggest his employer may be mad.<br><br>1. The Resident Patient, p173.<br>2. The Adventure of the Devil&#39;s Foot, p160.<br>3. The Adventure of Shoscombe Old Place, p218]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.147479,51.519999,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Regent CIrcus</name>
+        <description><![CDATA[Alternative name for Oxford Circus. Passed through by H&amp;W on way to Diogenes Club.<br><br>The Greek Interpreter, p182.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.141943,51.515286,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Diogenes Club</name>
+        <description><![CDATA[Mycroft Holmes is a regular here, and first introduced to Watson here.<br><br>The Greek Interpreter, p183.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.135891,51.506138,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Whitehall</name>
+        <description><![CDATA[1. Mycroft Holmes walks here every morning from his residence in Pall Mall.<br>2. Percy Phelps runs out onto Whitehall in an attempt to catch the thief of the naval treaty.<br>3. Where the Mazarin stone was taken from.<br><br>1. The Greek Interpreter, p183.<br>2. The Naval Treaty, p209.<br>3. The Adventure of the Mazarin Stone, p74.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.126965,51.505924,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pall Mall</name>
+        <description><![CDATA[1. Mycroft Holmes lodges in the street.<br>2. Holmes spends the day at his brother&#39;s after two attempts on his life.<br>3. Watson stops in at an estate agents to inquire about Charlington Hall.<br>4. Shipping office of the Adelaide-Southampton line situated at the end of Pall Mall.<br><br>1. The Greek Interpreter, p183.<br>2. The Final Problem, p244.<br>3. The Adventure of the Solitary Cyclist, p95.<br>4. The Adventure of the Abbey Grange, p292.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.134604,51.506525,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Carlton Club</name>
+        <description><![CDATA[1. Described as close to the Diogenes Club.<br>2. Sir James Damery&#39;s club.<br><br>1. The Greek Interpreter, p183.<br>2. The Adventure of the Illustrious Client, p11.]]></description>
+        <styleUrl>#icon-61</styleUrl>
+        <Point>
+          <coordinates>
+            -0.135334,51.506338,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Manor House</name>
+        <description><![CDATA[Holmes tackled a case in this area, which Mycroft Holmes was surprised his brother didn&#39;t consult him about.<br><br>The Greek Interpreter, p184.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.093985,51.572242,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kensington</name>
+        <description><![CDATA[1. Fake address of Mr Latimer, who lures Greek interpreter Mr Melas back to his home elsewhere.<br>2. Campden House Road - location of one of the smashed Napoleon busts.<br>3. Albemarle Mansion - home of Melville, a mutual friend of Eccles and Garcia.<br>4. 13 Caulfield Gardens. Fictitious address of Hugo Oberstein, the foreign agent. Some sources speculate that the true location is Cromwell Gardens.<br>5. 13 Lower Burke Street. Fictitious home of Mr Culverton Smith, mentioned as being on the Kensington-Notting Hill borders.<br><br>1. The Greek Interpreter, p187.<br>2. The Adventure of the Six Napoleons, p191.<br>3. The Adventure of Wisteria Lodge, p15.<br>4. The Adventure of the Bruce-Partington Plans, p108.<br>5. The Adventure of the Dying Detective, p126,128.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.195951,51.502171,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Shaftesbury Avenue</name>
+        <description><![CDATA[Part of route taken by Mr Melas and Mr Latimer.<br><br>The Greek Interpreter, p187.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.128574,51.513657,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wandsworth Common</name>
+        <description><![CDATA[Mr Melas, the Greek interpreter, is left here after attending to Mr Latimer.<br><br>The Greek Interpreter, p192.]]></description>
+        <styleUrl>#icon-123</styleUrl>
+        <Point>
+          <coordinates>
+            -0.169172,51.445288,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
