@@ -1,0 +1,270 @@
+---
+title: "Marvel vs DC"
+author: "Rafał Kobiela"
+output: 
+ html_document
+---
+
+
+
+```{r read, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(readr)
+library(knitr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(formattable)
+
+heroes <- read_csv('super_hero_powers_information.csv')
+powers <- read_csv('super_hero_powers.csv')
+```
+
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+heroes$Weight[heroes$Weight == "-99"] <- NA
+heroes$Height[heroes$Height == "-99"] <- NA
+
+powers[,-1] <- lapply(powers[,-1], as.logical)
+heroes$Gender <- as.factor(heroes$Gender)
+heroes$Alignment <- as.factor(heroes$Alignment)
+
+heroes$Gender[heroes$Gender == "-"] <- NA
+heroes$`Eye color`[heroes$`Eye color` == "-"] <- NA
+heroes$Race[heroes$Race == "-"] <- NA
+heroes$`Hair color`[heroes$`Hair color` == "-"] <- NA
+heroes$`Skin color`[heroes$`Skin color` == "-"] <- NA
+heroes$Alignment[heroes$Alignment == "-"] <- NA
+
+heroes <- heroes[,-1]
+```
+
+
+
+```{r ,echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+marvel_dc <- heroes %>%
+    filter(Publisher %in% c("Marvel Comics","DC Comics")) 
+```
+
+```{r ,echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+powers <- powers %>%
+    mutate(total_powers = rowSums(.[2:ncol(powers)]))
+    
+top20_heroes <- marvel_dc %>%
+    inner_join(powers, by = c('name' = 'hero_names')) %>%
+    select(name, total_powers, Publisher) %>%
+    arrange(desc(total_powers)) %>%
+    head(20)
+
+top20_heroes <- top20_heroes %>% filter(!(name == 'Captain Marvel' & Publisher == 'DC Comics'))
+
+top20_heroes %>%
+    ggplot(aes(x=reorder(name,total_powers), y=total_powers, fill=Publisher)) +
+    geom_bar(stat = "identity") + 
+    geom_text(aes(label = total_powers), hjust = -0.4, size = 3, color = "black") +
+    labs(title = "Superheroes having most number of powers", x='Name',y='Number of Superpowers') +
+    theme_bw() +
+    theme(plot.title = element_text(size=17,hjust = -0.4, face = "bold"), legend.position = "bottom", legend.title=element_blank()) +
+    scale_fill_manual(values = c("#377EB8", "#E41A1C")) +
+    coord_flip()
+```
+
+
+
+```{r ,echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+heroes$Publisher[is.na(heroes$Publisher)] <- 'Other Comics'
+heroes$Publisher[! (heroes$Publisher %in% c('Marvel Comics','DC Comics'))] <- 'Other Comics'
+
+gathered_powers3 <- heroes %>%
+    select(name, Publisher) %>%
+    inner_join(powers, by = c('name' = 'hero_names')) %>%
+    gather(power, power_count, -name, -Publisher)
+
+top_superpowers <- gathered_powers3 %>%
+    group_by(power, Publisher) %>%
+    summarise(powers_used_by = sum(power_count)) %>%
+    arrange(desc(powers_used_by)) %>%
+    filter(powers_used_by < 800) %>%
+    group_by(power) %>%
+    mutate(powers_in_total = sum(powers_used_by)) %>%
+    ungroup()
+
+top_superpowers$Publisher <- factor(top_superpowers$Publisher, levels = c('Other Comics','DC Comics','Marvel Comics')) 
+
+top_superpowers %>%
+    filter(powers_in_total >= 75) %>%
+    ggplot(aes(x = reorder(power,powers_in_total) , y = powers_used_by, fill = Publisher)) +
+    geom_bar(stat = "identity") +
+    scale_fill_manual(values = c("#33A02C", "#377EB8", "#E41A1C")) +
+    labs(title = "Common Powers of Superheroes", x = "Powers", y = "Number of Superheroes") +
+    theme_bw() +
+    theme(legend.position = "bottom", legend.title=element_blank(), plot.title = element_text(size=17,hjust = -0.4, face = "bold")) +
+    ylim(0, max(top_superpowers$powers_used_by + 200)) +
+    coord_flip()
+```
+
+
+```{r ,echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+races <- heroes %>%
+    filter(!is.na(Race)) %>%
+    group_by(Publisher, Race) %>%
+    summarise(race_total = n()) %>%
+    arrange(desc(race_total))
+
+races <- races %>%
+    group_by(Race) %>%
+    mutate(total = sum(race_total)) %>%
+    ungroup()
+
+races$Publisher <- factor(races$Publisher, levels = c('Other Comics','DC Comics','Marvel Comics'))
+
+races %>%
+    filter(total >= 5) %>%
+    ggplot(aes(x = reorder(Race,total) , y = race_total, fill = Publisher)) +
+    geom_bar(stat = "identity", position = "dodge") +
+    scale_fill_manual(values = c("#33A02C", "#377EB8", "#E41A1C")) +
+    labs(title = "Common Races of Superheroes", x = "Races", y = "Number of Superheroes") +
+    theme(legend.position = "bottom", legend.title=element_blank()) +
+    scale_y_continuous(breaks = seq(0,100,5)) +
+    coord_flip()
+```
+
+
+```{r ,echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+
+library(ggalt)
+library(patchwork)
+
+races <- heroes %>%
+  filter(!is.na(Height)) %>%
+  filter(!is.na(Weight)) %>%
+  filter(!is.na(Race)) %>%
+  group_by(Race) %>%
+  summarise(race_total = n()) %>%
+  arrange(desc(race_total))
+
+temp <- heroes %>%
+  inner_join(races, by = c('Race' = 'Race'))
+
+temp <- temp %>%
+  filter(race_total >= 6)
+
+g <- ggplot(data = temp, aes(x = Height, y = (Weight)^(1))) +
+  geom_point(aes(col = Race), show.legend = TRUE, size = 2) +
+  labs(title = "Weight vs Height comparision - common races: ") +
+  theme_bw() +
+  theme(axis.text = element_blank(), axis.title = element_blank(), plot.title = element_text(lineheight = 0.5))
+
+d1 <- ggplot(temp, aes(Weight)) +
+  geom_density(aes(fill=factor(Race)), alpha=0.8, show.legend = FALSE) +
+  labs(x = "Weight [kg]", y =" ") +
+  scale_y_reverse() +
+  coord_flip() +
+  theme_bw()
+
+d2 <- ggplot(temp, aes(Height)) +
+  geom_density(aes(fill=factor(Race)), alpha=0.8, show.legend = FALSE) +
+  labs(x = "Height [cm]", y =" ") +
+  scale_y_reverse() +
+  theme_bw()
+
+d1 + g + plot_spacer() + d2 + plot_layout(ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
+
+```
+
+
+```{r ,echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+
+temp <- heroes %>%
+  filter(!is.na(Height)) %>%
+  filter(!is.na(Weight)) %>%
+  filter(!is.na(Alignment))
+
+temp$Alignment <- factor(temp$Alignment, levels = c('bad','neutral','good'))
+
+g <- ggplot(data = temp, aes(x = Height, y = (Weight)^(1))) +
+  geom_point(aes(col = Alignment), show.legend = TRUE, size = 2) +
+  labs(title = "Weight vs Height comparision - alignment: ") +
+  theme_bw() +
+  theme(axis.text = element_blank(), axis.title = element_blank(), plot.title = element_text(lineheight = 0.5))
+
+d1 <- ggplot(temp, aes(Weight)) +
+  geom_density(aes(fill=factor(Alignment)), alpha=0.8, show.legend = FALSE) +
+  labs(x = "Weight [kg]", y =" ") +
+  scale_y_reverse() +
+  coord_flip() +
+  theme_bw()
+
+d2 <- ggplot(temp, aes(Height)) +
+  geom_density(aes(fill=factor(Alignment)), alpha=0.8, show.legend = FALSE) +
+  labs(x = "Height [cm]", y =" ") +
+  scale_y_reverse() +
+  theme_bw()
+
+d1 + g + plot_spacer() + d2 + plot_layout(ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
+
+```
+
+
+```{r ,echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+
+temp <- heroes %>%
+  filter(!is.na(Height)) %>%
+  filter(!is.na(Weight)) %>%
+  filter(!is.na(Gender))
+
+g <- ggplot(data = temp, aes(x = Height, y = (Weight)^(1))) +
+  geom_point(aes(col = Gender), show.legend = TRUE, size = 2) +
+  labs(title = "Weight vs Height comparision - gender: ") +
+  theme_bw() +
+  theme(axis.text = element_blank(), axis.title = element_blank(), plot.title = element_text(lineheight = 0.5))
+
+d1 <- ggplot(temp, aes(Weight)) +
+  geom_density(aes(fill=factor(Gender)), alpha=0.8, show.legend = FALSE) +
+  labs(x = "Weight [kg]", y =" ") +
+  scale_y_reverse() +
+  coord_flip() +
+  theme_bw()
+
+d2 <- ggplot(temp, aes(Height)) +
+  geom_density(aes(fill=factor(Gender)), alpha=0.8, show.legend = FALSE) +
+  labs(x = "Height [cm]", y =" ") +
+  scale_y_reverse() +
+  theme_bw()
+
+d1 + g + plot_spacer() + d2 + plot_layout(ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
+
+```
+
+
+```{r ,echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+
+temp <- heroes %>%
+  filter(!is.na(Height)) %>%
+  filter(!is.na(Weight)) %>%
+  filter(!is.na(Publisher))
+
+temp$Publisher <- factor(temp$Publisher, levels = c('Other Comics','DC Comics','Marvel Comics'))
+
+g <- ggplot(data = temp, aes(x = Height, y = (Weight)^(1))) +
+  geom_point(aes(col = Publisher), show.legend = TRUE, size = 2) +
+  labs(title = "Weight vs Height comparision - publisher: ") +
+  theme_bw() +
+  theme(axis.text = element_blank(), axis.title = element_blank(), plot.title = element_text(lineheight = 0.5))
+
+d1 <- ggplot(temp, aes(Weight)) +
+  geom_density(aes(fill=factor(Publisher)), alpha=0.8, show.legend = FALSE) +
+  labs(x = "Weight [kg]", y =" ") +
+  scale_y_reverse() +
+  coord_flip() +
+  theme_bw()
+
+d2 <- ggplot(temp, aes(Height)) +
+  geom_density(aes(fill=factor(Publisher)), alpha=0.8, show.legend = FALSE) +
+  labs(x = "Height [cm]", y =" ") +
+  scale_y_reverse() +
+  theme_bw()
+
+d1 + g + plot_spacer() + d2 + plot_layout(ncol = 2, heights = c(0.7, 0.3), widths = c(0.3, 0.7))
+
+```
