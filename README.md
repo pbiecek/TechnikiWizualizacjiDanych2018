@@ -18,8 +18,9 @@ Prace domowe należy zgłaszać przez GitHub. [Instrukcja jak korzystać](http:/
 * [6] W: [Skale pomiarowe](http://biecek.pl/Eseje/indexKuchnia.html); L: [Inkscape](https://inkscape.org/) lub [Illustrator](https://www.adobe.com/pl/products/illustrator/free-trial-download.html) (w miarę możliwości proszę przynieść własny laptop)
 * [7]: W: Prezentacja wyników projektu 1; L: [Shiny 1/2](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
 * [8]: W: Prezentacje studentów 1/2; L: [Shiny 2/2](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
-* [9]: W: Prezentacje studentów 2/2; L: [Wstęp do D3](http://vadim.ogievetsky.com/IntroD3/#1), [fiddle](https://jsfiddle.net/)
-* [10]: W: ; L: Tableau
+* [9]: W: Prezentacje studentów 2/2; L: Dobre praktyki w tworzeniu dashboardów
+* [10]: W: ; L: Tableau (w miarę możliwości proszę przynieść własny komputer)
+* [11]: W: ; L: [Wstęp do D3](http://vadim.ogievetsky.com/IntroD3/#1), [fiddle](https://jsfiddle.net/)
 
 
 # Zasady zaliczenia
