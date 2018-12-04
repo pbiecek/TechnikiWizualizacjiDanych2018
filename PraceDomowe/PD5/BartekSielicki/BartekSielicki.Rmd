@@ -1,0 +1,202 @@
+---
+title: "TWD - PD4"
+author: "Bartek Sielicki"
+date: "21 listopada 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(plotrix)
+library(reshape)
+library(scales)
+```
+
+## Praca Domowa nr 5
+
+W ramach tej pracy domowej przeprowadziłem ankietę próbującą ukazać wpływ sposobu przedstawienia wykresu na jego interpretację.
+Ankieta składa się z dwóch części. Pierwsza przedstawia diagram kołowy, a zadaniem uczestnika jest odpowiedź na pytanie które
+miejsce w kolejności malejącej zajmuje dana zmienna. Druga część to wykres liniowy, przedstawiający wartość pewnej zmiennej w czasie.
+
+Uczestnicy eksperymentu podzieleni zostali na dwie grupy. Obydwie dostały wykresy przedstawiające te same dane, jednak w różnej formie.
+Oczekiwanym celem badania było uzyskanie różnych rozkładów odpowiedzi od obu grup. Liczność pierwszej grupy wyniosła 8 osób, natomiast drugiej 9.
+
+```{r}
+# zbiór danych 1
+
+label <- c("Ania", "Basia", "Janek", "Marek", "Tomek")
+value <- c(36, 22, 20, 18, 4)
+data1 <- data.frame(label, value)
+
+# zbiór danych 2
+year <- c(2000:2018)
+price <- c(10.1, 9.9, 9.8, 10.0, 10.2, 10.1, 10.1, 10.3, 10.2, 10.5, 10.3, 10.6, 10.5, 10.6, 10.8, 10.8, 10.9, 11.0, 10.9)
+data2 <- data.frame(year, price)
+```
+
+
+### Część 1 - diagram kołowy
+
+Pytanie postawione było w ten sposób:
+
+**Wykres kołowy przedstawia wyniki wyborów na przewodniczącego klasy. Które miejsce uzyskał Marek?**
+
+#### Wykresy
+
+**Grupa 1**
+
+```{r echo=FALSE}
+ggplot(data1, aes(x="", y=value, fill=label)) +
+  geom_bar(width=1, stat="identity") +
+  coord_polar("y", start=0) +
+  scale_fill_brewer(palette="Set1") +
+  guides(fill = guide_legend(title = element_blank())) +
+  labs(title="") +
+  theme(
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    panel.grid=element_blank(),
+    axis.ticks = element_blank(),
+  )
+```
+
+**Grupa 2**
+
+```{r echo=FALSE}
+pie3D(
+  data1$value,
+  labels=data1$label,
+  theta=pi/7,
+  start=-0.7
+  )
+```
+
+W grupie drugiej wykres został przedstawiony w trójwymiarze, z odpowiednio małego kąta, a także odpowiednio obrócony. Celem manipulacji, było wywarcie wrażenia, że Marek znalazł się nieco wyżej, niż na 4 miejscu. Dane liczbowe z oczywistych względów
+nie zostały na wykresie uwzględnione.
+
+#### Wyniki
+
+```{r echo=FALSE}
+result_1_a = c(3, 4, 4, 3, 4, 3, 4, 4)
+result_1_b = c(3, 3, 2, 4, 3, 3, 4, 2, 3)
+```
+
+**Grupa 1**
+
+```{r echo=FALSE}
+qplot(
+  result_1_a,
+  geom="histogram",
+  binwidth=0.5,
+  fill=I("blue"), 
+  alpha=I(.5),
+  xlim=c(0.5, 5.5),
+  xlab="Pozycja Marka",
+  ylab="Liczba głosów",
+  main=paste("Średnia: ", format(mean(result_1_a), digits=4))
+)
+```
+
+**Grupa 2**
+
+```{r echo=FALSE}
+qplot(
+  result_1_b,
+  geom="histogram",
+  binwidth=0.5,
+  fill=I("blue"), 
+  alpha=I(.5),
+  xlim=c(0.5, 5.5),
+  xlab="Pozycja Marka",
+  ylab="Liczba głosów",
+  main=paste("Średnia: ", format(mean(result_1_b), digits=4))
+)
+```
+
+Jak widać, w grupie drugiej to pozycja nr 3 została najczęściej zaznaczaną odpowiedzią.
+
+
+### Część druga - wykres liniowy
+
+Pytanie postawione było w ten sposób:
+
+**Wykres przedstawia cenę artykułu "X" na przedziale ostatnich 18 lat. Jak bardzo według Ciebie, w skali od 1 do 5, podrożał ten produkt?**
+
+Wydawać się może ono dość infantylne, i na tyle subiektywne, że w zasadzie nie ma na nie prawidłowej odpowiedzi. Jednak to właśnie subiektywność, i sposób odbioru wykresu jest tutaj przedmiotem badań.
+
+Wykresy przedstawione zostały tak:
+
+**Grupa 1**
+
+```{r echo=FALSE}
+ggplot(data2, aes(x=year, y=price)) +
+  geom_line() +
+  ylim(0, 12) +
+  labs(
+    x = "Lata",
+    y = "Cena"
+  )
+```
+
+**Grupa 2**
+
+```{r echo=FALSE}
+ggplot(data2, aes(x=year, y=price)) +
+  geom_line() +
+  ylim(9.5, 11.5) +
+  labs(
+    x = "Lata",
+    y = "Cena"
+  )
+```
+
+Różnica między nimi znajduje się oczywiście w doborze zakresu osi Y. Cel manipulacji również jest oczywisty - odbiorca wykresu powinien uznać że wzrost ceny produktu jest bardziej znaczący.
+
+#### Wyniki
+
+```{r echo=FALSE}
+result_2_a = c(2, 1, 1, 2, 1, 2, 2, 2)
+result_2_b = c(2, 3, 3, 1, 2, 3, 1, 2, 3)
+```
+
+**Grupa 1**
+
+```{r echo=FALSE}
+qplot(
+  result_2_a,
+  geom="histogram",
+  binwidth=0.5,
+  fill=I("blue"),
+  alpha=I(.5),
+  xlim=c(0.5, 5.5),
+  ylim=c(0, 5),
+  xlab="Jak bardzo podrożał produkt? Skala 1-5",
+  ylab="Liczba głosów",
+  main=paste("Średnia: ", format(mean(result_2_a), digits=4))
+)
+```
+
+**Grupa 2**
+
+```{r echo=FALSE}
+qplot(
+  result_2_b,
+  geom="histogram",
+  binwidth=0.5,
+  fill=I("blue"), 
+  alpha=I(.5),
+  xlim=c(0, 5),
+  ylim=c(0, 5),
+  xlab="Jak bardzo podrożał produkt? Skala 1-5",
+  ylab="Liczba głosów",
+  main=paste("Średnia: ", format(mean(result_2_b), digits=4))
+)
+```
+
+Wyniki ponownie są zauważalnie różne. W grupie pierwszej nie padła żadna odpowiedź 3 lub wyższa, podczas gdy w grupie drugiej odpowiedź 3 stała się już wartością dominującą.
+
+Na tym etapie nie przeprowadzałem już bardziej szczegółowej analizy statystycznej, aby móc z określoną pewnością wyciągać wnioski dotyczące średnich czy rozkładu udzielanych odpowiedzi.
+Z pewnością byłby to jednak dobry kierunek w celu zbadania tego zagadnienia.
