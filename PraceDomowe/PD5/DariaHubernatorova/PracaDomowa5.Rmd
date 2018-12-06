@@ -1,0 +1,105 @@
+---
+title: "Praca domowa 5"
+author: "Daria Hubernatorova"
+date: "11/19/2018"
+output: html_document
+---
+
+```{R setup, include = FALSE}
+library(plotrix)
+library(ggplot2)
+library(dplyr)
+dane <- read.csv("/Users/dasha/Documents/twd/pd5_dane.csv", encoding = "UTF-8")
+wyniki <- read.csv("/Users/dasha/Documents/twd/wyniki_ankiety.csv", encoding = "UTF-8")
+colnames(wyniki) <- c("time", "p1", "p2", "p3_zdigitalizowani", 	"p3_niezaangazowani",	"p3_youtube",	"p3_tv",	"p3_krotki",	"p3_pozeracze", "order1", "order2", "order3",
+                      "order4", "order5", "order6")
+```
+## Opis zadania
+
+Celem pracy jest sprawdzenie czy ,,dobre praktyki'' omawiane na wykładzie opracowane lata temu (słupki lepsze niż kąty, kolor wykorzystywane z umiarem, unikanie ozdobników), faktycznie działa w społeczeństwie które wykresami karmione jest od urodzenia.
+Wybrany rodzaj wykresu - wykres kołowy 3D.
+Dane pochodzą z https://www.wirtualnemedia.pl/artykul/pozeracze-mediow-szesc-typow-konsumentow  
+```{R echo = FALSE}
+pie3D(dane$Procent,labels = dane$Typ, main = "Typy konsumpcji w media")
+```
+
+Takie dane przedstawione za pomocą wykresu słupkowego.   
+
+```{R echo = FALSE}
+ggplot(dane, aes(x=Typ, y=Procent, fill=Typ)) +
+  geom_col() +
+  theme(axis.title.x = element_blank(), axis.ticks.x = element_blank(),
+        axis.text.x = element_blank())
+```
+
+Ankieta do tego wykresu jest tutaj: https://goo.gl/forms/spgjTD1evoBgLmpz1  
+Na ankietę odpowiedziało 30 osób.
+
+## Pytanie 1  
+Największa grupa (typ) konsumentów mediów to:
+```{R echo=FALSE}
+wyniki %>% group_by(p1) %>% summarise(n = n()) %>% mutate(procent = paste0(as.character(round(n * 100/nrow(wyniki),1)), '%')) %>% 
+  ggplot(aes(x = p1, y = n, label = procent, fill = reorder(p1, n))) +
+  geom_col() +
+  xlab('Typ') +
+  ylab('Liczba odpowiedzi') +
+  geom_text(vjust = 0, hjust = 0.5) +
+  ggtitle('Pytanie 1') + 
+  theme(legend.position="none") +
+  coord_flip()
+```  
+
+Poprawna odpowiedź to: Fani krótkich form (więcej niż połowa respondentów 
+odpowiedziała poprawnie). Ale też były odpowiedzie dające do myślenia że może być 2 typy o takim samym udziale procentowym, mając największy udział. Wniosek z tego jest że z takiego kołowego wykresu nie da się zawsze stwierdzić gdzie jest największa grupa, co i jest wadą takiego wykresu. 
+
+## Pytanie 2
+Czy są typy o tej samej liczności?
+Pytanie to bardzo podchwytliwe, bo nie ma takich typów. Tak, jest mała różnica między 
+niektórymi typami, ale trudno ją zauważyć na wykresie kołowym.
+```{R echo=FALSE}
+wyniki %>% group_by(p2) %>% summarise(n = n()) %>% mutate(procent = paste0(as.character(round(n * 100/nrow(wyniki),1)), '%')) %>% 
+  ggplot(aes(x = p2, y = n, label = procent, fill = reorder(p2, n))) +
+  geom_col() +
+  xlab('Typ') +
+  ylab('Liczba odpowiedzi') +
+  geom_text(vjust = 0) +
+  ggtitle('Pytanie 2') + 
+  theme(legend.position="none")
+```
+
+## Pytanie 3
+Jeśli tak, to które?
+Pytanie było nie obowiązkowe, ale dużo osób znalazło typy o takim samym procentowym udziale. Było wybrane najciekawsze spotrzeżenie, że Fani krótkich form są o takim samym 
+udziale procentowym jak Fani YouTube'a albo Zdigitalizowani. Ale z wykresu słupkowego wynika duża różnica między nimi.  
+
+```{R echo=FALSE}
+wyniki %>% 
+  filter(p3_krotki != "Fani krótkich form") %>%
+  group_by(p3_krotki) %>% summarise(n = n()) %>% mutate(procent = paste0(as.character(round(n * 100/nrow(wyniki),1)), '%')) %>% 
+  ggplot(aes(x = p3_krotki, y = n, label = procent, fill = reorder(p3_krotki, n))) +
+  geom_col() +
+  xlab('Typ') +
+  ylab('Liczba odpowiedzi') +
+  geom_text(vjust = 0) +
+  ggtitle('Pytanie 3') + 
+  theme(legend.position="none") + 
+  coord_flip()
+```
+
+## Pytanie 4
+Proszę posortować grupy nie rosnąco. Większość respondentów odpowiedziała w niepoprawnej kolejności. Wynika to z percepcji takiego wykresu kołowego 3D.  
+```{R echo = FALSE}
+dane <- data.frame(sort = c("correct", "incorrect"), num = c(12, 18))
+dane %>% 
+  mutate(procent = paste0(as.character(round(num * 100/30,1)), '%')) %>% 
+  ggplot(aes(x = sort, y = num, label = procent, fill = reorder(sort, num))) +
+  geom_col() +
+  xlab('') +
+  ylab('Liczba odpowiedzi') +
+  geom_text(vjust = 0) +
+  ggtitle('Pytanie 4') + 
+  theme(legend.position="none")
+```
+
+## Podsumowanie  
+Wyniki takiej ankiety potwierdzają tezę o tym że wykres kołowy 3D jest nieczytelny, i lepiej dla takich danych użyć wykresu słupkowego.

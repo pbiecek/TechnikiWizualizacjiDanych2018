@@ -1,0 +1,97 @@
+---
+title: "Władca Pierścieni i Hobbit"
+author: "Kamil Grabowski"
+date: "November 11, 2018"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library('ggplot2')
+library(reshape2)
+library(dplyr)
+library(gridExtra)
+library(grid)
+library(gridSVG)
+Budżet <- c(93000000, 94000000, 94000000, 180000000, 225000000,  250000000)
+Przychody <- c(871530324, 926047111, 1119929521, 1017003568, 960366855, 955119788)
+money <- c(93000000, 94000000, 94000000, 180000000, 225000000,  250000000, 871530324, 926047111, 1119929521, 1017003568, 960366855, 955119788)
+# type <- c("Budżet", "Budżet", "Budżet", "Budżet", "Budżet", "Budżet", "Boxoffice", "Boxoffice", "Boxoffice", "Boxoffice", "Boxoffice", "Boxoffice")
+# trilogy <- c("Władca Pierścieni", "Władca Pierścieni", "Władca Pierścieni", "Hobbit", "Hobbit", "Hobbit", "Władca Pierścieni", "Władca Pierścieni", "Władca Pierścieni", "Hobbit", "Hobbit", "Hobbit" )
+trilogy <- c("Władca Pierścieni", "Władca Pierścieni", "Władca Pierścieni", "Hobbit", "Hobbit", "Hobbit" )
+name <- c("Drużyna Pierścienia", "Dwie wieże", "Powrót króla", "Niezwykła podróż", "Pustkowie Smauga", "Bitwa Pięciu Armii")
+Budżet <- round(Budżet/1000000)
+Przychody <- round(Przychody/1000000)
+df <- data.frame(Budżet, Przychody, name)
+df <- melt(df, id.vars='name')
+df['trilogy'] <- trilogy
+df$name <- factor(df$name, levels = c("Drużyna Pierścienia", "Dwie wieże", "Powrót króla", "Niezwykła podróż", "Pustkowie Smauga", "Bitwa Pięciu Armii"))
+colnames(df)[2] <- "Typ"
+```
+
+
+
+```{r warning=FALSE}
+df_lotr <- df %>% filter(trilogy == "Władca Pierścieni",)
+svg("money_lotr.svg", height = 7.5, width = 8)
+ggplot(data = df_lotr, aes(x = Typ, y = value, fill = Typ)) +
+  geom_bar(stat='identity', position = 'dodge')+
+  # ggtitle("Budżet i przychody (w milionach)") +
+  facet_grid(. ~ name) +
+  theme(plot.title = element_text(hjust = 0.5),
+        # axis.text.x = element_text(angle = 45, vjust = .5),
+        # axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.position="none")+
+  scale_fill_manual(values=c("lightblue", "steelblue")) +
+  labs(x = "", y = "Kwota (w milionach)") +
+   geom_text(aes(label = value), size = 3, vjust = -0.3, color = "black") +
+  # theme_light() +
+  expand_limits(y = c(0, 1200))
+dev.off()
+```
+```{r warning=FALSE}
+df_hobbit <- df %>% filter(trilogy == "Hobbit",)
+df_hobbit$name <- factor(df_hobbit$name, levels = c("Niezwykła podróż", "Pustkowie Smauga", "Bitwa Pięciu Armii"))
+svg("money_hobbit.svg", height = 7.5, width = 8)
+ggplot(data = df_hobbit, aes(x = Typ, y = value, fill = Typ)) +
+  geom_bar(stat='identity', position = 'dodge')+
+  # ggtitle("Budżet i przychody (w milionach)") +
+  facet_grid(. ~ name) +
+  theme(plot.title = element_text(hjust = 0.5),
+        # axis.text.x = element_text(angle = 45, vjust = .5),
+        # axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.position="none")+
+  scale_fill_manual(values=c("pink", "red")) +
+  labs(x = "", y = "Kwota (w milionach)") +
+  geom_text(aes(label = value), size = 3, vjust = -0.3, color = "black") +
+  # theme_light() +
+   expand_limits(y = c(0, 1200))
+dev.off()
+```
+
+```{r warning=FALSE}
+df_tr <-df %>% group_by(trilogy, Typ) %>% summarize(value = sum(value))
+df_tr$trilogy <- factor(df_tr$trilogy, levels = c("Władca Pierścieni", "Hobbit"))
+svg("money.svg", height = 7.5, width = 8)
+ggplot(data = df_tr, aes(x = Typ, y = value, fill = Typ)) +
+  geom_bar(stat='identity', position = 'dodge')+
+  facet_grid(. ~ trilogy) + 
+  # theme_light() + 
+  # ggtitle("Budżet i przychody (w milionach)") +
+  theme(plot.title = element_text(hjust = 0.5),
+        # axis.text.x = element_text(angle = 45, vjust = .5),
+        # axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.position="none") +
+  scale_fill_manual(values=c("violet", "purple"))+
+   geom_text(aes(label = value), size = 3, vjust = -0.3, color = "black") +
+  labs(x = "", y = "Kwota (w milionach)") +
+  expand_limits(y = c(0, 3100))
+# + theme_light()
+dev.off()
+```
