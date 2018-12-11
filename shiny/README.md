@@ -1,0 +1,1 @@
+Przykładowe aplikacje Shiny
