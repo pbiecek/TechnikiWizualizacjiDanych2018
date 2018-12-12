@@ -1,0 +1,12 @@
+name: Air_polution
+title: Air_polution
+username:
+account: ivanrukhavets
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 615093
+bundleId: 1758997
+url: https://ivanrukhavets.shinyapps.io/Air_polution/
+when: 1544638491.04661
+asMultiple: FALSE
+asStatic: FALSE
