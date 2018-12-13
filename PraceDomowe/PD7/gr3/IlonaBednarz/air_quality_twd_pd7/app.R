@@ -63,9 +63,9 @@ ui <- dashboardPage(
                   sidebarPanel(
                     checkboxGroupInput(inputId = "choose_continent_panstwa",
                                        label = "Wybierz kontynenty:",
-                                       choiceNames = c("Asia","Africa","Soutch America","South America","Europe","North America","Oceania"),
-                                       choiceValues = c("Asia","Africa","Soutch America","South America","Europe","North America","Oceania"),
-                                       selected = c("Asia","Africa","Soutch America","South America","Europe","North America","Oceania")
+                                       choiceNames = c("Asia","Africa","South America","Europe","North America","Oceania"),
+                                       choiceValues = c("Asia","Africa","South America","Europe","North America","Oceania"),
+                                       selected = c("Asia","Africa","South America","Europe","North America","Oceania")
                     ),
                     textOutput("caption_panstwa")
                   ),
@@ -83,9 +83,9 @@ ui <- dashboardPage(
                   sidebarPanel(
                     checkboxGroupInput(inputId = "choose_continent",
                                        label = "Wybierz kontynenty:",
-                                       choiceNames = c("Asia","Africa","Soutch America","South America","Europe","North America","Oceania"),
-                                       choiceValues = c("Asia","Africa","Soutch America","South America","Europe","North America","Oceania"),
-                                       selected = c("Asia","Africa","Soutch America","South America","Europe","North America","Oceania")
+                                       choiceNames = c("Asia","Africa","South America","Europe","North America","Oceania"),
+                                       choiceValues = c("Asia","Africa","South America","Europe","North America","Oceania"),
+                                       selected = c("Asia","Africa","South America","Europe","North America","Oceania")
                     ),
                     textOutput("caption")
                   ),
