@@ -20,7 +20,7 @@ Prace domowe należy zgłaszać przez GitHub. [Instrukcja jak korzystać](http:/
 * [8]: W: Prezentacje studentów 1/3; L: [Shiny 2/2](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
 * [9]: W: Prezentacje studentów 2/3; L: Dobre praktyki w tworzeniu dashboardów
 * [10]: W: Prezentacje studentów 3/3;; L: Tableau (w miarę możliwości proszę przynieść własny komputer)
-* [11]: W: Przegląd konferencji z tematu DataVis; L: [RBokeh](http://hafen.github.io/rbokeh/#preview) / [ggiraph](https://github.com/davidgohel/ggiraph), [vegalite1](https://github.com/hrbrmstr/vegalite), [vegalite2](https://idl.cs.washington.edu/files/2017-VegaLite-InfoVis.pdf), [googleVis](http://www.magesblog.com/2016/09/googlevis-061-on-cran.html), [choinki](http://smarterpoland.pl/index.php/2017/12/christmas-trees/)
+* [11]: W: Przegląd konferencji z tematu DataVis; L: [RBokeh](http://hafen.github.io/rbokeh/#preview) / [ggiraph](https://github.com/davidgohel/ggiraph), [vegalite1](https://github.com/hrbrmstr/vegalite), [vegalite2](https://idl.cs.washington.edu/files/2017-VegaLite-InfoVis.pdf), [googleVis](http://www.magesblog.com/2016/09/googlevis-061-on-cran.html), [r2d3](https://github.com/rstudio/r2d3), [choinki](http://smarterpoland.pl/index.php/2017/12/christmas-trees/)
 * [12]: W: ; L: [Wstęp do D3](http://vadim.ogievetsky.com/IntroD3/#1), [fiddle](https://jsfiddle.net/)
 
 
