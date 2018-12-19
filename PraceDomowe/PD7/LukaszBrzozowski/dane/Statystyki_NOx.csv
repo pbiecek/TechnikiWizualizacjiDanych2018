@@ -1,0 +1,1906 @@
+Rok;Województwo;Kod strefy;Nazwa strefy;Kod stacji;Wskaźnik;Czas uśredniania;Średnia;Min;Maks;Liczba pomiarów;Kompletność ;Liczba Lato/Zima
+2000;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;6,85;0,00;47,00;8392;95,5;1,1
+2000;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;16,11;0,00;135,00;8459;96,3;1,0
+2000;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;295,67;9,00;977,00;7477;85,1;0,8
+2000;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;67,52;4,00;710,00;6446;73,4;0,9
+2000;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;49,51;2,00;610,00;3839;43,7;4,2
+2000;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;9,27;0,00;52,00;7923;90,2;0,9
+2000;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.a09a;NOx;1g;19,90;3,00;172,00;8426;95,9;0,9
+2000;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;21,07;0,00;283,00;8238;93,8;1,1
+2000;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;27,26;1,00;609,00;8640;98,4;1,0
+2000;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;36,56;2,00;462,00;8716;99,2;1,0
+2000;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;25,20;2,00;359,00;8569;97,6;1,0
+2000;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;17,78;2,00;232,00;8564;97,5;1,0
+2000;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;17,81;2,00;278,00;8631;98,3;1,0
+2000;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;25,61;10,00;237,00;8472;96,4;1,0
+2000;śląskie;PL2401;Aglomeracja Górnośląska;SlBytomByto_modrz;NOx;1g;35,13;3,00;348,00;8191;93,2;1,0
+2000;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;47,29;11,00;488,00;6449;73,4;2,0
+2000;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoSosn_narut;NOx;1g;80,41;9,00;924,00;8607;98,0;1,0
+2000;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;18,66;8,00;161,00;4916;56,0;3,5
+2001;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;7,06;0,00;77,00;8374;95,6;1,1
+2001;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;21,24;0,00;167,00;8033;91,7;1,1
+2001;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;252,98;10,00;1259,00;7892;90,1;1,1
+2001;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;64,07;3,00;895,00;7590;86,6;0,8
+2001;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;57,76;5,00;742,00;2369;27,0;0,6
+2001;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;41,11;1,00;385,00;8177;93,3;1,1
+2001;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;9,35;0,00;73,00;7415;84,6;0,7
+2001;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.a09a;NOx;1g;26,09;7,00;416,00;8579;97,9;1,0
+2001;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;16,64;1,00;205,00;8175;93,3;1,2
+2001;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;28,62;3,00;504,00;7938;90,6;0,9
+2001;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;22,85;1,00;428,00;8441;96,4;1,0
+2001;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;34,36;2,00;440,00;7215;82,4;0,7
+2001;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;24,96;1,00;358,00;8320;95,0;1,0
+2001;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;17,54;2,00;289,00;8549;97,6;1,0
+2001;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;18,79;3,00;184,00;8414;96,1;1,0
+2001;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;29,46;4,00;260,00;7382;84,3;0,8
+2001;śląskie;PL2401;Aglomeracja Górnośląska;SlBytomByto_modrz;NOx;1g;31,30;9,00;480,00;6696;76,4;1,9
+2001;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;47,81;9,00;605,00;8699;99,3;1,0
+2001;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoSosn_narut;NOx;1g;68,79;9,00;905,00;8538;97,5;1,0
+2002;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;5,62;0,00;46,00;6748;77,0;1,7
+2002;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;22,72;0,00;191,00;6799;77,6;0,6
+2002;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;247,80;8,00;1484,00;8321;95,0;1,0
+2002;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;62,46;2,00;873,00;8022;91,6;1,1
+2002;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;76,06;3,00;879,00;5812;66,3;0,9
+2002;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;38,00;1,00;493,00;8184;93,4;1,0
+2002;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;9,41;0,00;65,00;7872;89,9;1,0
+2002;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.a09a;NOx;1g;24,23;5,00;217,00;8667;98,9;1,0
+2002;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;19,08;3,00;514,00;7903;90,2;1,2
+2002;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;20,13;3,00;455,00;8235;94,0;1,0
+2002;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;19,24;2,00;211,00;6862;78,3;1,3
+2002;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;39,56;0,00;547,00;8504;97,1;1,0
+2002;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;24,09;2,00;406,00;8474;96,7;1,0
+2002;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;14,58;2,00;289,00;8508;97,1;1,0
+2002;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;18,83;3,00;350,00;8546;97,6;1,0
+2002;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;18,93;3,00;218,00;7963;90,9;1,0
+2002;śląskie;PL2401;Aglomeracja Górnośląska;SlBytomByto_modrz;NOx;1g;46,35;14,00;508,00;7752;88,5;1,3
+2002;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;46,77;10,00;500,00;8742;99,8;1,0
+2002;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoSosn_narut;NOx;1g;80,68;11,00;986,00;7617;87,0;0,8
+2002;śląskie;PL2405;strefa śląska;SlUstroCies_sanat;NOx;1g;18,74;3,00;263,00;8578;97,9;1,0
+2002;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;12,26;0,00;160,00;5386;61,5;0,9
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;23,10;0,00;184,00;8457;96,5;1,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsCzar07;NOx;1g;8,64;0,00;60,00;8428;96,2;1,1
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;8,77;0,00;73,00;3460;39,5;0,9
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;25,35;0,05;205,00;2158;24,6;0,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;16,32;1,00;63,00;8688;99,2;1,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;19,55;0,00;226,00;7833;89,4;0,8
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;3,49;0,20;46,90;2205;25,2;0,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;20,51;0,00;295,00;8307;94,8;1,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsSnie04;NOx;1g;10,04;0,00;102,00;6607;75,4;0,8
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;13,33;0,05;83,20;2178;24,9;0,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsSoko08;NOx;1g;5,26;0,00;54,00;8448;96,4;1,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsSpal06;NOx;1g;6,76;0,00;42,00;4034;46,1;0,9
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsWitk09;NOx;1g;12,13;1,00;116,00;8545;97,5;1,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;16,58;2,00;93,00;8645;98,7;1,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsWlen03;NOx;1g;6,77;0,00;30,00;2297;26,2;7,1
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;17,21;0,00;105,00;8549;97,6;1,0
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;18,06;2,00;150,00;8702;99,3;1,0
+2003;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;NOx;1g;19,51;0,00;375,00;7533;86,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;16,32;2,00;206,60;7402;84,5;1,0
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWloclWSHE;NOx;1g;55,80;3,80;480,10;4981;56,9;1,1
+2003;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;NOx;1g;30,51;0,30;350,40;4500;51,4;2,3
+2003;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;22,42;0,00;153,00;1452;16,6;0,0
+2003;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;48,11;3,00;276,00;1192;13,6;0,0
+2003;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;60,90;6,00;605,00;2474;28,2;0,4
+2003;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;33,70;3,00;236,00;1463;16,7;0,0
+2003;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;30,43;0,00;361,00;2540;29,0;0,3
+2003;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;13,47;1,00;71,00;1418;16,2;0,0
+2003;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;19,75;0,00;123,00;1515;17,3;0,0
+2003;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;246,67;8,00;1742,00;7881;90,0;0,9
+2003;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;66,43;2,00;923,00;8092;92,4;1,0
+2003;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;76,96;3,00;945,00;6417;73,3;0,9
+2003;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPorajow;NOx;1g;33,92;1,00;535,00;3756;42,9;0,7
+2003;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;31,02;0,10;651,80;6311;72,0;1,6
+2003;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;31,16;0,00;418,00;7022;80,2;1,4
+2003;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;NOx;1g;17,66;7,50;136,90;8403;95,9;1,0
+2003;mazowieckie;PL1402;miasto Płock;MzPlockPKN2;NOx;1g;12,51;0,50;65,10;7352;83,9;1,0
+2003;mazowieckie;PL1402;miasto Płock;MzPlockPKN3;NOx;1g;20,43;2,50;176,50;7640;87,2;1,1
+2003;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;16,79;0,50;279,40;7263;82,9;0,9
+2003;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;11,44;1,00;59,00;8535;97,4;1,0
+2003;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.a09a;NOx;1g;24,61;8,00;203,00;8700;99,3;1,0
+2003;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;24,14;3,00;493,00;8131;92,8;0,9
+2003;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;35,71;4,00;841,00;8362;95,5;1,1
+2003;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;18,43;2,00;216,00;8223;93,9;1,1
+2003;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;39,61;4,00;736,00;8614;98,3;1,0
+2003;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;26,53;4,00;376,00;8416;96,1;1,0
+2003;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;17,74;3,00;252,00;8624;98,4;1,0
+2003;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;19,92;4,00;337,00;8625;98,5;1,0
+2003;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;21,73;5,00;215,00;8526;97,3;1,0
+2003;śląskie;PL2401;Aglomeracja Górnośląska;SlBytomByto_modrz;NOx;1g;42,42;10,00;368,00;8418;96,1;1,1
+2003;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;51,31;6,00;472,00;8405;95,9;1,0
+2003;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoSosn_narut;NOx;1g;97,34;15,00;664,00;4827;55,1;0,2
+2003;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;12,87;5,00;144,00;8695;99,3;1,0
+2003;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;17,92;0,00;316,00;8490;96,9;1,1
+2003;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczecinLukasza;NOx;1g;35,55;0,00;516,00;7897;90,1;1,1
+2003;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;12,56;0,00;83,00;8087;92,3;0,9
+2004;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocGrun;NOx;1g;31,20;6,90;116,10;5192;59,1;1,5
+2004;dolnośląskie;PL0202;miasto Legnica;DsLegSmok;NOx;1g;23,72;0,30;296,80;8640;98,4;1,0
+2004;dolnośląskie;PL0202;miasto Legnica;DsLegZlotor;NOx;1g;20,71;0,70;252,40;8578;97,7;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsBialka;NOx;1g;22,43;1,40;248,90;8599;97,9;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;18,58;0,00;136,00;7910;90,1;0,9
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsCzar07;NOx;1g;12,71;0,00;46,00;8078;92,0;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;7,56;0,00;58,00;7523;85,6;0,8
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;17,48;0,00;148,00;4924;56,1;0,6
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;18,03;0,10;205,00;8748;99,6;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;13,89;1,00;87,00;8411;95,8;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;18,79;0,00;157,00;7286;82,9;0,8
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;7,05;0,00;96,30;8735;99,4;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;15,44;3,00;135,00;8404;95,7;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsSnie04;NOx;1g;15,74;2,00;190,00;7570;86,2;0,9
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;11,41;0,05;112,80;8279;94,3;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;18,01;1,00;102,00;8386;95,5;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsWlen03;NOx;1g;6,36;0,00;71,00;6740;76,7;1,4
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;11,73;1,00;57,00;8218;93,6;1,0
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;18,70;1,00;138,00;8336;94,9;1,0
+2004;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;NOx;1g;13,34;0,00;340,00;7088;80,7;1,1
+2004;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunLotnisko;NOx;1g;9,83;0,00;165,03;6574;74,8;2,0
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;15,19;0,00;205,50;2144;24,4;0,6
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWloclWSHE;NOx;1g;40,03;0,10;482,30;6911;78,7;1,5
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;6,58;0,10;68,30;4684;53,3;1,5
+2004;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;20,37;0,00;284,00;8488;96,6;1,0
+2004;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;32,05;0,00;393,00;8682;98,8;1,0
+2004;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;53,28;1,00;631,00;8616;98,1;1,0
+2004;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;30,96;1,00;402,00;8423;95,9;1,0
+2004;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;24,58;0,00;225,00;8655;98,5;1,0
+2004;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;12,17;1,00;123,00;8263;94,1;1,0
+2004;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;14,38;0,00;165,00;8173;93,0;0,9
+2004;łódzkie;PL1002;strefa łódzka;LdPiotrkWIOSABelzack;NOx;1g;20,60;0,00;436,00;8046;91,6;0,9
+2004;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;219,40;11,00;1496,00;5312;60,5;1,2
+2004;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;55,55;3,00;756,00;6308;71,8;0,8
+2004;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;59,24;4,00;869,00;4167;47,4;1,1
+2004;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;NOx;1g;46,17;3,00;542,00;5946;67,7;0,9
+2004;małopolskie;PL1203;strefa małopolska;MpNSaczWIOSPija6204;NOx;1g;33,99;3,00;444,00;5317;60,5;1,0
+2004;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;18,48;2,00;89,00;1454;16,6;0,0
+2004;małopolskie;PL1203;strefa małopolska;MpTrzebiWIOSPils0303;NOx;1g;27,88;3,00;379,00;4887;55,6;1,3
+2004;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;35,73;3,00;727,00;5070;57,7;0,5
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;192,00;0,00;962,00;8687;98,9;1,0
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;41,58;1,00;922,00;8492;96,7;1,0
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPorajow;NOx;1g;33,27;0,40;617,00;5951;67,7;1,9
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;30,15;1,00;826,50;6432;73,2;1,0
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;32,78;0,00;386,00;6531;74,4;2,0
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarTolstoj;NOx;1g;31,52;1,70;1017,50;6949;79,1;0,7
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;30,68;1,00;672,00;8174;93,1;1,1
+2004;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;NOx;1g;13,08;5,50;72,50;7489;85,3;0,8
+2004;mazowieckie;PL1402;miasto Płock;MzPlockPKN2;NOx;1g;7,30;1,00;68,70;6648;75,7;1,1
+2004;mazowieckie;PL1402;miasto Płock;MzPlockPKN3;NOx;1g;18,13;4,50;147,80;7340;83,6;0,8
+2004;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;13,17;1,50;168,00;6678;76,0;0,8
+2004;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;25,59;2,00;634,00;7962;90,6;1,2
+2004;mazowieckie;PL1403;miasto Radom;MzRadomPulask;NOx;1g;33,62;3,80;587,30;8504;96,8;1,1
+2004;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;28,88;1,00;817,00;8253;94,0;1,1
+2004;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;9,99;0,00;70,00;8560;97,4;1,0
+2004;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;9,52;0,00;85,00;8603;97,9;1,0
+2004;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;22,08;0,00;341,00;8411;95,8;1,0
+2004;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;27,77;1,00;835,00;8385;95,5;1,1
+2004;mazowieckie;PL1404;strefa mazowiecka;MzTluszczJKiel;NOx;1g;13,53;0,00;189,00;8371;95,3;1,0
+2004;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;19,08;0,00;400,00;8161;92,9;1,1
+2004;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;14,29;0,00;146,00;2847;32,4;0,3
+2004;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;14,02;2,00;158,00;2921;33,3;0,3
+2004;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;3,84;0,00;37,00;2922;33,3;0,3
+2004;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;27,09;4,00;660,00;8479;96,5;1,1
+2004;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;19,78;3,00;188,00;8296;94,4;1,1
+2004;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;16,35;3,00;197,00;8525;97,1;1,0
+2004;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;17,69;3,00;214,00;8629;98,2;1,0
+2004;śląskie;PL2405;strefa śląska;SlUstroCies_sanat;NOx;1g;17,27;6,00;121,00;6107;69,5;0,6
+2004;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;17,64;0,00;79,00;8375;95,3;1,1
+2004;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczecinLukasza;NOx;1g;32,85;0,00;440,00;8520;97,0;1,0
+2004;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;9,07;0,00;120,00;8432;96,0;1,0
+2005;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;198,99;2,00;1153,00;7801;89,1;0,9
+2005;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;17,73;0,00;241,00;7192;82,1;1,0
+2005;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;39,43;0,00;483,00;7751;88,5;1,2
+2005;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;34,53;0,00;575,00;6666;76,1;0,9
+2005;dolnośląskie;PL0202;miasto Legnica;DsLegSmok;NOx;1g;27,10;0,50;273,50;8664;98,9;1,0
+2005;dolnośląskie;PL0202;miasto Legnica;DsLegZlotor;NOx;1g;21,41;0,50;265,60;8356;95,4;1,0
+2005;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;21,71;0,00;508,00;8181;93,4;1,1
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsBialka;NOx;1g;23,24;0,60;274,00;8233;94,0;1,1
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;15,11;1,00;92,00;7519;85,8;0,8
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsCzar07;NOx;1g;4,43;0,00;55,00;8280;94,5;1,1
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;8,99;0,00;54,00;6789;77,5;0,6
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;12,90;0,00;151,00;6510;74,3;0,8
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;18,72;0,00;446,00;6245;71,3;1,9
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;20,70;0,10;204,90;8664;98,9;1,0
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;16,40;2,00;72,00;8486;96,9;1,1
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;17,88;0,00;162,00;6947;79,3;1,0
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;24,59;1,00;280,00;8141;92,9;1,0
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;10,14;0,10;96,60;8581;98,0;1,0
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsNRudaSrebA;NOx;1g;29,37;0,00;353,00;8286;94,6;1,0
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;16,06;2,00;237,00;7316;83,5;0,8
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsSnie04;NOx;1g;10,33;1,00;76,00;6418;73,3;0,5
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;10,65;0,10;132,80;8367;95,5;1,0
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;14,63;0,00;138,00;7127;81,4;0,9
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsWlen03;NOx;1g;9,77;0,00;88,00;5748;65,6;0,5
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;11,77;0,00;57,00;3079;35,1;0,0
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;34,37;2,00;166,00;3293;37,6;0,9
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;20,54;1,00;181,00;8563;97,8;1,0
+2005;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;46,32;1,00;410,00;6758;77,1;1,7
+2005;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;NOx;1g;9,04;0,00;377,00;8208;93,7;1,1
+2005;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunLotnisko;NOx;1g;7,05;0,00;180,40;8300;94,7;1,1
+2005;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;60,62;0,70;691,60;5807;66,3;2,0
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;13,14;0,00;230,00;4797;54,8;7,6
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;9,14;0,00;56,00;5889;67,2;0,5
+2005;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;NOx;1g;25,90;0,00;281,50;6970;79,6;0,7
+2005;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;57,51;0,00;737,00;8147;93,0;1,0
+2005;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;23,90;0,00;461,00;8364;95,5;1,0
+2005;lubuskie;PL0803;strefa lubuska;LuSlubWIOS_AUT;NOx;1g;20,52;0,00;388,00;8185;93,4;0,9
+2005;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;6,80;0,00;63,00;8354;95,4;1,0
+2005;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;21,39;0,00;294,00;7669;87,5;1,0
+2005;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;23,79;1,00;444,00;8442;96,4;1,0
+2005;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;36,84;1,00;647,00;8713;99,5;1,0
+2005;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;64,27;2,00;1029,00;8688;99,2;1,0
+2005;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;38,39;0,00;424,00;8480;96,8;1,0
+2005;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;30,93;0,00;267,00;8678;99,1;1,0
+2005;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;15,51;0,00;148,00;8537;97,5;1,0
+2005;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;17,22;1,00;151,00;8636;98,6;1,0
+2005;łódzkie;PL1002;strefa łódzka;LdPiotrkWIOSABelzack;NOx;1g;31,22;0,00;821,00;7749;88,5;1,0
+2005;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;20,08;0,00;240,30;5610;64,0;1,4
+2005;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;220,56;8,00;1690,00;7904;90,2;1,1
+2005;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;59,41;3,00;706,00;8337;95,2;1,0
+2005;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;71,80;5,00;909,00;8152;93,1;1,1
+2005;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;NOx;1g;43,38;3,00;901,00;7319;83,6;1,4
+2005;małopolskie;PL1203;strefa małopolska;MpNSaczWIOSPija6204;NOx;1g;35,98;3,00;515,00;8396;95,8;1,0
+2005;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;9,48;1,00;81,00;8539;97,5;1,0
+2005;małopolskie;PL1203;strefa małopolska;MpTrzebiWIOSPils0303;NOx;1g;31,44;2,00;363,00;8375;95,6;1,1
+2005;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;31,15;3,00;391,00;7404;84,5;1,0
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;182,39;4,00;968,00;8359;95,4;1,0
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;43,22;1,00;784,00;8457;96,5;1,1
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPorajow;NOx;1g;25,02;0,10;507,40;7738;88,3;0,9
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;35,42;0,10;572,80;8358;95,4;1,1
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;NOx;1g;46,54;6,40;603,60;2675;30,5;0,0
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;35,69;0,00;370,00;7947;90,7;0,9
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarTolstoj;NOx;1g;30,56;0,10;677,50;8059;92,0;0,9
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;35,74;1,00;666,00;8530;97,4;1,1
+2005;mazowieckie;PL1402;miasto Płock;MzPlockPKN2;NOx;1g;8,25;1,00;48,50;7927;90,5;1,0
+2005;mazowieckie;PL1402;miasto Płock;MzPlockPKN3;NOx;1g;19,65;4,60;174,70;6951;79,3;1,3
+2005;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;13,16;0,50;226,10;7816;89,2;1,1
+2005;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;26,70;0,00;746,00;8004;91,4;1,2
+2005;mazowieckie;PL1403;miasto Radom;MzRadomPulask;NOx;1g;45,91;4,10;829,30;6517;74,4;1,8
+2005;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;33,99;0,00;728,00;7941;90,7;0,9
+2005;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;10,72;0,00;94,00;8243;94,1;0,9
+2005;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;9,97;0,00;101,00;8033;91,7;1,1
+2005;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;21,98;0,00;527,00;7955;90,8;1,1
+2005;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;29,88;0,00;469,00;8204;93,7;1,0
+2005;mazowieckie;PL1404;strefa mazowiecka;MzTluszczJKiel;NOx;1g;13,97;1,00;206,00;8563;97,8;1,0
+2005;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;21,56;0,00;366,00;8390;95,8;1,0
+2005;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;26,52;0,00;297,00;6066;69,2;1,9
+2005;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;21,84;0,00;312,00;6024;68,8;1,9
+2005;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;19,02;0,00;196,00;6049;69,1;1,9
+2005;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;NOx;1g;23,83;0,00;511,00;7789;88,9;0,8
+2005;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;10,51;0,00;148,00;8444;96,4;1,1
+2005;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;19,81;0,00;345,00;8072;92,1;0,9
+2005;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;2,94;0,00;26,00;8121;92,7;1,1
+2005;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;39,74;0,00;382,40;4886;55,8;1,3
+2005;podlaskie;PL2002;strefa podlaska;PdSuwPulaski;NOx;1g;24,99;0,00;692,50;5069;57,9;1,4
+2005;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;30,65;5,00;502,00;8491;96,9;1,0
+2005;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;21,54;5,00;237,00;8097;92,4;0,9
+2005;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;23,66;4,00;280,00;8718;99,5;1,0
+2005;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;19,07;4,00;239,00;8385;95,7;1,0
+2005;śląskie;PL2405;strefa śląska;SlUstroCies_sanat;NOx;1g;20,73;4,80;151,90;8325;95,0;0,9
+2005;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;16,19;4,00;69,00;7004;80,0;1,1
+2005;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;19,75;0,00;375,00;8207;93,7;1,0
+2005;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;16,79;0,00;198,10;4125;47,1;1,4
+2005;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;10,85;0,30;75,80;4465;51,0;1,3
+2005;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmMragParkow;NOx;1g;17,32;0,50;154,00;2032;23,2;0,2
+2005;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;19,67;-1,60;261,00;8649;98,7;1,0
+2005;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;40,07;0,00;570,00;7924;90,5;1,0
+2005;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;32,49;0,00;550,00;8298;94,7;1,0
+2005;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;14,15;0,00;200,00;7600;86,8;0,8
+2005;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;5,59;0,00;66,00;8097;92,4;1,1
+2005;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;16,46;0,00;417,00;8155;93,1;1,0
+2005;wielkopolskie;PL3003;strefa wielkopolska;WpWKP003;NOx;1g;2,93;0,00;109,17;8103;92,5;1,0
+2005;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;21,19;0,00;759,00;8508;97,1;1,0
+2005;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczLacz04;NOx;1g;10,99;0,00;284,00;8467;96,7;1,0
+2005;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;51,99;2,00;878,00;8484;96,8;1,0
+2005;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;8,76;0,00;54,00;8495;97,0;1,0
+2006;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;208,56;12,00;1566,00;8061;92,0;1,0
+2006;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;19,28;0,00;213,00;7569;86,4;1,2
+2006;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;50,60;1,00;693,00;8180;93,4;1,0
+2006;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;42,58;0,00;927,00;7452;85,1;0,9
+2006;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;23,53;1,00;637,00;8128;92,8;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;13,56;0,00;97,00;8075;92,2;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsCzar07;NOx;1g;7,75;0,00;94,00;7612;86,9;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;6,17;0,00;88,00;8234;94,0;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;14,04;0,00;147,00;8381;95,7;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;26,78;0,00;795,00;8637;98,6;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;19,95;0,10;205,00;8438;96,3;1,1
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;14,63;0,00;194,00;7695;87,8;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;18,94;0,00;186,00;8217;93,8;0,9
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;28,65;2,00;453,00;8116;92,6;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;11,70;0,00;111,30;8561;97,7;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsNRudaSrebA;NOx;1g;30,67;0,00;424,00;8386;95,7;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;13,68;6,00;89,00;8397;95,9;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsSnie04;NOx;1g;3,17;0,00;37,00;7750;88,5;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;14,02;0,10;119,70;8399;95,9;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;14,78;4,00;105,00;7988;91,2;0,9
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsWlen03;NOx;1g;10,47;1,00;84,00;7710;88,0;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;13,98;0,00;68,00;8288;94,6;1,0
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;32,63;5,00;286,00;4926;56,2;0,9
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;17,64;2,00;173,00;8145;93,0;1,0
+2006;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;75,57;2,00;979,00;8536;97,4;1,0
+2006;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;69,51;-1,20;314,00;7304;83,4;1,1
+2006;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;NOx;1g;8,88;0,00;262,00;8522;97,3;1,0
+2006;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;24,82;2,00;274,00;4333;49,5;1,3
+2006;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunLotnisko;NOx;1g;1,61;0,00;21,00;8564;97,8;1,0
+2006;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;60,62;0,70;691,60;5807;66,3;2,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBydgBlota;NOx;1g;65,26;4,60;567,90;1585;18,1;1,1
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;9,58;0,00;102,10;4325;49,4;0,2
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFIzbica;NOx;1g;9,97;0,00;28,70;1443;16,5;0,6
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFNieszawa;NOx;1g;19,11;1,80;117,80;1814;20,7;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSepolno;NOx;1g;55,14;23,30;179,60;1645;18,8;1,1
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecPrzechowo;NOx;1g;12,10;0,00;311,00;7703;87,9;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;12,89;0,00;101,00;7496;85,6;0,9
+2006;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;NOx;1g;39,31;0,00;966,10;7194;82,1;0,8
+2006;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;NOx;1g;26,65;0,10;380,20;5027;57,4;0,5
+2006;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;42,56;0,00;655,00;7893;90,1;1,0
+2006;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;27,40;3,00;476,00;8313;94,9;1,0
+2006;lubuskie;PL0803;strefa lubuska;LuSlubWIOS_AUT;NOx;1g;20,37;0,00;309,00;7982;91,1;1,0
+2006;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;6,82;0,00;87,00;8191;93,5;1,0
+2006;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;24,37;2,00;459,00;7644;87,3;0,9
+2006;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;25,51;0,30;618,60;8500;97,0;1,0
+2006;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;36,84;0,40;507,80;8702;99,3;1,0
+2006;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;72,41;4,50;1389,20;8726;99,6;1,0
+2006;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;33,89;0,50;320,40;7567;86,4;1,3
+2006;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;31,70;1,40;401,20;6665;76,1;1,9
+2006;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;18,66;0,10;224,30;8672;99,0;1,0
+2006;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;16,48;0,10;229,70;8528;97,4;1,0
+2006;łódzkie;PL1002;strefa łódzka;LdPiotrkWIOSABelzack;NOx;1g;32,54;1,30;921,90;5518;63,0;1,4
+2006;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;26,14;0,10;551,50;8707;99,4;1,0
+2006;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;219,80;13,00;1604,00;7869;89,8;1,1
+2006;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;76,52;2,00;1293,00;8488;96,9;1,0
+2006;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;82,64;5,00;938,00;8394;95,8;1,0
+2006;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;NOx;1g;57,82;4,00;911,00;7327;83,6;0,7
+2006;małopolskie;PL1203;strefa małopolska;MpNSaczWIOSPija6204;NOx;1g;40,05;2,00;677,00;8612;98,3;1,0
+2006;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;10,43;1,00;112,00;6673;76,2;0,9
+2006;małopolskie;PL1203;strefa małopolska;MpTrzebiWIOSPils0303;NOx;1g;32,23;2,00;418,00;8514;97,2;1,0
+2006;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;36,22;1,00;546,00;4862;55,5;0,9
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;184,89;9,50;995,60;8041;91,8;1,0
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;54,26;4,10;876,60;8631;98,5;1,0
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPorajow;NOx;1g;36,51;1,30;633,00;5822;66,5;0,7
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;32,91;0,80;601,30;8444;96,4;1,0
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;NOx;1g;58,15;3,10;911,30;5113;58,4;0,6
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;42,22;1,50;423,60;8748;99,9;1,0
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;37,29;2,90;847,60;8720;99,5;1,0
+2006;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;NOx;1g;20,49;1,20;138,90;3417;39,0;0,6
+2006;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;33,74;1,90;563,90;8521;97,3;1,0
+2006;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;34,94;1,90;983,40;8327;95,1;0,9
+2006;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;12,87;0,40;100,70;8604;98,2;1,0
+2006;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;12,73;0,60;172,60;8376;95,6;1,0
+2006;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;29,32;1,50;442,10;8556;97,7;1,0
+2006;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;35,58;3,10;713,70;8723;99,6;1,0
+2006;mazowieckie;PL1404;strefa mazowiecka;MzTluszczJKiel;NOx;1g;14,21;1,40;186,70;8582;98,0;1,0
+2006;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;24,56;2,10;372,40;8473;96,7;1,1
+2006;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;36,97;2,00;713,00;8286;94,6;1,0
+2006;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;26,10;0,00;494,00;8314;94,9;1,0
+2006;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;22,41;0,00;255,00;7817;89,2;0,9
+2006;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;NOx;1g;23,87;0,00;327,00;6715;76,7;0,8
+2006;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor;NOx;1g;18,45;0,00;180,80;4069;46,4;1,1
+2006;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;NOx;1g;25,09;1,30;338,70;3503;40,0;1,4
+2006;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;10,39;0,00;176,70;8441;96,4;1,1
+2006;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;17,59;0,00;280,40;8683;99,1;1,0
+2006;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;2,79;0,00;51,20;8627;98,5;1,0
+2006;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;29,04;0,00;382,80;8072;92,1;1,0
+2006;podlaskie;PL2002;strefa podlaska;PdSuwPulaski;NOx;1g;28,49;0,00;509,20;8659;98,8;1,0
+2006;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.a09a;NOx;1g;16,69;2,80;282,70;8646;98,7;1,0
+2006;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;23,91;3,40;278,90;8572;97,9;1,0
+2006;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;31,33;3,30;632,90;8570;97,8;1,0
+2006;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;20,64;3,40;300,90;8079;92,2;0,9
+2006;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;46,93;4,30;901,70;8630;98,5;1,0
+2006;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;27,24;3,10;475,00;8644;98,7;1,0
+2006;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;22,66;3,40;423,90;8547;97,6;1,0
+2006;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;18,28;2,80;409,90;7515;85,8;1,0
+2006;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;19,44;0,00;225,00;8286;94,6;1,0
+2006;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;23,64;3,90;331,00;8631;98,5;1,0
+2006;śląskie;PL2405;strefa śląska;SlUstroCies_sanat;NOx;1g;22,99;5,10;182,10;8660;98,9;1,0
+2006;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;13,50;2,00;99,00;8329;95,1;1,0
+2006;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;12,85;1,00;117,00;8531;97,4;1,0
+2006;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;20,98;0,00;315,60;8276;94,5;1,1
+2006;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;18,90;-0,30;276,10;7236;82,6;1,0
+2006;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;14,54;0,00;311,70;7734;88,3;0,9
+2006;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmMragParkow;NOx;1g;15,25;0,00;171,40;8276;94,5;0,9
+2006;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;19,35;0,00;465,80;7720;88,1;1,0
+2006;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;46,23;1,40;1129,00;8490;96,9;1,0
+2006;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;36,46;0,00;765,50;8582;98,0;1,0
+2006;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;28,11;0,00;367,50;3697;42,2;0,8
+2006;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;11,12;0,00;102,00;8622;98,4;1,0
+2006;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;22,62;0,00;445,00;8238;94,0;0,9
+2006;wielkopolskie;PL3003;strefa wielkopolska;WpWKP003;NOx;1g;9,42;0,00;86,00;8134;92,9;1,0
+2006;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;23,29;0,00;700,00;8533;97,4;1,0
+2006;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczLacz04;NOx;1g;14,84;0,00;181,00;8535;97,4;1,0
+2006;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;55,29;0,00;1309,00;8551;97,6;1,0
+2006;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;11,05;0,00;62,00;8376;95,6;1,0
+2007;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;179,42;12,00;1482,00;8342;95,2;1,0
+2007;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;20,59;0,00;221,00;7983;91,1;0,9
+2007;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;40,94;3,00;569,00;8290;94,6;1,0
+2007;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;37,79;0,00;652,00;7210;82,3;1,1
+2007;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;22,28;0,00;861,00;6752;77,1;0,7
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;13,49;0,00;131,00;8628;98,5;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsCzar07;NOx;1g;6,13;0,00;40,00;6920;79,0;0,7
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;6,52;0,00;56,00;7999;91,3;0,9
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;13,81;0,00;101,00;8089;92,3;1,1
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;21,65;0,00;461,00;8510;97,1;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;18,40;0,10;204,80;8285;94,6;0,9
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;13,04;2,00;128,00;8036;91,7;1,1
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;18,70;0,00;355,00;8470;96,7;1,1
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;26,51;2,00;294,00;8251;94,2;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;9,70;0,10;69,90;8617;98,4;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsNRudaSrebA;NOx;1g;22,52;0,00;365,00;7761;88,6;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;15,10;0,00;107,00;5539;63,2;1,5
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsSnie04;NOx;1g;2,32;0,00;28,00;8193;93,5;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;12,26;0,10;90,40;7992;91,2;0,9
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;16,12;2,00;141,00;8707;99,4;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsWlen03;NOx;1g;7,41;0,00;77,00;7759;88,6;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;13,43;2,00;100,00;4221;48,2;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;21,31;0,00;192,00;7060;80,6;0,9
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;17,99;1,00;152,00;8602;98,2;1,0
+2007;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgCO;NOx;1g;51,75;12,80;187,80;1571;17,9;1,0
+2007;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;68,76;2,90;536,90;8428;96,2;1,0
+2007;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;44,73;1,70;774,20;4083;46,6;5,7
+2007;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;NOx;1g;9,14;0,00;294,00;8637;98,6;1,0
+2007;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;41,73;1,00;591,00;5798;66,2;1,2
+2007;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunLotnisko;NOx;1g;1,60;0,00;50,00;6580;75,1;1,5
+2007;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;89,85;1,00;360,50;8444;96,4;1,0
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBydgBlota;NOx;1g;82,00;11,60;527,20;1384;15,8;1,4
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;3,16;0,00;102,70;8479;96,8;1,0
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;10,71;0,00;150,00;2792;31,9;0,3
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSepolno;NOx;1g;69,44;10,40;201,70;1511;17,2;0,9
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecPrzechowo;NOx;1g;10,73;0,00;155,10;8241;94,1;0,9
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;9,37;1,20;45,10;5337;60,9;1,1
+2007;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;NOx;1g;35,68;2,00;778,50;8662;98,9;1,0
+2007;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;NOx;1g;17,01;0,30;325,80;6220;71,0;0,9
+2007;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;31,15;0,00;841,00;7968;91,0;1,0
+2007;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;22,20;0,00;380,00;8245;94,1;1,0
+2007;lubuskie;PL0803;strefa lubuska;LuSlubWIOS_AUT;NOx;1g;15,29;0,00;303,00;7902;90,2;1,0
+2007;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;5,86;0,00;61,00;8245;94,1;1,0
+2007;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;14,92;0,00;608,00;7062;80,6;1,2
+2007;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;21,27;2,70;280,80;8468;96,7;1,1
+2007;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;34,59;4,40;440,70;8735;99,7;1,0
+2007;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;62,54;6,80;699,00;8709;99,4;1,0
+2007;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;33,68;2,60;553,20;8634;98,6;1,0
+2007;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;31,51;0,40;393,60;8106;92,5;1,1
+2007;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;16,36;0,10;172,10;8626;98,5;1,0
+2007;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;17,97;0,30;280,90;8622;98,4;1,0
+2007;łódzkie;PL1002;strefa łódzka;LdPiotrkWIOSABelzack;NOx;1g;27,78;0,40;759,60;8620;98,4;1,0
+2007;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;19,70;0,20;299,50;8563;97,8;1,0
+2007;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;202,81;12,00;1699,00;8488;96,9;1,1
+2007;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;63,62;3,00;877,00;8262;94,3;0,9
+2007;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;70,86;4,00;888,00;8488;96,9;1,0
+2007;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;NOx;1g;49,31;2,00;627,00;7787;88,9;0,8
+2007;małopolskie;PL1203;strefa małopolska;MpNSaczWIOSPija6204;NOx;1g;32,96;3,00;475,00;7453;85,1;0,8
+2007;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;41,78;3,00;649,00;8472;96,7;1,0
+2007;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;8,21;1,00;58,00;7237;82,6;0,9
+2007;małopolskie;PL1203;strefa małopolska;MpTrzebiWIOSPils0303;NOx;1g;30,39;3,00;313,00;8406;96,0;1,0
+2007;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;29,19;1,00;689,00;8114;92,6;1,0
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;176,70;7,40;1158,10;8629;98,5;1,0
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;45,09;4,30;461,70;8684;99,1;1,0
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPorajow;NOx;1g;26,14;1,00;399,30;6402;73,1;1,4
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;27,43;1,20;613,30;8383;95,7;0,9
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;NOx;1g;47,00;1,50;273,20;2015;23,0;0,0
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;35,98;0,10;403,90;8703;99,3;1,0
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszSGGW;NOx;1g;26,92;1,70;835,80;8523;97,3;1,0
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarTolstoj;NOx;1g;31,01;3,00;378,50;3287;37,5;0,7
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;31,16;1,80;678,40;7275;83,0;0,7
+2007;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;27,86;2,60;428,50;8470;96,7;1,0
+2007;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;21,81;2,10;376,70;8719;99,5;1,0
+2007;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;9,85;0,40;104,10;8568;97,8;1,0
+2007;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;8,98;0,80;78,70;7713;88,0;1,1
+2007;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;26,58;1,70;361,10;8703;99,3;1,0
+2007;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;30,73;2,40;541,30;8597;98,1;1,0
+2007;mazowieckie;PL1404;strefa mazowiecka;MzTluszczJKiel;NOx;1g;11,60;0,40;127,00;8713;99,5;1,0
+2007;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;17,14;0,80;202,50;7283;83,1;1,2
+2007;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;30,85;0,00;433,00;7659;87,4;0,9
+2007;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;22,01;0,00;293,00;8304;94,8;1,0
+2007;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;19,43;0,00;173,00;8116;92,6;0,9
+2007;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;NOx;1g;21,28;1,00;434,00;8319;95,0;1,1
+2007;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor;NOx;1g;19,49;0,00;186,90;7518;85,8;0,9
+2007;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;24,09;0,00;262,50;7373;84,2;0,9
+2007;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;NOx;1g;29,90;0,00;599,80;7708;88,0;0,9
+2007;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;10,52;0,00;173,20;8569;97,8;1,0
+2007;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;16,91;0,00;245,00;8624;98,4;1,0
+2007;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;2,60;0,00;62,90;7775;88,8;1,0
+2007;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;24,62;0,00;463,80;8290;94,6;1,0
+2007;podlaskie;PL2002;strefa podlaska;PdSuwPulaski;NOx;1g;24,23;0,00;584,00;5865;67,0;0,4
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.a09a;NOx;1g;14,64;2,30;185,70;8381;95,7;1,1
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;16,19;1,20;246,10;8558;97,7;1,0
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;26,52;2,50;656,40;8563;97,8;1,0
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;17,92;2,20;215,60;8504;97,1;1,0
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;33,26;3,30;568,00;7563;86,3;0,9
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;22,95;2,80;279,50;7398;84,5;0,7
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;16,40;2,10;253,40;8655;98,8;1,0
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;13,51;2,30;184,20;8552;97,6;1,0
+2007;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;16,30;0,00;269,00;7908;90,3;1,2
+2007;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;17,60;2,20;337,80;8169;93,3;1,0
+2007;śląskie;PL2405;strefa śląska;SlUstroCies_sanat;NOx;1g;24,97;4,50;148,70;8754;99,9;1,0
+2007;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;10,18;2,00;93,00;5159;58,9;1,6
+2007;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;1,82;0,00;43,00;6773;77,3;1,4
+2007;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;14,88;0,00;238,30;8252;94,2;1,0
+2007;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;18,39;0,00;376,20;7852;89,6;0,8
+2007;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;10,62;0,00;95,30;6308;72,0;0,9
+2007;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmMragParkow;NOx;1g;12,93;0,00;109,70;8719;99,5;1,0
+2007;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;19,66;0,00;667,40;8512;97,2;1,0
+2007;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;41,89;1,90;713,00;8392;95,8;0,9
+2007;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;33,49;0,00;596,80;8658;98,8;1,0
+2007;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;12,15;1,90;94,50;8620;98,4;1,0
+2007;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;22,24;1,30;252,40;5390;61,5;0,8
+2007;wielkopolskie;PL3003;strefa wielkopolska;WpWKP003;NOx;1g;9,30;2,40;82,20;8624;98,4;1,0
+2007;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;21,01;0,00;385,00;8286;94,6;1,1
+2007;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczLacz04;NOx;1g;10,79;0,00;151,00;8606;98,2;1,0
+2007;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;47,43;0,00;1179,00;8575;97,9;1,0
+2007;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;35,03;0,00;545,00;8273;94,4;1,0
+2007;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;10,34;0,00;113,00;8555;97,7;1,0
+2008;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;182,05;5,00;1162,00;8068;91,8;0,9
+2008;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;19,81;0,00;307,00;6860;78,1;1,5
+2008;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;43,58;2,00;538,00;7771;88,5;0,9
+2008;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;37,10;0,00;646,00;7581;86,3;1,2
+2008;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;22,30;1,00;612,00;8344;95,0;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;15,59;0,00;116,00;8752;99,6;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsCzar07;NOx;1g;5,69;0,00;27,00;6100;69,4;2,2
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;7,35;0,00;50,00;8561;97,5;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;14,21;1,00;144,00;8547;97,3;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;21,46;0,00;524,00;8426;95,9;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;17,07;0,10;154,60;8737;99,5;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;13,46;1,00;72,00;8645;98,4;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;NOx;1g;18,31;0,00;218,00;7981;90,9;0,9
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;23,59;0,00;307,00;7807;88,9;0,9
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsKgMob;NOx;1g;24,66;0,00;226,60;1836;20,9;0,4
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;8,67;0,10;56,10;8625;98,2;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsNRudaSrebA;NOx;1g;23,50;0,00;349,00;8291;94,4;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;28,23;3,00;294,00;3201;36,4;0,6
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;14,88;1,00;108,00;8731;99,4;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsSnie04;NOx;1g;2,71;0,00;38,00;8197;93,3;0,9
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;10,89;0,10;88,90;8146;92,7;0,9
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsTrzebMob;NOx;1g;24,52;0,00;283,00;4534;51,6;1,1
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;17,36;2,00;178,00;8719;99,3;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsWlen03;NOx;1g;7,63;0,00;68,00;7090;80,7;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;12,11;1,00;60,00;8701;99,1;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;26,18;2,00;399,00;2790;31,8;0,3
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;23,96;1,00;655,00;8410;95,7;1,0
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;17,32;2,00;203,00;8459;96,3;0,9
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgWzgWolnosci;NOx;1g;71,30;8,20;379,70;1320;15,0;1,6
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;74,93;3,50;861,20;8556;97,4;1,0
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;29,33;0,10;372,50;8147;92,7;1,1
+2008;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;28,82;0,00;534,00;6088;69,3;0,6
+2008;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunLotnisko;NOx;1g;3,03;0,00;66,90;8103;92,2;1,2
+2008;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;65,13;6,50;224,80;2760;31,4;1,6
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBydgBlota;NOx;1g;35,59;8,60;166,10;1522;17,3;0,9
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;3,61;0,00;147,30;7796;88,8;0,8
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFMarusza;NOx;1g;14,94;3,20;83,70;1832;20,9;1,2
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;2,14;0,00;12,30;8246;93,9;1,0
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecPrzechowo;NOx;1g;13,26;0,00;306,10;8546;97,3;1,0
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWabrzstmob;NOx;1g;15,86;3,20;75,00;1543;17,6;0,8
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;8,16;0,00;45,50;8409;95,7;1,0
+2008;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;NOx;1g;27,03;0,80;583,30;8685;98,9;1,0
+2008;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;NOx;1g;19,16;1,10;381,80;8024;91,3;0,9
+2008;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;36,58;0,00;444,00;8036;91,5;1,0
+2008;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;22,99;2,00;379,00;8362;95,2;1,0
+2008;lubuskie;PL0803;strefa lubuska;LuSlubWIOS_AUT;NOx;1g;21,96;1,00;375,00;8069;91,9;1,0
+2008;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;8,63;0,00;65,00;7896;89,9;0,9
+2008;lubuskie;PL0803;strefa lubuska;LuSwieboWIOS_MOB;NOx;1g;32,59;0,00;610,00;7655;87,1;1,2
+2008;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;14,05;0,00;254,00;7143;81,3;1,0
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;24,23;1,90;572,40;6289;71,6;1,4
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;35,86;1,00;384,80;8621;98,1;1,0
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;48,79;4,30;539,30;8697;99,0;1,0
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;32,72;2,60;447,90;8452;96,2;1,1
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;30,31;3,60;402,80;8680;98,8;1,0
+2008;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;15,24;1,10;144,70;8240;93,8;1,0
+2008;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;18,55;1,20;211,30;8398;95,6;1,0
+2008;łódzkie;PL1002;strefa łódzka;LdPiotrkWIOSABelzack;NOx;1g;43,97;1,70;810,00;8318;94,7;1,1
+2008;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;21,11;0,60;203,00;8501;96,8;1,0
+2008;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;237,94;9,00;1877,00;8575;97,6;1,0
+2008;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;68,55;3,00;870,00;8446;96,2;1,0
+2008;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;72,19;4,00;954,00;8391;95,5;1,1
+2008;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;NOx;1g;46,02;3,00;840,00;8517;97,0;1,0
+2008;małopolskie;PL1203;strefa małopolska;MpNSaczWIOSPija6204;NOx;1g;33,57;2,00;581,00;8695;99,0;1,0
+2008;małopolskie;PL1203;strefa małopolska;MpOlkuFrNull;NOx;1g;36,39;4,00;628,00;8449;96,2;1,0
+2008;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;47,01;4,00;603,00;8486;96,6;1,0
+2008;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;7,46;1,00;67,00;8287;94,3;1,0
+2008;małopolskie;PL1203;strefa małopolska;MpTrzebiWIOSPils0303;NOx;1g;27,72;2,00;370,00;8257;94,0;0,9
+2008;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;29,35;1,00;746,00;7170;81,6;0,8
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;169,10;0,00;993,70;8752;99,6;1,0
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;39,13;2,50;779,20;8719;99,3;1,0
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPorajow;NOx;1g;30,61;1,10;848,30;7841;89,3;1,2
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;28,29;1,30;521,80;8659;98,6;1,0
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;NOx;1g;46,87;3,90;612,50;7961;90,6;0,9
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;36,60;1,30;350,80;8670;98,7;1,0
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszSGGW;NOx;1g;25,82;1,10;329,20;4756;54,1;1,3
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;31,03;2,80;597,20;8634;98,3;1,0
+2008;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;24,89;2,00;699,20;7438;84,7;0,9
+2008;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;30,10;0,90;431,70;5433;61,9;0,5
+2008;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;10,81;0,00;100,50;8317;94,7;1,0
+2008;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;9,11;0,50;71,50;8237;93,8;0,9
+2008;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;23,69;1,50;400,10;8277;94,2;1,0
+2008;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;12,03;0,40;222,50;8075;91,9;1,2
+2008;mazowieckie;PL1404;strefa mazowiecka;MzTluszczJKiel;NOx;1g;12,48;0,40;141,60;8602;97,9;1,0
+2008;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;22,91;1,10;434,50;7317;83,3;0,8
+2008;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;33,26;1,00;495,00;8180;93,1;1,0
+2008;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;28,98;1,00;486,00;8407;95,7;1,0
+2008;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;21,34;2,00;252,00;8471;96,4;1,0
+2008;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;NOx;1g;24,66;0,00;438,00;8712;99,2;1,0
+2008;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor;NOx;1g;19,98;0,00;207,90;6808;77,5;1,3
+2008;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;24,66;0,40;464,20;6658;75,8;1,1
+2008;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;NOx;1g;28,80;2,20;332,00;5423;61,7;1,5
+2008;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;10,42;0,00;161,60;8098;92,2;1,1
+2008;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;18,37;0,00;318,60;8749;99,6;1,0
+2008;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;2,11;0,00;33,00;8197;93,3;1,1
+2008;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;30,28;0,00;415,60;8143;92,7;1,1
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.a09a;NOx;1g;12,77;2,70;97,60;6482;73,8;2,0
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;18,75;2,80;243,80;8619;98,1;1,0
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;27,52;2,60;594,20;8447;96,2;1,0
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;17,93;2,50;223,70;8508;96,9;1,0
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;40,13;4,70;658,60;8289;94,4;0,9
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;25,69;3,30;369,10;7618;86,7;1,1
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;18,04;2,70;326,60;7940;90,4;0,9
+2008;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;12,10;1,00;179,00;6162;70,2;0,6
+2008;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;42,40;4,20;241,90;7566;86,1;1,3
+2008;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;18,30;4,60;202,00;8652;98,5;1,0
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlBytomByto_modrz;NOx;1g;36,17;1,00;481,00;7209;82,1;1,4
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlChorzChor_bator;NOx;1g;120,74;7,00;695,00;8294;94,4;1,0
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;57,00;5,00;580,00;7770;88,5;1,1
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;42,89;1,00;531,00;8097;92,2;1,1
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;39,31;3,00;877,00;8381;95,4;1,0
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;40,39;4,00;555,00;7351;83,7;1,3
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;34,63;1,00;393,00;7489;85,3;1,0
+2008;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;37,23;4,00;535,00;7803;88,8;1,0
+2008;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;35,22;2,00;759,00;8331;94,8;1,0
+2008;śląskie;PL2404;miasto Częstochowa;SlCzestCzes_arkra;NOx;1g;105,80;3,00;955,00;4470;50,9;0,1
+2008;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;35,75;2,00;635,00;7567;86,1;1,0
+2008;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;20,99;1,00;197,00;8166;93,0;1,0
+2008;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;32,43;3,00;270,00;8256;94,0;1,0
+2008;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;11,26;3,00;81,00;6456;73,5;1,2
+2008;śląskie;PL2405;strefa śląska;SlZywieSlowa;NOx;1g;46,17;1,00;864,00;6974;79,4;1,3
+2008;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;5,49;1,00;53,00;5167;58,8;1,6
+2008;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;19,20;0,00;349,60;8484;96,6;1,0
+2008;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;16,39;0,00;268,20;7892;89,8;0,9
+2008;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;10,43;0,00;88,00;6762;77,0;0,8
+2008;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmMragParkow;NOx;1g;12,01;0,00;126,50;7515;85,6;1,0
+2008;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;22,70;0,00;305,40;6070;69,1;0,6
+2008;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;42,84;1,90;799,60;7864;89,5;0,8
+2008;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;31,95;0,00;370,00;7902;90,0;0,8
+2008;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;17,52;0,20;163,50;3475;39,6;3,7
+2008;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;13,54;0,00;74,70;7793;88,7;0,9
+2008;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;24,79;0,90;559,30;7012;79,8;1,1
+2008;wielkopolskie;PL3003;strefa wielkopolska;WpWKP003;NOx;1g;9,60;0,90;81,20;7840;89,3;0,8
+2008;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;16,09;0,00;329,00;8520;97,0;1,0
+2008;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczLacz04;NOx;1g;13,25;0,00;246,00;8438;96,1;1,0
+2008;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;49,29;2,00;585,00;8435;96,0;1,0
+2008;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;33,10;0,00;535,00;8021;91,3;1,1
+2008;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpGryfMarwiceDO;NOx;1g;8,12;0,00;60,00;6461;73,6;1,0
+2008;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzcStorkowoDO;NOx;1g;3,03;0,00;50,00;5726;65,2;1,0
+2008;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;9,81;0,00;71,00;8516;96,9;1,0
+2009;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;23,48;2,00;260,00;7053;80,5;1,0
+2009;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;45,06;3,00;696,00;7758;88,6;1,0
+2009;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;38,95;4,00;799,00;7192;82,1;1,4
+2009;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;23,80;0,00;658,00;7546;86,1;0,9
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;12,90;0,00;144,00;8659;98,8;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;6,96;0,00;70,00;7385;84,3;1,3
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;13,76;1,00;131,00;8603;98,2;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;25,42;0,00;420,00;8424;96,2;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;15,69;0,10;179,30;8353;95,4;1,1
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;9,81;0,00;66,00;8743;99,8;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;27,35;1,00;321,00;8334;95,1;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;26,65;4,00;509,00;4419;50,4;1,5
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;10,13;0,20;54,80;8715;99,5;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsNRudaSrebA;NOx;1g;24,32;0,00;446,00;7534;86,0;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;26,24;1,00;370,00;7590;86,6;0,9
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;14,25;0,00;111,00;8752;99,9;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsSnie04;NOx;1g;3,75;0,00;43,00;6840;78,1;1,5
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;11,03;0,10;98,00;7098;81,0;0,9
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsTrzebMob;NOx;1g;27,99;1,00;429,00;6149;70,2;0,6
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;13,87;1,00;125,00;7726;88,2;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsWlen03;NOx;1g;7,98;0,00;78,00;8230;93,9;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;9,17;0,00;75,00;8710;99,4;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;22,16;0,00;256,00;7950;90,8;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;24,90;0,00;263,00;8213;93,8;1,0
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;13,41;0,00;140,00;8599;98,2;1,0
+2009;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;103,24;5,60;665,30;3682;42,0;0,7
+2009;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;48,75;3,80;470,90;2082;23,8;0,3
+2009;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;35,71;3,90;510,90;3069;35,0;1,0
+2009;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;115,91;0,00;779,10;4468;51,0;1,1
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFGolub;NOx;1g;16,55;3,50;128,10;1743;19,9;0,7
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFRypinKOMES;NOx;1g;17,36;2,00;159,60;1580;18,0;0,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;8,58;0,00;45,10;3922;44,8;0,7
+2009;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;NOx;1g;29,18;0,40;490,60;8594;98,1;1,0
+2009;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;NOx;1g;26,84;1,00;300,30;8339;95,2;1,1
+2009;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;37,72;2,00;478,00;4915;56,1;0,7
+2009;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;24,03;0,00;286,00;8310;94,9;1,0
+2009;lubuskie;PL0803;strefa lubuska;LuSlubWIOS_AUT;NOx;1g;22,97;2,00;448,00;8060;92,0;1,0
+2009;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;7,44;0,00;95,00;5704;65,1;1,0
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;26,67;2,00;390,80;8436;96,3;1,0
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;36,38;3,40;452,60;8593;98,1;1,0
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;65,89;4,70;817,30;8719;99,5;1,0
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;36,63;3,30;418,90;8431;96,2;1,0
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;29,27;0,50;602,30;8173;93,3;0,9
+2009;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;16,74;0,00;114,10;8060;92,0;0,9
+2009;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;18,37;1,40;173,10;7780;88,8;0,9
+2009;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;21,27;0,50;251,10;8283;94,6;1,0
+2009;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;244,43;18,00;1808,00;8568;97,8;1,0
+2009;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;65,91;2,00;987,00;8314;94,9;1,0
+2009;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;NOx;1g;81,97;9,00;919,00;8649;98,7;1,0
+2009;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;NOx;1g;46,74;4,00;657,00;8310;94,9;1,1
+2009;małopolskie;PL1203;strefa małopolska;MpNSaczWIOSPija6204;NOx;1g;36,56;3,00;614,00;8657;98,8;1,0
+2009;małopolskie;PL1203;strefa małopolska;MpOlkuFrNull;NOx;1g;35,13;3,00;438,00;7845;89,6;1,0
+2009;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;46,05;2,00;620,00;8470;96,7;1,0
+2009;małopolskie;PL1203;strefa małopolska;MpSzarowWIOS1908;NOx;1g;23,59;3,00;332,00;8126;92,8;1,2
+2009;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;9,03;1,00;141,00;8576;97,9;1,0
+2009;małopolskie;PL1203;strefa małopolska;MpTrzebiWIOSPils0303;NOx;1g;29,89;2,00;347,00;8660;98,9;1,0
+2009;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;32,74;1,00;454,00;8462;96,6;1,0
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;146,26;6,10;956,00;8525;97,3;1,0
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;40,26;2,00;771,00;8584;98,0;1,0
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPorajow;NOx;1g;31,34;0,70;604,00;7689;87,8;1,2
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;46,09;1,40;828,80;7327;83,6;1,1
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;NOx;1g;45,39;3,20;840,90;8454;96,5;1,0
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;24,89;0,40;370,70;8483;96,8;1,1
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;32,86;2,30;453,60;8666;98,9;1,0
+2009;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;25,39;1,20;663,20;7950;90,8;1,1
+2009;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;31,29;0,20;580,50;8422;96,1;1,0
+2009;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;11,65;0,40;93,20;8667;98,9;1,0
+2009;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;12,04;0,50;75,10;8339;95,2;0,9
+2009;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;23,22;1,20;251,80;8624;98,4;1,0
+2009;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;28,02;1,30;447,10;8282;94,5;1,0
+2009;mazowieckie;PL1404;strefa mazowiecka;MzTluszczJKiel;NOx;1g;11,04;0,70;118,00;8474;96,7;1,1
+2009;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;24,26;2,70;336,10;7567;86,4;1,2
+2009;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;34,20;2,00;405,00;7525;85,9;0,8
+2009;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;34,17;2,00;329,00;6874;78,5;0,7
+2009;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;25,63;2,00;215,00;8012;91,5;1,0
+2009;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;NOx;1g;28,72;2,00;458,00;7391;84,4;0,7
+2009;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor;NOx;1g;21,07;0,60;169,90;8306;94,8;1,1
+2009;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;29,31;1,60;324,60;8500;97,0;1,0
+2009;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;NOx;1g;31,94;0,00;600,60;8360;95,4;1,1
+2009;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;10,97;0,00;264,30;8243;94,1;1,1
+2009;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;19,90;0,00;675,40;8695;99,3;1,0
+2009;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;3,04;0,00;34,60;6126;69,9;0,5
+2009;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;22,83;0,00;463,70;8554;97,6;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;22,95;3,20;266,30;8543;97,5;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;31,95;3,60;728,20;8197;93,6;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;23,55;3,90;391,80;8467;96,7;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;55,50;3,50;768,90;8481;96,8;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;29,35;3,90;428,10;8328;95,1;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;19,16;3,20;320,80;8509;97,1;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;17,84;3,00;267,50;8494;97,0;1,0
+2009;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;20,06;1,00;221,00;3669;41,9;2,0
+2009;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;34,05;4,30;202,10;7188;82,1;0,9
+2009;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;21,86;3,80;292,90;8481;96,8;1,0
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlBytomByto_modrz;NOx;1g;41,67;2,00;808,00;7573;86,4;1,0
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlChorzChor_bator;NOx;1g;110,65;5,00;1049,00;7157;81,7;1,4
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;44,51;3,00;543,00;8043;91,8;0,9
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;46,47;2,00;817,00;8183;93,4;1,0
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;55,86;4,00;1031,00;8242;94,1;1,0
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;43,68;2,00;629,00;8312;94,9;1,0
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;39,21;2,00;764,00;7534;86,0;1,0
+2009;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;28,88;2,00;412,00;7464;85,2;0,8
+2009;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;33,65;3,00;499,00;8362;95,5;1,0
+2009;śląskie;PL2404;miasto Częstochowa;SlCzestCzes_arkra;NOx;1g;106,86;7,00;955,00;7422;84,7;1,0
+2009;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;31,20;4,00;523,00;7315;83,5;1,2
+2009;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;22,01;1,00;217,00;8333;95,1;1,0
+2009;śląskie;PL2405;strefa śląska;SlUstroCies_sanat;NOx;1g;11,46;1,40;85,10;8428;96,2;1,0
+2009;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;32,27;4,00;399,00;8332;95,1;1,0
+2009;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;11,04;1,00;85,00;7736;88,3;1,1
+2009;śląskie;PL2405;strefa śląska;SlZywieSlowa;NOx;1g;49,96;2,00;983,00;8344;95,3;1,0
+2009;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;3,69;0,00;46,00;7528;85,9;1,4
+2009;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;24,47;0,00;469,80;8128;92,8;1,0
+2009;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;20,53;0,00;327,20;7801;89,1;0,9
+2009;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;9,45;0,00;106,90;7504;85,7;1,2
+2009;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmMragParkow;NOx;1g;11,75;0,00;147,40;6435;73,5;1,5
+2009;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;27,49;0,30;629,40;7386;84,3;1,0
+2009;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;46,98;1,40;1274,10;8676;99,0;1,0
+2009;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;35,56;0,00;886,70;8391;95,8;1,0
+2009;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;16,70;0,50;258,30;7479;85,4;1,1
+2009;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;13,15;0,00;85,40;8003;91,4;0,9
+2009;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;23,96;0,20;470,60;8188;93,5;1,1
+2009;wielkopolskie;PL3003;strefa wielkopolska;WpWKP003;NOx;1g;10,16;0,00;76,40;8003;91,4;1,2
+2009;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;17,12;0,00;468,00;8241;94,1;1,0
+2009;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczecinDO;NOx;1g;69,15;0,00;896,00;7753;88,5;1,0
+2009;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczLacz04;NOx;1g;14,31;0,00;131,00;8521;97,3;1,0
+2009;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;52,49;0,00;595,00;7885;90,0;1,1
+2009;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;33,17;1,00;829,00;7855;89,7;1,1
+2009;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpGryfMarwiceDO;NOx;1g;12,15;0,00;133,00;5914;67,5;0,6
+2009;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzcStorkowoDO;NOx;1g;4,74;0,50;54,00;6509;74,3;0,9
+2009;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;8,97;0,00;77,00;8499;97,0;1,0
+2010;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;190,44;9,00;1 235,00;6 354,00;72,5;1,39
+2010;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;19,90;0,00;264,00;6 665,00;76,1;1,59
+2010;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;42,36;3,00;558,00;6 303,00;72,0;1,23
+2010;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;37,68;0,00;633,00;7 981,00;91,1;0,93
+2010;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;23,84;0,00;588,00;7 700,00;87,9;0,97
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;17,21;0,00;169,00;8 536,00;97,4;1,01
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;8,31;0,00;84,00;8 037,00;91,7;1,18
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;15,68;1,00;162,00;8 408,00;96,0;1,05
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;27,94;1,00;495,00;8 196,00;93,6;0,99
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;14,86;0,10;202,50;8 666,00;98,9;1,00
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;11,34;0,00;111,00;8 651,00;98,8;0,99
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;30,34;1,00;485,00;8 335,00;95,1;1,01
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;30,97;3,00;380,00;8 090,00;92,4;1,02
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;9,93;0,30;82,90;8 718,00;99,5;1,01
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsNRudaSrebA;NOx;1g;25,82;0,00;304,00;8 332,00;95,1;1,00
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;27,83;1,00;302,00;7 463,00;85,2;0,89
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;NOx;1g;11,12;0,00;140,00;8 677,00;99,1;1,01
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;17,79;0,00;139,00;5 157,00;58,9;1,40
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsSnie04;NOx;1g;2,30;0,00;27,00;8 346,00;95,3;1,05
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;10,16;0,10;114,70;8 619,00;98,4;1,01
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsStrzMob;NOx;1g;27,11;1,00;365,00;5 756,00;65,7;0,52
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;14,21;0,00;171,00;8 273,00;94,4;0,93
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsWlen03;NOx;1g;10,93;0,00;122,00;7 434,00;84,9;0,95
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;11,18;0,00;142,00;8 361,00;95,4;1,06
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;21,27;0,00;306,00;8 276,00;94,5;0,99
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;27,21;2,00;334,00;8 335,00;95,1;1,00
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;19,79;0,00;225,00;8 729,00;99,6;1,00
+2010;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;69,06;2,40;630,80;7 566,00;86,4;1,18
+2010;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;30,14;0,10;546,60;3 778,00;43,1;0,72
+2010;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;65,58;1,00;700,80;4 537,00;51,8;1,37
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFAleksandrowK;NOx;1g;24,71;5,50;297,50;1 577,00;18,0;0,74
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFChelmza;NOx;1g;20,91;2,90;273,90;1 958,00;22,4;0,80
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFIzbica;NOx;1g;18,62;3,70;143,70;1 330,00;15,2;1,27
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFRadzyn;NOx;1g;13,70;5,40;62,60;1 366,00;15,6;5,63
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;4,36;0,30;31,80;3 845,00;43,9;0,83
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecPrzechowo;NOx;1g;13,37;0,00;237,80;5 431,00;62,0;1,22
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;8,21;0,00;45,90;6 132,00;70,0;0,55
+2010;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;NOx;1g;29,88;0,70;648,20;3 042,00;34,7;0,45
+2010;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;NOx;1g;38,93;1,80;1 054,80;4 790,00;54,7;1,29
+2010;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;NOx;1g;28,08;0,70;436,20;7 271,00;83,0;0,67
+2010;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;36,54;0,00;413,00;6 912,00;78,9;1,43
+2010;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;27,81;2,00;490,00;8 273,00;94,4;0,99
+2010;lubuskie;PL0803;strefa lubuska;LuSlubWIOS_AUT;NOx;1g;21,84;0,00;282,00;6 309,00;72,0;1,06
+2010;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;8,11;0,00;88,00;8 233,00;94,0;1,00
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;25,54;1,10;410,50;8 716,00;99,5;1,00
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;38,95;2,50;354,90;8 658,00;98,8;0,99
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;65,25;2,00;674,70;8 740,00;99,8;1,00
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;35,59;1,60;438,50;8 494,00;97,0;1,00
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;32,01;1,10;387,20;8 569,00;97,8;0,98
+2010;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;14,35;0,00;143,50;8 436,00;96,3;1,00
+2010;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;18,76;0,10;195,70;8 568,00;97,8;0,99
+2010;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;NOx;1g;44,70;3,60;988,30;8 553,00;97,6;0,99
+2010;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;27,11;1,70;749,40;8 593,00;98,1;0,98
+2010;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;243,61;18,00;1 574,00;8 020,00;91,6;0,87
+2010;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;NOx;1g;87,61;2,00;955,00;6 445,00;73,6;1,68
+2010;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;64,64;3,00;981,00;8 199,00;93,6;0,93
+2010;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;NOx;1g;34,56;2,00;684,00;8 257,00;94,3;1,02
+2010;małopolskie;PL1203;strefa małopolska;MpKrynicWIOSPark1009;NOx;1g;20,27;4,00;223,00;2 152,00;24,6;1,24
+2010;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;NOx;1g;86,27;3,00;825,00;1 935,00;22,1;0,00
+2010;małopolskie;PL1203;strefa małopolska;MpNSaczWIOSPija6204;NOx;1g;31,43;3,00;340,00;6 099,00;69,6;2,03
+2010;małopolskie;PL1203;strefa małopolska;MpOlkuFrNull;NOx;1g;36,70;3,00;503,00;7 940,00;90,6;0,83
+2010;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;47,42;3,00;657,00;8 521,00;97,3;0,97
+2010;małopolskie;PL1203;strefa małopolska;MpSzarowWIOS1908;NOx;1g;28,56;3,00;336,00;8 658,00;98,8;0,99
+2010;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;11,26;2,00;153,00;7 912,00;90,3;0,83
+2010;małopolskie;PL1203;strefa małopolska;MpTrzebiWIOSPils0303;NOx;1g;27,91;2,00;309,00;4 513,00;51,5;1,13
+2010;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;NOx;1g;27,85;2,00;436,00;2 881,00;32,9;0,32
+2010;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;34,19;1,00;449,00;7 786,00;88,9;0,88
+2010;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;154,55;4,10;994,30;8 606,00;98,2;0,99
+2010;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;33,65;2,90;312,60;8 554,00;97,6;1,02
+2010;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;19,81;0,70;203,30;5 174,00;59,1;1,52
+2010;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;NOx;1g;41,01;2,70;387,40;8 600,00;98,2;1,02
+2010;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;29,18;0,80;299,90;8 426,00;96,2;1,01
+2010;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;13,76;0,40;248,70;7 784,00;88,9;1,00
+2010;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;24,27;0,40;293,30;7 937,00;90,6;1,02
+2010;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;32,67;1,90;364,50;8 566,00;97,8;0,99
+2010;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;13,69;2,00;112,00;8 267,00;94,4;1,11
+2010;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;10,65;0,50;158,20;7 858,00;89,7;1,19
+2010;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;26,39;1,00;257,00;8 638,00;98,6;1,02
+2010;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;29,62;1,60;215,20;8 595,00;98,1;0,98
+2010;mazowieckie;PL1404;strefa mazowiecka;MzTluszczJKiel;NOx;1g;12,95;0,90;145,60;7 291,00;83,2;1,44
+2010;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;27,09;2,00;174,20;8 264,00;94,3;1,02
+2010;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;28,09;0,00;195,00;5 863,00;66,9;1,51
+2010;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;33,00;0,00;426,00;6 951,00;79,3;0,96
+2010;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;26,47;0,00;221,00;8 442,00;96,4;1,00
+2010;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;NOx;1g;31,46;0,00;697,00;7 582,00;86,6;0,94
+2010;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor;NOx;1g;22,38;0,20;190,10;6 685,00;76,3;1,61
+2010;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;38,15;1,60;325,10;8 444,00;96,4;0,96
+2010;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;NOx;1g;28,46;1,50;419,70;6 941,00;79,2;1,51
+2010;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;10,20;0,00;209,10;7 988,00;91,2;1,14
+2010;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;19,66;0,00;432,20;8 617,00;98,4;1,00
+2010;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;2,20;0,00;20,40;7 318,00;83,5;1,37
+2010;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;22,30;0,00;544,90;7 870,00;89,8;1,05
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;25,15;3,90;305,00;6 923,00;79,0;1,37
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;32,24;3,80;799,40;8 392,00;95,8;1,04
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;23,84;3,80;453,10;8 593,00;98,1;1,01
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;52,26;4,20;865,00;8 620,00;98,4;0,99
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;26,42;3,60;435,40;8 426,00;96,2;1,05
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;21,42;3,20;245,40;8 242,00;94,1;0,97
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdySzaf09N;NOx;1g;35,13;3,70;991,40;8 627,00;98,5;1,00
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;NOx;1g;44,92;6,90;771,40;5 373,00;61,3;1,23
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;19,02;3,00;267,70;8 197,00;93,6;1,11
+2010;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;36,51;6,20;199,80;8 024,00;91,6;1,10
+2010;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;23,00;3,80;428,20;7 659,00;87,4;1,23
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlBytomByto_modrz;NOx;1g;41,67;4,00;734,00;7 232,00;82,6;1,34
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlChorzChor_bator;NOx;1g;114,62;3,00;1 070,00;5 181,00;59,1;2,35
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;48,65;3,00;804,00;8 296,00;94,7;1,02
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;49,47;3,00;898,00;8 343,00;95,2;1,00
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;59,98;2,00;777,00;8 325,00;95,0;1,02
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoLubel;NOx;1g;60,57;12,00;342,00;5 214,00;59,5;1,58
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;49,35;5,00;891,00;8 268,00;94,4;1,01
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;45,27;2,00;574,00;7 094,00;81,0;1,23
+2010;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;31,51;4,00;1 118,00;6 992,00;79,8;0,92
+2010;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;33,95;1,00;528,00;8 331,00;95,1;1,00
+2010;śląskie;PL2404;miasto Częstochowa;SlCzestoArmK;NOx;1g;113,21;5,00;955,00;8 093,00;92,4;0,94
+2010;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;34,86;4,00;562,00;6 991,00;79,8;0,86
+2010;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;27,21;1,00;334,00;8 142,00;92,9;0,95
+2010;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;37,16;3,00;420,00;7 202,00;82,2;0,73
+2010;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;14,55;2,00;120,00;6 857,00;78,3;0,75
+2010;śląskie;PL2405;strefa śląska;SlZywieSlowa;NOx;1g;53,70;2,00;934,00;8 065,00;92,1;1,03
+2010;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;NOx;1g;47,28;0,10;678,60;7 454,00;85,1;1,11
+2010;świętokrzyskie;PL2602;strefa świętokrzyska;SkMalogCemen2;NOx;1g;16,31;3,70;128,20;6 097,00;69,6;1,57
+2010;świętokrzyskie;PL2602;strefa świętokrzyska;SkNowiParkow;NOx;1g;36,30;6,90;252,60;3 025,00;34,5;0,78
+2010;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;13,76;0,00;138,85;4 007,00;45,7;0,39
+2010;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;21,39;0,00;366,10;7 197,00;82,2;0,89
+2010;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;19,09;0,00;558,30;7 240,00;82,6;1,04
+2010;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;8,75;0,00;185,30;8 051,00;91,9;1,02
+2010;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmMragParkow;NOx;1g;10,29;0,00;73,30;5 543,00;63,3;1,71
+2010;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;19,23;0,00;371,10;8 361,00;95,4;0,97
+2010;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;42,87;0,00;753,40;8 521,00;97,3;1,02
+2010;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;33,30;0,00;753,20;8 480,00;96,8;1,03
+2010;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;NOx;1g;24,39;0,50;470,10;7 691,00;87,8;1,29
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;19,75;0,00;176,10;4 739,00;54,1;0,18
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;14,71;0,00;161,30;6 601,00;75,4;0,98
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;25,90;0,00;492,20;6 422,00;73,3;0,60
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpWKP003;NOx;1g;10,50;0,00;92,50;3 576,00;40,8;0,68
+2010;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;23,48;0,00;500,00;7 582,00;86,6;0,90
+2010;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczecinDO;NOx;1g;71,05;3,00;839,00;7 135,00;81,4;0,95
+2010;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczLacz04;NOx;1g;15,77;0,00;190,00;8 253,00;94,2;0,99
+2010;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;52,22;0,00;806,00;8 256,00;94,2;1,08
+2010;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;28,28;0,00;509,00;7 169,00;81,8;1,20
+2010;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpGryfMarwiceDO;NOx;1g;11,16;0,00;122,00;6 822,00;77,9;1,00
+2010;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzcStorkowoDO;NOx;1g;6,50;0,00;58,00;6 034,00;68,9;1,64
+2010;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;10,08;0,00;93,00;8 507,00;97,1;1,00
+2011;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;182,69;9,00;1220,00;7800;89,0;1,1
+2011;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;24,50;0,00;330,00;3593;41,0;0,8
+2011;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;47,31;2,00;519,00;6632;75,7;1,1
+2011;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;45,81;1,00;695,00;8181;93,4;1,0
+2011;dolnośląskie;PL0202;miasto Legnica;DsLegPoraz;NOx;1g;23,85;2,00;362,00;7594;86,7;1,2
+2011;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;25,66;2,00;617,00;8077;92,2;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;17,14;0,00;219,00;8695;99,3;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;6,60;0,00;57,00;7863;89,8;0,9
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;15,11;0,00;109,00;7982;91,1;0,9
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;29,47;1,00;684,00;8598;98,2;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;16,38;0,00;204,00;8542;97,5;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;6,46;0,00;83,00;8649;98,7;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;23,69;2,00;307,00;6553;74,8;1,7
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;31,34;3,00;534,00;8231;94,0;0,9
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;7,37;0,00;69,00;8666;98,9;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;28,41;2,00;431,00;7235;82,6;0,9
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;NOx;1g;9,45;0,00;92,00;8337;95,2;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;16,56;1,00;150,00;8034;91,7;1,2
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;8,89;0,00;170,00;8655;98,8;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsStrzMob;NOx;1g;22,14;1,00;352,00;6894;78,7;1,1
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;12,28;1,00;121,00;8745;99,8;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;6,75;0,00;76,00;8182;93,4;1,0
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;21,30;1,00;340,00;7927;90,5;0,9
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;24,97;1,00;403,00;7753;88,5;0,9
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;11,73;0,00;324,00;7948;90,7;0,8
+2011;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;83,89;0,10;832,70;3629;41,4;0,7
+2011;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;29,84;1,70;318,50;3874;44,2;0,8
+2011;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;46,01;1,80;829,40;7820;89,3;1,0
+2011;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;121,52;2,10;1372,50;7738;88,3;1,2
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;14,26;2,20;91,60;2833;32,3;25,0
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecPrzechowo;NOx;1g;20,71;0,00;212,60;8443;96,4;1,0
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;6,95;0,60;36,40;3011;34,4;0,2
+2011;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;NOx;1g;38,98;1,40;1677,30;8137;92,9;1,1
+2011;lubelskie;PL0602;strefa lubelska;LbBiaSlupRPN;NOx;1g;8,82;0,00;62,60;6803;77,7;1,3
+2011;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;NOx;1g;32,79;0,70;927,80;5293;60,4;1,1
+2011;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;NOx;1g;21,07;0,50;338,30;8755;99,9;1,0
+2011;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;26,88;2,00;600,00;8204;93,7;1,1
+2011;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;5,10;0,00;54,00;7453;85,1;1,0
+2011;lubuskie;PL0803;strefa lubuska;LuSulecDudka;NOx;1g;16,90;0,00;287,00;7753;88,5;1,2
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;26,28;1,70;639,10;8641;98,6;1,0
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;NOx;1g;31,45;4,50;309,30;5037;57,5;1,4
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;62,31;3,60;1065,10;8584;98,0;1,0
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;32,95;1,90;552,30;8607;98,3;1,0
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;29,05;1,90;394,00;8707;99,4;1,0
+2011;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;16,65;1,20;138,70;7645;87,3;1,0
+2011;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;16,71;1,30;244,70;7810;89,2;1,1
+2011;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;NOx;1g;36,71;2,70;1288,40;8607;98,3;1,0
+2011;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;26,92;2,60;834,20;7778;88,8;0,8
+2011;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;251,01;19,00;1623,00;8666;98,9;1,0
+2011;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;NOx;1g;87,98;4,00;953,00;8518;97,2;1,0
+2011;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;66,81;5,00;851,00;8218;93,8;1,0
+2011;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;NOx;1g;37,67;2,00;613,00;8558;97,7;1,0
+2011;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;NOx;1g;54,23;2,00;545,00;7876;89,9;1,0
+2011;małopolskie;PL1203;strefa małopolska;MpOlkuFrNull;NOx;1g;42,03;4,00;527,00;8571;97,8;1,0
+2011;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;49,17;2,00;607,00;8581;98,0;1,0
+2011;małopolskie;PL1203;strefa małopolska;MpSuchaBWIOSHand1512;NOx;1g;50,36;2,00;577,00;1968;22,5;0,0
+2011;małopolskie;PL1203;strefa małopolska;MpSzarowWIOS1908;NOx;1g;24,94;1,00;332,00;8348;95,3;1,1
+2011;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;9,45;1,00;68,00;8508;97,1;1,0
+2011;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;NOx;1g;25,53;1,00;493,00;8676;99,0;1,0
+2011;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;32,75;3,00;439,00;8041;91,8;0,9
+2011;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;143,18;6,50;1022,70;8720;99,5;1,0
+2011;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;47,95;0,30;721,90;8202;93,6;1,0
+2011;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;39,12;0,40;946,50;8149;93,0;1,1
+2011;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;31,12;0,50;829,10;8726;99,6;1,0
+2011;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;15,95;0,80;303,70;8547;97,6;1,0
+2011;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;20,52;0,30;537,10;7731;88,3;0,8
+2011;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;30,70;1,60;590,20;8631;98,5;1,0
+2011;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;12,82;0,90;125,70;8449;96,4;1,0
+2011;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;10,39;0,40;98,90;8451;96,5;1,0
+2011;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;27,07;1,70;374,00;8717;99,5;1,0
+2011;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;34,17;0,80;826,40;8690;99,2;1,0
+2011;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;24,78;1,50;463,60;8722;99,6;1,0
+2011;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;33,56;3,00;530,00;7513;85,8;1,2
+2011;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;24,95;0,00;426,00;6561;74,9;1,3
+2011;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;28,04;2,00;258,00;5587;63,8;0,4
+2011;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;NOx;1g;29,09;0,00;329,00;4879;55,7;0,9
+2011;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor;NOx;1g;22,36;1,45;244,67;7855;89,7;1,0
+2011;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;65,11;1,46;317,94;5596;63,9;0,6
+2011;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;NOx;1g;18,03;3,27;187,93;4691;53,6;1,5
+2011;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;13,52;0,00;162,70;7373;84,2;0,7
+2011;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;21,11;0,00;477,00;8506;97,1;1,0
+2011;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;2,29;0,00;17,40;2913;33,3;1,0
+2011;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;23,93;0,00;562,50;8193;93,5;0,9
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;23,53;3,70;466,80;8045;91,8;1,2
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;31,43;3,60;662,30;8470;96,7;1,0
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;22,47;4,40;459,60;7977;91,1;1,0
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;43,83;4,00;756,90;8622;98,4;1,0
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;27,99;3,90;599,20;7971;91,0;1,1
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;19,64;1,70;289,10;8346;95,3;1,0
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdySzaf09N;NOx;1g;34,57;4,40;857,20;8627;98,5;1,0
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;NOx;1g;39,01;4,40;869,60;8223;93,9;1,0
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;18,81;3,80;243,60;8371;95,6;1,0
+2011;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;13,83;1,00;173,00;2869;32,8;1,3
+2011;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;23,16;3,50;317,20;1613;18,4;0,0
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;55,96;4,00;944,00;8075;92,2;1,0
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;44,92;0,00;927,00;8053;91,9;1,0
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;61,85;3,00;970,00;8189;93,5;1,0
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoPlebA4;NOx;1g;206,61;8,00;1388,00;7638;87,2;1,1
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;47,61;4,00;847,00;8257;94,3;1,0
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;45,96;4,00;1230,00;8143;93,0;1,0
+2011;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;31,79;2,00;609,00;7722;88,2;1,0
+2011;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;31,45;1,00;605,00;8190;93,5;1,0
+2011;śląskie;PL2404;miasto Częstochowa;SlCzestoArmK;NOx;1g;114,45;8,00;955,00;7764;88,6;1,2
+2011;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;40,08;5,00;728,00;5965;68,1;0,5
+2011;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;20,83;1,00;248,00;8302;94,8;1,0
+2011;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;33,56;2,00;404,00;7603;86,8;1,2
+2011;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;14,01;0,00;88,00;6613;75,5;0,9
+2011;śląskie;PL2405;strefa śląska;SlZywieSlowa;NOx;1g;44,46;2,00;535,00;6847;78,2;1,3
+2011;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;NOx;1g;40,24;1,00;685,50;7249;82,8;1,4
+2011;świętokrzyskie;PL2602;strefa świętokrzyska;SkNowiParkow;NOx;1g;26,36;4,20;259,50;8444;96,4;1,0
+2011;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;13,40;0,00;100,00;3231;36,9;0,5
+2011;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;21,63;0,00;409,30;8042;91,8;1,1
+2011;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;19,29;0,00;498,90;7217;82,4;0,9
+2011;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;11,34;0,00;144,10;7010;80,0;0,7
+2011;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmMragParkow;NOx;1g;11,73;0,20;242,40;2301;26,3;0,0
+2011;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;24,75;0,00;617,10;7542;86,1;0,8
+2011;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;48,19;0,60;1095,70;8458;96,6;1,0
+2011;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;35,92;0,00;672,10;8605;98,2;1,0
+2011;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;NOx;1g;22,51;1,80;570,70;8626;98,5;1,0
+2011;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;NOx;1g;17,45;0,40;310,20;8655;98,8;1,0
+2011;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;21,12;1,60;213,00;5351;61,1;0,2
+2011;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;14,65;0,00;135,10;8278;94,5;1,0
+2011;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;24,15;0,00;473,00;6349;72,5;1,0
+2011;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;24,18;0,00;498,00;7732;88,3;1,1
+2011;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczecinDO;NOx;1g;66,17;0,00;595,00;5922;67,6;1,4
+2011;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczLacz04;NOx;1g;12,70;0,00;139,00;8602;98,2;1,0
+2011;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;50,23;0,00;523,00;8560;97,7;1,0
+2011;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;31,78;1,00;490,00;7886;90,0;1,0
+2011;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpGryfMarwiceDO;NOx;1g;9,66;1,00;103,00;7146;81,6;1,0
+2011;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczecPrze;NOx;1g;26,22;0,00;458,00;8692;99,2;1,0
+2011;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;11,02;0,00;88,00;8368;95,5;1,0
+2012;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;158,50;10,00;1405,00;6684;76,1;1,0
+2012;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;37,22;2,00;458,00;7816;89,0;1,1
+2012;dolnośląskie;PL0202;miasto Legnica;DsLegPoraz;NOx;1g;21,69;2,00;219,00;8034;91,5;1,0
+2012;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;23,45;2,00;587,00;4774;54,3;1,1
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;12,48;0,00;94,00;8515;96,9;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;6,37;0,00;62,00;8518;97,0;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;17,77;0,00;137,00;8194;93,3;0,9
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;26,18;0,00;456,00;7374;83,9;0,8
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;17,43;0,00;205,00;8749;99,6;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;8,14;0,00;60,00;8707;99,1;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;26,23;0,00;330,00;6931;78,9;0,7
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;28,83;4,00;457,00;8329;94,8;0,9
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;8,66;0,00;74,00;8675;98,8;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsLubinMob;NOx;1g;47,34;1,00;676,00;7282;82,9;1,3
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;26,25;2,00;440,00;6343;72,2;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;NOx;1g;8,39;0,00;89,00;7431;84,6;1,2
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;12,72;1,00;65,00;8398;95,6;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;8,23;0,00;104,00;7992;91,0;1,2
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;11,67;0,00;66,00;8074;91,9;1,2
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;5,59;0,00;54,00;8463;96,3;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;19,59;0,00;255,00;7503;85,4;1,0
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;10,88;0,00;107,00;8483;96,6;1,0
+2012;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgChemEC;NOx;1g;18,17;0,30;223,10;8724;99,3;1,0
+2012;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;77,04;5,80;476,80;4715;53,7;1,6
+2012;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;20,81;0,60;217,60;6256;71,2;1,7
+2012;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;40,19;0,40;432,80;5045;57,4;1,3
+2012;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruWSikor;NOx;1g;26,99;0,90;508,20;7252;82,6;1,5
+2012;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;144,03;6,10;1625,70;8674;98,7;1,0
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;15,50;1,30;323,20;8048;91,6;0,9
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudPilsud;NOx;1g;71,73;0,80;740,70;6807;77,5;1,7
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;NOx;1g;15,81;0,60;283,40;6506;74,1;1,6
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;13,94;0,60;161,00;8576;97,6;1,0
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecPrzechowo;NOx;1g;14,43;0,20;176,80;7575;86,2;1,1
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWiktorowoG;NOx;1g;10,23;0,50;56,00;2916;33,2;0,7
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;5,22;0,10;39,80;7947;90,5;1,1
+2012;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;NOx;1g;38,14;0,60;1036,70;8622;98,2;1,0
+2012;lubelskie;PL0602;strefa lubelska;LbBiaSlupRPN;NOx;1g;15,04;1,20;126,70;7921;90,2;0,9
+2012;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;NOx;1g;27,48;1,70;446,70;6353;72,3;1,3
+2012;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;NOx;1g;21,90;1,10;247,70;8588;97,8;1,0
+2012;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;29,93;0,00;467,00;8049;91,6;1,0
+2012;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;22,87;0,00;539,00;8107;92,3;1,1
+2012;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;5,72;0,00;57,00;8347;95,0;1,0
+2012;lubuskie;PL0803;strefa lubuska;LuSulecDudka;NOx;1g;15,18;0,00;468,00;7588;86,4;0,8
+2012;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;6,95;0,00;107,00;2548;29,0;1,9
+2012;lubuskie;PL0803;strefa lubuska;LuZarySzyman;NOx;1g;33,31;1,00;624,00;2205;25,1;0,0
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;24,70;1,30;560,10;8531;97,1;1,0
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;NOx;1g;39,04;2,40;521,40;8156;92,9;1,0
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;61,05;4,30;814,10;8495;96,7;0,9
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;31,55;1,80;346,30;8479;96,5;0,9
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;30,81;2,70;443,00;8372;95,3;0,9
+2012;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;14,77;0,90;149,70;8520;97,0;1,0
+2012;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;16,41;0,80;180,60;8388;95,5;0,9
+2012;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;NOx;1g;36,00;2,40;492,90;8337;94,9;1,0
+2012;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;23,04;2,00;451,30;8474;96,5;1,0
+2012;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;231,45;16,00;1335,00;7646;87,0;1,0
+2012;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;NOx;1g;83,59;3,00;950,00;8612;98,0;1,0
+2012;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;60,65;4,00;682,00;7982;90,9;1,0
+2012;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;NOx;1g;38,69;2,00;802,00;6604;75,2;0,7
+2012;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;NOx;1g;51,00;1,00;595,00;7979;90,8;1,0
+2012;małopolskie;PL1203;strefa małopolska;MpOlkuFrNull;NOx;1g;33,21;4,00;456,00;8312;94,6;1,1
+2012;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;36,59;2,00;589,00;8550;97,3;1,0
+2012;małopolskie;PL1203;strefa małopolska;MpSuchaBWIOSHand1512;NOx;1g;38,89;1,00;270,00;7922;90,2;0,9
+2012;małopolskie;PL1203;strefa małopolska;MpSzarowWIOS1908;NOx;1g;31,80;2,00;331,00;7414;84,4;1,2
+2012;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;8,45;1,00;78,00;8615;98,1;1,0
+2012;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;NOx;1g;22,66;1,00;298,00;7904;90,0;1,1
+2012;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;32,25;3,00;472,00;8163;92,9;1,1
+2012;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;144,84;5,40;929,90;8639;98,3;1,0
+2012;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;39,77;0,40;782,10;8552;97,4;1,0
+2012;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarPuszSol;NOx;1g;26,58;0,20;606,20;7486;85,2;0,8
+2012;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszKrucza;NOx;1g;40,95;2,40;466,40;8477;96,5;1,1
+2012;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;32,05;0,30;690,30;8737;99,5;1,0
+2012;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;14,42;0,10;294,10;8350;95,1;1,0
+2012;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;24,08;0,30;472,00;8684;98,9;1,0
+2012;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;28,92;1,00;740,70;8730;99,4;1,0
+2012;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;13,01;0,40;128,60;8590;97,8;1,0
+2012;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;11,04;0,20;167,30;8593;97,8;1,0
+2012;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;23,42;0,60;383,80;8675;98,8;1,0
+2012;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;26,78;1,30;431,50;8639;98,3;1,0
+2012;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;NOx;1g;40,95;2,40;466,40;8477;96,5;1,1
+2012;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;21,94;1,10;340,10;8754;99,7;1,0
+2012;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;29,98;1,00;487,00;7417;84,4;1,0
+2012;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;25,21;1,00;261,00;3860;43,9;1,0
+2012;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;18,68;0,00;167,00;7048;80,2;1,5
+2012;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;NOx;1g;25,38;0,00;296,00;6636;75,5;1,5
+2012;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;NOx;1g;20,12;1,87;415,94;8214;93,5;0,9
+2012;podkarpackie;PL1802;strefa podkarpacka;PkPrzemyslWIOSMick;NOx;1g;36,75;0,82;595,69;5213;59,3;1,9
+2012;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;9,75;0,00;197,50;7463;85,0;1,3
+2012;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;19,36;0,00;469,40;8243;93,8;1,1
+2012;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;3,00;0,00;44,70;7383;84,1;1,4
+2012;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;19,87;0,00;393,30;8299;94,5;1,1
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;19,40;4,30;242,76;8036;91,5;1,1
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;28,75;3,50;756,50;8480;96,5;1,0
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;21,02;4,10;394,80;8103;92,2;1,1
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;37,01;4,52;558,94;8393;95,5;1,0
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;26,68;4,24;425,98;8630;98,2;1,0
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;18,71;3,79;208,89;8237;93,8;1,1
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdySzaf09N;NOx;1g;25,76;3,80;612,60;8611;98,0;1,0
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;NOx;1g;37,93;4,50;1064,90;8610;98,0;1,0
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;19,44;3,80;267,30;8597;97,9;1,0
+2012;pomorskie;PL2202;strefa pomorska;PmKosTargo12;NOx;1g;25,80;0,49;693,71;7835;89,2;1,0
+2012;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;NOx;1g;17,36;0,00;248,22;8508;96,9;1,0
+2012;pomorskie;PL2202;strefa pomorska;PmLinieKos17;NOx;1g;7,38;0,03;57,75;7911;90,1;0,9
+2012;pomorskie;PL2202;strefa pomorska;PmMalMicki15;NOx;1g;23,49;1,00;265,06;8384;95,4;1,0
+2012;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;21,32;0,05;254,39;8453;96,2;1,0
+2012;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;35,37;5,70;479,90;6383;72,7;1,7
+2012;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;25,27;3,40;1002,20;8277;94,2;1,0
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;46,22;2,00;638,00;8028;91,4;1,0
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;42,46;1,00;554,00;8308;94,6;1,0
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;56,89;2,00;707,00;8302;94,5;1,0
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoPlebA4;NOx;1g;182,60;8,00;1123,00;8322;94,7;1,0
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;47,54;3,00;870,00;8168;93,0;1,0
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;44,22;2,00;677,00;8057;91,7;0,9
+2012;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;38,40;2,00;448,00;7991;91,0;1,0
+2012;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlZorySikors;NOx;1g;30,62;2,00;351,00;7896;89,9;1,0
+2012;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;30,33;2,00;430,00;8336;94,9;1,0
+2012;śląskie;PL2404;miasto Częstochowa;SlCzestoArmK;NOx;1g;104,75;4,00;1149,00;7922;90,2;1,0
+2012;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;32,72;2,00;605,00;8180;93,1;1,0
+2012;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;20,68;1,00;172,00;8381;95,4;1,0
+2012;śląskie;PL2405;strefa śląska;SlUstronSana;NOx;1g;17,86;2,00;177,00;7950;90,5;1,0
+2012;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;30,83;1,00;469,00;8055;91,7;1,1
+2012;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;11,04;0,00;94,00;8062;91,8;1,0
+2012;śląskie;PL2405;strefa śląska;SlZywieSlowa;NOx;1g;41,53;3,00;543,00;8190;93,2;1,1
+2012;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;NOx;1g;49,94;1,10;614,30;2246;25,6;0,6
+2012;świętokrzyskie;PL2602;strefa świętokrzyska;SkNowiParkow;NOx;1g;33,92;3,20;256,00;6977;79,4;0,6
+2012;świętokrzyskie;PL2602;strefa świętokrzyska;SkPolaRuszcz;NOx;1g;19,73;2,10;245,10;8684;98,9;1,0
+2012;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;18,79;0,00;295,80;7463;85,0;0,9
+2012;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;21,46;0,00;236,60;8328;94,8;1,1
+2012;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;8,88;0,00;256,20;8456;96,3;0,9
+2012;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;21,54;0,00;415,60;7812;88,9;1,0
+2012;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;44,76;1,00;860,70;8274;94,2;1,1
+2012;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;31,37;0,00;542,00;8669;98,7;1,0
+2012;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;NOx;1g;20,54;0,90;402,60;8286;94,3;0,9
+2012;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;NOx;1g;15,30;0,00;407,50;8015;91,2;1,1
+2012;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;18,49;0,00;179,20;8049;91,6;0,9
+2012;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;11,08;0,00;66,70;8504;96,8;1,0
+2012;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;24,42;0,60;346,90;7742;88,1;0,9
+2012;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;27,01;0,00;537,00;8333;94,9;1,0
+2012;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczLacz04;NOx;1g;12,90;0,00;188,00;8579;97,7;1,0
+2012;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;50,03;0,00;930,00;8550;97,3;1,0
+2012;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;34,42;1,00;434,00;8275;94,2;1,1
+2012;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczecPrze;NOx;1g;21,73;0,00;355,00;8696;99,0;1,0
+2012;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;8,93;0,00;122,00;8646;98,4;1,0
+2013;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;150,14;10,00;1319,00;8383;95,7;1,0
+2013;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;26,90;0,00;341,00;5083;58,0;1,5
+2013;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;48,20;2,00;802,00;3378;38,6;0,7
+2013;dolnośląskie;PL0202;miasto Legnica;DsLegPoraz;NOx;1g;17,76;3,00;169,00;6938;79,2;1,4
+2013;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;21,97;2,00;503,00;2858;32,6;1,5
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsBogChop;NOx;1g;10,08;0,00;51,00;8421;96,1;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsCzLasMob;NOx;1g;9,72;1,00;67,00;5526;63,1;1,6
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;18,59;4,00;94,00;2963;33,8;0,4
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;24,36;1,00;595,00;8559;97,7;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsGlogSikor;NOx;1g;14,52;0,00;201,00;8682;99,1;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsJasnaSport;NOx;1g;8,68;0,00;57,00;8599;98,2;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;NOx;1g;23,30;1,00;349,00;7285;83,2;0,8
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;25,80;4,00;259,00;5131;58,6;1,5
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsKromolin;NOx;1g;8,43;0,00;87,00;8737;99,7;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;24,26;2,00;290,00;3970;45,3;2,3
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;NOx;1g;7,32;0,00;82,00;8002;91,3;1,1
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsRadomierz;NOx;1g;10,54;0,00;71,00;8329;95,1;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsSobczyce;NOx;1g;7,66;0,00;76,00;8739;99,8;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsWitka;NOx;1g;12,94;0,00;80,00;8560;97,7;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsWyszkow;NOx;1g;7,41;0,00;51,00;8654;98,8;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;19,26;1,00;232,00;8230;93,9;1,0
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsZgorzOrz;NOx;1g;10,44;1,00;101,00;8446;96,4;1,1
+2013;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;70,40;2,40;952,00;8615;98,3;1,0
+2013;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;29,46;0,90;520,80;8620;98,4;1,0
+2013;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;48,51;2,40;659,30;8210;93,7;1,0
+2013;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruWSikor;NOx;1g;27,32;0,50;688,80;8687;99,2;1,0
+2013;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;119,87;3,90;1507,10;8373;95,6;1,1
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;13,62;0,00;170,40;8717;99,5;1,0
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudPilsud;NOx;1g;61,05;0,40;597,70;8682;99,1;1,0
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;NOx;1g;13,40;0,20;246,50;7780;88,8;0,8
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;13,22;0,50;179,10;8224;93,9;1,1
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;5,51;0,20;53,70;7829;89,4;0,9
+2013;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;NOx;1g;32,72;2,00;1084,10;8076;92,2;1,0
+2013;lubelskie;PL0602;strefa lubelska;LbBiaSlupRPN;NOx;1g;16,64;1,80;150,50;6177;70,5;1,5
+2013;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;NOx;1g;28,92;1,50;630,80;8019;91,5;1,0
+2013;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;NOx;1g;21,04;2,60;463,30;8069;92,1;1,2
+2013;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;29,88;0,00;545,00;7515;85,8;0,9
+2013;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;21,24;0,00;372,00;7293;83,3;1,1
+2013;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;6,72;0,00;58,00;6498;74,2;1,2
+2013;lubuskie;PL0803;strefa lubuska;LuSulecDudka;NOx;1g;12,60;0,00;143,00;6186;70,6;1,6
+2013;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;18,17;1,00;396,00;5534;63,2;1,7
+2013;lubuskie;PL0803;strefa lubuska;LuZarySzyman;NOx;1g;20,36;0,00;305,00;8583;98,0;1,0
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;24,66;1,10;790,40;8675;99,0;1,0
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;NOx;1g;38,92;4,10;1014,00;8701;99,3;1,0
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;56,94;3,60;1093,00;8698;99,3;1,0
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;32,24;3,10;482,10;8548;97,6;1,0
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;25,70;2,50;339,30;8606;98,2;1,0
+2013;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;13,14;0,60;105,00;8351;95,3;1,0
+2013;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;15,54;0,60;191,10;8333;95,1;1,0
+2013;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;NOx;1g;32,19;2,00;832,90;8695;99,3;1,0
+2013;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;20,11;2,00;321,60;8273;94,4;0,9
+2013;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;234,56;13,00;1302,00;7900;90,2;0,9
+2013;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;NOx;1g;72,58;2,00;1465,00;8155;93,1;0,9
+2013;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;53,04;2,00;738,00;7997;91,3;1,1
+2013;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;NOx;1g;38,41;3,00;677,00;8363;95,5;1,0
+2013;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;NOx;1g;47,25;3,00;573,00;8568;97,8;1,0
+2013;małopolskie;PL1203;strefa małopolska;MpOlkuFrNull;NOx;1g;33,32;4,00;426,00;8679;99,1;1,0
+2013;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;38,40;2,00;426,00;8520;97,3;1,0
+2013;małopolskie;PL1203;strefa małopolska;MpSuchaBWIOSHand1512;NOx;1g;38,50;1,00;278,00;8288;94,6;0,9
+2013;małopolskie;PL1203;strefa małopolska;MpSzarowWIOS1908;NOx;1g;34,54;2,00;342,00;8553;97,6;1,0
+2013;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;9,07;2,00;90,00;8664;98,9;1,0
+2013;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;NOx;1g;24,56;2,00;217,00;8651;98,8;1,0
+2013;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;30,46;1,00;468,00;8314;94,9;1,1
+2013;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;139,19;3,50;1289,60;8655;98,8;1,0
+2013;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;35,50;0,10;633,60;8667;98,9;1,0
+2013;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarMarszal;NOx;1g;114,56;3,00;616,70;8550;97,6;1,0
+2013;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;32,93;1,10;844,60;8629;98,5;1,0
+2013;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;17,71;0,50;283,50;8196;93,6;1,0
+2013;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;25,55;1,20;565,90;8735;99,7;1,0
+2013;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;32,42;3,30;745,80;8662;98,9;1,0
+2013;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;12,12;0,40;130,10;8664;98,9;1,0
+2013;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;9,47;0,10;80,90;8632;98,5;1,0
+2013;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;20,88;0,50;308,70;8531;97,4;1,0
+2013;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;29,40;0,70;532,40;8596;98,1;1,0
+2013;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;NOx;1g;20,06;0,10;268,40;8624;98,4;1,0
+2013;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;23,07;0,50;311,50;8627;98,5;1,0
+2013;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;30,48;2,00;406,00;6836;78,0;0,7
+2013;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;15,67;0,00;185,00;3304;37,7;12,6
+2013;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;NOx;1g;26,67;1,63;475,07;8471;96,7;1,0
+2013;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;NOx;1g;15,73;1,21;181,11;8093;92,4;1,0
+2013;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;31,22;0,02;247,46;1587;18,1;0,6
+2013;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;NOx;1g;21,77;1,89;360,46;6596;75,3;0,6
+2013;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;9,00;0,00;136,30;6264;71,5;1,3
+2013;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;18,17;0,00;470,50;8464;96,6;1,1
+2013;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;3,65;0,00;33,70;7448;85,0;0,8
+2013;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;16,94;0,00;421,50;8349;95,3;1,0
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;19,69;4,10;291,80;7726;88,2;1,0
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;26,43;3,50;504,40;8524;97,3;1,0
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;20,17;3,90;337,60;8037;91,7;0,9
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;35,01;3,60;654,20;8311;94,9;1,0
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;22,40;3,60;313,70;8465;96,6;1,0
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;16,29;3,70;217,20;8472;96,7;1,0
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdySzaf09N;NOx;1g;24,50;3,70;695,40;8612;98,3;1,0
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;15,48;3,40;340,00;8591;98,1;1,0
+2013;pomorskie;PL2202;strefa pomorska;PmKosTargo12;NOx;1g;28,58;0,40;902,00;8592;98,1;1,0
+2013;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;NOx;1g;15,95;0,00;255,80;8435;96,3;1,1
+2013;pomorskie;PL2202;strefa pomorska;PmLinieKos17;NOx;1g;7,24;0,00;84,90;8393;95,8;0,9
+2013;pomorskie;PL2202;strefa pomorska;PmMalMicki15;NOx;1g;24,63;1,00;251,90;8421;96,1;0,9
+2013;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;22,66;0,30;281,78;8141;92,9;0,9
+2013;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;32,16;4,10;346,90;8425;96,2;1,0
+2013;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;22,02;3,50;470,70;8280;94,5;1,0
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;39,22;2,00;636,00;7965;90,9;1,0
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;38,36;1,00;588,00;8289;94,6;1,0
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;50,69;3,00;819,00;8263;94,3;1,0
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoPlebA4;NOx;1g;166,10;8,00;1252,00;6502;74,2;0,9
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoLubel;NOx;1g;61,25;5,00;322,00;8274;94,5;1,0
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;37,61;2,00;525,00;8032;91,7;1,1
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;34,26;2,00;480,00;8244;94,1;1,0
+2013;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;32,77;3,00;380,00;8190;93,5;1,0
+2013;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlZorySikors;NOx;1g;26,88;3,00;300,00;8257;94,3;1,0
+2013;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;30,61;3,00;706,00;8083;92,3;1,0
+2013;śląskie;PL2404;miasto Częstochowa;SlCzestoArmK;NOx;1g;86,79;3,00;1090,00;7487;85,5;0,8
+2013;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;26,37;1,00;463,00;6816;77,8;0,8
+2013;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;21,35;1,00;165,00;8222;93,9;1,0
+2013;śląskie;PL2405;strefa śląska;SlUstronSana;NOx;1g;18,38;2,00;162,00;8325;95,0;1,0
+2013;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;28,13;1,00;328,00;8172;93,3;1,0
+2013;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;10,97;1,00;106,00;6198;70,8;0,7
+2013;śląskie;PL2405;strefa śląska;SlZywieSlowa;NOx;1g;39,75;2,00;852,00;8365;95,5;1,0
+2013;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;NOx;1g;40,41;2,90;799,60;8061;92,0;0,9
+2013;świętokrzyskie;PL2602;strefa świętokrzyska;SkMalo11List;NOx;1g;13,17;0,40;117,10;8295;94,7;0,9
+2013;świętokrzyskie;PL2602;strefa świętokrzyska;SkPolaRuszcz;NOx;1g;20,00;1,60;274,10;8727;99,6;1,0
+2013;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;15,71;3,00;85,00;7536;86,0;1,4
+2013;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;18,03;0,00;781,30;8337;95,2;1,1
+2013;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;16,15;0,00;279,20;8178;93,4;1,0
+2013;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;10,62;0,00;204,60;8379;95,7;0,9
+2013;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;23,56;0,10;611,70;8347;95,3;1,0
+2013;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;30,57;0,00;577,00;8514;97,2;1,0
+2013;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;26,47;0,10;637,10;8620;98,4;1,0
+2013;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;NOx;1g;18,25;0,00;310,30;8618;98,4;1,0
+2013;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;NOx;1g;15,22;0,00;279,70;8502;97,1;1,1
+2013;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;17,56;0,20;243,90;8359;95,4;1,1
+2013;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;7,84;0,00;63,10;8093;92,4;1,1
+2013;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;21,03;0,00;393,20;8659;98,8;1,0
+2013;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;45,91;1,00;385,00;8602;98,2;1,0
+2013;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;29,96;0,00;404,00;8153;93,1;1,1
+2013;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczecPrze;NOx;1g;24,50;0,00;451,00;8134;92,9;1,0
+2013;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;9,42;0,00;108,00;8544;97,5;1,0
+2014;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;157,12;5,00;1398,00;8676;99,0;1,0
+2014;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;25,98;2,00;331,00;4702;53,7;1,1
+2014;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;43,89;0,00;884,00;8625;98,5;1,0
+2014;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;38,93;0,00;1122,00;8380;95,7;1,0
+2014;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;20,14;1,00;424,00;7060;80,6;1,6
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;6,45;0,00;45,00;5273;60,2;1,4
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;13,41;0,00;162,00;6524;74,5;2,0
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;23,34;1,00;624,00;8712;99,5;1,0
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsGlogMob;NOx;1g;23,32;1,00;457,00;7615;86,9;1,2
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;21,73;2,00;479,00;6326;72,2;1,6
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;33,33;3,00;493,00;6398;73,0;1,4
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;NOx;1g;9,14;0,00;155,00;8330;95,1;1,1
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;21,25;0,00;343,00;8188;93,5;1,0
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;19,64;0,00;300,00;7186;82,0;1,5
+2014;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;72,15;2,50;1288,70;8691;99,2;1,0
+2014;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;33,86;0,30;539,90;8546;97,6;1,0
+2014;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;38,55;1,90;983,50;8585;98,0;1,0
+2014;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruWSikor;NOx;1g;21,20;0,20;556,70;8722;99,6;1,0
+2014;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;70,57;3,80;1408,25;8702;99,3;1,0
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;14,28;0,42;185,10;8181;93,4;1,0
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudPilsud;NOx;1g;87,19;0,40;1000,10;8676;99,0;1,0
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;NOx;1g;12,26;0,00;354,40;8752;99,9;1,0
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;14,17;0,40;148,53;8681;99,1;1,0
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWiktorowoG;NOx;1g;2,28;0,10;13,60;3098;35,4;0,7
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;5,52;0,10;35,60;8078;92,2;0,9
+2014;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;NOx;1g;40,22;1,86;823,95;8394;95,8;1,0
+2014;lubelskie;PL0602;strefa lubelska;LbBiaSlupRPN;NOx;1g;10,30;0,42;71,70;8475;96,7;1,0
+2014;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;NOx;1g;23,51;1,84;321,70;8228;93,9;1,1
+2014;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;NOx;1g;17,84;0,59;228,97;8375;95,6;1,0
+2014;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;41,87;0,70;595,99;8255;94,2;1,0
+2014;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;24,88;1,50;458,82;7686;87,7;1,0
+2014;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;6,60;0,00;83,00;8198;93,6;1,0
+2014;lubuskie;PL0803;strefa lubuska;LuSulecDudka;NOx;1g;42,42;3,00;174,00;4379;50,0;1,2
+2014;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;22,04;1,00;429,14;3833;43,8;0,9
+2014;lubuskie;PL0803;strefa lubuska;LuZarySzyman;NOx;1g;21,50;0,00;492,66;8636;98,6;1,0
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;22,71;1,68;518,02;8457;96,5;1,1
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;NOx;1g;39,43;1,65;787,84;8358;95,4;1,0
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzKilins;NOx;1g;49,97;3,94;633,62;8586;98,0;1,0
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;60,63;4,11;1120,66;7587;86,6;0,7
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;31,17;2,18;701,89;8641;98,6;1,0
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;27,28;2,45;426,25;8670;99,0;1,0
+2014;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;14,04;0,73;90,90;8100;92,5;0,9
+2014;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;15,70;0,40;132,39;8455;96,5;1,0
+2014;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;NOx;1g;33,56;1,85;755,46;8235;94,0;1,0
+2014;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;17,23;1,07;265,29;8626;98,5;1,0
+2014;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;228,96;8,00;1402,00;8636;98,6;1,0
+2014;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;NOx;1g;80,25;1,00;1442,00;8549;97,6;1,0
+2014;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;58,08;2,00;749,00;8551;97,6;1,0
+2014;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;NOx;1g;34,86;1,00;947,00;8425;96,2;1,0
+2014;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;NOx;1g;48,11;3,00;584,00;8399;95,9;0,9
+2014;małopolskie;PL1203;strefa małopolska;MpOlkuFrNull;NOx;1g;29,91;2,00;428,00;8649;98,7;1,0
+2014;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;48,85;1,00;534,00;8425;96,2;1,0
+2014;małopolskie;PL1203;strefa małopolska;MpSuchaBWIOSHand1512;NOx;1g;37,06;3,00;419,00;8625;98,5;1,0
+2014;małopolskie;PL1203;strefa małopolska;MpSzarowWIOS1908;NOx;1g;30,01;3,00;339,00;8663;98,9;1,0
+2014;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;7,16;1,00;93,00;8522;97,3;1,0
+2014;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;NOx;1g;23,25;3,00;374,00;8672;99,0;1,0
+2014;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;32,58;1,00;487,00;8726;99,6;1,0
+2014;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;125,45;1,34;920,91;8541;97,5;1,0
+2014;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;37,84;2,80;775,17;8668;98,9;1,0
+2014;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarMarszal;NOx;1g;125,77;0,10;1237,00;8304;94,8;1,1
+2014;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;31,63;1,00;600,60;8505;97,1;1,0
+2014;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;17,45;0,07;374,28;8566;97,8;1,0
+2014;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;25,13;1,20;597,57;8687;99,2;1,0
+2014;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;32,00;1,63;700,13;8536;97,4;1,0
+2014;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;12,85;0,44;155,60;8498;97,0;1,0
+2014;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;10,37;0,08;104,90;8533;97,4;1,0
+2014;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;22,86;0,00;421,52;8204;93,7;1,0
+2014;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;31,80;0,00;488,45;8322;95,0;1,0
+2014;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;NOx;1g;20,62;0,70;576,15;8686;99,2;1,0
+2014;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;23,16;0,90;422,99;8545;97,5;1,0
+2014;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;29,36;1,00;435,00;7773;88,7;1,0
+2014;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;27,34;1,00;265,00;5660;64,6;0,7
+2014;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;26,92;1,00;214,00;5884;67,2;1,7
+2014;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;NOx;1g;26,52;1,52;478,29;8277;94,5;1,0
+2014;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;NOx;1g;16,28;0,66;149,91;7358;84,0;0,8
+2014;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;21,20;0,02;288,00;8072;92,1;1,0
+2014;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;NOx;1g;21,20;1,52;613,61;8319;95,0;1,0
+2014;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;10,06;0,00;201,13;7474;85,3;0,8
+2014;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;18,79;0,90;327,00;8312;94,9;1,1
+2014;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;4,03;0,00;33,85;8152;93,1;1,0
+2014;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;25,70;0,00;869,91;7783;88,8;0,8
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;23,94;3,10;314,70;8612;98,3;1,0
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;33,14;3,90;676,80;8400;95,9;1,0
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;20,53;3,50;421,80;8402;95,9;1,1
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;38,26;3,50;633,50;8315;94,9;0,9
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;26,16;3,30;307,60;8532;97,4;1,0
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;19,26;3,30;203,40;8416;96,1;1,0
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdySzaf09N;NOx;1g;25,63;3,30;535,00;8587;98,0;1,0
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;NOx;1g;31,27;3,30;621,40;8625;98,5;1,0
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;18,27;1,40;281,10;8633;98,6;1,0
+2014;pomorskie;PL2202;strefa pomorska;PmKosTargo12;NOx;1g;28,99;0,20;746,60;7353;83,9;1,4
+2014;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;NOx;1g;15,76;0,00;254,60;8142;92,9;1,0
+2014;pomorskie;PL2202;strefa pomorska;PmLinieKos17;NOx;1g;8,45;0,30;50,00;7937;90,6;0,9
+2014;pomorskie;PL2202;strefa pomorska;PmMalMicki15;NOx;1g;21,64;0,80;186,70;6679;76,2;0,8
+2014;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;15,90;0,70;226,50;8584;98,0;1,0
+2014;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;27,30;4,40;648,20;8154;93,1;1,1
+2014;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;20,30;3,90;362,50;7194;82,1;1,3
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;41,08;2,00;524,00;8353;95,4;1,0
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;34,90;1,00;573,00;8011;91,4;1,1
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;52,85;3,00;890,00;8121;92,7;1,1
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoPlebA4;NOx;1g;180,58;6,00;1019,00;7966;90,9;1,1
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoLubel;NOx;1g;34,68;2,00;286,00;8381;95,7;1,0
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;42,61;4,00;695,00;8134;92,9;1,0
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;36,53;2,00;526,00;8070;92,1;1,0
+2014;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;35,63;2,00;436,00;7879;89,9;1,0
+2014;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlZorySikors;NOx;1g;27,05;2,00;344,00;7865;89,8;1,2
+2014;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;27,89;2,00;552,00;8226;93,9;1,0
+2014;śląskie;PL2404;miasto Częstochowa;SlCzestoArmK;NOx;1g;99,77;6,00;1221,00;8372;95,6;1,0
+2014;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;31,38;2,00;630,00;8358;95,4;1,0
+2014;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;20,00;2,00;212,00;8299;94,7;1,0
+2014;śląskie;PL2405;strefa śląska;SlUstronSana;NOx;1g;16,07;2,00;182,00;8227;93,9;1,0
+2014;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;28,56;2,00;464,00;8228;93,9;1,0
+2014;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;9,62;1,00;93,00;7693;87,8;1,0
+2014;śląskie;PL2405;strefa śląska;SlZywieSlowa;NOx;1g;44,58;3,00;632,00;8069;92,1;1,1
+2014;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;NOx;1g;49,37;0,60;892,47;7988;91,2;1,0
+2014;świętokrzyskie;PL2602;strefa świętokrzyska;SkMalo11List;NOx;1g;13,37;0,63;89,89;8614;98,3;1,0
+2014;świętokrzyskie;PL2602;strefa świętokrzyska;SkNowiParkow;NOx;1g;22,18;1,23;196,04;8293;94,7;0,9
+2014;świętokrzyskie;PL2602;strefa świętokrzyska;SkPolaRuszcz;NOx;1g;13,91;0,39;161,00;7417;84,7;0,7
+2014;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;12,35;0,00;116,00;7789;88,9;1,2
+2014;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;21,69;0,00;378,31;8474;96,7;1,1
+2014;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;17,19;0,00;190,92;7990;91,2;1,0
+2014;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;11,16;0,00;106,77;7159;81,7;1,3
+2014;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;17,12;0,00;305,80;8612;98,3;1,0
+2014;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;34,39;0,10;789,90;8625;98,5;1,0
+2014;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;32,86;0,90;971,50;8557;97,7;1,0
+2014;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;NOx;1g;23,37;0,00;348,10;6669;76,1;0,7
+2014;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;NOx;1g;16,13;0,60;287,30;8474;96,7;1,0
+2014;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;16,38;0,00;245,60;7800;89,0;1,0
+2014;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;9,70;0,00;146,50;8055;92,0;0,9
+2014;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;21,61;0,00;488,30;8399;95,9;1,1
+2014;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;21,87;1,00;483,00;7953;90,8;1,1
+2014;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;20,88;0,00;447,00;8282;94,5;1,1
+2014;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;44,33;2,00;733,00;8023;91,6;0,9
+2014;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczecPrze;NOx;1g;30,18;1,00;536,00;8352;95,3;1,1
+2014;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;9,48;0,00;127,00;8298;94,7;1,0
+2015;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;149,96;5,74;1728,03;8579;97,9;1,0
+2015;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;33,74;3,72;398,68;8552;97,6;1,0
+2015;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;40,02;1,01;734,83;8287;94,6;0,9
+2015;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;38,64;0,55;966,85;8709;99,4;1,0
+2015;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;21,00;0,40;508,59;8537;97,5;1,0
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;8,55;0,00;74,84;8192;93,5;1,0
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;13,65;0,79;127,15;8583;98,0;1,0
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;23,27;0,60;773,95;8671;99,0;1,0
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorOgin;NOx;1g;16,24;0,00;255,52;8509;97,1;1,0
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;26,18;1,44;607,89;8571;97,8;1,0
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;23,55;1,22;540,60;7967;90,9;1,0
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;NOx;1g;9,31;0,00;98,05;8375;95,6;1,0
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsSwidnMarciMOB;NOx;1g;17,96;1,62;656,58;7791;88,9;1,2
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;22,38;1,00;291,35;8403;95,9;0,9
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;23,41;2,17;375,90;7737;88,3;0,8
+2015;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;71,20;4,50;751,10;8747;99,9;1,0
+2015;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;33,34;1,60;404,70;8601;98,2;1,0
+2015;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;41,07;0,50;1382,40;7885;90,0;1,0
+2015;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruWSikor;NOx;1g;22,66;0,10;1125,10;8701;99,3;1,0
+2015;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclChelmMOB;NOx;1g;10,19;0,10;106,70;8266;94,4;1,1
+2015;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;75,27;2,70;998,40;8631;98,5;1,0
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;20,35;0,60;294,20;8013;91,5;0,8
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudPilsud;NOx;1g;83,04;1,90;713,40;7990;91,2;1,0
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;NOx;1g;12,79;0,10;460,90;8736;99,7;1,0
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;15,00;0,20;223,70;8423;96,2;1,0
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;5,29;0,20;40,50;8551;97,6;1,0
+2015;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;NOx;1g;38,71;1,60;1055,20;8610;98,3;1,0
+2015;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;NOx;1g;19,01;1,80;241,60;4325;49,4;1,0
+2015;lubelskie;PL0602;strefa lubelska;LbBiaSlupRPN;NOx;1g;11,36;0,80;68,41;6549;74,8;0,7
+2015;lubelskie;PL0602;strefa lubelska;LbPulaKarpin;NOx;1g;16,47;0,70;334,20;5008;57,2;1,4
+2015;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;NOx;1g;19,47;0,75;286,91;8387;95,7;1,0
+2015;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;37,16;1,39;596,34;8752;99,9;1,0
+2015;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;24,46;0,00;714,96;8707;99,4;1,0
+2015;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;6,72;0,30;48,15;8176;93,3;1,0
+2015;lubuskie;PL0803;strefa lubuska;LuSulecDudka;NOx;1g;15,27;0,73;136,14;8496;97,0;1,0
+2015;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;20,02;0,08;971,97;8538;97,5;1,0
+2015;lubuskie;PL0803;strefa lubuska;LuZarySzyman;NOx;1g;22,21;0,30;565,56;8088;92,3;1,2
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;23,63;3,40;499,17;8488;96,9;1,1
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;NOx;1g;37,51;3,90;855,50;8671;99,0;1,0
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzJanPaw;NOx;1g;66,91;4,60;560,80;1292;14,7;0,0
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzKilins;NOx;1g;43,47;3,75;803,17;8543;97,5;1,0
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;NOx;1g;53,23;5,50;835,30;7088;80,9;1,6
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;31,50;2,60;470,80;8593;98,1;1,0
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;29,99;4,00;388,70;8617;98,4;1,0
+2015;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;14,94;1,50;131,00;8501;97,0;1,0
+2015;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;15,05;0,60;162,30;8429;96,2;1,0
+2015;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;NOx;1g;30,87;1,00;927,00;8666;98,9;1,0
+2015;łódzkie;PL1002;strefa łódzka;LdRadomsRoln;NOx;1g;29,82;4,51;814,82;7231;82,5;1,5
+2015;łódzkie;PL1002;strefa łódzka;LdRadomsSoko;NOx;1g;20,89;3,07;117,90;1329;15,2;0,0
+2015;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;215,43;10,00;1545,00;8523;97,3;1,0
+2015;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;NOx;1g;83,02;2,70;1548,80;8669;99,0;1,0
+2015;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;61,00;2,60;756,64;8468;96,7;1,0
+2015;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;NOx;1g;34,18;1,00;688,70;8607;98,3;1,0
+2015;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;NOx;1g;57,97;3,18;797,10;8490;96,9;1,0
+2015;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;41,95;1,33;530,50;8645;98,7;1,0
+2015;małopolskie;PL1203;strefa małopolska;MpSzarowSpok;NOx;1g;25,40;2,68;312,80;5234;59,7;1,4
+2015;małopolskie;PL1203;strefa małopolska;MpSzarowWIOS1908;NOx;1g;28,38;2,00;268,28;2062;23,5;0,0
+2015;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;7,21;1,00;74,00;8660;98,9;1,0
+2015;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;NOx;1g;19,07;1,00;238,50;8681;99,1;1,0
+2015;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;29,27;1,00;474,60;8564;97,8;1,0
+2015;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;160,48;4,75;1139,51;8424;96,2;1,0
+2015;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;45,84;3,60;955,16;8624;98,4;1,0
+2015;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarMarszal;NOx;1g;97,72;0,50;696,90;8299;94,7;1,0
+2015;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;33,15;0,03;747,10;8543;97,5;1,0
+2015;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;18,24;0,02;498,36;8743;99,8;1,0
+2015;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;27,43;0,48;870,70;8323;95,0;0,9
+2015;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;32,37;2,09;449,50;8580;97,9;1,0
+2015;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;12,83;2,04;89,18;8644;98,7;1,0
+2015;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;11,92;0,33;107,67;8363;95,5;1,0
+2015;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;20,39;0,26;308,89;8498;97,0;1,1
+2015;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;33,81;1,50;590,89;8666;98,9;1,0
+2015;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;NOx;1g;17,58;0,70;428,11;8504;97,1;1,0
+2015;mazowieckie;PL1404;strefa mazowiecka;MzZyraRoosev;NOx;1g;22,90;0,16;426,55;8520;97,3;1,0
+2015;opolskie;PL1601;miasto Opole;OpOpoleMinor;NOx;1g;28,60;1,92;495,99;8342;95,2;1,0
+2015;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;24,27;0,20;314,95;8355;95,4;1,0
+2015;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;22,15;0,82;364,14;8533;97,4;1,0
+2015;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;NOx;1g;27,60;2,17;757,30;8387;95,7;1,1
+2015;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;NOx;1g;16,45;1,70;147,95;8309;94,9;1,0
+2015;podkarpackie;PL1802;strefa podkarpacka;PkKrempnaMPN;NOx;1g;6,32;0,10;56,26;8398;95,9;1,1
+2015;podkarpackie;PL1802;strefa podkarpacka;PkMielSolski;NOx;1g;23,33;0,02;400,68;8586;98,0;1,0
+2015;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;20,03;0,40;257,87;8659;98,8;1,0
+2015;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;NOx;1g;22,33;1,92;342,11;8572;97,9;1,0
+2015;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;10,57;0,00;170,30;8209;93,7;1,1
+2015;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;20,19;0,90;530,30;8285;94,6;1,0
+2015;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;4,20;0,00;51,70;8223;93,9;1,0
+2015;podlaskie;PL2002;strefa podlaska;PdHajnowkJagMOB;NOx;1g;13,16;0,08;168,10;2348;26,8;0,3
+2015;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;22,42;0,00;485,00;8444;96,4;1,0
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;22,99;2,66;569,96;7759;88,6;0,8
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;28,73;2,99;611,57;8513;97,2;1,0
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;20,82;3,15;468,36;8515;97,2;1,0
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;36,09;3,18;562,36;8635;98,6;1,0
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;22,74;2,06;550,80;8450;96,5;1,0
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;17,55;2,70;248,77;8510;97,1;1,0
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdySzaf09N;NOx;1g;22,78;2,44;633,06;8176;93,3;1,1
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;NOx;1g;30,58;2,90;695,13;8699;99,3;1,0
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;16,71;2,75;387,45;8194;93,5;1,0
+2015;pomorskie;PL2202;strefa pomorska;PmKosTargo12;NOx;1g;24,59;0,16;653,56;6765;77,2;0,9
+2015;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;NOx;1g;18,13;0,12;192,47;7742;88,4;1,2
+2015;pomorskie;PL2202;strefa pomorska;PmLinieKos17;NOx;1g;7,84;0,02;96,32;7313;83,5;1,4
+2015;pomorskie;PL2202;strefa pomorska;PmMalMicki15;NOx;1g;23,63;0,65;190,33;7711;88,0;1,0
+2015;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;16,13;0,83;238,58;8575;97,9;1,0
+2015;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;25,63;3,80;1205,50;8714;99,5;1,0
+2015;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;18,54;2,42;508,78;4434;50,6;1,4
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;48,91;2,00;534,11;8547;97,6;1,0
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;40,20;1,00;685,96;8509;97,1;1,1
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;51,10;3,00;881,06;8609;98,3;1,0
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoPlebA4;NOx;1g;176,53;3,97;1438,10;8487;96,9;1,0
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoLubel;NOx;1g;34,02;2,08;260,57;8465;96,6;1,1
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;38,06;3,39;490,66;8672;99,0;1,0
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;37,73;3,27;619,30;8642;98,7;1,0
+2015;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;33,67;2,00;374,72;8417;96,1;1,0
+2015;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;27,66;2,00;611,14;8676;99,0;1,0
+2015;śląskie;PL2404;miasto Częstochowa;SlCzestoArmK;NOx;1g;95,79;7,53;1248,93;8621;98,4;1,0
+2015;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;27,83;1,27;721,21;8603;98,2;1,0
+2015;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;18,28;1,48;163,28;8420;96,1;1,0
+2015;śląskie;PL2405;strefa śląska;SlUstronSana;NOx;1g;16,28;2,00;109,41;8402;95,9;1,1
+2015;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;28,82;3,01;244,44;8495;97,0;1,0
+2015;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;11,34;1,00;88,16;8520;97,3;1,1
+2015;śląskie;PL2405;strefa śląska;SlZywieKoper;NOx;1g;27,78;2,80;284,80;8511;97,2;1,0
+2015;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;NOx;1g;46,86;1,60;833,60;8556;97,7;1,0
+2015;świętokrzyskie;PL2602;strefa świętokrzyska;SkMalo11List;NOx;1g;17,61;2,60;154,00;3185;36,4;0,2
+2015;świętokrzyskie;PL2602;strefa świętokrzyska;SkNowiParkow;NOx;1g;23,60;3,00;219,00;8726;99,6;1,0
+2015;świętokrzyskie;PL2602;strefa świętokrzyska;SkPolaRuszcz;NOx;1g;18,23;1,80;230,30;8718;99,5;1,0
+2015;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;18,87;0,00;330,50;8244;94,1;1,0
+2015;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;17,87;0,00;239,58;8600;98,2;1,0
+2015;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;9,88;0,00;153,31;8453;96,5;1,0
+2015;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;19,83;0,00;510,19;8435;96,3;1,0
+2015;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;43,97;0,94;1060,23;8656;98,8;1,0
+2015;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;36,82;2,97;568,81;8577;97,9;1,0
+2015;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;NOx;1g;13,64;0,66;244,51;8550;97,6;1,0
+2015;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;NOx;1g;19,23;1,77;236,01;8340;95,2;1,1
+2015;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;20,85;1,14;351,67;8659;98,8;1,0
+2015;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;12,61;1,33;183,70;8635;98,6;1,0
+2015;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;21,71;0,66;457,51;8722;99,6;1,0
+2015;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;21,52;-0,40;665,07;8596;98,1;1,0
+2015;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;46,52;1,87;817,73;8529;97,4;1,0
+2015;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;50,83;1,84;892,32;8548;97,6;1,0
+2015;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczecPrze;NOx;1g;22,84;0,93;472,86;8648;98,7;1,0
+2015;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;5,75;-0,52;91,68;8237;94,0;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;7,1;0,0;80,7;8650;98,5;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;12,5;0,0;90,3;8492;96,7;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;27,4;1,9;663,4;8731;99,4;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorOgin;NOx;1g;17,6;0,9;353,0;8727;99,4;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;26,7;1,6;397,2;8637;98,3;1,0
+2016;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;40,8;2,2;821,5;8686;98,9;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;22,7;0,1;361,1;8481;96,6;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;NOx;1g;9,7;0,1;95,1;8622;98,2;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsPolanSportMOB;NOx;1g;14,9;0,7;149,9;8316;94,7;0,9
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsSzkPor1MajMOB;NOx;1g;10,5;0,7;108,9;7730;88,0;1,2
+2016;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;23,1;0,2;551,1;8570;97,6;1,0
+2016;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;145,1;3,9;1021,5;8770;99,8;1,0
+2016;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;29,7;3,0;290,3;8700;99,0;1,0
+2016;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;36,7;1,1;672,8;8711;99,2;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;20,3;1,6;235,3;8618;98,1;1,0
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;24,7;1,6;365,2;8687;98,9;1,0
+2016;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;63,3;2,2;900,5;8320;94,7;0,9
+2016;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;31,6;1,9;455,3;8691;98,9;1,0
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;24,0;0,4;314,3;8560;97,4;1,0
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudPilsud;NOx;1g;60,0;2,2;589,8;8480;96,5;1,0
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowOsMatwMOB;NOx;1g;18,4;0,2;275,7;7153;81,4;1,0
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;NOx;1g;10,2;0,1;246,6;8209;93,5;1,0
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;13,6;0,8;145,8;8416;95,8;1,0
+2016;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;41,7;1,1;742,8;5788;65,9;0,5
+2016;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruWSikor;NOx;1g;23,6;0,1;747,0;7478;85,1;1,3
+2016;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;81,6;3,8;1153,6;8665;98,6;1,0
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;5,4;0,1;43,2;8348;95,0;1,0
+2016;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;NOx;1g;17,0;0,6;237,5;8693;99,0;1,0
+2016;lubelskie;PL0602;strefa lubelska;LbBiaSlupRPN;NOx;1g;10,4;0,7;89,5;8047;91,6;1,1
+2016;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;NOx;1g;34,3;0,7;661,0;8739;99,5;1,0
+2016;lubelskie;PL0602;strefa lubelska;LbPulaKarpin;NOx;1g;17,5;0,8;495,7;8387;95,5;0,9
+2016;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;NOx;1g;17,9;0,7;305,3;8745;99,6;1,0
+2016;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;14,2;1,0;156,1;8616;98,1;1,0
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;23,6;1,4;323,1;8643;98,4;1,0
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;NOx;1g;37,2;2,3;390,5;8438;96,1;1,0
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzJanPaw;NOx;1g;66,9;2,4;574,7;8615;98,1;1,0
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzKilins;NOx;1g;39,8;4,4;429,0;8704;99,1;1,0
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;29,4;2,2;326,9;8560;97,4;1,0
+2016;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;15,9;1,4;135,5;6314;71,9;1,7
+2016;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;NOx;1g;32,8;2,4;501,5;8532;97,1;1,0
+2016;łódzkie;PL1002;strefa łódzka;LdRadomsRoln;NOx;1g;32,3;4,2;414,0;8661;98,6;1,0
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;26,4;2,4;362,0;8749;99,6;1,0
+2016;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;40,1;0,5;499,5;7858;89,5;0,8
+2016;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;6,9;0,8;62,1;8767;99,8;1,0
+2016;lubuskie;PL0803;strefa lubuska;LuSulecDudka;NOx;1g;13,1;0,9;171,3;8714;99,2;1,0
+2016;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;20,9;0,2;725,9;8472;96,4;0,9
+2016;lubuskie;PL0803;strefa lubuska;LuZarySzyman;NOx;1g;17,2;0,4;403,6;8077;92,0;1,0
+2016;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;25,7;0,1;641,2;8707;99,1;1,0
+2016;małopolskie;PL1203;strefa małopolska;MpKaszowLisz;NOx;1g;26,8;2,5;329,0;8569;97,6;1,0
+2016;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;203,9;9,0;1250,0;8682;98,8;1,0
+2016;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;NOx;1g;79,6;2,9;1143,3;8682;98,8;1,0
+2016;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;58,9;2,5;719,7;8671;98,7;1,0
+2016;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;NOx;1g;52,5;1,9;970,8;8593;97,8;1,0
+2016;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;41,3;1,6;526,1;8703;99,1;1,0
+2016;małopolskie;PL1203;strefa małopolska;MpSzarowSpok;NOx;1g;21,7;2,1;335,3;8666;98,7;1,0
+2016;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;9,4;0,9;62,8;8287;94,3;1,1
+2016;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;NOx;1g;33,2;1,3;519,3;8670;98,7;1,0
+2016;małopolskie;PL1202;miasto Tarnów;MpTarRoSitko;NOx;1g;64,8;1,3;1034,1;8523;97,0;1,0
+2016;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;NOx;1g;23,6;2,0;234,5;8641;98,4;1,0
+2016;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;30,4;1,1;555,2;8722;99,3;1,0
+2016;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;11,5;0,4;91,3;8699;99,0;1,0
+2016;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;11,8;0,1;92,3;8525;97,1;1,0
+2016;mazowieckie;PL1404;strefa mazowiecka;MzGutyDuCzer;NOx;1g;7,1;0,0;80,9;8522;97,0;1,0
+2016;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;17,7;0,4;305,4;8760;99,7;1,0
+2016;mazowieckie;PL1404;strefa mazowiecka;MzOtwoBrzozo;NOx;1g;22,9;1,7;470,1;8699;99,0;1,0
+2016;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;34,3;1,8;465,6;8741;99,5;1,0
+2016;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;14,9;0,2;189,8;8779;99,9;1,0
+2016;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;21,5;0,5;379,6;8711;99,2;1,0
+2016;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;33,5;4,0;712,1;8739;99,5;1,0
+2016;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;NOx;1g;17,6;0,2;307,1;8682;98,8;1,0
+2016;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;158,4;5,7;955,3;8725;99,3;1,0
+2016;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;43,6;1,1;955,4;8684;98,9;1,0
+2016;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarMarszal;NOx;1g;91,0;0,2;484,5;8510;96,9;1,0
+2016;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;32,2;0,1;550,6;8661;98,6;1,0
+2016;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;24,7;0,4;389,0;8654;98,5;1,0
+2016;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;NOx;1g;21,2;3,5;487,1;8475;96,5;1,1
+2016;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;22,4;0,8;255,1;8626;98,2;1,0
+2016;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;11,1;0,0;225,1;8627;98,2;1,0
+2016;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;18,1;0,0;353,5;8628;98,2;1,0
+2016;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;3,9;0,0;48,7;8450;96,2;1,0
+2016;podlaskie;PL2002;strefa podlaska;PdHajnowkJagMOB;NOx;1g;5,9;0,0;119,4;6211;70,7;0,7
+2016;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;20,9;0,8;651,6;8757;99,7;1,0
+2016;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;NOx;1g;16,9;1,0;259,6;8358;95,2;1,0
+2016;podkarpackie;PL1802;strefa podkarpacka;PkKrempnaMPN;NOx;1g;5,9;0,1;45,3;8657;98,6;1,0
+2016;podkarpackie;PL1802;strefa podkarpacka;PkMielSolski;NOx;1g;23,7;2,2;262,1;8043;91,6;1,1
+2016;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;19,3;0,2;314,4;8688;98,9;1,0
+2016;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;NOx;1g;17,5;1,8;430,2;8559;97,4;1,0
+2016;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;NOx;1g;26,4;1,7;384,3;8731;99,4;1,0
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;20,9;3,3;297,2;8258;94,0;0,9
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;25,2;3,1;398,5;8461;96,3;1,0
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;23,7;2,9;453,8;8338;94,9;0,9
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;33,1;3,1;397,8;8587;97,8;1,0
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;21,0;2,9;300,5;8630;98,2;1,0
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;18,2;3,0;308,8;8361;95,2;1,1
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdySzaf09N;NOx;1g;21,7;2,7;587,8;8346;95,0;1,0
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;NOx;1g;32,0;3,1;601,6;8442;96,1;1,1
+2016;pomorskie;PL2202;strefa pomorska;PmKosTargo12;NOx;1g;27,8;1,2;561,4;7061;80,4;0,6
+2016;pomorskie;PL2202;strefa pomorska;PmLinieKos17;NOx;1g;6,6;1,2;37,8;6656;75,8;0,7
+2016;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;21,2;1,7;206,9;6614;75,3;0,5
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;17,7;3,1;272,3;8613;98,1;1,0
+2016;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;24,4;3,6;516,7;6979;79,5;1,7
+2016;pomorskie;PL2202;strefa pomorska;PmTczeTarg07;NOx;1g;23,9;0,7;1120,1;8122;92,5;1,0
+2016;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;NOx;1g;43,8;2,5;708,5;8749;99,6;1,0
+2016;świętokrzyskie;PL2602;strefa świętokrzyska;SkMalo11List;NOx;1g;10,6;0,0;95,1;7783;88,6;1,2
+2016;świętokrzyskie;PL2602;strefa świętokrzyska;SkNowiParkow;NOx;1g;23,5;2,0;197,0;8767;99,8;1,0
+2016;świętokrzyskie;PL2602;strefa świętokrzyska;SkPolaRuszcz;NOx;1g;18,2;1,8;187,7;8619;98,1;1,0
+2016;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;3,8;0,0;56,0;7329;83,4;1,5
+2016;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;27,8;0,9;422,2;8765;99,8;1,0
+2016;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;17,9;1,8;172,3;8682;98,8;1,0
+2016;śląskie;PL2404;miasto Częstochowa;SlCzestoArmK;NOx;1g;90,0;4,3;971,7;8767;99,8;1,0
+2016;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;28,7;2,5;403,1;8591;97,8;1,0
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;45,4;1,9;535,4;8764;99,8;1,0
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;38,7;2,7;505,6;8736;99,5;1,0
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;51,9;1,5;746,3;8699;99,0;1,0
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoPlebA4;NOx;1g;179,9;6,2;1044,3;8725;99,3;1,0
+2016;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;34,2;1,3;418,9;8702;99,1;1,0
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoLubel;NOx;1g;33,8;2,9;285,2;8727;99,4;1,0
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;35,8;2,1;463,6;8697;99,0;1,0
+2016;śląskie;PL2405;strefa śląska;SlUstronSana;NOx;1g;16,9;1,8;176,1;8765;99,8;1,0
+2016;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;27,7;0,5;341,9;8750;99,6;1,0
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;36,3;1,5;451,7;8539;97,2;1,0
+2016;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;11,3;0,7;90,9;8730;99,4;1,0
+2016;śląskie;PL2405;strefa śląska;SlZywieKoper;NOx;1g;25,2;2,0;339,5;8707;99,1;1,0
+2016;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;17,7;0,0;305,5;8676;98,8;1,0
+2016;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;12,0;0,0;149,7;8707;99,1;1,0
+2016;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmMragParkow;NOx;1g;10,7;0,8;169,0;7803;88,8;1,2
+2016;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;29,0;2,1;340,5;8508;96,9;1,0
+2016;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrChrobr;NOx;1g;24,2;0,6;392,3;7112;81,0;1,5
+2016;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;NOx;1g;4,7;-0,3;31,6;8507;96,8;1,0
+2016;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;NOx;1g;19,2;0,9;304,6;8683;98,9;1,0
+2016;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;NOx;1g;18,8;1,7;281,8;5383;61,3;0,3
+2016;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;20,1;0,6;300,2;8320;94,7;0,9
+2016;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;11,9;0,4;106,0;8662;98,6;1,0
+2016;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;23,7;0,4;435,9;8662;98,6;1,0
+2016;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;43,4;0,5;1108,5;8683;98,9;1,0
+2016;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;34,4;2,3;506,7;8679;98,8;1,0
+2016;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;56,5;1,2;1168,0;8647;98,4;1,0
+2016;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;27,1;0,1;854,5;8647;98,4;1,0
+2016;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczecPrze;NOx;1g;21,5;0,6;380,7;8715;99,2;1,0
+2016;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;46,4;0,2;738,1;8491;96,7;1,0
+2016;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;11,3;0,3;218,5;8601;97,9;1,0
+2017;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;NOx;1g;131,3;5,0;1002,2;8702;99,3;1,0
+2017;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocBartni;NOx;1g;22,5;1,3;203,8;8661;98,9;1,0
+2017;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;NOx;1g;31,8;1,1;654,2;8661;98,9;1,0
+2017;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;NOx;1g;33,8;2,1;681,9;8713;99,5;1,0
+2017;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;NOx;1g;22,5;0,4;701,4;8548;97,6;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsBoleslaMOB;NOx;1g;26,1;0,1;548,9;8290;94,6;1,1
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;NOx;1g;7,1;0,1;70,0;8476;96,8;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;NOx;1g;13,3;0,5;111,2;8550;97,6;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsDziePilsud;NOx;1g;25,0;1,7;642,9;8678;99,1;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorOgin;NOx;1g;17,6;1,2;426,3;8660;98,9;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsKlodzSzkol;NOx;1g;25,8;1,4;556,3;8435;96,3;1,1
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsKudowaMOB;NOx;1g;14,0;0,9;216,0;8291;94,6;1,1
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;NOx;1g;20,8;1,4;365,0;8617;98,4;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;NOx;1g;9,6;0,0;116,3;8541;97,5;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsZabkPowWar;NOx;1g;19,8;0,7;193,5;8610;98,3;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;NOx;1g;22,1;1,5;220,0;8674;99,0;1,0
+2017;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;NOx;1g;67,2;0,1;585,7;8715;99,5;1,0
+2017;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;NOx;1g;31,4;0,5;535,2;8170;93,3;0,9
+2017;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;NOx;1g;35,8;2,0;700,2;8028;91,6;1,1
+2017;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruWSikor;NOx;1g;20,0;0,1;553,2;8016;91,5;1,0
+2017;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclChelmMOB;NOx;1g;13,4;1,1;166,2;8428;96,2;1,0
+2017;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;NOx;1g;78,1;4,8;777,7;8745;99,8;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;NOx;1g;15,4;1,0;335,7;8459;96,6;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudPilsud;NOx;1g;65,2;1,4;829,1;8254;94,2;1,1
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;NOx;1g;10,7;0,3;221,9;8713;99,5;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;NOx;1g;12,3;1,2;218,6;8579;97,9;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;NOx;1g;5,4;0,1;46,0;7695;87,8;0,8
+2017;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;NOx;1g;32,5;1,9;742,1;8726;99,6;1,0
+2017;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;NOx;1g;15,2;0,3;350,1;8706;99,4;1,0
+2017;lubelskie;PL0602;strefa lubelska;LbBiaSlupRPN;NOx;1g;8,1;0,0;88,3;8706;99,4;1,0
+2017;lubelskie;PL0602;strefa lubelska;LbPulaKarpin;NOx;1g;14,8;0,2;327,0;8729;99,6;1,0
+2017;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;NOx;1g;21,4;0,0;250,0;8642;98,7;1,0
+2017;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;NOx;1g;34,9;0,1;662,2;8699;99,3;1,0
+2017;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;NOx;1g;23,9;1,8;415,8;8643;98,7;1,0
+2017;lubuskie;PL0803;strefa lubuska;LuSmolBytnic;NOx;1g;7,5;0,4;56,9;8524;97,3;1,0
+2017;lubuskie;PL0803;strefa lubuska;LuSulecDudka;NOx;1g;12,8;0,7;133,1;7519;85,8;1,1
+2017;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;NOx;1g;18,7;0,2;541,8;8632;98,5;1,0
+2017;lubuskie;PL0803;strefa lubuska;LuZarySzyman;NOx;1g;27,4;1,6;675,9;8732;99,7;1,0
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;NOx;1g;23,2;3,4;348,9;8508;97,1;1,0
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;NOx;1g;34,8;3,2;470,4;8711;99,4;1,0
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzJanPaw;NOx;1g;57,3;3,8;755,8;8517;97,2;1,0
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzKilins;NOx;1g;40,3;3,6;542,7;7824;89,3;1,3
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKonsta;NOx;1g;28,4;2,3;558,3;8634;98,6;1,0
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdZgieMielcz;NOx;1g;26,4;3,5;474,8;8690;99,2;1,0
+2017;łódzkie;PL1002;strefa łódzka;LdGajewUjWod;NOx;1g;13,0;2,3;108,8;8495;97,0;1,0
+2017;łódzkie;PL1002;strefa łódzka;LdParzniUjWo;NOx;1g;15,2;2,2;180,0;8157;93,1;1,0
+2017;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;NOx;1g;31,2;2,1;887,5;8481;96,8;1,0
+2017;łódzkie;PL1002;strefa łódzka;LdRadomsRoln;NOx;1g;30,4;3,4;594,0;8599;98,2;1,0
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;NOx;1g;197,2;7,6;1340,6;8648;98,7;1,0
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;NOx;1g;78,4;1,4;1135,6;8505;97,1;1,0
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;NOx;1g;61,5;2,3;942,2;8647;98,7;1,0
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakDietla;NOx;1g;99,2;7,9;1056,5;8723;99,6;1,0
+2017;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;NOx;1g;33,5;1,1;719,3;8662;98,9;1,0
+2017;małopolskie;PL1202;miasto Tarnów;MpTarRoSitko;NOx;1g;62,6;3,0;1104,8;7904;90,2;1,2
+2017;małopolskie;PL1203;strefa małopolska;MpKaszowLisz;NOx;1g;24,0;1,2;351,7;8000;91,3;1,2
+2017;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;NOx;1g;48,5;2,1;628,1;8678;99,1;1,0
+2017;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;NOx;1g;42,5;1,5;595,8;8597;98,1;1,0
+2017;małopolskie;PL1203;strefa małopolska;MpSzarowSpok;NOx;1g;23,9;1,5;362,4;8672;99,0;1,0
+2017;małopolskie;PL1203;strefa małopolska;MpSzymbaGorl;NOx;1g;8,6;1,2;85,4;8259;94,3;1,1
+2017;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;NOx;1g;24,0;1,0;274,8;8621;98,4;1,0
+2017;małopolskie;PL1203;strefa małopolska;MpZakopaSien;NOx;1g;34,3;1,1;890,8;8684;99,1;1,0
+2017;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;NOx;1g;136,8;2,9;954,5;8650;98,7;1,0
+2017;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarKondrat;NOx;1g;38,8;2,3;805,9;8692;99,2;1,0
+2017;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarMarszal;NOx;1g;82,7;0,1;620,9;8505;97,1;1,0
+2017;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;NOx;1g;30,9;0,7;953,0;8654;98,8;1,0
+2017;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;NOx;1g;15,1;0,0;224,1;8759;100,0;1,0
+2017;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;NOx;1g;20,6;1,5;604,9;8723;99,6;1,0
+2017;mazowieckie;PL1403;miasto Radom;MzRadTochter;NOx;1g;30,9;2,9;947,8;8690;99,2;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzBelsIGFPAN;NOx;1g;9,9;0,4;128,1;8672;99,0;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;NOx;1g;11,5;0,9;148,0;8508;97,1;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzGutyDuCzer;NOx;1g;6,5;0,8;48,3;8349;95,3;1,1
+2017;mazowieckie;PL1404;strefa mazowiecka;MzKonJezMos;NOx;1g;20,5;2,9;280,3;8133;92,8;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzLegZegrzyn;NOx;1g;21,3;0,0;258,9;8638;98,6;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzOtwoBrzozo;NOx;1g;26,1;1,8;456,3;8590;98,1;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzPiasPulask;NOx;1g;36,1;2,3;790,0;8628;98,5;1,0
+2017;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;NOx;1g;22,0;1,6;475,7;8668;98,9;1,0
+2017;opolskie;PL1602;strefa opolska;OpKKozBSmial;NOx;1g;23,7;0,0;307,3;8646;98,7;1,0
+2017;opolskie;PL1602;strefa opolska;OpZdziePiast;NOx;1g;20,8;0,0;280,6;8529;97,4;1,0
+2017;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;NOx;1g;25,7;2,0;816,3;8715;99,5;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;NOx;1g;16,6;1,5;203,2;8485;96,9;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkKrempnaMPN;NOx;1g;6,4;0,6;44,7;8592;98,1;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkMielBierna;NOx;1g;26,6;3,0;488,2;8682;99,1;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;NOx;1g;17,9;0,7;241,5;8619;98,4;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;NOx;1g;18,0;1,5;303,6;8657;98,8;1,0
+2017;podlaskie;PL2001;Aglomeracja Białostocka;PdBialPulPie;NOx;1g;11,0;0,0;121,7;7886;90,0;1,2
+2017;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;NOx;1g;16,6;0,7;675,0;8629;98,5;1,0
+2017;podlaskie;PL2002;strefa podlaska;PdAugustoZdrMOB;NOx;1g;12,5;0,1;199,0;2476;28,3;0,4
+2017;podlaskie;PL2002;strefa podlaska;PdBorsukowiz;NOx;1g;3,7;0,0;40,0;8590;98,1;1,0
+2017;podlaskie;PL2002;strefa podlaska;PdLomSikorsk;NOx;1g;20,1;0,0;455,6;8724;99,6;1,0
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;NOx;1g;20,9;3,3;435,7;8614;98,3;1,0
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLeczk08;NOx;1g;24,1;3,1;578,5;8325;95,0;1,1
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaOstrz05;NOx;1g;20,5;3,1;400,4;7642;87,2;0,8
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaPoWie01;NOx;1g;31,0;2,6;533,9;8574;97,9;1,0
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaWyzwo03;NOx;1g;25,7;3,0;536,9;8149;93,0;1,1
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyPoreb04;NOx;1g;16,7;2,8;271,9;7719;88,1;1,2
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdySzaf09N;NOx;1g;20,3;2,7;622,0;8431;96,2;1,0
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;NOx;1g;29,6;3,1;694,5;8503;97,1;1,0
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmSopBitPl06;NOx;1g;16,9;3,1;301,6;8620;98,4;1,0
+2017;pomorskie;PL2202;strefa pomorska;PmKosTargo12;NOx;1g;25,4;2,4;279,0;8565;97,8;1,0
+2017;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;NOx;1g;16,1;0,7;263,8;8252;94,2;0,9
+2017;pomorskie;PL2202;strefa pomorska;PmLinieKos17;NOx;1g;7,8;0,7;47,7;4886;55,8;1,3
+2017;pomorskie;PL2202;strefa pomorska;PmMalMicki15;NOx;1g;22,1;1,2;209,4;6514;74,4;1,6
+2017;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;NOx;1g;16,1;1,3;287,2;8603;98,2;1,0
+2017;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;NOx;1g;25,3;2,9;596,2;4731;54,0;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;NOx;1g;49,3;2,5;1057,2;8712;99,5;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlGliwicMewy;NOx;1g;36,0;0,6;864,7;8657;98,8;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;NOx;1g;53,3;3,3;1089,9;8637;98,6;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoPlebA4;NOx;1g;186,2;2,9;1359,3;8677;99,1;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlSosnoLubel;NOx;1g;36,7;3,2;539,4;8712;99,5;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlTychyTolst;NOx;1g;36,2;1,6;609,9;8744;99,8;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;NOx;1g;39,6;2,3;839,4;8735;99,7;1,0
+2017;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;NOx;1g;36,9;0,6;598,7;8681;99,1;1,0
+2017;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;NOx;1g;28,7;0,8;601,9;8723;99,6;1,0
+2017;śląskie;PL2404;miasto Częstochowa;SlCzestoArmK;NOx;1g;86,5;3,9;1640,2;8742;99,8;1,0
+2017;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;NOx;1g;28,9;1,1;681,4;8459;96,6;1,0
+2017;śląskie;PL2405;strefa śląska;SlCiesMickie;NOx;1g;17,5;1,1;220,1;8731;99,7;1,0
+2017;śląskie;PL2405;strefa śląska;SlUstronSana;NOx;1g;18,4;2,0;195,8;8747;99,9;1,0
+2017;śląskie;PL2405;strefa śląska;SlWodzGalczy;NOx;1g;28,4;1,8;486,7;8734;99,7;1,0
+2017;śląskie;PL2405;strefa śląska;SlZlotPotLes;NOx;1g;12,2;0,8;128,1;8665;98,9;1,0
+2017;śląskie;PL2405;strefa śląska;SlZywieKoper;NOx;1g;27,6;0,6;346,2;8652;98,8;1,0
+2017;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;NOx;1g;40,7;1,8;802,3;8586;98,0;1,0
+2017;świętokrzyskie;PL2602;strefa świętokrzyska;SkMalo11List;NOx;1g;12,9;0,0;111,9;2396;27,4;0,3
+2017;świętokrzyskie;PL2602;strefa świętokrzyska;SkMaloSlonec;NOx;1g;17,9;3,0;70,8;2204;25,2;0,0
+2017;świętokrzyskie;PL2602;strefa świętokrzyska;SkNowiParkow;NOx;1g;24,5;2,0;249,0;8700;99,3;1,0
+2017;świętokrzyskie;PL2602;strefa świętokrzyska;SkPolaRuszcz;NOx;1g;16,1;1,7;296,2;7643;87,2;1,2
+2017;świętokrzyskie;PL2602;strefa świętokrzyska;SkSwietKrzyz;NOx;1g;4,1;0,0;48,0;8645;98,7;1,0
+2017;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;NOx;1g;20,5;0,2;309,4;8594;98,1;1,0
+2017;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;NOx;1g;17,4;0,0;227,8;8720;99,5;1,0
+2017;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmElkStadion;NOx;1g;13,7;0,8;323,3;8742;99,8;1,0
+2017;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGoldJacwie;NOx;1g;10,7;0,0;106,8;8730;99,7;1,0
+2017;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmOstrPilsud;NOx;1g;22,8;0,4;567,0;8133;92,8;1,0
+2017;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;NOx;1g;4,9;0,1;31,3;7935;90,6;1,2
+2017;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;NOx;1g;35,9;0,3;1025,2;8634;98,6;1,0
+2017;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznPolank;NOx;1g;29,5;1,1;435,8;8655;98,8;1,0
+2017;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;NOx;1g;20,7;0,1;236,4;8632;98,5;1,0
+2017;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;NOx;1g;15,5;0,5;230,8;8538;97,5;1,0
+2017;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;NOx;1g;18,0;0,3;244,2;8539;97,5;1,0
+2017;wielkopolskie;PL3003;strefa wielkopolska;WpPiaskiKrzy;NOx;1g;10,5;0,6;116,7;8592;98,1;1,0
+2017;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;NOx;1g;21,6;0,4;494,3;8619;98,4;1,0
+2017;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;NOx;1g;21,0;0,5;532,5;8608;98,3;1,0
+2017;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;NOx;1g;38,2;0,5;794,7;8556;97,7;1,0
+2017;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszArKraj;NOx;1g;46,9;0,3;1314,4;8631;98,5;1,0
+2017;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczecPrze;NOx;1g;17,6;0,0;522,6;8617;98,4;1,0
+2017;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;NOx;1g;12,0;0,2;231,9;8559;97,7;1,0
