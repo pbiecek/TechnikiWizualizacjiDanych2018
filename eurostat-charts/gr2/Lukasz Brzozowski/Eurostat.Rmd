@@ -1,0 +1,35 @@
+---
+author: "Łukasz Brzozowski"
+title: "Średnia liczba samobójstw w Europie na 100 tys. mieszkańców"
+output: html_document
+---
+```{r, echo = FALSE, message = FALSE, warning=FALSE, fig.height=6, fig.width=18}
+library(ggplot2)
+library(dplyr)
+library(eurostat)
+
+s2 <- search_eurostat("death", type = "table")
+lp <- get_eurostat_geospatial(output_class = "df", resolution = "60", nuts_level = "all")
+
+t2 <- get_eurostat(s2[4, "code"])
+t3 <- t2 %>% group_by(geo, age) %>% summarise(values = mean(values))
+levels(t3$age) <- c("15-19 lat", "50-54 lata", "Powyżej 85 roku życia")
+
+left_join(lp, t3, by = c("geo" = "geo")) %>% 
+  na.omit %>% 
+  ggplot(aes(x = long, y = lat, group = group, fill = values)) + 
+  scale_fill_gradient(low = "green", high = "red") +
+  geom_polygon(color = "black") +
+  labs(title = "Średnia liczba samobójstw  w Europie na 100 tys. mieszkańców",
+       fill = "Liczba samobójstw") +
+  theme(plot.title = element_text(size=22),
+    axis.line=element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank()) +
+  coord_map() +
+  facet_wrap(~ age)
+
+```

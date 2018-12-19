@@ -1,0 +1,39 @@
+---
+title: "Praca domowa 5"
+author: "Michal Pastuszka"
+output: html_document
+---
+
+#Wstęp
+
+Na potrzeby zadania postanowiłem sprawdzić, jak duże problemy może sprawiać odczytywanie wykresów kołowych 3d. W tym celu sporządziłem ankietę, w której należało wskazać, która z zaznaczonych na wykresie wartości jest zdaniem odpowiadającego większa, lub czy są one równe. Znajduje się ona pod adresem <https://goo.gl/forms/sqEBfOs6yfJSNN7j1>.
+
+#Wykres
+
+Większa z wartości odpowiada 12% całości, a mniejsza 11%. Zostały one ułożone tak, aby porównanie ich było utrudnione. Mniejsza wartość, oznaczona literą "b", umieszczona jest z przodu i otoczona wartościami mniejszymi od siebie. Większa, z literą "a", znajduje się z brzegu i otoczona jest wartościami większymi.
+
+```{r wykres, echo=FALSE}
+library(plotrix)
+
+dane <- c(0.12, 0.22, 0.25, 0.08, 0.11, 0.07, 0.15)
+labels <- c("a", "", "", "", "b", "", "")
+pie3D(dane, labels = labels)
+
+```
+
+#Wyniki
+
+Na ankietę odpowiedziało 26 osób. Większość nie była w stanie stwierdzić różnicy między wynikami i wskazała odpowiedź "są równe". Co więcej aż osób wskazało mniejszą z wartości jako większą, podczas gdy prawidłowo odpowiedziały tylko 3.
+
+```{r wyniki, echo=FALSE}
+library(ggplot2)
+# wyniki <- c("a (kolor czerwony)" = 3, "b (kolor niebieski)" = 6, "są sobie równe" = 17)
+wyniki = read.csv("ankieta.csv")
+colnames(wyniki) <- c("Czas", "Odpowiedź")
+ggplot(wyniki, aes(x=Odpowiedź, fill=Odpowiedź)) + geom_bar() + scale_fill_manual(values=c("a (kolor czerwony)" = "#fbb4ae", "b (kolor niebieski)" = "#b3cde3", "są sobie równe" = "#ccebc5"), guide=FALSE) + labs(y = "Liczba ankietowanych", title= "Wyniki ankiety") + scale_y_continuous(breaks = c(3, 6, 9, 12, 15, 18), minor_breaks = 1:17) + theme(panel.background = element_rect(fill = "white"), panel.grid.major = element_line(colour = "slategray3"), panel.grid.minor = element_line(colour = "slategray2"), plot.title = element_text(size=18), axis.title = element_text(size=14), axis.text = element_text(size=12))
+
+```
+
+#Podsumowanie
+
+Jak pokazują wyniki, taki wykres nie przedstawia w czytelny sposób danych. Utrudnia porównywanie bliskich sobie wartości i może tworzyć iluzje prowadzące do błędnego odczytu informacji.

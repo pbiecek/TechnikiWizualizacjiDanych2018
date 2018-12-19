@@ -1,0 +1,60 @@
+---
+title: "Praca domowa 4"
+author: "Dominik Rafacz"
+date: "November 3, 2018"
+output: html_document
+---
+
+W tej pracy domowej pragnąłbym przyjrzeć się danym, znalezionym pod [tym linkiem](https://www.confectionerynews.com/Article/2017/11/16/Hershey-beats-Mars-and-Mondelez-in-Amazon-Halloween-candy-sales). Zaprezentowane są tu najchętniej kupowane słodycze w każdym stanie. Oryginalny wykres odtworzyłem, używając jedynie skali szarości:
+
+```{r setup, include=FALSE}
+library(maps)
+library(mapdata)
+library(ggplot2)
+library(mapproj)
+
+usa <- map_data("state")
+
+states <- unique(usa$region)
+candies <- c("Air Heads", "Starburst", "Sour Patch", "Hershey's", "Skittles", "no data")
+most_popular_candies <- rep(4, 49)
+names(most_popular_candies) <- states
+most_popular_candies[c("idaho", "utah", "north dakota", "iowa", "missouri", "arkansas", "indiana", "kentucky", "louisiana")] <- 1
+most_popular_candies[c("arizona", "oklahoma")] <- 2
+most_popular_candies[c("oregon", "wyoming", "west virginia")] <- 3
+most_popular_candies[c("colorado", "nebraska", "wisconsin", "vermont", "arkansas", "alabama")] <- 5
+most_popular_candies[c("new mexico", "south dakota")] <- NA
+
+most_popular_candies <- as.factor(most_popular_candies)
+levels(most_popular_candies) <- candies
+```
+
+```{r wykres1, fig.align="center", fig.width= 8, fig.height=6}
+ggplot() + geom_polygon(data = usa, 
+                        aes(x=long, y = lat, group = group, fill = most_popular_candies[region]), 
+                        color = "white", size = 0.1) + 
+  scale_fill_grey(start = 0, end = 0.8, na.value = "white", name = "Slodycze") +
+  theme_light() +
+  theme(legend.position = "bottom") +
+  coord_map() +
+  xlab("") + ylab("")+
+  ggtitle("Najczesciej kupowane slodycze w danym stanie na miesiac przed Halloween 2017", 
+          subtitle = "na podstawie sprzedazy w serwisie Amazon")
+  
+```
+
+Poniżej ten sam wykres ze zmienionymi jedynie barwami poszczególnych słodyczy:
+
+```{r wykres2, fig.align="center", fig.width= 8, fig.height=6}
+
+ggplot() + geom_polygon(data = usa, aes(x=long, y = lat, group = group, fill = most_popular_candies[region]), color = "white", size = 0.1) + 
+  scale_fill_manual(values = c("#71c5e8", "#ffe70d", "#95cb2e", "#43141a", "#cf202f", "#FFFFFF"), name = "Slodycze") +
+  theme_light() +
+  theme(legend.position = "bottom") +
+  coord_map() +
+  xlab("") + ylab("")+
+  ggtitle("Najczesciej kupowane slodycze w danym stanie na miesiac przed Halloween 2017", subtitle = "na podstawie sprzedazy w serwisie Amazon")
+
+```
+
+Wykres kolorowy jest zarówno czytelniejszy, jak i atrakcyjniejszy dla odbiorcy. Czytelniejszy, ponieważ o wiele łatwiej jest na nim rozróżnić od siebie poszczególne rodzaje słodyczy. Przy sześciu różnych wartościach, poszczególne odcienie szarości różnią się od siebie na tyle niewiele, że trudno jest oszacować, który z poszególnych odcieni ma dany stan. Co więcej - dobrane na drugiej mapie kolory powinny się kojarzyć z poszczególnymi słodyczami, jako że są to kolory ich marek. Co do atrakcyjności natomiast, żywa paleta różnorodnych barw o wiele łatwiej przykuje uwagę odbiorcy niż "biedna", czarno-biała skala.

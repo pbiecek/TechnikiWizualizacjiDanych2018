@@ -1,0 +1,39 @@
+---
+title: "Techniki wizualizacji danych - rCharts cz. 2"
+author: "Piotr Halama"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(rCharts)
+library(reshape2)
+library(RColorBrewer)
+```
+
+```{r, echo=F}
+wedding_data <- data.frame(wedding_costs = c(41521, 29613, 27091, 31191, 28465, 27245, 30586, 28320, 28240, 33406, 31335, 36902), 
+                           region= c("London", "East of England", "Wales", "West Mids", "East Mids", "Yorkshire", "North West", "North East", "South West", "South East", "Scotland", "Northern Ireland")) 
+wedding_data$region <- reorder(wedding_data$region, -wedding_data$wedding_costs)
+avg <- 32273
+```
+
+```{r, results='asis'}
+plot <- rPlot(wedding_costs ~ region, data=wedding_data, type='bar')
+plot$show('inline', include_assets = TRUE, cdn = TRUE)
+```
+
+
+```{r, fig.height=6, fig.width=12}
+palette <- brewer.pal(7, "PuOr")
+
+ggplot(wedding_data, 
+  aes(x = region, y = wedding_costs)) +
+  geom_bar(position = position_dodge(width=0.8), stat="identity", width=.5, fill=palette[2]) +
+  geom_hline(yintercept = avg, color=palette[7], size=1, linetype="dashed") + 
+  geom_text(aes(12, avg, label = "2018 average", vjust = -1), color=palette[7], size=4) + 
+  theme(axis.line = element_blank(), plot.title = element_text(hjust=0.5)) + 
+  labs(title="UK Wedding Costs By Region", x="Region of UK", y="Wedding Costs in Pounds") +
+  scale_y_continuous(expand = c(0, 0))
+```
