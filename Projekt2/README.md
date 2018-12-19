@@ -10,5 +10,16 @@ C) Projekt **JA**. Celem jest opracowanie strony internetowej (interaktywnej lub
 
 Projekt wykonywać można w grupie do 3 osób. Nie można pracować ponownie ze współpracownikiem z projektu 1 ani z prezentacji.
 
-Kryteria oceny zostaną podane wkrótce.
+**Kryteria oceny**
 
+Za ten projekt można otrzymać od 0 do 20 punktów, z czego:
+
+- 5 punktów uzyskuje się za estetykę całej strony www
+- 5 punktów uzyskuje się za estetykę poszczególnych wykresów (przynajmniej 2 wykresy), 
+- 5 punktów uzyskuje się przemyślaną interakcje/animacje na wykresach
+- 5 punktów uzyskuje się za oryginalność i pomysłowość prezentowanych danych
+
+
+**Termin na oddanie projektu**
+
+Ostatni wykład z TWD - 23 I 2019 godzina 10:15. Do tego czasu projekty powinny być na GitHub. Każda grupa krótko (!!!) pokaże opracowany projekt.
