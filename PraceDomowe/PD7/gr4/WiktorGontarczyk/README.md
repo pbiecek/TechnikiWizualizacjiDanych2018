@@ -1,0 +1,1 @@
+Link do aplikacji: https://aaaaaaaaaaaaaa.shinyapps.io/dashboard/
