@@ -1,4 +1,3 @@
-setwd("C:/Users/Anna Kozak/Desktop/PD8/gr3/AnnaKozak/")
 ### wczytanie danych
 w1 <- read.csv("warstwa1.csv")
 w2 <- read.csv("warstwa2.csv")
