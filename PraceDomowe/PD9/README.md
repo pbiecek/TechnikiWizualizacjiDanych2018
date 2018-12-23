@@ -1,4 +1,4 @@
-PD9 - czas na wykonanie od 15-12-2018 do 09-01-2019
+PD9 - czas na wykonanie od 15-12-2018 do 16-01-2019
 
 Pod adresem
 https://github.com/ModelOriented/DALEX2/blob/master/data/dragons.rda
