@@ -49,55 +49,6 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   
-  
-  # countries_r <- reactive({
-  #   filter(skoki, Kraj %in% input[["chosen_country"]])%>% 
-  #     mutate(chosen_name = Kraj == input[["chosen_country"]])
-  #   
-  # })
-  # 
-  # jumpers_r <- reactive({
-  #   filter(countries_r(), Skoczek %in% input[["chosen_jumper"]])
-  # })
-  # 
-  # all_r <- reactive({
-  #   if (input[["byJumper"]]) {
-  #     jumpers_r()
-  #   } else {
-  #     countries_r()
-  #   }
-  # })
-  # 
-  # model_r <- reactive({
-  #   lm(Skok ~ Punkty, data = all_r())
-  # })
-  # 
-  # observe({
-  #   updateSelectizeInput(session, inputId = "chosen_jumper", 
-  #                        selected = input[["chosen_jumper"]],
-  #                        choices = countries_r()[["Skoczek"]])
-  # })
-  
-  
-  # output[["jumpers_plot"]] <- renderPlot({
-  #   p <- ggplot(all_r(), aes(x=Punkty, y=Skok, label=Skoczek)) + 
-  #     theme_bw() +
-  #     geom_point(stat='identity', color = rgb(input[["red"]]/255, input[["green"]]/255, input[["blue"]]/255),  size=3)  +
-  #     geom_text_repel(color="black", size=3, force=1) +
-  #     ylim(min(all_r()[["Skok"]]), max(all_r()[["Skok"]])) +
-  #     xlim(min(all_r()[["Punkty"]]), max(all_r()[["Punkty"]])) +
-  #     ylab('Długość skoku') +
-  #     coord_flip()
-  #   
-  #   if (input[["byJumper"]]) {
-  #     p <- p + geom_text(data = all_r(), aes(x = Punkty, y = Skok, label = paste0("Punkty: ", all_r()[["Punkty"]], " pkt, Długość skoku: ", all_r()[["Skok"]], " m")), 
-  #                        size = 10, color = "black", vjust = 5)
-  #   } else if(input[["abline"]]){
-  #     p <- p + geom_abline(slope = coef(model_r())[2], intercept = coef(model_r())[1], color = "black")
-  #   }
-  #   p
-  # })
-  
   output[["choinka_plot"]] <- renderPlot({
     p <- ggplot(data = dane, aes()) +
       geom_point(col = 3, aes(y = V1, x = value)) 
