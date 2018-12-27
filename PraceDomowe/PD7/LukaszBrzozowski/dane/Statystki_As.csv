@@ -1,0 +1,975 @@
+Rok;Województwo;Kod strefy;Nazwa strefy;Kod stacji;Wskaźnik;Czas uśredniania;Średnia;Min;Maks;Liczba ważnych pom.;Kompletność/rok;Lato/Zima
+2002;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;4,6     ;0,1     ;20,2     ;175;47,9     ;1,1     
+2002;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;As(PM10);24g;6,3     ;0,0     ;39,8     ;167;45,8     ;0,9     
+2003;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;As(PM10);24g;3,4     ;0,1     ;13,6     ;140;38,4     ;1,0     
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;6,2     ;0,4     ;118,9     ;165;45,2     ;1,1     
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;As(PM10);24g;4,4     ;0,1     ;117,5     ;172;47,1     ;1,1     
+2003;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszAlJerozol;As(PM10);24g;0,4     ;0,2     ;0,8     ;18;4,9     ;
+2003;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;As(PM10);24g;0,6     ;0,1     ;3,5     ;89;24,4     ;1,4     
+2003;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;1,2     ;0,5     ;9,0     ;102;27,9     ;1,2     
+2004;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;As(PM10);24g;3,1     ;0,1     ;33,5     ;143;39,1     ;1,1     
+2004;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;6,4     ;1,7     ;32,5     ;35;9,6     ;0,0     
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;2,4     ;0,0     ;7,9     ;174;47,5     ;1,0     
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;3,3     ;0,1     ;13,3     ;137;37,4     ;1,1     
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;As(PM10);24g;3,1     ;0,0     ;19,7     ;176;48,1     ;1,1     
+2004;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;5,3     ;1,8     ;45,7     ;112;30,6     ;1,8     
+2004;lubelskie;PL0602;strefa lubelska;LbDorohWIOS;As(PM10);24g;0,3     ;0,3     ;0,3     ;84;23,0     ;1,0     
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszAlJerozol;As(PM10);24g;0,2     ;0,0     ;1,1     ;131;35,8     ;1,0     
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;As(PM10);24g;0,2     ;0,0     ;0,9     ;111;30,3     ;0,8     
+2004;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;0,7     ;0,5     ;5,3     ;104;28,4     ;1,0     
+2004;mazowieckie;PL1404;strefa mazowiecka;MzOstrolTargowa;As(PM10);24g;0,5     ;0,0     ;8,3     ;100;27,3     ;1,0     
+2005;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;As(PM10);24g;1,9     ;0,1     ;13,8     ;57;15,6     ;1,0     
+2005;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;As(PM10);24g;2,8     ;0,2     ;27,6     ;183;50,1     ;1,0     
+2005;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;7,7     ;1,7     ;54,5     ;197;54,0     ;1,1     
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;1,3     ;0,0     ;14,1     ;195;53,4     ;1,1     
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;2,1     ;0,1     ;15,2     ;197;54,0     ;1,1     
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;As(PM10);24g;2,8     ;0,2     ;87,0     ;198;54,2     ;1,1     
+2005;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;5,1     ;1,7     ;68,1     ;197;54,0     ;1,1     
+2005;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;0,0     ;0,0     ;0,0     ;62;17,0     ;1,1     
+2005;lubelskie;PL0602;strefa lubelska;LbDorohWIOS;As(PM10);24g;0,2     ;0,2     ;0,3     ;84;23,0     ;1,0     
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;As(PM10);24g;0,2     ;0,0     ;0,8     ;98;26,8     ;1,2     
+2005;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;1,0     ;0,5     ;4,1     ;95;26,0     ;0,9     
+2005;mazowieckie;PL1404;strefa mazowiecka;MzOstrolTargowa;As(PM10);24g;0,9     ;0,0     ;6,0     ;90;24,7     ;1,0     
+2006;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;As(PM10);24g;3,2     ;0,2     ;58,2     ;53;14,5     ;0,9     
+2006;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;As(PM10);24g;4,4     ;0,2     ;90,1     ;189;51,8     ;0,9     
+2006;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;9,8     ;1,7     ;89,0     ;196;53,7     ;1,1     
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;2,8     ;0,0     ;13,2     ;170;46,6     ;1,0     
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;2,9     ;0,1     ;23,4     ;174;47,7     ;1,1     
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;As(PM10);24g;2,9     ;0,1     ;25,5     ;144;39,5     ;1,2     
+2006;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;7,2     ;1,6     ;114,1     ;186;51,0     ;1,0     
+2006;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydWarszaw;As(PM10);24g;2,7     ;0,0     ;23,0     ;50;13,7     ;0,9     
+2006;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;0,5     ;0,0     ;2,7     ;62;17,0     ;1,0     
+2006;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;0,0     ;0,0     ;0,0     ;48;13,2     ;0,9     
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;0,0     ;0,0     ;0,0     ;52;14,2     ;1,0     
+2006;małopolskie;PL1203;strefa małopolska;MpSkawOsOgro;As(PM10);24g;3,6     ;0,2     ;21,8     ;41;11,2     ;1,1     
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;As(PM10);24g;0,1     ;0,0     ;0,6     ;138;37,8     ;1,0     
+2006;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;0,7     ;0,5     ;2,6     ;74;20,3     ;0,6     
+2006;mazowieckie;PL1404;strefa mazowiecka;MzOstrolTargowa;As(PM10);24g;0,5     ;0,1     ;3,0     ;66;18,1     ;1,2     
+2006;podkarpackie;PL1802;strefa podkarpacka;PkMielZaStre;As(PM10);24g;1,6     ;0,6     ;7,1     ;43;11,8     ;1,4     
+2006;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;As(PM10);24g;2,3     ;0,6     ;13,0     ;25;6,8     ;1,1     
+2006;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;0,3     ;0,0     ;2,0     ;16;4,4     ;1,7     
+2006;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;0,1     ;0,0     ;2,0     ;16;4,4     ;1,7     
+2006;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;As(PM10);24g;0,3     ;0,0     ;3,0     ;16;4,4     ;1,7     
+2006;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;0,3     ;0,0     ;2,0     ;16;4,4     ;1,7     
+2006;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;0,1     ;0,0     ;1,0     ;16;4,4     ;1,7     
+2006;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;0,6     ;0,0     ;4,0     ;16;4,4     ;1,7     
+2006;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;As(PM10);24g;0,1     ;0,0     ;5,0     ;85;23,3     ;1,0     
+2006;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;2,6     ;2,0     ;14,6     ;101;27,7     ;0,9     
+2007;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;As(PM10);24g;1,4     ;0,1     ;8,1     ;60;16,4     ;1,0     
+2007;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;As(PM10);24g;2,5     ;0,1     ;21,2     ;190;52,1     ;0,9     
+2007;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;8,5     ;1,8     ;67,6     ;200;54,8     ;1,0     
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;1,9     ;0,1     ;25,0     ;177;48,5     ;0,9     
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;2,0     ;0,1     ;17,6     ;162;44,4     ;1,0     
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;6,0     ;1,8     ;108,6     ;186;51,0     ;1,0     
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsSzczKopPM;As(PM10);24g;1,4     ;0,1     ;11,0     ;182;49,9     ;1,3     
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;2,5     ;0,1     ;29,2     ;151;41,4     ;1,1     
+2007;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;2,8     ;0,0     ;42,1     ;63;17,3     ;1,1     
+2007;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;0,9     ;0,0     ;47,0     ;52;14,2     ;0,9     
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;0,0     ;0,0     ;0,0     ;50;13,7     ;1,2     
+2007;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;As(PM10);24g;0,3     ;0,1     ;0,9     ;12;3,3     ;1,0     
+2007;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;2,3     ;0,1     ;28,6     ;251;68,8     ;1,3     
+2007;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;As(PM10);24g;1,3     ;0,4     ;2,9     ;291;79,7     ;1,5     
+2007;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;As(PM10);24g;1,3     ;0,2     ;3,5     ;185;50,7     ;0,6     
+2007;małopolskie;PL1203;strefa małopolska;MpNiepo3Maja;As(PM10);24g;1,7     ;0,5     ;4,8     ;12;3,3     ;1,0     
+2007;małopolskie;PL1203;strefa małopolska;MpProszWIOSKrol1404;As(PM10);24g;1,6     ;0,5     ;2,8     ;11;3,0     ;0,8     
+2007;małopolskie;PL1203;strefa małopolska;MpWadowiWIOSPSka1805;As(PM10);24g;2,1     ;0,6     ;3,7     ;11;3,0     ;0,8     
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;As(PM10);24g;0,1     ;0,0     ;0,6     ;84;23,0     ;1,4     
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszZelazWSSE;As(PM10);24g;0,1     ;0,0     ;0,4     ;41;11,2     ;1,4     
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarZeganWSSE;As(PM10);24g;0,2     ;0,0     ;0,7     ;42;11,5     ;1,5     
+2007;mazowieckie;PL1402;miasto Płock;MzPlockKolegWSSE;As(PM10);24g;0,4     ;0,1     ;1,3     ;44;12,1     ;1,2     
+2007;mazowieckie;PL1403;miasto Radom;MzRadomCzWSSE;As(PM10);24g;0,1     ;0,0     ;1,0     ;70;19,2     ;1,1     
+2007;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;0,7     ;0,5     ;3,6     ;107;29,3     ;1,1     
+2007;mazowieckie;PL1404;strefa mazowiecka;MzOstMazSikorWSSE;As(PM10);24g;0,3     ;0,0     ;1,3     ;44;12,1     ;1,2     
+2007;mazowieckie;PL1404;strefa mazowiecka;MzOstrolTargowa;As(PM10);24g;0,3     ;0,0     ;1,8     ;62;17,0     ;0,8     
+2007;mazowieckie;PL1404;strefa mazowiecka;MzPiaseczDworWSSE;As(PM10);24g;0,2     ;0,0     ;0,7     ;40;11,0     ;1,5     
+2007;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;As(PM10);24g;0,9     ;0,4     ;2,2     ;19;5,2     ;1,1     
+2007;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor2;As(PM10);24g;0,5     ;0,2     ;2,6     ;110;30,1     ;1,1     
+2007;podkarpackie;PL1802;strefa podkarpacka;PkMielZaStre;As(PM10);24g;1,3     ;0,4     ;3,7     ;22;6,0     ;1,0     
+2007;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;As(PM10);24g;1,2     ;0,4     ;3,7     ;19;5,2     ;1,1     
+2007;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;As(PM10);24g;0,7     ;0,5     ;2,3     ;22;6,0     ;1,2     
+2007;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;1,2     ;0,0     ;3,0     ;22;6,0     ;0,8     
+2007;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;1,3     ;0,0     ;6,8     ;25;6,8     ;0,9     
+2007;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;As(PM10);24g;1,4     ;0,0     ;8,5     ;25;6,8     ;0,9     
+2007;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;1,3     ;0,0     ;9,0     ;25;6,8     ;1,1     
+2007;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;0,7     ;0,0     ;7,4     ;25;6,8     ;1,1     
+2007;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;0,9     ;0,0     ;4,2     ;23;6,3     ;1,1     
+2007;śląskie;PL2405;strefa śląska;SlCieszCies_dojaz;As(PM10);24g;4,7     ;0,0     ;11,7     ;18;4,9     ;1,6     
+2007;śląskie;PL2405;strefa śląska;SlLublPiasko;As(PM10);24g;6,3     ;0,0     ;16,3     ;21;5,8     ;1,1     
+2007;śląskie;PL2405;strefa śląska;SlRacibRaci_studz;As(PM10);24g;3,3     ;0,0     ;14,8     ;18;4,9     ;1,6     
+2007;śląskie;PL2405;strefa śląska;SlWodziWodz_bogum;As(PM10);24g;5,0     ;0,0     ;15,6     ;22;6,0     ;1,2     
+2007;śląskie;PL2405;strefa śląska;SlZawSkloCur;As(PM10);24g;0,5     ;0,5     ;0,5     ;16;4,4     ;0,5     
+2007;śląskie;PL2405;strefa śląska;SlZywieKoper;As(PM10);24g;4,5     ;0,0     ;16,0     ;21;5,8     ;1,3     
+2007;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;As(PM10);24g;1,2     ;0,3     ;2,9     ;17;4,7     ;0,6     
+2007;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsztyWSSE_Zolnier;As(PM10);24g;1,4     ;0,3     ;9,8     ;284;77,8     ;1,0     
+2007;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmDzialdWSSE_Biedraw;As(PM10);24g;2,6     ;0,2     ;9,3     ;277;75,9     ;0,9     
+2007;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;2,1     ;2,0     ;5,5     ;101;27,7     ;1,0     
+2007;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;As(PM10);24g;1,8     ;0,0     ;5,3     ;59;16,2     ;0,8     
+2007;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;1,0     ;0,0     ;4,3     ;59;16,2     ;0,8     
+2008;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocAlWisn;As(PM10);24g;2,4     ;0,2     ;23,3     ;52;14,2     ;0,9     
+2008;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;As(PM10);24g;2,3     ;0,2     ;19,6     ;193;52,7     ;1,3     
+2008;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;7,7     ;1,8     ;74,0     ;200;54,6     ;1,1     
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;1,2     ;0,0     ;15,9     ;195;53,3     ;1,0     
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;1,5     ;0,0     ;10,5     ;190;51,9     ;1,0     
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsJelw05;As(PM10);24g;2,7     ;0,3     ;13,2     ;291;79,5     ;1,6     
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;4,7     ;1,8     ;59,9     ;199;54,4     ;1,0     
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsSzczKopPM;As(PM10);24g;1,2     ;0,0     ;26,0     ;185;50,5     ;1,0     
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;2,1     ;0,1     ;21,9     ;193;52,7     ;1,0     
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;As(PM10);24g;3,0     ;1,0     ;6,0     ;320;87,4     ;0,9     
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgWPola;As(PM10);24g;1,8     ;0,0     ;14,0     ;356;97,3     ;1,1     
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;4,9     ;0,0     ;11,0     ;107;29,2     ;0,4     
+2008;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;4,7     ;2,0     ;8,5     ;83;22,7     ;0,6     
+2008;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunSzpMiejski;As(PM10);24g;0,9     ;0,2     ;2,0     ;316;86,3     ;1,3     
+2008;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;0,0     ;0,0     ;0,0     ;45;12,3     ;1,4     
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;0,0     ;0,0     ;0,0     ;45;12,3     ;1,1     
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;As(PM10);24g;0,7     ;0,1     ;2,0     ;295;80,6     ;1,1     
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolan;As(PM10);24g;1,5     ;0,1     ;3,0     ;323;88,3     ;1,1     
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;As(PM10);24g;1,5     ;0,1     ;3,0     ;323;88,3     ;1,1     
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;As(PM10);24g;2,2     ;1,0     ;5,0     ;335;91,5     ;0,8     
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;2,2     ;1,0     ;5,0     ;335;91,5     ;0,8     
+2008;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;As(PM10);24g;0,2     ;0,1     ;0,5     ;12;3,3     ;1,0     
+2008;lubelskie;PL0602;strefa lubelska;LbChelJagiel;As(PM10);24g;0,3     ;0,2     ;0,6     ;12;3,3     ;1,0     
+2008;lubelskie;PL0602;strefa lubelska;LbRadzPodSit;As(PM10);24g;0,3     ;0,0     ;0,8     ;12;3,3     ;1,0     
+2008;lubelskie;PL0602;strefa lubelska;LbRejowiecFabrWIOS;As(PM10);24g;0,4     ;0,2     ;0,9     ;12;3,3     ;1,0     
+2008;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;As(PM10);24g;0,9     ;0,2     ;2,0     ;12;3,3     ;1,0     
+2008;lubuskie;PL0802;miasto Zielona Góra;LuZgoraWSSE_1;As(PM10);24g;1,5     ;0,2     ;5,1     ;182;49,7     ;1,0     
+2008;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;3,2     ;1,6     ;8,2     ;12;3,3     ;1,0     
+2008;lubuskie;PL0803;strefa lubuska;LuZaryWSSE;As(PM10);24g;1,1     ;0,2     ;4,9     ;158;43,2     ;1,3     
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;As(PM10);24g;1,5     ;0,2     ;7,8     ;175;47,8     ;0,9     
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzLegion;As(PM10);24g;1,8     ;0,5     ;10,7     ;118;32,2     ;0,8     
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;1,9     ;0,3     ;7,0     ;130;35,5     ;0,6     
+2008;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;2,1     ;1,3     ;4,6     ;247;67,5     ;0,8     
+2008;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;As(PM10);24g;2,2     ;1,6     ;3,5     ;87;23,8     ;0,6     
+2008;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;As(PM10);24g;1,2     ;0,6     ;2,0     ;123;33,6     ;0,4     
+2008;małopolskie;PL1203;strefa małopolska;MpBochniWSSEKons0105;As(PM10);24g;1,0     ;0,2     ;2,2     ;177;48,4     ;1,0     
+2008;małopolskie;PL1203;strefa małopolska;MpChrzanWSSEGrzy0301;As(PM10);24g;2,0     ;0,6     ;3,5     ;182;49,7     ;1,0     
+2008;małopolskie;PL1203;strefa małopolska;MpNiepo3Maja;As(PM10);24g;1,5     ;0,6     ;2,7     ;142;38,8     ;0,8     
+2008;małopolskie;PL1203;strefa małopolska;MpNoTargWSSESzaf1102;As(PM10);24g;1,6     ;0,2     ;3,3     ;169;46,2     ;1,0     
+2008;małopolskie;PL1203;strefa małopolska;MpNSaczWSSETarn6202;As(PM10);24g;1,1     ;0,2     ;2,1     ;169;46,2     ;0,9     
+2008;małopolskie;PL1203;strefa małopolska;MpProszWIOSKrol1404;As(PM10);24g;1,2     ;0,0     ;2,4     ;166;45,4     ;0,9     
+2008;małopolskie;PL1203;strefa małopolska;MpWadowiWIOSPSka1805;As(PM10);24g;1,7     ;0,5     ;3,1     ;168;45,9     ;1,0     
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;As(PM10);24g;0,2     ;0,0     ;1,2     ;180;49,2     ;0,8     
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszZelazWSSE;As(PM10);24g;0,2     ;0,0     ;0,6     ;138;37,7     ;1,1     
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarZeganWSSE;As(PM10);24g;0,1     ;0,0     ;0,7     ;143;39,1     ;1,0     
+2008;mazowieckie;PL1402;miasto Płock;MzPlockKolegWSSE;As(PM10);24g;0,5     ;0,0     ;1,3     ;71;19,4     ;1,0     
+2008;mazowieckie;PL1403;miasto Radom;MzRad25Czerw;As(PM10);24g;0,0     ;0,0     ;0,1     ;71;19,4     ;1,0     
+2008;mazowieckie;PL1403;miasto Radom;MzRadomCzWSSE;As(PM10);24g;0,0     ;0,0     ;0,1     ;71;19,4     ;1,0     
+2008;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;1,0     ;0,3     ;3,7     ;156;42,6     ;1,0     
+2008;mazowieckie;PL1404;strefa mazowiecka;MzOstMazSikorWSSE;As(PM10);24g;0,3     ;0,0     ;1,3     ;50;13,7     ;1,1     
+2008;mazowieckie;PL1404;strefa mazowiecka;MzOstrolTargowa;As(PM10);24g;0,3     ;0,1     ;1,1     ;122;33,3     ;0,4     
+2008;mazowieckie;PL1404;strefa mazowiecka;MzPiaseczDworWSSE;As(PM10);24g;0,1     ;0,0     ;0,5     ;144;39,3     ;1,0     
+2008;opolskie;PL1602;strefa opolska;OpGlubKochan;As(PM10);24g;2,5     ;1,5     ;16,0     ;52;14,2     ;1,5     
+2008;opolskie;PL1602;strefa opolska;OpNamys2pyl;As(PM10);24g;4,4     ;2,2     ;19,3     ;53;14,5     ;1,5     
+2008;opolskie;PL1602;strefa opolska;OpOlesno3pyl;As(PM10);24g;3,9     ;2,2     ;13,2     ;40;10,9     ;0,8     
+2008;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;As(PM10);24g;1,3     ;0,4     ;2,4     ;23;6,3     ;0,9     
+2008;podkarpackie;PL1802;strefa podkarpacka;PkJarosWIOSJanPawII;As(PM10);24g;1,1     ;0,4     ;3,1     ;19;5,2     ;0,7     
+2008;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor2;As(PM10);24g;0,8     ;0,4     ;3,0     ;148;40,4     ;1,0     
+2008;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,0     ;0,4     ;2,6     ;21;5,7     ;1,3     
+2008;podkarpackie;PL1802;strefa podkarpacka;PkMielZaStre;As(PM10);24g;1,2     ;0,4     ;2,8     ;23;6,3     ;1,3     
+2008;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;As(PM10);24g;1,3     ;0,4     ;3,2     ;20;5,5     ;0,8     
+2008;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;As(PM10);24g;1,0     ;0,4     ;3,1     ;25;6,8     ;1,1     
+2008;podkarpackie;PL1802;strefa podkarpacka;PkPrzemyslWIOSMick;As(PM10);24g;0,9     ;0,4     ;1,8     ;20;5,5     ;1,9     
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.01w.01m;As(PM10);24g;1,0     ;0,6     ;2,5     ;107;29,2     ;1,2     
+2008;pomorskie;PL2202;strefa pomorska;Pm14TCZEw06m;As(PM10);24g;1,3     ;1,3     ;1,5     ;60;16,4     ;0,7     
+2008;pomorskie;PL2202;strefa pomorska;PmWladywHallera;As(PM10);24g;1,9     ;0,6     ;14,0     ;127;34,7     ;1,1     
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;2,4     ;0,4     ;6,7     ;26;7,1     ;1,2     
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;2,9     ;0,4     ;8,6     ;26;7,1     ;1,2     
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;As(PM10);24g;2,6     ;0,4     ;8,4     ;26;7,1     ;1,2     
+2008;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;2,6     ;0,4     ;9,6     ;26;7,1     ;1,0     
+2008;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;1,5     ;0,4     ;6,5     ;26;7,1     ;1,0     
+2008;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;2,3     ;0,4     ;7,3     ;23;6,3     ;0,9     
+2008;śląskie;PL2405;strefa śląska;SlCieszCies_dojaz;As(PM10);24g;2,6     ;0,0     ;7,5     ;21;5,7     ;0,8     
+2008;śląskie;PL2405;strefa śląska;SlLublPiasko;As(PM10);24g;2,5     ;0,0     ;14,2     ;21;5,7     ;1,3     
+2008;śląskie;PL2405;strefa śląska;SlRacibRaci_studz;As(PM10);24g;2,3     ;0,0     ;14,6     ;22;6,0     ;0,8     
+2008;śląskie;PL2405;strefa śląska;SlWodziWodz_bogum;As(PM10);24g;1,9     ;0,0     ;7,4     ;19;5,2     ;1,7     
+2008;śląskie;PL2405;strefa śląska;SlZawSkloCur;As(PM10);24g;3,0     ;1,1     ;7,7     ;21;5,7     ;0,9     
+2008;śląskie;PL2405;strefa śląska;SlZywieKoper;As(PM10);24g;1,9     ;0,0     ;7,2     ;22;6,0     ;1,2     
+2008;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;As(PM10);24g;1,3     ;0,5     ;3,1     ;27;7,4     ;0,9     
+2008;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsztyWSSE_Zolnier;As(PM10);24g;1,2     ;0,4     ;2,6     ;270;73,8     ;0,8     
+2008;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmDzialdWSSE_Biedraw;As(PM10);24g;2,4     ;0,5     ;8,4     ;259;70,8     ;1,0     
+2008;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,4     ;0,1     ;1,3     ;12;3,3     ;1,0     
+2008;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;As(PM10);24g;0,6     ;0,0     ;0,6     ;228;62,3     ;0,9     
+2008;wielkopolskie;PL3003;strefa wielkopolska;WpLeszno411000;As(PM10);24g;5,2     ;4,0     ;6,9     ;64;17,5     ;0,0     
+2008;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;2,1     ;2,0     ;5,5     ;102;27,9     ;1,1     
+2008;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;1,1     ;0,4     ;2,9     ;48;13,1     ;0,6     
+2009;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;As(PM10);24g;3,0     ;0,3     ;25,9     ;179;49,0     ;0,7     
+2009;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;5,5     ;0,9     ;47,0     ;204;55,9     ;1,0     
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;0,9     ;0,0     ;11,4     ;202;55,3     ;0,8     
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;1,6     ;0,0     ;11,1     ;204;55,9     ;0,9     
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;3,8     ;0,9     ;28,5     ;204;55,9     ;1,0     
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsSzczKopPM;As(PM10);24g;1,5     ;0,2     ;13,2     ;193;52,9     ;1,1     
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;1,9     ;0,0     ;19,7     ;203;55,6     ;0,9     
+2009;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;2,1     ;0,5     ;4,7     ;248;67,9     ;1,0     
+2009;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;1,1     ;0,1     ;6,2     ;256;70,1     ;1,0     
+2009;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;1,3     ;0,4     ;11,4     ;240;65,8     ;1,1     
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;0,7     ;0,2     ;2,1     ;252;69,0     ;1,1     
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFGolub;As(PM10);24g;1,4     ;0,1     ;2,5     ;13;3,6     ;0,9     
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;As(PM10);24g;16,5     ;4,0     ;33,0     ;20;5,5     ;0,8     
+2009;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;As(PM10);24g;0,4     ;0,1     ;0,9     ;352;96,4     ;1,0     
+2009;lubelskie;PL0602;strefa lubelska;LbRadzPodSit;As(PM10);24g;0,3     ;0,0     ;0,9     ;328;89,9     ;1,0     
+2009;lubelskie;PL0602;strefa lubelska;LbRejowiecFabrWIOS;As(PM10);24g;0,2     ;0,1     ;0,5     ;263;72,1     ;0,9     
+2009;lubelskie;PL0602;strefa lubelska;LbTomaszowLubWIOS;As(PM10);24g;0,4     ;0,2     ;2,2     ;254;69,6     ;1,5     
+2009;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzowWSSE_1;As(PM10);24g;1,5     ;0,3     ;4,9     ;173;47,4     ;1,1     
+2009;lubuskie;PL0802;miasto Zielona Góra;LuZgoraWSSE_1;As(PM10);24g;1,0     ;0,2     ;4,4     ;172;47,1     ;1,0     
+2009;lubuskie;PL0803;strefa lubuska;LuZaryWSSE;As(PM10);24g;0,7     ;0,2     ;9,8     ;175;47,9     ;1,1     
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzCzerni;As(PM10);24g;1,5     ;0,2     ;8,3     ;142;38,9     ;1,6     
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;As(PM10);24g;4,7     ;0,1     ;15,2     ;163;44,7     ;0,8     
+2009;łódzkie;PL1002;strefa łódzka;LdKutnoWIOSMWilcza;As(PM10);24g;2,2     ;0,3     ;10,4     ;139;38,1     ;1,9     
+2009;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakowWIOSPrad6115;As(PM10);24g;1,7     ;0,0     ;4,4     ;159;43,6     ;1,2     
+2009;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;As(PM10);24g;1,4     ;0,5     ;2,7     ;97;26,6     ;1,7     
+2009;małopolskie;PL1203;strefa małopolska;MpBochniWSSEKons0105;As(PM10);24g;1,3     ;0,5     ;3,1     ;150;41,1     ;1,4     
+2009;małopolskie;PL1203;strefa małopolska;MpChrzanWSSEGrzy0301;As(PM10);24g;2,0     ;0,5     ;5,9     ;157;43,0     ;1,2     
+2009;małopolskie;PL1203;strefa małopolska;MpGorlKrasin;As(PM10);24g;0,9     ;0,5     ;2,3     ;169;46,3     ;1,1     
+2009;małopolskie;PL1203;strefa małopolska;MpNiepo3Maja;As(PM10);24g;1,8     ;0,5     ;4,7     ;171;46,8     ;0,9     
+2009;małopolskie;PL1203;strefa małopolska;MpNoTargWSSESzaf1102;As(PM10);24g;2,1     ;0,5     ;7,5     ;156;42,7     ;1,1     
+2009;małopolskie;PL1203;strefa małopolska;MpNSaczWSSETarn6202;As(PM10);24g;1,3     ;0,5     ;5,1     ;163;44,7     ;1,0     
+2009;małopolskie;PL1203;strefa małopolska;MpProszWIOSKrol1404;As(PM10);24g;1,5     ;0,5     ;3,9     ;170;46,6     ;0,9     
+2009;małopolskie;PL1203;strefa małopolska;MpTuchChopin;As(PM10);24g;0,9     ;0,5     ;2,0     ;189;51,8     ;0,8     
+2009;małopolskie;PL1203;strefa małopolska;MpWadowiWIOSPSka1805;As(PM10);24g;1,9     ;0,5     ;6,4     ;180;49,3     ;1,0     
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;As(PM10);24g;0,2     ;0,0     ;1,7     ;345;94,5     ;1,1     
+2009;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;1,2     ;0,5     ;7,0     ;196;53,7     ;1,0     
+2009;mazowieckie;PL1404;strefa mazowiecka;MzOstMazSikorWSSE;As(PM10);24g;0,3     ;0,0     ;1,2     ;75;20,5     ;1,2     
+2009;mazowieckie;PL1404;strefa mazowiecka;MzOstrolTargowa;As(PM10);24g;0,7     ;0,1     ;4,4     ;190;52,1     ;0,8     
+2009;opolskie;PL1602;strefa opolska;OpGlubKochan;As(PM10);24g;2,0     ;1,3     ;7,1     ;57;15,6     ;1,1     
+2009;opolskie;PL1602;strefa opolska;OpNamys2pyl;As(PM10);24g;3,6     ;2,1     ;11,9     ;49;13,4     ;0,8     
+2009;opolskie;PL1602;strefa opolska;OpOlesno3pyl;As(PM10);24g;3,4     ;2,1     ;10,1     ;46;12,6     ;1,0     
+2009;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;As(PM10);24g;1,4     ;0,4     ;4,3     ;175;47,9     ;1,0     
+2009;podkarpackie;PL1802;strefa podkarpacka;PkJarosWIOSJanPawII;As(PM10);24g;1,3     ;0,4     ;4,0     ;175;47,9     ;1,0     
+2009;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor2;As(PM10);24g;1,2     ;0,4     ;2,9     ;169;46,3     ;1,0     
+2009;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,4     ;0,4     ;3,3     ;183;50,1     ;1,0     
+2009;podkarpackie;PL1802;strefa podkarpacka;PkMielZaStre;As(PM10);24g;1,8     ;0,9     ;5,6     ;169;46,3     ;0,9     
+2009;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;As(PM10);24g;1,3     ;0,4     ;3,3     ;157;43,0     ;0,8     
+2009;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;As(PM10);24g;1,3     ;0,4     ;4,1     ;176;48,2     ;1,0     
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.00.s237m;As(PM10);24g;3,5     ;0,3     ;10,4     ;121;33,2     ;1,0     
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.01w.01m;As(PM10);24g;1,1     ;0,4     ;6,1     ;185;50,7     ;0,9     
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaGleboka;As(PM10);24g;4,2     ;0,3     ;9,3     ;174;47,7     ;1,0     
+2009;pomorskie;PL2202;strefa pomorska;Pm.06.s712m;As(PM10);24g;4,5     ;0,3     ;16,4     ;161;44,1     ;1,2     
+2009;pomorskie;PL2202;strefa pomorska;Pm.63.s079m;As(PM10);24g;3,1     ;0,3     ;8,3     ;159;43,6     ;0,9     
+2009;pomorskie;PL2202;strefa pomorska;PmWejhPlWejh;As(PM10);24g;3,9     ;0,3     ;12,2     ;160;43,8     ;1,3     
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;2,3     ;1,0     ;8,6     ;182;49,9     ;1,0     
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;2,7     ;1,0     ;8,9     ;182;49,9     ;1,0     
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;As(PM10);24g;2,6     ;1,0     ;11,0     ;182;49,9     ;1,0     
+2009;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;2,9     ;1,0     ;12,0     ;182;49,9     ;0,9     
+2009;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;2,2     ;1,0     ;7,9     ;182;49,9     ;1,1     
+2009;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;3,2     ;1,0     ;14,0     ;182;49,9     ;1,0     
+2009;śląskie;PL2405;strefa śląska;SlCieszCies_dojaz;As(PM10);24g;3,8     ;2,9     ;8,9     ;182;49,9     ;0,7     
+2009;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;1,5     ;1,0     ;5,1     ;53;14,5     ;0,3     
+2009;śląskie;PL2405;strefa śląska;SlKnurJedNar;As(PM10);24g;2,3     ;1,0     ;6,3     ;108;29,6     ;1,6     
+2009;śląskie;PL2405;strefa śląska;SlLublPiasko;As(PM10);24g;3,3     ;2,9     ;9,3     ;182;49,9     ;1,2     
+2009;śląskie;PL2405;strefa śląska;SlMyszMiedzi;As(PM10);24g;3,6     ;1,0     ;13,0     ;106;29,0     ;1,5     
+2009;śląskie;PL2405;strefa śląska;SlRacibRaci_studz;As(PM10);24g;3,1     ;2,9     ;6,8     ;182;49,9     ;1,1     
+2009;śląskie;PL2405;strefa śląska;SlWodziWodz_bogum;As(PM10);24g;3,2     ;2,9     ;7,9     ;182;49,9     ;1,1     
+2009;śląskie;PL2405;strefa śląska;SlZawSkloCur;As(PM10);24g;3,0     ;1,0     ;14,0     ;182;49,9     ;1,1     
+2009;śląskie;PL2405;strefa śląska;SlZywieKoper;As(PM10);24g;3,5     ;2,9     ;11,8     ;182;49,9     ;1,1     
+2009;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;As(PM10);24g;2,2     ;0,5     ;4,5     ;42;11,5     ;0,0     
+2009;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsztyWSSE_Zolnier;As(PM10);24g;0,8     ;0,2     ;3,0     ;235;64,4     ;0,8     
+2009;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmDzialdWSSE_Biedraw;As(PM10);24g;1,0     ;0,5     ;7,0     ;247;67,7     ;1,0     
+2009;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmGizyckWIOS_Wodoc;As(PM10);24g;0,6     ;0,5     ;2,9     ;204;55,9     ;0,9     
+2009;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,3     ;0,0     ;2,9     ;365;100,0     ;1,0     
+2009;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;As(PM10);24g;0,6     ;0,6     ;0,6     ;235;64,4     ;1,0     
+2009;wielkopolskie;PL3003;strefa wielkopolska;WpLeszno411000;As(PM10);24g;2,3     ;0,0     ;10,8     ;215;58,9     ;0,8     
+2009;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;0,9     ;0,0     ;2,8     ;125;34,2     ;1,5     
+2009;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;1,4     ;1,2     ;4,5     ;52;14,2     ;1,1     
+2010;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;As(PM10);24g;2,6     ;0,1     ;13,9     ;150;41,1     ;1,6     
+2010;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;5,9     ;0,4     ;63,0     ;190;52,1     ;1,0     
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;1,2     ;0,2     ;28,4     ;198;54,2     ;1,3     
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;2,0     ;0,2     ;21,5     ;219;60,0     ;1,1     
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;As(PM10);24g;2,9     ;0,3     ;8,7     ;205;56,2     ;0,8     
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;As(PM10);24g;3,8     ;0,2     ;38,7     ;350;95,9     ;1,0     
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;4,2     ;0,4     ;31,0     ;207;56,7     ;1,0     
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsSzczKopPM;As(PM10);24g;2,2     ;0,3     ;19,6     ;194;53,2     ;0,9     
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;3,0     ;0,2     ;57,1     ;227;62,2     ;1,0     
+2010;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;As(PM10);24g;9,1     ;3,2     ;51,7     ;260;71,2     ;1,1     
+2010;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgWPola;As(PM10);24g;2,2     ;0,0     ;10,7     ;265;72,6     ;0,9     
+2010;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;4,4     ;0,5     ;33,4     ;168;46,0     ;0,6     
+2010;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;3,1     ;0,2     ;11,9     ;254;69,6     ;1,0     
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFChelmza;As(PM10);24g;1,4     ;0,5     ;2,6     ;12;3,3     ;1,0     
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpDAFRadzyn;As(PM10);24g;8,0     ;4,7     ;10,5     ;12;3,3     ;0,7     
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;As(PM10);24g;5,7     ;3,3     ;8,7     ;195;53,4     ;1,3     
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolan;As(PM10);24g;4,9     ;0,1     ;23,3     ;221;60,5     ;0,9     
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;As(PM10);24g;9,2     ;2,3     ;35,1     ;264;72,3     ;1,1     
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;9,2     ;2,3     ;35,1     ;264;72,3     ;1,1     
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;As(PM10);24g;0,7     ;0,0     ;3,0     ;324;88,8     ;1,2     
+2010;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;As(PM10);24g;1,4     ;0,4     ;2,1     ;126;34,5     ;0,5     
+2010;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;As(PM10);24g;1,2     ;0,4     ;3,1     ;221;60,5     ;1,4     
+2010;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;4,3     ;1,5     ;8,4     ;342;93,7     ;0,9     
+2010;lubuskie;PL0803;strefa lubuska;LuZaryWIOS_MAN;As(PM10);24g;2,1     ;0,5     ;8,0     ;311;85,2     ;1,4     
+2010;lubuskie;PL0803;strefa lubuska;LuZaryWIOS_MOB;As(PM10);24g;3,8     ;0,5     ;7,3     ;70;19,2     ;0,7     
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;2,3     ;0,2     ;5,4     ;142;38,9     ;1,7     
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;As(PM10);24g;2,1     ;0,2     ;8,6     ;165;45,2     ;1,0     
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKilins;As(PM10);24g;2,0     ;0,2     ;7,5     ;128;35,1     ;1,5     
+2010;łódzkie;PL1002;strefa łódzka;LdKutnoWIOSMWilcza;As(PM10);24g;1,8     ;0,2     ;10,1     ;185;50,7     ;1,0     
+2010;łódzkie;PL1002;strefa łódzka;LdOpocPlKosc;As(PM10);24g;1,6     ;0,2     ;4,7     ;143;39,2     ;1,4     
+2010;łódzkie;PL1002;strefa łódzka;LdPioTrSienk;As(PM10);24g;1,8     ;0,2     ;4,3     ;113;31,0     ;1,5     
+2010;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;As(PM10);24g;1,4     ;0,5     ;4,0     ;130;35,6     ;1,8     
+2010;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;1,8     ;0,8     ;3,3     ;306;83,8     ;0,9     
+2010;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;As(PM10);24g;1,1     ;0,5     ;2,8     ;117;32,1     ;1,3     
+2010;małopolskie;PL1203;strefa małopolska;MpBochniWSSEKons0105;As(PM10);24g;1,4     ;0,5     ;3,1     ;166;45,5     ;1,2     
+2010;małopolskie;PL1203;strefa małopolska;MpGorlKrasin;As(PM10);24g;1,2     ;0,5     ;3,0     ;169;46,3     ;1,0     
+2010;małopolskie;PL1203;strefa małopolska;MpNiepo3Maja;As(PM10);24g;1,8     ;0,5     ;4,4     ;166;45,5     ;1,0     
+2010;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;As(PM10);24g;1,7     ;1,3     ;2,1     ;42;11,5     ;0,0     
+2010;małopolskie;PL1203;strefa małopolska;MpNSaczWIOSPija6204;As(PM10);24g;1,4     ;0,5     ;5,8     ;114;31,2     ;2,8     
+2010;małopolskie;PL1203;strefa małopolska;MpProszWIOSKrol1404;As(PM10);24g;1,7     ;0,5     ;3,6     ;174;47,7     ;1,0     
+2010;małopolskie;PL1203;strefa małopolska;MpTuchChopin;As(PM10);24g;0,9     ;0,2     ;2,8     ;324;88,8     ;1,2     
+2010;małopolskie;PL1203;strefa małopolska;MpWadowiWIOSPSka1805;As(PM10);24g;2,3     ;0,5     ;5,4     ;118;32,3     ;0,6     
+2010;małopolskie;PL1203;strefa małopolska;MpZakopaSien;As(PM10);24g;1,8     ;0,5     ;5,3     ;168;46,0     ;1,2     
+2010;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarszBernWoda;As(PM10);24g;0,7     ;0,1     ;2,9     ;170;46,6     ;1,1     
+2010;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;1,6     ;0,5     ;9,0     ;170;46,6     ;1,0     
+2010;mazowieckie;PL1404;strefa mazowiecka;MzOstrolTargowa;As(PM10);24g;0,7     ;0,0     ;3,2     ;199;54,5     ;1,2     
+2010;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;As(PM10);24g;2,8     ;2,1     ;10,0     ;59;16,2     ;1,0     
+2010;opolskie;PL1602;strefa opolska;OpGlubKochan;As(PM10);24g;2,8     ;1,3     ;14,5     ;56;15,3     ;0,9     
+2010;opolskie;PL1602;strefa opolska;OpKluczMicki;As(PM10);24g;4,3     ;2,1     ;15,8     ;25;6,8     ;0,7     
+2010;opolskie;PL1602;strefa opolska;OpNamys2pyl;As(PM10);24g;2,6     ;2,1     ;8,3     ;35;9,6     ;1,3     
+2010;opolskie;PL1602;strefa opolska;OpOlesno3pyl;As(PM10);24g;3,3     ;2,1     ;14,6     ;56;15,3     ;1,0     
+2010;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;As(PM10);24g;1,6     ;0,8     ;8,9     ;169;46,3     ;1,1     
+2010;podkarpackie;PL1802;strefa podkarpacka;PkJarosWIOSJanPawII;As(PM10);24g;1,6     ;0,8     ;5,3     ;168;46,0     ;1,0     
+2010;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;As(PM10);24g;1,9     ;0,8     ;6,6     ;153;41,9     ;0,8     
+2010;podkarpackie;PL1802;strefa podkarpacka;PkJasloWIOSFlor2;As(PM10);24g;1,4     ;0,8     ;4,3     ;170;46,6     ;0,9     
+2010;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,5     ;0,8     ;5,1     ;156;42,7     ;1,4     
+2010;podkarpackie;PL1802;strefa podkarpacka;PkMielZaStre;As(PM10);24g;1,8     ;0,8     ;4,8     ;172;47,1     ;1,1     
+2010;podkarpackie;PL1802;strefa podkarpacka;PkNiskoSzkla;As(PM10);24g;1,4     ;0,8     ;3,6     ;178;48,8     ;1,0     
+2010;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;As(PM10);24g;1,4     ;0,8     ;4,3     ;167;45,8     ;1,1     
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaGleboka;As(PM10);24g;1,1     ;1,0     ;3,1     ;113;31,0     ;2,1     
+2010;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLecz08m;As(PM10);24g;0,9     ;0,3     ;1,8     ;364;99,7     ;1,0     
+2010;pomorskie;PL2202;strefa pomorska;PmKosTargo12;As(PM10);24g;1,1     ;1,0     ;1,4     ;123;33,7     ;1,2     
+2010;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;As(PM10);24g;1,5     ;1,0     ;4,3     ;144;39,5     ;1,0     
+2010;pomorskie;PL2202;strefa pomorska;PmWejhPlWejh;As(PM10);24g;1,1     ;1,0     ;2,3     ;136;37,3     ;1,3     
+2010;pomorskie;PL2202;strefa pomorska;PmWladywHallera;As(PM10);24g;1,1     ;1,0     ;2,0     ;143;39,2     ;1,1     
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;5,2     ;1,0     ;27,0     ;182;49,9     ;1,0     
+2010;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;5,4     ;1,0     ;19,0     ;144;39,5     ;0,6     
+2010;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;4,3     ;1,0     ;15,0     ;176;48,2     ;1,0     
+2010;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;6,0     ;1,0     ;26,0     ;146;40,0     ;1,3     
+2010;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;2,0     ;1,0     ;8,2     ;183;50,1     ;1,0     
+2010;śląskie;PL2405;strefa śląska;SlKnurJedNar;As(PM10);24g;4,5     ;1,0     ;17,0     ;183;50,1     ;1,0     
+2010;śląskie;PL2405;strefa śląska;SlLublPiasko;As(PM10);24g;5,8     ;1,0     ;29,0     ;146;40,0     ;1,7     
+2010;śląskie;PL2405;strefa śląska;SlPszczBoged;As(PM10);24g;5,3     ;1,0     ;20,0     ;162;44,4     ;1,1     
+2010;śląskie;PL2405;strefa śląska;SlRacibRaci_studz;As(PM10);24g;4,5     ;1,0     ;17,0     ;146;40,0     ;0,9     
+2010;śląskie;PL2405;strefa śląska;SlTarnoLitew;As(PM10);24g;5,7     ;1,0     ;25,0     ;167;45,8     ;1,2     
+2010;śląskie;PL2405;strefa śląska;SlZywieKoper;As(PM10);24g;5,1     ;1,0     ;26,0     ;140;38,4     ;1,4     
+2010;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;As(PM10);24g;1,1     ;0,1     ;4,5     ;112;30,7     ;2,9     
+2010;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;As(PM10);24g;0,6     ;0,5     ;2,2     ;114;31,2     ;2,4     
+2010;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;As(PM10);24g;0,7     ;0,5     ;5,2     ;210;57,5     ;1,1     
+2010;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmNiTraugutt;As(PM10);24g;0,6     ;0,5     ;2,4     ;203;55,6     ;1,1     
+2010;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,3     ;0,0     ;1,0     ;364;99,7     ;1,0     
+2010;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznSzyman;As(PM10);24g;0,9     ;0,8     ;2,4     ;16;4,4     ;1,0     
+2010;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;As(PM10);24g;2,1     ;1,3     ;18,8     ;106;29,0     ;1,2     
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpGnieznoPM10;As(PM10);24g;2,7     ;1,2     ;7,0     ;42;11,5     ;0,6     
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpKoniWyszyn;As(PM10);24g;0,6     ;0,6     ;0,6     ;227;62,2     ;0,9     
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpLeszno411000;As(PM10);24g;5,9     ;1,2     ;19,0     ;220;60,3     ;1,1     
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpOstWieWyso;As(PM10);24g;2,0     ;1,3     ;12,2     ;101;27,7     ;1,7     
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;1,4     ;1,0     ;3,8     ;180;49,3     ;1,0     
+2010;wielkopolskie;PL3003;strefa wielkopolska;WpTarPodZach;As(PM10);24g;2,1     ;1,2     ;6,5     ;41;11,2     ;0,6     
+2010;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;As(PM10);24g;2,6     ;1,2     ;13,0     ;51;14,0     ;0,9     
+2011;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;As(PM10);24g;1,5     ;0,4     ;3,8     ;113;31,0     ;2,1     
+2011;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;5,8     ;0,4     ;42,0     ;217;59,5     ;0,8     
+2011;dolnośląskie;PL0202;miasto Legnica;DsLegPoraz;As(PM10);24g;12,0     ;0,3     ;160,6     ;365;100,0     ;1,0     
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;0,6     ;0,0     ;2,8     ;326;89,3     ;1,1     
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;1,5     ;0,0     ;5,7     ;339;92,9     ;1,0     
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;As(PM10);24g;2,6     ;0,8     ;6,9     ;147;40,3     ;0,9     
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;As(PM10);24g;3,0     ;0,0     ;29,4     ;338;92,6     ;1,0     
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;4,1     ;0,4     ;18,0     ;293;80,3     ;1,0     
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsSzczKopPM;As(PM10);24g;2,8     ;0,7     ;9,1     ;262;71,8     ;0,5     
+2011;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;1,6     ;0,0     ;5,1     ;302;82,7     ;1,1     
+2011;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;1,4     ;0,2     ;5,2     ;252;69,0     ;1,0     
+2011;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;1,4     ;0,2     ;5,4     ;222;60,8     ;1,4     
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;1,3     ;0,2     ;10,2     ;234;64,1     ;1,0     
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudSienki;As(PM10);24g;1,6     ;0,2     ;8,8     ;156;42,7     ;1,3     
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;As(PM10);24g;1,5     ;0,2     ;5,1     ;252;69,0     ;1,0     
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;1,2     ;0,1     ;5,0     ;277;75,9     ;1,7     
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiast;As(PM10);24g;0,4     ;0,1     ;3,1     ;261;71,5     ;1,3     
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;As(PM10);24g;0,6     ;0,0     ;2,3     ;365;100,0     ;1,0     
+2011;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;As(PM10);24g;0,7     ;0,4     ;2,5     ;364;99,7     ;1,0     
+2011;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzPilsud;As(PM10);24g;1,5     ;1,5     ;1,5     ;177;48,5     ;1,2     
+2011;lubuskie;PL0803;strefa lubuska;LuSulecDudka;As(PM10);24g;1,5     ;1,5     ;1,5     ;153;41,9     ;0,9     
+2011;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;8,4     ;3,2     ;12,8     ;365;100,0     ;1,0     
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;2,7     ;0,2     ;9,2     ;168;46,0     ;1,0     
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;As(PM10);24g;1,6     ;0,2     ;7,0     ;122;33,4     ;1,7     
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKilins;As(PM10);24g;2,4     ;0,2     ;8,4     ;136;37,3     ;1,7     
+2011;łódzkie;PL1002;strefa łódzka;LdKutnoWIOSMWilcza;As(PM10);24g;2,2     ;0,2     ;6,7     ;186;51,0     ;1,0     
+2011;łódzkie;PL1002;strefa łódzka;LdOpocPlKosc;As(PM10);24g;3,0     ;0,2     ;7,8     ;182;49,9     ;1,0     
+2011;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;As(PM10);24g;2,0     ;0,9     ;4,0     ;185;50,7     ;1,0     
+2011;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;1,9     ;0,3     ;3,6     ;356;97,5     ;1,0     
+2011;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;As(PM10);24g;1,3     ;0,3     ;2,3     ;178;48,8     ;1,0     
+2011;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;As(PM10);24g;1,6     ;0,7     ;3,3     ;173;47,4     ;1,1     
+2011;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;As(PM10);24g;2,2     ;1,0     ;3,4     ;163;44,7     ;1,2     
+2011;małopolskie;PL1203;strefa małopolska;MpZakopaSien;As(PM10);24g;1,3     ;0,3     ;3,3     ;233;63,8     ;1,1     
+2011;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAKrzywo;As(PM10);24g;0,9     ;0,0     ;5,4     ;212;58,1     ;1,0     
+2011;mazowieckie;PL1403;miasto Radom;MzRad25Czerw;As(PM10);24g;1,3     ;0,0     ;6,7     ;201;55,1     ;0,8     
+2011;mazowieckie;PL1404;strefa mazowiecka;MzCiechStrazacka;As(PM10);24g;1,0     ;0,2     ;4,6     ;158;43,3     ;1,0     
+2011;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;As(PM10);24g;3,0     ;2,1     ;12,2     ;49;13,4     ;0,5     
+2011;opolskie;PL1602;strefa opolska;OpGlubKochan;As(PM10);24g;1,5     ;1,3     ;4,5     ;44;12,1     ;0,5     
+2011;opolskie;PL1602;strefa opolska;OpKluczMicki;As(PM10);24g;3,0     ;2,1     ;7,3     ;48;13,2     ;0,7     
+2011;opolskie;PL1602;strefa opolska;OpOlesno3pyl;As(PM10);24g;3,4     ;2,1     ;11,0     ;15;4,1     ;0,0     
+2011;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;As(PM10);24g;3,3     ;0,8     ;25,0     ;172;47,1     ;1,0     
+2011;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;As(PM10);24g;1,7     ;0,8     ;4,4     ;179;49,0     ;1,0     
+2011;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,6     ;0,8     ;4,2     ;182;49,9     ;1,0     
+2011;podkarpackie;PL1802;strefa podkarpacka;PkPrzemWIOSPDom;As(PM10);24g;1,3     ;0,8     ;4,2     ;161;44,1     ;0,9     
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.00.s237m;As(PM10);24g;1,0     ;1,0     ;3,1     ;138;37,8     ;1,0     
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaGleboka;As(PM10);24g;1,2     ;1,0     ;3,5     ;114;31,2     ;0,6     
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLecz08m;As(PM10);24g;1,1     ;0,7     ;3,1     ;162;44,4     ;1,4     
+2011;pomorskie;PL2202;strefa pomorska;Pm.06.s712m;As(PM10);24g;1,1     ;1,0     ;3,1     ;121;33,2     ;0,9     
+2011;pomorskie;PL2202;strefa pomorska;Pm.63.wDSMm;As(PM10);24g;1,6     ;1,0     ;3,6     ;120;32,9     ;1,7     
+2011;pomorskie;PL2202;strefa pomorska;Pm.aw07m;As(PM10);24g;1,0     ;1,0     ;1,1     ;16;4,4     ;0,0     
+2011;pomorskie;PL2202;strefa pomorska;PmKwiSportow;As(PM10);24g;1,1     ;1,0     ;2,7     ;163;44,7     ;1,1     
+2011;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;As(PM10);24g;1,6     ;1,0     ;3,6     ;121;33,2     ;1,7     
+2011;pomorskie;PL2202;strefa pomorska;PmSlupOrzesz;As(PM10);24g;0,9     ;0,6     ;2,0     ;109;29,9     ;1,1     
+2011;pomorskie;PL2202;strefa pomorska;PmWejhPlWejh;As(PM10);24g;1,0     ;1,0     ;1,0     ;156;42,7     ;1,1     
+2011;pomorskie;PL2202;strefa pomorska;PmWladywHallera;As(PM10);24g;1,0     ;1,0     ;1,0     ;159;43,6     ;1,1     
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;2,0     ;1,0     ;7,4     ;154;42,2     ;1,4     
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;2,4     ;1,0     ;9,1     ;176;48,2     ;0,9     
+2011;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;2,6     ;1,0     ;8,9     ;165;45,2     ;0,9     
+2011;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;1,9     ;1,0     ;7,6     ;163;44,7     ;1,0     
+2011;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;2,7     ;1,0     ;13,0     ;170;46,6     ;1,2     
+2011;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;1,3     ;1,0     ;5,7     ;182;49,9     ;1,0     
+2011;śląskie;PL2405;strefa śląska;SlKnurJedNar;As(PM10);24g;2,6     ;1,0     ;9,2     ;180;49,3     ;1,0     
+2011;śląskie;PL2405;strefa śląska;SlLublPiasko;As(PM10);24g;1,7     ;1,0     ;12,0     ;126;34,5     ;1,5     
+2011;śląskie;PL2405;strefa śląska;SlPszczBoged;As(PM10);24g;2,6     ;1,0     ;9,9     ;179;49,0     ;1,1     
+2011;śląskie;PL2405;strefa śląska;SlTarnoLitew;As(PM10);24g;2,0     ;1,0     ;7,0     ;166;45,5     ;1,0     
+2011;śląskie;PL2405;strefa śląska;SlZywieKoper;As(PM10);24g;2,5     ;1,0     ;21,0     ;101;27,7     ;1,2     
+2011;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;As(PM10);24g;2,1     ;0,5     ;11,0     ;54;14,8     ;0,9     
+2011;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;As(PM10);24g;0,8     ;0,4     ;3,8     ;190;52,1     ;0,9     
+2011;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;As(PM10);24g;1,0     ;0,5     ;3,4     ;180;49,3     ;1,3     
+2011;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmNiTraugutt;As(PM10);24g;0,7     ;0,5     ;3,5     ;217;59,5     ;0,9     
+2011;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,3     ;0,1     ;1,0     ;343;94,0     ;1,1     
+2011;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;As(PM10);24g;2,5     ;1,3     ;8,4     ;94;25,8     ;1,0     
+2011;wielkopolskie;PL3003;strefa wielkopolska;WpGniePaczko;As(PM10);24g;1,5     ;1,2     ;5,1     ;64;17,5     ;1,5     
+2011;wielkopolskie;PL3003;strefa wielkopolska;WpGnieznoPM10;As(PM10);24g;2,0     ;1,2     ;7,5     ;38;10,4     ;1,1     
+2011;wielkopolskie;PL3003;strefa wielkopolska;WpOstWieWyso;As(PM10);24g;2,6     ;1,3     ;17,3     ;103;28,2     ;1,0     
+2011;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;As(PM10);24g;1,0     ;0,1     ;6,2     ;52;14,2     ;0,9     
+2011;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszSpasow;As(PM10);24g;0,8     ;0,1     ;5,1     ;52;14,2     ;0,9     
+2011;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczec1Maj;As(PM10);24g;0,8     ;0,1     ;3,8     ;49;13,4     ;1,0     
+2011;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;0,8     ;0,1     ;4,0     ;52;14,2     ;0,9     
+2012;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocOrzech;As(PM10);24g;2,7     ;0,7     ;8,9     ;326;89,1     ;0,8     
+2012;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;As(PM10);24g;2,8     ;0,3     ;10,4     ;363;99,2     ;1,0     
+2012;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;7,7     ;1,1     ;31,0     ;358;97,8     ;1,0     
+2012;dolnośląskie;PL0202;miasto Legnica;DsLegPoraz;As(PM10);24g;6,9     ;0,3     ;67,3     ;331;90,4     ;1,0     
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsCzerStraza;As(PM10);24g;0,8     ;0,0     ;3,5     ;320;87,4     ;1,0     
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsDzialoszyn;As(PM10);24g;1,8     ;0,0     ;12,5     ;355;97,0     ;1,0     
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsNowRudSreb;As(PM10);24g;3,3     ;0,7     ;12,0     ;322;88,0     ;1,0     
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;As(PM10);24g;2,2     ;0,8     ;6,1     ;142;38,8     ;1,0     
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;As(PM10);24g;2,9     ;0,2     ;15,8     ;351;95,9     ;1,0     
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;5,9     ;0,4     ;21,0     ;337;92,1     ;1,2     
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsSzczaKolej;As(PM10);24g;2,3     ;0,4     ;12,0     ;325;88,8     ;1,2     
+2012;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;2,3     ;0,2     ;11,3     ;332;90,7     ;0,9     
+2012;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;0,9     ;0,5     ;4,0     ;240;65,6     ;1,0     
+2012;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;1,1     ;0,2     ;3,5     ;221;60,4     ;1,2     
+2012;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;0,5     ;0,1     ;2,1     ;145;39,6     ;1,4     
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;1,3     ;0,2     ;3,7     ;110;30,1     ;0,8     
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudSienki;As(PM10);24g;1,5     ;0,2     ;6,6     ;236;64,5     ;0,8     
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolan;As(PM10);24g;0,3     ;0,1     ;1,2     ;224;61,2     ;1,2     
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;As(PM10);24g;1,0     ;0,2     ;4,1     ;200;54,6     ;1,5     
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;1,3     ;0,2     ;5,0     ;221;60,4     ;1,2     
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiast;As(PM10);24g;0,5     ;0,1     ;1,8     ;85;23,2     ;0,3     
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;As(PM10);24g;0,7     ;0,0     ;3,2     ;340;92,9     ;1,0     
+2012;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;As(PM10);24g;0,5     ;0,4     ;1,1     ;341;93,2     ;1,0     
+2012;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzPilsud;As(PM10);24g;1,2     ;0,9     ;1,5     ;133;36,3     ;0,9     
+2012;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;As(PM10);24g;4,3     ;1,7     ;12,5     ;341;93,2     ;1,2     
+2012;lubuskie;PL0803;strefa lubuska;LuSulecDudka;As(PM10);24g;1,2     ;0,9     ;1,5     ;179;48,9     ;1,3     
+2012;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;7,0     ;1,7     ;9,4     ;339;92,6     ;0,9     
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzLegion;As(PM10);24g;1,8     ;0,2     ;4,0     ;164;44,8     ;1,0     
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;2,8     ;0,2     ;8,1     ;177;48,4     ;0,9     
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKilins;As(PM10);24g;2,5     ;0,2     ;9,5     ;173;47,3     ;1,1     
+2012;łódzkie;PL1002;strefa łódzka;LdBrzeReform;As(PM10);24g;2,6     ;0,2     ;5,1     ;150;41,0     ;0,9     
+2012;łódzkie;PL1002;strefa łódzka;LdKutnoWIOSMWilcza;As(PM10);24g;1,9     ;0,2     ;13,8     ;184;50,3     ;1,0     
+2012;łódzkie;PL1002;strefa łódzka;LdOpocPlKosc;As(PM10);24g;2,4     ;0,2     ;6,8     ;184;50,3     ;1,0     
+2012;łódzkie;PL1002;strefa łódzka;LdPioTrSienk;As(PM10);24g;2,8     ;0,2     ;7,3     ;169;46,2     ;0,8     
+2012;łódzkie;PL1002;strefa łódzka;LdRadomsRoln;As(PM10);24g;2,5     ;0,2     ;7,1     ;172;47,0     ;1,0     
+2012;łódzkie;PL1002;strefa łódzka;LdRawaNiepod;As(PM10);24g;2,4     ;0,2     ;5,7     ;171;46,7     ;1,1     
+2012;łódzkie;PL1002;strefa łódzka;LdSierGrunwa;As(PM10);24g;2,6     ;0,2     ;5,0     ;179;48,9     ;1,0     
+2012;łódzkie;PL1002;strefa łódzka;LdSkiernWIOSMJagiell;As(PM10);24g;2,3     ;0,2     ;4,3     ;181;49,5     ;1,0     
+2012;łódzkie;PL1002;strefa łódzka;LdToMaSwAnto;As(PM10);24g;2,2     ;0,2     ;5,1     ;173;47,3     ;1,0     
+2012;łódzkie;PL1002;strefa łódzka;LdZduWoKrole;As(PM10);24g;2,8     ;0,2     ;7,1     ;182;49,7     ;1,0     
+2012;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;As(PM10);24g;2,0     ;0,3     ;5,6     ;301;82,2     ;1,3     
+2012;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;2,0     ;0,2     ;6,2     ;343;93,7     ;1,1     
+2012;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;As(PM10);24g;1,4     ;0,3     ;4,5     ;284;77,6     ;1,1     
+2012;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;As(PM10);24g;1,4     ;0,3     ;3,9     ;302;82,5     ;1,2     
+2012;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;As(PM10);24g;2,1     ;0,3     ;5,8     ;264;72,1     ;1,5     
+2012;małopolskie;PL1203;strefa małopolska;MpZakopaSien;As(PM10);24g;1,4     ;0,3     ;3,8     ;305;83,3     ;1,4     
+2012;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAKrzywo;As(PM10);24g;1,0     ;0,3     ;6,5     ;193;52,7     ;0,8     
+2012;mazowieckie;PL1403;miasto Radom;MzRad25Czerw;As(PM10);24g;1,2     ;0,3     ;3,9     ;218;59,6     ;1,0     
+2012;mazowieckie;PL1404;strefa mazowiecka;MzMlawOrdona;As(PM10);24g;0,9     ;0,3     ;4,1     ;176;48,1     ;1,0     
+2012;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;As(PM10);24g;0,9     ;0,3     ;4,9     ;173;47,3     ;0,9     
+2012;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;As(PM10);24g;2,8     ;1,2     ;9,5     ;57;15,6     ;1,0     
+2012;opolskie;PL1602;strefa opolska;OpGlubKochan;As(PM10);24g;2,4     ;0,8     ;8,6     ;52;14,2     ;1,1     
+2012;opolskie;PL1602;strefa opolska;OpKluczMicki;As(PM10);24g;1,9     ;1,2     ;5,5     ;18;4,9     ;0,8     
+2012;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;As(PM10);24g;2,0     ;0,8     ;8,9     ;152;41,5     ;1,0     
+2012;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;As(PM10);24g;2,0     ;0,8     ;7,9     ;180;49,2     ;1,0     
+2012;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,3     ;0,8     ;4,9     ;179;48,9     ;1,0     
+2012;podkarpackie;PL1802;strefa podkarpacka;PkPrzemyslWIOSMick;As(PM10);24g;1,6     ;0,8     ;7,3     ;163;44,5     ;1,0     
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaGleboka;As(PM10);24g;1,8     ;1,0     ;16,6     ;169;46,2     ;1,0     
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLecz08m;As(PM10);24g;1,2     ;0,4     ;4,2     ;172;47,0     ;1,2     
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyJozBema;As(PM10);24g;1,2     ;0,7     ;3,4     ;151;41,3     ;1,0     
+2012;pomorskie;PL2202;strefa pomorska;Pm.63.wDSMm;As(PM10);24g;1,1     ;1,0     ;1,5     ;169;46,2     ;1,1     
+2012;pomorskie;PL2202;strefa pomorska;PmKosTargo12;As(PM10);24g;1,7     ;1,0     ;6,9     ;125;34,2     ;1,4     
+2012;pomorskie;PL2202;strefa pomorska;PmKwiSportow;As(PM10);24g;1,4     ;0,8     ;3,3     ;180;49,2     ;1,0     
+2012;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;As(PM10);24g;1,0     ;0,4     ;2,8     ;170;46,4     ;1,0     
+2012;pomorskie;PL2202;strefa pomorska;PmLinieKos17;As(PM10);24g;1,1     ;0,5     ;2,5     ;169;46,2     ;0,8     
+2012;pomorskie;PL2202;strefa pomorska;PmMalMicki15;As(PM10);24g;2,1     ;1,0     ;8,8     ;144;39,3     ;1,3     
+2012;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;As(PM10);24g;1,1     ;1,0     ;1,5     ;169;46,2     ;1,1     
+2012;pomorskie;PL2202;strefa pomorska;PmSlupOrzesz;As(PM10);24g;0,9     ;0,0     ;2,7     ;176;48,1     ;1,3     
+2012;pomorskie;PL2202;strefa pomorska;PmWejhPlWejh;As(PM10);24g;1,8     ;0,6     ;13,6     ;161;44,0     ;1,0     
+2012;pomorskie;PL2202;strefa pomorska;PmWladywHallera;As(PM10);24g;1,5     ;0,8     ;8,4     ;159;43,4     ;1,1     
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;2,1     ;1,0     ;7,4     ;161;44,0     ;1,2     
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;1,9     ;1,0     ;12,0     ;169;46,2     ;0,9     
+2012;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;1,9     ;1,0     ;10,0     ;159;43,4     ;1,2     
+2012;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;1,7     ;1,0     ;6,3     ;163;44,5     ;0,9     
+2012;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;2,3     ;1,0     ;10,0     ;180;49,2     ;1,0     
+2012;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;2,0     ;1,0     ;8,3     ;211;57,7     ;1,1     
+2012;śląskie;PL2405;strefa śląska;SlKnurJedNar;As(PM10);24g;1,7     ;1,0     ;8,2     ;168;45,9     ;0,9     
+2012;śląskie;PL2405;strefa śląska;SlLublPiasko;As(PM10);24g;1,5     ;1,0     ;4,6     ;121;33,1     ;2,1     
+2012;śląskie;PL2405;strefa śląska;SlPszczBoged;As(PM10);24g;1,6     ;1,0     ;7,7     ;166;45,4     ;1,3     
+2012;śląskie;PL2405;strefa śląska;SlTarnoLitew;As(PM10);24g;2,1     ;1,0     ;11,0     ;164;44,8     ;1,0     
+2012;śląskie;PL2405;strefa śląska;SlZywieKoper;As(PM10);24g;1,4     ;1,0     ;4,0     ;103;28,1     ;1,2     
+2012;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;As(PM10);24g;2,0     ;0,5     ;8,1     ;52;14,2     ;1,0     
+2012;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;As(PM10);24g;1,7     ;0,5     ;19,1     ;170;46,4     ;1,3     
+2012;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmNiTraugutt;As(PM10);24g;1,1     ;0,5     ;3,0     ;219;59,8     ;1,0     
+2012;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,3     ;0,0     ;1,5     ;340;92,9     ;1,1     
+2012;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznChwial;As(PM10);24g;2,2     ;0,8     ;15,5     ;212;57,9     ;1,2     
+2012;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;As(PM10);24g;1,1     ;0,6     ;6,1     ;284;77,6     ;1,1     
+2012;wielkopolskie;PL3003;strefa wielkopolska;WpOstWieWyso;As(PM10);24g;1,2     ;0,6     ;9,6     ;307;83,9     ;1,1     
+2012;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;1,4     ;0,9     ;10,8     ;298;81,4     ;0,7     
+2012;wielkopolskie;PL3003;strefa wielkopolska;WpTarPodZach;As(PM10);24g;2,3     ;0,6     ;12,5     ;265;72,4     ;1,1     
+2012;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;As(PM10);24g;1,1     ;0,1     ;6,6     ;51;13,9     ;0,9     
+2012;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszSpasow;As(PM10);24g;0,7     ;0,1     ;5,5     ;51;13,9     ;0,9     
+2012;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczec1Maj;As(PM10);24g;0,8     ;0,1     ;4,6     ;50;13,7     ;1,0     
+2012;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;0,9     ;0,1     ;4,7     ;51;13,9     ;0,9     
+2013;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;As(PM10);24g;3,1     ;0,4     ;8,7     ;355;97,3     ;1,0     
+2013;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;8,6     ;1,3     ;39,0     ;347;95,1     ;1,0     
+2013;dolnośląskie;PL0202;miasto Legnica;DsLegPoraz;As(PM10);24g;7,5     ;0,3     ;151,7     ;347;95,1     ;1,1     
+2013;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;As(PM10);24g;2,3     ;0,1     ;11,0     ;352;96,4     ;1,0     
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsCzLasMob;As(PM10);24g;3,0     ;0,5     ;10,5     ;232;63,6     ;1,7     
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsGlogNorw;As(PM10);24g;16,0     ;1,6     ;50,0     ;355;97,3     ;1,0     
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsNowRudSreb;As(PM10);24g;3,1     ;0,7     ;10,0     ;360;98,6     ;1,0     
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;As(PM10);24g;2,4     ;0,6     ;4,8     ;348;95,3     ;1,1     
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;As(PM10);24g;3,4     ;0,0     ;27,4     ;358;98,1     ;1,1     
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;7,8     ;0,7     ;25,0     ;356;97,5     ;1,0     
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsSzczaKolej;As(PM10);24g;2,8     ;0,3     ;11,0     ;352;96,4     ;1,0     
+2013;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;2,8     ;0,2     ;8,6     ;345;94,5     ;1,0     
+2013;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;1,3     ;0,4     ;5,9     ;268;73,4     ;0,9     
+2013;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;1,1     ;0,2     ;4,0     ;288;78,9     ;1,0     
+2013;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;1,0     ;0,1     ;2,4     ;294;80,5     ;0,9     
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;0,9     ;0,1     ;2,7     ;269;73,7     ;1,1     
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudSienki;As(PM10);24g;1,2     ;0,2     ;4,0     ;280;76,7     ;1,0     
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;As(PM10);24g;0,5     ;0,1     ;1,7     ;295;80,8     ;0,9     
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;As(PM10);24g;1,3     ;0,2     ;4,9     ;295;80,8     ;0,9     
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;1,8     ;0,2     ;5,9     ;295;80,8     ;0,9     
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiast;As(PM10);24g;0,7     ;0,1     ;2,9     ;271;74,2     ;1,1     
+2013;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;As(PM10);24g;0,6     ;0,0     ;2,4     ;365;100,0     ;1,0     
+2013;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;As(PM10);24g;0,5     ;0,3     ;1,1     ;364;99,7     ;1,0     
+2013;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;As(PM10);24g;0,7     ;0,3     ;1,2     ;364;99,7     ;1,0     
+2013;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzPilsud;As(PM10);24g;1,4     ;1,1     ;3,6     ;356;97,5     ;1,0     
+2013;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;As(PM10);24g;6,7     ;1,7     ;23,4     ;349;95,6     ;0,9     
+2013;lubuskie;PL0803;strefa lubuska;LuSulecDudka;As(PM10);24g;1,4     ;1,1     ;4,4     ;343;94,0     ;1,0     
+2013;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;8,9     ;1,7     ;69,2     ;312;85,5     ;0,7     
+2013;lubuskie;PL0803;strefa lubuska;LuZarySzyman;As(PM10);24g;9,5     ;1,7     ;29,9     ;285;78,1     ;0,7     
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzLegion;As(PM10);24g;1,9     ;0,6     ;5,1     ;173;47,4     ;1,1     
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;1,7     ;0,2     ;4,0     ;182;49,9     ;1,0     
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKilins;As(PM10);24g;1,8     ;0,6     ;5,1     ;147;40,3     ;1,4     
+2013;łódzkie;PL1002;strefa łódzka;LdBrzeReform;As(PM10);24g;1,6     ;0,2     ;5,7     ;173;47,4     ;0,9     
+2013;łódzkie;PL1002;strefa łódzka;LdOpocPlKosc;As(PM10);24g;2,0     ;0,6     ;6,0     ;173;47,4     ;1,2     
+2013;łódzkie;PL1002;strefa łódzka;LdPioTrSienk;As(PM10);24g;2,0     ;0,6     ;5,2     ;180;49,3     ;1,1     
+2013;łódzkie;PL1002;strefa łódzka;LdRadomsRoln;As(PM10);24g;1,6     ;0,6     ;3,8     ;179;49,0     ;1,1     
+2013;łódzkie;PL1002;strefa łódzka;LdRawaNiepod;As(PM10);24g;1,8     ;0,6     ;5,4     ;129;35,3     ;0,8     
+2013;łódzkie;PL1002;strefa łódzka;LdSierGrunwa;As(PM10);24g;1,9     ;0,6     ;5,1     ;184;50,4     ;1,0     
+2013;łódzkie;PL1002;strefa łódzka;LdSkiernWIOSMJagiell;As(PM10);24g;1,5     ;0,6     ;5,0     ;175;47,9     ;1,0     
+2013;łódzkie;PL1002;strefa łódzka;LdToMaSwAnto;As(PM10);24g;1,4     ;0,6     ;3,2     ;183;50,1     ;1,0     
+2013;łódzkie;PL1002;strefa łódzka;LdWieluPOW12;As(PM10);24g;1,7     ;0,6     ;3,3     ;148;40,5     ;1,1     
+2013;łódzkie;PL1002;strefa łódzka;LdZduWoKrole;As(PM10);24g;2,4     ;0,6     ;6,9     ;178;48,8     ;0,9     
+2013;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;As(PM10);24g;1,7     ;0,3     ;6,7     ;348;95,3     ;0,9     
+2013;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;1,7     ;0,2     ;5,1     ;365;100,0     ;1,0     
+2013;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;As(PM10);24g;1,2     ;0,7     ;3,3     ;345;94,5     ;1,0     
+2013;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;As(PM10);24g;1,5     ;0,7     ;4,0     ;359;98,4     ;1,0     
+2013;małopolskie;PL1203;strefa małopolska;MpZakopaSien;As(PM10);24g;2,2     ;0,3     ;8,5     ;349;95,6     ;1,1     
+2013;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAKrzywo;As(PM10);24g;1,1     ;0,3     ;10,5     ;216;59,2     ;1,0     
+2013;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;As(PM10);24g;0,9     ;0,3     ;4,8     ;218;59,7     ;1,0     
+2013;mazowieckie;PL1403;miasto Radom;MzRad25Czerw;As(PM10);24g;1,0     ;0,3     ;5,7     ;195;53,4     ;1,0     
+2013;mazowieckie;PL1404;strefa mazowiecka;MzMlawOrdona;As(PM10);24g;0,9     ;0,3     ;3,6     ;191;52,3     ;0,7     
+2013;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;As(PM10);24g;0,9     ;0,3     ;3,3     ;205;56,2     ;1,0     
+2013;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;As(PM10);24g;3,2     ;1,2     ;21,3     ;183;50,1     ;1,0     
+2013;opolskie;PL1602;strefa opolska;OpGlubKochan;As(PM10);24g;2,4     ;0,8     ;8,7     ;128;35,1     ;1,1     
+2013;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;As(PM10);24g;1,1     ;0,5     ;2,7     ;172;47,1     ;1,1     
+2013;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;As(PM10);24g;1,6     ;0,5     ;3,9     ;180;49,3     ;1,0     
+2013;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,2     ;0,5     ;2,7     ;181;49,6     ;1,0     
+2013;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;As(PM10);24g;1,1     ;0,5     ;3,5     ;180;49,3     ;1,0     
+2013;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;As(PM10);24g;1,4     ;1,1     ;4,8     ;49;13,4     ;1,0     
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaGleboka;As(PM10);24g;1,0     ;1,0     ;1,0     ;163;44,7     ;1,1     
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLecz08m;As(PM10);24g;1,0     ;1,0     ;3,0     ;178;48,8     ;1,1     
+2013;pomorskie;PL2202;strefa pomorska;PmKosTargo12;As(PM10);24g;1,0     ;1,0     ;1,0     ;175;47,9     ;1,1     
+2013;pomorskie;PL2202;strefa pomorska;PmKwiSportow;As(PM10);24g;1,1     ;1,0     ;3,0     ;180;49,3     ;1,0     
+2013;pomorskie;PL2202;strefa pomorska;PmLinieKos17;As(PM10);24g;1,0     ;1,0     ;1,0     ;178;48,8     ;1,0     
+2013;pomorskie;PL2202;strefa pomorska;PmMalMicki15;As(PM10);24g;1,0     ;1,0     ;2,2     ;173;47,4     ;0,9     
+2013;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;As(PM10);24g;1,0     ;1,0     ;1,0     ;181;49,6     ;1,0     
+2013;pomorskie;PL2202;strefa pomorska;PmWladywHallera;As(PM10);24g;1,0     ;1,0     ;2,0     ;170;46,6     ;1,0     
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;1,6     ;0,9     ;3,7     ;256;70,1     ;1,0     
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;1,9     ;0,9     ;3,6     ;265;72,6     ;1,0     
+2013;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;1,6     ;0,9     ;3,4     ;270;74,0     ;1,0     
+2013;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;1,1     ;0,9     ;2,6     ;265;72,6     ;1,0     
+2013;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;1,8     ;0,9     ;5,0     ;265;72,6     ;1,0     
+2013;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;2,2     ;0,9     ;8,0     ;359;98,4     ;1,0     
+2013;śląskie;PL2405;strefa śląska;SlLublPiasko;As(PM10);24g;1,5     ;0,9     ;3,4     ;243;66,6     ;1,1     
+2013;śląskie;PL2405;strefa śląska;SlPszczBoged;As(PM10);24g;1,8     ;0,9     ;4,4     ;246;67,4     ;0,8     
+2013;śląskie;PL2405;strefa śląska;SlTarnoLitew;As(PM10);24g;1,8     ;0,9     ;4,4     ;268;73,4     ;1,0     
+2013;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;As(PM10);24g;1,9     ;0,5     ;8,8     ;53;14,5     ;1,0     
+2013;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;As(PM10);24g;1,9     ;0,5     ;4,4     ;218;59,7     ;1,0     
+2013;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;As(PM10);24g;2,0     ;0,5     ;4,0     ;200;54,8     ;1,3     
+2013;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmNiTraugutt;As(PM10);24g;1,8     ;0,5     ;5,4     ;229;62,7     ;1,0     
+2013;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,5     ;0,1     ;1,1     ;357;97,8     ;1,1     
+2013;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznChwial;As(PM10);24g;1,8     ;0,8     ;22,1     ;270;74,0     ;1,0     
+2013;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;As(PM10);24g;1,6     ;0,6     ;18,3     ;213;58,4     ;0,8     
+2013;wielkopolskie;PL3003;strefa wielkopolska;WpNoTomSzpit;As(PM10);24g;3,9     ;0,6     ;32,3     ;262;71,8     ;1,3     
+2013;wielkopolskie;PL3003;strefa wielkopolska;WpOstWieWyso;As(PM10);24g;1,5     ;0,6     ;10,2     ;204;55,9     ;0,9     
+2013;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;0,9     ;0,0     ;0,9     ;194;53,2     ;0,8     
+2013;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;As(PM10);24g;0,7     ;0,1     ;3,9     ;52;14,2     ;1,0     
+2013;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszSpasow;As(PM10);24g;0,6     ;0,1     ;8,4     ;52;14,2     ;1,0     
+2013;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczec1Maj;As(PM10);24g;0,9     ;0,1     ;10,5     ;52;14,2     ;1,0     
+2013;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;0,7     ;0,1     ;13,2     ;52;14,2     ;1,0     
+2014;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;As(PM10);24g;3,0     ;0,1     ;13,1     ;359;98,4     ;1,0     
+2014;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;11,0     ;2,6     ;33,0     ;338;92,6     ;0,9     
+2014;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;As(PM10);24g;2,1     ;0,4     ;10,0     ;363;99,5     ;1,0     
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsGlogNorw;As(PM10);24g;14,5     ;1,2     ;61,0     ;361;98,9     ;1,0     
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorSoko;As(PM10);24g;1,7     ;0,1     ;5,9     ;321;87,9     ;1,2     
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsNowRudSreb;As(PM10);24g;2,9     ;0,3     ;9,5     ;362;99,2     ;1,0     
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;As(PM10);24g;2,8     ;0,3     ;9,0     ;332;91,0     ;1,0     
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;As(PM10);24g;3,6     ;0,0     ;27,4     ;344;94,2     ;1,1     
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;6,5     ;0,8     ;24,0     ;362;99,2     ;1,0     
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsSzczaKolej;As(PM10);24g;2,3     ;0,0     ;9,3     ;350;95,9     ;1,1     
+2014;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;2,6     ;0,0     ;9,3     ;318;87,1     ;1,3     
+2014;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;0,8     ;0,1     ;4,8     ;289;79,2     ;1,7     
+2014;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;0,9     ;0,2     ;5,6     ;340;93,2     ;1,1     
+2014;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;0,8     ;0,1     ;3,8     ;362;99,2     ;1,0     
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;0,7     ;0,1     ;5,9     ;363;99,5     ;1,0     
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudSienki;As(PM10);24g;1,1     ;0,1     ;4,6     ;362;99,2     ;1,0     
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;As(PM10);24g;0,7     ;0,1     ;6,8     ;293;80,3     ;1,6     
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;As(PM10);24g;1,0     ;0,2     ;6,1     ;359;98,4     ;1,0     
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;1,6     ;0,1     ;5,8     ;345;94,5     ;0,9     
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;As(PM10);24g;0,8     ;0,0     ;12,2     ;344;94,2     ;0,9     
+2014;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;As(PM10);24g;0,8     ;0,5     ;1,9     ;348;95,3     ;1,0     
+2014;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;As(PM10);24g;0,9     ;0,5     ;4,8     ;365;100,0     ;1,0     
+2014;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;As(PM10);24g;1,8     ;0,8     ;6,1     ;335;91,8     ;1,0     
+2014;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzPilsud;As(PM10);24g;1,4     ;0,8     ;4,2     ;339;92,9     ;1,0     
+2014;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;As(PM10);24g;5,1     ;1,1     ;25,0     ;337;92,3     ;1,0     
+2014;lubuskie;PL0803;strefa lubuska;LuSulecDudka;As(PM10);24g;1,5     ;0,8     ;4,3     ;280;76,7     ;0,6     
+2014;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;3,3     ;1,4     ;12,6     ;363;99,5     ;1,0     
+2014;lubuskie;PL0803;strefa lubuska;LuZarySzyman;As(PM10);24g;3,6     ;0,1     ;14,9     ;345;94,5     ;0,9     
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzLegion;As(PM10);24g;1,7     ;0,6     ;5,1     ;328;89,9     ;1,1     
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;2,0     ;0,6     ;5,3     ;363;99,5     ;1,0     
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKilins;As(PM10);24g;1,7     ;0,6     ;4,4     ;360;98,6     ;1,0     
+2014;łódzkie;PL1002;strefa łódzka;LdBrzeReform;As(PM10);24g;1,4     ;0,6     ;4,1     ;354;97,0     ;1,0     
+2014;łódzkie;PL1002;strefa łódzka;LdKutnKosciu;As(PM10);24g;1,6     ;0,6     ;4,3     ;332;91,0     ;1,2     
+2014;łódzkie;PL1002;strefa łódzka;LdOpocPlKosc;As(PM10);24g;2,5     ;0,6     ;7,2     ;340;93,2     ;1,2     
+2014;łódzkie;PL1002;strefa łódzka;LdPioTrSienk;As(PM10);24g;1,7     ;0,6     ;4,8     ;353;96,7     ;1,0     
+2014;łódzkie;PL1002;strefa łódzka;LdRadomsRoln;As(PM10);24g;1,7     ;0,6     ;4,9     ;349;95,6     ;0,9     
+2014;łódzkie;PL1002;strefa łódzka;LdRawaNiepod;As(PM10);24g;1,7     ;0,6     ;4,0     ;361;98,9     ;1,0     
+2014;łódzkie;PL1002;strefa łódzka;LdSierGrunwa;As(PM10);24g;1,8     ;0,6     ;4,7     ;362;99,2     ;1,0     
+2014;łódzkie;PL1002;strefa łódzka;LdSkiernWIOSMJagiell;As(PM10);24g;1,8     ;0,6     ;4,9     ;181;49,6     ;1,0     
+2014;łódzkie;PL1002;strefa łódzka;LdToMaSwAnto;As(PM10);24g;1,6     ;0,6     ;3,9     ;363;99,5     ;1,0     
+2014;łódzkie;PL1002;strefa łódzka;LdWieluPOW12;As(PM10);24g;1,9     ;0,6     ;5,1     ;314;86,0     ;1,0     
+2014;łódzkie;PL1002;strefa łódzka;LdZduWoKrole;As(PM10);24g;2,1     ;0,6     ;5,6     ;355;97,3     ;1,0     
+2014;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;As(PM10);24g;1,6     ;0,5     ;7,0     ;329;90,1     ;1,1     
+2014;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;1,6     ;0,2     ;5,2     ;324;88,8     ;1,1     
+2014;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;As(PM10);24g;0,9     ;0,5     ;2,7     ;348;95,3     ;1,0     
+2014;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;As(PM10);24g;1,2     ;0,5     ;6,6     ;354;97,0     ;1,0     
+2014;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;As(PM10);24g;1,4     ;0,5     ;3,6     ;352;96,4     ;1,0     
+2014;małopolskie;PL1203;strefa małopolska;MpZakopaSien;As(PM10);24g;2,1     ;0,5     ;7,1     ;363;99,5     ;1,0     
+2014;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAKrzywo;As(PM10);24g;1,0     ;0,3     ;2,5     ;338;92,6     ;1,0     
+2014;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;As(PM10);24g;1,0     ;0,3     ;3,0     ;339;92,9     ;1,0     
+2014;mazowieckie;PL1403;miasto Radom;MzRad25Czerw;As(PM10);24g;1,1     ;0,3     ;3,2     ;340;93,2     ;1,1     
+2014;mazowieckie;PL1404;strefa mazowiecka;MzMlawOrdona;As(PM10);24g;0,7     ;0,3     ;2,7     ;345;94,5     ;1,1     
+2014;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;As(PM10);24g;0,9     ;0,3     ;2,5     ;359;98,4     ;1,0     
+2014;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;As(PM10);24g;1,5     ;0,7     ;5,4     ;207;56,7     ;1,0     
+2014;opolskie;PL1602;strefa opolska;OpNysaRodzie;As(PM10);24g;1,7     ;0,7     ;5,4     ;207;56,7     ;1,0     
+2014;opolskie;PL1602;strefa opolska;OpZdziePiast;As(PM10);24g;1,7     ;0,7     ;5,9     ;200;54,8     ;2,3     
+2014;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;As(PM10);24g;0,8     ;0,5     ;2,7     ;338;92,6     ;1,0     
+2014;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;As(PM10);24g;1,3     ;0,5     ;3,4     ;352;96,4     ;1,1     
+2014;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;0,8     ;0,5     ;2,1     ;349;95,6     ;0,9     
+2014;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;As(PM10);24g;1,1     ;0,5     ;4,3     ;350;95,9     ;1,0     
+2014;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;As(PM10);24g;0,6     ;0,3     ;1,7     ;363;99,5     ;1,0     
+2014;podlaskie;PL2002;strefa podlaska;PdSuwPulaski;As(PM10);24g;0,3     ;0,3     ;0,3     ;210;57,5     ;1,4     
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaGleboka;As(PM10);24g;1,1     ;0,5     ;3,0     ;225;61,6     ;0,8     
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLecz08m;As(PM10);24g;1,1     ;0,5     ;6,0     ;299;81,9     ;1,2     
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyJozBema;As(PM10);24g;0,9     ;0,5     ;2,7     ;295;80,8     ;1,3     
+2014;pomorskie;PL2202;strefa pomorska;PmGac;As(PM10);24g;0,8     ;0,5     ;3,2     ;203;55,6     ;1,5     
+2014;pomorskie;PL2202;strefa pomorska;PmKosTargo12;As(PM10);24g;1,1     ;0,5     ;3,4     ;312;85,5     ;1,3     
+2014;pomorskie;PL2202;strefa pomorska;PmKwiSportow;As(PM10);24g;1,0     ;0,5     ;3,1     ;290;79,5     ;1,4     
+2014;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;As(PM10);24g;1,2     ;0,5     ;3,2     ;170;46,6     ;0,3     
+2014;pomorskie;PL2202;strefa pomorska;PmLinieKos17;As(PM10);24g;0,9     ;0,5     ;5,0     ;290;79,5     ;1,1     
+2014;pomorskie;PL2202;strefa pomorska;PmMalMicki15;As(PM10);24g;1,4     ;0,5     ;5,2     ;205;56,2     ;0,6     
+2014;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;As(PM10);24g;0,9     ;0,5     ;3,0     ;286;78,4     ;1,2     
+2014;pomorskie;PL2202;strefa pomorska;PmSlupOrzesz;As(PM10);24g;0,9     ;0,5     ;2,9     ;260;71,2     ;1,4     
+2014;pomorskie;PL2202;strefa pomorska;PmWejhPlWejh;As(PM10);24g;1,2     ;0,5     ;2,8     ;250;68,5     ;0,9     
+2014;pomorskie;PL2202;strefa pomorska;PmWladywHallera;As(PM10);24g;1,0     ;0,5     ;2,9     ;296;81,1     ;1,3     
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;1,8     ;0,9     ;5,7     ;358;98,1     ;1,0     
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;2,2     ;0,9     ;7,3     ;346;94,8     ;1,1     
+2014;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;2,9     ;0,9     ;7,6     ;343;94,0     ;1,0     
+2014;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;2,1     ;0,9     ;9,0     ;355;97,3     ;1,0     
+2014;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;2,2     ;0,9     ;8,1     ;342;93,7     ;1,0     
+2014;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;2,0     ;0,9     ;13,0     ;361;98,9     ;1,0     
+2014;śląskie;PL2405;strefa śląska;SlLublPiasko;As(PM10);24g;2,5     ;0,9     ;7,5     ;321;87,9     ;0,9     
+2014;śląskie;PL2405;strefa śląska;SlPszczBoged;As(PM10);24g;2,6     ;0,9     ;8,8     ;354;97,0     ;1,0     
+2014;śląskie;PL2405;strefa śląska;SlTarnoLitew;As(PM10);24g;2,8     ;0,9     ;10,0     ;364;99,7     ;1,0     
+2014;śląskie;PL2405;strefa śląska;SlZywieKoper;As(PM10);24g;3,0     ;0,9     ;20,0     ;360;98,6     ;1,0     
+2014;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;As(PM10);24g;2,3     ;0,5     ;7,5     ;309;84,7     ;1,2     
+2014;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;As(PM10);24g;3,0     ;0,6     ;5,6     ;280;76,7     ;1,1     
+2014;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;As(PM10);24g;3,3     ;0,6     ;6,2     ;290;79,5     ;0,7     
+2014;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmNiTraugutt;As(PM10);24g;2,9     ;0,6     ;20,3     ;324;88,8     ;1,3     
+2014;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,5     ;0,1     ;1,8     ;342;93,7     ;1,0     
+2014;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznChwial;As(PM10);24g;1,5     ;0,8     ;5,1     ;215;58,9     ;0,8     
+2014;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;As(PM10);24g;3,6     ;0,6     ;6,1     ;213;58,4     ;0,9     
+2014;wielkopolskie;PL3003;strefa wielkopolska;WpNoTomSzpit;As(PM10);24g;3,2     ;0,6     ;11,6     ;213;58,4     ;0,9     
+2014;wielkopolskie;PL3003;strefa wielkopolska;WpOstWieWyso;As(PM10);24g;3,6     ;0,6     ;8,2     ;208;57,0     ;0,9     
+2014;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;1,0     ;0,8     ;3,2     ;202;55,3     ;0,6     
+2014;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;As(PM10);24g;0,7     ;0,1     ;3,2     ;166;45,5     ;1,0     
+2014;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszSpasow;As(PM10);24g;0,4     ;0,1     ;1,6     ;165;45,2     ;1,1     
+2014;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczec1Maj;As(PM10);24g;0,5     ;0,1     ;1,6     ;168;46,0     ;1,0     
+2014;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;1,1     ;0,1     ;4,5     ;159;43,6     ;0,9     
+2015;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;As(PM10);24g;3,5     ;0,7     ;12,4     ;361;98,9     ;1,0     
+2015;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;18,0     ;2,6     ;145,1     ;361;98,9     ;1,0     
+2015;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;As(PM10);24g;1,7     ;0,1     ;4,9     ;351;96,2     ;1,1     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsGlogWiStwo;As(PM10);24g;12,2     ;0,6     ;50,8     ;354;97,0     ;1,1     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorSoko;As(PM10);24g;1,6     ;0,1     ;8,4     ;354;97,0     ;1,0     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsNowRudSreb;As(PM10);24g;2,7     ;0,3     ;7,6     ;361;98,9     ;1,0     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;As(PM10);24g;2,8     ;0,5     ;8,9     ;354;97,0     ;1,1     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;As(PM10);24g;3,2     ;0,2     ;29,9     ;354;97,0     ;1,0     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;5,3     ;0,2     ;17,4     ;347;95,1     ;1,0     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsSzczaKolej;As(PM10);24g;1,8     ;0,4     ;5,5     ;361;98,9     ;1,0     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;2,0     ;0,2     ;8,9     ;340;93,2     ;1,2     
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsZlotoStasz;As(PM10);24g;3,4     ;0,1     ;39,0     ;340;93,2     ;1,2     
+2015;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;2,0     ;0,3     ;6,3     ;353;96,7     ;1,0     
+2015;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;1,4     ;0,3     ;3,7     ;365;100,0     ;1,0     
+2015;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;1,7     ;0,3     ;4,5     ;319;87,4     ;0,9     
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;1,5     ;0,3     ;3,9     ;307;84,1     ;0,7     
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudSienki;As(PM10);24g;1,8     ;0,3     ;4,5     ;351;96,2     ;0,9     
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;As(PM10);24g;1,4     ;0,3     ;4,5     ;355;97,3     ;1,1     
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;As(PM10);24g;1,5     ;0,3     ;4,7     ;363;99,5     ;1,0     
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;2,0     ;0,3     ;6,2     ;358;98,1     ;1,0     
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;As(PM10);24g;0,6     ;0,1     ;2,1     ;358;98,1     ;1,0     
+2015;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;As(PM10);24g;0,7     ;0,5     ;2,6     ;365;100,0     ;1,0     
+2015;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;As(PM10);24g;0,6     ;0,5     ;2,2     ;363;99,5     ;1,0     
+2015;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;As(PM10);24g;1,2     ;1,1     ;6,3     ;358;98,1     ;1,0     
+2015;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzPilsud;As(PM10);24g;1,3     ;1,1     ;9,2     ;350;95,9     ;1,1     
+2015;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;As(PM10);24g;4,2     ;1,1     ;50,1     ;335;91,8     ;0,8     
+2015;lubuskie;PL0803;strefa lubuska;LuSulecDudka;As(PM10);24g;1,3     ;1,1     ;11,5     ;338;92,6     ;0,9     
+2015;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;4,6     ;1,1     ;32,4     ;363;99,5     ;1,0     
+2015;lubuskie;PL0803;strefa lubuska;LuZarySzyman;As(PM10);24g;2,0     ;1,1     ;13,1     ;365;100,0     ;1,0     
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzLegion;As(PM10);24g;1,7     ;0,4     ;5,6     ;361;98,9     ;1,0     
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;1,6     ;0,4     ;6,0     ;354;97,0     ;1,1     
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKilins;As(PM10);24g;1,8     ;0,4     ;7,1     ;361;98,9     ;1,0     
+2015;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;As(PM10);24g;1,7     ;0,4     ;4,8     ;361;98,9     ;1,0     
+2015;łódzkie;PL1002;strefa łódzka;LdSierGrunwa;As(PM10);24g;1,9     ;0,4     ;7,9     ;361;98,9     ;1,0     
+2015;łódzkie;PL1002;strefa łódzka;LdSkierKonop;As(PM10);24g;1,4     ;0,4     ;4,1     ;361;98,9     ;1,0     
+2015;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;As(PM10);24g;1,9     ;0,5     ;6,8     ;344;94,2     ;1,1     
+2015;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;2,2     ;0,5     ;7,9     ;330;90,4     ;0,9     
+2015;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;As(PM10);24g;1,0     ;0,5     ;4,1     ;350;95,9     ;1,0     
+2015;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;As(PM10);24g;1,1     ;0,5     ;3,2     ;361;98,9     ;1,0     
+2015;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;As(PM10);24g;1,8     ;0,5     ;6,3     ;360;98,6     ;1,0     
+2015;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAKrzywo;As(PM10);24g;1,0     ;0,3     ;3,4     ;351;96,2     ;0,9     
+2015;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;As(PM10);24g;1,0     ;0,2     ;2,5     ;365;100,0     ;1,0     
+2015;mazowieckie;PL1403;miasto Radom;MzRad25Czerw;As(PM10);24g;1,0     ;0,3     ;2,5     ;355;97,3     ;1,0     
+2015;mazowieckie;PL1404;strefa mazowiecka;MzGranicaKPN;As(PM10);24g;0,8     ;0,2     ;2,4     ;338;92,6     ;1,2     
+2015;mazowieckie;PL1404;strefa mazowiecka;MzOstroHalle;As(PM10);24g;0,8     ;0,1     ;4,7     ;360;98,6     ;1,0     
+2015;mazowieckie;PL1404;strefa mazowiecka;MzOtwoBrzozo;As(PM10);24g;1,9     ;0,2     ;15,7     ;336;92,1     ;1,0     
+2015;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;As(PM10);24g;0,7     ;0,2     ;2,0     ;357;97,8     ;1,0     
+2015;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;As(PM10);24g;2,2     ;0,7     ;9,3     ;213;58,4     ;0,9     
+2015;opolskie;PL1602;strefa opolska;OpKKozBSmial;As(PM10);24g;1,8     ;0,7     ;4,6     ;205;56,2     ;1,0     
+2015;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;As(PM10);24g;0,9     ;0,5     ;2,4     ;364;99,7     ;1,0     
+2015;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;As(PM10);24g;1,2     ;0,5     ;3,5     ;352;96,4     ;1,0     
+2015;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,0     ;0,5     ;2,6     ;356;97,5     ;1,0     
+2015;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;As(PM10);24g;1,1     ;0,5     ;3,1     ;326;89,3     ;1,0     
+2015;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;As(PM10);24g;0,6     ;0,3     ;1,3     ;357;97,8     ;1,1     
+2015;podlaskie;PL2002;strefa podlaska;PdSuwPulaski;As(PM10);24g;0,6     ;0,3     ;1,3     ;347;95,1     ;1,0     
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaGleboka;As(PM10);24g;1,0     ;0,5     ;3,5     ;348;95,3     ;1,0     
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaLecz08m;As(PM10);24g;1,0     ;0,5     ;4,3     ;336;92,1     ;1,1     
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyJozBema;As(PM10);24g;0,9     ;0,5     ;3,4     ;347;95,1     ;1,1     
+2015;pomorskie;PL2202;strefa pomorska;PmGac;As(PM10);24g;0,6     ;0,5     ;1,4     ;201;55,1     ;1,0     
+2015;pomorskie;PL2202;strefa pomorska;PmKosTargo12;As(PM10);24g;1,6     ;0,5     ;6,0     ;322;88,2     ;0,8     
+2015;pomorskie;PL2202;strefa pomorska;PmKwiSportow;As(PM10);24g;0,9     ;0,5     ;2,7     ;334;91,5     ;1,2     
+2015;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;As(PM10);24g;1,2     ;0,5     ;4,1     ;309;84,7     ;1,0     
+2015;pomorskie;PL2202;strefa pomorska;PmLinieKos17;As(PM10);24g;0,7     ;0,5     ;2,1     ;337;92,3     ;1,2     
+2015;pomorskie;PL2202;strefa pomorska;PmMalMicki15;As(PM10);24g;1,1     ;0,5     ;3,5     ;358;98,1     ;1,0     
+2015;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;As(PM10);24g;0,9     ;0,5     ;3,6     ;338;92,6     ;1,2     
+2015;pomorskie;PL2202;strefa pomorska;PmSlupOrzesz;As(PM10);24g;1,0     ;0,5     ;3,0     ;321;87,9     ;1,1     
+2015;pomorskie;PL2202;strefa pomorska;PmWejhPlWejh;As(PM10);24g;1,1     ;0,5     ;4,5     ;323;88,5     ;1,1     
+2015;pomorskie;PL2202;strefa pomorska;PmWladywHallera;As(PM10);24g;0,9     ;0,5     ;3,6     ;319;87,4     ;1,1     
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;As(PM10);24g;3,3     ;0,5     ;6,9     ;327;89,6     ;1,1     
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;3,7     ;0,5     ;6,8     ;325;89,0     ;1,0     
+2015;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;3,1     ;0,5     ;4,7     ;334;91,5     ;0,9     
+2015;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;2,4     ;0,5     ;5,3     ;327;89,6     ;1,0     
+2015;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;2,5     ;0,5     ;6,3     ;343;94,0     ;1,1     
+2015;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;2,3     ;0,5     ;6,4     ;335;91,8     ;1,1     
+2015;śląskie;PL2405;strefa śląska;SlPszczBoged;As(PM10);24g;4,0     ;0,5     ;8,6     ;344;94,2     ;1,1     
+2015;śląskie;PL2405;strefa śląska;SlTarnoLitew;As(PM10);24g;3,1     ;0,5     ;5,6     ;347;95,1     ;1,0     
+2015;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;As(PM10);24g;3,8     ;0,5     ;8,6     ;358;98,1     ;1,1     
+2015;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;As(PM10);24g;0,7     ;0,1     ;1,9     ;340;93,2     ;1,0     
+2015;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;As(PM10);24g;0,9     ;0,3     ;2,6     ;342;93,7     ;0,9     
+2015;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmNiTraugutt;As(PM10);24g;0,8     ;0,1     ;1,9     ;344;94,2     ;0,9     
+2015;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,4     ;0,0     ;1,3     ;345;94,5     ;1,0     
+2015;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznChwial;As(PM10);24g;1,7     ;0,5     ;6,2     ;195;53,4     ;0,5     
+2015;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;As(PM10);24g;2,6     ;0,5     ;6,0     ;200;54,8     ;0,7     
+2015;wielkopolskie;PL3003;strefa wielkopolska;WpNoTomSzpit;As(PM10);24g;2,6     ;0,5     ;10,4     ;194;53,2     ;0,8     
+2015;wielkopolskie;PL3003;strefa wielkopolska;WpOstWieWyso;As(PM10);24g;2,7     ;0,5     ;7,0     ;195;53,4     ;0,7     
+2015;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;1,0     ;0,5     ;3,5     ;199;54,5     ;0,8     
+2015;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;As(PM10);24g;0,6     ;0,5     ;1,5     ;182;49,9     ;1,0     
+2015;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszSpasow;As(PM10);24g;0,7     ;0,5     ;2,1     ;181;49,6     ;1,0     
+2015;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczec1Maj;As(PM10);24g;0,6     ;0,5     ;2,9     ;182;49,9     ;1,0     
+2015;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;0,9     ;0,5     ;2,9     ;182;49,9     ;1,0     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsGlogWiStwo;As(PM10);24g;12,6     ;1,7     ;38,7     ;346;94,5     ;1,1     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorSoko;As(PM10);24g;1,9     ;0,3     ;8,4     ;344;94,0     ;1,0     
+2016;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;17,4     ;2,0     ;94,7     ;363;99,2     ;1,0     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsLubiWierzb;As(PM10);24g;4,0     ;0,7     ;16,0     ;330;90,2     ;1,1     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsNowRudSreb;As(PM10);24g;2,4     ;0,3     ;13,3     ;366;100,0     ;1,0     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;As(PM10);24g;2,8     ;0,7     ;7,8     ;347;94,8     ;1,0     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;As(PM10);24g;4,3     ;0,1     ;25,8     ;357;97,5     ;1,0     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;5,2     ;0,8     ;20,4     ;336;91,8     ;1,1     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsSzczaKolej;As(PM10);24g;2,2     ;0,3     ;6,3     ;287;78,4     ;1,2     
+2016;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;As(PM10);24g;2,0     ;0,3     ;8,1     ;338;92,3     ;1,2     
+2016;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;As(PM10);24g;3,7     ;0,3     ;11,3     ;350;95,6     ;1,0     
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;2,2     ;0,1     ;16,8     ;362;98,9     ;1,0     
+2016;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;1,6     ;0,3     ;5,5     ;338;92,3     ;0,9     
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;1,1     ;0,3     ;4,4     ;365;99,7     ;1,0     
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudSienki;As(PM10);24g;1,6     ;0,3     ;6,5     ;338;92,3     ;1,0     
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;As(PM10);24g;1,2     ;0,3     ;4,0     ;357;97,5     ;1,1     
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;As(PM10);24g;1,1     ;0,3     ;4,1     ;359;98,1     ;1,0     
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;1,7     ;0,3     ;4,7     ;357;97,5     ;1,0     
+2016;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;1,1     ;0,3     ;3,9     ;366;100,0     ;1,0     
+2016;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;1,4     ;0,3     ;4,6     ;365;99,7     ;1,0     
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;As(PM10);24g;0,5     ;0,1     ;1,5     ;353;96,4     ;0,9     
+2016;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;As(PM10);24g;0,6     ;0,5     ;2,6     ;366;100,0     ;1,0     
+2016;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;As(PM10);24g;0,6     ;0,5     ;2,0     ;366;100,0     ;1,0     
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzLegion;As(PM10);24g;1,5     ;0,4     ;4,8     ;364;99,5     ;1,0     
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;1,6     ;0,4     ;5,5     ;365;99,7     ;1,0     
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKilins;As(PM10);24g;1,6     ;0,4     ;4,4     ;357;97,5     ;1,0     
+2016;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;As(PM10);24g;1,6     ;0,4     ;6,5     ;366;100,0     ;1,0     
+2016;łódzkie;PL1002;strefa łódzka;LdSieraPolna;As(PM10);24g;2,1     ;0,4     ;5,8     ;363;99,2     ;1,0     
+2016;łódzkie;PL1002;strefa łódzka;LdSkierKonop;As(PM10);24g;1,2     ;0,4     ;4,0     ;366;100,0     ;1,0     
+2016;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;As(PM10);24g;1,4     ;0,6     ;7,5     ;364;99,5     ;1,0     
+2016;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzPilsud;As(PM10);24g;1,5     ;0,6     ;6,3     ;350;95,6     ;1,1     
+2016;lubuskie;PL0803;strefa lubuska;LuSulecDudka;As(PM10);24g;1,3     ;0,6     ;5,2     ;344;94,0     ;0,9     
+2016;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;5,7     ;0,6     ;25,0     ;351;95,9     ;0,9     
+2016;lubuskie;PL0803;strefa lubuska;LuZarySzyman;As(PM10);24g;3,1     ;0,6     ;19,8     ;366;100,0     ;1,0     
+2016;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;As(PM10);24g;4,7     ;0,6     ;29,3     ;365;99,7     ;1,0     
+2016;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;As(PM10);24g;1,3     ;0,5     ;6,1     ;360;98,4     ;1,0     
+2016;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;1,5     ;0,5     ;6,1     ;331;90,4     ;1,2     
+2016;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;As(PM10);24g;1,0     ;0,5     ;3,4     ;362;98,9     ;1,0     
+2016;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;As(PM10);24g;0,9     ;0,5     ;2,9     ;353;96,4     ;1,1     
+2016;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;As(PM10);24g;1,5     ;0,5     ;4,8     ;362;98,9     ;1,0     
+2016;mazowieckie;PL1404;strefa mazowiecka;MzGutyDuCzer;As(PM10);24g;0,4     ;0,1     ;1,8     ;358;97,8     ;1,0     
+2016;mazowieckie;PL1404;strefa mazowiecka;MzOstroHalle;As(PM10);24g;0,5     ;0,1     ;2,6     ;366;100,0     ;1,0     
+2016;mazowieckie;PL1404;strefa mazowiecka;MzOtwoBrzozo;As(PM10);24g;1,4     ;0,3     ;15,5     ;365;99,7     ;1,0     
+2016;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;As(PM10);24g;0,8     ;0,2     ;2,7     ;366;100,0     ;1,0     
+2016;mazowieckie;PL1403;miasto Radom;MzRad25Czerw;As(PM10);24g;0,9     ;0,2     ;2,6     ;361;98,6     ;1,0     
+2016;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;As(PM10);24g;0,6     ;0,2     ;2,5     ;318;86,9     ;1,1     
+2016;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAKrzywo;As(PM10);24g;0,7     ;0,2     ;2,7     ;366;100,0     ;1,0     
+2016;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;As(PM10);24g;0,8     ;0,3     ;2,8     ;363;99,2     ;1,0     
+2016;opolskie;PL1602;strefa opolska;OpKluczMicki;As(PM10);24g;2,4     ;0,7     ;7,2     ;356;97,3     ;1,1     
+2016;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;As(PM10);24g;2,1     ;0,7     ;6,6     ;330;90,2     ;1,0     
+2016;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;As(PM10);24g;0,6     ;0,3     ;1,6     ;314;85,8     ;1,4     
+2016;podlaskie;PL2002;strefa podlaska;PdSuwPulaski;As(PM10);24g;0,6     ;0,3     ;1,8     ;328;89,6     ;1,2     
+2016;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;As(PM10);24g;1,0     ;0,5     ;2,9     ;364;99,5     ;1,0     
+2016;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,0     ;0,5     ;3,0     ;363;99,2     ;1,0     
+2016;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;As(PM10);24g;0,9     ;0,5     ;3,3     ;342;93,4     ;1,1     
+2016;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;As(PM10);24g;0,7     ;0,5     ;2,1     ;361;98,6     ;1,0     
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyJozBema;As(PM10);24g;0,9     ;0,5     ;3,3     ;265;72,4     ;0,7     
+2016;pomorskie;PL2202;strefa pomorska;PmKosTargo12;As(PM10);24g;1,2     ;0,5     ;3,5     ;362;98,9     ;1,0     
+2016;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;As(PM10);24g;2,2     ;0,4     ;9,2     ;335;91,5     ;1,0     
+2016;świętokrzyskie;PL2602;strefa świętokrzyska;SkStaraZlota;As(PM10);24g;1,7     ;0,4     ;7,4     ;345;94,3     ;1,1     
+2016;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;2,2     ;0,5     ;15,4     ;356;97,3     ;1,1     
+2016;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;3,1     ;0,5     ;11,8     ;346;94,5     ;1,1     
+2016;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;1,7     ;0,5     ;10,7     ;355;97,0     ;1,1     
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;4,2     ;0,5     ;16,2     ;358;97,8     ;1,0     
+2016;śląskie;PL2405;strefa śląska;SlPszczBoged;As(PM10);24g;4,0     ;0,5     ;22,6     ;345;94,3     ;1,1     
+2016;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;4,4     ;0,5     ;21,8     ;362;98,9     ;1,0     
+2016;śląskie;PL2405;strefa śląska;SlTarnoLitew;As(PM10);24g;3,4     ;0,5     ;22,8     ;363;99,2     ;1,0     
+2016;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;As(PM10);24g;0,8     ;0,1     ;2,7     ;340;92,9     ;0,9     
+2016;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmNiTraugutt;As(PM10);24g;0,8     ;0,1     ;2,5     ;355;97,0     ;1,0     
+2016;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;As(PM10);24g;0,7     ;0,1     ;2,4     ;347;94,8     ;1,0     
+2016;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,3     ;0,1     ;2,1     ;344;94,0     ;1,0     
+2016;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;As(PM10);24g;2,4     ;0,5     ;5,5     ;200;54,6     ;0,8     
+2016;wielkopolskie;PL3003;strefa wielkopolska;WpNoTomSzpit;As(PM10);24g;2,5     ;0,5     ;7,8     ;198;54,1     ;0,7     
+2016;wielkopolskie;PL3003;strefa wielkopolska;WpOstWieWyso;As(PM10);24g;2,6     ;0,5     ;5,5     ;203;55,5     ;0,8     
+2016;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;1,1     ;0,5     ;3,0     ;200;54,6     ;0,7     
+2016;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznChwial;As(PM10);24g;1,5     ;0,5     ;4,8     ;202;55,2     ;0,7     
+2016;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszSpasow;As(PM10);24g;0,7     ;0,5     ;1,7     ;182;49,7     ;1,0     
+2016;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;As(PM10);24g;0,9     ;0,5     ;3,7     ;182;49,7     ;1,0     
+2016;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczec1Maj;As(PM10);24g;0,7     ;0,5     ;2,0     ;182;49,7     ;1,0     
+2016;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;1,2     ;0,5     ;4,4     ;181;49,5     ;1,0     
+2017;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;As(PM10);24g;3,7;0,3;15,9;357;97,8;1,0
+2017;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;As(PM10);24g;9,7;1,6;30,5;365;100,0;1,0
+2017;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;As(PM10);24g;1,7;0,3;6,9;354;97,0;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsGlogWiStwo;As(PM10);24g;30,2;2,2;341,6;362;99,2;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorSoko;As(PM10);24g;1,9;0,1;7,3;352;96,4;1,1
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsNowRudSreb;As(PM10);24g;2,3;0,3;7,5;362;99,2;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsOlawZolnAK;As(PM10);24g;2,6;0,3;8,8;352;96,4;0,9
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsOsieczow21;As(PM10);24g;3,2;0,1;23,5;349;95,6;0,9
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsPolKasztan;As(PM10);24g;5,4;0,3;21,4;338;92,6;1,2
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsSzczaKolej;As(PM10);24g;1,8;0,3;7,3;360;98,6;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;As(PM10);24g;1,7;0,1;6,7;360;98,6;1,0
+2017;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;As(PM10);24g;1,8;0,3;9,5;365;100,0;1,0
+2017;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruDziewu;As(PM10);24g;1,4;0,3;5,9;365;100,0;1,0
+2017;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOkrze;As(PM10);24g;1,5;0,3;5,9;345;94,5;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodKochan;As(PM10);24g;1,4;0,3;4,9;364;99,7;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;As(PM10);24g;1,3;0,3;6,1;360;98,6;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudSienki;As(PM10);24g;1,3;0,3;4,7;365;100,0;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowSolank;As(PM10);24g;1,6;0,3;5,3;365;100,0;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKoniczynka;As(PM10);24g;1,3;0,3;4,9;365;100,0;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNaklSkargi;As(PM10);24g;2,0;0,3;9,2;348;95,3;1,0
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;As(PM10);24g;0,6;0,1;2,6;324;88,8;0,8
+2017;lubelskie;PL0601;Aglomeracja Lubelska;LbLubSliwins;As(PM10);24g;0,5;0,5;1,1;365;100,0;1,0
+2017;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;As(PM10);24g;0,5;0,5;1,3;365;100,0;1,0
+2017;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;As(PM10);24g;1,5;0,6;11,4;337;92,3;1,2
+2017;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzPilsud;As(PM10);24g;1,4;0,6;8,4;352;96,4;0,9
+2017;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;As(PM10);24g;4,7;0,6;34,7;358;98,1;1,0
+2017;lubuskie;PL0803;strefa lubuska;LuSulecDudka;As(PM10);24g;2,3;0,6;18,7;333;91,2;0,8
+2017;lubuskie;PL0803;strefa lubuska;LuWsKaziWiel;As(PM10);24g;8,2;0,6;54,7;359;98,4;1,0
+2017;lubuskie;PL0803;strefa lubuska;LuZarySzyman;As(PM10);24g;3,3;0,6;29,0;365;100,0;1,0
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzLegion;As(PM10);24g;1,7;0,4;8,6;365;100,0;1,0
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzRudzka;As(PM10);24g;1,9;0,5;10,7;364;99,7;1,0
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdPabiKilins;As(PM10);24g;1,7;0,4;10,0;333;91,2;1,1
+2017;łódzkie;PL1002;strefa łódzka;LdPioTrKraPr;As(PM10);24g;2,0;0,4;8,8;362;99,2;1,0
+2017;łódzkie;PL1002;strefa łódzka;LdSieraPolna;As(PM10);24g;2,3;0,7;9,8;364;99,7;1,0
+2017;łódzkie;PL1002;strefa łódzka;LdSkierKonop;As(PM10);24g;1,4;0,3;6,8;364;99,7;1,0
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;As(PM10);24g;1,3;0,5;7,9;345;94,5;1,1
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;As(PM10);24g;1,7;0,5;8,6;354;97,0;1,0
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakWadow;As(PM10);24g;1,1;0,5;2,9;310;84,9;1,4
+2017;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;As(PM10);24g;1,0;0,5;4,5;360;98,6;1,0
+2017;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;As(PM10);24g;1,0;0,5;3,7;362;99,2;1,0
+2017;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;As(PM10);24g;1,8;0,5;9,6;360;98,6;1,0
+2017;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAKrzywo;As(PM10);24g;0,9;0,1;5,6;355;97,3;1,0
+2017;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;As(PM10);24g;0,9;0,2;4,4;365;100,0;1,0
+2017;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;As(PM10);24g;0,9;0,0;5,2;364;99,7;1,0
+2017;mazowieckie;PL1403;miasto Radom;MzRad25Czerw;As(PM10);24g;1,0;0,1;4,8;365;100,0;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzGutyDuCzer;As(PM10);24g;0,5;0,0;3,2;354;97,0;1,1
+2017;mazowieckie;PL1404;strefa mazowiecka;MzKonJezMos;As(PM10);24g;0,8;0,0;3,5;327;89,6;0,9
+2017;mazowieckie;PL1404;strefa mazowiecka;MzOstroHalle;As(PM10);24g;0,6;0,0;3,1;365;100,0;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzOtwoBrzozo;As(PM10);24g;1,1;0,1;5,1;361;98,9;1,0
+2017;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;As(PM10);24g;0,6;0,0;3,4;365;100,0;1,0
+2017;opolskie;PL1601;miasto Opole;OpOpoleOsAKr;As(PM10);24g;1,6;0,7;5,6;333;91,2;1,0
+2017;opolskie;PL1602;strefa opolska;OpGlubRatusz;As(PM10);24g;1,7;0,7;6,5;363;99,5;1,0
+2017;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;As(PM10);24g;0,9;0,5;4,2;364;99,7;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkJasloSikor;As(PM10);24g;1,2;0,5;4,0;360;98,6;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkKrosKletow;As(PM10);24g;1,4;0,5;5,2;361;98,9;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;As(PM10);24g;1,0;0,5;4,1;354;97,0;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkRymZdrPark;As(PM10);24g;0,7;0,5;2,3;364;99,7;1,0
+2017;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;As(PM10);24g;0,8;0,3;2,9;343;94,0;0,9
+2017;podlaskie;PL2002;strefa podlaska;PdSuwPulaski;As(PM10);24g;0,7;0,3;1,7;343;94,0;0,9
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyJozBema;As(PM10);24g;0,8;0,1;3,3;299;81,9;0,9
+2017;pomorskie;PL2202;strefa pomorska;PmKosTargo12;As(PM10);24g;1,2;0,5;4,0;362;99,2;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlKatoKossut;As(PM10);24g;1,7;0,5;5,1;355;97,3;1,0
+2017;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;As(PM10);24g;2,2;0,5;5,6;323;88,5;0,9
+2017;śląskie;PL2403;miasto Bielsko-Biała;SlBielKossak;As(PM10);24g;1,4;0,5;7,9;334;91,5;1,1
+2017;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;As(PM10);24g;1,9;0,5;6,0;359;98,4;1,0
+2017;śląskie;PL2405;strefa śląska;SlGodGliniki;As(PM10);24g;0,7;0,5;2,5;314;86,0;1,2
+2017;śląskie;PL2405;strefa śląska;SlPszczBoged;As(PM10);24g;2,5;0,5;7,3;365;100,0;1,0
+2017;śląskie;PL2405;strefa śląska;SlTarnoLitew;As(PM10);24g;1,6;0,5;3,2;364;99,7;1,0
+2017;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;As(PM10);24g;1,4;0,4;7,1;365;100,0;1,0
+2017;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;As(PM10);24g;0,7;0,1;2,3;355;97,3;1,1
+2017;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;As(PM10);24g;0,8;0,1;2,5;360;98,6;1,0
+2017;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmNiTraugutt;As(PM10);24g;0,8;0,1;2,6;360;98,6;1,0
+2017;warmińsko-mazurskie;PL2803;strefa warmińsko-mazurska;WmPuszczaBor;As(PM10);24g;0,4;0,1;1,5;355;97,3;1,0
+2017;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznChwial;As(PM10);24g;1,9;0,5;6,9;179;49,0;0,9
+2017;wielkopolskie;PL3002;miasto Kalisz;WpKaliSawick;As(PM10);24g;2,5;0,5;9,3;210;57,5;0,7
+2017;wielkopolskie;PL3003;strefa wielkopolska;WpNoTomSzpit;As(PM10);24g;3,0;0,5;15,2;223;61,1;0,9
+2017;wielkopolskie;PL3003;strefa wielkopolska;WpOstWieWyso;As(PM10);24g;3,1;0,5;10,3;190;52,1;0,6
+2017;wielkopolskie;PL3003;strefa wielkopolska;WpPilaKusoci;As(PM10);24g;1,4;0,5;5,1;201;55,1;0,7
+2017;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczAndr01;As(PM10);24g;0,9;0,5;4,9;182;49,9;1,0
+2017;zachodniopomorskie;PL3202;miasto Koszalin;ZpKoszSpasow;As(PM10);24g;0,8;0,5;4,1;178;48,8;1,1
+2017;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpSzczec1Maj;As(PM10);24g;0,9;0,5;6,5;180;49,3;1,1
+2017;zachodniopomorskie;PL3203;strefa zachodniopomorska;ZpWiduBulRyb;As(PM10);24g;0,9;0,5;5,4;179;49,0;1,0
