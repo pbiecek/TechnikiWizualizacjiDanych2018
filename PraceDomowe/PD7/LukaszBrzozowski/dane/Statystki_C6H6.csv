@@ -1,0 +1,779 @@
+Rok;Województwo;Kod strefy;Nazwa strefy;Kod stacji;Wskaźnik;Czas uśredniania;Średnia;Min;Maks;Liczba pomiarów;Kompletność ;Liczba Lato/Zima
+2001;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;3,7;0,4;8,0;51;14,0;1,0
+2001;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;2,6;0,4;9,6;51;14,0;1,0
+2002;dolnośląskie;PL0202;miasto Legnica;DsLegRzecz;C6H6;24g;3,3;0,0;17,0;52;14,2;1,1
+2002;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgATRKalisk;C6H6;24g;2,7;0,0;15,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;3,7;0,0;20,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;3,5;0,0;15,0;61;16,7;1,0
+2002;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;3,8;0,0;22,0;61;16,7;1,0
+2002;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;4,1;0,0;16,0;61;16,7;1,0
+2002;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;4,9;0,0;24,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;5,2;0,0;25,7;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;7,8;0,0;29,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;4,4;0,0;24,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;2,8;0,0;24,7;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;C6H6;24g;4,4;0,0;21,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;6,4;0,0;29,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;3,3;0,0;21,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;6,0;0,0;23,0;62;17,0;1,0
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;2,5;0,0;21,0;60;16,4;1,1
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWienSanatorium;C6H6;24g;3,5;0,0;30,0;60;16,4;1,1
+2002;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;4,1;0,0;27,0;62;17,0;1,0
+2002;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Chmielna;C6H6;24g;2,4;0,0;7,2;51;14,0;1,0
+2002;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinNadrzecz;C6H6;24g;2,0;0,0;6,7;50;13,7;1,2
+2002;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSLang;C6H6;24g;2,8;0,6;23,3;124;34,0;1,3
+2002;świętokrzyskie;PL2601;miasto Kielce;SkKielJagielWSSE;C6H6;24g;2,6;0,0;8,0;73;20,0;1,0
+2002;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;C6H6;24g;2,0;0,2;11,4;55;15,1;3,2
+2003;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocUkr;C6H6;24g;1,6;0,5;9,0;140;38,4;2,0
+2003;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;C6H6;24g;3,5;0,2;14,5;58;15,9;0,9
+2003;dolnośląskie;PL0202;miasto Legnica;DsLegRzecz;C6H6;24g;3,4;0,3;30,2;58;15,9;1,1
+2003;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbBator;C6H6;24g;4,2;0,0;41,0;216;59,2;1,1
+2003;dolnośląskie;PL0204;strefa dolnośląska;DsKawice;C6H6;24g;2,3;0,3;22,2;58;15,9;1,1
+2003;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgATRKalisk;C6H6;24g;0,2;0,0;2,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;0,4;0,0;9,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;C6H6;24g;1,9;0,0;18,0;61;16,7;1,0
+2003;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgZachemWojska;C6H6;24g;2,1;0,0;10,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;2,5;0,0;12,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;3,1;0,0;14,0;61;16,7;1,0
+2003;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;4,0;0,0;37,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;3,2;0,0;20,0;61;16,7;1,1
+2003;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;2,8;0,9;16,9;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;4,5;0,0;27,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;2,8;0,0;12,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;2,2;0,0;13,6;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;C6H6;24g;2,3;0,0;18,0;61;16,7;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;3,7;1,0;14,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrPlacKlaszt;C6H6;24g;2,2;0,0;16,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;C6H6;24g;1,5;0,0;11,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;2,4;0,0;8,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;4,4;0,0;19,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNwiesNaftobazy;C6H6;24g;2,0;0,0;13,2;146;40,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecSadowa;C6H6;24g;2,1;0,0;18,0;61;16,7;1,0
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;0,5;0,0;3,0;62;17,0;1,1
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWloclWSHE;C6H6;24g;6,1;0,0;45,6;56;15,3;1,3
+2003;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;2,1;0,0;9,0;62;17,0;1,1
+2003;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinSpokojna;C6H6;24g;1,8;0,4;13,4;52;14,2;1,0
+2003;lubelskie;PL0602;strefa lubelska;LbKrasnikSpoldziel;C6H6;24g;1,8;0,4;8,3;51;14,0;1,0
+2003;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;C6H6;24g;1,8;0,0;7,7;52;14,2;1,0
+2003;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;1,9;0,0;13,0;1999;22,8;0,2
+2003;mazowieckie;PL1402;miasto Płock;MzPlockKolodWSSE;C6H6;24g;2,3;1,0;17,0;64;17,5;0,8
+2003;mazowieckie;PL1402;miasto Płock;MzPlockOpsis;C6H6;1g;10,5;0,2;93,6;3444;39,3;0,3
+2003;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;C6H6;1g;2,1;0,1;39,7;8254;94,2;1,0
+2003;mazowieckie;PL1402;miasto Płock;MzPlockPKN2;C6H6;1g;1,8;0,1;22,7;6572;75,0;1,2
+2003;mazowieckie;PL1402;miasto Płock;MzPlockPKN3;C6H6;1g;2,4;0,0;40,0;6186;70,6;0,7
+2003;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;2,5;0,1;27,6;8139;92,9;1,0
+2003;świętokrzyskie;PL2601;miasto Kielce;SkKielJagielWSSE;C6H6;24g;2,9;0,0;10,0;73;20,0;1,0
+2003;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;C6H6;24g;3,0;0,8;11,1;52;14,2;1,1
+2004;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocUkr;C6H6;24g;1,6;0,5;8,0;220;60,1;1,1
+2004;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;C6H6;24g;2,2;0,7;13,0;59;16,1;1,3
+2004;dolnośląskie;PL0202;miasto Legnica;DsLegRzecz;C6H6;24g;1,8;0,3;6,8;53;14,5;1,0
+2004;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbGrodz;C6H6;24g;2,1;0,1;19,6;244;66,7;1,0
+2004;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbJord;C6H6;24g;4,2;1,4;44,0;253;69,1;1,0
+2004;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgATRKalisk;C6H6;24g;0,0;0,0;1,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;0,1;0,0;6,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;C6H6;24g;1,1;0,0;5,0;63;17,2;1,0
+2004;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgZachemWojska;C6H6;24g;3,3;0,0;14,0;59;16,1;1,0
+2004;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;0,9;0,0;7,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;1,5;0,0;8,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;1,9;0,0;8,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;1,0;0,0;7,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;1,7;0,0;8,1;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;3,0;0,0;14,0;61;16,7;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;1,3;0,0;7,0;60;16,4;1,0
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;0,7;0,0;3,8;61;16,7;1,0
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;C6H6;24g;1,1;0,0;7,0;58;15,8;0,9
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;2,2;0,0;13,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrPlacKlaszt;C6H6;24g;1,0;0,0;11,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;C6H6;24g;0,5;0,0;6,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;1,3;0,0;5,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;2,9;0,0;18,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecSadowa;C6H6;24g;0,9;0,0;6,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;0,1;0,0;1,0;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWloclWSHE;C6H6;24g;2,2;0,0;6,6;62;16,9;1,1
+2004;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;1,0;0,0;7,0;62;16,9;1,1
+2004;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinMaszynowa;C6H6;24g;2,2;0,4;7,0;51;13,9;1,0
+2004;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinSpokojna;C6H6;24g;2,1;0,4;6,4;51;13,9;1,0
+2004;lubelskie;PL0602;strefa lubelska;LbChelmSzpWSSE;C6H6;24g;1,7;0,9;4,8;51;13,9;1,0
+2004;lubelskie;PL0602;strefa lubelska;LbKrasnikSpoldziel;C6H6;24g;1,9;0,4;6,0;51;13,9;1,0
+2004;lubelskie;PL0602;strefa lubelska;LbNaleczowKasztan;C6H6;24g;1,8;0,4;5,8;51;13,9;1,0
+2004;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;C6H6;24g;1,9;0,4;4,9;50;13,7;1,0
+2004;lubelskie;PL0602;strefa lubelska;LbSwidnikWPolskiego;C6H6;24g;2,3;0,4;6,1;50;13,7;1,1
+2004;lubelskie;PL0602;strefa lubelska;LbZamoscWSSE;C6H6;24g;2,8;0,0;9,2;52;14,2;1,0
+2004;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;C6H6;1g;1,4;0,0;12,0;8406;95,7;1,0
+2004;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;1,9;0,0;31,5;6115;69,6;1,8
+2004;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;4,3;0,4;11,6;54;14,8;0,7
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;2,0;0,2;17,7;7999;91,1;1,0
+2004;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;0,8;0,1;7,8;8431;96,0;1,0
+2004;mazowieckie;PL1402;miasto Płock;MzPlockOpsis;C6H6;1g;5,3;1,7;29,3;2137;24,3;0,0
+2004;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;C6H6;1g;2,1;0,1;40,0;7719;87,9;0,8
+2004;mazowieckie;PL1402;miasto Płock;MzPlockPKN2;C6H6;1g;1,6;0,1;18,3;5877;66,9;1,3
+2004;mazowieckie;PL1402;miasto Płock;MzPlockPKN3;C6H6;1g;1,8;0,1;38,8;7520;85,6;0,9
+2004;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,4;0,1;31,0;7275;82,8;0,9
+2004;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;0,9;0,1;12,3;8081;92,0;1,0
+2004;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,5;0,1;17,8;8245;93,9;1,0
+2004;świętokrzyskie;PL2601;miasto Kielce;SkKielJagielWSSE;C6H6;24g;2,5;0,0;8,0;73;19,9;1,0
+2004;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;C6H6;24g;2,3;0,0;7,2;53;14,5;1,0
+2005;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;C6H6;24g;2,0;0,2;7,9;57;15,6;1,3
+2005;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;24g;3,5;0,3;14,9;53;14,5;1,0
+2005;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbJord;C6H6;24g;4,3;1,3;25,0;239;65,5;1,0
+2005;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgATRKalisk;C6H6;24g;0,6;0,0;12,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;0,3;0,0;5,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;C6H6;24g;1,4;0,0;5,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgZachemWojska;C6H6;24g;6,3;0,0;53,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;1,5;0,0;11,0;61;16,7;1,0
+2005;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;1,5;0,0;6,0;61;16,7;1,0
+2005;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;2,2;0,0;8,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;1,8;0,0;16,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;1,8;0,0;5,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;3,6;0,0;14,0;64;17,5;1,3
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;1,7;0,0;10,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;1,4;0,0;5,4;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;C6H6;24g;1,9;0,0;11,0;61;16,7;1,0
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;2,4;0,0;8,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrPlacKlaszt;C6H6;24g;2,2;0,0;12,0;60;16,4;1,0
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;C6H6;24g;1,3;0,0;5,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;3,8;0,0;12,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;3,2;0,0;11,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecSadowa;C6H6;24g;2,1;0,0;7,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;0,6;0,0;6,0;62;17,0;1,1
+2005;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;1,7;0,0;6,0;62;17,0;1,1
+2005;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinMaszynowa;C6H6;24g;2,1;0,4;7,1;50;13,7;1,1
+2005;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinObywat_13;C6H6;24g;0,9;0,5;1,7;262;71,8;1,0
+2005;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinSpokojna;C6H6;24g;1,8;0,4;5,7;50;13,7;0,9
+2005;lubelskie;PL0602;strefa lubelska;LbBialaPKopernika;C6H6;24g;2,2;0,0;7,1;51;14,0;1,0
+2005;lubelskie;PL0602;strefa lubelska;LbChelmSzpWSSE;C6H6;24g;1,1;0,8;3,1;51;14,0;1,0
+2005;lubelskie;PL0602;strefa lubelska;LbNaleczowKasztan;C6H6;24g;1,4;0,4;5,3;52;14,2;1,0
+2005;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;C6H6;24g;1,5;0,3;4,8;52;14,2;1,0
+2005;lubelskie;PL0602;strefa lubelska;LbZamoscWSSE;C6H6;24g;2,1;0,8;10,5;52;14,2;1,0
+2005;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;C6H6;1g;0,0;0,0;0,9;8481;96,8;1,0
+2005;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;C6H6;1g;1,5;0,2;18,0;8281;94,5;1,0
+2005;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;1,7;0,1;15,3;8315;94,9;1,0
+2005;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;6,6;1,9;23,8;53;14,5;0,8
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,6;0,1;21,5;8156;93,1;1,0
+2005;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;0,9;0,2;10,7;7308;83,4;1,2
+2005;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;C6H6;1g;2,2;0,2;30,5;7264;82,9;0,8
+2005;mazowieckie;PL1402;miasto Płock;MzPlockPKN2;C6H6;1g;1,5;0,2;29,5;7555;86,2;1,1
+2005;mazowieckie;PL1402;miasto Płock;MzPlockPKN3;C6H6;1g;2,4;0,3;35,0;6864;78,4;1,5
+2005;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;2,0;0,1;27,2;7006;80,0;1,4
+2005;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;1,3;0,2;31,8;8228;93,9;1,0
+2005;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,1;0,2;20,7;4974;56,8;2,3
+2005;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;13,1;0,0;634,0;6442;73,5;1,9
+2005;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;3,0;0,0;110,0;6178;70,5;2,0
+2005;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;C6H6;1g;3,6;0,0;79,9;3299;37,7;0,6
+2005;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;C6H6;24g;2,2;0,5;6,4;52;14,2;1,0
+2005;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;0,6;0,0;20,6;6330;72,3;0,8
+2005;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;0,6;0,0;12,9;7436;84,9;1,2
+2006;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;C6H6;24g;1,6;0,2;9,1;54;14,8;0,9
+2006;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;0,8;0,0;12,2;4911;56,1;4,6
+2006;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;24g;2,6;0,3;25,5;51;14,0;0,9
+2006;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbJord;C6H6;24g;3,8;1,4;19,0;130;35,6;1,0
+2006;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;3,9;0,0;148,4;4257;48,6;0,6
+2006;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;24g;3,9;0,0;44,9;174;47,7;0,6
+2006;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgATRKalisk;C6H6;24g;1,3;0,0;9,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;1,0;0,0;11,0;61;16,7;1,0
+2006;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;C6H6;24g;2,5;0,0;13,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgZachemWojska;C6H6;24g;7,0;1,0;50,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;3,1;0,6;56,2;8479;96,8;1,0
+2006;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;2,5;0,0;19,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;2,3;0,0;15,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;3,3;0,0;27,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;2,6;0,0;12,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;2,7;0,0;10,1;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;5,2;0,0;24,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;2,6;0,0;10,7;63;17,3;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;2,2;0,0;16,4;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;C6H6;24g;2,0;0,0;12,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;3,5;1,0;18,0;61;16,7;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrPlacKlaszt;C6H6;24g;2,2;0,0;13,0;60;16,4;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;C6H6;24g;1,7;0,0;10,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;4,0;0,0;26,0;60;16,4;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;4,2;0,0;20,0;61;16,7;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNwiesNaftobazy;C6H6;24g;2,6;0,0;9,0;145;39,7;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecSadowa;C6H6;24g;1,8;0,0;14,0;62;17,0;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;0,8;0,0;6,0;59;16,2;1,0
+2006;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;2,5;0,0;15,0;62;17,0;1,0
+2006;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;C6H6;1g;2,4;0,4;18,8;6586;75,2;0,9
+2006;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinMaszynowa;C6H6;24g;2,3;0,0;19,0;51;14,0;1,0
+2006;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinObywat_13;C6H6;24g;1,1;0,8;1,4;248;67,9;1,0
+2006;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinSpokojna;C6H6;24g;2,0;0,1;8,7;51;14,0;1,0
+2006;lubelskie;PL0602;strefa lubelska;LbBialaPKopernika;C6H6;24g;2,8;0,0;19,7;51;14,0;1,0
+2006;lubelskie;PL0602;strefa lubelska;LbKrasnikSpoldziel;C6H6;24g;2,2;0,0;17,5;52;14,2;1,0
+2006;lubelskie;PL0602;strefa lubelska;LbNaleczowKasztan;C6H6;24g;1,8;0,0;11,4;51;14,0;1,0
+2006;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;C6H6;24g;1,3;0,0;13,2;52;14,2;1,0
+2006;lubelskie;PL0602;strefa lubelska;LbSwidnikWPolskiego;C6H6;24g;1,7;0,0;8,0;50;13,7;1,0
+2006;lubelskie;PL0602;strefa lubelska;LbZamoscWSSE;C6H6;24g;3,5;0,6;6,8;52;14,2;1,0
+2006;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;C6H6;1g;1,7;0,2;21,2;8321;95,0;1,0
+2006;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,8;0,0;37,3;8030;91,7;1,0
+2006;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;6,2;1,1;26,0;58;15,9;0,9
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;2,3;0,1;19,6;7277;83,1;1,2
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarTolstoj;C6H6;1g;1,0;0,0;18,1;6467;73,8;0,5
+2006;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;0,5;0,0;16,5;8552;97,6;1,0
+2006;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;C6H6;1g;2,9;0,2;17,5;1488;17,0;0,0
+2006;mazowieckie;PL1402;miasto Płock;MzPlockPKN2;C6H6;1g;2,5;0,3;24,9;1561;17,8;0,0
+2006;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;2,4;0,2;18,7;6552;74,8;0,8
+2006;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;1,7;0,1;21,5;7619;87,0;1,0
+2006;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;0,8;0,1;16,6;7362;84,0;1,4
+2006;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;12,4;0,0;798,0;8463;96,6;1,1
+2006;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;5,4;0,0;566,0;7694;87,8;0,8
+2006;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;2,1;0,0;54,0;8273;94,4;1,1
+2006;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;C6H6;1g;3,4;0,0;62,2;7314;83,5;1,3
+2006;świętokrzyskie;PL2601;miasto Kielce;SkKielJagielWSSE;C6H6;24g;1,8;0,1;7,0;73;20,0;1,0
+2006;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;C6H6;24g;2,9;0,8;9,5;52;14,2;1,0
+2006;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;1,2;0,0;8,7;7168;81,8;1,6
+2006;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;0,9;0,0;25,0;3965;45,3;1,0
+2006;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;1,2;0,0;49,0;7715;88,1;1,2
+2007;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;C6H6;24g;2,0;0,2;7,7;58;15,9;0,6
+2007;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;1,2;0,0;29,9;5790;66,1;0,6
+2007;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;24g;1,7;0,3;7,4;51;14,0;1,0
+2007;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;24g;3,1;0,8;22,0;240;65,8;1,0
+2007;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;C6H6;1g;3,2;0,1;24,8;5810;66,3;1,6
+2007;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgATRKalisk;C6H6;24g;0,8;0,0;13,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;0,4;0,0;10,0;61;16,7;1,1
+2007;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;C6H6;24g;1,4;0,0;30,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgZachemWojska;C6H6;24g;9,2;0,0;46,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;3,5;0,5;41,3;8525;97,3;1,0
+2007;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;1,0;0,0;7,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;1,0;0,0;6,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;2,3;0,0;11,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;1,4;0,0;5,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;1,7;0,0;6,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;2,9;0,0;13,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;1,2;0,0;7,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;1,4;0,0;9,9;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;C6H6;24g;0,9;0,0;5,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;2,1;0,0;7,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrPlacKlaszt;C6H6;24g;1,8;0,0;9,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;C6H6;24g;0,9;0,0;6,0;62;17,0;1,0
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;2,2;0,0;13,0;60;16,4;1,0
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;3,0;0,0;18,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNwiesNaftobazy;C6H6;24g;1,9;0,0;6,5;145;39,7;1,0
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecSadowa;C6H6;24g;1,4;0,0;17,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;1,6;0,0;9,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWienSanatorium;C6H6;24g;1,1;0,0;7,0;62;17,0;1,1
+2007;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;1,5;0,0;5,0;62;17,0;1,1
+2007;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;C6H6;1g;2,3;0,2;24,9;8528;97,4;1,0
+2007;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinMaszynowa;C6H6;24g;1,6;0,2;6,9;50;13,7;0,9
+2007;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinObywat_13;C6H6;24g;1,3;0,6;3,3;196;53,7;1,0
+2007;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinSpokojna;C6H6;24g;1,9;0,3;6,8;53;14,5;1,0
+2007;lubelskie;PL0602;strefa lubelska;LbBialaPKopernika;C6H6;24g;2,5;0,2;10,0;51;14,0;1,0
+2007;lubelskie;PL0602;strefa lubelska;LbKrasnikSpoldziel;C6H6;24g;1,7;0,0;6,0;53;14,5;1,0
+2007;lubelskie;PL0602;strefa lubelska;LbNaleczowKasztan;C6H6;24g;1,2;0,2;4,9;52;14,2;1,0
+2007;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;C6H6;24g;1,1;0,3;4,8;52;14,2;1,0
+2007;lubelskie;PL0602;strefa lubelska;LbSwidnikWPolskiego;C6H6;24g;1,7;0,2;6,4;53;14,5;1,0
+2007;lubelskie;PL0602;strefa lubelska;LbZamoscWSSE;C6H6;24g;3,1;1,2;7,4;51;14,0;1,0
+2007;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;C6H6;1g;1,3;0,1;9,3;8375;95,6;1,0
+2007;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,7;0,1;27,6;5208;59,5;1,5
+2007;małopolskie;PL1202;miasto Tarnów;MpTarnowWIOSSoli6303;C6H6;24g;2,3;0,3;8,6;56;15,3;0,8
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;2,0;0,1;13,3;5090;58,1;1,6
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarTolstoj;C6H6;1g;0,7;0,0;6,6;6352;72,5;1,1
+2007;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;0,2;0,0;2,0;3114;35,5;0,0
+2007;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;C6H6;1g;2,1;0,1;28,7;6551;74,8;0,6
+2007;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,5;0,1;17,9;6765;77,2;0,9
+2007;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;0,9;0,1;6,6;3801;43,4;0,0
+2007;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;0,7;0,1;7,5;3625;41,4;0,8
+2007;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;3,4;0,0;99,0;7387;84,3;0,8
+2007;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;3,8;0,0;56,0;2948;33,7;3,5
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.00.s237m;C6H6;24g;0,9;0,1;5,6;117;32,1;1,1
+2007;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.00.s477m;C6H6;24g;0,6;0,1;4,8;120;32,9;1,0
+2007;pomorskie;PL2202;strefa pomorska;PmKartWejher;C6H6;24g;2,5;0,5;14,0;173;47,4;1,4
+2007;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;C6H6;1g;2,4;0,4;16,0;7806;89,1;1,0
+2007;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;4,0;0,0;36,0;2122;24,2;0,0
+2007;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;C6H6;1g;2,5;0,0;37,7;6104;69,7;1,9
+2007;świętokrzyskie;PL2601;miasto Kielce;SkKielJagielWSSE;C6H6;24g;0,8;0,1;7,0;73;20,0;1,0
+2007;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;C6H6;24g;2,4;0,4;11,5;52;14,2;1,0
+2007;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;1,4;0,0;10,3;5986;68,3;1,5
+2007;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;2,1;0,0;23,1;3524;40,2;0,8
+2007;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;1,2;0,0;22,2;8360;95,4;1,0
+2007;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;0,9;0,0;22,3;7393;84,4;1,1
+2008;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;C6H6;24g;1,9;0,2;11,2;55;15,0;1,0
+2008;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;1,0;0,1;11,0;8332;94,9;1,0
+2008;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;24g;2,2;0,3;6,4;52;14,2;1,0
+2008;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;2,7;0,0;73,9;7128;81,1;1,4
+2008;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;24g;2,7;0,0;21,1;289;79,0;1,5
+2008;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;C6H6;1g;2,8;0,2;36,3;6673;76,0;1,6
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgATRKalisk;C6H6;24g;1,5;0,0;34,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgCO;C6H6;1g;0,6;0,0;5,4;1455;16,6;1,2
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;0,8;0,0;13,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;C6H6;24g;3,3;0,0;57,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgZachemWojska;C6H6;24g;2,0;0,0;11,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;4,1;0,1;83,0;8348;95,0;0,9
+2008;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;1,5;0,2;11,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;1,8;0,2;18,6;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;2,1;0,0;21,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;1,3;0,0;18,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclOpsis;C6H6;1g;2,8;0,0;13,6;3989;45,4;1,0
+2008;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;1,4;0,0;8,3;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;2,6;0,0;55,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBydgBlota;C6H6;1g;1,1;0,0;12,9;1218;13,9;1,2
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;1,8;0,0;17,0;60;16,4;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;1,2;0,0;8,0;61;16,7;1,0
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;C6H6;24g;1,2;0,0;18,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;3,1;0,0;20,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrPlacKlaszt;C6H6;24g;2,0;0,0;12,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;C6H6;24g;1,2;0,0;15,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;1,7;0,0;19,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;3,4;0,0;21,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNwiesNaftobazy;C6H6;24g;1,3;0,3;6,3;149;40,7;1,0
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSepolno;C6H6;1g;4,0;0,0;144,2;1355;15,4;1,5
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecSadowa;C6H6;24g;2,3;0,0;12,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;1,6;0,0;12,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWienSanatorium;C6H6;24g;1,3;0,0;10,0;62;16,9;1,1
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;C6H6;1g;0,0;0,0;2,8;4963;56,5;1,6
+2008;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;2,4;0,0;12,0;62;16,9;1,1
+2008;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;C6H6;1g;2,3;0,4;18,2;8373;95,3;1,1
+2008;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinSpokojna;C6H6;24g;1,7;0,3;8,9;51;13,9;1,0
+2008;lubelskie;PL0602;strefa lubelska;LbBialaPKopernika;C6H6;24g;2,3;0,0;13,0;195;53,3;1,1
+2008;lubelskie;PL0602;strefa lubelska;LbChelmSzpWSSE;C6H6;24g;2,2;1,1;10,3;51;13,9;1,0
+2008;lubelskie;PL0602;strefa lubelska;LbKrasnikSpoldziel;C6H6;24g;1,4;0,3;4,0;50;13,7;0,9
+2008;lubelskie;PL0602;strefa lubelska;LbKrasnobrodWSSELel;C6H6;24g;1,2;0,1;2,7;53;14,5;1,0
+2008;lubelskie;PL0602;strefa lubelska;LbPulawyLubelska;C6H6;24g;1,3;0,2;6,8;50;13,7;1,0
+2008;lubelskie;PL0602;strefa lubelska;LbSwidnikWPolskiego;C6H6;24g;2,1;0,2;11,9;194;53,0;1,0
+2008;lubelskie;PL0602;strefa lubelska;LbZamoscWSSE;C6H6;24g;2,5;0,3;4,2;53;14,5;1,0
+2008;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;2,1;0,0;19,0;3874;44,1;1,0
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;C6H6;1g;1,3;0,0;17,9;8439;96,1;1,0
+2008;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,0;0,2;18,1;8413;95,8;1,0
+2008;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;3,7;0,4;76,0;7108;80,9;0,7
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;3,4;0,2;16,7;5013;57,1;1,4
+2008;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;1,8;0,1;13,7;6351;72,3;1,9
+2008;mazowieckie;PL1402;miasto Płock;MzPlockPKN1;C6H6;1g;1,4;0,2;10,5;5589;63,6;0,6
+2008;mazowieckie;PL1402;miasto Płock;MzPlockPKN2;C6H6;1g;1,5;0,2;16,2;5690;64,8;0,9
+2008;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,8;0,1;21,0;6343;72,2;0,7
+2008;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;1,9;0,1;15,9;6471;73,7;0,9
+2008;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;0,8;0,1;4,7;2338;26,6;0,1
+2008;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;10,8;0,0;480,0;8552;97,4;1,0
+2008;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;5,5;0,0;171,0;8108;92,3;1,1
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.00.s237m;C6H6;24g;1,9;0,1;9,9;115;31,4;1,1
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.00.s477m;C6H6;24g;1,0;0,0;8,0;119;32,5;1,0
+2008;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;C6H6;1g;1,3;0,1;15,3;8554;97,4;1,0
+2008;pomorskie;PL2202;strefa pomorska;PmKartWejher;C6H6;24g;1,9;0,4;8,3;203;55,5;1,0
+2008;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;C6H6;1g;2,7;0,3;13,9;7840;89,3;1,0
+2008;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;0,3;0,0;8,3;8145;92,7;1,1
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;1,9;0,0;54,9;8680;98,8;1,0
+2008;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;C6H6;1g;2,7;0,0;44,8;8272;94,2;1,0
+2008;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;24g;2,4;0,5;13,0;73;19,9;1,0
+2008;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;C6H6;24g;2,5;0,6;7,2;53;14,5;1,0
+2008;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;1,8;0,1;10,3;7429;84,6;1,1
+2008;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;2,7;0,1;17,2;4773;54,3;0,4
+2008;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;1,4;0,0;27,6;7834;89,2;0,8
+2008;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;0,3;0,0;7,8;8450;96,2;1,0
+2009;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWie;C6H6;24g;2,8;0,4;12,6;333;91,2;1,0
+2009;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;1,9;0,0;19,2;7106;81,1;1,4
+2009;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;24g;2,0;0,2;25,3;132;36,2;1,0
+2009;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;2,8;0,0;36,6;6939;79,2;0,6
+2009;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;24g;2,8;0,0;12,1;288;78,9;0,6
+2009;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;C6H6;1g;4,0;0,1;52,8;7958;90,8;1,1
+2009;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgATRKalisk;C6H6;24g;3,4;0,4;40,7;61;16,7;1,0
+2009;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;2,0;0,4;24,5;64;17,5;0,9
+2009;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;C6H6;24g;2,2;0,4;11,1;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgZachemWojska;C6H6;24g;14,2;0,4;82,0;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;8,9;0,0;50,6;2431;27,8;0,1
+2009;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;C6H6;1g;1,4;0,0;18,4;5518;63,0;0,5
+2009;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;4,5;0,4;37,2;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;2,9;0,4;17,5;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;6,1;0,4;34,7;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;3,9;0,4;50,3;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWlocZytnia;C6H6;24g;3,4;0,4;26,4;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;3,4;0,4;31,6;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;4,5;0,4;84,9;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;2,8;0,4;23,9;61;16,7;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzIkara;C6H6;24g;2,9;0,4;41,1;60;16,4;0,9
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;5,4;0,4;75,9;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrPlacKlaszt;C6H6;24g;4,0;0,4;20,5;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;6,7;0,4;58,5;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;5,6;0,4;24,7;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNwiesNaftobazy;C6H6;24g;1,2;0,3;8,2;150;41,1;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSepolno;C6H6;1g;1,3;0,0;23,6;1251;14,3;0,6
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecSadowa;C6H6;24g;4,1;0,4;21,1;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;2,7;0,4;20,3;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWienSanatorium;C6H6;24g;3,6;0,4;39,5;62;17,0;1,0
+2009;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;5,0;0,4;39,8;61;16,7;1,0
+2009;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;C6H6;1g;2,5;0,3;25,0;8602;98,2;1,0
+2009;lubelskie;PL0601;Aglomeracja Lubelska;LbLublinMaszynowa;C6H6;24g;1,7;0,7;7,4;51;14,0;1,0
+2009;lubelskie;PL0602;strefa lubelska;LbBialaPKopernika;C6H6;24g;1,9;0,2;11,2;193;52,9;1,1
+2009;lubelskie;PL0602;strefa lubelska;LbKrasnobrodWSSELel;C6H6;24g;0,9;0,0;2,2;52;14,2;1,0
+2009;lubelskie;PL0602;strefa lubelska;LbNaleczowKasztan;C6H6;24g;1,5;0,7;5,4;51;14,0;1,0
+2009;lubelskie;PL0602;strefa lubelska;LbSwidnikWPolskiego;C6H6;24g;2,3;0,7;12,0;200;54,8;1,1
+2009;lubelskie;PL0602;strefa lubelska;LbZamoscWSSE;C6H6;24g;2,0;0,5;2,9;52;14,2;1,0
+2009;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;2,4;0,0;37,7;6425;73,3;1,1
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;C6H6;1g;1,9;0,1;17,7;8651;98,8;1,0
+2009;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,8;0,3;17,6;8378;95,6;0,9
+2009;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;4,0;0,4;89,1;8235;94,0;1,0
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;2,6;0,1;13,7;8303;94,8;1,1
+2009;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;1,3;0,1;9,8;6650;75,9;1,3
+2009;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;2,7;0,3;14,3;7341;83,8;1,2
+2009;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;2,2;0,1;14,7;7927;90,5;1,1
+2009;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,8;0,0;18,7;7348;83,9;1,1
+2009;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;6,9;0,0;609,0;7968;91,0;1,2
+2009;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;4,7;0,0;172,0;7919;90,4;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.00.s237m;C6H6;24g;1,4;0,1;7,7;117;32,1;1,0
+2009;pomorskie;PL2201;Aglomeracja Trójmiejska;Pm.00.s477m;C6H6;24g;1,0;0,0;6,3;117;32,1;1,0
+2009;pomorskie;PL2202;strefa pomorska;PmKartWejher;C6H6;24g;1,5;0,1;6,7;166;45,5;1,3
+2009;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;C6H6;1g;3,3;0,3;24,4;7671;87,6;1,0
+2009;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;0,4;0,0;12,2;8545;97,5;1,0
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;1,9;0,0;23,6;6799;77,6;0,7
+2009;śląskie;PL2401;Aglomeracja Górnośląska;SlZabSkloCur;C6H6;1g;2,8;0,0;43,6;8407;96,0;1,0
+2009;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;24g;1,9;1,0;8,0;73;20,0;1,0
+2009;świętokrzyskie;PL2601;miasto Kielce;SkKielTransp;C6H6;24g;2,8;0,6;10,7;51;14,0;1,1
+2009;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;1,9;0,1;17,0;7950;90,8;1,0
+2009;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;1,7;0,0;15,1;6844;78,1;1,1
+2009;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;1,2;0,0;25,6;7908;90,3;0,9
+2009;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;0,5;0,1;8,1;8050;91,9;1,1
+2010;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;1,0;0,0;16,0;5325;60,8;3,4
+2010;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;24g;2,3;0,8;16,8;131;35,9;1,0
+2010;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;2,2;0,0;41,2;6850;78,2;1,3
+2010;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;24g;2,1;0,0;24,4;285;78,1;1,3
+2010;dolnośląskie;PL0204;strefa dolnośląska;DsJgCiepA;C6H6;1g;3,9;0,2;52,9;6265;71,5;1,7
+2010;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgMorska;C6H6;24g;1,9;0,4;14,4;62;17,0;1,0
+2010;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydgUjejskiego;C6H6;24g;3,3;0,4;25,3;57;15,6;1,2
+2010;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;1,3;0,0;62,2;6828;77,9;1,7
+2010;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;C6H6;1g;1,3;0,0;19,7;7898;90,2;1,1
+2010;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunGagarina;C6H6;24g;4,5;0,4;33,4;62;17,0;1,0
+2010;kujawsko-pomorskie;PL0402;miasto Toruń;KpTorunKopernika;C6H6;24g;3,1;0,4;25,2;62;17,0;1,0
+2010;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclKilinskiego;C6H6;24g;3,1;0,4;27,3;57;15,6;1,2
+2010;kujawsko-pomorskie;PL0403;miasto Włocławek;KpWloclLady;C6H6;24g;2,3;0,4;12,7;59;16,2;1,1
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpBrodnZwirki;C6H6;24g;2,0;0,1;14,8;61;16,7;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpChelmnLunawska;C6H6;24g;5,2;0,4;44,1;60;16,4;0,9
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;24g;3,5;0,4;46,0;61;16,7;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpGrudzKosynierow;C6H6;24g;3,8;0,4;17,7;62;17,0;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrPlacKlaszt;C6H6;24g;3,0;0,4;14,8;60;16,4;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpInowrSolankowa;C6H6;24g;2,8;0,4;33,3;60;16,4;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpKruszwicamob;C6H6;1g;0,5;0,0;6,3;1418;16,2;1,8
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpMogilKosciuszki;C6H6;24g;5,3;0,4;25,7;61;16,7;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNakloSkargi;C6H6;24g;6,9;0,4;45,0;62;17,0;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNwiesNaftobazy;C6H6;24g;1,6;0,3;7,5;150;41,1;1,1
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpSwiecSadowa;C6H6;24g;2,9;0,4;18,0;61;16,7;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpTuchPiastowska;C6H6;24g;1,9;0,4;10,9;61;16,7;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpWienSanatorium;C6H6;24g;1,7;0,4;10,5;60;16,4;1,1
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;C6H6;1g;1,2;0,0;9,0;3728;42,6;1,0
+2010;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZninBrowarowa;C6H6;24g;4,5;0,4;35,9;62;17,0;1,0
+2010;lubelskie;PL0601;Aglomeracja Lubelska;LbLublin_Krasn;C6H6;1g;2,2;0,0;31,7;5220;59,6;1,5
+2010;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;C6H6;1g;2,9;0,0;33,1;3041;34,7;0,5
+2010;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;C6H6;24g;2,2;0,3;7,5;53;14,5;1,0
+2010;lubelskie;PL0602;strefa lubelska;LbKrasKoszar;C6H6;24g;2,0;0,3;4,9;56;15,3;1,0
+2010;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;C6H6;24g;1,9;0,3;8,0;53;14,5;1,0
+2010;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;1,1;0,0;22,7;8530;97,4;1,1
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;C6H6;1g;2,2;0,1;23,2;8667;98,9;1,0
+2010;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;3,2;0,3;25,2;8639;98,6;1,0
+2010;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;2,3;0,4;7,9;51;14,0;0,8
+2010;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;3,8;0,4;38,0;5937;67,8;1,0
+2010;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;24g;2,2;0,4;7,5;53;14,5;1,0
+2010;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;C6H6;24g;1,5;0,3;6,5;73;20,0;1,0
+2010;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,5;0,2;8,3;8336;95,2;1,0
+2010;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;0,9;0,1;6,1;6833;78,0;0,9
+2010;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;2,4;0,0;11,8;7648;87,3;1,0
+2010;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;2,5;0,2;17,5;7418;84,7;0,9
+2010;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;9,7;0,0;644,0;7542;86,1;1,2
+2010;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;5,0;0,0;65,0;5553;63,4;1,6
+2010;pomorskie;PL2202;strefa pomorska;PmKartWejher;C6H6;24g;1,5;0,1;4,9;168;46,0;1,0
+2010;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;0,7;0,0;18,1;8488;96,9;1,0
+2010;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;1,9;0,0;27,6;5618;64,1;1,2
+2010;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;24g;2,5;0,5;8,7;52;14,2;1,0
+2010;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;1,8;0,1;20,6;7590;86,6;1,3
+2010;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;1,6;0,0;18,5;6046;69,0;1,0
+2010;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;0,6;0,0;11,3;8611;98,3;1,0
+2010;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;0,8;0,1;21,2;8522;97,3;1,0
+2011;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;24g;2,5;0,8;17,0;129;35,3;0,7
+2011;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;1,6;0,0;35,7;6595;75,3;1,4
+2011;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;C6H6;1g;1,5;0,0;33,4;6120;69,9;0,9
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;1g;1,9;0,0;36,5;3140;35,8;0,3
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNwiesNaftobazy;C6H6;24g;1,0;0,3;7,7;151;41,4;1,0
+2011;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;C6H6;1g;0,6;0,0;9,1;5651;64,5;1,8
+2011;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;C6H6;1g;2,4;0,1;17,9;2094;23,9;0,0
+2011;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;C6H6;24g;1,9;0,3;6,3;56;15,3;1,0
+2011;lubelskie;PL0602;strefa lubelska;LbKrasKoszar;C6H6;24g;2,6;0,3;4,7;56;15,3;1,0
+2011;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;C6H6;24g;3,8;0,8;13,6;56;15,3;1,0
+2011;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;C6H6;1g;0,0;0,0;0,3;3268;37,3;0,4
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzWIOSARubinst;C6H6;1g;1,8;0,2;43,7;5027;57,4;1,3
+2011;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,6;0,2;24,0;8644;98,7;1,0
+2011;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;3,4;1,1;10,1;56;15,3;0,8
+2011;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;2,1;0,4;15,1;4088;46,7;1,7
+2011;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;24g;3,1;0,4;9,1;51;14,0;1,0
+2011;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;C6H6;24g;1,4;0,3;9,4;73;20,0;1,0
+2011;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,6;0,1;13,0;8575;97,9;1,0
+2011;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;1,3;0,0;9,5;7689;87,8;0,9
+2011;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,7;0,1;13,1;8074;92,2;0,9
+2011;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;1,3;0,0;7,7;8303;94,8;1,1
+2011;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,3;0,0;14,5;7497;85,6;1,0
+2011;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;12,4;0,0;612,0;7567;86,4;0,9
+2011;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;9,5;0,0;118,0;5715;65,2;0,9
+2011;podkarpackie;PL1801;miasto Rzeszów;PkRzeszWIOSSzop;C6H6;1g;0,8;0,0;21,7;4230;48,3;1,3
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;C6H6;1g;0,6;0,0;9,0;8510;97,1;1,0
+2011;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdyWendy10;C6H6;1g;0,9;0,1;10,1;2230;25,5;0,0
+2011;pomorskie;PL2202;strefa pomorska;PmKartWejher;C6H6;24g;2,3;0,6;11,3;186;51,0;1,1
+2011;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;C6H6;1g;0,8;0,0;21,4;8139;92,9;0,9
+2011;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;1,0;0,0;15,1;4414;50,4;0,1
+2011;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;1,8;0,0;35,7;6768;77,3;1,7
+2011;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;C6H6;1g;2,4;0,0;33,1;4424;50,5;1,0
+2011;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;24g;2,7;0,5;12,6;52;14,2;1,0
+2011;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;1,5;0,0;17,6;6873;78,5;1,7
+2011;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;0,7;0,0;17,9;4743;54,1;5,8
+2011;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;0,8;0,0;22,3;8632;98,5;1,0
+2011;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;0,7;0,1;12,9;6862;78,3;1,0
+2012;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;24g;2,1;0,8;14,7;131;35,8;1,0
+2012;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;24g;1,9;0,7;17,0;147;40,2;1,1
+2012;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;1,5;0,0;46,0;8295;94,4;1,0
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;1g;1,8;0,0;31,3;2264;25,8;0,1
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpNwiesNaftobazy;C6H6;24g;1,2;0,3;6,8;147;40,2;1,0
+2012;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;C6H6;1g;1,0;0,0;8,8;5164;58,8;0,7
+2012;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;C6H6;1g;2,4;0,0;47,6;2774;31,6;0,3
+2012;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;C6H6;24g;2,4;0,3;7,0;56;15,3;1,0
+2012;lubelskie;PL0602;strefa lubelska;LbKrasKoszar;C6H6;24g;1,7;0,3;5,1;55;15,0;1,0
+2012;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;C6H6;24g;1,5;0,3;7,0;63;17,2;1,3
+2012;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;0,4;0,0;8,0;3032;34,5;0,4
+2012;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;C6H6;1g;0,8;0,0;58,0;6673;76,0;1,5
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;C6H6;1g;2,5;0,2;19,6;8237;93,8;1,0
+2012;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,6;0,2;16,0;8485;96,6;0,9
+2012;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;4,7;0,4;15,7;52;14,2;0,9
+2012;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;3,1;0,4;29,5;3373;38,4;0,9
+2012;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;24g;3,0;0,4;18,2;136;37,2;0,9
+2012;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;C6H6;24g;1,8;0,3;8,9;73;19,9;1,0
+2012;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,7;0,0;18,8;7813;88,9;1,1
+2012;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;1,2;0,1;19,6;8115;92,4;0,9
+2012;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;2,1;0,1;29,3;4908;55,9;0,4
+2012;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;1,7;-0,1;21,4;8705;99,1;1,0
+2012;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,6;0,1;25,3;7119;81,0;0,9
+2012;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;C6H6;1g;1,9;0,2;53,8;8575;97,6;1,0
+2012;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;9,0;0,0;599,0;7223;82,2;1,1
+2012;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;7,7;0,0;156,0;8257;94,0;1,0
+2012;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;C6H6;1g;0,5;0,0;7,9;8730;99,4;1,0
+2012;pomorskie;PL2202;strefa pomorska;PmKartWejher;C6H6;24g;1,8;0,5;6,6;156;42,6;1,4
+2012;pomorskie;PL2202;strefa pomorska;PmKosTargo12;C6H6;24g;3,0;0,5;15,0;250;68,3;1,9
+2012;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;C6H6;24g;3,3;0,3;39,7;225;61,5;2,1
+2012;pomorskie;PL2202;strefa pomorska;PmLinieKos17;C6H6;24g;2,0;0,0;11,0;149;40,7;0,8
+2012;pomorskie;PL2202;strefa pomorska;PmMalMicki15;C6H6;24g;2,6;0,1;10,9;258;70,5;0,6
+2012;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;0,9;0,0;43,5;7827;89,1;1,0
+2012;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;2,0;0,0;27,2;7472;85,1;1,0
+2012;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;C6H6;1g;2,8;0,0;44,5;8236;93,8;1,0
+2012;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;24g;2,0;0,5;7,6;51;13,9;1,0
+2012;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;1,0;0,0;22,0;8194;93,3;1,1
+2013;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;3,6;0,1;14,0;6167;70,4;1,3
+2013;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;1g;1,4;0,1;9,3;7809;89,1;1,2
+2013;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;3,7;0,2;15,7;1478;16,9;0,0
+2013;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;24g;1,4;0,7;5,9;143;39,2;1,0
+2013;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;1,3;0,0;40,5;7810;89,2;0,9
+2013;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;C6H6;1g;1,6;0,0;36,8;8037;91,7;1,0
+2013;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;C6H6;24g;1,7;0,4;3,8;56;15,3;1,0
+2013;lubelskie;PL0602;strefa lubelska;LbKrasKoszar;C6H6;24g;1,9;0,2;4,3;56;15,3;1,0
+2013;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;C6H6;24g;1,9;0,4;4,0;56;15,3;1,0
+2013;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;0,6;0,0;37,0;8130;92,8;0,9
+2013;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;C6H6;1g;0,2;0,0;11,0;6204;70,8;1,6
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;C6H6;1g;2,1;0,2;30,3;6603;75,4;2,0
+2013;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,4;0,2;16,2;8630;98,5;1,0
+2013;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;3,7;0,4;14,0;93;25,5;0,9
+2013;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;2,8;0,0;25,0;5978;68,2;0,6
+2013;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;24g;3,1;0,4;11,6;84;23,0;1,0
+2013;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;C6H6;24g;2,1;0,3;13,8;130;35,6;1,0
+2013;małopolskie;PL1203;strefa małopolska;MpSuchaBWIOSHand1512;C6H6;1g;3,6;0,4;37,9;6128;70,0;0,6
+2013;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,6;0,1;9,9;8258;94,3;1,0
+2013;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;1,2;0,0;9,9;7990;91,2;1,0
+2013;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,6;0,2;19,2;5190;59,2;0,7
+2013;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;2,3;0,1;22,2;8453;96,5;1,1
+2013;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,9;0,0;24,6;8473;96,7;1,0
+2013;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;C6H6;1g;1,8;0,1;24,0;8436;96,3;1,0
+2013;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;4,9;0,0;408,0;8066;92,1;1,0
+2013;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;C6H6;1t;1,9;0,8;3,5;71;19,5;1,0
+2013;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;C6H6;1g;0,6;0,0;8,1;8741;99,8;1,0
+2013;pomorskie;PL2202;strefa pomorska;PmKosTargo12;C6H6;24g;3,6;0,3;15,7;300;82,2;1,0
+2013;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;C6H6;24g;3,9;0,3;20,5;293;80,3;1,3
+2013;pomorskie;PL2202;strefa pomorska;PmLinieKos17;C6H6;24g;1,1;0,3;10,9;259;71,0;1,3
+2013;pomorskie;PL2202;strefa pomorska;PmMalMicki15;C6H6;24g;2,4;0,3;10,8;286;78,4;1,0
+2013;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;0,8;0,0;25,2;6944;79,3;0,7
+2013;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;2,2;0,1;13,1;8306;94,8;1,0
+2013;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;C6H6;1g;2,5;0,0;26,6;8596;98,1;1,0
+2013;śląskie;PL2405;strefa śląska;SlZlotPotLes;C6H6;1g;1,3;0,1;9,0;7891;90,1;1,0
+2013;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;24g;1,8;0,4;5,0;52;14,2;1,0
+2013;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;0,8;0,0;17,6;7825;89,3;0,9
+2013;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;0,5;0,0;8,9;8701;99,3;1,0
+2014;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;1g;1,8;0,1;16,5;8373;95,6;1,0
+2014;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;3,0;0,1;21,2;8511;97,2;1,0
+2014;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;24g;1,8;0,7;9,7;135;37,0;1,3
+2014;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;1,5;0,0;48,9;8594;98,1;1,0
+2014;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;C6H6;1g;0,7;0,0;10,8;6594;75,3;1,4
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;1g;1,0;0,1;17,3;6615;75,5;1,4
+2014;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;C6H6;1g;1,3;0,0;24,9;6982;79,7;0,8
+2014;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;C6H6;1g;1,4;0,1;27,8;8364;95,5;1,0
+2014;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;C6H6;24g;1,4;0,2;4,9;196;53,7;1,2
+2014;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;C6H6;1g;0,7;0,0;7,7;8443;96,4;1,0
+2014;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;0,4;0,0;6,5;8212;93,7;1,1
+2014;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;C6H6;1g;0,5;0,0;15,6;8106;92,5;1,1
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;C6H6;1g;1,3;0,3;7,7;2669;30,5;6,2
+2014;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,3;0,0;19,9;8314;94,9;0,9
+2014;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;2,7;0,4;16,3;153;41,9;1,3
+2014;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;C6H6;24g;3,5;0,4;25,5;139;38,1;1,3
+2014;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;2,8;0,3;25,2;8047;91,9;1,1
+2014;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;C6H6;24g;1,7;0,3;7,9;132;36,2;1,0
+2014;małopolskie;PL1203;strefa małopolska;MpSuchaBWIOSHand1512;C6H6;1g;3,4;0,3;40,9;8374;95,6;1,0
+2014;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,9;0,3;18,7;8149;93,0;1,0
+2014;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;1,1;0,0;21,8;8531;97,4;1,0
+2014;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,8;0,1;64,1;8534;97,4;1,0
+2014;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;2,0;0,1;49,2;8234;94,0;1,0
+2014;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,6;0,0;31,4;7876;89,9;1,1
+2014;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;C6H6;1g;2,1;0,4;39,5;8729;99,6;1,0
+2014;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;4,9;0,0;343,0;7995;91,3;1,0
+2014;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;3,8;0,0;120,0;8615;98,3;1,0
+2014;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;C6H6;1g;1,1;0,0;26,8;8356;95,4;1,0
+2014;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;C6H6;1g;0,6;0,0;12,1;4682;53,4;1,3
+2014;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;C6H6;1g;0,9;0,0;12,6;8695;99,3;1,0
+2014;pomorskie;PL2202;strefa pomorska;PmKartWejher;C6H6;24g;2,3;0,3;11,3;176;48,2;0,7
+2014;pomorskie;PL2202;strefa pomorska;PmKosTargo12;C6H6;24g;4,6;0,8;13,3;108;29,6;0,6
+2014;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;C6H6;24g;3,9;0,3;17,3;323;88,5;1,0
+2014;pomorskie;PL2202;strefa pomorska;PmLinieKos17;C6H6;24g;2,4;0,3;7,7;100;27,4;0,2
+2014;pomorskie;PL2202;strefa pomorska;PmMalMicki15;C6H6;24g;2,9;0,3;7,6;93;25,5;0,4
+2014;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;C6H6;1g;2,9;0,5;14,0;7494;85,5;1,0
+2014;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;1,0;0,0;28,7;8146;93,0;1,0
+2014;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;2,3;0,1;16,0;8683;99,1;1,0
+2014;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;C6H6;1g;3,1;0,1;37,5;8155;93,1;1,1
+2014;śląskie;PL2405;strefa śląska;SlCzerKopaln;C6H6;1g;4,8;0,2;51,1;8454;96,5;1,0
+2014;śląskie;PL2405;strefa śląska;SlZlotPotLes;C6H6;1g;1,3;0,1;10,4;7883;90,0;1,0
+2014;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;1g;1,1;0,0;13,6;7540;86,1;1,1
+2014;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;0,8;0,0;9,8;8360;95,4;1,0
+2014;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;0,8;0,1;10,0;5603;64,0;1,8
+2014;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;0,3;0,0;15,9;6667;76,1;0,7
+2015;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;2,1;0,1;8,7;6800;77,6;1,5
+2015;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;1g;2,2;0,2;13,6;7953;90,8;1,2
+2015;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;1,5;0,1;12,2;7223;82,5;1,1
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorOgin;C6H6;1g;1,7;0,0;15,2;6964;79,5;0,8
+2015;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;C6H6;1g;1,2;0,0;17,2;6539;74,6;1,0
+2015;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;1,5;0,0;35,1;7761;88,6;0,9
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;1g;0,8;0,0;12,9;8236;94,0;0,9
+2015;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;C6H6;1g;1,0;0,0;14,2;3612;41,2;0,5
+2015;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;C6H6;1g;1,8;0,0;28,7;7627;87,1;0,8
+2015;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;C6H6;24g;2,4;0,4;4,9;188;51,5;1,1
+2015;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;C6H6;1g;1,2;0,0;14,7;8215;93,8;1,0
+2015;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;0,6;0,0;22,0;7021;80,1;1,7
+2015;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;C6H6;1g;0,5;0,0;10,0;8337;95,2;1,1
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;C6H6;1g;1,7;0,2;27,1;5416;61,8;2,3
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzJanPaw;C6H6;1g;2,3;0,1;12,7;1219;13,9;0,0
+2015;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzZachod;C6H6;1g;2,2;0,2;31,8;6960;79,5;1,6
+2015;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;24g;2,2;0,4;11,4;136;37,3;1,2
+2015;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;C6H6;24g;2,6;0,1;13,0;135;37,0;1,2
+2015;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;2,8;0,1;28,5;8152;93,1;0,9
+2015;małopolskie;PL1202;miasto Tarnów;MpTarBitStud;C6H6;24g;1,5;0,4;7,4;131;35,9;1,0
+2015;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;C6H6;1g;3,1;0,3;22,9;5989;68,4;1,7
+2015;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,8;0,0;13,0;8137;92,9;0,9
+2015;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;1,1;0,0;59,4;8130;92,8;1,1
+2015;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,3;0,2;43,0;8034;91,7;0,9
+2015;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;1,5;0,0;36,0;8617;98,4;1,0
+2015;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,5;0,0;24,9;8428;96,2;1,0
+2015;mazowieckie;PL1404;strefa mazowiecka;MzSiedKonars;C6H6;1g;1,6;0,2;36,1;7778;88,8;1,1
+2015;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;2,8;0,0;240,6;8315;94,9;1,1
+2015;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;2,7;0,0;85,4;8422;96,1;1,1
+2015;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;C6H6;1g;1,2;0,0;25,1;8632;98,5;1,0
+2015;podkarpackie;PL1802;strefa podkarpacka;PkMielSolski;C6H6;1g;1,9;0,1;17,0;8360;95,4;1,0
+2015;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;C6H6;1g;0,8;0,0;13,7;8634;98,6;1,0
+2015;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;C6H6;1t;0,6;0,3;1,3;73;20,0;1,0
+2015;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;C6H6;1g;0,9;0,0;18,6;8708;99,4;1,0
+2015;pomorskie;PL2202;strefa pomorska;PmKartWejher;C6H6;24g;1,9;0,3;8,0;192;52,6;1,2
+2015;pomorskie;PL2202;strefa pomorska;PmKosTargo12;C6H6;24g;2,9;0,3;11,3;253;69,3;1,5
+2015;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;C6H6;24g;3,3;0,3;13,3;331;90,7;1,2
+2015;pomorskie;PL2202;strefa pomorska;PmLinieKos17;C6H6;24g;1,4;0,3;12,8;308;84,4;1,2
+2015;pomorskie;PL2202;strefa pomorska;PmMalMicki15;C6H6;24g;2,1;0,3;8,2;330;90,4;1,1
+2015;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;C6H6;1g;3,1;0,4;13,8;7215;82,4;1,2
+2015;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;1,1;0,0;56,3;7309;83,4;0,9
+2015;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;2,3;0,0;17,3;8670;99,0;1,0
+2015;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;C6H6;1g;3,8;0,0;59,2;8559;97,7;1,0
+2015;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;C6H6;1g;1,5;0,0;27,9;7952;90,8;1,2
+2015;śląskie;PL2405;strefa śląska;SlCzerKopaln;C6H6;1g;3,9;0,0;34,7;8352;95,3;1,1
+2015;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;1g;0,5;0,0;7,7;8494;97,0;1,0
+2015;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;0,5;0,0;11,2;6567;75,0;0,6
+2015;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;0,9;0,0;9,6;8450;96,5;1,0
+2015;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;1,1;0,1;13,3;8037;91,7;1,2
+2015;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;0,9;-0,1;11,0;7713;88,0;1,2
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorOgin;C6H6;1g;1,7;0,1;25,1;8405;95,7;0,9
+2016;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;1g;1,1;0,0;18,9;8503;96,8;1,1
+2016;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;0,9;0,0;24,0;8382;95,4;1,0
+2016;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;0,9;0,0;10,6;8331;94,8;1,1
+2016;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;C6H6;1g;1,4;0,0;27,7;8018;91,3;0,9
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;1g;0,8;0,0;12,1;8568;97,5;1,0
+2016;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;C6H6;1g;0,6;0,0;10,4;6723;76,5;0,9
+2016;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;C6H6;24g;1,8;0,2;6,6;171;46,7;1,2
+2016;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;C6H6;1g;2,3;0,0;41,8;8038;91,5;1,0
+2016;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;C6H6;1g;2,0;0,1;18,9;8068;91,8;1,2
+2016;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzJanPaw;C6H6;1g;1,2;0,1;20,8;8391;95,5;1,0
+2016;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;0,5;0,0;3,0;7059;80,4;1,1
+2016;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;C6H6;1g;0,6;0,0;13,7;8695;99,0;1,0
+2016;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;1g;2,3;0,1;23,3;8232;93,7;1,0
+2016;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;C6H6;24g;2,6;0,1;12,7;138;37,7;0,5
+2016;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;1,8;0,1;23,5;7771;88,5;0,9
+2016;małopolskie;PL1203;strefa małopolska;MpNoSaczNadb;C6H6;1g;3,4;0,3;30,6;8643;98,4;1,0
+2016;małopolskie;PL1202;miasto Tarnów;MpTarRoSitko;C6H6;24g;2,1;0,3;11,3;130;35,5;1,0
+2016;mazowieckie;PL1404;strefa mazowiecka;MzOtwoBrzozo;C6H6;1g;2,1;0,0;45,3;8284;94,3;1,0
+2016;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,2;0,1;47,3;8481;96,6;1,0
+2016;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;1,7;0,0;58,0;8469;96,4;1,0
+2016;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,7;0,0;31,7;8574;97,6;1,0
+2016;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,8;0,0;10,0;8459;96,3;1,0
+2016;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarWokalna;C6H6;1g;0,9;0,0;10,9;7873;89,6;1,1
+2016;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;4,9;0,0;361,7;8555;97,4;1,0
+2016;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;7,2;0,1;110,0;8236;93,8;0,9
+2016;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;C6H6;24g;0,9;0,3;2,6;72;19,7;1,0
+2016;podkarpackie;PL1802;strefa podkarpacka;PkMielSolski;C6H6;1g;1,9;0,1;23,9;8166;93,0;1,1
+2016;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;C6H6;1g;1,1;0,0;21,6;7915;90,1;1,2
+2016;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;C6H6;1g;1,3;0,1;13,3;8735;99,4;1,0
+2016;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;C6H6;1g;1,0;0,0;11,2;8772;99,9;1,0
+2016;pomorskie;PL2202;strefa pomorska;PmKosTargo12;C6H6;1g;3,8;0,3;47,8;8054;91,7;0,9
+2016;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;C6H6;24g;3,9;0,3;29,2;365;99,7;1,0
+2016;pomorskie;PL2202;strefa pomorska;PmLinieKos17;C6H6;24g;1,6;0,3;9,7;358;97,8;1,0
+2016;pomorskie;PL2202;strefa pomorska;PmMalMicki15;C6H6;24g;2,2;0,3;9,0;362;98,9;1,0
+2016;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;C6H6;1g;4,1;0,8;15,8;1416;16,1;2,4
+2016;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;1,6;0,0;77,7;8447;96,2;1,0
+2016;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;1g;0,8;0,0;11,6;8588;97,8;1,0
+2016;śląskie;PL2405;strefa śląska;SlCzerKopaln;C6H6;1g;5,1;0,1;50,5;8495;96,7;1,0
+2016;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;C6H6;1g;1,6;0,0;81,1;7890;89,8;1,1
+2016;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;2,4;0,1;21,9;8703;99,1;1,0
+2016;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;C6H6;1g;4,6;0,2;58,9;8733;99,4;1,0
+2016;śląskie;PL2405;strefa śląska;SlZlotPotLes;C6H6;1g;1,2;0,1;7,7;8647;98,4;1,0
+2016;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;1,0;0,1;10,9;8436;96,0;0,9
+2016;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;0,7;0,0;6,8;8304;94,5;1,0
+2016;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;C6H6;1g;0,7;0,0;16,2;8690;98,9;1,0
+2016;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;1,4;0,1;13,6;8121;92,5;0,9
+2016;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;1,1;0,0;12,7;8429;96,0;1,0
+2017;dolnośląskie;PL0201;Aglomeracja Wrocławska;DsWrocWybCon;C6H6;1g;0,1;0,0;3,9;5758;65,7;1,6
+2017;dolnośląskie;PL0202;miasto Legnica;DsLegAlRzecz;C6H6;1g;0,6;0,0;13,9;6149;70,2;1,1
+2017;dolnośląskie;PL0203;miasto Wałbrzych;DsWalbrzWyso;C6H6;1g;0,7;0,0;23,7;6049;69,1;1,0
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsJelGorOgin;C6H6;1g;1,5;0,1;18,8;8016;91,5;1,1
+2017;dolnośląskie;PL0204;strefa dolnośląska;DsZgorBohGet;C6H6;1g;1,7;0,0;30,5;6915;78,9;0,7
+2017;kujawsko-pomorskie;PL0401;Aglomeracja Bydgoska;KpBydPlPozna;C6H6;1g;1,2;0,0;43,2;8217;93,8;1,1
+2017;kujawsko-pomorskie;PL0402;miasto Toruń;KpToruKaszow;C6H6;1g;0,8;0,0;19,2;7952;90,8;1,1
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpCiechTezni;C6H6;1g;0,6;0,0;9,2;8345;95,3;1,1
+2017;kujawsko-pomorskie;PL0404;strefa kujawsko - pomorska;KpZielBoryTu;C6H6;1g;1,3;0,0;10,4;5063;57,8;0,4
+2017;lubelskie;PL0601;Aglomeracja Lubelska;LbLubObywate;C6H6;1g;1,8;0,1;25,3;8322;95,0;1,0
+2017;lubelskie;PL0602;strefa lubelska;LbBiaPodOrze;C6H6;24g;1,8;0,2;9,4;184;50,4;1,0
+2017;lubelskie;PL0602;strefa lubelska;LbZamoHrubie;C6H6;1g;1,8;0,1;26,0;8508;97,1;1,0
+2017;lubuskie;PL0801;miasto Gorzów Wielkopolski;LuGorzKosGdy;C6H6;1g;0,7;0,0;47,7;7896;90,1;1,2
+2017;lubuskie;PL0802;miasto Zielona Góra;LuZielKrotka;C6H6;1g;0,7;0,0;7,7;8311;94,9;1,1
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzGdansk;C6H6;1g;0,7;0,1;9,2;6252;71,4;1,2
+2017;łódzkie;PL1001;Aglomeracja Łódzka;LdLodzJanPaw;C6H6;1g;0,8;0,0;13,0;8484;96,8;1,0
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakAlKras;C6H6;1g;2,3;0,1;29,1;7940;90,6;1,1
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBujaka;C6H6;24g;2,5;0,2;30,2;149;40,8;1,3
+2017;małopolskie;PL1201;Aglomeracja Krakowska;MpKrakBulwar;C6H6;1g;2,0;0,1;21,7;7463;85,2;0,9
+2017;małopolskie;PL1202;miasto Tarnów;MpTarRoSitko;C6H6;24g;2,3;0,4;12,0;132;36,2;1,0
+2017;małopolskie;PL1203;strefa małopolska;MpTrzebOsZWM;C6H6;1g;2,2;0,2;17,6;7736;88,3;1,2
+2017;mazowieckie;PL1401;Aglomeracja Warszawska;MzWarAlNiepo;C6H6;1g;1,5;0,1;24,0;8600;98,2;1,0
+2017;mazowieckie;PL1402;miasto Płock;MzPlocKroJad;C6H6;1g;1,0;0,0;26,8;8716;99,5;1,0
+2017;mazowieckie;PL1402;miasto Płock;MzPlocMiReja;C6H6;1g;1,2;0,1;29,8;8714;99,5;1,0
+2017;mazowieckie;PL1403;miasto Radom;MzRadTochter;C6H6;1g;1,2;0,0;13,1;8296;94,7;1,1
+2017;mazowieckie;PL1404;strefa mazowiecka;MzKonJezMos;C6H6;1g;1,5;0,0;23,1;7592;86,7;1,2
+2017;opolskie;PL1602;strefa opolska;OpKKozBSmial;C6H6;1g;3,5;0,0;174,0;8645;98,7;1,0
+2017;opolskie;PL1602;strefa opolska;OpZdziePiast;C6H6;1g;3,4;0,0;280,9;8178;93,4;1,1
+2017;podkarpackie;PL1801;miasto Rzeszów;PkRzeszRejta;C6H6;1g;1,5;0,0;30,7;8347;95,3;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkMielBierna;C6H6;1g;1,6;0,0;38,1;8330;95,1;1,0
+2017;podkarpackie;PL1802;strefa podkarpacka;PkPrzemGrunw;C6H6;1g;1,3;0,0;22,4;8134;92,9;1,1
+2017;podlaskie;PL2001;Aglomeracja Białostocka;PdBialWaszyn;C6H6;24g;0,6;0,3;1,4;55;15,1;1,0
+2017;pomorskie;PL2201;Aglomeracja Trójmiejska;PmGdaKacze02;C6H6;1g;0,9;0,0;11,5;8727;99,6;1,0
+2017;pomorskie;PL2202;strefa pomorska;PmKosTargo12;C6H6;1g;2,9;0,1;44,0;8321;95,0;1,1
+2017;pomorskie;PL2202;strefa pomorska;PmLebMalcz16;C6H6;24g;3,1;0,3;22,9;362;99,2;1,0
+2017;pomorskie;PL2202;strefa pomorska;PmLinieKos17;C6H6;24g;1,4;0,3;13,9;354;97,0;1,0
+2017;pomorskie;PL2202;strefa pomorska;PmMalMicki15;C6H6;24g;2,0;0,3;11,8;362;99,2;1,0
+2017;pomorskie;PL2202;strefa pomorska;PmSlupKniazi;C6H6;1g;0,7;0,0;12,4;2879;32,9;
+2017;pomorskie;PL2202;strefa pomorska;PmStaGdaLubi;C6H6;1g;0,6;0,0;27,2;8200;93,6;1,0
+2017;śląskie;PL2401;Aglomeracja Górnośląska;SlDabro1000L;C6H6;1g;1,7;0,0;25,7;8437;96,3;1,1
+2017;śląskie;PL2402;Aglomeracja Rybnicko-Jastrzębska;SlRybniBorki;C6H6;1g;3,2;0,0;49,2;8708;99,4;1,0
+2017;śląskie;PL2404;miasto Częstochowa;SlCzestoBacz;C6H6;1g;1,6;0,0;56,9;8033;91,7;1,0
+2017;śląskie;PL2405;strefa śląska;SlCzerKopaln;C6H6;1g;4,4;0,0;100,1;7986;91,2;1,0
+2017;śląskie;PL2405;strefa śląska;SlZlotPotLes;C6H6;1g;1,1;0,0;11,7;8620;98,4;1,0
+2017;świętokrzyskie;PL2601;miasto Kielce;SkKielJagiel;C6H6;1g;1,2;0,0;17,6;8534;97,4;1,0
+2017;warmińsko-mazurskie;PL2801;miasto Olsztyn;WmOlsPuszkin;C6H6;1g;1,0;0,0;12,2;8280;94,5;1,0
+2017;warmińsko-mazurskie;PL2802;miasto Elbląg;WmElbBazynsk;C6H6;1g;1,2;0,1;8,9;8544;97,5;1,0
+2017;wielkopolskie;PL3001;Aglomeracja Poznańska;WpPoznDabrow;C6H6;1g;1,4;0,0;17,3;7330;83,7;1,0
+2017;wielkopolskie;PL3003;strefa wielkopolska;WpBoroDrapal;C6H6;1g;0,8;0,0;15,6;8140;92,9;1,1
+2017;zachodniopomorskie;PL3201;Aglomeracja Szczecińska;ZpSzczPils02;C6H6;1g;0,9;0,0;10,4;8504;97,1;1,1

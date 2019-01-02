@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<title>Praca domowa 9</title>
+	<style type="text/css">
+		.knitr .inline {
+		  background-color: #f7f7f7;
+		  border:solid 1px #B0B0B0;
+		}
+		.error {
+			font-weight: bold;
+			color: #FF0000;
+		}
+		.warning {
+			font-weight: bold;
+		}
+		.message {
+			font-style: italic;
+		}
+		.source, .output, .warning, .error, .message {
+			padding: 0 1em;
+		  border:solid 1px #F7F7F7;
+		}
+		.source {
+		  background-color: #f5f5f5;
+		}
+		.rimage .left {
+		  text-align: left;
+		}
+		.rimage .right {
+		  text-align: right;
+		}
+		.rimage .center {
+		  text-align: center;
+		}
+		.hl.num {
+		  color: #AF0F91;
+		}
+		.hl.str {
+		  color: #317ECC;
+		}
+		.hl.com {
+		  color: #AD95AF;
+		  font-style: italic;
+		}
+		.hl.opt {
+		  color: #000000;
+		}
+		.hl.std {
+		  color: #585858;
+		}
+		.hl.kwa {
+		  color: #295F94;
+		  font-weight: bold;
+		}
+		.hl.kwb {
+		  color: #B05A65;
+		}
+		.hl.kwc {
+		  color: #55aa55;
+		}
+		.hl.kwd {
+		  color: #BC5A65;
+		  font-weight: bold;
+		}
+		body {
+		  font-family: "Arial Black", Gadget, sans-serif;
+		}
+		div#layout {
+		  text-align: center;
+		}
+		div#container {
+		  width: 1400px;
+		  height: 840px;
+		  margin: auto;
+		  background-color: #fefdfb;
+		}
+		svg {
+		  width: 100%;
+		  height: 100%;
+		}
+		.bar {
+		  fill: #85c1cc;
+		}
+		text {
+		  font-size: 11px;
+		  fill: #2f2f2e;
+		}
+		path {
+		  stroke: gray;
+		}
+		line {
+		  stroke: gray;
+		}
+		line#limit {
+		  stroke: #2f2f2e;
+		  stroke-width: 1;
+		  stroke-dasharray: 8 3;
+		}
+		.grid path {
+		  stroke-width: 0;
+		}
+
+		.grid .tick line {
+		  stroke: #2f2f2e;
+		  stroke-opacity: 0.3;
+		}
+		text.divergence {
+		  font-size: 14px;
+		  fill: #2f2f2e;
+		}
+		text.value {
+		  font-size: 14px;
+		}
+		text.title {
+		  font-size: 22px;
+		  font-weight: 600;
+		}
+		text.label {
+		  font-size: 14px;
+		  font-weight: 400;
+		}
+		text.source {
+		  font-size: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id='layout'>
+		<h1>Techniki wizualizacji danych - Praca domowa 9 </h1>
+		<h3>Anna Kozak</h3>
+		Korzystając ze zbioru danych o smokach przygotowałam wykres przedstawiający liczbę urodzonych smoków w poszczególnych stuleciach. Wykonałam interaktywny wykres słupowy wraz z linią pokazującą zależność dla danego stulecia od pozostałych. 
+		<div id='container'>
+			<svg />
+		</div>
+	</div>
+</body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script type='text/javascript'>
+    const sample = [
+		{
+			century: 'XX p.n.e.',
+			value: 50
+		},
+ 		{
+     		century: 'XIX p.n.e.',
+     		value: 38
+     	},
+     	{
+     		century: 'XVIII p.n.e.',
+     		value: 55
+     	},
+     	{
+     		century: 'XVII p.n.e.',
+     		value: 52
+     	},
+     	{
+     		century: 'XVI p.n.e.',
+     		value: 54
+     	},
+     	{
+     		century: 'XV p.n.e.',
+     		value: 53
+     	},
+     	{
+     		century: 'XIV p.n.e.',
+     		value: 59
+     	},
+     	{
+     		century: 'XIII p.n.e.',
+     		value: 44
+     	},
+     	{
+     		century: 'XII p.n.e.',
+     		value: 52
+     	},
+     	{
+     		century: 'XI p.n.e.',
+     		value: 50
+     	},
+     	{
+     		century: 'X p.n.e.',
+     		value: 65
+     	},
+     	{
+     		century: 'IX p.n.e.',
+     		value: 62
+     	},
+     	{
+     		century: 'VIII p.n.e.',
+     		value: 57
+     	},
+     	{
+     		century: 'VII p.n.e.',
+     		value: 48
+     	},
+     	{
+     		century: 'VI p.n.e.',
+     		value: 54
+     	},
+     	{
+    		century: 'V p.n.e.',
+     		value: 43
+     	},
+     	{
+     		century: 'IV p.n.e.',
+     		value: 43
+     	},
+     	{
+     		century: 'III p.n.e.',
+     		value: 59
+     	},
+     	{
+     		century: 'II p.n.e.',
+     		value: 41
+     	},
+     	{
+     		century: 'I p.n.e.',
+     		value: 60
+    	},
+     	{
+     		century: 'I n.e.',
+     		value: 55
+    	},
+    	{
+     		century: 'II n.e.',
+     		value: 45
+    	},
+     	{
+     		century: 'III n.e.',
+     		value: 46
+     	},    
+     	{
+     		century: 'IV n.e.',
+     		value: 51
+     	},
+     	{
+     		century: 'V n.e.',
+     		value: 52
+     	},
+     	{
+     		century: 'VI n.e.',
+     		value: 54
+     	},
+     	{
+     		century: 'VII n.e.',
+     		value: 51
+     	},
+     	{
+     		century: 'VIII n.e.',
+     		value: 74
+     	},
+     	{
+     		century: 'IX n.e.',
+     		value: 55
+     	},
+     	{
+     		century: 'X n.e.',
+     		value: 44
+     	},
+     	{
+     		century: 'XI n.e.',
+     		value: 54
+     	},
+     	{
+     		century: 'XII n.e.',
+     		value: 53
+     	},
+     	{
+     		century: 'XIII n.e.',
+     		value: 59
+     	},
+     	{
+     		century: 'XIV n.e.',
+     		value: 45
+     	},
+     	{
+     		century: 'XV n.e.',
+     		value: 61
+     	},
+     	{
+     		century: 'XVI n.e.',
+     		value: 62
+     	},
+     	{
+     		century: 'XVII n.e.',
+     		value: 46
+     	},
+     	{	
+     		century: 'XVIII n.e.',
+     		value: 52
+     	}
+    ];
+    const svg = d3.select('svg');
+    const svgContainer = d3.select('#container');
+    const margin = 80;
+    const width = 1400 - 2 * margin;
+    const height = 840 - 2 * margin;
+    const chart = svg.append('g')
+      .attr('transform', `translate(${margin}, ${margin})`);
+    const xScale = d3.scaleBand()
+      .range([0, width])
+      .domain(sample.map((s) => s.century))
+      .padding(0.3)
+    const yScale = d3.scaleLinear()
+      .range([height, 0])
+      .domain([0, 80]);
+     const makeYLines = () => d3.axisLeft()
+      .scale(yScale)
+    chart.append('g')
+		.attr('transform', `translate(0, ${height})`)
+		.call(d3.axisBottom(xScale)).selectAll("text")
+    	.attr("y", 0)
+		.attr("x", 9)
+		.attr("dy", ".35em")
+		.attr("transform", "rotate(90)")
+		.style("text-anchor", "start");
+    chart.append('g')
+      .call(d3.axisLeft(yScale));
+    chart.append('g')
+      .attr('class', 'grid')
+      .call(makeYLines()
+        .tickSize(-width, 0, 0)
+        .tickFormat('')
+      )
+    const barGroups = chart.selectAll()
+      .data(sample)
+      .enter()
+      .append('g')
+    barGroups
+      .append('rect')
+      .attr('class', 'bar')
+      .attr('x', (g) => xScale(g.century))
+      .attr('y', (g) => yScale(g.value))
+      .attr('height', (g) => height - yScale(g.value))
+      .attr('width', xScale.bandwidth())
+      .on('mouseenter', function (actual, i) {
+        d3.selectAll('.value')
+          .attr('opacity', 0)
+        d3.select(this)
+          .transition()
+          .duration(300)
+          .attr('opacity', 0.6)
+          .attr('x', (a) => xScale(a.century) - 5)
+          .attr('width', xScale.bandwidth() + 10)
+        const y = yScale(actual.value)
+        line = chart.append('line')
+          .attr('id', 'limit')
+          .attr('x1', 0)
+          .attr('y1', y)
+          .attr('x2', width)
+          .attr('y2', y)
+        barGroups.append('text')
+          .attr('class', 'divergence')
+          .attr('x', (a) => xScale(a.century) + xScale.bandwidth() / 2)
+          .attr('y', (a) => yScale(a.value) + 30)
+          .attr('fill', 'white')
+          .attr('text-anchor', 'middle')
+          .text((a, idx) => {
+            const divergence = Math.floor(a.value - actual.value);
+            let text = '';
+            if (divergence > 0) text += '+';
+            text += `${divergence}`;
+            return idx !== i ? text : '';
+          })
+
+      })
+      .on('mouseleave', function () {
+        d3.selectAll('.value')
+          .attr('opacity', 1)
+        d3.select(this)
+          .transition()
+          .duration(300)
+          .attr('opacity', 1)
+          .attr('x', (a) => xScale(a.century))
+          .attr('width', xScale.bandwidth())
+        chart.selectAll('#limit').remove()
+        chart.selectAll('.divergence').remove()
+      })
+    barGroups 
+      .append('text')
+      .attr('class', 'value')
+      .attr('x', (a) => xScale(a.century) + xScale.bandwidth() / 2)
+      .attr('y', (a) => yScale(a.value) + 30)
+      .attr('text-anchor', 'middle')
+      .text((a) => `${a.value}`)
+    svg
+      .append('text')
+      .attr('class', 'label')
+      .attr('x', -(height / 2) - margin)
+      .attr('y', margin / 2.4)
+      .attr('transform', 'rotate(-90)')
+      .attr('text-anchor', 'middle')
+      .text('Liczba urodzonych smoków')
+    svg.append('text')
+      .attr('class', 'label')
+      .attr('x', width / 2 + margin)
+      .attr('y', height + margin * 1.9)
+      .attr('text-anchor', 'middle')
+      .text('Stulecie')
+    svg.append('text')
+      .attr('class', 'title')
+      .attr('x', width / 2 + margin)
+      .attr('y', 40)
+      .attr('text-anchor', 'middle')
+      .text('Liczba smoków urodzonych w poszczególnych stuleciach')
+</script>
+</html>
