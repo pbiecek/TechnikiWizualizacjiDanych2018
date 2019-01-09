@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>D3 - chart</title>
+
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <style type="text/css">
+  svg {
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+  }
+ 
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+  }
+ 
+  path.domain {
+    stroke: none;
+  }
+ 
+  .y .tick line {
+    stroke: #ddd;
+  }
+
+  div#layout {
+		  text-align: center;
+		}
+        .rimage .center {
+		  text-align: center;
+		}
+  svg {
+    display: block;
+    margin: 0 auto;
+}
+  </style>
+ 
+</head>
+<body>
+<center>
+    <h1>
+        Rafał Kobiela
+    </h1>
+    <h2>
+        Praca domowa numer 9 - D3
+    </h2>
+    
+    <h3>
+        Na wykresie przedstawiona została populacja odkrytych smoków z podziałem na kolory w danym stuleciu. Po najechaniu na dany kolor na słupku pokazuje nam się okienko informujące o danej liczbie.     
+    </h3>
+
+</center>
+
+<script type="text/javascript">
+ 
+var margin = {top: 50, right: 160, bottom: 100, left: 30};
+ 
+var width = 1400 - margin.left - margin.right,
+    height = 550 - margin.top - margin.bottom;
+ 
+var svg = d3.select("body")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+ 
+var data = [
+{ year: "2000 - 1901 p.n.e.", Czerwone: "23", Niebieskie: "18", Zielone: "6", Czarne: "2"},
+{ year: "1900 - 1801 p.n.e.", Czerwone: "16", Niebieskie: "16", Zielone: "8", Czarne: "0"},
+{ year: "1800 - 1701 p.n.e.", Czerwone: "25", Niebieskie: "16", Zielone: "13", Czarne: "1"},
+{ year: "1700 - 1601 p.n.e.", Czerwone: "27", Niebieskie: "17", Zielone: "6", Czarne: "0"},
+{ year: "1600 - 1501 p.n.e.", Czerwone: "29", Niebieskie: "11", Zielone: "14", Czarne: "2"},
+{ year: "1500 - 1401 p.n.e.", Czerwone: "32", Niebieskie: "14", Zielone: "5", Czarne: "0"},
+{ year: "1400 - 1301 p.n.e.", Czerwone: "34", Niebieskie: "17", Zielone: "8", Czarne: "1"},
+{ year: "1300 - 1201 p.n.e.", Czerwone: "28", Niebieskie: "11", Zielone: "4", Czarne: "1"},
+{ year: "1200 - 1101 p.n.e.", Czerwone: "30", Niebieskie: "13", Zielone: "7", Czarne: "1"},
+{ year: "1100 - 1001 p.n.e.", Czerwone: "27", Niebieskie: "12", Zielone: "11", Czarne: "0"},
+{ year: "1000 - 901 p.n.e.", Czerwone: "33", Niebieskie: "18", Zielone: "12", Czarne: "1"},
+{ year: "900 - 801 p.n.e.", Czerwone: "34", Niebieskie: "13", Zielone: "14", Czarne: "3"},
+{ year: "800 - 701 p.n.e.", Czerwone: "38", Niebieskie: "16", Zielone: "4", Czarne: "0"},
+{ year: "700 - 601 p.n.e.", Czerwone: "25", Niebieskie: "13", Zielone: "9", Czarne: "0"},
+{ year: "600 - 501 p.n.e.", Czerwone: "28", Niebieskie: "18", Zielone: "6", Czarne: "2"},
+{ year: "500 - 401 p.n.e.", Czerwone: "20", Niebieskie: "12", Zielone: "9", Czarne: "1"},
+{ year: "400 - 301 p.n.e.", Czerwone: "16", Niebieskie: "19", Zielone: "9", Czarne: "0"},
+{ year: "300 - 201 p.n.e.", Czerwone: "29", Niebieskie: "19", Zielone: "11", Czarne: "0"},
+{ year: "200 - 101 p.n.e.", Czerwone: "21", Niebieskie: "9", Zielone: "10", Czarne: "1"},
+{ year: "100 - 1 p.n.e.", Czerwone: "27", Niebieskie: "22", Zielone: "9", Czarne: "3"},
+{ year: "0 - 99 n.e.", Czerwone: "29", Niebieskie: "15", Zielone: "11", Czarne: "0"},
+{ year: "100 - 199 n.e.", Czerwone: "17", Niebieskie: "15", Zielone: "13", Czarne: "0"},
+{ year: "200 - 299 n.e.", Czerwone: "22", Niebieskie: "14", Zielone: "10", Czarne: "0"},
+{ year: "300 - 399 n.e.", Czerwone: "25", Niebieskie: "16", Zielone: "8", Czarne: "2"},
+{ year: "400 - 499 n.e.", Czerwone: "25", Niebieskie: "15", Zielone: "12", Czarne: "0"},
+{ year: "500 - 599 n.e.", Czerwone: "29", Niebieskie: "13", Zielone: "11", Czarne: "1"},
+{ year: "600 - 699 n.e.", Czerwone: "24", Niebieskie: "14", Zielone: "13", Czarne: "0"},
+{ year: "700 - 799 n.e.", Czerwone: "35", Niebieskie: "22", Zielone: "17", Czarne: "0"},
+{ year: "800 - 899 n.e.", Czerwone: "31", Niebieskie: "18", Zielone: "5", Czarne: "1"},
+{ year: "900 - 999 n.e.", Czerwone: "22", Niebieskie: "16", Zielone: "6", Czarne: "0"},
+{ year: "1000 - 1099 n.e.", Czerwone: "23", Niebieskie: "18", Zielone: "13", Czarne: "0"},
+{ year: "1100 - 1199 n.e.", Czerwone: "26", Niebieskie: "17", Zielone: "10", Czarne: "0"},
+{ year: "1200 - 1299 n.e.", Czerwone: "36", Niebieskie: "13", Zielone: "10", Czarne: "0"},
+{ year: "1300 - 1399 n.e.", Czerwone: "24", Niebieskie: "11", Zielone: "9", Czarne: "1"},
+{ year: "1400 - 1499 n.e.", Czerwone: "30", Niebieskie: "18", Zielone: "12", Czarne: "1"},
+{ year: "1500 - 1599 n.e.", Czerwone: "34", Niebieskie: "11", Zielone: "16", Czarne: "1"},
+{ year: "1600 - 1699 n.e.", Czerwone: "26", Niebieskie: "10", Zielone: "9", Czarne: "1"},
+{ year: "1700 - 1799 n.e.", Czerwone: "26", Niebieskie: "16", Zielone: "10", Czarne: "0"},
+{ year: "1800 - 1899 n.e.", Czerwone: "1", Niebieskie: "0", Zielone: "0", Czarne: "0"}
+
+
+];
+ 
+var parse = d3.time.format("%Y").parse;
+  
+ 
+var dataset = d3.layout.stack()(["Czerwone", "Niebieskie", "Zielone", "Czarne"].map(function(fruit) {
+  return data.map(function(d) {
+    return {x: d.year, y: +d[fruit]};
+  });
+}));
+ 
+ 
+ 
+// Set x, y and colors
+var x = d3.scale.ordinal()
+  .domain(dataset[0].map(function(d) { return d.x; }))
+  .rangeRoundBands([10, width-10], 0.02);
+ 
+var y = d3.scale.linear()
+  .domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; });  })])
+  .range([height, 0]);
+ 
+ 
+ 
+var colors = ["#b71f1f", "#25a335", "#272ef4", "#5b5b5b"];
+ 
+
+var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left")
+  .ticks(10)
+  .tickSize(-width, 0, 0)
+  .tickFormat( function(d) { return d } );
+ 
+var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom")
+ 
+svg.append("g")
+  .attr("class", "y axis")
+  .call(yAxis);
+ 
+
+
+svg.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(xAxis)  .selectAll("text")	
+  .style("text-anchor", "end")
+  .attr("dx", "-.8em")
+  .attr("dy", ".15em")
+  .attr("transform", function(d) {
+      return "rotate(-65)" 
+      });
+ 
+var groups = svg.selectAll("g.cost")
+  .data(dataset)
+  .enter().append("g")
+  .attr("class", "cost")
+  .style("fill", function(d, i) { return colors[i]; });
+ 
+var rect = groups.selectAll("rect")
+  .data(function(d) { return d; })
+  .enter()
+  .append("rect")
+  .attr("x", function(d) { return x(d.x); })
+  .attr("y", function(d) { return y(d.y0 + d.y); })
+  .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+  .attr("width", x.rangeBand())
+  .on("mouseover", function() { tooltip.style("display", null); })
+  .on("mouseout", function() { tooltip.style("display", "none"); })
+  .on("mousemove", function(d) {
+    var xPosition = d3.mouse(this)[0] - 15;
+    var yPosition = d3.mouse(this)[1] - 25;
+    tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
+    tooltip.select("text").text(d.y);
+  });
+ 
+
+
+
+var legend = svg.selectAll(".legend")
+  .data(colors)
+  .enter().append("g")
+  .attr("class", "legend")
+  .attr("transform", function(d, i) { return "translate(30," + i * 19 + ")"; });
+ 
+legend.append("rect")
+  .attr("x", width - 18)
+  .attr("width", 18)
+  .attr("height", 18)
+  .style("fill", function(d, i) {return colors.slice().reverse()[i];});
+ 
+legend.append("text")
+  .attr("x", width + 5)
+  .attr("y", 9)
+  .attr("dy", ".35em")
+  .style("text-anchor", "start")
+  .text(function(d, i) {
+    switch (i) {
+      case 0: return "Czarny";
+      case 1: return "Niebieski";
+      case 2: return "Zielony";
+      case 3: return "Czerwony";
+    }
+  });
+ 
+ 
+var tooltip = svg.append("g")
+  .attr("class", "tooltip")
+  .style("display", "none");
+   
+tooltip.append("rect")
+  .attr("width", 30)
+  .attr("height", 20)
+  .attr("fill", "white")
+  .style("opacity", 0.5);
+ 
+tooltip.append("text")
+  .attr("x", 15)
+  .attr("dy", "1.2em")
+  .style("text-anchor", "middle")
+  .attr("font-size", "12px")
+  .attr("font-weight", "bold");
+ 
+  svg.append('text')
+      .attr('class', 'title')
+      .attr('x', 630)
+      .attr('y', -20)
+      .attr('font-size', 20)
+      .attr('text-anchor', 'middle')
+      .text('Liczba smoków urodzonych w poszczególnych latach')
+
+    svg.append('text')
+      .attr('class', 'label')
+      .attr('x', 630)
+      .attr('y', 500)
+      .attr('font-size', 15)
+      .attr('text-anchor', 'middle')
+      .text('Lata')
+    
+    svg.append('text')
+      .attr('class', 'label')
+      .attr('x', -220)
+      .attr('y', -20)
+      .attr('font-size', 15)
+      .attr('transform', 'rotate(-90)')
+      .attr('text-anchor', 'middle')
+      .text('Liczba urodzonych smoków')
+
+    svg.append('text')
+      .attr('class', 'label')
+      .attr('x', 1263)
+      .attr('y', -10)
+      .attr('font-size', 15)
+      .attr('text-anchor', 'middle')
+      .text('Kolor smoka')
+
+</script>
+</body>
+</html>
