@@ -1,0 +1,4 @@
+Tworząc choinkę, chciałem zostać w otoczeniu prezentacji danych w przeciwieństwie do generowanie jej od zera z wielokątów. Znalazłem przykładowy wykres na stronie i postanowiłem tylko lekko go przerobić, aby już zaczął przypominać kształtem choinkę. Wykres jest dostępny pod linkiem: 
+https://vega.github.io/vega-lite/examples/stacked_area_stream.html
+Ostatecznie podpisy w legendzie zamieniłem na bombki i łańcuchy przy użyciu Inkscape'a, żeby zmaksymalizować obecny tutaj "recykling" danych.
+Niestety choinka jest w pliku .png, ponieważ z jakiegoś powodu pakiet vegalite nie współpracował z eksportem do grafiki wektorowej.
