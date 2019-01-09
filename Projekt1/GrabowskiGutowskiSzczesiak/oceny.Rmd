@@ -1,0 +1,80 @@
+---
+title: "TWD projekt 1"
+author: "Andrzej Szczesiak"
+output:  pdf_document
+papersize: a2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(dev='cairo_pdf')
+library(ggplot2)
+library(scales)
+library(gridSVG)
+```
+
+### IMDb
+
+```{r, echo=FALSE, warning=FALSE}
+ratings_lotr <- data.frame(rating = rep(1:10, 4), 
+                           movie_title = rep(c("Drużyna pierścienia", "Dwie wieże", "Powrót króla", "Władca Pierścieni"), each = 10),
+                           type = as.factor(rep(1, 40)),
+                           percentage = c(1.8, 0.4, 0.5, 0.7, 1.4, 2.8, 7.9, 18.8, 27.6, 38.3, 
+                                          1.5, 0.4, 0.5, 0.6, 1.4, 3.0, 8.7, 20.7, 28.2, 35, 
+                                          1.9, 0.4, 0.5, 0.7, 1.3, 2.7, 7.1, 16.2, 26.2, 43.1, 
+                                          round((c(1.8, 0.4, 0.5, 0.7, 1.4, 2.8, 7.9, 18.8, 27.6, 38.3) + 
+                                           c(1.5, 0.4, 0.5, 0.6, 1.4, 3.0, 8.7, 20.7, 28.2, 35) + 
+                                           c(1.9, 0.4, 0.5, 0.7, 1.3, 2.7, 7.1, 16.2, 26.2, 43.1)) / 3, 2)), 
+                           facet_title = factor(rep(c("Drużyna pierścienia", "Dwie wieże", "Powrót króla", "Władca Pierścieni"), each = 10), 
+                                                levels = c("Powrót króla", "Dwie wieże", "Drużyna pierścienia", "Władca Pierścieni")))
+
+ratings_hobbit <- data.frame(rating = rep(1:10, 4), 
+                           movie_title = rep(c("Niezwykła podróż", "Pustkowie Smauga", "Bitwa Pięciu Armii", "Hobbit"), each = 10), 
+                           type = as.factor(rep(2, 40)),
+                           percentage = c(1, 0.4, 0.7, 1.2, 3.0, 7.8, 18.4, 28.5, 19.2, 19.7,  
+                                          0.9, 0.4, 0.7, 1.3, 3.0, 7.7, 18.8, 29.6, 19.1, 18.4, 
+                                          1.1, 0.6, 1.2, 2.3, 5.2, 11.9, 23.7, 25.8, 13.1, 15.2, 
+                                          round((c(1, 0.4, 0.7, 1.2, 3.0, 7.8, 18.4, 28.5, 19.2, 19.7) + 
+                                           c(0.9, 0.4, 0.7, 1.3, 3.0, 7.7, 18.8, 29.6, 19.1, 18.4) + 
+                                           c(1.1, 0.6, 1.2, 2.3, 5.2, 11.9, 23.7, 25.8, 13.1, 15.2)) / 3, 2)),
+                           facet_title = factor(rep(c("Niezwykła podróż", "Pustkowie Smauga", "Bitwa Pięciu Armii", "Hobbit"), each = 10), 
+                                                levels = c("Hobbit", "Niezwykła podróż", "Pustkowie Smauga", "Bitwa Pięciu Armii")))
+
+ratings_summary  <- data.frame(rating = rep(1:10, 2), 
+                           movie_title = rep(c("Władca Pierścieni", "Hobbit"), each = 10), 
+                           type = as.factor(rep(c(1, 2), each = 10)),
+                           percentage = c((ratings_lotr$percentage[1:10] + ratings_lotr$percentage[11:20] + ratings_lotr$percentage[21:30]) / 3, 
+                                          (ratings_hobbit$percentage[1:10] + ratings_hobbit$percentage[11:20] + ratings_hobbit$percentage[21:30]) / 3),
+                           facet_title = "Łącznie")
+
+ratings <- rbind(ratings_lotr, ratings_summary, ratings_hobbit)
+ratings$type = as.factor(ratings$type)
+```
+
+```{r, echo=FALSE, warning=FALSE, fig_width = 6}
+svg("oceny_lotr.svg", height = 4, width = 6.5)
+ggplot(ratings_lotr, aes(x = rating, y = -percentage)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  geom_text(aes(label = paste(percentage, "%")), size = 2.2, hjust = 1.1) +
+  scale_x_continuous(breaks = pretty(ratings_lotr$rating, n = 10)) +
+  scale_y_continuous(labels = abs, limits = c(-max(ratings$percentage) - 8, 0)) +
+  labs(x = "Ocena", y = "") + 
+  coord_flip() + 
+  facet_grid(. ~ facet_title) 
+  # + theme_light()
+dev.off()
+```
+
+```{r, echo=FALSE, warning=FALSE, fig_width = 6}
+svg("oceny_hobbit.svg", height = 4, width = 6.5)
+ggplot(ratings_hobbit, aes(x = rating, y = percentage)) +
+  geom_bar(stat = "identity", fill = "red") + 
+  geom_text(aes(label = paste(percentage, "%")), size = 2.2, hjust = -0.2) +
+  scale_x_continuous(breaks = pretty(ratings_hobbit$rating, n = 10), position = "top") +
+  scale_y_continuous(labels = abs, limits = c(0, max(ratings$percentage))) +
+  labs(x = "Ocena", y = "") + 
+  coord_flip() + 
+  facet_grid(. ~ facet_title) 
+  # +   theme_light()
+dev.off()
+```
