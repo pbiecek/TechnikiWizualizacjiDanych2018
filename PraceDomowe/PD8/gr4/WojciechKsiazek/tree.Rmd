@@ -1,0 +1,50 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(gganimate)
+```
+
+```{r}
+tree <- data_frame(x=seq(0, 32 * pi, by = 0.1)) %>% 
+  mutate(y = x * sin(x))
+
+lights <- 
+  data_frame(x = runif(1500, min = 0, max = 100),
+             y = runif(1500, min = -100, max = 100)) %>% 
+  filter(y >= -abs(x) & y <= abs(x)) %>% 
+  slice(1:500) %>% 
+  mutate(color = sample(rainbow(5), size = 500, replace = TRUE),
+         fill = sample(rainbow(5), size = 500, replace = TRUE))
+
+
+christmas_tree <-
+tree %>% 
+ggplot() + 
+  geom_line(color = "green", aes(-x, y)) + 
+  geom_line(color = "green", aes(-x, -y), inherit.aes = FALSE) + 
+  geom_point(data = lights, aes(-x, y, fill = fill, color = color), size = 5, shape = 21, inherit.aes = FALSE) +
+  geom_point(data = data_frame(x = 0, y = 0), aes(x, y), shape = 42, size = 20, color = "yellow",inherit.aes = FALSE) +
+  geom_rect(data = data_frame(xmin = -101, xmax = -110.5, ymin = -10, ymax = 10),
+            aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+            color = "brown",
+            fill = "brown",
+            inherit.aes = FALSE) +
+   coord_flip() +
+  theme_void() +
+  theme(legend.position = "none", panel.background = element_rect(fill = "navy"))+
+  transition_states(color, transition_length = 1) +
+  enter_fade() +
+  exit_fade() +
+  ease_aes('sine-in-out')
+
+
+anim <- animate(christmas_tree, renderer = magick_renderer())
+
+magick::image_write(anim, "tree.gif")
+```
+ 
+ 
