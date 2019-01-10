@@ -20,7 +20,7 @@ div.tooltip {
   position: absolute;
   text-align: center;
   width: 100px;
-  height: 28px;
+  height: 40px;
   padding: 2px;
   font: 12px sans-serif;
   background: lightsteelblue;
@@ -91,7 +91,8 @@ d3.csv("countries_d3.csv", function(error, data) {
        div.transition()
          .duration(200)
          .style("opacity", .9);
-       div.html("Birth rate:" + d.birthRate + "<br/>Death rate:" + d.deathRate)
+       div.html(d.country + "<br/>Birth rate:" + d.birthRate + "<br/>Death rate:" 
+       +d.deathRate )
          .style("left", (d3.event.pageX) + "px")
          .style("top", (d3.event.pageY - 28) + "px");
        })
