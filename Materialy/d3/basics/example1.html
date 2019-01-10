@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Podstawy d3</title>
+    <meta charset="utf-8">
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+  </head>
+  <body>
+  
+  <h1>Co robi d3?</h1>
+  <p>d3 modyfikuje wygląd każdego elementu strony, w tym grafik SVG</p>
+    
+    <script>
+    d3.select('h1')
+      .style('color', 'red');
+    d3.select('p')
+       .style('font-size', '18px')
+       .style('color', 'blue');
+       
+    d3.select('body')
+      .append('svg')
+      .attr('height', 500)
+      .attr('width', 500)
+      .append('circle')
+      .attr('cx', 50)
+      .attr('cy', 50)
+      .attr('r', 20)
+      .attr('fill', 'green').transition()
+	    .duration(3000)
+	    .delay(2000)
+	    .attr("cx",400)
+	    .attr("cy",150)
+	    .style("fill","orange")
+	    .attr("r",50);;
+    </script>
+
+  
+  <p>Napisz losowe przemieszczenia trzech kółek.</p>
+
+  </body>
+</html>
