@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>D3PD9 - Mateusz Polakowski</title>
+
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<style type="text/css">
+			svg {
+				font: 10px sans-serif;
+				shape-rendering: crispEdges;
+			}
+			.axis path,
+			.axis line {
+				fill: none;
+				strke: #000;
+			}
+		 
+			path.domain {
+				stroke: none;
+			}
+			.y .tick line {
+				stroke: #ddd;
+			}
+		   
+			div#layout {
+				text-align: center;
+			}
+			.rimage .center {
+				text-align: center;
+			}
+			
+			svg {
+				display: block;
+				margin: 0 auto;
+			}	
+		</style>
+
+	</head>
+	<body>
+		<center>
+			<h1>
+				Mateusz Polakowski
+			</h1>
+			<h2>
+				Rozwiązanie pracy domowej nr 9
+			</h2>
+			<h3>
+				Spróbujmy na poniższym wykresie znaleźć zależność między kolorem smoka a jego wysokością. Być może istnieje możliwość, że smoki wyższe są jednocześnie tylko czerwone?
+			</h3>
+		</center>
+
+		<script type="text/javascript">
+			var margin = {top: 50, right: 160, bottom: 100, left: 30};
+			var width = 1400 - margin.left - margin.right, height = 550 - margin.top - margin.bottom;
+		 
+			var svg = d3.select("body")
+				.append("svg")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.top + margin.bottom)
+				.append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			// Dane
+			var data = [{"height":30,"Black":0,"Blue":0,"Green":2,"Red":0},{"height":31,"Black":0,"Blue":1,"Green":0,"Red":0},{"height":32,"Black":0,"Blue":3,"Green":0,"Red":0},{"height":33,"Black":0,"Blue":3,"Green":1,"Red":2},{"height":34,"Black":0,"Blue":1,"Green":1,"Red":1},{"height":35,"Black":0,"Blue":1,"Green":2,"Red":4},{"height":36,"Black":0,"Blue":2,"Green":2,"Red":11},{"height":37,"Black":0,"Blue":7,"Green":3,"Red":7},{"height":38,"Black":0,"Blue":9,"Green":3,"Red":10},{"height":39,"Black":1,"Blue":14,"Green":6,"Red":17},{"height":40,"Black":0,"Blue":9,"Green":4,"Red":23},{"height":41,"Black":2,"Blue":11,"Green":15,"Red":30},{"height":42,"Black":0,"Blue":21,"Green":16,"Red":34},{"height":43,"Black":2,"Blue":24,"Green":9,"Red":44},{"height":44,"Black":1,"Blue":27,"Green":22,"Red":44},{"height":45,"Black":0,"Blue":30,"Green":22,"Red":50},{"height":46,"Black":1,"Blue":29,"Green":10,"Red":46},{"height":47,"Black":4,"Blue":26,"Green":22,"Red":52},{"height":48,"Black":1,"Blue":24,"Green":21,"Red":63},{"height":49,"Black":0,"Blue":38,"Green":29,"Red":59},{"height":50,"Black":1,"Blue":24,"Green":14,"Red":58},{"height":51,"Black":1,"Blue":47,"Green":15,"Red":50},{"height":52,"Black":1,"Blue":27,"Green":20,"Red":53},{"height":53,"Black":2,"Blue":28,"Green":15,"Red":65},{"height":54,"Black":2,"Blue":28,"Green":30,"Red":40},{"height":55,"Black":0,"Blue":17,"Green":14,"Red":48},{"height":56,"Black":1,"Blue":22,"Green":6,"Red":34},{"height":57,"Black":2,"Blue":22,"Green":10,"Red":33},{"height":58,"Black":2,"Blue":11,"Green":16,"Red":21},{"height":59,"Black":0,"Blue":14,"Green":7,"Red":34},{"height":60,"Black":0,"Blue":12,"Green":6,"Red":21},{"height":61,"Black":1,"Blue":9,"Green":8,"Red":18},{"height":62,"Black":2,"Blue":11,"Green":4,"Red":8},{"height":63,"Black":0,"Blue":4,"Green":1,"Red":10},{"height":64,"Black":0,"Blue":2,"Green":5,"Red":7},{"height":65,"Black":0,"Blue":1,"Green":3,"Red":4},{"height":66,"Black":0,"Blue":3,"Green":2,"Red":10},{"height":67,"Black":0,"Blue":5,"Green":2,"Red":4},{"height":68,"Black":0,"Blue":1,"Green":0,"Red":4},{"height":69,"Black":0,"Blue":2,"Green":0,"Red":1},{"height":70,"Black":0,"Blue":4,"Green":0,"Red":2},{"height":71,"Black":0,"Blue":0,"Green":1,"Red":3},{"height":72,"Black":0,"Blue":2,"Green":0,"Red":0},{"height":74,"Black":0,"Blue":0,"Green":1,"Red":0},{"height":76,"Black":0,"Blue":0,"Green":0,"Red":2}] 
+		 
+			var dataset = d3.layout.stack()(["Red", "Green", "Blue", "Black"].map(function(fruit) {
+				return data.map(function(d) {
+					return {x: d.height, y: +d[fruit]};
+				});
+			}));
+			
+			var x = d3.scale.ordinal()
+				.domain(dataset[0].map(function(d) { return d.x; }))
+				.rangeRoundBands([10, width-10], 0.02);
+			
+			var y = d3.scale.linear()
+				.domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; }) + 5;  })])
+				.range([height, 0]);
+		 
+			var colors = ["#991010", "#009900", "#1010bb", "#404040"];
+		 
+			var yAxis = d3.svg.axis()
+				.scale(y)
+				.orient("left")
+				.ticks(10)
+				.tickSize(-width, 0, 0)
+				.tickFormat( function(d) { return d } );
+		 
+			var xAxis = d3.svg.axis()
+				.scale(x)
+				.orient("bottom")
+		 
+			svg.append("g")
+				.attr("class", "y axis")
+				.call(yAxis);
+		 
+			svg.append("g")
+				.attr("class", "x axis")
+				.attr("transform", "translate(0," + height + ")")
+				.call(xAxis)  .selectAll("text")	
+				.style("text-anchor", "end")
+				.attr("dx", ".5em")
+				.attr("dy", ".15em")
+		 
+			var groups = svg.selectAll("g.cost")
+				.data(dataset)
+				.enter().append("g")
+				.attr("class", "cost")
+				.style("fill", function(d, i) { return colors[i]; });
+		 
+			var rect = groups.selectAll("rect")
+				.data(function(d) { return d; })
+				.enter()
+				.append("rect")
+				.attr("x", function(d) { return x(d.x); })
+				.attr("y", function(d) { return y(d.y0 + d.y); })
+				.attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+				.attr("width", x.rangeBand())
+			
+			// Nazwy osi i tytuł wykresu
+			svg.append('text')
+				.attr('class', 'title')
+				.attr('x', 630)
+				.attr('y', -20)
+				.attr('font-size', 20)
+				.attr('text-anchor', 'middle')
+				.text('Kolory smoków w zależności od ich wysokości')
+			
+			svg.append('text')
+				.attr('class', 'label')
+				.attr('x', 630)
+				.attr('y', 445)
+				.attr('font-size', 15)
+				.attr('text-anchor', 'middle')
+				.text('Wysokość smoków')
+			
+			svg.append('text')
+				.attr('class', 'label')
+				.attr('x', -220)
+				.attr('y', -20)
+				.attr('font-size', 15)
+				.attr('transform', 'rotate(-90)')
+				.attr('text-anchor', 'middle')
+				.text('Liczba smoków')
+		</script>
+		<hr>
+		<center>
+		<h3>
+			Jak widać - kolor smoka jest związany raczej z jego popularnością występowania, niż z wysokością.
+		</h3>
+		<h3>
+			Poniżej zamieszczony został wykres analogicznej zależności między kolorem a wagą smoka... z analogicznym rezultatem:
+		</h3>
+		</center>
+		
+		<script type="text/javascript">
+			var margin = {top: 50, right: 160, bottom: 100, left: 30};
+			var width = 1400 - margin.left - margin.right, height = 550 - margin.top - margin.bottom;
+		 
+			var svg = d3.select("body")
+				.append("svg")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.top + margin.bottom)
+				.append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			// Dane
+			var data = [{"height":8,"Black":0,"Blue":3,"Green":2,"Red":0},{"height":9,"Black":0,"Blue":8,"Green":2,"Red":10},{"height":10,"Black":1,"Blue":22,"Green":16,"Red":47},{"height":11,"Black":3,"Blue":69,"Green":41,"Red":97},{"height":12,"Black":6,"Blue":94,"Green":63,"Red":175},{"height":13,"Black":4,"Blue":102,"Green":70,"Red":213},{"height":14,"Black":4,"Blue":111,"Green":70,"Red":181},{"height":15,"Black":6,"Blue":74,"Green":45,"Red":159},{"height":16,"Black":3,"Blue":45,"Green":38,"Red":71},{"height":17,"Black":0,"Blue":23,"Green":13,"Red":41},{"height":18,"Black":0,"Blue":17,"Green":8,"Red":23},{"height":19,"Black":0,"Blue":8,"Green":1,"Red":3},{"height":20,"Black":0,"Blue":0,"Green":1,"Red":3},{"height":21,"Black":0,"Blue":0,"Green":0,"Red":1},{"height":22,"Black":0,"Blue":0,"Green":0,"Red":3}] 
+		 
+			var dataset = d3.layout.stack()(["Red", "Green", "Blue", "Black"].map(function(fruit) {
+				return data.map(function(d) {
+					return {x: d.height, y: +d[fruit]};
+				});
+			}));
+			
+			var x = d3.scale.ordinal()
+				.domain(dataset[0].map(function(d) { return d.x; }))
+				.rangeRoundBands([10, width-10], 0.02);
+			
+			var y = d3.scale.linear()
+				.domain([0, d3.max(dataset, function(d) {  return d3.max(d, function(d) { return d.y0 + d.y; }) + 5;  })])
+				.range([height, 0]);
+		 
+			var colors = ["#991010", "#009900", "#1010bb", "#404040"];
+		 
+			var yAxis = d3.svg.axis()
+				.scale(y)
+				.orient("left")
+				.ticks(10)
+				.tickSize(-width, 0, 0)
+				.tickFormat( function(d) { return d } );
+		 
+			var xAxis = d3.svg.axis()
+				.scale(x)
+				.orient("bottom")
+		 
+			svg.append("g")
+				.attr("class", "y axis")
+				.call(yAxis);
+		 
+			svg.append("g")
+				.attr("class", "x axis")
+				.attr("transform", "translate(0," + height + ")")
+				.call(xAxis)  .selectAll("text")	
+				.style("text-anchor", "end")
+				.attr("dx", ".5em")
+				.attr("dy", ".15em")
+		 
+			var groups = svg.selectAll("g.cost")
+				.data(dataset)
+				.enter().append("g")
+				.attr("class", "cost")
+				.style("fill", function(d, i) { return colors[i]; });
+		 
+			var rect = groups.selectAll("rect")
+				.data(function(d) { return d; })
+				.enter()
+				.append("rect")
+				.attr("x", function(d) { return x(d.x); })
+				.attr("y", function(d) { return y(d.y0 + d.y); })
+				.attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+				.attr("width", x.rangeBand())		 
+			
+			// Nazwy osi i tytuł wykresu
+			svg.append('text')
+				.attr('class', 'title')
+				.attr('x', 630)
+				.attr('y', -20)
+				.attr('font-size', 20)
+				.attr('text-anchor', 'middle')
+				.text('Kolory smoków w zależności od ich wagi')
+			
+			svg.append('text')
+				.attr('class', 'label')
+				.attr('x', 630)
+				.attr('y', 445)
+				.attr('font-size', 15)
+				.attr('text-anchor', 'middle')
+				.text('Waga smoków')
+			
+			svg.append('text')
+				.attr('class', 'label')
+				.attr('x', -220)
+				.attr('y', -21)
+				.attr('font-size', 15)
+				.attr('transform', 'rotate(-90)')
+				.attr('text-anchor', 'middle')
+				.text('Liczba smoków')
+		</script>
+	</body>
+</html>
