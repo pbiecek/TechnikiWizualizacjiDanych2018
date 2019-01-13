@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    body {
+        font: 12px sans-serif;
+        text-align: center;
+    }
+
+    .chart-title {
+        font: 24px sans-serif;
+    }
+
+    .axis text {
+        fill: black;
+    }
+
+    div.tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: lightblue;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+</style>
+
+<body>
+    <h1>Techniki Wizualizacji Danych - PD9</h1>
+    <p>Andrzej Szczesiak</p>
+    <b class="chart-title">Liczba blizn w zależności od długości życia smoka</b><br/>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+        var margin = {
+                top: 20,
+                right: 20,
+                bottom: 30,
+                left: 40
+            },
+            width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        var x = d3.scaleLinear()
+            .range([0, width]);
+        var y = d3.scaleLinear()
+            .range([height, 0]);
+
+        var color = d3.scaleOrdinal()
+            .domain(["red", "green", "black", "blue"])
+            .range(["red", "green", "black", "blue"]);
+        var colorName = d3.scaleOrdinal()
+            .domain(["red", "green", "black", "blue"])
+            .range(["czerwony", "zielony", "czarny", "niebieski"]);
+
+        var xAxis = d3.axisBottom(x);
+        var yAxis = d3.axisLeft(y);
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right + 40)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        d3.csv("dragons.csv", function(error, data) {
+            if (error) throw error;
+
+            data.forEach(function(d) {
+                d.life_length = +d.life_length;
+                d.number_of_lost_teeth = +d.number_of_lost_teeth;
+            });
+
+            var xExtent = d3.extent(data, function(d) {
+                    return d.life_length;
+                }),
+                xRange = xExtent[1] - xExtent[0],
+                yExtent = d3.extent(data, function(d) {
+                    return d.number_of_lost_teeth;
+                }),
+                yRange = yExtent[1] - yExtent[0];
+
+            x.domain([xExtent[0] - (xRange * .05), xExtent[1] + (xRange * .05)]);
+            y.domain([yExtent[0] - (yRange * .05), yExtent[1] + (yRange * .05)]);
+
+            svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis)
+                .append("text")
+                .attr("class", "label")
+                .attr("x", width)
+                .attr("y", -6)
+                .style("text-anchor", "end")
+                .text("Długość życia");
+
+            svg.append("g")
+                .attr("class", "y axis")
+                .call(yAxis)
+                .append("text")
+                .attr("class", "label")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 6)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("Liczba utraconych zębów")
+
+            var div = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
+            svg.selectAll(".dot")
+                .data(data)
+                .enter().append("circle")
+                .attr("class", "dot")
+                .attr("r", 3.5)
+                .attr("cx", function(d) {
+                    return x(d.life_length);
+                })
+                .attr("cy", function(d) {
+                    return y(d.number_of_lost_teeth);
+                })
+                .style("fill", function(d) {
+                    return color(d.colour);
+                })
+                .on("mouseover", function(d) {
+                    div.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    div.html("Kolor: " + colorName(d.colour) + "<br/>" +
+                            "Długość życia: " + d.life_length.toFixed(2) + "<br/>" +
+                            "Liczba utraconych zębów: " + d.number_of_lost_teeth)
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY - 28) + "px");
+                })
+                .on("mouseout", function(d) {
+                    div.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+
+            svg.select(".legend").append("g").append("text")
+                .attr("x", width + 16)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text("Kolor smoka");
+
+            var legend = svg.selectAll(".legend")
+                .data(color.domain())
+                .enter().append("g")
+                .attr("class", "legend")
+                .attr("transform", function(d, i) {
+                    return "translate(0," + i * 20 + ")";
+                });
+
+            legend.append("rect")
+                .attr("x", width + 24)
+                .attr("width", 18)
+                .attr("height", 18)
+                .style("fill", color);
+
+            legend.append("text")
+                .attr("x", width + 16)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text(function(d) {
+                    return colorName(d);
+                });
+        });
+    </script>
+</body>
