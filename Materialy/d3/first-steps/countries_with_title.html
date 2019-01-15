@@ -90,7 +90,7 @@ function concat_data(d) {
       .attr("cy", function(d) { return y(d.deathRate); })
       .style("fill", function(d) { return color(d.continent); })
       .append("title")
-		.html(concat_data);
+		.html(d.country);
 
   var legend = svg.selectAll(".legend")
       .data(color.domain())
