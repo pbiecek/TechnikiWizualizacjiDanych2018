@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Podstawy d3</title>
+    <meta charset="utf-8">
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+  </head>
+  <body>
+  
+  <h1>Co robi d3?</h1>
+  
+  <p>d3 modyfikuje wygląd każdego elementu strony, w tym grafik SVG.</p>
+  
+  <p>1. Wykorzystaj checkbox poniżej, aby zmienić kolor tekstu w tagu p na czerwony.</p>
+  <input type="checkbox" id="d3checkbox">
+  
+    <script>
+    d3.select("#d3checkbox").
+       on("change", update);
+		
+		update();
+
+		function update(){
+		  if(d3.select("#d3checkbox").property("checked")){
+					d3.selectAll('p')
+            .style('color', 'red');
+				} else {
+					d3.selectAll('p')
+            .style('color', 'blue');		
+				}	
+			}
+    </script>
+
+  </body>
+</html>
