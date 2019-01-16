@@ -47,4 +47,4 @@ layout = go.Layout(
 
 data = [spiral.get_trace() for spiral in spirals]
 
-py.plot(go.Figure(data=data, layout=layout), filename='tree')
+py.plot(go.Figure(data=data, layout=layout), filename='tree.html')
