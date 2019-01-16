@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css">
+    text {
+  fill: black;
+  font: 18px sans-serif;
+  text-anchor: start;
+}
+    .title {
+  fill: black;
+  font: 20px sans-serif;
+  text-anchor: middle;
+}
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 60px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;	
+  
+}
+
+    </style>
+</head>
+<body>
+<div class="output">
+<svg width=700, height=400></svg>
+</div>
+<script src='https://d3js.org/d3.v4.min.js'></script>
+<script language="JavaScript"  type="text/javascript">
+window.onload = function(){
+        var svg = d3.select("div.output svg")
+
+	var margin = {top: 40, right: 20, bottom: 30, left: 40},
+    		width = 700 - margin.left - margin.right,
+    		height = 400 - margin.top - margin.bottom;
+
+
+	var x = d3.scaleLinear()
+  		.range([0, width+margin.left])
+  		.domain([0,1100]);
+
+	var y = d3.scaleLinear()
+    		.range([margin.top, height+margin.top])
+    		.domain([0,4]);
+
+	var div = d3.select("body").append("div")	
+    		.attr("class", "tooltip")				
+    		.style("opacity", 0);
+
+	var selection = svg.selectAll("g")
+  		.data([{"colour":"black","count":27},{"colour":"blue","count":576},{"colour":"green","count":370},{"colour":"red","count":1027}])
+  		.enter().append("g")
+
+  
+ 	selection.append("rect")
+ 		.attr("x", x(0))
+ 		.attr("y", function(d,i){return y(i)})
+ 		.style("fill", "steelblue")
+ 		.attr("width", 0)
+ 		.attr("height", y(0.4))
+		.on("mouseover", function(d) {		
+            		div.transition()		
+                	.duration(200)		
+                	.style("opacity", .9);		
+            		div.html(d.colour + "<br/>"  + d.count)	
+                	.style("left", (d3.event.pageX) + "px")		
+                	.style("top", (d3.event.pageY - 28) + "px");	
+            	})					
+        	.on("mouseout", function(d) {		
+            		div.transition()		
+                	.duration(500)		
+                	.style("opacity", 0);	
+        	})
+ 		.text(function(d) { return d.colour})
+ 		.transition()
+  		.duration(3000)
+  		.attr("y", function(d,i){return y(i)})
+		.style("fill", "blue")
+		.attr("width", function(d,i){return x(d.count)})
+
+
+  
+  
+	selection.append("text")
+    		.attr("x", x(80))
+    		.attr("y", function(d,i){return y(i+0.5)})
+    		.attr("fill", "black")
+    		.text(function(d) { return d.colour; })
+    		.transition()
+    		.duration(3000)
+    		.attr("x", function(d,i){return x(d.count+10)})
+    
+   	svg.append("text")
+		.attr("class", "title")
+       		.attr("x", (width / 2))             
+        	.attr("y", 20)
+		.style("text decoration", "bold")
+        	.text("Number of dragons in each colour");
+
+	var x_axis = d3.axisBottom()
+        	.scale(x);
+	var xAxisTranslate = height + margin.top;
+
+    	svg.append("g")
+            .attr("transform", "translate(0, " + xAxisTranslate  +")")
+            .call(x_axis)
+
+	
+ }  
+
+    </script>   
+</body>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Dragons losing teeth</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+  <p>Dragons life length and losing teeth</p>
+<script>
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+d3.csv("dragons.csv", function(error, data) {
+  if (error) throw error;
+  data.forEach(function(d) {
+    d.life_length = +d.life_length;
+    d.number_of_lost_teeth = +d.number_of_lost_teeth;
+  });
+  var x = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return d.number_of_lost_teeth; })])
+    .range([0, width]);
+  var y = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return d.life_length; })])
+    .range([height, 0]);
+ var color = d3.scaleOrdinal()
+    .range(['#FF0040', '#01DF01', '#000000', '#0040FF']);
+  var xAxis = d3.axisBottom(x).scale(x);
+  var yAxis = d3.axisLeft(y).scale(y);
+  x.domain(d3.extent(data, function(d) { return d.number_of_lost_teeth; })).nice();
+  y.domain(d3.extent(data, function(d) { return d.life_length; })).nice();
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("Number of lost teeth");
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Life length")
+  svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", function(d) { return x(d.number_of_lost_teeth); })
+      .attr("cy", function(d) { return y(d.life_length); })
+      .style("fill", function(d) { return color(d.colour); })
+      .on("mouseover", function(d) {
+       div.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div.html("Lost teeth:" + d.number_of_lost_teeth + "<br/>Life length:" 
+       +d.life_length + "<br/>Year of birth:" + d.year_of_birth)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });;
+  var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+});
+</script>
