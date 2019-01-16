@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<title>PD9 - Bartek Sielicki</title>
+		
+		<!-- style -->
+		<style>
+			body {
+				text-align: center;
+				font-family: Sans-Serif;
+			}
+
+			.axis text {
+				fill: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Liczba blizn w zależności od wieku smoka</h1>
+		<svg></svg>
+	</body>
+	<script>
+		// inspiration
+		// http://bl.ocks.org/weiglemc/6185069
+
+		// size
+		var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    		width = 1150 - margin.left - margin.right,
+    		height = 640 - margin.top - margin.bottom;
+
+		// x
+		var xValue = function (d) { return d.life_length; },
+			xScale = d3.scaleLinear().range([0, width]),
+			xAxis = d3.axisBottom(xScale);
+		
+		// y
+		var yValue = function (d) { return d.scars; },
+			yScale = d3.scaleLinear().range([height, 0]),
+			yAxis = d3.axisLeft(yScale);
+
+		// color
+		var color = d3.scaleOrdinal(d3.schemeCategory10)
+  			.range(['red', 'green', 'black', 'blue']);
+
+		// svg
+		var svg = d3.select('svg')
+			.attr('width', width + margin.left + margin.right)
+			.attr('height', height + margin.bottom + margin.top)
+		.append('g')
+			.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+
+		var colorsHexMap = {
+			'red': '#C81319',
+			'blue': '#4276D3',
+			'black': '#666666',
+			'green': '#6CA757'
+		};
+		var colorsNameMap = {
+			'red': 'Smok czerwony',
+			'blue': 'Smok niebieski',
+			'black': 'Smok czarny',
+			'green': 'Smok zielony'
+		}
+
+		// data handling 
+		d3.csv('dragons.csv', function (data) {
+			data.forEach(function (d) {
+			    d.life_length = + d.life_length;
+			    d.scars = + d.scars;
+			});
+
+			xScale
+				.domain(d3.extent(data, xValue))
+				.nice();
+
+			yScale
+				.domain(d3.extent(data, yValue))
+				.nice();
+
+			// x axis
+			svg.append('g')
+				.attr('class', 'x axis')
+				.attr('transform', 'translate(0,' + height + ')')
+      			.call(xAxis)
+      		.append('text')
+				.attr('class', 'label')
+				.attr('x', width)
+				.attr('y', -6)
+				.style('text-anchor', 'end')
+				.style('font-size', '16px')
+				.text('Wiek [lata]');
+
+			// y axis
+      		svg.append('g')
+      			.attr('class', 'y axis')
+      			.call(yAxis)
+      		.append('text')
+				.attr('class', 'label')
+				.attr('transform', 'rotate(-90)')
+				.attr('y', 6)
+				.attr('dy', '.71em')
+				.style('text-anchor', 'end')
+				.style('font-size', '16px')
+				.text('Blizny')
+
+			// scatter dots
+			svg.selectAll('.dot').data(data)
+				.enter().append('circle')
+					.attr('class', 'dot')
+					.attr('r', 5)
+					.attr('cx', function (d) { return xScale(xValue(d)); })
+					.attr('cy', function (d) { return yScale(yValue(d)); })
+					.style('fill', function (d) { return colorsHexMap[color(d.colour)]; })
+					.attr('fill-opacity', 0.75);
+
+			// legend
+			var legend = svg.selectAll('.legend')
+      			.data(color.domain())
+    		.enter().append('g')
+      			.attr('class', 'legend')
+      			.attr('transform', function(d, i) { return 'translate(-40,' + (height - 60 - i * 20) + ')'; });
+
+			legend.append('rect')
+				.attr('x', width - 18)
+				.attr('width', 18)
+				.attr('height', 18)
+				.style('fill', function (d) { return colorsHexMap[d]; });
+
+			legend.append('text')
+				.attr('x', width - 24)
+				.attr('y', 9)
+				.attr('dy', '.35em')
+				.style('text-anchor', 'end')
+				.text(function(d) { return colorsNameMap[d]; })
+		})
+	</script>
+</html>
