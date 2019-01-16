@@ -16,7 +16,7 @@
   
   <p>2. Dodaj checkbox, który pozwala zmienić początkowy kolor kółka.</p>
   <input type="checkbox" id="checkbox-color">
-  
+  <p>Checkbox jest powyżej</p>
     <script>
     d3.select("#d3checkbox").
        on("change", update);
@@ -32,6 +32,38 @@
             .style('color', 'blue');		
 				}	
 			}
+			
+		d3.select("#checkbox-color").
+       on("change", updateColor);
+		
+		updateColor();
+
+		function updateColor(){
+		  if(d3.select("#checkbox-color").property("checked")){
+					d3.select('circle')
+            .attr('fill', 'green');
+				} else {
+					d3.select('circle')
+            .attr('fill', 'orange');		
+				}	
+			}	
+			
+		d3.select('body')
+      .append('svg')
+      .attr('height', 500)
+      .attr('width', 500)
+      .append('circle')
+      .attr('cx', 50)
+      .attr('cy', 50)
+      .attr('r', 20)
+      //.attr('fill', 'blue')
+      .transition()
+	    .duration(6000)
+	    .delay(50)
+	    .attr("cx", 400)
+	    .attr("cy", 400)
+	    //.style("fill","red")
+	    .attr("r",50);	
 			
     </script>
 
