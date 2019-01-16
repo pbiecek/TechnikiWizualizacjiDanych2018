@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+p {
+  margin: .3em 0;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: black;
+}
+
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<p>Wykres przedstawia zależność między długością życia smoka a sumą liczby utraconych zębów i blizn. Zależność wydaje się silnie liniowa. </p>
+<p> Smoki można filtrować po kolorze, poprzez klinkięcie legendy.</p>
+<script>
+
+var margin = {top: 20, right: 120, bottom: 30, left: 30},
+    width = 1280 - margin.left - margin.right,
+    height = 760 - margin.top - margin.bottom;
+
+var x = d3.scaleLinear()
+    .range([0, width]);
+
+var y = d3.scaleLinear()
+    .range([height, 0]);
+
+var color = d3.scaleOrdinal()
+	.domain(["red", "blue", "black", "green"])
+	.range(["red", "blue", "black", "green"]);
+
+var xAxis = d3.axisBottom(x);
+
+var yAxis = d3.axisLeft(y);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+
+d3.csv("dragons.csv", function(error, data) {
+  if (error) throw error;
+
+  data.forEach(function(d) {
+    d.lifeLength = +d.life_length;
+    d.lostTeethAndScars = +d.number_of_lost_teeth + +d.scars;
+  });
+
+  x.domain(d3.extent(data, function(d) { return d.lifeLength; })).nice();
+  y.domain(d3.extent(data, function(d) { return d.lostTeethAndScars; })).nice();
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+	  .style("font-size", "2em")
+      .text("Długość życia smoka");
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+	  .style("font-size", "2em")
+      .text("Liczba utraconych zębów i blizn")
+
+  svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", function(d) { return x(d.lifeLength); })
+      .attr("cy", function(d) { return y(d.lostTeethAndScars); })
+      .style("fill", function(d) { return color(d.colour); })
+      .append("title")
+		.html("");
+
+  var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
+	  .on('click', function(label) { 
+		var rect = d3.select(this).select("rect");
+		
+		var dots = svg.selectAll(".dot")
+			.filter(function(e){
+			   return e.colour === label;
+			 });
+		var visible = dots.style("display") !== "none";
+		dots.style("display", visible ? "none": "");
+		rect.style("fill", visible ? "white": label);
+	  });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 16)
+      .attr("height", 16)
+      .style("fill", color)
+	  .style("stroke", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+});
+</script>
+
+</body>
+</html>
