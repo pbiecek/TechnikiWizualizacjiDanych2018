@@ -1,1 +1,0 @@
-Zaadaptuj przykład z https://bl.ocks.org/sebg/6f7f1dd55e0c52ce5ee0dac2b2769f4b do danych z countries_d3.csv.
