@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>PD9</title>
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis line, .axis path {
+  shape-rendering: crispEdges;
+  stroke: black;
+  fill: none;
+}
+
+.axis text {
+  fill: black;
+}
+
+.legend-title {
+  font-size: 14px;
+}
+
+.description {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  width: 960px;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+</style>
+  
+<body>
+	<div class="description">
+		<h1>Techniki wizualizacji danych - PD9</h1>
+		<h2>Autor - Damian Kisieliński</h2>
+    <p>
+    Poniższy wykres przedstawia zależność wagi smoków od wzrostu. Zależność ta jest w przybliżeniu liniowa. Jako trzeci wymiar została
+    dodana zdyskretyzowana długość życia smoków. Niestety nie widać wpływu wagi, wzrostu, ani ich interakcji na długość życia.
+    Klikając w element legendy można wyróżnić interesującą grupę smoków.
+    </p>
+	</div>
+</body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 15, bottom: 60, left: 60},
+      width = 960 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
+
+var x = d3.scaleLinear()
+    .range([0, width]);
+
+var y = d3.scaleLinear()
+    .range([height, 0]);
+
+var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+var xAxis = d3.axisBottom(x);
+
+var yAxis = d3.axisLeft(y);
+
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("dragons.csv", function(error, data) {
+  if (error) {
+    console.log("error while loading data");
+    throw error;
+  }
+  data.forEach(function(d) {
+    d.weight = +d.weight;
+    d.height = +d.height;
+  });
+
+  x.domain(d3.extent(data, function(d) { return d.weight; })).nice();
+  y.domain(d3.extent(data, function(d) { return d.height; })).nice();
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("Waga");
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Wzrost");
+
+  svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", function(d) { return x(d.weight); })
+      .attr("cy", function(d) { return y(d.height); })
+      .style("fill", function(d) { return color(d.life_discrete); })
+      .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div	.html("Rok urodzenia: " + d.year_of_birth + "<br/>"
+                      + "Rok odkrycia: "  + d.year_of_discovery + "<br/>" 
+                      + "Liczba blizn: "  + d.scars + "<br/>"
+                      + "Kolor smoka: "  + d.colour + "<br/>"
+                      + "Stracone zęby: "  + d.number_of_lost_teeth + "<br/>"
+                      + "Długość życia: "  + d.life_length)
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);
+      });          
+
+  var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+      
+  svg.append("g")
+    .append("text")
+      .attr("class", "legend-title")
+      .attr("x", width)
+      .attr("y", -10)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text("Długość życia");
+
+  legend.on('click', function(type){
+    d3.selectAll('.dot')
+			.style('opacity', 0.2)
+			.filter(function(d){ return d.life_discrete == type;	})
+			.style('opacity', 1);
+    d3.selectAll('rect')
+      .style('opacity', 0.2)
+      .filter(function(d){ return d==type;  })
+      .style('opacity', 1);
+		})
+
+});
+
+</script>
