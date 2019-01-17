@@ -42,6 +42,8 @@ Każdy projekt należy realizować w innym zespole.
 
 Termin oddania projektu 1 to **21 listopada** - 10:15 rano (wykład).
 
+Termin oddania projektu 2 to **23 stycznia** - 10:15 rano (wykład).
+
 # Prezentacje studentów
 
 Prezentacje można przygotować w 2-3 osobowych zespołach. Należy wybrać jeden z tematów poniżej, przeczytać, zrozumieć, przeczytać, przedstawić treści z tego artykułu w 5+5 min (5 minut na prezentacje i 5 minut na dyskusje).
