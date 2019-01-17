@@ -1,0 +1,36 @@
+text {
+	font: 28px cursive;
+}
+
+p {
+	font: 24px cursive;
+	text-align: center;
+}
+
+.axis line,
+.axis path {
+	shape-rendering: crispEdges;
+	stroke: black;
+	fill: none;
+}
+
+.axis text {
+	fill: black;
+}
+
+div.tooltip {
+	position: absolute;
+	text-align: center;
+	/*height: 32px;*/
+	padding: 2px;
+	border-radius: 2px;
+	font: 16px cursive;
+	background: Gainsboro;
+	border: 0px;
+	pointer-events: none;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+}

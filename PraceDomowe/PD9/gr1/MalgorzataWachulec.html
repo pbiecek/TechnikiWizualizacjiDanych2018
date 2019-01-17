@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> </title>
+		<meta charset="utf-8">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<style>
+			rect{
+  fill:green;
+  stroke:black;
+  stroke-width:1;
+  opacity:1
+
+}
+		</style>
+	</head>
+<body>
+	<div id='layout'>
+		<h2>Dziewiąta praca domowa - wykres o smokach</h2>
+		<h3>Małgorzata Wachulec</h3>
+Zrobiłam wykres słupkowy przedstawiający ile smoków wykopano w każdym dziesięcioleciu w latach 1701-1800. 
+   		 <h1>
+    
+   		 </h1>
+	</div>
+	<div class = "output">
+  		<svg width="500" height = "400">
+    		<line x1="50" y1="310" x2="450" y2="310" style="stroke:black;stroke-width:2" />
+   		 <line x1="50" y1="310" x2="50" y2="60" style="stroke:black;stroke-width:2" />
+  		</svg>
+	</div>
+
+	<script language="javascript">
+var svg = d3.select("div.output svg")
+
+var data = [213,206,194,163,198,213,178,217,207,200]
+var y = [60,100,140,180,220,260,300,340,380,420]
+var xtext = [1,2,3,4,5,6,7,8,9,10]
+var ytext = [0,50,100,150,200]
+
+var selection = svg.selectAll("rect")
+.data(data)
+.enter()
+.append("rect")
+  .attr("x", function(d,i){return y[i]})
+  .attr("y", function(d){return 300-d})
+  .attr("width", 20)
+  .attr("height", function(d,i){return data[i]})
+
+var textLabels = svg.selectAll("text")
+.data(data)
+
+textLabels
+.enter()
+.append("text")
+ 	.attr("x",100)
+  .attr("y",350)
+  .text(function(d) {return "Kolejne dziesięciolecia XV wieku"})
+  .attr("fill","black")
+  
+ textLabels
+.enter()
+.append("text")
+ 	.attr("x",10)
+  .attr("y",20)
+  .text(function(d) {return "Ile smoków wykopano w każdym dziesięcioleciu XV wieku?"})
+  .attr("fill","black")
+  .attr("font-size", "20px")
+  
+textLabels
+.enter()
+.append("text")
+	.attr("x",0)
+  .attr("y",300)
+  .text(function(d) {return "Liczba znalezionych smoków"})
+  .attr("fill","black")
+  .attr("transform", "translate(-290,290) rotate(270)")
+  
+textLabels
+.enter()
+.append("text")
+	.attr("x", function(d,i){return y[i]+6})           
+	.attr("y", 325)
+	.text( function (d,i) { return xtext[i] })
+  .attr("font-size", "14px")
+  
+textLabels
+.data(data)
+.enter()
+.append("text")
+	.attr("x", 20)           
+	.attr("y",function(d,i){return 300-ytext[i]})
+	.text( function (d,i) { return ytext[i] })
+  .attr("font-size", "14px")
+
+textLabels
+.data(data)
+.enter()
+.append("text")
+	.attr("x",function(d,i){return y[i]-4})            
+	.attr("y",function(d,i){return 300-data[i]-4})
+	.text( function (d,i) { return data[i] })
+  .attr("font-size", "20px" )
+</script>
+
+</body>
+</html>
