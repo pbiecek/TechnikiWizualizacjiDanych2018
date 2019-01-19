@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 14px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+input[type='checkbox']:checked {
+    background: black;
+}
+
+</style>
+<body>
+<h1 style="width: 100%; text-align: center">
+        BMI smoka w zależności od roku urodzenia
+</h1>
+<div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript" src="KacperSiemaszko.js"></script>
+</div>
+<div style="width:100%;
+  background-color: #eee;">
+        <h2 style="width: 100%; text-align: center">
+        Które smoki Cię interesują?
+        </h2>
+        <table style="font-size: 18px
+        display: block;
+        margin-left: auto;
+        margin-right: auto;"><tr>
+            <td>
+                <input type="checkbox" value="red" class="choice"><br/> Red
+            </td>
+            <td>
+                <input type="checkbox" value="blue" class="choice"><br/> Blue
+            </td>
+            <td>
+                <input type="checkbox" value="green" class="choice"><br/> Green
+            </td>
+            <td>
+                <input type="checkbox" value="black" class="choice"><br/> Black
+            </td></tr>
+        </table>
+</div>
+</body>
