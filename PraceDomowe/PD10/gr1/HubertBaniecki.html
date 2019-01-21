@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>TWD10</title>
+        <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+		<style type="text/css">
+            border{
+                solid 1px blue;
+                }	
+            div {
+				display: block;
+				margin: 0 auto;
+			}
+            html, body{
+                width: 100%;
+                }
+		</style>
+	</head>
+    <body>
+		<center>
+			<h1>
+				PD10 - Hubert Baniecki
+			</h1>
+            <h2>Wykres porównujący liczbę żyjących kobiet i mężczyzn w zależności od wieku dla roku 2009.</h2>
+
+            <div></div>
+		</center>
+        <script type="text/javascript">
+            
+            var colors = ["#ff9292", "#f2ee97", "#afe5ad", "#83b8f4", "#ecb3d2"]
+            
+            var data = [{"Age":0,"FTx":7991684,"MTx":7148455,"roznica":843229},{"Age":1,"FTx":7892158,"MTx":7049023,"roznica":843135},{"Age":2,"FTx":7792681,"MTx":6949644,"roznica":843037},{"Age":3,"FTx":7693229,"MTx":6850296,"roznica":842933},{"Age":4,"FTx":7593795,"MTx":6750968,"roznica":842827},{"Age":5,"FTx":7494379,"MTx":6651653,"roznica":842726},{"Age":6,"FTx":7394975,"MTx":6552355,"roznica":842620},{"Age":7,"FTx":7295583,"MTx":6453075,"roznica":842508},{"Age":8,"FTx":7196206,"MTx":6353808,"roznica":842398},{"Age":9,"FTx":7096844,"MTx":6254557,"roznica":842287},{"Age":10,"FTx":6997493,"MTx":6155321,"roznica":842172},{"Age":11,"FTx":6898154,"MTx":6056101,"roznica":842053},{"Age":12,"FTx":6798825,"MTx":5956894,"roznica":841931},{"Age":13,"FTx":6699509,"MTx":5857703,"roznica":841806},{"Age":14,"FTx":6600210,"MTx":5758528,"roznica":841682},{"Age":15,"FTx":6500931,"MTx":5659376,"roznica":841555},{"Age":16,"FTx":6401675,"MTx":5560260,"roznica":841415},{"Age":17,"FTx":6302441,"MTx":5461185,"roznica":841256},{"Age":18,"FTx":6203230,"MTx":5362166,"roznica":841064},{"Age":19,"FTx":6104047,"MTx":5263229,"roznica":840818},{"Age":20,"FTx":6004890,"MTx":5164392,"roznica":840498},{"Age":21,"FTx":5905758,"MTx":5065664,"roznica":840094},{"Age":22,"FTx":5806650,"MTx":4967048,"roznica":839602},{"Age":23,"FTx":5707567,"MTx":4868542,"roznica":839025},{"Age":24,"FTx":5608509,"MTx":4770149,"roznica":838360},{"Age":25,"FTx":5509479,"MTx":4671862,"roznica":837617},{"Age":26,"FTx":5410474,"MTx":4573679,"roznica":836795},{"Age":27,"FTx":5311494,"MTx":4475604,"roznica":835890},{"Age":28,"FTx":5212542,"MTx":4377640,"roznica":834902},{"Age":29,"FTx":5113621,"MTx":4279786,"roznica":833835},{"Age":30,"FTx":5014736,"MTx":4182046,"roznica":832690},{"Age":31,"FTx":4915890,"MTx":4084434,"roznica":831456},{"Age":32,"FTx":4817085,"MTx":3986966,"roznica":830119},{"Age":33,"FTx":4718325,"MTx":3889647,"roznica":828678},{"Age":34,"FTx":4619611,"MTx":3792486,"roznica":827125},{"Age":35,"FTx":4520946,"MTx":3695496,"roznica":825450},{"Age":36,"FTx":4422339,"MTx":3598700,"roznica":823639},{"Age":37,"FTx":4323798,"MTx":3502106,"roznica":821692},{"Age":38,"FTx":4225322,"MTx":3405725,"roznica":819597},{"Age":39,"FTx":4126920,"MTx":3309588,"roznica":817332},{"Age":40,"FTx":4028610,"MTx":3213730,"roznica":814880},{"Age":41,"FTx":3930402,"MTx":3118176,"roznica":812226},{"Age":42,"FTx":3832310,"MTx":3022961,"roznica":809349},{"Age":43,"FTx":3734343,"MTx":2928126,"roznica":806217},{"Age":44,"FTx":3636509,"MTx":2833684,"roznica":802825},{"Age":45,"FTx":3538823,"MTx":2739657,"roznica":799166},{"Age":46,"FTx":3441306,"MTx":2646101,"roznica":795205},{"Age":47,"FTx":3343983,"MTx":2553060,"roznica":790923},{"Age":48,"FTx":3246872,"MTx":2460595,"roznica":786277},{"Age":49,"FTx":3150000,"MTx":2368772,"roznica":781228},{"Age":50,"FTx":3053397,"MTx":2277634,"roznica":775763},{"Age":51,"FTx":2957090,"MTx":2187252,"roznica":769838},{"Age":52,"FTx":2861118,"MTx":2097703,"roznica":763415},{"Age":53,"FTx":2765512,"MTx":2009038,"roznica":756474},{"Age":54,"FTx":2670297,"MTx":1921334,"roznica":748963},{"Age":55,"FTx":2575509,"MTx":1834668,"roznica":740841},{"Age":56,"FTx":2481183,"MTx":1749106,"roznica":732077},{"Age":57,"FTx":2387359,"MTx":1664725,"roznica":722634},{"Age":58,"FTx":2294086,"MTx":1581620,"roznica":712466},{"Age":59,"FTx":2201407,"MTx":1499894,"roznica":701513},{"Age":60,"FTx":2109364,"MTx":1419613,"roznica":689751},{"Age":61,"FTx":2018012,"MTx":1340848,"roznica":677164},{"Age":62,"FTx":1927414,"MTx":1263685,"roznica":663729},{"Age":63,"FTx":1837624,"MTx":1188201,"roznica":649423},{"Age":64,"FTx":1748682,"MTx":1114498,"roznica":634184},{"Age":65,"FTx":1660624,"MTx":1042626,"roznica":617998},{"Age":66,"FTx":1573514,"MTx":972687,"roznica":600827},{"Age":67,"FTx":1487411,"MTx":904742,"roznica":582669},{"Age":68,"FTx":1402360,"MTx":838801,"roznica":563559},{"Age":69,"FTx":1318423,"MTx":774955,"roznica":543468},{"Age":70,"FTx":1235686,"MTx":713321,"roznica":522365},{"Age":71,"FTx":1154262,"MTx":653995,"roznica":500267},{"Age":72,"FTx":1074258,"MTx":597031,"roznica":477227},{"Age":73,"FTx":995781,"MTx":542495,"roznica":453286},{"Age":74,"FTx":918966,"MTx":490461,"roznica":428505},{"Age":75,"FTx":844006,"MTx":441007,"roznica":402999},{"Age":76,"FTx":771103,"MTx":394206,"roznica":376897},{"Age":77,"FTx":700453,"MTx":350097,"roznica":350356},{"Age":78,"FTx":632253,"MTx":308738,"roznica":323515},{"Age":79,"FTx":566743,"MTx":270214,"roznica":296529},{"Age":80,"FTx":504184,"MTx":234558,"roznica":269626},{"Age":81,"FTx":444819,"MTx":201794,"roznica":243025},{"Age":82,"FTx":388880,"MTx":171957,"roznica":216923},{"Age":83,"FTx":336605,"MTx":145032,"roznica":191573},{"Age":84,"FTx":288228,"MTx":120966,"roznica":167262},{"Age":85,"FTx":243909,"MTx":99705,"roznica":144204},{"Age":86,"FTx":203797,"MTx":81129,"roznica":122668},{"Age":87,"FTx":168018,"MTx":65099,"roznica":102919},{"Age":88,"FTx":136515,"MTx":51521,"roznica":84994},{"Age":89,"FTx":109115,"MTx":40175,"roznica":68940},{"Age":90,"FTx":85734,"MTx":30844,"roznica":54890},{"Age":91,"FTx":66093,"MTx":23272,"roznica":42821},{"Age":92,"FTx":49808,"MTx":17157,"roznica":32651},{"Age":93,"FTx":36679,"MTx":12359,"roznica":24320},{"Age":94,"FTx":26378,"MTx":8714,"roznica":17664},{"Age":95,"FTx":18526,"MTx":6041,"roznica":12485},{"Age":96,"FTx":12711,"MTx":4124,"roznica":8587},{"Age":97,"FTx":8485,"MTx":2752,"roznica":5733},{"Age":98,"FTx":5504,"MTx":1794,"roznica":3710},{"Age":99,"FTx":3466,"MTx":1142,"roznica":2324},{"Age":100,"FTx":2117,"MTx":709,"roznica":1408},{"Age":101,"FTx":1253,"MTx":429,"roznica":824},{"Age":102,"FTx":718,"MTx":253,"roznica":465},{"Age":103,"FTx":399,"MTx":146,"roznica":253},{"Age":104,"FTx":214,"MTx":82,"roznica":132},{"Age":105,"FTx":112,"MTx":45,"roznica":67},{"Age":106,"FTx":56,"MTx":24,"roznica":32},{"Age":107,"FTx":28,"MTx":12,"roznica":16},{"Age":108,"FTx":13,"MTx":6,"roznica":7},{"Age":109,"FTx":6,"MTx":3,"roznica":3}]
+            
+            var margin = {top: 20, right: 20, bottom: 50, left: 100},
+                width = 1800 - margin.left - margin.right,
+                height = 800 - margin.top - margin.bottom;
+            
+            var svg = d3.select("div").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+            
+            var g = svg.append('g').attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+            
+            var x = d3.scaleBand()
+              .range([ 0, width ])
+              .padding(0.2);
+            var xAxis = svg.append("g")
+              .attr("transform", "translate(" + (-10 + margin.left) + "," + height + ")")
+            
+
+            var y = d3.scaleLinear()
+              .range([ height, 0]);
+            var yAxis = svg.append("g")
+                .attr("transform", "translate(" + (-10+ margin.left) + ",0)")
+                .attr("class", "myYaxis")
+            
+            svg.append("text")
+                          .attr("transform",
+                            "translate(" + (width/2) + " ," + 
+                                   (height + margin.top + 20) + ")")
+                                    .style("text-anchor", "middle")
+                                    .text("Wiek")
+            
+            svg.append("text")
+                          .attr("transform", "rotate(-90)")
+                          .attr("y", 10)
+                          .attr("x",0 - (height / 2))
+                          .attr("dy", "1em")
+                          .style("text-anchor", "middle")
+                          .attr("id", "osY")
+            
+            var active_link = "1"
+            
+            function update() {
+                if(active_link === "1"){
+                    active_link = "0"
+                  x.domain(data.map(function(d) { return d.Age; }))
+                  xAxis.call(d3.axisBottom(x))
+
+
+                  y.domain([0, 70000+d3.max(data, function(d) { return d.roznica}) ]);
+                  yAxis.transition().duration(500).call(d3.axisLeft(y));
+
+                  svg.select("#osY")
+                        .text("Różnica pomiędzy kobietami i mężczyznami")
+                    
+                  svg.selectAll(".Roznica")
+                    .transition()
+                    .duration(500)
+                      .attr("x", function(d) { return x(d.Age)+margin.left-10; })
+                      .attr("y", function(d) { return y(d.roznica); })
+                      .attr("width", x.bandwidth())
+                      .attr("height", function(d) { return height - y(d.roznica); })
+                      .attr("fill", colors[4])
+
+                } else {
+                    active_link = "1"
+                    
+                    x.domain(data.map(function(d) { return d.Age; }))
+                      xAxis.call(d3.axisBottom(x))
+
+
+                    y.domain([0, 100000+d3.max(data, function(d) { return d.FTx}) ]);
+                      yAxis.transition().duration(500).call(d3.axisLeft(y));
+
+                    svg.select("#osY")
+                        .text("Liczba żyjących kobiet i mężczyzn")
+                    
+                    svg.selectAll(".Roznica")
+                        .transition()
+                        .duration(500)
+                          .attr("x", function(d) { return x(d.Age)+margin.left-10; })
+                          .attr("y", function(d) { return y(d.FTx); })
+                          .attr("width", x.bandwidth())
+                          .attr("height", function(d) { return height - y(d.roznica); })
+                          .attr("fill", colors[4])
+                    
+                    
+                }
+            }
+            
+            x.domain(data.map(function(d) { return d.Age; }))
+            xAxis.call(d3.axisBottom(x))
+
+
+            y.domain([0, 100000+d3.max(data, function(d) { return d.FTx}) ]);
+            yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+            svg.select("#osY")
+                    .text("Liczba żyjących kobiet i mężczyzn")
+            var u = svg.selectAll("rect")
+                    .data(data)
+
+            u.enter()
+                .append("rect")
+                .transition() 
+                .duration(1000)
+                    .attr("x", function(d) { return x(d.Age)+margin.left-10; })
+                    .attr("y", function(d) { return y(d.MTx); })
+                    .attr("width", x.bandwidth())
+                    .attr("height", function(d) { return height - y(d.MTx); })
+                    .attr("fill", colors[3])
+                    .attr("class","Mezczyzni")
+            u.enter()
+                .append("rect")
+                .merge(u)
+                .transition()
+                .duration(1000)
+                    .attr("x", function(d) { return x(d.Age)+margin.left-10; })
+                    .attr("y", function(d) { return y(d.FTx); })
+                    .attr("width", x.bandwidth())
+                    .attr("height", function(d) { return height - y(d.roznica); })
+                    .attr("fill", colors[4])
+                    .attr("class","Roznica")
+            
+            var bars = d3.selectAll("rect")
+            
+            var tooltip = d3.select("body").append("div")
+
+            tooltip
+                .text("")
+                .style('position', 'absolute' )
+                .style('background', 'lightsteelblue')
+                .style('left', '100px')
+                .style('opacity', 0)
+                .style('top', '100px')
+                .style('width', '140px')
+                .style('height', '60px')
+                .attr('padding', 2)
+                
+            
+            bars.on("click", function() {
+					update()
+                })
+            bars.on("mouseover", function(d) {                    
+                tooltip
+                    .style('left',  function(d) { return d3.event.pageX + "px"} )
+                    .style('top',  function(d) { return d3.event.pageY + "px"} )
+                    .style('opacity', 1)
+                    .html("Kobiet: " + d.FTx + " <br/> Mężczyzn: " + d.MTx + "<br/> Różnica: " +d.roznica)
+               })
+                .on("mouseout", function(d) {
+                 tooltip
+                    .style('opacity', 0);
+
+               })
+                
+                
+        </script> 
+    </body>
+</html>

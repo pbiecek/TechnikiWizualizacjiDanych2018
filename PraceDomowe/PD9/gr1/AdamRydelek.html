@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//d3js.org/d3.v3.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+    .line-chart
+    {
+        border: 1px solid lightgray;
+    }
+
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+    window.onload=function(){
+      
+var svgWidth = 600, svgHeight = 400;
+   var margin = { top: 20, right: 20, bottom: 30, left: 50 };
+   var width = svgWidth - margin.left - margin.right;
+   var height = svgHeight - margin.top - margin.bottom;
+
+   var svg = d3.select('svg')
+     .attr("width", svgWidth)
+     .attr("height", svgHeight);
+   
+   var data = [
+  {
+    "century": -19,
+    "meanlength": 1370.1031
+  },
+  {
+    "century": -18,
+    "meanlength": 1472.1552
+  },
+  {
+    "century": -17,
+    "meanlength": 1438.517
+  },
+  {
+    "century": -16,
+    "meanlength": 1454.1336
+  },
+  {
+    "century": -15,
+    "meanlength": 1367.7668
+  },
+  {
+    "century": -14,
+    "meanlength": 1287.1068
+  },
+  {
+    "century": -13,
+    "meanlength": 1348.7209
+  },
+  {
+    "century": -12,
+    "meanlength": 1361.1962
+  },
+  {
+    "century": -11,
+    "meanlength": 1348.0772
+  },
+  {
+    "century": -10,
+    "meanlength": 1346.2513
+  },
+  {
+    "century": -9,
+    "meanlength": 1417.0101
+  },
+  {
+    "century": -8,
+    "meanlength": 1445.5545
+  },
+  {
+    "century": -7,
+    "meanlength": 1398.4652
+  },
+  {
+    "century": -6,
+    "meanlength": 1475.4006
+  },
+  {
+    "century": -5,
+    "meanlength": 1311.9026
+  },
+  {
+    "century": -4,
+    "meanlength": 1429.9072
+  },
+  {
+    "century": -3,
+    "meanlength": 1299.7821
+  },
+  {
+    "century": -2,
+    "meanlength": 1412.5973
+  },
+  {
+    "century": -1,
+    "meanlength": 1414.7563
+  },
+  {
+    "century": -0,
+    "meanlength": 1407.2283
+  },
+  {
+    "century": 1,
+    "meanlength": 1436.3543
+  },
+  {
+    "century": 2,
+    "meanlength": 1255.3222
+  },
+  {
+    "century": 3,
+    "meanlength": 1460.3915
+  },
+  {
+    "century": 4,
+    "meanlength": 1395.3065
+  },
+  {
+    "century": 5,
+    "meanlength": 1412.0374
+  },
+  {
+    "century": 6,
+    "meanlength": 1165.9125
+  },
+  {
+    "century": 7,
+    "meanlength": 1278.544
+  },
+  {
+    "century": 8,
+    "meanlength": 1307.1071
+  },
+  {
+    "century": 9,
+    "meanlength": 1276.6801
+  },
+  {
+    "century": 10,
+    "meanlength": 1262.8152
+  },
+  {
+    "century": 11,
+    "meanlength": 1350.6843
+  },
+  {
+    "century": 12,
+    "meanlength": 1379.5823
+  },
+  {
+    "century": 13,
+    "meanlength": 1276.7032
+  },
+  {
+    "century": 14,
+    "meanlength": 1357.368
+  },
+  {
+    "century": 15,
+    "meanlength": 1346.3346
+  },
+  {
+    "century": 16,
+    "meanlength": 1563.8041
+  },
+  {
+    "century": 17,
+    "meanlength": 1387.0198
+  },
+  {
+    "century": 18,
+    "meanlength": 1364.5676
+  }
+]
+
+
+   
+   var g = svg.append("g")
+   .attr("transform", 
+      "translate(" + margin.left + "," + margin.top + ")"
+   );
+   
+   var x = d3.scaleLinear().rangeRound([0, width]);
+
+	 var y = d3.scaleLinear().rangeRound([height, 0]);
+	
+  var line = d3.line()
+   .x(function(d) { return x(d.century)})
+   .y(function(d) { return y(d.meanlength)})
+   x.domain(d3.extent(data, function(d) { return d.century }));
+   y.domain(d3.extent(data, function(d) { return d.meanlength }));
+   
+  g.append("g")
+   .attr("transform", "translate(0," + height + ")")
+   .call(d3.axisBottom(x))
+   .append("text")
+   .attr("fill", "#000")
+   .attr("y", 6)
+   .attr("dy", "0.71em")
+   .attr("dx","54em")
+   .attr("text-anchor", "end")
+   .text("Century")
+   .select(".domain")
+   .remove()
+
+   
+  g.append("g")
+   .call(d3.axisLeft(y))
+   .append("text")
+   .attr("fill", "#000")
+   .attr("transform", "rotate(-90)")
+   .attr("y", 6)
+   .attr("dy", "0.71em")
+   .attr("text-anchor", "end")
+   .text("Life length");
+   
+  g.append("path")
+		.datum(data)
+		.attr("fill", "none")
+		.attr("stroke", "steelblue")
+		.attr("stroke-linejoin", "round")
+		.attr("stroke-linecap", "round")
+		.attr("stroke-width", 1.5)
+		.attr("d", line);
+
+    }
+
+</script>
+
+</head>
+<body>
+    
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+  <center>
+			<h1>
+				PD9 - Adam Rydelek
+			</h1>
+
+		
+    <svg></svg>
+    <script src="https://d3js.org/d3.v4.min.js"></script> </center> </body>
+
+
+  
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "cdxaoyp2"
+      }], "*")
+    }
+  </script>
+</body>
+</html>
