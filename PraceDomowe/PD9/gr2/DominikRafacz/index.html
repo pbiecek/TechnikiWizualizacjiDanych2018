@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 15px sans-serif;
+}
+
+.axis text {
+    font: 18px sans-serif;	
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: none;
+}
+
+.dot {
+  stroke: #000;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 140px;
+    height: 42px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
+input[type='checkbox']:checked {
+    background: #abd;
+}
+</style>
+
+<body>
+
+</style>
+<body>
+    <h1 style="width: 100%; text-align: center">
+        Zależność między długością życia a liczbą blizn
+    </h1>
+    <div style="float: left;">
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script type="text/javascript" src="dragonbar.js"></script>
+    </div >
+    <div style="width:10%; float: right;">
+    	Wybierz kolory smoków, o których informacje chcesz wyświetlić:
+        <table style="font-size: 18px"><tr>
+            <td>
+                <input type="checkbox" value="red" class="myCheckbox"> RED
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" value="blue" class="myCheckbox"> BLUE    
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" value="green" class="myCheckbox"> GREEN
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" value="black" class="myCheckbox"> BLACK
+            </td></tr>
+        </table>
+        Najedź myszką na punkt, by wyświetlić datę urodzenia, odkrycia i śmierci smoka.
+    </div>
+</body>
+
+
+
+
+

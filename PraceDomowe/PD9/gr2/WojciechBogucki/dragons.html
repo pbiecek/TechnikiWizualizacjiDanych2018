@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+    <html>
+      <head>
+        <title>Dragons</title>
+<style>
+.main text {
+    font: 15px sans-serif;
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: none;
+}
+
+.dot {
+  stroke: #000;
+}
+
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 160px;
+  height: 70px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+
+</style>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+  <h1>Liczba blizn a długość życia</h1>
+  <script type="text/javascript" src="dragons.js"></script>
+  <p>Smoki odkryte przed rokiem:<span id="rok"></span></p>
+  <div class="slidercontainer">
+    <input type="range" min="1700" max="1800" value="1800" class="slider" id="mySlider">
+
+  </div>
+
+  <script>
+  var slider = document.getElementById("mySlider");
+  var output = document.getElementById("rok");
+  output.innerHTML = slider.value;
+
+  slider.oninput = function(){
+    output.innerHTML = this.value;
+  }
+  </script>
+</body>
+</html>
