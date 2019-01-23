@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- normalize -->
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+          crossorigin="anonymous"></script>
+
+  <!-- slick -->
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+  <title>Techniki Wizualizacji Danych - Projekt 2</title>
+</head>
+<body class="sleep">
+<h1>Two weeks of mine</h1>
+<div class="slides-container">
+  <div class="slide-wrapper">
+    <div class="slide">
+      <div class="chart-wrapper">
+        <canvas id="sleep-chart"></canvas>
+      </div>
+      <h2>
+        <i class="fa fa-moon-o"></i> Hours of sleep each night
+      </h2>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <div class="slide">
+      <div class="chart-wrapper">
+        <canvas id="studying-chart"></canvas>
+      </div>
+      <h2>
+        <i class="fa fa-graduation-cap"></i> Time spent on stydying / working on projects
+      </h2>
+    </div>
+  </div>
+  <div class="slide-wrapper">
+    <div class="slide">
+      <div class="chart-wrapper">
+        <canvas id="traveling-chart"></canvas>
+      </div>
+      <h2>
+        <i class="fa fa-car"></i> Total distance traveled
+      </h2>
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<footer>
+  <p>
+    &copy;2019 Bartek Sielicki | <a
+          href="https://github.com/pbiecek/TechnikiWizualizacjiDanych2018/tree/master/Projekt2"><i
+          class="fa fa-github"></i> TWD Assignment 2</a><br><br>
+  </p>
+</footer>
+<!-- js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
