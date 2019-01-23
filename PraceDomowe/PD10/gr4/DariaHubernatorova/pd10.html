@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+svg {
+  font: 10px sans-serif;
+}
+
+.shared, .bar, .label {
+  font-size: 8pt;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+.femalebar {
+  fill: red;
+}
+.malebar {
+  fill: blue;
+}
+.highlight rect.malebar, .highlight rect.femalebar {
+  fill: #a14538;
+}
+text.malebar, text.femalebar {
+  display: none;
+}
+.highlight text {
+  display: block;
+  fill: #000;
+}
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+
+</style>
+<body>
+  <h2>Females and males living in 2009</h2>
+  <div id="option">
+    <input name="updateButton" 
+           type="button" 
+           value="Update" 
+           onclick="refresh()" />
+</div>
+<script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+<script>
+var w = 800,
+    h = 1000,
+    topMargin = 15,
+    labelSpace = 20,
+    innerMargin = w/2+labelSpace,
+    outerMargin = 40,
+    gap = 3,
+    leftLabel = "Female",
+    rightLabel = "Male";
+d3.csv("przezycia2009.csv", function(error, data) {
+  if (error) throw error;
+  data.forEach(function(d) {
+    d.MTx = +d.MTx;
+    d.FTx = +d.FTx;
+  });
+
+var dataRange = d3.max(data.map(function(d) { return Math.max(d.MTx, d.FTx) }));
+
+
+var chartWidth = w - innerMargin - outerMargin,
+    barWidth = h / data.length,
+    yScale = d3.scaleLinear().domain([0, data.length]).range([0, h-topMargin]),
+    total = d3.scaleLinear().domain([0, dataRange]).range([0, chartWidth - labelSpace]),
+    commas = d3.format(",.0f");
+
+/* main panel */
+var vis = d3.select("body").append("svg")
+    .attr("width", w)
+    .attr("height", h);
+    
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+/* MTx label */
+vis.append("text")
+  .attr("class", "label")
+  .text(leftLabel)
+  .attr("x", w-innerMargin)
+  .attr("y", topMargin-3)
+  .attr("text-anchor", "end");
+
+/* FTx label */
+vis.append("text")
+  .attr("class", "label")
+  .text(rightLabel)
+  .attr("x", innerMargin)
+  .attr("y", topMargin-3);
+
+/* female bars and data labels */ 
+var bar = vis.selectAll("g.bar")
+    .data(data)
+  .enter().append("g")
+    .attr("class", "bar")
+    .attr("transform", function(d, i) {
+      return "translate(0," + (yScale(i) + topMargin) + ")";
+    });
+
+var wholebar = bar.append("rect")
+    .attr("width", w)
+    .attr("height", barWidth-gap)
+    .attr("fill", "none")
+    .attr("pointer-events", "all");
+
+var highlight = function(c) {
+  return function(d, i) {
+    bar.filter(function(d, j) {
+      return i === j;
+    }).attr("class", c);
+  };
+};
+
+bar
+  .on("mouseover", highlight("highlight bar"))
+  .on("mouseout", highlight("bar"));
+
+bar.append("rect")
+    .attr("class", "femalebar")
+    .attr("height", barWidth-gap);
+
+bar.append("text")
+    .attr("class", "femalebar")
+    .attr("dx", -3)
+    .attr("dy", "1em")
+    .attr("text-anchor", "end");
+
+bar.append("rect")
+    .attr("class", "malebar")
+    .attr("height", barWidth-gap)
+    .attr("x", innerMargin);
+
+bar.append("text")
+    .attr("class", "malebar")
+    .attr("dx", 3)
+    .attr("dy", "1em");
+
+/* sharedLabels */
+bar.append("text")
+    .attr("class", "shared")
+    .attr("x", w/2)
+    .attr("dy", "1em")
+    .attr("text-anchor", "middle")
+    .text(function(d) { return d.Age; });
+
+var bars = d3.selectAll("g.bar")
+      .data(data);
+  bars.selectAll("rect.malebar")
+    .transition()
+      .attr("width", function(d) { return total(d.MTx); });
+  bars.selectAll("rect.femalebar")
+    .transition()
+      .attr("x", function(d) { return innerMargin - total(d.FTx) - 2 * labelSpace; }) 
+      .attr("width", function(d) { return total(d.FTx); });
+
+  bars.selectAll("rect.malebar").on("click", function(d) {
+    console.log(d);
+    d3.select(this).transition()
+          .duration(1000)
+          .attr('width', total(d.roznica))
+  });
+  bars.selectAll("rect.femalebar").on("click", function(d) {
+    console.log(d);
+    d3.select(this).transition()
+          .duration(1000)
+          .attr('width', total(d.roznica))
+          .attr("x", function(d) { return innerMargin - total(d.roznica) - 2 * labelSpace; }) 
+  })
+  
+  bars.selectAll("rect.malebar")
+  .on("mouseover", function(d) {
+       div.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div.html(d.MTx + "<br/>Difference: " + d.roznica)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+  bars.selectAll("rect.femalebar")
+  .on("mouseover", function(d) {
+       div.transition()
+         .duration(200)
+         .style("opacity", .9);
+       div.html(d.FTx + "<br/>Difference: " + d.roznica)
+         .style("left", (d3.event.pageX) + "px")
+         .style("top", (d3.event.pageY - 28) + "px");
+       })
+     .on("mouseout", function(d) {
+       div.transition()
+         .duration(500)
+         .style("opacity", 0);
+       });
+
+  bars.selectAll("text.malebar")
+      .text(function(d) { return commas(d.MTx); })
+    .transition()
+      .attr("x", function(d) { return innerMargin + total(d.MTx); });
+  bars.selectAll("text.femalebar")
+      .text(function(d) { return commas(d.FTx); })
+    .transition()
+      .attr("x", function(d) { return innerMargin - total(d.FTx) - 2 * labelSpace; });
+});
+
+function refresh() {
+  d3.csv("przezycia2009.csv", function(error, data) {
+  if (error) throw error;
+  data.forEach(function(d) {
+    d.MTx = +d.MTx;
+    d.FTx = +d.FTx;
+  });
+  var dataRange = d3.max(data.map(function(d) { return Math.max(d.MTx, d.FTx) }));
+
+
+var chartWidth = w - innerMargin - outerMargin,
+    barWidth = h / data.length,
+    yScale = d3.scaleLinear().domain([0, data.length]).range([0, h-topMargin]),
+    total = d3.scaleLinear().domain([0, dataRange]).range([0, chartWidth - labelSpace]),
+    commas = d3.format(",.0f");
+  var bars = d3.selectAll("g.bar")
+      .data(data);
+  bars.selectAll("rect.malebar")
+    .transition()
+      .attr("width", function(d) { return total(d.MTx); });
+  bars.selectAll("rect.femalebar")
+    .transition()
+      .attr("x", function(d) { return innerMargin - total(d.FTx) - 2 * labelSpace; }) 
+      .attr("width", function(d) { return total(d.FTx); });
+  });
+};
+
+
+</script>
