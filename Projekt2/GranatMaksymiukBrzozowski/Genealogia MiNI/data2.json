@@ -1,0 +1,41 @@
+[
+    {
+        "distan": "2", 
+        "values": [
+            {
+                "value": 2, 
+                "school": "Warszawska"
+            }, 
+            {
+                "value": 2, 
+                "school": "Lwowska"
+            }
+        ]
+    }, 
+    {
+        "distan": "3", 
+        "values": [
+            {
+                "value": 3, 
+                "school": "Warszawska"
+            }, 
+            {
+                "value": 5, 
+                "school": "Lwowska"
+            }
+        ]
+    },  
+    {
+        "distan": "4", 
+        "values": [
+            {
+                "value": 15, 
+                "school": "Warszawska"
+            }, 
+            {
+                "value": 1, 
+                "school": "Lwowska"
+            }
+        ]
+    }
+]

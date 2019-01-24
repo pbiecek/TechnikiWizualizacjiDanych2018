@@ -1,0 +1,12 @@
+name: ProjektJA
+title: ProjektJA
+username:
+account: wojciechkretowicz
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 659583
+bundleId: 1829924
+url: https://wojciechkretowicz.shinyapps.io/ProjektJA/
+when: 1548187653.59509
+asMultiple: FALSE
+asStatic: FALSE

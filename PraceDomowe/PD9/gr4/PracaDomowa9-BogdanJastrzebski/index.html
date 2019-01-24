@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Bar Transition Example</title>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript" src="bar.js"></script>
+
+    <style type="text/css">
+        #demo {
+            float: left;
+        }
+        #vimeo {
+            padding: 30px;
+            float: left;
+        }
+    </style>
+ </head>
+ <body>
+   <bold> Porownanie parametrow roznych kolorow smokow </bold>
+   <br> ---------------------------------------------------------------
+   <br> Na ponizszym wykresie mozna porownac liczbe straconych zebow
+   <br> i blizn odnalezionych smokow, wzgledem koloru smoka.
+   <br> Kolory na wykresie odpowiadaja kolorom smokow.
+   <br>
+    <div id="demo">
+        <div id="buttons">
+        <button id="data1">number_of_lost_teeth</button>
+        <button id="data2">scars</button>
+        </div>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg"></svg>
+    </div>
+
+    <script type="text/javascript">
+        init();
+    </script>
+
+ </body>
+</html>
