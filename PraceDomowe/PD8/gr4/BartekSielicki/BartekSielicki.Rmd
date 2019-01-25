@@ -1,0 +1,45 @@
+---
+title: "TWD - PD4"
+author: "Bartek Sielicki"
+date: "2 stycznia 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(reshape)
+library(scales)
+```
+
+## Praca Domowa nr 8 - choinka
+
+
+```{r}
+picture <- data.frame(
+  "Col"=c(1:11),
+  "Niebo"=c(8, 7, 6, 5, 4, 2, 4, 5, 6, 7, 8),
+  "Gwiazdka"=c(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0),
+  "Choinka"=c(1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1),
+  "Pień"=c(0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0),
+  "Śnieg"=c(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1)
+)
+melted_picture <- melt(picture, id.vars="Col")
+```
+
+```{r}
+ggplot(melted_picture, aes(x=Col, y=value, fill=variable), ) +
+  geom_bar(stat="identity", position="fill") +
+  scale_fill_manual(values=c("#D0ECF4", "#F9B154", "#48A64D", "#644121", "#FFFFFF")) +
+  guides(fill = guide_legend(title = element_blank())) +
+  theme(
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    panel.grid = element_blank(),
+    axis.ticks = element_blank(),
+    legend.background = element_rect(fill="#DEDEDE") 
+  )
+```

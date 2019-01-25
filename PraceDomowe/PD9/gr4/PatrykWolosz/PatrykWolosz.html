@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: black;
+}
+.centered {
+	text-align: center;
+}
+html {
+	font-family: sans-serif;
+}
+.tooltip1, .tooltip2 {
+	position: absolute;
+	border: 1px solid;
+	padding: 5px;
+	background: #e5efff;
+	border-radius: 10px;
+}
+</style>
+<body>
+<h2 class = "centered">Techniki Wizualizacji Danych</h2>
+<h4 class = "centered">Praca domowa 9, Patryk Wołosz</h4>
+<p>
+W tym zadaniu przyjrzymy się zbiorowi danych 'dragons'. Sprawdźmy, jak ilość straconych zębów jest zależna od wieku.
+</p>
+<div class="plot1"></div>
+<p>
+Zobaczmy teraz jak wygląda zależność wagi od wzrostu.
+</p>
+<div class="plot2"></div>
+<div class="plot3"></div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scaleLinear()
+    .range([0, width]);
+
+var y = d3.scaleLinear()
+    .range([height, 0]);
+
+var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+var xAxis = d3.axisBottom(x);
+
+var yAxis = d3.axisLeft(y);
+
+var svg1 = d3.select("div.plot1").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom + 30)
+	.attr("id", "svg1")
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+var tooltip1 = d3.select("div.plot1").append("div")
+    .attr("class", "tooltip1")
+    .style("opacity", 0);
+	
+var tooltip2 = d3.select("div.plot2").append("div")
+    .attr("class", "tooltip2")
+    .style("opacity", 0);
+	
+d3.csv("dragons.csv", function(error, data) {
+  if (error) throw error;
+
+  data.forEach(function(d) {
+    d.number_of_lost_teeth = +d.number_of_lost_teeth;
+    d.life_length = +d.life_length;
+	d.weight = + d.weight;
+	d.height = + d.height;
+  });
+
+  function get_color_label(color_name) {
+	switch(color_name) {
+		case "red":
+			return "czerwony";
+		case "black":
+			return "czarny";
+		case "blue":
+			return "niebieski";
+		case "green":
+			return "zielony";
+		default:
+			return "";
+	}
+  }
+  
+  x.domain(d3.extent(data, function(d) { return d.life_length; })).nice();
+  y.domain(d3.extent(data, function(d) { return d.number_of_lost_teeth; })).nice();
+  
+  svg1.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("Wiek");
+
+  svg1.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Ilość straconych zębów")
+
+  svg1.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", function(d) { return x(d.life_length); })
+      .attr("cy", function(d) { return y(d.number_of_lost_teeth); })
+      .style("fill", function(d) { return d.colour; })
+	  .on("mouseover", function (d) {
+      tooltip1.transition()
+        .duration(200)
+        .style("opacity", 0.9);
+      tooltip1.html("Kolor: " + get_color_label(d.colour) + "<br/>" +
+					"Waga: " + Math.round(d.weight * 100)/100 + "<br/>" +
+					"Wzrost: " + Math.round(d.height *100)/100 + "<br/>" +
+					"Długość życia: " + Math.round(d.life_length * 100)/100 + "<br/>" +
+					"Ilość straconych zębów: " +d.number_of_lost_teeth + "<br/>" + 
+					"Rok urodzenia: " + d.year_of_birth + "<br/>" +
+					"Ilość blizn: " + d.scars)
+        .style("left", (d3.event.pageX) + "px")
+        .style("top", (d3.event.pageY) + "px")
+		.style("display", "block");
+    })
+    .on("mouseout", function (d) {
+      tooltip1
+		.style("left", "0px")
+        .style("top", "0px")
+		.style("display", "none");
+    });
+
+	var x2 = d3.scaleLinear().range([0, width]);
+	var y2 = d3.scaleLinear().range([height, 0]);
+	var xAxis2 = d3.axisBottom(x2);
+	var yAxis2 = d3.axisLeft(y2);
+
+	
+	
+var svg2 = d3.select("div.plot2").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom + 30)
+	.attr("id", "svg2")
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+	x2.domain(d3.extent(data, function(d) { return d.weight; })).nice();
+	y2.domain(d3.extent(data, function(d) { return d.height; })).nice();
+	
+	svg2.append("g")
+		.attr("class", "x axis")
+		.attr("transform", "translate(0," + height + ")")
+		.call(xAxis2)
+		.append("text")
+		.attr("class", "label")
+		.attr("x", width)
+		.attr("y", -6)
+		.style("text-anchor", "end")
+		.text("Wzrost");
+		
+	svg2.append("g")
+		.attr("class", "y axis")
+		.call(yAxis2)
+		.append("text")
+		.attr("class", "label")
+		.attr("transform", "rotate(-90)")
+		.attr("y", 6)
+		.attr("dy", ".71em")
+		.style("text-anchor", "end")
+		.text("Waga")
+		
+	svg2.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", function(d) { return x2(d.weight); })
+      .attr("cy", function(d) { return y2(d.height); })
+      .style("fill", function(d) { return d.colour; })
+	  .on("mouseover", function (d) {
+      tooltip2.transition()
+        .duration(200)
+        .style("opacity", 0.9);
+      tooltip2.html("Kolor: " + get_color_label(d.colour) + "<br/>" +
+					"Waga: " + Math.round(d.weight * 100)/100 + "<br/>" +
+					"Wzrost: " + Math.round(d.height *100)/100 + "<br/>" +
+					"Długość życia: " + Math.round(d.life_length * 100)/100 + "<br/>" +
+					"Ilość straconych zębów: " +d.number_of_lost_teeth + "<br/>" + 
+					"Rok urodzenia: " + d.year_of_birth + "<br/>" +
+					"Ilość blizn: " + d.scars)
+        .style("left", (d3.event.pageX) + "px")
+        .style("top", (d3.event.pageY) + "px")
+		.style("display", "block");
+    })
+    .on("mouseout", function (d) {
+      tooltip2
+		.style("left", "0px")
+        .style("top", "0px")
+		.style("display", "none");
+    });
+	
+});
+
+</script>
+
+</body>
+</html>
