@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>MINI - korzenie</title>
+		<meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
+		<meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<style>
+	
+			.node {
+				cursor: pointer;
+			}
+
+			.node circle {
+			fill: #fff;
+			/*stroke: steelblue;*/
+			stroke-width: 3px;
+			}
+
+			.node text {
+			font: 12px sans-serif;
+			}
+
+			.link {
+			fill: none;
+			stroke: #ccc;
+			stroke-width: 2px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<h1 class="main-title" id="miniHeaderType"></h1>
+				</div>
+				<div class="codrops-header" style="margin-top:50px">
+					<h1>Graf powiązań naszych wykładowców<span>Z tej prezentacji dowiesz się jakie są związki pracowników z wydziału <font color="blue">MiNI</font> z 
+                        <font color="green">Warszawską</font> i <font color="red">Lwowską</font> szkołą matematyczną</span></h1>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
+		<!-- load the d3.js library -->	
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+			
+		<script src="https://cdn.jsdelivr.net/npm/typeit@6.0.1/dist/typeit.min.js"></script>
+		<script>
+			new TypeIt('#miniHeaderType', {
+				speed: 50,
+				startDelay: 900
+			})
+			.type('Wydział Matematyki i Nauk Informacyjnych')
+			.pause(300)
+			.pause(750)
+			.type('<br/><span class="thin">Powiązania</span>')
+			.pause(150)
+			.options({speed: 100, deleteSpeed: 75})
+			.delete(10)
+			.pause(750)
+			.type('<span class="thin">Korzenie</span>')
+			.go();
+		</script>
+		<script>
+		var treeData = [
+		{
+			"name": "Kazimierz Twardowski",
+			"parent": "null",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kazimierz_Twardowski_1933.jpg/144px-Kazimierz_Twardowski_1933.jpg",
+			"children": [
+			{
+				"name": "Stefan Banach",
+				"parent": "Kazimierz Twardowski",
+                "school": "l",
+                "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/%D8%B9%D8%A7%D9%84%D9%85_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%A8%D9%88%D9%84%D9%86%D8%AF%D9%89_%D8%B3%D8%AA%D9%8A%D9%81%D8%A7%D9%86_%D8%A8%D9%86%D8%A7%D8%AE.jpg/178px-%D8%B9%D8%A7%D9%84%D9%85_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D8%A8%D9%88%D9%84%D9%86%D8%AF%D9%89_%D8%B3%D8%AA%D9%8A%D9%81%D8%A7%D9%86_%D8%A8%D9%86%D8%A7%D8%AE.jpg",
+				"children": [
+				{
+					"name": "Stanisław Mazur",
+					"parent": "Stefan Banach",
+                    "school": "l",
+                    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Stanislaw_Mazur_Polish_mathematician.jpg/150px-Stanislaw_Mazur_Polish_mathematician.jpg",
+					"children": [
+					{
+						"name": "Stefan Rolewicz",
+						"parent": "Stanisław Mazur",
+                        "img": "https://www.ptm.org.pl/sites/default/files/imagecache/large/strolewicz_1.gif",
+						"children": [
+						{
+							"name": "Ewa Bednarczuk",
+							"parent": "Stefan Rolewicz",
+                            "school": "mini"
+						}
+						]
+					},
+					{
+						"name": "Krzysztof Maurin",
+						"parent": "Stanisław Mazur",
+                        "img": "http://www.deltami.edu.pl/temat/roznosci/historia_i_filozofia/2017/02/27/maurin3_thumb_190px.jpg",
+						"children": [
+						{
+							"name": "Stanisław Lech Woronowicz",
+							"parent": "Krzysztof Maurin",
+                            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Woronowicz_s_l.jpg/200px-Woronowicz_s_l.jpg",
+							"children": [
+							{
+								"name": "Piotr Mikołaj Sołtan",
+								"parent": "Stanisław Lech Woronowicz",
+								"children": [
+								{
+									"name": "Paweł Józiak",
+									"parent": "Piotr Mikołaj Sołtan",
+                                    "school": "mini",
+                                    "img": "https://www.impan.pl/~pjoziak/data/avatar.png"
+								}
+								]
+							}
+							]
+						}
+						]
+					}
+					]
+				}
+				]
+			},
+			{
+				"name": "Stanisław Leśniewski",
+				"parent": "Kazimierz Twardowski",
+                "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Stanis%C5%82aw_Le%C5%9Bniewski.jpg/220px-Stanis%C5%82aw_Le%C5%9Bniewski.jpg",
+                "school": "w",
+				"children": [
+				{
+					"name": "Alfred Tarski",
+					"parent": "Stanisław Leśniewski",
+                    "school": "w",
+                    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/AlfredTarski1968.jpeg/240px-AlfredTarski1968.jpeg",
+					"children": [
+					{
+						"name": "Andrzej Mostowski",
+						"parent": "null",
+                        "school": "w",
+                        "img": "https://mm.pwn.pl/ency/jpg/583/19/d92i6435.jpg",
+						"children": [
+						{
+							"name": "Roman Sikorski",
+							"parent": "null",
+							"children": [
+							{
+								"name": "Tadeusz Traczyk",
+								"parent": "Roman Sikorski",
+								"children": [
+								{
+									"name": "Anna B. Romanowska",
+									"parent": "Tadeusz Traczyk",
+                                    "school": "mini",
+									"children": [
+									{
+										"name": "Agata Pilitowska",
+										"parent": "Anna B. Romanowska",
+                                        "school": "mini",
+                                        "img": "http://www.mini.pw.edu.pl/~apili/gifs/agata_pilitowska.jpg"
+									},
+									{
+										"name": "Barbara Roszkowska-Lech",
+										"parent": "Anna B. Romanowska",
+                                        "school": "mini"
+									},
+									{
+										"name": "Tomasz Brengos",
+										"parent": "Anna B. Romanowska",
+                                        "school": "mini",
+                                        "img": "http://www.mini.pw.edu.pl/~radadokt/images/tomek_b.jpg"
+									},
+									{
+										"name": "Anna Zamojska-Dzienio",
+										"parent": "Anna B. Romanowska",
+                                        "school": "mini"
+									}
+									]
+								},
+								{
+									"name": "Zbigniew Lonc",
+									"parent": "Tadeusz Traczyk",
+                                    "school": "mini",
+									"children": [
+									{
+										"name": "Krzysztof Brys",
+										"parent": "Zbigniew Lonc",
+                                        "school": "mini",
+                                        "img": "http://szok.mini.pw.edu.pl/photos/brys_krzysztof.jpg"
+									},
+									{
+										"name": "Michał Tuczyński",
+										"parent": "Zbigniew Lonc",
+                                        "school": "mini"
+									},
+									{
+										"name": "Paweł Rzążewski",
+										"parent": "Zbigniew Lonc",
+                                        "school": "mini",
+                                        "img": "https://scholar.google.pl/citations?view_op=medium_photo&user=yJfMw-EAAAAJ&citpid=2"
+									}
+									]
+								}
+								]
+							},
+							{
+								"name": "Karol Krzyżewski",
+								"parent": "Roman Sikorski",
+								"children": [
+								{
+									"name": "Feliks Marian Przytycki",
+									"parent": "Karol Krzyżewski",
+									"children": [
+									{
+										"name": "Bogusława Karpińska",
+										"parent": "Feliks Marian Przytycki",
+                                        "school": "mini"
+									},
+									{
+										"name": "Ludwik Jaksztas",
+										"parent": "Feliks Marian Przytycki",
+                                        "school": "mini"
+									}
+									]
+								},
+								{
+									"name": "Janina Kotus",
+									"parent": "Karol Krzyżewski",
+                                    "school": "mini",
+									"children": [
+									{
+										"name": "Agnieszka Badeńska",
+										"parent": "Janina Kotus",
+                                        "school": "mini",
+                                        "img": "http://szok.mini.pw.edu.pl/photos/badenska_agnieszka.jpg"
+									},
+									{
+										"name": "Piotr Gałązka ",
+										"parent": "Janina Kotus",
+                                        "school": "mini"
+									}
+									]
+								}
+								]
+							}
+							]
+						},
+						{
+							"name": "Helena Rasiowa",
+							"parent": "Andrzej Mostowski",
+                            "img": "http://konferencja.ptkwm.org.pl/images/djmediatools/rasiowa2.jpg",
+							"children": [
+							{
+								"name": "Andrzej Salwicki",
+								"parent": "Helena Rasiowa",
+                                "img": "https://i1.rgstatic.net/ii/profile.image/273743545106433-1442276955536_Q512/Andrzej_Salwicki.jpg",
+								"children": [
+								{
+									"name": "Andrzej Szalas",
+									"parent": "Andrzej Salwicki",
+									"children": [
+									{
+										"name": "Anna Zalewska",
+										"parent": "Andrzej Szalas",
+                                        "school": "mini"
+									}
+									]
+								}
+								]
+							}
+							]
+						}
+						]
+					}
+					]
+				}
+				]
+			}
+			]
+		}
+		];
+
+
+		// ************** Generate the tree diagram	 *****************
+		var margin = {top: 20, right: 120, bottom: 20, left: 120},
+			width = 1900 - margin.right - margin.left,
+			height = 950 - margin.top - margin.bottom;
+			
+		var i = 0,
+			duration = 750,
+			root;
+
+		var tree = d3.layout.tree()
+			.size([width, height]);
+
+		var diagonal = d3.svg.diagonal()
+			.projection(function(d) { return [d.x, d.y]; });
+
+		var svg = d3.select("body").append("svg")
+			.attr("width", width + margin.right + margin.left)
+			.attr("height", height + margin.top + margin.bottom)
+			.append("g")
+			.attr("transform", "translate(" + margin.left + "," + (margin.top + 25) + ")");
+
+        var defs = svg.append('defs');
+
+		root = treeData[0];
+		root.x0 = width / 2;
+		root.y0 = 100;
+
+        var nodes = tree.nodes(root).reverse(),
+			links = tree.links(nodes);
+
+        //nodes.forEach(function(d) {  
+                
+        //});
+		
+		update(root);
+
+		d3.select(self.frameElement).style("height", "500px");
+
+		function update(source) {
+
+		// Compute the new tree layout.
+
+        tree.separation(function(a, b) { return a.parent == b.parent ? 1 : 1; })        
+
+		var nodes = tree.nodes(root).reverse(),
+			links = tree.links(nodes);
+
+		// Normalize for fixed-depth.
+		nodes.forEach(function(d) { d.y = d.depth * 120; });
+
+		// Update the nodes…
+		var node = svg.selectAll("g.node")
+			.data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+		// Enter any new nodes at the parent's previous position.
+		var nodeEnter = node.enter().append("g")
+			.attr("class", "node")
+			.attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+			.on("click", click);
+        
+        nodeEnter.append('pattern')
+                  .attr("id", function(d) {return "img" + d.id;})
+                  .attr("width", 1)
+                  .attr("height", 1)
+                  .attr('patternContentUnits', 'objectBoundingBox')
+                  .append("svg:image")
+                  .attr("xlink:href", function(d) {return d.img;})
+                  .attr("width", 1)
+                  .attr("height", 1)
+                  .attr("preserveAspectRatio", "xMinYMin slice");
+
+		nodeEnter.append("circle")
+            .attr("r", 5)
+            .style("stroke", function(d) { 
+                switch(d.school) {
+                  case "w":
+                    return "green";
+                  case "l":
+                    return "red";
+                  case "mini":
+                    return "blue";
+                  default:
+                    return "lightsteelblue";
+                }             
+            });
+
+		nodeEnter.append("text")
+			.attr("y", function(d) { return d.img ? -41 : -22 })
+			.attr("dy", ".35em")
+			.attr("text-anchor", function(d) { return "middle"; })
+			.text(function(d) { return d.name; })
+			.style("fill-opacity", 1e-6);
+
+		// Transition nodes to their new position.
+		var nodeUpdate = node.transition()
+			.duration(duration)
+			.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+		nodeUpdate.select("circle")
+			.attr("r", function(d) { return d.img ? 30 : 10 })
+			//.style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
+            .style("fill", function(d) { return d.img ? "url(#img" + d.id + ")" : d._children ? "lightsteelblue" : "#fff"; });
+
+		nodeUpdate.select("text")
+			.style("fill-opacity", 1);
+
+		// Transition exiting nodes to the parent's new position.
+		var nodeExit = node.exit().transition()
+			.duration(duration)
+			.attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+			.remove();
+
+		nodeExit.select("circle")
+			.attr("r", 1e-6);
+
+		nodeExit.select("text")
+			.style("fill-opacity", 1e-6);
+
+		// Update the links…
+		var link = svg.selectAll("path.link")
+			.data(links, function(d) { return d.target.id; });
+
+		// Enter any new links at the parent's previous position.
+		link.enter().insert("path", "g")
+			.attr("class", "link")
+			.attr("d", function(d) {
+				var o = {x: source.x0, y: source.y0};
+				return diagonal({source: o, target: o});
+			});
+
+		// Transition links to their new position.
+		link.transition()
+			.duration(duration)
+			.attr("d", diagonal);
+
+		// Transition exiting nodes to the parent's new position.
+		link.exit().transition()
+			.duration(duration)
+			.attr("d", function(d) {
+				var o = {x: source.x, y: source.y};
+				return diagonal({source: o, target: o});
+			})
+			.remove();
+
+		// Stash the old positions for transition.
+		nodes.forEach(function(d) {
+			d.x0 = d.x;
+			d.y0 = d.y;
+		});
+		}
+
+		// Toggle children on click.
+		function click(d) {
+		if (d.children) {
+			d._children = d.children;
+			d.children = null;
+		} else {
+			d.children = d._children;
+			d._children = null;
+		}
+		update(d);
+		}
+
+		</script>
+	</body>
+</html>

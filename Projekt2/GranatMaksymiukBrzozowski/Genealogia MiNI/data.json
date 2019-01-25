@@ -1,0 +1,54 @@
+[
+    {
+        "distan": "Brak powiazania", 
+        "values": [
+            {
+                "value": 10, 
+                "gender": "Mężczyźni"
+            }, 
+            {
+                "value": 3, 
+                "gender": "Kobiety"
+            }
+        ]
+    }, 
+    {
+        "distan": "2", 
+        "values": [
+            {
+                "value": 2, 
+                "gender": "Mężczyźni"
+            }, 
+            {
+                "value": 2, 
+                "gender": "Kobiety"
+            }
+        ]
+    }, 
+    {
+        "distan": "3", 
+        "values": [
+            {
+                "value": 5, 
+                "gender": "Mężczyźni"
+            }, 
+            {
+                "value": 3, 
+                "gender": "Kobiety"
+            }
+        ]
+    },  
+    {
+        "distan": "4", 
+        "values": [
+            {
+                "value": 9, 
+                "gender": "Mężczyźni"
+            }, 
+            {
+                "value": 7, 
+                "gender": "Kobiety"
+            }
+        ]
+    }
+]

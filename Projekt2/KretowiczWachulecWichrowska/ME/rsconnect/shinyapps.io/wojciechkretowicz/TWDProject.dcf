@@ -1,0 +1,12 @@
+name: TWDProject
+title: TWDProject
+username:
+account: wojciechkretowicz
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 656303
+bundleId: 1825184
+url: https://wojciechkretowicz.shinyapps.io/TWDProject/
+when: 1547987022.08627
+asMultiple: FALSE
+asStatic: FALSE
