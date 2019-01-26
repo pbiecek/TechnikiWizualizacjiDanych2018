@@ -43,7 +43,14 @@ d3.json("data.json", function(error, data) {
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .call(xAxis)
+      .append("text")
+      .attr("transform", "rotate(0)")
+      .attr("x", width)
+      .attr("dy", "2em")
+      .style("text-anchor", "end")
+      .style('font-weight','bold')
+      .text("Odległość w drzewie do najblższego pracownika szkoły lwowskiej lub warszawskiej (w liczbie węzłów)");
 
   svg.append("g")
       .attr("class", "y axis")
