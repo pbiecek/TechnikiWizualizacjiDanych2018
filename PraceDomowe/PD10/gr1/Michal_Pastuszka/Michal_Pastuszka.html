@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css">
+text {
+  fill: black;
+  font: sans-serif;
+}
+.title {
+  fill: black;
+  font: 18px sans-serif;
+  text-anchor: middle;
+}
+div.tooltip {	
+  position: absolute;			
+  text-align: center;			
+  width: 200px;					
+  height: 48px;					
+  padding: 2px;				
+  font: 12px sans-serif;		
+  background: lightsteelblue;	
+  border: 0px;		
+  border-radius: 8px;			
+  pointer-events: none;	
+  
+}
+
+    </style>
+</head>
+<body>
+<div class="output">
+<svg width=1800, height=900></svg>
+</div>
+<script src='https://d3js.org/d3.v4.min.js'></script>
+<script language="JavaScript"  type="text/javascript">
+var data = [{"Age":0,"color":"green","delta":843229,"minrate":7148455,"rate":7991684},{"Age":1,"color":"green","delta":843135,"minrate":7049023,"rate":7892158},{"Age":2,"color":"green","delta":843037,"minrate":6949644,"rate":7792681},{"Age":3,"color":"green","delta":842933,"minrate":6850296,"rate":7693229},{"Age":4,"color":"green","delta":842827,"minrate":6750968,"rate":7593795},{"Age":5,"color":"green","delta":842726,"minrate":6651653,"rate":7494379},{"Age":6,"color":"green","delta":842620,"minrate":6552355,"rate":7394975},{"Age":7,"color":"green","delta":842508,"minrate":6453075,"rate":7295583},{"Age":8,"color":"green","delta":842398,"minrate":6353808,"rate":7196206},{"Age":9,"color":"green","delta":842287,"minrate":6254557,"rate":7096844},{"Age":10,"color":"green","delta":842172,"minrate":6155321,"rate":6997493},{"Age":11,"color":"green","delta":842053,"minrate":6056101,"rate":6898154},{"Age":12,"color":"green","delta":841931,"minrate":5956894,"rate":6798825},{"Age":13,"color":"green","delta":841806,"minrate":5857703,"rate":6699509},{"Age":14,"color":"green","delta":841682,"minrate":5758528,"rate":6600210},{"Age":15,"color":"green","delta":841555,"minrate":5659376,"rate":6500931},{"Age":16,"color":"green","delta":841415,"minrate":5560260,"rate":6401675},{"Age":17,"color":"green","delta":841256,"minrate":5461185,"rate":6302441},{"Age":18,"color":"green","delta":841064,"minrate":5362166,"rate":6203230},{"Age":19,"color":"green","delta":840818,"minrate":5263229,"rate":6104047},{"Age":20,"color":"green","delta":840498,"minrate":5164392,"rate":6004890},{"Age":21,"color":"green","delta":840094,"minrate":5065664,"rate":5905758},{"Age":22,"color":"green","delta":839602,"minrate":4967048,"rate":5806650},{"Age":23,"color":"green","delta":839025,"minrate":4868542,"rate":5707567},{"Age":24,"color":"green","delta":838360,"minrate":4770149,"rate":5608509},{"Age":25,"color":"green","delta":837617,"minrate":4671862,"rate":5509479},{"Age":26,"color":"green","delta":836795,"minrate":4573679,"rate":5410474},{"Age":27,"color":"green","delta":835890,"minrate":4475604,"rate":5311494},{"Age":28,"color":"green","delta":834902,"minrate":4377640,"rate":5212542},{"Age":29,"color":"green","delta":833835,"minrate":4279786,"rate":5113621},{"Age":30,"color":"green","delta":832690,"minrate":4182046,"rate":5014736},{"Age":31,"color":"green","delta":831456,"minrate":4084434,"rate":4915890},{"Age":32,"color":"green","delta":830119,"minrate":3986966,"rate":4817085},{"Age":33,"color":"green","delta":828678,"minrate":3889647,"rate":4718325},{"Age":34,"color":"green","delta":827125,"minrate":3792486,"rate":4619611},{"Age":35,"color":"green","delta":825450,"minrate":3695496,"rate":4520946},{"Age":36,"color":"green","delta":823639,"minrate":3598700,"rate":4422339},{"Age":37,"color":"green","delta":821692,"minrate":3502106,"rate":4323798},{"Age":38,"color":"green","delta":819597,"minrate":3405725,"rate":4225322},{"Age":39,"color":"green","delta":817332,"minrate":3309588,"rate":4126920},{"Age":40,"color":"green","delta":814880,"minrate":3213730,"rate":4028610},{"Age":41,"color":"green","delta":812226,"minrate":3118176,"rate":3930402},{"Age":42,"color":"green","delta":809349,"minrate":3022961,"rate":3832310},{"Age":43,"color":"green","delta":806217,"minrate":2928126,"rate":3734343},{"Age":44,"color":"green","delta":802825,"minrate":2833684,"rate":3636509},{"Age":45,"color":"green","delta":799166,"minrate":2739657,"rate":3538823},{"Age":46,"color":"green","delta":795205,"minrate":2646101,"rate":3441306},{"Age":47,"color":"green","delta":790923,"minrate":2553060,"rate":3343983},{"Age":48,"color":"green","delta":786277,"minrate":2460595,"rate":3246872},{"Age":49,"color":"green","delta":781228,"minrate":2368772,"rate":3150000},{"Age":50,"color":"green","delta":775763,"minrate":2277634,"rate":3053397},{"Age":51,"color":"green","delta":769838,"minrate":2187252,"rate":2957090},{"Age":52,"color":"green","delta":763415,"minrate":2097703,"rate":2861118},{"Age":53,"color":"green","delta":756474,"minrate":2009038,"rate":2765512},{"Age":54,"color":"green","delta":748963,"minrate":1921334,"rate":2670297},{"Age":55,"color":"green","delta":740841,"minrate":1834668,"rate":2575509},{"Age":56,"color":"green","delta":732077,"minrate":1749106,"rate":2481183},{"Age":57,"color":"green","delta":722634,"minrate":1664725,"rate":2387359},{"Age":58,"color":"green","delta":712466,"minrate":1581620,"rate":2294086},{"Age":59,"color":"green","delta":701513,"minrate":1499894,"rate":2201407},{"Age":60,"color":"green","delta":689751,"minrate":1419613,"rate":2109364},{"Age":61,"color":"green","delta":677164,"minrate":1340848,"rate":2018012},{"Age":62,"color":"green","delta":663729,"minrate":1263685,"rate":1927414},{"Age":63,"color":"green","delta":649423,"minrate":1188201,"rate":1837624},{"Age":64,"color":"green","delta":634184,"minrate":1114498,"rate":1748682},{"Age":65,"color":"green","delta":617998,"minrate":1042626,"rate":1660624},{"Age":66,"color":"green","delta":600827,"minrate":972687,"rate":1573514},{"Age":67,"color":"green","delta":582669,"minrate":904742,"rate":1487411},{"Age":68,"color":"green","delta":563559,"minrate":838801,"rate":1402360},{"Age":69,"color":"green","delta":543468,"minrate":774955,"rate":1318423},{"Age":70,"color":"green","delta":522365,"minrate":713321,"rate":1235686},{"Age":71,"color":"green","delta":500267,"minrate":653995,"rate":1154262},{"Age":72,"color":"green","delta":477227,"minrate":597031,"rate":1074258},{"Age":73,"color":"green","delta":453286,"minrate":542495,"rate":995781},{"Age":74,"color":"green","delta":428505,"minrate":490461,"rate":918966},{"Age":75,"color":"green","delta":402999,"minrate":441007,"rate":844006},{"Age":76,"color":"green","delta":376897,"minrate":394206,"rate":771103},{"Age":77,"color":"green","delta":350356,"minrate":350097,"rate":700453},{"Age":78,"color":"green","delta":323515,"minrate":308738,"rate":632253},{"Age":79,"color":"green","delta":296529,"minrate":270214,"rate":566743},{"Age":80,"color":"green","delta":269626,"minrate":234558,"rate":504184},{"Age":81,"color":"green","delta":243025,"minrate":201794,"rate":444819},{"Age":82,"color":"green","delta":216923,"minrate":171957,"rate":388880},{"Age":83,"color":"green","delta":191573,"minrate":145032,"rate":336605},{"Age":84,"color":"green","delta":167262,"minrate":120966,"rate":288228},{"Age":85,"color":"green","delta":144204,"minrate":99705,"rate":243909},{"Age":86,"color":"green","delta":122668,"minrate":81129,"rate":203797},{"Age":87,"color":"green","delta":102919,"minrate":65099,"rate":168018},{"Age":88,"color":"green","delta":84994,"minrate":51521,"rate":136515},{"Age":89,"color":"green","delta":68940,"minrate":40175,"rate":109115},{"Age":90,"color":"green","delta":54890,"minrate":30844,"rate":85734},{"Age":91,"color":"green","delta":42821,"minrate":23272,"rate":66093},{"Age":92,"color":"green","delta":32651,"minrate":17157,"rate":49808},{"Age":93,"color":"green","delta":24320,"minrate":12359,"rate":36679},{"Age":94,"color":"green","delta":17664,"minrate":8714,"rate":26378},{"Age":95,"color":"green","delta":12485,"minrate":6041,"rate":18526},{"Age":96,"color":"green","delta":8587,"minrate":4124,"rate":12711},{"Age":97,"color":"green","delta":5733,"minrate":2752,"rate":8485},{"Age":98,"color":"green","delta":3710,"minrate":1794,"rate":5504},{"Age":99,"color":"green","delta":2324,"minrate":1142,"rate":3466},{"Age":100,"color":"green","delta":1408,"minrate":709,"rate":2117},{"Age":101,"color":"green","delta":824,"minrate":429,"rate":1253},{"Age":102,"color":"green","delta":465,"minrate":253,"rate":718},{"Age":103,"color":"green","delta":253,"minrate":146,"rate":399},{"Age":104,"color":"green","delta":132,"minrate":82,"rate":214},{"Age":105,"color":"green","delta":67,"minrate":45,"rate":112},{"Age":106,"color":"green","delta":32,"minrate":24,"rate":56},{"Age":107,"color":"green","delta":16,"minrate":12,"rate":28},{"Age":108,"color":"green","delta":7,"minrate":6,"rate":13},{"Age":109,"color":"green","delta":3,"minrate":3,"rate":6}];
+
+window.onload = function(){
+var svg = d3.select("svg")
+var svgdata  = document.getElementsByTagName('svg')[0];
+var width = 1800
+var height = 900
+console.log(width);
+var g1 = svg.append('g');
+
+var margin = {top: 10, right: 0, bottom: 40, left: 80};
+var barWidth = Math.floor((width-margin.left-margin.right) / data.length);
+var y = d3.scaleLinear()
+.range([(height-margin.bottom), margin.top])
+.domain([0, 8000000]);
+
+var x = d3.scaleBand()
+        .range([margin.left, width-margin.left])
+        .domain(data.map(function(d) { return d.Age; }));
+        
+var state = "unfolded";
+
+var div = d3.select("body").append("div")	
+    		.attr("class", "tooltip")				
+    		.style("opacity", 0);
+
+g1.selectAll('rect')
+.data(data)
+.enter().append('rect')
+.attr('width', barWidth-1)
+.attr('height', function(d, i) { return height-margin.bottom-y(d.rate); })
+.attr('y', function(d, i) { return y(d.rate); })
+.attr('x', function(d, i) { return x(d.Age)})
+.attr('fill', 'darkblue')
+.on("mouseover", function(d) {		
+            		div.transition()		
+                	.duration(200)		
+                	.style("opacity", .99);		
+            		div.html("Wiek: " + d.Age + "<br/>" + "Liczba kobiet: " + d.rate + "<br/>"  + "Liczba mężczyzn: " + d.minrate)	
+                	.style("left", (d3.event.pageX) + "px")		
+                	.style("top", (d3.event.pageY - 28) + "px");	
+            	})					
+        	.on("mouseout", function(d) {		
+            		div.transition()		
+                	.duration(500)		
+                	.style("opacity", 0);	
+        	})
+.on("click", function(d) {
+  if(state=="unfolded"){
+    state = "folded";
+    d3.selectAll('rect')
+    .transition()
+    .duration(1000)
+    .attr('height', function(d, i) { return height-margin.bottom-y(d.delta);})
+    .attr('fill', function(d,i) {return d.color});
+    d3.select('.title')
+    .text("Przewaga liczby kobiet nad liczbą mężczyzn");
+  }else{
+    state = "unfolded";
+    d3.selectAll('rect')
+    .transition()
+    .duration(1000)
+    .attr('height', function(d, i) { return height-margin.bottom-y(d.rate); })
+    .attr('fill', 'darkblue');
+    d3.select('.title')
+    .text("Liczba żyjących kobiet w danym wieku");
+  }
+});
+
+var x_axis = d3.axisBottom()
+        	.scale(x);
+	var xAxisTranslate = height-margin.bottom;
+
+    	svg.append("g")
+            .attr("transform", "translate(0, " + xAxisTranslate  +")")
+            .call(x_axis);
+            
+var y_axis = d3.axisLeft()
+        	.scale(y)
+        	.tickFormat(d3.format(",d"));
+	var yAxisTranslate = margin.left;
+
+    	svg.append("g")
+            .attr("transform", "translate("+ yAxisTranslate + ", 0" +")")
+            .call(y_axis);
+            
+  svg.append("text")
+		.attr("class", "title")
+       		.attr("x", (width / 2))             
+        	.attr("y", 20)
+        	.style("text-anchor", "middle")
+		      .style("text decoration", "bold")
+        	.text("Liczba żyjących kobiet w danym wieku");
+        	
+  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height - margin.top + 0) + ")")
+      .style("text-anchor", "middle")
+      .text("Wiek");
+      
+      svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", 0 - height/2)
+      .attr("y", 0)      
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Liczba kobiet");     
+
+	
+ }  
+
+    </script>   
+</body>
