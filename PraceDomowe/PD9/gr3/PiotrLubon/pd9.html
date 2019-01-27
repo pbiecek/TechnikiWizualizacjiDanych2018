@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="http://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="http://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 30, bottom: 100, left: 55},
+    width = 460 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Parse the Data
+d3.csv("https://gist.githubusercontent.com/plubon/1b0e1a7b3a03abdfd79440e11ffd3f0a/raw/df8d789b3e77918493552cb122635122a5d0b2ca/dragons.csv", function(data) {
+
+  // List of groups = header of the csv files
+  var keys = data.columns.slice(1)
+  console.log(keys)
+  // Add X axis
+  var x = d3.scaleLinear()
+    .domain(d3.extent(data, function(d) { return d.year; }))
+    .range([ 0, width ]);
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).ticks(5));
+
+	svg.append("text")             
+	      .attr("transform",
+	            "translate(" + (width/2) + " ," + 
+	                           (height + margin.top + 20) + ")")
+	      .style("text-anchor", "middle")
+	      .style("font", "14px times")
+	      .text("Year");
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain([0, 2200])
+    .range([ height, 0 ]);
+  svg.append("g")
+    .call(d3.axisLeft(y));
+ svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .style("font", "14px times")
+      .text("Number of discovered dragons of each color"); 
+  // color palette
+  var color = d3.scaleOrdinal()
+    .domain(keys)
+    .range(['#ff6961','#6495ed','#77dd77','#000000'])
+
+  //stack the data?
+  var stackedData = d3.stack()
+    .keys(keys)
+    (data)
+    console.log("This is the stack result: ", stackedData)
+
+  // Show the areas
+  svg
+    .selectAll("mylayers")
+    .data(stackedData)
+    .enter()
+    .append("path")
+      .style("fill", function(d) { console.log(d.key) ; return color(d.key); })
+      .attr("d", d3.area()
+        .x(function(d, i) { return x(d.data.year); })
+        .y0(function(d) { return y(d[0]); })
+        .y1(function(d) { return y(d[1]); })
+    )
+
+})
+
+</script>

@@ -1,0 +1,141 @@
+  <!DOCTYPE html>
+  <html lang="">
+  	<head>
+  		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<title>Genealogia MiNI</title>
+  
+  		<!-- Bootstrap CSS -->
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  		<!-- Google Fonts -->
+  		<link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+  		<!-- Font Awesome -->
+  		<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+  		<!-- Style -->
+  		<link href='style.css' rel='stylesheet' type='text/css'>
+		<style>
+
+            #tooltip {
+               position: absolute;
+               width: 200px;
+               height: auto;
+               padding: 10px;
+               background-color: white;
+               -webkit-border-radius: 10px;
+               -moz-border-radius: 10px;
+               border-radius: 10px;
+               -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+               -mox-box-shadow: 4px 4px 4px 10px rgba(0, 0, 0, 0.4);
+               box-shadow: 4px 4px 10px rbga(0, 0, 0, 0.4)
+               pointer-events: none;
+            }
+
+            #tooltip.hidden {
+               display: none;
+            }
+
+           #tooltip p {
+               margin: 0;
+               font-family: sans-serif;
+               font-size: 16px;
+               line-height: 20px;
+           }
+		</style>
+  
+  	</head>
+  	<body>
+  
+		
+		<!-- START SECTION -->
+  		<div class="section hero text-center background-dark dark-bg">
+  			<div class="background-image" style="background: url(images/hero.jpg) no-repeat center center; background-size: cover; opacity: .2;"></div>
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12">
+  						<h2>Korzenie MiNI</h2>
+  						<p class="lead">Łukasz Brzozowski, Bartłomiej Granat, Szymon Maksymiuk </p>
+  						<ul class="list-inline">
+  							<li><a href=".\SzkolaLwTest.html" title="Learn More" class="btn btn-md btn-primary">Szkoła Lwowska</a></li>
+  							<li><a href=".\SzkolaWwTest.html" title="Learn More" class="btn btn-md btn-primary">Szkoła Warszawska</a></li>
+							<li><a href=".\testPracTest.html" title="Learn More" class="btn btn-md btn-primary">Przodkowie Pracowników</a></li>
+							<li><a href=".\Statystyki.html" title="Learn More" class="btn btn-md btn-primary">Garść statystyk</a></li>
+  						</ul>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/.section -->
+		<div style="margin:75px;" class="tabbable">
+            <ul class="nav nav-tabs">
+                <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">Wykres 1</a></li>
+                <li><a class="btab" href="#b_tab" data-toggle="tab">Wykres 2</a></li>
+				<li><a class="ctab" href="#c_tab" data-toggle="tab">Wykres 3</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="a_tab">
+                    <h3>Procentowy udział powiązań pracowników MiNI z daną szkołą</h3>
+                    <acontent></acontent>
+                </div>
+                <div class="tab-pane" id="b_tab">
+                    <h3>Odległość między pracownikami a członkami szkół matematycznych mierzona pokoleniami z podziałem na płeć </h3>
+                    <bcontent></bcontent>
+                </div>
+				<div class="tab-pane" id="c_tab">
+                    <h3>Odległość między pracownikami a członkami szkół matematycznych mierzona pokoleniami z podziałem na szkoły </h3>
+                    <ccontent></ccontent>
+                </div>
+            </div>
+        </div>
+		
+		<style>
+			g.slice:hover {
+				fill: brown;
+			}
+
+
+}
+		</style>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="http://d3js.org/d3.v3.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+
+        <script>
+            $.getScript("a.js");
+            $(".atab").click(function() {
+                $.getScript("a.js");
+            })
+        </script>
+        <script>
+            $(".btab").click(function() {
+                $.getScript("b.js");
+            })
+        </script>
+		<script>
+            $(".ctab").click(function() {
+                $.getScript("c.js");
+            })
+        </script>
+
+  		
+
+  		
+
+  		
+
+
+  			<div class="background-image" style="background: url(images/hero.jpg) no-repeat fixed center center; background-size: cover; opacity: .2;"></div>
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12">
+  						
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+ 
+
+  	
+
+  	</body>
+  </html>
