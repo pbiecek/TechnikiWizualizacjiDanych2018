@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    body {
+        font: 12px sans-serif;
+        text-align: center;
+    }
+    
+    .chart-title {
+        font: 24px sans-serif;
+    }
+    
+    .axis text {
+        fill: black;
+    }
+    
+    div.tooltip {
+        position: absolute;
+        text-align: center;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: lightblue;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+</style>
+
+<body>
+    <h1>Techniki Wizualizacji Danych - PD10</h1>
+    <p>Andrzej Szczesiak</p>
+    <b class="chart-title">Liczba żyjących kobiet i mężczyzn w zależności od wieku w 2009 roku</b>
+    <br/>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+        var margin = {
+                top: 20,
+                right: 20,
+                bottom: 20,
+                left: 60
+            },
+            width = 1800 - margin.left - margin.right,
+            height = 900 - margin.top - margin.bottom;
+
+        var x = d3.scaleBand()
+            .rangeRound([0, width])
+            .padding(0.2);
+        var y = d3.scaleLinear()
+            .rangeRound([height, 0]);
+
+        var color = d3.scaleOrdinal()
+            .domain(["Male", "Female"])
+            .range(["blue", "red"]);
+        var genderName = d3.scaleOrdinal()
+            .domain(["Male", "Female"])
+            .range(["Mężczyźni", "Kobiety"]);
+
+        var xAxis = d3.axisBottom(x);
+        var yAxis = d3.axisLeft(y);
+
+        var maleVisible = true;
+        var femaleVisible = true;
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right + 40)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        d3.csv("data.csv", function(error, data) {
+            if (error) throw error;
+
+            data.forEach(function(d) {
+                d.age = +d.age;
+                d.people = +d.people;
+            });
+
+            x.domain(data.map(function(d) {
+                return d.age;
+            }));
+            y.domain([0, d3.max(data, function(d) {
+                return d.people;
+            })]);
+
+            svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis)
+                .append("text")
+                .attr("class", "tick");
+
+            svg.append("g")
+                .attr("class", "y axis")
+                .call(yAxis)
+                .append("text")
+                .attr("class", "tick");
+
+            var div = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
+            svg.selectAll(".bar")
+                .data(data)
+                .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", function(d) {
+                    return x(d.age);
+                })
+                .attr("y", function(d) {
+                    return y(d.people);
+                })
+                .attr("width", x.bandwidth())
+                .attr("height", function(d) {
+                    return height - y(d.people);
+                })
+                .attr("class", function(d) {
+                    return d.gender + "Rect";
+                })
+                .style("fill", function(d) {
+                    return color(d.gender);
+                })
+                .on("mouseover", function(d) {
+                    div.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    div.html(genderName(d.gender) + ": " + d.people + "</br>" +
+                            "wiek " + d.age + " lat")
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY - 28) + "px");
+                })
+                .on("mouseout", function(d) {
+                    div.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+
+            svg.select(".legend").append("g").append("text")
+                .attr("x", width + 16)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text("Płeć");
+
+            var legend = svg.selectAll(".legend")
+                .data(color.domain())
+                .enter().append("g")
+                .attr("class", "legend")
+                .attr("transform", function(d, i) {
+                    return "translate(0," + i * 20 + ")";
+                });
+
+            legendRects = legend.append("rect")
+                .attr("x", width + 24)
+                .attr("width", 18)
+                .attr("height", 18)
+                .style("fill", color);
+
+            legend.append("text")
+                .attr("x", width + 16)
+                .attr("y", 9)
+                .attr("dy", ".35em")
+                .style("text-anchor", "end")
+                .text(function(d) {
+                    return genderName(d);
+                });
+
+            legendRects = legendRects.nodes();
+            d3.select(legendRects[0]).on("click", function() {
+                maleVisible = !maleVisible;
+                d3.selectAll(".MaleRect").style("opacity", +maleVisible);
+            });
+
+            d3.select(legendRects[1]).on("click", function() {
+                femaleVisible = !femaleVisible;
+                d3.selectAll(".FemaleRect").style("opacity", +femaleVisible);
+            });
+
+        });
+    </script>
+    <p>Wiek</p>
+</body>
