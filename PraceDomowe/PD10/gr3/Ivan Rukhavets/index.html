@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>PD10</title>
+</head>
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.y.axisRight text {
+    fill: orange;
+}
+
+.y.axisLeft text {
+    fill: steelblue;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar1 {
+  fill: #FC363B;
+}
+
+.bar1:hover, .bar2:hover {
+  opacity: 0.7;
+}
+
+.bar2 {
+  fill: #2766F6;
+}
+
+.x.axis path {
+  display: none;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 150px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+</style>
+<body>
+  <h1>Techniki wizualizacji danych - Praca domowa 10</h1>
+  <h3>Ivan Rukhavets</h3>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+<script>
+
+var margin = {top: 80, right: 80, bottom: 80, left: 80},
+    width = 1600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+
+var y0 = d3.scale.linear().range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+// create left yAxis
+var yAxisLeft = d3.svg.axis().scale(y0).ticks(4).orient("left");
+
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("class", "graph")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+const maxInObject = (object) => Object.values(object)
+  .reduce((acc, val) => val > acc ? val: acc, 0);
+
+d3.csv("data.csv", type, function(error, data) {
+  const groupSums = data.reduce((acc, x) => {
+    if (acc[x.Gender][x.Year]) {
+      acc[x.Gender][x.Year] += x.Tx;
+    } else {
+      acc[x.Gender][x.Year] = x.Tx;
+    }
+    return acc
+  }, {Female: {}, Male: {}})
+  
+  const max = Math.max(maxInObject(groupSums.Female), maxInObject(groupSums.Male))
+  const data2 = {
+    females: Object.entries(groupSums.Female).map(([year, pop]) => ({year, pop})),
+    males: Object.entries(groupSums.Male).map(([year, pop]) => ({year, pop}))
+  };
+  x.domain(Object.keys(groupSums.Female))
+  y0.domain([0, max]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+	  .attr("class", "y axis axisLeft")
+	  .attr("transform", "translate(0,0)")
+	  .call(yAxisLeft)
+	.append("text")
+	  .attr("y", 6)
+	  .attr("dy", "-2em")
+	  .style("text-anchor", "end")
+	  .style("text-anchor", "end")
+	  .text("Populacja");
+
+  bars = svg.selectAll(".bar").data(data2.females).enter();
+  bars.append("rect")
+      .attr("class", "bar1")
+      .attr("x", d => x(d.year))
+      .attr("width", x.rangeBand()/2)
+      .attr("y", function(d) { return y0(d.pop); })
+	    .attr("height", function(d,i,j) { return height - y0(d.pop); })
+      .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div	.html(`Ilość kobiet w ${d.year}:<br/>${d.pop.toLocaleString()}`)
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);
+        })
+        .on('click', (d) => {
+          div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div	.html(`Różnica między płciami <br/> w ${d.year}: ${(groupSums.Female[d.year] - groupSums.Male[d.year]).toLocaleString()}`)
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+        }); 
+
+  bars = svg.selectAll(".bar").data(data2.males).enter();
+  bars.append("rect")
+      .attr("class", "bar2")
+      .attr("x", function(d) { return x(d.year) + x.rangeBand()/2; })
+      .attr("width", x.rangeBand() / 2)
+      .attr("y", function(d) { return y0(d.pop); })
+	    .attr("height", function(d,i,j) { return height - y0(d.pop); })
+      .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+                div	.html(`Ilość mężczyzn w ${d.year}:<br/>${d.pop.toLocaleString()}`)
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);
+        })
+        .on('click', (d) => {
+          div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+                div	.html(`Różnica między płciami <br/> w ${d.year}: ${(groupSums.Female[d.year] - groupSums.Male[d.year]).toLocaleString()}`)
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+        });
+});
+
+function type(d) {
+    d.Tx = +d.Tx;
+    return d;
+}
+
+</script>
