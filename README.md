@@ -34,6 +34,11 @@ Zaliczenie jest oparte o trzy składowe:
 
 W sumie uzyskać można do 100 punktów. 51 punktów zalicza przedmiot.
 
+* 51-60 ocena 3
+* 61-70 ocena 3,5
+* 71-80 ocena 4
+* 81-90 ocena 4,5
+* 91-100 ocena 5
 
 # Projekty
 
@@ -41,6 +46,8 @@ Projekty można realizować w zespołach 1-3 osobowych.
 Każdy projekt należy realizować w innym zespole. 
 
 Termin oddania projektu 1 to **21 listopada** - 10:15 rano (wykład).
+
+Termin oddania projektu 2 to **23 stycznia** - 10:15 rano (wykład).
 
 # Prezentacje studentów
 

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<title>Praca domowa 10</title>
+	<style type="text/css">
+		.knitr .inline {
+		  background-color: #f7f7f7;
+		  border:solid 1px #B0B0B0;
+		}
+		.error {
+			font-weight: bold;
+			color: #FF0000;
+		}
+		.warning {
+			font-weight: bold;
+		}
+		.message {
+			font-style: italic;
+		}
+		.source, .output, .warning, .error, .message {
+			padding: 0 1em;
+		  border:solid 1px #F7F7F7;
+		}
+		.source {
+		  background-color: #f5f5f5;
+		}
+		.rimage .left {
+		  text-align: left;
+		}
+		.rimage .right {
+		  text-align: right;
+		}
+		.rimage .center {
+		  text-align: center;
+		}
+		.hl.num {
+		  color: #AF0F91;
+		}
+		.hl.str {
+		  color: #317ECC;
+		}
+		.hl.com {
+		  color: #AD95AF;
+		  font-style: italic;
+		}
+		.hl.opt {
+		  color: #000000;
+		}
+		.hl.std {
+		  color: #585858;
+		}
+		.hl.kwa {
+		  color: #295F94;
+		  font-weight: bold;
+		}
+		.hl.kwb {
+		  color: #B05A65;
+		}
+		.hl.kwc {
+		  color: #55aa55;
+		}
+		.hl.kwd {
+		  color: #BC5A65;
+		  font-weight: bold;
+		}
+		body {
+		  font-family: "Arial Black", Gadget, sans-serif;
+		}
+		div#layout {
+		  text-align: center;
+		}
+		div#container {
+		  width: 1400px;
+		  height: 840px;
+		  margin: auto;
+		  background-color: #fefdfb;
+		}
+		svg {
+		  width: 100%;
+		  height: 100%;
+		}
+		.value-wrapper .bar {
+			fill: #af8dc3;
+		}
+		.roznica-wrapper .bar {
+			fill: #7fbf7b;
+		}
+		text {
+		  font-size: 11px;
+		  fill: #2f2f2e;
+		}
+		path {
+		  stroke: gray;
+		}
+		line {
+		  stroke: gray;
+		}
+		line#limit {
+		  stroke: #2f2f2e;
+		  stroke-width: 1;
+		  stroke-dasharray: 8 3;
+		}
+		.grid path {
+		  stroke-width: 0;
+		}
+
+		.grid .tick line {
+		  stroke: #2f2f2e;
+		  stroke-opacity: 0.3;
+		}
+		text.divergence {
+		  font-size: 14px;
+		  fill: #2f2f2e;
+		}
+		text.value {
+		  font-size: 14px;
+		}
+		text.title {
+		  font-size: 22px;
+		  font-weight: 600;
+		}
+		text.label {
+		  font-size: 14px;
+		  font-weight: 400;
+		}
+		text.source {
+		  font-size: 10px;
+		}
+		.value-wrapper, .roznica-wrapper {
+			height: 100%;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id='layout'>
+		<h1>Techniki wizualizacji danych - Praca domowa 10 </h1>
+		<h3>Anna Kozak</h3>
+			<div id='container'>
+			<div class="value-wrapper"><svg /></div>
+			<div class="roznica-wrapper hidden"><svg /></div>
+		</div>
+	</div>
+</body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script type='text/javascript'>
+    const sample = [{ wiek: ' 0 ',  value: 15140139 , roznica: 843229 },{ wiek: ' 1 ',  value: 14941181 , roznica: 843135 },{ wiek: ' 2 ',  value: 14742325 , roznica: 843037 },{ wiek: ' 3 ',  value: 14543525 , roznica: 842933 },{ wiek: ' 4 ',  value: 14344763 , roznica: 842827 },{ wiek: ' 5 ',  value: 14146032 , roznica: 842726 },{ wiek: ' 6 ',  value: 13947330 , roznica: 842620 },{ wiek: ' 7 ',  value: 13748658 , roznica: 842508 },{ wiek: ' 8 ',  value: 13550014 , roznica: 842398 },{ wiek: ' 9 ',  value: 13351401 , roznica: 842287 },{ wiek: ' 10 ',  value: 13152814 , roznica: 842172 },{ wiek: ' 11 ',  value: 12954255 , roznica: 842053 },{ wiek: ' 12 ',  value: 12755719 , roznica: 841931 },{ wiek: ' 13 ',  value: 12557212 , roznica: 841806 },{ wiek: ' 14 ',  value: 12358738 , roznica: 841682 },{ wiek: ' 15 ',  value: 12160307 , roznica: 841555 },{ wiek: ' 16 ',  value: 11961935 , roznica: 841415 },{ wiek: ' 17 ',  value: 11763626 , roznica: 841256 },{ wiek: ' 18 ',  value: 11565396 , roznica: 841064 },{ wiek: ' 19 ',  value: 11367276 , roznica: 840818 },{ wiek: ' 20 ',  value: 11169282 , roznica: 840498 },{ wiek: ' 21 ',  value: 10971422 , roznica: 840094 },{ wiek: ' 22 ',  value: 10773698 , roznica: 839602 },{ wiek: ' 23 ',  value: 10576109 , roznica: 839025 },{ wiek: ' 24 ',  value: 10378658 , roznica: 838360 },{ wiek: ' 25 ',  value: 10181341 , roznica: 837617 },{ wiek: ' 26 ',  value: 9984153 , roznica: 836795 },{ wiek: ' 27 ',  value: 9787098 , roznica: 835890 },{ wiek: ' 28 ',  value: 9590182 , roznica: 834902 },{ wiek: ' 29 ',  value: 9393407 , roznica: 833835 },{ wiek: ' 30 ',  value: 9196782 , roznica: 832690 },{ wiek: ' 31 ',  value: 9000324 , roznica: 831456 },{ wiek: ' 32 ',  value: 8804051 , roznica: 830119 },{ wiek: ' 33 ',  value: 8607972 , roznica: 828678 },{ wiek: ' 34 ',  value: 8412097 , roznica: 827125 },{ wiek: ' 35 ',  value: 8216442 , roznica: 825450 },{ wiek: ' 36 ',  value: 8021039 , roznica: 823639 },{ wiek: ' 37 ',  value: 7825904 , roznica: 821692 },{ wiek: ' 38 ',  value: 7631047 , roznica: 819597 },{ wiek: ' 39 ',  value: 7436508 , roznica: 817332 },{ wiek: ' 40 ',  value: 7242340 , roznica: 814880 },{ wiek: ' 41 ',  value: 7048578 , roznica: 812226 },{ wiek: ' 42 ',  value: 6855271 , roznica: 809349 },{ wiek: ' 43 ',  value: 6662469 , roznica: 806217 },{ wiek: ' 44 ',  value: 6470193 , roznica: 802825 },{ wiek: ' 45 ',  value: 6278480 , roznica: 799166 },{ wiek: ' 46 ',  value: 6087407 , roznica: 795205 },{ wiek: ' 47 ',  value: 5897043 , roznica: 790923 },{ wiek: ' 48 ',  value: 5707467 , roznica: 786277 },{ wiek: ' 49 ',  value: 5518772 , roznica: 781228 },{ wiek: ' 50 ',  value: 5331031 , roznica: 775763 },{ wiek: ' 51 ',  value: 5144342 , roznica: 769838 },{ wiek: ' 52 ',  value: 4958821 , roznica: 763415 },{ wiek: ' 53 ',  value: 4774550 , roznica: 756474 },{ wiek: ' 54 ',  value: 4591631 , roznica: 748963 },{ wiek: ' 55 ',  value: 4410177 , roznica: 740841 },{ wiek: ' 56 ',  value: 4230289 , roznica: 732077 },{ wiek: ' 57 ',  value: 4052084 , roznica: 722634 },{ wiek: ' 58 ',  value: 3875706 , roznica: 712466 },{ wiek: ' 59 ',  value: 3701301 , roznica: 701513 },{ wiek: ' 60 ',  value: 3528977 , roznica: 689751 },{ wiek: ' 61 ',  value: 3358860 , roznica: 677164 },{ wiek: ' 62 ',  value: 3191099 , roznica: 663729 },{ wiek: ' 63 ',  value: 3025825 , roznica: 649423 },{ wiek: ' 64 ',  value: 2863180 , roznica: 634184 },{ wiek: ' 65 ',  value: 2703250 , roznica: 617998 },{ wiek: ' 66 ',  value: 2546201 , roznica: 600827 },
+{ wiek: ' 67 ',  value: 2392153 , roznica: 582669 },{ wiek: ' 68 ',  value: 2241161 , roznica: 563559 },{ wiek: ' 69 ',  value: 2093378 , roznica: 543468 },{ wiek: ' 70 ',  value: 1949007 , roznica: 522365 },{ wiek: ' 71 ',  value: 1808257 , roznica: 500267 },{ wiek: ' 72 ',  value: 1671289 , roznica: 477227 },{ wiek: ' 73 ',  value: 1538276 , roznica: 453286 },{ wiek: ' 74 ',  value: 1409427 , roznica: 428505 },{ wiek: ' 75 ',  value: 1285013 , roznica: 402999 },{ wiek: ' 76 ',  value: 1165309 , roznica: 376897 },{ wiek: ' 77 ',  value: 1050550 , roznica: 350356 },{ wiek: ' 78 ',  value: 940991 , roznica: 323515 },{ wiek: ' 79 ',  value: 836957 , roznica: 296529 },{ wiek: ' 80 ',  value: 738742 , roznica: 269626 },{ wiek: ' 81 ',  value: 646613 , roznica: 243025 },{ wiek: ' 82 ',  value: 560837 , roznica: 216923 },{ wiek: ' 83 ',  value: 481637 , roznica: 191573 },{ wiek: ' 84 ',  value: 409194 , roznica: 167262 },{ wiek: ' 85 ',  value: 343614 , roznica: 144204 },{ wiek: ' 86 ',  value: 284926 , roznica: 122668 },{ wiek: ' 87 ',  value: 233117 , roznica: 102919 },{ wiek: ' 88 ',  value: 188036 , roznica: 84994 },{ wiek: ' 89 ',  value: 149290 , roznica: 68940 },{ wiek: ' 90 ',  value: 116578 , roznica: 54890 },{ wiek: ' 91 ',  value: 89365 , roznica: 42821 },{ wiek: ' 92 ',  value: 66965 , roznica: 32651 },{ wiek: ' 93 ',  value: 49038 , roznica: 24320 },{ wiek: ' 94 ',  value: 35092 , roznica: 17664 },{ wiek: ' 95 ',  value: 24567 , roznica: 12485 },{ wiek: ' 96 ',  value: 16835 , roznica: 8587 },{ wiek: ' 97 ',  value: 11237 , roznica: 5733 },{ wiek: ' 98 ',  value: 7298 , roznica: 3710 },{ wiek: ' 99 ',  value: 4608 , roznica: 2324 },{ wiek: ' 100 ',  value: 2826 , roznica: 1408 },{ wiek: ' 101 ',  value: 1682 , roznica: 824 },{ wiek: ' 102 ',  value: 971 , roznica: 465 },{ wiek: ' 103 ',  value: 545 , roznica: 253 },{ wiek: ' 104 ',  value: 296 , roznica: 132 },{ wiek: ' 105 ',  value: 157 , roznica: 67 },{ wiek: ' 106 ',  value: 80 , roznica: 32 },{ wiek: ' 107 ',  value: 40 , roznica: 16 },{ wiek: ' 108 ',  value: 19 , roznica: 7 },{ wiek: ' 109 ',  value: 9 , roznica: 3 },{ wiek: ' 110+ ',  value: 5 , roznica: 1 }
+    ];
+    var max = 15140139;
+    var max1 = 843229;
+    const valueSvg = d3.select('.value-wrapper svg');
+    const roznicaSvg = d3.select('.roznica-wrapper svg');
+    const svgContainer = d3.select('#container');
+    const margin = 100;
+    const width = 1400 - 2 * margin;
+    const height = 840 - 2 * margin;
+    
+
+    function displayGraph(svg, dataType) {
+    	const chart = svg.append('g').attr('class', 'g-container')
+      .attr('transform', `translate(${margin}, ${margin})`);
+    const xScale = d3.scaleBand()
+      .range([0, width])
+      .domain(sample.map((s) => s.wiek))
+      .padding(0.3)
+    const yScale = d3.scaleLinear()
+      .range([height, 0])
+      .domain([0, (dataType==='v') ? max : max1]);
+     const makeYLines = () => d3.axisLeft()
+      .scale(yScale)
+    chart.append('g')
+		.attr('transform', `translate(0, ${height})`)
+		.call(d3.axisBottom(xScale)).selectAll("text")
+    	.attr("y", 0)
+		.attr("x", 9)
+		.attr("dy", ".35em")
+		.attr("transform", "rotate(90)")
+		.style("text-anchor", "start");
+    chart.append('g')
+      .call(d3.axisLeft(yScale));
+    chart.append('g')
+      .attr('class', 'grid')
+      .call(makeYLines()
+        .tickSize(-width, 0, 0)
+        .tickFormat('')
+      )
+     
+    const barGroups = chart.selectAll()
+      .data(sample)
+      .enter()
+      .append('g')
+    barGroups
+      .append('rect')
+      .attr('class', 'bar')
+      .attr('x', (g) => xScale(g.wiek))
+      .attr('y', (g) => yScale((dataType==='v') ? g.value : g.roznica))
+      .attr('height', (g) => height - yScale((dataType==='v') ? g.value : g.roznica))
+      .attr('width', xScale.bandwidth())
+      .on('mouseenter', function (actual, i) {
+        d3.selectAll('.value')
+          .attr('opacity', 0)
+        d3.select(this)
+          .transition()
+          .duration(300)
+          .attr('opacity', 0.6)
+          .attr('x', (a) => xScale(a.wiek) - 5)
+          .attr('width', xScale.bandwidth() + 10)
+        const y = yScale((dataType==='v') ? actual.value : actual.roznica)
+        
+        barGroups.append('text')
+          .attr('class', 'divergence')
+          .attr('x', (a) => xScale(a.wiek) + xScale.bandwidth() / 2)
+          .attr('y', (a) => yScale((dataType==='v') ? a.value : a.roznica) - 30)
+          .attr('fill', 'white')
+          .attr('text-anchor', 'middle')
+          .text((a, idx) => {
+            const divergence = Math.floor((dataType==='v') ? actual.value : actual.roznica);
+            let text = '';
+            text += `${divergence}`;
+            return idx == i ? text : '';
+          })
+
+      })
+      .on('mouseleave', function () {
+        d3.selectAll('.value')
+          .attr('opacity', 1)
+        d3.select(this)
+          .transition()
+          .duration(300)
+          .attr('opacity', 1)
+          .attr('x', (a) => xScale(a.wiek))
+          .attr('width', xScale.bandwidth())
+        chart.selectAll('#limit').remove()
+        chart.selectAll('.divergence').remove()
+      })
+      
+    barGroups 
+      .append('text')
+      .attr('class', 'value')
+      .attr('x', (a) => xScale(a.wiek) + xScale.bandwidth() / 2)
+      .attr('y', (a) => yScale((dataType==='v') ? a.value : a.roznica) + 30)
+    svg
+      .append('text')
+      .attr('class', 'label')
+      .attr('x', -(height / 2) - margin)
+      .attr('y', margin / 10)
+      .attr('transform', 'rotate(-90)')
+      .attr('text-anchor', 'middle')
+      .text((dataType==='v') ? 'Liczba żyjących kobiet i mężczyzn' : 'Różnica między liczbą kobiet a liczbą mężczyzn')
+    svg.append('text')
+      .attr('class', 'label')
+      .attr('x', width / 2 + margin)
+      .attr('y', height + margin * 1.9)
+      .attr('text-anchor', 'middle')
+      .text('Wiek')
+    svg.append('text')
+      .attr('class', 'title')
+      .attr('x', width / 2 + margin)
+      .attr('y', 40)
+      .attr('text-anchor', 'middle')
+      .text('Liczba kobiet i mężczyzn żyjąca w danym wieku dla roku 2009')
+    }    
+
+    displayGraph(valueSvg, 'v');
+    displayGraph(roznicaSvg, 'r');
+
+    var visibleChart = 'v';
+
+    function toggleChart () {
+    	if (visibleChart === 'v') {
+    		document.getElementsByClassName("value-wrapper")[0].classList.add('hidden');
+    		document.getElementsByClassName("roznica-wrapper")[0].classList.remove('hidden');
+    		visibleChart = 'r';
+    	}
+    	else {
+    		document.getElementsByClassName("roznica-wrapper")[0].classList.add('hidden');
+    		document.getElementsByClassName("value-wrapper")[0].classList.remove('hidden');
+    		visibleChart = 'v';
+    	}
+    }
+
+    document.getElementsByClassName("g-container")[0].addEventListener("click", toggleChart);
+	document.getElementsByClassName("g-container")[1].addEventListener("click", toggleChart);
+</script>
+</html>
