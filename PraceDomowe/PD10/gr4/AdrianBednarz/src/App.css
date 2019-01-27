@@ -1,0 +1,69 @@
+svg {
+  font: 11px sans-serif;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.axis .domain {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1px;
+}
+
+.axis line {
+  stroke: #000;
+}
+
+rect.Male {
+  fill: #333333;
+}
+
+rect.Female {
+  fill: #333333;
+}
+
+.handle {
+  stroke: #000;
+  fill: #ccc;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 14px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#controls {
+  position: absolute;
+  right: 15vw;
+  top: 0;
+  width: 500px;
+  margin: 5em;
+}
+
+#controls svg {
+  margin: 0 auto;
+}
+
+#controls button {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  right: 0;
+}
+
+#description {
+  position: absolute;
+  right: 5vw;
+  top: 30vh;
+  width: 40vw;
+}

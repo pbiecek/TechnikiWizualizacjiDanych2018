@@ -23,3 +23,6 @@ Za ten projekt można otrzymać od 0 do 20 punktów, z czego:
 **Termin na oddanie projektu**
 
 Ostatni wykład z TWD - 23 I 2019 godzina 10:15. Do tego czasu projekty powinny być na GitHub. Każda grupa krótko (!!!) pokaże opracowany projekt.
+
+
+![QR_projekt2](QR_projekt2.png)

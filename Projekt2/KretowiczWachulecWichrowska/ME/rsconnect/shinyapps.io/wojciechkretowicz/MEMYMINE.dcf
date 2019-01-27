@@ -1,0 +1,12 @@
+name: MEMYMINE
+title: MEMYMINE
+username:
+account: wojciechkretowicz
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 656272
+bundleId: 1825114
+url: https://wojciechkretowicz.shinyapps.io/MEMYMINE/
+when: 1547983367.55329
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TWD Projekt 2</title>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- CSS STYLES -->
+    <link href="app.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">PROJEKT 'JA'</div>
+        <div class="authors">
+            <div class="section-title">AUTORZY</div>
+            <div class="authors-content">
+                <div class="single-author">Dawid Kowalczyk</div>
+                <div class="single-author">Magda Prokopczuk</div>
+
+            </div>
+        </div>
+        <div class="intro">
+            <div class="section-title">WSTĘP</div>
+            <div class="description">
+                <br>
+                Projekt nr 2 z przedmiotu <i>Techniki Wizualizacji Danych</i>.
+                <br>
+                <br>Cel projektu: opracowanie strony internetowej, opisującej wycinek z życia autorów. Ukazano ciekawe zależności między aktywnością w sieci a wydarzeniami w realnym świecie. Przedstawiono również analizę wydatków na podstawie płatności rejestrowanych przez bank. Wszelkie dane do analiz opisują autorów oraz zostały pobrane na prośbę skierowaną do odpowiednich podmiotów.
+            </div>
+        </div>
+        <div class="graphs">
+            <div class="single-graph">
+                
+                <div class="graph-desc graph-desc-100">
+                    <div class="graph-title">Analiza Facebook</div>
+                    <div class="graph-subtitle">Znajomi z facebooka a rzeczywistość</div>
+                    <div class="graph-description">Wykres przedstawia liczbę nowo dodanych znajomych w kategoriach płci oraz w podziale na kolejne miesiące. Pojawiające się piki, oznaczające duży miesięczny przyrost znajomości wskazują na zwiększone życie towarzyskie oraz poznanie nowego grona osób.
+                    <br>
+                    <br>Dane reprezentują aktywność użytkowników w okresach od początku istnienia kont.
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="graph graph-100">
+                    <img src="fb_wykres2.svg" frameborder="0"></img>
+                </div>
+            
+            <div class="single-graph">
+                
+                <div class="graph-desc">
+                    <div class="graph-title">Analiza Tinder</div>
+                    <div class="graph-subtitle">Let's date somebody!</div>
+                    <div class="graph-description">Analiza aktywności użytkowania aplikacji Tinder jednego z autorów wskazuje na podobne - do facebooka - okresy zwiększonej aktywności w zakresie nowo poznawanych osób.
+                    <br>
+                    <br> Legenda:
+                    <br> <b>Activity</b> oznacza jak często aplikacja została uruchomiona w danym tygodniu.
+                    <br> <b>No of matches</b> to liczba nowych połączeń w analizowanym okresie czasu.
+                    <br> <b>No of likes</b> to liczba polubionych profili.
+                    <br>
+                    <br> Łatwo dostrzec brak liniowej zależności między aktywnością oraz liczbą like'ów a liczbą nowo zmatchowanych osób. Jest to zaskakujące i niezgodne z oczekiwaniami. Obserwujemy dużą aktywność jesienią 2017 roku, podobnie jak ma to miejsce w danych z facebooka.
+                    </div>
+                </div>
+                <div class="graph">
+                     <iframe src="aktywnosc_tinder.html" frameborder="0"></iframe>
+                </div>
+            </div>
+            
+                <div class="graph-desc graph-desc-100">
+                    <div class="graph-title">Analiza wydatków</div>
+                    <div class="graph-subtitle">Wydatki na rozrywkę oraz zakupy, jakie są priorytety...</div>
+                    <div class="graph-description">Przedstawione wykresy prezentują wydatki na zakupy oraz rozrywkę w zależności od miesięcznych dochodów w podziale na miesiące. Interesująca jest zaobserwowana dla zakupów silna zależność: małe dochody - małe wydatki, większe dochody - większe wydatki. Zaskakujące natomiast jest to, że podobnej zależności dla wydatków na rozrywkę nie obserwujemy. Prosty wniosek: autor potrafi dostosować wydatki na zakupy w zależności od swojego dochodu, podczas gdy rozrywka jest celem nadrzędnym i wydatki w tej kategorii potrafią przewyższać 50% dochodu w analizowanym okresie.
+                    <br>
+                    <br>Dane pochodzą z okresu 15.01.2018 - 14.01.2019 z rejestrowanych przez bank transakcji, katerogie zostały przypisane ręcznie skąd pewność poprawności analizy. Wielkość punktów jest proporcjonalna do wydatków w danej kategorii.
+                    </div>
+                </div>
+            
+            <div class="single-graph graph-flex-wrap">
+                <div class="graph graph-50">
+                     <iframe src="wydatki_zakupy.html" frameborder="0"></iframe>
+                </div>
+                  <div class="graph graph-50">
+                     <iframe src="wydatki_rozrywka.html" frameborder="0"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
