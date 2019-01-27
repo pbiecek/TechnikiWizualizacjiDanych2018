@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+ 		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<title>TWD - PD10</title>
+		<style>
+			.axis {
+				font-size: 12px;
+			}
+			.centered {
+				text-align: center;
+			}
+		</style>
+	</head>
+    <body>
+		<h2 class = "centered">Techniki Wizualizacji Danych</h2>
+		<h4 class = "centered">Praca domowa 10, Patryk Wołosz</h4>
+		<h3 class = "centered">Wykres przedstawiający ilość żyjących kobiet i mężczyzn w 2009</h3>
+        <script type="text/javascript">
+			const color_dict = {'Female': '#ff7777', 'Male': '#3953f9'};
+			
+			var are_bars_separated = false;
+			
+			function get_gender_label(gender) {
+				if(gender == 'Female') {
+					return 'Kobiety';
+				} else {
+					return 'Mężczyźni';
+				}
+			}
+			
+			function get_label(d) {
+				let label = '<div class="tooltip-content">';
+			
+				for(let i=0;i<data.length;i++) {
+					if(data[i].x == d.x) {
+						label += get_gender_label(data[i].type) + ': ' + data[i].value + '<br/>';
+					}
+				}
+				label += 'Wiek: ' + d.x + '</div>';
+				
+				return label;
+			}
+			
+			const legend_length = 10;
+            const height = 600;
+			const width = 1400;
+			const marginTop = 10;
+			const marginBottom = 100;
+			const marginLeft = 60;
+			const marginRight = 10;
+			var data;
+			
+			d3.csv("data.csv", function(error, read_data) {
+				if (error) throw error;
+				data = [];
+				
+				for(let i=0;i<read_data.length;i++) {
+					read_data[i].value = parseInt(read_data[i].value);
+					
+					if((parseInt(read_data[i].x) || 100) <= 95) {
+						data.push(read_data[i]);
+					}
+				}
+				
+				draw_plot();
+			});
+			
+			function draw_plot() {
+			
+				var svg = d3.select('body')
+					.append('svg')
+					.attr('width', width + marginLeft + marginRight)
+					.attr('height', height + marginTop + marginBottom)
+					.style({'margin': '0 auto', 'display': 'block'})
+					.append('g')
+					.attr("transform", "translate(" + marginLeft + "," + marginTop + ")");
+				
+				var tooltip = d3.select("body").append("div")
+					.attr("class", "tooltip")
+					.style({'display': 'none', 
+							'position': 'absolute',
+							'border': '2px solid',
+							'padding': '5px',
+							'border-radius': '10px',
+							'background': '#cecece'});
+				
+				var x = d3.scale.ordinal()
+					.domain(data.map(d => d.x))
+					.rangeRoundBands([0, width], 0.05)
+				
+				var xAxis = d3.svg.axis()
+					.scale(x)
+					.orient("bottom")
+	
+				var y = d3.scale.linear()
+					.domain([0, d3.max(data, function(d) { return d.value * 1.1; })])
+					.range([height, 0]);
+				
+				var yAxis = d3.svg.axis()
+					.scale(y)
+					.orient("left")
+					.ticks(20);
+				
+				svg.append("g")
+					.attr("class", "y axis")
+					.call(yAxis)
+					.attr('class', 'axis');
+				
+				svg.append("g")
+					.attr("class", "x axis")
+					.attr("transform", "translate(0," + height + ")")
+					.call(xAxis) 
+					.style("text-anchor", "end")
+					.attr('class', 'axis');
+				
+				d3.selectAll('.axis')
+					.selectAll('path')
+					.style({'fill': 'none',
+							'stroke': '#000',
+							'shape-rendering': 'crispEdges'});
+				
+				d3.selectAll('.axis')
+					.selectAll('line')
+					.style({'fill': 'none',
+							'stroke': '#000',
+							'shape-rendering': 'crispEdges'});
+				
+				var bars = svg.append('g')
+					.attr('class', 'graph-container')
+					.attr('fill', '#3281ff')
+					.selectAll('rect')
+					.data(data)
+					.enter()
+					.append('rect')
+					.attr('y', d => y(d.value))
+					.attr('x', d => x(d.x))
+					.attr('width', x.rangeBand())
+					.attr('height', d => y(0) - y(d.value))
+					.attr('fill', d => color_dict[d.type])
+					.attr('class', d => d.type + ' bar')
+					.on('mouseover', d => {
+						tooltip.style('left', (d3.event.pageX) + 'px');
+						tooltip.style('top', (d3.event.pageY) + 'px');
+						tooltip.style('display', 'unset');
+						tooltip.html(get_label(d));
+					})
+					.on('mouseout', d => {
+						tooltip.style('display', 'none');
+					})
+					
+					
+				svg.on('click', (d) => {
+				
+					if(are_bars_separated) {
+						svg.select('.graph-container')	
+							.selectAll('.bar')
+							.transition().duration(1000)
+							.attr('x', d => x(d.x))	
+							.attr('width', x.rangeBand());
+							
+						are_bars_separated = false;
+					} else {
+						svg.select('.graph-container')	
+							.selectAll('.bar')
+							.transition().duration(1000)
+							.attr('x', d => x(d.x) + (d.type == 'Female' ? 0 : x.rangeBand()/2))
+							.attr('width', x.rangeBand()/2);
+					
+						are_bars_separated = true
+					}
+				});
+				
+				svg.append('text')
+					.attr('class', 'label')
+					.attr('x', -210)
+					.attr('y', 15)
+					.attr('font-size', 15)
+					.text('Liczba żyjących kobiet i mężczyzn')
+					.attr('transform', 'rotate(-90)');
+			
+				svg.append('text')
+					.attr('class', 'label')
+					.attr('x', 1365)
+					.attr('y', 595)
+					.attr('font-size', 15)
+					.text('Wiek')
+				
+				var legend = svg.select(".graph-container")
+					.append("g")
+					.attr("class", "legend");
+					
+				legend.append("rect")
+					.attr("x", 50)
+					.attr("y", 0)
+					.attr("width", legend_length)
+					.attr("height", legend_length)
+					.style("fill", color_dict['Female']);
+					
+				legend.append('text')
+					.text('Kobiety')
+					.attr('x', 40 + legend_length * 2 + 5)
+					.attr('y', legend_length)
+					.style('fill', '#000');
+					
+				legend.append("rect")
+					.attr("x", 50)
+					.attr("y", legend_length * 2)
+					.attr("width", legend_length)
+					.attr("height", legend_length)
+					.style("fill", color_dict['Male']);
+					
+				legend.append('text')
+					.text('Mężczyźni')
+					.attr('x', 40 + legend_length * 2 + 5)
+					.attr('y', legend_length * 3)
+					.style('fill', '#000');
+			}
+        </script>
+        
+    </body>
+</html>

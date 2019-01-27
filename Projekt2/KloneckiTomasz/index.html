@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+<title>Tomasz Klonecki - Projekt 2</title>
+
+body { font: 12px sans-serif;
+       background-color: #F5F5F5}
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 80px;					
+    height: 40px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+svg {
+				display: block;
+				margin: 0 auto;
+			}
+ul { display:table; margin:0 auto;}            
+</style>
+<body>
+
+<!-- load the d3.js library -->	
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<center>
+            <h1>
+                Projekt 2 - Interaktywna Strona Internetowa - Tomasz Klonecki
+            </h1>
+<br>
+<br>
+            <h2>
+                Dane wykorzystane w projekcie pochodzą z:
+            </h2>
+</center>
+                <ul>
+                  <li>konto na Facebooku (Facebook pozwala pobrać wszystkie swoje dane np. w postaci wielu plików HTML)</li>
+                  <li>smartwatch - noszony przeze mnie codzennie od połowy sierpnia 2018</li>
+                </ul>
+<br>
+<br>
+<center>
+            <h2>
+                1. Wykres przedstawiający ilość wymienionych wiadomości na facebooku od początku 2018 roku do dnia 15.01.2019.
+            </h2>
+</center>
+                <ul>
+                  <li>Możemy zauważyć, że w okresie wakacyjnym wysłanych wiadomości było o wiele mniej niż w pozostałych miesiącach.</li>
+                  <li>Powrót na studia również spowodował duży wzrost ilości wysłanych wiadomości.</li>
+                  <li>W pozostałej częsci roku nie widać żadnych anomalii.</li>
+                </ul>
+            </br>
+            </br>
+<center>
+            <h4>
+            Po najechaniu myszką na poszczególne dane, wyświetli nam się dokładna ilość wiadomości wysłanych danego dnia na Facebooku i dokładna data.
+            </h4>
+</center>
+
+<script>
+// Ustal rozmiar obrazka z wykresem i marginesów
+var margin = {top: 30, right: 100, bottom: 30, left: 100    },
+    width = 1400 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// Wczytaj date w poprawnym formacie
+var parseDate = d3.time.format("%d-%b-%y").parse;
+var formatTime = d3.time.format("%e %B");
+
+var x = d3.time.scale().range([0, width]);
+var y = d3.scale.linear().range([height, 0]);
+
+// Definicja osi X i Y
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(5);
+
+var yAxis = d3.svg.axis().scale(y)
+    .orient("left").ticks(5);
+
+// Ustal przestrzeń na tooltipy
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+// Dodaj pole svg
+var svg1 = d3.select("body")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform", 
+              "translate(" + margin.left + "," + margin.top + ")");
+
+    // Wczytaj dane
+    d3.csv("data.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.date = parseDate(d.date);
+            d.msg_cnt = +d.msg_cnt;
+        });
+
+    // Ustal zasięg danych (ustawienia osi Y)
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y.domain([0, d3.max(data, function(d) { return d.msg_cnt; })]);
+
+    // Dodaj wykres punktowy (scatterplot)
+    svg1.selectAll("dot")	
+        .data(data)			
+    .enter().append("circle")								
+        .attr("r", 3)		
+        .style("fill", "steelblue")
+        .attr("cx", function(d) { return x(d.date); })		 
+        .attr("cy", function(d) { return y(d.msg_cnt); })		
+        .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div	.html(formatTime(d.date) + "<br/>"  + d.msg_cnt)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
+
+    // Dodaj oś X
+    svg1.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    // Dodaj oś Y
+    svg1.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+        
+    // Dodaj opis osi Y, X jest oczywista
+    svg1.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .attr('font-size', 20)
+      .style("text-anchor", "middle")
+      .text("Ilość wysłanych wiadomości");  
+
+});
+</script>
+<br>
+<br>
+<br>
+<center>
+            <h2>
+                2. Wykres porównujący ilość wiadomości wysłanych danego dnia na Facebooku i ilość kroków, które wykonałem.
+            </h2>
+</center>
+                <ul>
+                  <li>Możemy zauważyć, że w okresie wakacyjnym wykonywałem o wiele więcej kroków.</li>
+                  <li>Na początku roku szkolnego nastąpił delikatny kryzys i nie ruszałem się za bardzo, natomiast delikatnie wzrosła liczba wysłanych wiadomości</li>
+                  <li>Grudzień i Styczeń przyniosły duży wzrost ilości wiadomości co jest pewnie spowodowane nadchodzącymi zaliczeniami.</li>
+                  <li>Oprócz tego w Grudniu i Styczniu nastąpił bardzo duży wzrost ilości kroków, co może być spowodowane spacerami do biblioteki jak i regularnymi treningami w przerwie w nauce</li>
+                </ul>
+            </br>
+            </br>
+<script>
+var margin = {top: 30, right: 100, bottom: 30, left: 100},
+    width = 1400 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var parseDate = d3.time.format("%d-%b-%y").parse;
+
+var x = d3.time.scale().range([0, width]);
+var y0 = d3.scale.linear().range([height, 0]);
+var y1 = d3.scale.linear().range([height, 0]);
+
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(5);
+
+var yAxisLeft = d3.svg.axis().scale(y0)
+    .orient("left").ticks(5);
+
+var yAxisRight = d3.svg.axis().scale(y1)
+    .orient("right").ticks(5); 
+
+var valueline = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y0(d.msg_cnt); });
+    
+var valueline2 = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y1(d.kroki); });
+  
+var svg2 = d3.select("body")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform", 
+              "translate(" + margin.left + "," + margin.top + ")");
+
+// Wczytywanie danych
+d3.csv("data2.csv", function(error, data) {
+    data.forEach(function(d) {
+        d.date = parseDate(d.date);
+        d.msg_cnt = +d.msg_cnt;
+        d.kroki = +d.kroki;
+    });
+
+    // Ustal zasięg danych (ustawienia obu osi Y)
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y0.domain([0, d3.max(data, function(d) {
+		return Math.max(d.msg_cnt); })]); 
+    y1.domain([0, d3.max(data, function(d) { 
+		return Math.max(d.kroki); })]);
+
+    // Dodaj linię dla danych 1 (niebieska)
+    svg2.append("path")        
+        .attr("d", valueline(data));
+    
+    // Dodaj linię dla danych 2 (czerwona)
+    svg2.append("path")        
+        .style("stroke", "red")
+        .attr("d", valueline2(data));
+    
+    // Dodaj oś X
+    svg2.append("g")            
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+    // Dodaj oś Y (lewa)
+    svg2.append("g")
+        .attr("class", "y axis")
+        .style("fill", "steelblue")
+        .call(yAxisLeft);
+        
+    // Dodaj oś Y (prawa)
+    svg2.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(" + width + " ,0)")
+        .style("fill", "red")
+        .call(yAxisRight);
+        
+    // Dodaj opisy osi Y (lewej)
+    svg2.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .attr('font-size', 20)
+      .style("text-anchor", "middle")
+      .style("fill", "steelblue")
+      .text("Ilość wysłanych wiadomości");  
+    
+    // Dodaj opisy osi Y (prawej)
+    svg2.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 1350 - margin.right)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .attr('font-size', 20)
+      .style("text-anchor", "middle")
+      .style("fill", "red")
+      .text("Ilość kroków");  
+
+});
+
+</script>
+</body>

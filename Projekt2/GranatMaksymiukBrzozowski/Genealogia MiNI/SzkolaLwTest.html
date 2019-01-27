@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<title>Genealogia MiNI</title>
+  
+  		<!-- Bootstrap CSS -->
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  		<!-- Google Fonts -->
+  		<link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+  		<!-- Font Awesome -->
+  		<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+  		<!-- Style -->
+  		<link href='style.css' rel='stylesheet' type='text/css'>
+
+    <title>Tree Example</title>
+
+   <style>
+
+	.node {
+		cursor: pointer;
+	}
+
+	.node circle {
+	  fill: #fff;
+	  stroke: steelblue;
+	  stroke-width: 3px;
+	}
+
+	.node text {
+	  font: 12px sans-serif;
+	}
+
+	.link {
+	  fill: none;
+	  stroke: #ccc;
+	  stroke-width: 2px;
+	}
+
+   div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 80px;					
+    height: 60px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;	
+}
+	path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+	}
+
+    </style>
+
+  </head>
+
+  <body>
+
+<!-- load the d3.js library -->	
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  		<div class="section hero text-center background-dark dark-bg">
+  			<div class="background-image" style="background: url(images/hero.jpg) no-repeat center center; background-size: cover; opacity: .2;"></div>
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12">
+  						<h2>Korzenie MiNI</h2>
+  						<p class="lead">Łukasz Brzozowski, Bartłomiej Granat, Szymon Maksymiuk </p>
+  						<ul class="list-inline">
+  							<li><a href=".\SzkolaLwTest.html" title="Learn More" class="btn btn-md btn-primary">Szkoła Lwowska</a></li>
+  							<li><a href=".\SzkolaWwTest.html" title="Learn More" class="btn btn-md btn-primary">Szkoła Warszawska</a></li>
+							<li><a href=".\testPracTest.html" title="Learn More" class="btn btn-md btn-primary">Przodkowie Pracowników</a></li>
+							<li><a href=".\Statystyki.html" title="Learn More" class="btn btn-md btn-primary">Garść statystyk</a></li>
+  						</ul>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/.section -->
+		<div>	
+<script>
+
+var treeData = [
+{
+	"name": "",
+	"parent": "null",
+	"Uczelnia": "",
+	"Rok": "",
+	"czyKolor": "root",
+	"children": [
+  {
+    "name": "Hugo D. Steinhaus",
+    "parent": "",
+	"Uczelnia": "",
+	"Rok": "",
+	"czyKolor": "Lw",
+    "children": [
+      {
+        "name": "Julian Perkal",
+        "parent": "Hugo D. Steinhaus",
+		"Uczelnia": "Uniwersytet Wrocławski",
+		"Rok": "1950",
+        "children": [
+          {
+            "name": "Witold Klonecki",
+            "parent": "Julian Perkal",
+			"Uczelnia": "Uniwersytet Wrocławski",
+			"Rok": "1963",
+			"children": [
+				{
+					"name": "Przemysław Biecek",
+					"parent": "Witold Klonecki",
+					"Uczelnia": "Politechnika Wrocławska",
+					"czyKolor": "prac",
+					"Rok": "2007"
+				}
+			]
+          }
+        ]
+      },
+	  {
+        "name": "Agnieszka Plucińska",
+        "parent": "Hugo D. Steinhaus",
+		"Uczelnia": "Uniwersytet Wrocławski",
+		"Rok": "1961",
+        "children": [
+          {
+            "name": "Jacek Wesołowski",
+            "parent": "Agnieszka Plucińska",
+			"Uczelnia": "Politechnika Warszawska",
+			"czyKolor": "prac",
+			"Rok": "1989",
+			"children": [
+				{
+					"name": "Konstancja Bobecka-Wesołowska",
+					"parent": "Jacek Wesołowski",
+					"Uczelnia": "Politechnika Warszawska",
+					"czyKolor": "prac",
+					"Rok": "2002"
+				},
+				{
+					"name": "Anna Dembińska",
+					"parent": "Jacek Wesołowski",
+					"Uczelnia": "Politechnika Warszawska",
+					"czyKolor": "prac",
+					"Rok": "2002"
+				}
+				
+			]
+          }
+        ]
+		}
+    ]
+  },
+  {
+    "name": "Stanisław Mazur",
+    "parent": "",
+	"Uczelnia": "",
+	"Rok": "",
+	"czyKolor": "Lw",
+    "children": [
+      {
+        "name": "Stefan Rolewicz",
+        "parent": "Stanisław Mazur",
+		"Uczelnia": "Uniwersytet Warszawski",
+		"Rok": "1958",
+        "children": [
+          {
+            "name": "Ewa Bednarczuk",
+            "parent": "Stefan Rolewicz",
+			"Uczelnia": "Politechnika Warszawska",
+			"czyKolor": "prac",
+			"Rok": "1986",
+          }
+        ]
+      },
+	{
+        "name": "Krzysztof Maurin",
+        "parent": "Stanisław Mazur",
+		"Uczelnia": "Uniwersytet Warszawski",
+		"Rok": "1950",
+        "children": [
+          {
+            "name": "Stanisław L. Woronowicz",
+            "parent": "Krzysztof Maurin",
+			"Uczelnia": "Politechnika Warszawska",
+			"Rok": "1968",
+			"children": [
+			{
+				"name": "Piotr Sołtan",
+				"parent": "Stanisław L. Woronowicz",
+				"Uczelnia": "Polska Akademia Nauk",
+				"Rok": "2003",
+				"children": [
+					{
+						"name": "Paweł Józiak",
+						"parent": ["Piotr Sołtan", "Paweł Kasprzak"],
+						"Uczelnia": "Polska Akademia Nauk",
+						"czyKolor": "prac",
+						"Rok": "2017"
+					}
+				]
+			},
+			{
+				"name": "Paweł Kasprzak",
+				"parent": "Stanisław L. Woronowicz",
+				"Uczelnia": "Uniwersytet Warszawski",
+				"Rok": "2006"
+			}
+			]	
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Władysław R. Orlicz",
+    "parent": "",
+	"Uczelnia": "",
+	"Rok": "",
+	"czyKolor": "Lw",
+    "children": [
+					{						
+						"name": "Zbigniew Ciesielski",
+						"parent": "Władysław R. Orlicz",
+						"Uczelnia": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
+						"Rok": "1960",
+						"children": [
+										{
+											"name": "Stanisław Kwapień",
+											"parent": "Zbigniew Ciesielski",
+											"Uczelnia": "Polska Akademia Nauk",
+											"Rok": "1960",
+											"children": [
+															{
+																"name": "Jacek Jakubowski",
+																"parent": "Zbigniew Ciesielski",
+																"Uczelnia": "Uniwersytet Warszawski",
+																"czyKolor": "prac",
+																"Rok": "1983"
+															}
+														]
+										},
+										{
+											"name": "Jerzy Zabczyk",
+											"parent": "Zbigniew Ciesielski",
+											"Uczelnia": "Uniwersytet Gdański",
+											"Rok": "1969",
+											"children": [
+															{
+																"name": "Jarosław Sobczyk",
+																"parent": "Jerzy Zabczyk",
+																"Uczelnia": "Politechnika Warszawska",
+																"czyKolor": "prac",
+																"Rok": "1995"
+															}
+														]
+										}
+									]
+					}
+				]
+	}
+	]
+}
+];
+
+
+// ************** Generate the tree diagram	 *****************
+var margin = {top: 200, right: 100, bottom: 20, left: 400},
+	width = 1920 - margin.right - margin.left,
+	height = 1280 - margin.top - margin.bottom;
+	
+var i = 0,
+	duration = 600,
+	root;
+
+var tree = d3.layout.tree()
+	.size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.x, d.y]; });
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height", height + margin.top + margin.bottom)
+  .append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	
+svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "14px") 
+        .text("Drzewo genealogiczne lwowskiej szkoły matematycznej");
+		
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
+root = treeData[0];
+root.x0 = 0;
+root.y0 = width/2;
+  
+update(root);
+
+d3.select(self.frameElement).style("width", "1920px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+ var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+	  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	  .on("click", click)														//added mouseover function
+    .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            div	.html(d.Rok + "<br/>"  + d.Uczelnia)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
+    ;
+
+  nodeEnter.append("circle")
+	  .attr("r", 1e-6)
+	  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeEnter.append("text")
+	  .attr("x", function(d) { return d.children || d._children ? -11 : 21; })
+	  .attr("dy", "-.70em")
+	  .attr("transform", "rotate(90)")
+	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+	  .text(function(d) { return d.name; })
+	  .style("fill-opacity", 1e-6);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  nodeUpdate.select("circle")
+	  .attr("r", 10)
+	  .style("fill", function(d) { 
+	  if (d.czyKolor == "Lw") {
+		return "cornflowerblue"
+	  }else if (d.czyKolor == "Ww") {
+		return  "darkred"
+	  } else if (d.czyKolor == "root") {
+		return "black"
+	  } else  if (d.czyKolor == "prac"){
+		return "lightcyan"
+	  } else {
+	  return d._children ? "lightsteelblue" : "lightgray"; }});
+		
+  nodeUpdate.select("text")
+	  .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + source.x + "," + source.y + ")"; })
+	  .remove();
+
+  nodeExit.select("circle")
+	  .attr("r", 1e-6);
+
+  nodeExit.select("text")
+	  .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+	  .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+	  .attr("class", "link")
+	  .attr("d", function(d) {
+		var o = {y: source.y0, x: source.x0};
+		return diagonal({source: o, target: o});
+	  });
+
+  // Transition links to their new position.
+  link.transition()
+	  .duration(duration)
+	  .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+	  .duration(duration)
+	  .attr("d", function(d) {
+		var o = {y: source.y, x: source.x};
+		return diagonal({source: o, target: o});
+	  })
+	  .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+	d.y0 = d.y;
+	d.x0 = d.x;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+  }
+  update(d);
+}
+
+
+</script>
+</div>
+
+  		
+
+  		
+
+  		
+
+
+  			<div class="background-image" style="background: url(images/hero.jpg) no-repeat fixed center center; background-size: cover; opacity: .2;"></div>
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12">
+  						
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+
+  </body>
+</html>

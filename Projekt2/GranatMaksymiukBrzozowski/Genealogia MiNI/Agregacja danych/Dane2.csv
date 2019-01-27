@@ -1,0 +1,65 @@
+Imię i nazwisko;Uczelnia;Rok;Opiekun 1;Opiekun 2;CzyPracownik
+Ewa Bednarczuk;Polska Akademia Nauk;1986;Stefan Rolewicz;;Tak
+Przemysław Biecek;Politechnika Wrocławska;2007;Witold Klonecki;;Tak
+Konstancja Bobecka-Wesołowska;Politechnika Warszawska;2002;Jacek Wesołowski;;Tak
+Tomasz Brengos;Politechnika Warszawska;2010;Anna B. Romanowska;;Tak
+Krzysztof Bryś;Politechnika Warszawska;2003;Zbigniew Lonc;;Tak
+Anna Dembińska;Politechnika Warszawska;2002;Jacek Wesołowski;;Tak
+Wojciech Domitrz;Politechnika Warszawska;1994;Stanisław Janeczko;;Tak
+Piotr Gałązka;Politechnika Warszawska;2012;Janina Kotus;;Tak
+Maria Ganzha;Lomonosov Moscow State Univeristy;1994;Boris Vainberg;;Tak
+Przemysław Górka;Politechnika Warszawska;2007;Piotr Rybka;;Tak
+Jarosław Grytczuk;Uniwersytet im. Adama Mickiewicza w Poznaniu;1996;Andrzej Rotkiewicz;;Tak
+Ludwik Jaksztas;Politechnika Warszawska;2008;Feliks M. Przytycki;;Tak
+Jacek Jakubowski;Uniwersytet Warszawski;1983;Stanisław Kwapień;;Tak
+Stanisław Janeczko;;;;;Tak
+Paweł Józiak;Polska Akademia Nauk;2017;Piotr Sołtan;Paweł Kasprzak;Tak
+Konstanty Junosza-Szaniawski;Politechnika Warszawska;2004;Adam Idzik;;Tak
+Bogusława Karpińska;Politechnika Warszawska;1999;Feliks M. Przytycki;;Tak
+Danuta Kołodziejczyk;Uniwersytet Warszawski;1993;Sławomir A. Nowak;;Tak
+Janina Kotus;Politechnika Warszawska;1983;Karol Krzyżewski;;Tak
+Adam Kubica;Politechnika Warszawska;2009;Piotr Rybka;;Tak
+Zbigniew Lonc;Politechnika Warszawska;1982;Tadeusz Traczyk;;Tak
+Marcin Małogrosz;Uniwersytet Warszawski;2015;Philippe Laurençot;Dariusz Wrzosek;Tak
+Anna Mućka;Politechnika Warszawska;2008;Anna B. Romanowska;;Tak
+Paweł Naroski;Politechnika Warszawska;2011;Zbigniew Lonc;;Tak
+Gabriel Pietrzkowski;Polska Akademia Nauk;2010;Bronisław Jakubczyk;;Tak
+Agata Pilitowska;Politechnika Warszawska;1996;Anna B. Romanowska;;Tak
+Barbara Roszkowska-Lech;Politechnika Warszawska;1987;Anna B. Romanowska;;Tak
+Paweł Rzążewski;Uniwersytet Warszawski;2015;Zbigniew Lonc;Konstanty Junosza-Szaniawski;Tak
+Jan Samsonowicz;Uniwersytet Warszawski;1988;Andrzej S. Białynicki-Birula;;Tak
+Jarosław Sobczyk;Politechnika Warszawska;1995;Jerzy Zabczyk;;Tak
+Jan Spaliński;University of Notre Dame;1991;William Gerard Dwyer;;Tak
+Michał Stronkowski;Politechnika Warszawska;2007;Anna B. Romanowska;;Tak
+Grzegorz Świątek;Uniwersytet Warszawski;1987;Michał Misiurewicz;;Tak
+Żaneta Trębska;Politechnika Warszawska;2012;Wojciech Domitrz;;Tak
+Michał Tuczyński;Politechnika Warszawska;2012;Zbigniew Lonc;;Tak
+Jacek Wesołowski;Politechnika Warszawska;1989;Agnieszka Plucińska;;Tak
+Paweł Wilczyński;Uniwersytet Jagielloński;2006;Roman Srzednicki;;Tak
+Anna Zalewska;Uniwersytet Warszawski;1996;Andrzej Szałas;;Tak
+Anna Zamojska-Dzienio;Politechnika Warszawska;2004;Anna B. Romanowska;;Tak
+Michał Ziembowski;University of Edinburgh;2010;Agata Smoktunowicz;;Tak
+Agnieszka Zimnicka;Politechnika Warszawska;2010;Janina Kotus;;Tak
+Stefan Rolewicz;Uniwersytet Warszawski;1958;Stanisław Mazur;;Nie
+Witold Klonecki;Uniwersytet Wrocławski;1963;Julian Perkal;;Nie
+Julian Perkal;Uniwersytet Wrocławski;1950;Hugo D. Steinhaus;;Nie
+Anna B. Romanowska;Politechnika Warszawska;1973;Tadeusz Traczyk;;Nie
+Tadeusz Traczyk;Polska Akademia Nauk;1959;Roman Sikorski;;Nie
+Roman Sikorski;Uniwersytet Warszawski;1949;Andrzej Mostowski;;Nie
+Karol Krzyżewski;Politechnika Warszawska;;Roman Sikorski;;Nie
+Andrzej Rotkiewicz;Polska Akademia Nauk;1963;Wacław Sierpiński;;Nie
+Feliks M. Przytycki;Polska Akademia Nauk;1977;Karol Krzyżewski;;Nie
+Stanisław Kwapień;Polska Akademia Nauk;1968;Zbigniew Ciesielski;;Nie
+Zbigniew Ciesielski;Uniwersytet im. Adama Mickiewicza w Poznaniu;1960;Władysław R. Orlicz;;Nie
+Piotr Sołtan;Polska Akademia Nauk;2003;Stanisław L. Woronowicz;;Nie
+Stanisław L. Woronowicz;Uniwersytet Warszawski;1968;Krzysztof Maurin;;Nie
+Krzysztof Maurin;Uniwersytet Warszawski;1950;Stanisław Mazur;;Nie
+Paweł Kasprzak;Uniwersytet Warszawski;2006;Stanisław L. Woronowicz;;Nie
+Sławomir A. Nowak;Uniwersytet Warszawski;1973;Karol Borsuk;;Nie
+Jerzy Zabczyk;Uniwersytet Gdański;1969;Zbigniew Ciesielski;;Nie
+William Gerard Dwyer;Massachusetts Institute of Technology;1973;Daniel M. Kan;;Nie
+Daniel M. Kan;Hebrew University;1955;Samuel Eilenberg;;Nie
+Agnieszka Plucińska;Uniwersytet Wrocławski;1961;Hugo D. Steinhaus;;Nie
+Andrzej Szałas;Uniwersytet Warszawski;1984;Andrzej Salwicki;;Nie
+Andrzej Salwicki;Uniwersytet Warszawski;1969;Helena Rasiowa;;Nie
+Helena Rasiowa;Uniwersytet Warszawski;1950;Andrzej Mostowski;;Nie
