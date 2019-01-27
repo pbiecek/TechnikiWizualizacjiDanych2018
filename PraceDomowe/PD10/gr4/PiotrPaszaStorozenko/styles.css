@@ -1,0 +1,50 @@
+text {
+	font: 24px cursive;
+	color: rgb(48, 57, 82)
+}
+
+body {
+	font: 24px cursive;
+	text-align: center;
+	color: rgb(48, 57, 82)
+}
+
+.bot_box {
+	font: 20px cursive;
+}
+
+div.tooltip {
+	position: absolute;
+	text-align: center;
+	/*height: 32px;*/
+	padding: 2px;
+	border-radius: 2px;
+	font: 16px cursive;
+	background: rgb(247, 215, 148);
+	border: 0px;
+	pointer-events: none;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+}
+rect.bar.Male {
+	fill: rgb(119, 139, 235)
+}
+
+rect.bar.Female {
+	fill: rgb(247, 143, 179)
+}
+
+mark {
+	background-color: white;
+}
+
+mark.men {
+	color: rgb(119, 139, 235);
+}
+
+mark.women {
+	color: rgb(247, 143, 179);
+}
