@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<title>Praca domowa nr 10</title>
+	<style type="text/css">
+
+		.axis_label {
+			font-size: 20px;
+			font-weight: 200;
+			color: red;
+		}
+
+		.chart_title {
+			font-size: 30px;
+			font-weight: 200;
+			color: silver;
+		}
+
+		body {
+		  text-align: center;
+			background: #ffffff;
+			font-family: 'Roboto', sans-serif;
+			color: #22222
+
+		}
+
+		div#svg_container {
+		  width: 1110px;
+		  height: 960px;
+		  margin: auto;
+		}
+
+		svg {
+		  width: 100%;
+		  height: 100%;
+		}
+
+		.bar_male{
+			fill: #4682B4;
+		}
+
+		
+		.bar_famale{
+			fill: #EE7989;
+		}
+
+		.bar_difference{
+			fill: #DD6878;
+		}
+
+		h2, h3, h4 {
+			margin-block-start: 10px;
+			margin-block-end: 10px;
+		}
+
+		#svg_container > svg > g > g:nth-child(1) > g:nth-child(6) > text{
+			transform:translateX(28px);
+		}
+
+	</style>
+</head>
+<body>
+	<br/>
+	<h2>Techniki wizualizacji danych</h2>
+	<h4>Praca domowa nr 10 - Piotr Wawrzyniak</h4>
+	<br/><br/><br/>
+	<div id='svg_container'>
+		<svg>
+		</svg>
+	</div>
+</body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script type='text/javascript'>
+
+		const famale_value = [7991684,7892158,7792681,7693229,7593795,7494379,7394975,7295583,7196206,7096844,6997493,6898154,6798825,6699509,6600210,6500931,6401675,6302441,6203230,6104047,6004890,5905758,5806650,5707567,5608509,5509479,5410474,5311494,5212542,5113621,5014736,4915890,4817085,4718325,4619611,4520946,4422339,4323798,4225322,4126920,4028610,3930402,3832310,3734343,3636509,3538823,3441306,3343983,3246872,3150000,3053397,2957090,2861118,2765512,2670297,2575509,2481183,2387359,2294086,2201407,2109364,2018012,1927414,1837624,1748682,1660624,1573514,1487411,1402360,1318423,1235686,1154262,1074258,995781,918966,844006,771103,700453,632253,566743,504184,444819,388880,336605,288228,243909,203797,168018,136515,109115,85734,66093,49808,36679,26378,18526,12711,8485,5504,3466,2117,1253,718,399,214,112,56,28,13,6,3]
+		const male_value = [7148455,7049023,6949644,6850296,6750968,6651653,6552355,6453075,6353808,6254557,6155321,6056101,5956894,5857703,5758528,5659376,5560260,5461185,5362166,5263229,5164392,5065664,4967048,4868542,4770149,4671862,4573679,4475604,4377640,4279786,4182046,4084434,3986966,3889647,3792486,3695496,3598700,3502106,3405725,3309588,3213730,3118176,3022961,2928126,2833684,2739657,2646101,2553060,2460595,2368772,2277634,2187252,2097703,2009038,1921334,1834668,1749106,1664725,1581620,1499894,1419613,1340848,1263685,1188201,1114498,1042626,972687,904742,838801,774955,713321,653995,597031,542495,490461,441007,394206,350097,308738,270214,234558,201794,171957,145032,120966,99705,81129,65099,51521,40175,30844,23272,17157,12359,8714,6041,4124,2752,1794,1142,709,429,253,146,82,45,24,12,6,3,2]
+    var chart_data = []
+		for(var i=0; i<100;i++){
+			chart_data.push({
+				age: i,
+				famale_value: famale_value[i],
+				male_value: male_value[i]
+			})
+		}
+
+    const svg = d3.select('svg');
+    const svgContainer = d3.select('#svg_container');
+    
+		const margin = 60;
+    const width = 1100 - 2 * margin;
+    const height = 950 - 2 * margin;
+
+		var tooltip = d3.select("body")
+			.append("div")
+			.style("position", "absolute")
+			.style("z-index", "10")
+			.style("visibility", "hidden")
+			.text("Kliknij aby zmienić widok");
+
+    const chart = svg.append('g')
+      .attr('transform', `translate(${margin}, ${margin})`);
+
+		svgContainer
+			.on("mouseover", function(){return tooltip.style("visibility", "visible");})
+			.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+			.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+		
+		// X, Y axis
+    const yScale = d3.scaleBand()
+      .range([0, height])
+      .domain(chart_data.map((x) => x.age))
+      .padding(0.3);
+
+		const xScale = d3.scaleLinear()
+      .range([0, width])
+      .domain([-8000000, 8000000]);
+
+		chart.append('g')
+		.attr('transform', `translate(0, ${height})`)
+		.call(d3.axisBottom(xScale))
+		.selectAll("text")
+		.attr("x", -31)
+    .attr("y", 14)
+		.style("text-anchor", "start")
+		.style("font-weight", "600")
+		.style("font-size", "13px");
+
+		chart.append('g')
+      .call(d3.axisLeft(yScale));
+    
+		// Ticks
+
+		ticks = chart.append('g')
+      .attr('class', 'ticks')
+      .call(d3.axisTop()
+      	.scale(xScale)
+        .tickSize(-height, 0, 0)
+        .tickFormat('')
+      )
+		
+		ticks.selectAll(".tick:not(:first-of-type) line")
+			.attr("stroke", "#907163")
+			.attr("stroke-dasharray", "2,2");
+
+		// Chart labels/title
+
+		svg
+      .append('text')
+      .attr('class', 'axis_label')
+      .attr('x', -(height / 2) - margin)
+      .attr('y', 20)
+      .attr('transform', 'rotate(-90)')
+      .attr('text-anchor', 'middle')
+			.style('fill', '#333333')
+      .text('Wiek')
+
+    svg.append('text')
+      .attr('class', 'axis_label')
+      .attr('x', width / 2 + margin)
+      .attr('y', height + 1.9 * margin)
+      .attr('text-anchor', 'middle')
+			.style('fill', '#555555')
+      .text('Wielkość populacji')
+
+    svg.append('text')
+      .attr('class', 'chart_title')
+      .attr('x', width / 2 + margin)
+      .attr('y', 25)
+      .attr('text-anchor', 'middle')
+      .text('Rozkład populacji w Polsce (2009)')
+
+		svg.append('text')
+      .attr('class', 'gender_label')
+      .attr('x', width / 5 + margin)
+      .attr('y', 55)
+      .attr('text-anchor', 'middle')
+      .text('Mężczyźni')
+
+		svg.append('text')
+      .attr('class', 'gender_label')
+      .attr('x', 4 * width / 5 + margin)
+      .attr('y', 55)
+      .attr('text-anchor', 'middle')
+      .text('Kobiety')
+
+		// Bars
+		const bars = chart.selectAll()
+      .data(chart_data)
+      .enter()
+      .append('g')
+			.attr('class', 'same')
+
+		bars
+      .append('rect')
+      .attr('class', 'bar_famale')
+      .attr('x', (x) => width/2)
+      .attr('y', (x) => yScale(x.age))
+      .attr('width', (x) => xScale(x.famale_value) - width/2)
+      .attr('height', yScale.bandwidth() + 1)
+
+		bars
+      .append('rect')
+      .attr('class', 'bar_male')
+      .attr('x', (x) => width/2 - (xScale(x.male_value) - width/2))
+      .attr('y', (x) => yScale(x.age))
+      .attr('width', (x) => xScale(x.male_value) - width/2)
+      .attr('height', yScale.bandwidth() + 1)
+
+		bars
+      .append('rect')
+      .attr('class', 'bar_difference')
+      .attr('opacity', 0)
+      .attr('x', (x) => width/2)
+      .attr('y', (x) => yScale(x.age))
+      .attr('width', (x) => xScale(x.famale_value - x.male_value) - width/2)
+      .attr('height', yScale.bandwidth() + 1)
+
+		var chart_type = 0
+
+		svg.on("click", function(){
+			d3.selectAll('.bar_male')
+        .attr('opacity', chart_type)
+			d3.selectAll('.bar_famale')
+        .attr('opacity', chart_type)
+			d3.selectAll('.bar_difference')
+        .attr('opacity', 1 - chart_type)
+
+			d3.selectAll(".chart_title").each(function(d, i) {
+				d3.select(this).text(chart_type==1 ? 'Rozkład populacji w Polsce (2009)' : 'Różnica w populacji pomiędzy płciami w Polsce (2009)');
+			});
+
+			chart_type = 1 - chart_type
+		})
+
+</script>
+</html>
