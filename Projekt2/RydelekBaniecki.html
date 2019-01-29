@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>ProjektTWD2</title>
+        <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+		<style type="text/css">
+            div {
+				display: block;
+				margin: 0 auto;
+			}
+            html, body{
+                width: 100%;
+                }
+            .button1 {
+                background-color:  white; 
+                border: 2px solid rgba(64,64,64,1); 
+                color: rgba(64,64,64,1); /*black*/
+                padding: 10px 12px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 23px;
+                border-radius: 12px;
+                -webkit-transition-duration: 0.4s; 
+                transition-duration: 0.4s;
+                width:180px;
+            }
+            .button2 {
+                background-color:  rgba(64,64,64,1); 
+                border: 2px solid rgba(64,64,64,1); 
+                color: white; /*black*/
+                padding: 10px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                border-radius: 12px;
+                -webkit-transition-duration: 0.4s; 
+                transition-duration: 0.4s;
+                width:180px;
+            }
+            
+            .button1:hover {
+                background-color: rgba(64,64,64,1); 
+                color: white;
+            }
+            .button2:hover {
+                background-color: white; 
+                color: rgba(64,64,64,1);
+            }
+
+		</style>
+	</head>
+    <body>
+		<center>
+			<h1>
+				Analiza użytkowania telefonu
+			</h1>
+            <h2>Adam Rydelek, Hubert Baniecki</h2>
+            <h2><button class="button button1" onclick="runTransitions3()">Grudzień 2018</button1></h2>
+            <button class="button button2" onclick="runTransitions()">Średni czas używania telefonu: 4:34</button>
+            <button class="button button2" onclick="runTransitions2()">Średnia liczba odblokowań telefonu: 102</button>
+            <div></div>
+		</center>
+        <script type="text/javascript">
+            
+            var data = [
+              {
+                "Liczba": 127,
+                "Social": 98,
+                "Games": 33,
+                "Streaming": 66,
+                "Phone": 7,
+                "Other": 88,
+                "Czas2": 292,
+                "Czas": "4:52"
+              },
+              {
+                "Liczba": 101,
+                "Social": 100,
+                "Games": 46,
+                "Streaming": 52,
+                "Phone": 15,
+                "Other": 50,
+                "Czas2": 263,
+                "Czas": "4:23"
+              },
+              {
+                "Liczba": 110,
+                "Social": 100,
+                "Games": 77,
+                "Streaming": 21,
+                "Phone": 16,
+                "Other": 41,
+                "Czas2": 255,
+                "Czas": "4:15"
+              },
+              {
+                "Liczba": 105,
+                "Social": 114,
+                "Games": 117,
+                "Streaming": 97,
+                "Phone": 3,
+                "Other": 42,
+                "Czas2": 373,
+                "Czas": "6:13"
+              },
+              {
+                "Liczba": 96,
+                "Social": 93,
+                "Games": 86,
+                "Streaming": 43,
+                "Phone": 5,
+                "Other": 29,
+                "Czas2": 256,
+                "Czas": "4:16"
+              },
+              {
+                "Liczba": 71,
+                "Social": 73,
+                "Games": 8,
+                "Streaming": 124,
+                "Phone": 21,
+                "Other": 52,
+                "Czas2": 278,
+                "Czas": "4:38"
+              },
+              {
+                "Liczba": 84,
+                "Social": 66,
+                "Games": 62,
+                "Streaming": 107,
+                "Phone": 4,
+                "Other": 56,
+                "Czas2": 295,
+                "Czas": "4:55"
+              },
+              {
+                "Liczba": 143,
+                "Social": 146,
+                "Games": 78,
+                "Streaming": 53,
+                "Phone": 8,
+                "Other": 57,
+                "Czas2": 342,
+                "Czas": "5:42"
+              },
+              {
+                "Liczba": 109,
+                "Social": 132,
+                "Games": 39,
+                "Streaming": 14,
+                "Phone": 19,
+                "Other": 60,
+                "Czas2": 264,
+                "Czas": "4:24"
+              },
+              {
+                "Liczba": 75,
+                "Social": 58,
+                "Games": 0,
+                "Streaming": 5,
+                "Phone": 4,
+                "Other": 63,
+                "Czas2": 130,
+                "Czas": "2:10"
+              },
+              {
+                "Liczba": 100,
+                "Social": 82,
+                "Games": 114,
+                "Streaming": 74,
+                "Phone": 0,
+                "Other": 46,
+                "Czas2": 316,
+                "Czas": "5:16"
+              },
+              {
+                "Liczba": 126,
+                "Social": 77,
+                "Games": 46,
+                "Streaming": 30,
+                "Phone": 0,
+                "Other": 63,
+                "Czas2": 216,
+                "Czas": "3:36"
+              },
+              {
+                "Liczba": 79,
+                "Social": 73,
+                "Games": 29,
+                "Streaming": 78,
+                "Phone": 0,
+                "Other": 144,
+                "Czas2": 324,
+                "Czas": "5:24"
+              },
+              {
+                "Liczba": 120,
+                "Social": 89,
+                "Games": 37,
+                "Streaming": 137,
+                "Phone": 0,
+                "Other": 85,
+                "Czas2": 348,
+                "Czas": "5:48"
+              },
+              {
+                "Liczba": 91,
+                "Social": 75,
+                "Games": 13,
+                "Streaming": 67,
+                "Phone": 0,
+                "Other": 76,
+                "Czas2": 231,
+                "Czas": "3:51"
+              },
+              {
+                "Liczba": 82,
+                "Social": 73,
+                "Games": 34,
+                "Streaming": 24,
+                "Phone": 0,
+                "Other": 55,
+                "Czas2": 186,
+                "Czas": "3:06"
+              },
+              {
+                "Liczba": 94,
+                "Social": 80,
+                "Games": 27,
+                "Streaming": 28,
+                "Phone": 0,
+                "Other": 50,
+                "Czas2": 185,
+                "Czas": "3:05"
+              },
+              {
+                "Liczba": 89,
+                "Social": 74,
+                "Games": 31,
+                "Streaming": 59,
+                "Phone": 11,
+                "Other": 58,
+                "Czas2": 233,
+                "Czas": "3:53"
+              },
+              {
+                "Liczba": 118,
+                "Social": 86,
+                "Games": 49,
+                "Streaming": 29,
+                "Phone": 13,
+                "Other": 55,
+                "Czas2": 232,
+                "Czas": "3:52"
+              },
+              {
+                "Liczba": 109,
+                "Social": 99,
+                "Games": 64,
+                "Streaming": 86,
+                "Phone": 7,
+                "Other": 60,
+                "Czas2": 316,
+                "Czas": "5:16"
+              },
+              {
+                "Liczba": 127,
+                "Social": 105,
+                "Games": 59,
+                "Streaming": 73,
+                "Phone": 6,
+                "Other": 95,
+                "Czas2": 338,
+                "Czas": "5:38"
+              },
+              {
+                "Liczba": 108,
+                "Social": 74,
+                "Games": 34,
+                "Streaming": 127,
+                "Phone": 21,
+                "Other": 50,
+                "Czas2": 306,
+                "Czas": "5:06"
+              },
+              {
+                "Liczba": 122,
+                "Social": 79,
+                "Games": 50,
+                "Streaming": 147,
+                "Phone": 11,
+                "Other": 55,
+                "Czas2": 342,
+                "Czas": "5:42"
+              },
+              {
+                "Liczba": 72,
+                "Social": 73,
+                "Games": 87,
+                "Streaming": 56,
+                "Phone": 15,
+                "Other": 46,
+                "Czas2": 277,
+                "Czas": "4:37"
+              },
+              {
+                "Liczba": 77,
+                "Social": 144,
+                "Games": 116,
+                "Streaming": 33,
+                "Phone": 24,
+                "Other": 33,
+                "Czas2": 350,
+                "Czas": "5:50"
+              },
+              {
+                "Liczba": 90,
+                "Social": 105,
+                "Games": 81,
+                "Streaming": 93,
+                "Phone": 20,
+                "Other": 40,
+                "Czas2": 339,
+                "Czas": "5:39"
+              },
+              {
+                "Liczba": 102,
+                "Social": 144,
+                "Games": 37,
+                "Streaming": 60,
+                "Phone": 22,
+                "Other": 82,
+                "Czas2": 345,
+                "Czas": "5:45"
+              },
+              {
+                "Liczba": 88,
+                "Social": 80,
+                "Games": 12,
+                "Streaming": 34,
+                "Phone": 12,
+                "Other": 90,
+                "Czas2": 228,
+                "Czas": "3:48"
+              },
+              {
+                "Liczba": 87,
+                "Social": 52,
+                "Games": 53,
+                "Streaming": 4,
+                "Phone": 8,
+                "Other": 46,
+                "Czas2": 163,
+                "Czas": "2:43"
+              },
+              {
+                "Liczba": 125,
+                "Social": 69,
+                "Games": 47,
+                "Streaming": 50,
+                "Phone": 8,
+                "Other": 53,
+                "Czas2": 227,
+                "Czas": "3:47"
+              },
+              {
+                "Liczba": 124,
+                "Social": 86,
+                "Games": 26,
+                "Streaming": 59,
+                "Phone": 5,
+                "Other": 81,
+                "Czas2": 257,
+                "Czas": "4:17"
+              }
+            ]
+            var colors = ["#ff9292", "#f2ee97", "#afe5ad", "#83b8f4", "#ecb3d2"]
+            
+            var margin = {top: 20, right: 20, bottom: 50, left: 50},
+                width = 640 - margin.left - margin.right,
+                height = 600 - margin.top - margin.bottom;
+            
+            var svg = d3.select("div").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+            
+            var g1 = svg.append('g')
+                .style("opacity","0.0")
+                .attr("class","g1class")
+            g1.selectAll("kwadraty")
+              .data(data)
+              .enter().append('rect')
+                .attr("x", function(d,i) { return 10+((i+5)%7)*90})
+                .attr("y", function(d,i) { return Math.floor((i+5)/7)*90+50})
+                .attr("width", 80)
+                .attr("height", 80)
+                .style("fill", "#404040")
+                .on("click", function(d) {
+                    var d2 = [{"name":"Games","value":d.Games},{"name":"Social","value":d.Social},{"name":"Phone","value":d.Phone},{"name":"Streaming","value":d.Streaming},{"name":"Other","value":d.Other}]
+                    update(d2)
+               })
+            
+            g1.selectAll("numer")
+                .data(data)
+                .enter().append("text")
+                .attr("dx", function(d,i) { return 10+((i+5)%7)*90+5})
+                .attr("dy", function(d,i) { return Math.floor((i+5)/7)*90+70})
+                .style("fill", "white")
+                .text(function(d,i) { return i + 1 })
+            
+            g1.selectAll("czas")
+                .data(data)
+                .enter().append("text")
+                .attr("dx", function(d,i) { return 10+((i+5)%7)*90+25})
+                .attr("dy", function(d,i) { return Math.floor((i+5)/7)*90+90})
+                .style('opacity','0.0')
+                .style("fill", function(d,i){
+                  if(d.Czas2>163+2*(373-163)/3) return colors[0]
+                  else if(d.Czas2>163+(373-163)/3) return colors[1]
+                  else return colors[2]
+                })
+                .text(function(d) {
+                    return d.Czas;
+                })
+            .attr("class","czastekst")
+
+            g1.selectAll("liczba")
+                .data(data)
+                .enter()
+                .append("text")
+                .attr("dx", function(d,i) { return 10+((i+5)%7)*90+30})
+                .attr("dy", function(d,i) {return Math.floor((i+5)/7)*90+110})
+                .style('opacity','0.0')
+                .style("fill", function(d,i){
+                  if(d.Liczba>71+2*(127-71)/3) return colors[0]
+                  else if(d.Liczba>71+(127-71)/3) return colors[1]
+                  else return colors[2]
+                })
+                .text(function(d) {
+                    return d.Liczba;
+                })
+                .attr("class","liczbatekst")
+            
+            var dniTygodnia = ["Sobota","Niedziela","Poniedziałek","Wtorek","Środa","Czwartek","Piątek"]
+            var temp = 0;
+            
+            g1.selectAll("dniTygodnia")
+                .data(dniTygodnia)
+                .enter().append("text")
+                .attr("dx", function(d,i) { 
+                    if (i==2) temp = ((i+5)%7)*90+5;
+                    else if(i==1 || i==5) temp = ((i+5)%7)*90+15;
+                    else temp = ((i+5)%7)*90+25;
+                    return temp
+            })
+                .attr("dy", function(d,i) { return 40})
+                .style("fill", "black")
+                .text(function(d) { return d})
+            
+            var margin2 = {top: 20, right: 20, bottom: 50, left: 30},
+                width2 = 540 - margin2.left - margin2.right,
+                height2 = 600 - margin2.top - margin2.bottom;
+            
+            var svg2 = d3.select("div").append("svg")
+                .attr("width", 10+width2 + margin2.left + margin2.right)
+                .attr("height", height2 + margin2.top + margin2.bottom)
+                .style("opacity","0.0")
+                .attr("class","g2class")
+             
+            const chart = svg2.append('g')
+                        .attr("transform","translate(0," + margin2.top + ")");
+            
+            var x = d3.scaleBand()
+                      .range([0,width2])
+                      .padding(0.2)
+            
+            var xAxis = svg2.append("g")
+                    .attr("transform", "translate(" + (-10 + margin2.left) + "," + height2 + ")")
+                    .style("font", "14px times")
+
+            var y = d3.scaleLinear()
+                    .range([height2, 0])
+                    .domain([0, 150])
+            var yAxis = svg2.append("g")
+                    .attr("transform", "translate(" + (-10 + width2 + margin2.left) + ",0)")
+                    .style("font", "14px times")
+                    .attr("class", "myYaxis")
+            
+            svg2.append("text")
+                          .attr("transform", "rotate(90)")
+                          .attr("y", -555)
+                          .attr("x",250)
+                          .attr("dy", "1em")
+                          .style("text-anchor", "middle")
+                          .attr("id", "osY")
+                          .text("Czas [min]")
+            
+            x.domain(["Games","Social","Phone","Streaming","Other"])
+            
+            xAxis.call(d3.axisBottom(x))
+            yAxis.call(d3.axisRight(y));
+            
+             
+            var dataWykres = [{"name":"Games","value":0},{"name":"Social","value":0},{"name":"Phone","value":0},{"name":"Streaming","value":0},                     {"name":"Other","value":0}]
+            var average = [{"name":"Games","value":90},{"name":"Social","value":51},{"name":"Phone","value":9},{"name":"Streaming","value":62},                     {"name":"Other","value":61}]
+      
+            update(dataWykres)
+            
+            var jestKalendarz = false;
+            var klikniete1 = "1.0";
+            var klikniete2 = "1.0";
+            var klikniete3 = "1.0";
+                             
+            function update(data) {
+                var u = svg2.selectAll("rect")
+                    .data(data)
+
+                u.enter()
+                    .append("rect")
+                    .merge(u) 
+                    .transition()
+                    .duration(1000)
+                    .attr("x", function(d) { return x(d.name)+margin2.left-10; })
+                    .attr("y", function(d) { return y(d.value); })
+                    .attr("width", x.bandwidth())
+                    .attr("height", function(d) { return height - y(d.value); })
+                    .attr("fill", function(d,i){ return colors[i]} )
+                
+                u.exit().remove()
+                
+                svg2.selectAll(".kolka").remove()
+                svg2.selectAll(".tekstkolka").remove()
+                
+                var w = svg2.selectAll("circle")
+                                .data(average)
+                w.enter()
+                    .append("circle")
+                    .attr("class","kolka")
+                    .merge(w)
+                    .attr("cx", function(d) { return x(d.name)+57.5; })
+                    .attr("cy", function(d) { return y(d.value) })
+                    .attr("r",15)
+                    .attr("fill","#404040")
+                
+                w.exit().remove()
+
+                var v = svg2.selectAll("average")
+                                .data(average)
+                v.enter()
+                    .append("text")
+                    .attr("class","tekstkolka")
+                    .merge(v)
+                    .attr("x", function(d) { return x(d.name)+57.5; })
+                    .attr("y", function(d) { return y(d.value)+5 })
+                    .attr("fill","white")
+                    .style("text-anchor", "middle")
+                    .text(function(d) { return d.value})
+                
+                v.exit().remove()
+            }
+            
+            function runTransitions(){
+                if(jestKalendarz==true){
+                    if(klikniete1==="1.0"){
+                        var czasTransition = d3.selectAll(".czastekst").transition().duration(2000);
+						czasTransition.style("opacity",klikniete1);
+                        klikniete1 = "0";
+                    } else {
+                        var czasTransition = d3.selectAll(".czastekst").transition().duration(2000);
+						czasTransition.style("opacity",klikniete1); 
+                        klikniete1 = "1.0";
+                    }           
+                }
+            }
+            
+            function runTransitions2(){
+                if(jestKalendarz==true){
+                    if(klikniete2==="1.0"){
+                        var liczbaTransition = d3.selectAll(".liczbatekst").transition().duration(2000);
+						liczbaTransition.style("opacity",klikniete2);
+                        klikniete2 = "0";
+                    } else {
+                        var liczbaTransition = d3.selectAll(".liczbatekst").transition().duration(2000);
+						liczbaTransition.style("opacity",klikniete2);
+                        klikniete2 = "1.0";
+                    }
+                }
+            }
+            
+            function runTransitions3(){
+                if(klikniete3 === "1.0") {
+                    jestKalendarz=true;
+                    var g1Transition = d3.selectAll(".g1class").transition().duration(2500);
+                    var g2Transition = d3.selectAll(".g2class").transition().duration(2500);
+                        g1Transition.style("opacity",klikniete3);
+                        g2Transition.style("opacity",klikniete3);
+                    klikniete3 = "0";
+                } else {
+                    jestKalendarz=false;
+                    var g1Transition = d3.selectAll(".g1class").transition().duration(2500);
+                    var g2Transition = d3.selectAll(".g2class").transition().duration(2500);
+                        g1Transition.style("opacity",klikniete3);
+                        g2Transition.style("opacity",klikniete3); 
+                    klikniete3 = "1.0";
+                }
+            }
+            
+        </script>
+    </body>
+</html>
