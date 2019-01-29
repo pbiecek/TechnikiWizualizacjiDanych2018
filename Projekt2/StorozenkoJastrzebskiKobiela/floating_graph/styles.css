@@ -1,0 +1,63 @@
+.vertical-menu {
+    width: 200px;
+  }
+  
+  .vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc;
+  }
+  
+  .vertical-menu a.active {
+    background-color: #e17055;
+    color: white;
+  }
+
+  .btn-success {
+	background-image: -webkit-linear-gradient(top,#e17055 0,#e17055 100%);
+	background-image: -o-linear-gradient(top,#e17055 0,#e17055 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#e17055),to(#e17055));
+	background-image: #e17055;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	background-repeat: repeat-x;
+	border-color: #e17055;
+}
+
+
+.btn-success:focus, .btn-success:hover {
+	background-color: #e17055;
+	background-position: 0 -15px;
+}
+
+.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open > .dropdown-toggle.btn-success.focus, .open > .dropdown-toggle.btn-success:focus, .open > .dropdown-toggle.btn-success:hover {
+	color: #fff;
+	background-color: #e17055;
+	border-color: #e17055;
+}
+
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #e17055;
+	background-color: #fff;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #e17055;
+	border-color: #e17055;
+}
+
+.btn-success.active, .btn-success:active, .open > .dropdown-toggle.btn-success {
+	color: #fff;
+	background-color: #e17055;
+	border-color: #e17055;
+}

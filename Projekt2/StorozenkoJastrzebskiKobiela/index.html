@@ -1,73 +1,38 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Collapsible Tree</title>
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/@observablehq/notebook-inspector@1/dist/notebook-inspector-style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css"> 
 
 
-<script type="module">
-    import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1?module";
-    import notebook1 from "./collapsible-tree.js";
-    import notebook2 from "./collapsible-tree_hugo_steinhaus.js";
-    import notebook3 from "./collapsible-tree_stefan_banach.js";
-
-    export function loadTree1(){
-        document.getElementById("tree").innerHTML = ""
-        Runtime.load(notebook1, Inspector.into(document.getElementById("tree")));
-    }
-    export function loadTree2(){
-        document.getElementById("tree").innerHTML = ""
-        Runtime.load(notebook2, Inspector.into(document.getElementById("tree")));
-    }
-    export function loadTree3(){
-        document.getElementById("tree").innerHTML = ""
-        Runtime.load(notebook3, Inspector.into(document.getElementById("tree")));
-    }
-
-    window.loadTree1 = loadTree1
-    window.loadTree2 = loadTree2
-    window.loadTree3 = loadTree3
-
-    function removeDivs() {
-        document.getElementById("tree").children[0].innerHTML = ""
-        document.getElementById("tree").children[2].innerHTML = ""
-        document.getElementById("tree").children[3].innerHTML = ""
-        document.getElementById("tree").children[4].innerHTML = ""
-        document.getElementById("tree").children[5].innerHTML = ""
-        document.getElementById("tree").children[6].innerHTML = ""
-        document.getElementById("tree").children[7].innerHTML = ""
-        document.getElementById("tree").children[8].innerHTML = ""
-    }
-
-    $('#tree').bind('DOMSubtreeModified', function() {
-        removeDivs()
-    });
-    
-
-</script>
-
-<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
+<html>
 <body>
 
-<div class="btn-group">
-    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Zmień drzewo
-    </button>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" href="#" onclick="loadTree1()">Deafult</a>
-        <a class="dropdown-item" href="#" onclick="loadTree2()">Hugo</a>
-        <a class="dropdown-item" href="#" onclick="loadTree3()">Stefan</a>
-    </div>
+<div class="vertical-menu">
+    <a href="index.html" class="active">Home</a>
+    <a href="floating_graph/index.html">Mapa powiązań</a>
+    <a href="tree/index.html" >Rozwijane drzewo</a>
+    <a href="connection_graph/index.html">Graf koneksji</a>
+  </div>
 
-</div>
 
-<div id="tree"></div>
+<img src="Lwowska_szkola.png">
+
+<h1>MiNI korzenie</h1>
+<h3>Autorzy: Piotr Storożenko, Bogdan Jastrzębski, Rafał Kobiela</h3>
+
+
+<p>Celem było opracowanie strony internetowej prezentującej związek pracowników z wydziału MiNI z Warszawską i Lwowską szkołą matematyczną. <br>
+  Dane zostały pozyskane ze strony <a href="https://genealogy.math.ndsu.nodak.edu/">https://genealogy.math.ndsu.nodak.edu/</a> <br>
+Strona składa się z 3 zakładek:
+<ul>
+ <li> <b>Mapa powiązań</b> pokazuje całościową zależność (promotor - doktorant) pomiędzy Polskimi matematykami z wielu różnych szkół z wyróżnieniem Uniwersytetu Lwowskiego, Politechniki Warszawskiej oraz Uniwersytetu Warszawskiego.</li>
+  <li> <b>Rozwijane drzewo</b> pokazuje bliżej jak wyglądają relacje pomiędzy słynnimi matematykami a ich uczniami.</li>
+    <li> <b>Graf koneksji</b> pokazuje jaka ilość matematyków zmieniała uczelnię i jak wyglądały ilościowo te zmiany. </li>
+
+</ul>
+</p>
 
 </body>
+</html>

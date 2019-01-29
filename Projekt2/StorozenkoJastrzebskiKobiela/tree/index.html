@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Collapsible Tree</title>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/@observablehq/notebook-inspector@1/dist/notebook-inspector-style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="../styles.css"> 
+
+<script type="module">
+    import {Inspector, Runtime} from "https://unpkg.com/@observablehq/notebook-runtime@1?module";
+    import notebook2 from "./collapsible-tree_hugo_steinhaus.js";
+    import notebook3 from "./collapsible-tree_stefan_banach.js";
+    import notebook4 from "./collapsible-tree_adnrzej_mostowski.js";
+    import notebook5 from "./collapsible-tree_Wladysław_Orlicz.js";
+    import notebook6 from "./collapsible-tree_stanislaw_zaremba.js";
+    import notebook7 from "./collapsible-tree_stefan_mazurkiewicz.js";
+
+    export function loadTree2(){
+        document.getElementById("tree").innerHTML = ""
+        Runtime.load(notebook2, Inspector.into(document.getElementById("tree")));
+    }
+    export function loadTree3(){
+        document.getElementById("tree").innerHTML = ""
+        Runtime.load(notebook3, Inspector.into(document.getElementById("tree")));
+    }
+    export function loadTree4(){
+        document.getElementById("tree").innerHTML = ""
+        Runtime.load(notebook4, Inspector.into(document.getElementById("tree")));
+    }
+    export function loadTree5(){
+        document.getElementById("tree").innerHTML = ""
+        Runtime.load(notebook5, Inspector.into(document.getElementById("tree")));
+    }
+    export function loadTree6(){
+        document.getElementById("tree").innerHTML = ""
+        Runtime.load(notebook6, Inspector.into(document.getElementById("tree")));
+    }
+    export function loadTree7(){
+        document.getElementById("tree").innerHTML = ""
+        Runtime.load(notebook7, Inspector.into(document.getElementById("tree")));
+    }
+
+    
+    window.loadTree2 = loadTree2
+    window.loadTree3 = loadTree3
+    window.loadTree4 = loadTree4
+    window.loadTree5 = loadTree5
+    window.loadTree6 = loadTree6
+    window.loadTree7 = loadTree7
+
+    function removeDivs() {
+        document.getElementById("tree").children[0].innerHTML = ""
+        document.getElementById("tree").children[2].innerHTML = ""
+        document.getElementById("tree").children[3].innerHTML = ""
+        document.getElementById("tree").children[4].innerHTML = ""
+        document.getElementById("tree").children[5].innerHTML = ""
+        document.getElementById("tree").children[6].innerHTML = ""
+        document.getElementById("tree").children[7].innerHTML = ""
+        document.getElementById("tree").children[8].innerHTML = ""
+    }
+
+    $('#tree').bind('DOMSubtreeModified', function() {
+        removeDivs()
+    });
+    
+
+</script>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<body>
+
+<div class="vertical-menu">
+    <a href="../index.html">Home</a>
+    <a href="../floating_graph/index.html">Mapa powiązań</a>
+    <a href="index.html" class="active">Rozwijane drzewo</a>
+    <a href="../connection_graph/index.html">Graf koneksji</a>
+  </div>
+
+
+
+<div class="btn-group">
+    <div class="Container">
+        <p style="color:#a29bfe">Politechnika Warszawska</p>
+        <p style="color:#81ecec">Uniwersytet Warszawski</p>
+        <p style="color:#74b9ff">Uniwersytet Lwowski</p>
+        <p style="color:black"> Inna uczelnia </p>
+      </div>
+    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Zmień korzeń drzewa
+    </button>
+
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="#" onclick="loadTree2()">Hugo Steinhaus</a> <br>
+        <a class="dropdown-item" href="#" onclick="loadTree3()">Stefan Banach</a> <br>
+        <a class="dropdown-item" href="#" onclick="loadTree4()">Andrzej Mostowski</a> <br>
+        <a class="dropdown-item" href="#" onclick="loadTree5()">Władysław Roman Orlicz</a> <br>
+        <a class="dropdown-item" href="#" onclick="loadTree7()">Stefan  Mazurkiewicz</a> <br>
+
+        
+    </div>
+
+</div>
+
+<div id="tree"></div>
+
+</body>
