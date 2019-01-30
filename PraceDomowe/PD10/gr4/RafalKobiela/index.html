@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<head>
+    <title>Liczba ludzi w danym wieku</title>
+    
+</head>
+	<body>
+
+      <center>
+          <h1>
+              Rafał Kobiela
+          </h1>
+          <h2>
+              Praca domowa numer 10 - D3
+          </h2>
+          
+          <h3>
+              Na wykresie przedstawiona została liczba żyjących ludzi danej płci w danym wieku. Klikając na przyciski na dole można zmieniać płeć.    
+          </h3>
+      
+      </center>
+      <h2>Liczba ludzi w danym wieku wg. płci w 2009 roku.</h2>
+		<div id="chart">
+        </div>
+        
+		<button onclick="render('male')">Mężczyźni</button>
+	    <button onclick="render('female')">Kobiety</button>
+
+        <script src="index.js"></script>
+        
+	</body>
+    <style type="text/css">
+    
+    body {
+                  font: 10px sans-serif;
+                }
+                
+                .axis path,
+                .axis line {
+                  fill: none;
+                  stroke: #000;
+                  shape-rendering: crispEdges;
+                }
+                
+                .bar {
+                  fill: orange;
+                }
+                
+                .bar:hover {
+                  fill: orangered ;
+                }
+                
+                .x.axis path {
+                  display: none;
+                }
+                
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 60px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+#chart {
+	padding: 10px 10px 20px 50px;
+	position: relative;
+	margin-top: 20px;
+}
+.bar {
+  background-color: teal;
+  height: 20px;
+  margin-top: 2px;
+}
+	</style>
+</html>
