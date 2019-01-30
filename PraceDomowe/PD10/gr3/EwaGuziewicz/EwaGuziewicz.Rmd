@@ -1,0 +1,138 @@
+---
+output: html_document
+---
+
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(message = TRUE, warning = TRUE)
+library(r2d3)
+library(archivist)
+przezycia = archivist::aread("pbiecek/Przewodnik/arepo/609491e5ec491f240cbeafe377743e21")  
+data = przezycia[which(przezycia$Year == 2009),c("Age", "Gender", "Tx", "ex")]
+head(data)
+```
+
+```{d3 message=TRUE, warning=TRUE, css="styles.css", data=data, height=600, width=1140, dependencies="d3.tip.js"}
+
+  var initial_width = 1140;
+  var initial_height = 600;
+  var margin = {top: 0, right: 0, bottom: 0, left: 55}
+  
+  svg
+    .attr('width', initial_width)
+    .attr('height', initial_height);
+  
+  var width = svg.attr('width') - margin.left - margin.right
+  var height = svg.attr('height') - margin.top - margin.bottom
+  
+  
+  processedData = []
+  for (i = 0; i < 111; i++) {
+    processedData.push({Age: data[i].Age, Female: data[i].Tx, Male: data[i + 111].Tx});
+  }
+  
+  var x = d3.scaleBand()
+      .rangeRound([80, width])
+      .padding(0.15)
+      .domain(processedData.map(d => d.Age));
+      
+  var y1 = d3.scaleLinear()
+      .rangeRound([height / 2, 0])
+      .domain([0, d3.max(processedData, function(d) {
+        return d.Male
+      })]);
+      
+  var y2 = d3.scaleLinear()
+      .rangeRound([height / 2, 0])
+      .domain([d3.max(processedData, function(d) {
+        return d.Female
+      }), 0]);
+  
+  var xAxis = d3.axisBottom(x).tickSize(0, 0);
+  var yAxis1 = d3.axisLeft(y1);
+  var yAxis2 = d3.axisLeft(y2);
+  
+  var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-5, 0])
+    .html(function(d) {
+      return '<style>.d3-tip {line-height: 1; font: 14px sans-serif; padding: 12px; background: rgba(0, 0, 0, 0.8); color: rgb(185, 185, 185); border-radius: 2px;}' +
+        '.d3-tip:after {box-sizing: border-box;display: inline;font-size: 10px;width: 100%;line-height: 0.9;color: rgba(0, 0, 0, 0.8);content: \'\\25BC\';position: absolute;text-align: center;}' +
+        '.d3-tip.n:after {margin: -1px 0 0 0;top: 100%;left: 0;} </style>' + 
+        '<div><span>Age:</span> <span style=\'color:white\'>' + d.Age + '</span></div>' +
+        '<div><span>Male alive:</span> <span style=\'color:white\'>' + d.Male + '</span></div>' +
+        '<div><span>Female alive:</span> <span style=\'color:white\'>' + d.Female + '</span></div>';
+    });
+  
+  svg.call(tip);
+  
+  svg.append('g')
+    .attr('class', 'y axis')
+    .attr('transform', 'translate(' + margin.left + ',0)')
+    .call(yAxis1)
+    .append('text')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', 6)
+    .attr('dy', '.71em')
+    .style('text-anchor', 'end');
+  
+  svg.append('g')
+    .attr('class', 'y axis')
+    .attr('transform', 'translate(' + margin.left + ',' + (height/2) + ')')
+    .call(yAxis2)
+    .append('text')
+    .style('text-anchor', 'end');
+
+  var barsGroups = svg.selectAll(null)
+    .data(processedData)
+    .enter()
+    .append("g")
+    .attr('transform', function(d) {
+      return 'translate(' + (x(d.Age) - 20) + ',0)'
+    });
+
+  var shouldShowTooltips = true;
+  barsGroups
+    .on('mouseover', function(d, i) {
+      if (shouldShowTooltips) {
+        tip.show(d, i);
+      }
+    })
+    .on('mouseout', function(d, i) {
+      if (shouldShowTooltips) {
+        tip.hide(d, i);
+      }
+    })
+    .on('click', function(d, i){
+      shouldShowTooltips = !shouldShowTooltips;
+      if (shouldShowTooltips) {
+        tip.show(d, i);
+      } else {
+        tip.hide(d, i);
+      }
+    });
+
+  var maleRect = barsGroups.append('rect')
+    .attr('fill', 'salmon')
+    .attr('class', 'bar')
+    .attr('y', function(d) {
+      return y1(d.Male);
+    })
+    .attr('width', x.bandwidth())
+    .attr('height', function(d) {
+      return height / 2 - y1(d.Male);
+    });
+    
+  var femaleRect = barsGroups.append('rect')
+    .attr('fill', 'plum')
+    .attr('class', 'bar')
+    .attr('y', function(d) {
+      return height / 2;
+    })
+    .attr('width', x.bandwidth())
+    .attr('height', function(d) {
+      return y2(d.Female);
+    });
+  
+  
+```
